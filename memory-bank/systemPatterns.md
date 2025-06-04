@@ -18,6 +18,8 @@ This file documents the system architecture, key technical decisions, design pat
 
 - `src/` — Main TypeScript project source. When both a TypeScript library and a Next.js web app coexist, place the TS code in `src/` and the Next.js app in `web/`. If the codebase consists solely of a Next.js application, you may omit `web/` and host the app directly at the project root.
 - `web/` — Next.js application when coexisting with other code.
+- `web/prisma/` — Prisma schema and migrations for database.
+- `docker-compose.yml` manages PostgreSQL service for development.
 - `scripts/` — Shell scripts for setup and automation. Only shell scripts should live here.
 - `python/` — Python projects, modules, and utilities.
 - `notebooks/` — Jupyter notebooks and related resources.

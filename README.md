@@ -65,6 +65,8 @@ All operational rules and protocols are maintained in the modular files under `.
 2. The script will not overwrite any existing files or folders.
 3. Place all future shell scripts in the `scripts/` directory.
 4. Update this README with any new rules before implementing them.
+5. Run `bash scripts/setup_web_env.sh` to scaffold the Next.js application.
+6. Run `bash scripts/setup_db_prisma.sh` to start PostgreSQL and initialize Prisma.
 
 ## Top-Level Folder Conventions
 

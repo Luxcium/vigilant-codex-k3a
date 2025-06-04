@@ -30,6 +30,7 @@ This file tracks what works, what remains to be built, current status, and known
 - Repository documentation updated to reference new rules
 - Python standards instruction file published
 - VS Code settings updated for Copilot 1.101+
+- Next.js app scaffolded with Prisma integration
 
 <!-- ai:section:whats-left -->
 ## What's Left
@@ -37,6 +38,7 @@ This file tracks what works, what remains to be built, current status, and known
 - **Test Conditional Python Framework**: Run each environment mode (local, docker_isolated, docker_volume) to validate complete functionality
 - **Document Framework Lessons**: Capture learnings about conditional instruction design for future language environments
 - **Extend Conditional Framework**: Consider applying conditional approach to Node.js, TypeScript, and other language setups
+- **Complete Web Authentication**: Finalize login flows and database migrations
 - Review all Memory Bank and .clinerules files for cross-reference and compliance with the new code organization standard.
 - Verify markdown-lint compliance for all updated documentation.
 - Communicate the new standard to all contributors and ensure script-driven enforcement.
@@ -67,6 +69,7 @@ This file tracks what works, what remains to be built, current status, and known
 | Name | Date | Contribution |
 | --- | --- | --- |
 | user | 2025-02-06 | Initial framework |
+| user | 2025-06-04 | Next.js and Prisma setup |
 
 ## Known Issues
 

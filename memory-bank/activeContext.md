@@ -1,4 +1,4 @@
-## [2025-02-06]
+## [2025-06-04]
 # activeContext.md
 
 ## Purpose
@@ -15,46 +15,27 @@ This file tracks the current work focus, recent changes, next steps, and active 
 
 ## Current Work Focus
 
-Completed conditional Python environment framework that provides three environment modes (local virtual environment, Docker isolated, Docker volume-mounted) through parameterized instructions and scripts. The framework defers hard implementation choices to runtime via ENV_MODE parameter, following project's script-driven creation protocols.
+Implementing full-stack web environment. Initialized Next.js app with Prisma and PostgreSQL using script-driven setup. Preparing integration with existing Python services.
 
 ## Recent Changes
 
-- **Conditional Python Environment Framework**: Created comprehensive conditional setup system:
-  - `.github/instructions/python-environment-conditional.instructions.md` - Parameter-driven conditional instructions
-  - `.github/prompts/python-environment-setup.prompt.md` - User-facing prompt for mode selection
-  - `scripts/setup_python_env.sh` - Main entry script with ENV_MODE parameter routing
-  - `scripts/setup_python_local.sh` - Local virtual environment setup with comprehensive documentation
-  - `scripts/setup_python_docker_isolated.sh` - Fully isolated Docker environment setup
-  - `scripts/setup_python_docker_volume.sh` - Volume-mounted Docker environment with live editing
-- **Parameter-Driven Architecture**: Implemented true conditional logic:
-  - ENV_MODE parameter determines runtime behavior (local, docker_isolated, docker_volume)
-  - PYTHON_VERSION and PROJECT_NAME parameters for customization
-  - No hard-coded choices in instruction files or scripts
-  - Mode-specific README.md generation with complete documentation
-- **Project Protocol Compliance**: Followed established patterns:
-  - Script-driven creation in `scripts/` directory
-  - Idempotent scripts with existence checks and user prompts
-  - Cross-references to Memory Bank and instruction files
-  - Integration with three AI agent system (Cline AI, Codex CLI, VS Code Copilot)
-- **Quality Assurance**: Comprehensive testing and validation:
-  - Docker build verification in isolated and volume modes
-  - Python version checking and virtual environment testing
-  - Mode-switching capabilities documented and tested
-  - Complete troubleshooting guides for each environment type
+- **Next.js Web Environment**: Generated project scaffold via `setup_web_env.sh` with TypeScript and ESLint.
+- **Database Setup**: Added PostgreSQL service and Prisma schema with user model through `setup_db_prisma.sh`.
+- **Login Feature**: Created simple login API routes using Prisma and bcrypt.
 
 ## Next Steps
 
 ### Documentation Updates
-- Update `memory-bank/dependencies.md` with conditional Python environment dependencies
-- Update `memory-bank/docker-workflow.md` with new conditional Docker patterns
-- Update `memory-bank/progress.md` with completed framework status
+- Document Prisma and PostgreSQL dependencies in `memory-bank/dependencies.md`
+- Record web architecture in `memory-bank/systemPatterns.md`
+- Update `memory-bank/progress.md` with web environment status
 
 ### Testing
-- Run each environment mode to validate behavior
+- Verify Next.js app starts and connects to database
 
 ### Expansion
-- Document lessons learned about conditional instruction design
-- Explore applying framework to other languages (Node.js, etc.)
+- Integrate Python API routes with Next.js front end
+- Extend authentication to token-based system
 
 ## Active Decisions
 

@@ -53,6 +53,8 @@ This file tracks all project dependencies, their relationships, and integration 
 - **Jupyter Notebooks**: Research and analysis in `notebooks/`
 - **Shell Scripts**: Automation and setup in `scripts/`
 - **Web Framework**: Next.js application in `web/` (when applicable)
+- **Prisma ORM**: Database schema and client under `web/prisma/`
+- **PostgreSQL Database**: Service defined in `docker-compose.yml`
 
 ## Development Dependencies
 
@@ -217,6 +219,11 @@ Project Root
 - **Added**: Parametric input system for dynamic configuration generation
 - **Enhanced**: Quality assurance checklists for all environment modes
 - **Integration**: VS Code Copilot, Cline AI, and Codex CLI collaboration
+
+### Web Application Stack
+- **Added**: Next.js application scaffolded via `setup_web_env.sh`
+- **Added**: PostgreSQL and Prisma setup via `setup_db_prisma.sh`
+- **Impact**: Enables full-stack TypeScript and Python interoperability
 
 ## Call to Action
 

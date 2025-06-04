@@ -1,1 +1,13 @@
-# Placeholder for .gitignore
+# Node
+web/node_modules/
+web/.next/
+web/.env
+
+# Python
+python/.venv/
+python/__pycache__/
+python/.env
+
+# Environment
+.env
+
