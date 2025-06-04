@@ -1,0 +1,2 @@
+# Example Python requirements file
+# Add your dependencies below

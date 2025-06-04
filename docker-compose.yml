@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  python:
+    build: ./python
+    volumes:
+      - ./python:/app
+    env_file:
+      - ./python/.env
+    working_dir: /app
+    command: bash
