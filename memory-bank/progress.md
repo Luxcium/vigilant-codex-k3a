@@ -25,6 +25,7 @@ This file tracks what works, what remains to be built, current status, and known
 - Autonomous state manager tracks changes
 - Multipurpose initialization system under `init/`
 - Enhanced prompt generator and context-aware templates
+- Genesis boot-phase script for dependency checks and environment validation
 
 ### Docs
 - Repository documentation updated to reference new rules
@@ -36,6 +37,7 @@ This file tracks what works, what remains to be built, current status, and known
 ## What's Left
 
 - **Test Conditional Python Framework**: Run each environment mode (local, docker_isolated, docker_volume) to validate complete functionality
+- **Test Genesis Boot-Phase Script**: Validate package manager detection and environment checks across OS/container setups
 - **Document Framework Lessons**: Capture learnings about conditional instruction design for future language environments
 - **Extend Conditional Framework**: Consider applying conditional approach to Node.js, TypeScript, and other language setups
 - **Complete Web Authentication**: Finalize login flows and database migrations
