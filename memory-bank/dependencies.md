@@ -46,6 +46,7 @@ This file tracks all project dependencies, their relationships, and integration 
 - **Prompt Files**: Executable workflow templates in `.github/prompts/`
 - **Instruction Files**: Coding standards and guidelines in `.github/instructions/`
 - **Script System**: Automation tools in `scripts/` directory
+- **Genesis Boot-Phase Script**: Checks Node dependencies, container state, and Git repo
 
 ### Project Structure Dependencies
 - **TypeScript Runtime**: Core language support in `src/`

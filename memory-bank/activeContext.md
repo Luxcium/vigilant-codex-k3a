@@ -32,6 +32,7 @@ Implementing full-stack web environment. Initialized Next.js app with Prisma and
 
 ### Testing
 - Verify Next.js app starts and connects to database
+- Validate `scripts/genesis_boot.sh` initialization script
 
 ### Expansion
 - Integrate Python API routes with Next.js front end
