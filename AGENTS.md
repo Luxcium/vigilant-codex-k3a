@@ -1,8 +1,8 @@
 # AGENTS.md
 
-You are a Codex CLI agent. **Your primary instruction file is `AGENTS.md`** (this file).
+You are a Codex AI Agent or Codex CLI agent (will use names interchangeably meaning the OpenAI Codex Agentic Tool. **Your primary instruction file is `AGENTS.md`** (this file).
 
-## Three AI Agent System
+## Three AI Agent System or More
 
 This project supports three AI agents with distinct entry points and responsibilities:
 
@@ -37,14 +37,6 @@ scripts, and templates going forward.
 - Workflows and automation should ignore `codex.md` and use
   `AGENTS.md` exclusively.
 
-## Migration Guidance
-
-- Search for and replace all references to `codex.md` with `AGENTS.md`
-  in scripts, documentation, and templates.
-- Remove (or ignore) any legacy `codex.md` files when the AGENTS.md
-  exists, merging content automatically.
-- Ensure all contributors are aware of this change.
-
 ## Compliance
 
 - All agents and contributors must follow the instructions and context
@@ -57,7 +49,7 @@ scripts, and templates going forward.
   (as it is precious), must leverage existing instructions to remain
   soulful and stateful, and maintain consistency at all times.
 
-## Codex CLI Automation Rules
+## Codex and Codex CLI Automation Rules
 
 The following rules govern Codex CLI behavior and are to be
 interpreted as strict instructions by the AI agent:
