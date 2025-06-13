@@ -3,3 +3,6 @@
 
 - [2025-06-04T03:37:00Z] Current State: Next.js web app with Prisma initialized; Last Action: Created setup scripts and login routes; Rationale: Provide full-stack example with database integration; Next Intent: Complete migrations and integrate Python API.
 - [2025-06-13T12:17:49Z] Added Memory Bank ledger protocol to AGENTS.md and updated Markdown files to pass verification.
+
+- [2025-06-13T19:58:36Z] Started SDK core bootstrap from Implementation Playbook; unzipping skipped (file absent). Created branch feat/sdk-core-bootstrap. Planning to restructure TS code to Questrade SDK core per blueprint.
+- [2025-06-13T21:22:19Z] Removed pnpm-lock.yaml and added rule to avoid lock files; updated AGENTS.md with no-lock-files preference and activeContext with decision note.
