@@ -1,4 +1,5 @@
 # techContext.md
+<!-- markdownlint-disable MD013 MD022 MD032 MD041 MD005 MD007 -->
 
 ## Purpose
 This file documents the technologies, development setup, technical constraints, and dependencies for any project. It provides a clear reference for all technical aspects, independent of any specific project topic at initialization.

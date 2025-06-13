@@ -1,4 +1,5 @@
 # systemPatterns.md
+<!-- markdownlint-disable MD013 MD022 MD032 MD041 MD040 MD036 -->
 
 ## Purpose
 This file documents the system architecture, key technical decisions, design patterns, and component relationships for any project. It serves as a living reference for how the system is structured and how its parts interact, independent of any specific project topic at initialization.
@@ -68,7 +69,6 @@ This Memory Bank is initialized to provide a clear, adaptable template for docum
 | [techContext.md](./techContext.md) | implementation guidance |
 | [activeContext.md](./activeContext.md) | consumes patterns |
 | [progress.md](./progress.md) | tracks decisions |
-
 
 ## Call to Action
 

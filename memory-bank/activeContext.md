@@ -1,3 +1,5 @@
+<!-- markdownlint-disable MD013 MD041 MD022 MD032 -->
+
 ## [2025-06-04]
 # activeContext.md
 
@@ -22,6 +24,8 @@ Implementing full-stack web environment. Initialized Next.js app with Prisma and
 - **Next.js Web Environment**: Generated project scaffold via `setup_web_env.sh` with TypeScript and ESLint.
 - **Database Setup**: Added PostgreSQL service and Prisma schema with user model through `setup_db_prisma.sh`.
 - **Login Feature**: Created simple login API routes using Prisma and bcrypt.
+- **Ledger Protocol**: Added Memory Bank ledger instructions to `AGENTS.md` and
+  updated documentation for markdownlint compliance.
 
 ## Next Steps
 

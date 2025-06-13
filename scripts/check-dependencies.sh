@@ -20,7 +20,7 @@ else
 fi
 
 log "Verifying Markdown compliance…"
-markdownlint --config .markdownlint.yaml "$FILE" || {
+pnpm exec markdownlint --config .markdownlint.yaml "$FILE" || {
   echo "[ERROR] $FILE failed markdownlint."
   exit 1
 }

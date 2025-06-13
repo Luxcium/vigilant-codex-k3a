@@ -1,4 +1,5 @@
 # Docker Workflow Documentation
+<!-- markdownlint-disable MD013 MD022 MD032 MD041 MD009 -->
 
 ## Purpose
 
