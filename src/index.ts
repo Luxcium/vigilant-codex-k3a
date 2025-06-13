@@ -1,3 +1,4 @@
-export { bootstrap } from './auth/manual'
-export { scheduleAutoRefresh } from './auth/scheduler'
-export { smartFetch } from './errors/smartFetch'
+export * from './client/QuestradeClient';
+export * from './auth/interfaces';
+export * from './auth/manager';
+export * from './http/restClient';

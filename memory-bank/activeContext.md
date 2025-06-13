@@ -51,6 +51,7 @@ Implementing full-stack web environment. Initialized Next.js app with Prisma and
 - **Conditional Framework Standard**: Instruction files must use parameter-driven conditional sections rather than hard-coded implementation choices.
 - **Runtime Decision Deferral**: Environment setup modes determined by ENV_MODE parameter at script execution time, not at instruction creation time.
 - **Mode-Specific Documentation**: Each environment mode generates complete, standalone documentation appropriate for that specific setup.
+- **No Lock Files**: Package manager lock files will not be generated or committed until further notice.
 
 ## Dependencies and Relationships
 

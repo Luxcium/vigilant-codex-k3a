@@ -249,8 +249,7 @@ sessions until explicitly changed. Preferences are stored in this
 section for codex cli.
 
 Current Preferences:
-- **None set**: No special preferences currently active, this shall be
-  removed when a first preference is set.
+- **no-lock-files**: Package manager lock files (pnpm-lock.yaml, package-lock.json, npm-shrinkwrap.json, yarn.lock) must not be generated or committed until further notice.
 
 To add or update preferences:
 1. Edit this section following the strictest set of markdown-lint

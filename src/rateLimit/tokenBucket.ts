@@ -1,40 +1,28 @@
-import { Category, RULES } from './rules'
+import { BucketKind, RateLimitBucket } from './interfaces';
 
-/**
- * Create an in-memory token bucket rate limiter.
- */
-export const createRateLimiter = () => {
-  type Bucket = { tokens: number; last: number }
-  const buckets = new Map<Category, Bucket>(
-    Object.entries(RULES).map(([k, v]) => [k as Category, { tokens: v.rps, last: Date.now() }])
-  )
+export class TokenBucketLimiter {
+  private buckets: Record<BucketKind, RateLimitBucket> = {
+    account: { capacity: 30, refillInterval: 1000, remaining: 30, reset: Date.now() },
+    market: { capacity: 20, refillInterval: 1000, remaining: 20, reset: Date.now() }
+  };
 
-  const refill = (cat: Category): void => {
-    const b = buckets.get(cat)!
-    const now = Date.now()
-    const delta = now - b.last
-    const add = Math.floor(delta / 1_000) * RULES[cat].rps
-    if (add) {
-      b.tokens = Math.min(b.tokens + add, RULES[cat].rps)
-      b.last += (add / RULES[cat].rps) * 1_000
+  async consume(kind: BucketKind): Promise<void> {
+    while (this.buckets[kind].remaining <= 0) {
+      const delay = this.buckets[kind].reset - Date.now();
+      await new Promise((r) => setTimeout(r, Math.max(delay, 50)));
     }
+    this.buckets[kind].remaining -= 1;
   }
 
-  const acquire = async (cat: Category): Promise<void> => {
-    while (true) {
-      refill(cat)
-      const b = buckets.get(cat)!
-      if (b.tokens > 0) {
-        b.tokens--
-        return
-      }
-      await new Promise((r) => setTimeout(r, 50))
-    }
+  hydrate(kind: BucketKind, headers: Record<string, string>): void {
+    const rem = Number(headers['x-ratelimit-remaining']);
+    const reset = Number(headers['x-ratelimit-reset']) * 1000;
+    if (!Number.isNaN(rem)) this.buckets[kind].remaining = rem;
+    if (!Number.isNaN(reset)) this.buckets[kind].reset = reset;
   }
 
-  const sync = (cat: Category, remaining: number, reset: number): void => {
-    buckets.set(cat, { tokens: remaining, last: reset * 1_000 })
+  handle429(kind: BucketKind, reset: number): void {
+    this.buckets[kind].remaining = 0;
+    this.buckets[kind].reset = reset * 1000;
   }
-
-  return { acquire, sync }
 }
