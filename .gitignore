@@ -11,3 +11,8 @@ python/.env
 # Environment
 .env
 
+.keys/
+node_modules/
+.coverage/
+coverage/
+docs/

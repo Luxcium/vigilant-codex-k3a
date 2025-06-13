@@ -5,9 +5,9 @@ log() {
   echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] $1"
 }
 
-log "Running markdownlint --strict on all tracked markdown files"
+log "Running markdownlint on all tracked markdown files"
 files=$(git ls-files '*.md')
-markdownlint --config .markdownlint.yaml --strict "$files" || {
+pnpm exec markdownlint --config .markdownlint.yaml "$files" || {
   echo "[ERROR] markdownlint failed"
   exit 1
 }

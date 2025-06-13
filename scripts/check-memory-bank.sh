@@ -13,7 +13,7 @@ if [ ! -d "$dir" ]; then
 fi
 
 log "Running markdownlint on $dir/*.md"
-markdownlint --config .markdownlint.yaml "$dir"/*.md || {
+pnpm exec markdownlint --config .markdownlint.yaml "$dir"/*.md || {
   echo "[ERROR] Markdownlint failed for $dir"
   exit 1
 }

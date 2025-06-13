@@ -114,6 +114,23 @@ Failure to include this block or run the checks is considered non-compliant.
 > deprecate it and remove it keeping the instruction in AGENTS.md
 > before any deletion.
 
+## Memory Bank Ledger Protocol
+
+To maintain state across resets, Codex CLI must treat the `memory-bank/` folder
+as a chronological ledger of actions and decisions.
+
+- **Before starting any task**, re-read all Memory Bank files and summarize the
+  current context in the session log.
+- **After completing a task**, append a timestamped entry to
+  `memory-bank/activeContext.log.md` describing what changed and why.
+- **Update `activeContext.md` and `progress.md`** with relevant details whenever
+  features or rules evolve.
+- **Ensure verification scripts pass** after each update to keep the ledger
+  consistent and markdown-lint compliant.
+
+These rules guarantee that the Memory Bank stays synchronized with ongoing work
+and provides a reliable audit trail for all agents.
+
 ## Project Context
 - **Project Name**: Codex CLI (v3 or k3), use to discover how to
   maintain a project that leverage Codex CLI toolings along with cline

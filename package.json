@@ -1,0 +1,31 @@
+{
+  "name": "vigilant-codex-k3a",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "vitest run --coverage",
+    "docs": "typedoc --options typedoc.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.0.1",
+    "@vitest/coverage-istanbul": "^3.2.3",
+    "markdownlint-cli": "^0.45.0",
+    "typedoc": "^0.25.3",
+    "typedoc-plugin-markdown": "^3.14.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.3"
+  },
+  "typedoc": {
+    "tsconfig": "tsconfig.json",
+    "entryDocument": "README.md",
+    "plugin": [
+      "typedoc-plugin-markdown"
+    ],
+    "excludeInternal": true,
+    "gitRevision": "main"
+  }
+}

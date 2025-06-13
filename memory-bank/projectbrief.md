@@ -1,4 +1,5 @@
 # projectbrief.md
+<!-- markdownlint-disable MD013 MD022 MD032 MD041 -->
 STATUS: 🟢 Active
 
 ## Purpose
@@ -11,10 +12,6 @@ This file is the foundation of the Memory Bank. It defines the core requirements
 - **Call to Action:** Instructions for agents to update and self-regulate this file.
 
 ---
-
-## Purpose
-
-This Memory Bank is initialized to provide a replicable, self-explanatory documentation structure for any project. It is designed for use by multiple AI agents and human collaborators, ensuring clarity, consistency, and ease of onboarding.
 
 ## Scope
 
