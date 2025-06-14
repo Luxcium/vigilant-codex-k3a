@@ -22,8 +22,17 @@ export class RestClient {
     });
     this.limiter.hydrate('account', {
       'x-ratelimit-remaining': res.headers.get('x-ratelimit-remaining') ?? '',
-      'x-ratelimit-reset': res.headers.get('x-ratelimit-reset') ?? ''
+      'x-ratelimit-reset': res.headers.get('x-ratelimit-reset') ?? '',
+      'x-ratelimit-remaining-second': res.headers.get('x-ratelimit-remaining-second') ?? '',
+      'x-ratelimit-reset-second': res.headers.get('x-ratelimit-reset-second') ?? '',
+      'x-ratelimit-remaining-hour': res.headers.get('x-ratelimit-remaining-hour') ?? '',
+      'x-ratelimit-reset-hour': res.headers.get('x-ratelimit-reset-hour') ?? ''
     });
+    if (res.status === 429) {
+      const reset = Number(res.headers.get('x-ratelimit-reset') ?? '0');
+      if (!Number.isNaN(reset)) this.limiter.handle429('account', reset);
+      throw new Error('Rate limit exceeded');
+    }
     if (!res.ok) return handleQuestradeError(res);
     return res.json() as Promise<T>;
   }

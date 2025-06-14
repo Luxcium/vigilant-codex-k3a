@@ -17,7 +17,7 @@ This file tracks the current work focus, recent changes, next steps, and active 
 
 ## Current Work Focus
 
-Implementing full-stack web environment. Initialized Next.js app with Prisma and PostgreSQL using script-driven setup. Preparing integration with existing Python services.
+Finishing Questrade SDK core features. Implemented hourly rate-limit buckets with 429 back-off logic while continuing web integration work.
 
 ## Recent Changes
 
@@ -26,6 +26,7 @@ Implementing full-stack web environment. Initialized Next.js app with Prisma and
 - **Login Feature**: Created simple login API routes using Prisma and bcrypt.
 - **Ledger Protocol**: Added Memory Bank ledger instructions to `AGENTS.md` and
   updated documentation for markdownlint compliance.
+- **Rate Limit Patch**: Added hourly token buckets and 429 handling logic in SDK core.
 
 ## Next Steps
 
@@ -33,10 +34,12 @@ Implementing full-stack web environment. Initialized Next.js app with Prisma and
 - Document Prisma and PostgreSQL dependencies in `memory-bank/dependencies.md`
 - Record web architecture in `memory-bank/systemPatterns.md`
 - Update `memory-bank/progress.md` with web environment status
+- Note rate limiter patch in `memory-bank/progress.md`
 
 ### Testing
 - Verify Next.js app starts and connects to database
 - Validate `scripts/genesis_boot.sh` initialization script
+- Run unit tests for updated rate limiter
 
 ### Expansion
 - Integrate Python API routes with Next.js front end
