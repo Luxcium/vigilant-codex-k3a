@@ -7,7 +7,7 @@ log() {
 
 log "Running markdownlint on all tracked markdown files"
 files=$(git ls-files '*.md')
-pnpm exec markdownlint --config .markdownlint.yaml "$files" || {
+pnpm exec markdownlint --config .markdownlint.yaml $files || {
   echo "[ERROR] markdownlint failed"
   exit 1
 }

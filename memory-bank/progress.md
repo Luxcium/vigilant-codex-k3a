@@ -33,6 +33,7 @@ This file tracks what works, what remains to be built, current status, and known
 - Python standards instruction file published
 - VS Code settings updated for Copilot 1.101+
 - Next.js app scaffolded with Prisma integration
+- SDK Rate Limiter with hourly buckets and 429 back-off logic
 
 <!-- ai:section:whats-left -->
 ## What's Left
@@ -42,6 +43,7 @@ This file tracks what works, what remains to be built, current status, and known
 - **Document Framework Lessons**: Capture learnings about conditional instruction design for future language environments
 - **Extend Conditional Framework**: Consider applying conditional approach to Node.js, TypeScript, and other language setups
 - **Complete Web Authentication**: Finalize login flows and database migrations
+- **Wire SDK 429 Errors**: Connect error handler to rate limiter for header sync
 - Review all Memory Bank and .clinerules files for cross-reference and compliance with the new code organization standard.
 - Verify markdown-lint compliance for all updated documentation.
 - Communicate the new standard to all contributors and ensure script-driven enforcement.
