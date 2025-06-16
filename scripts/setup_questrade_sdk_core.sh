@@ -12,7 +12,7 @@ DIRS=(
   "src/auth/providers"
   "src/auth/tokenStore"
   "src/rateLimit"
-  "src/error"
+  "src/errors"
   "src/http"
   "src/client"
   "examples"

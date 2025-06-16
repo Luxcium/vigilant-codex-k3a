@@ -27,6 +27,7 @@ Finishing Questrade SDK core features. Implemented hourly rate-limit buckets wit
 - **Ledger Protocol**: Added Memory Bank ledger instructions to `AGENTS.md` and
   updated documentation for markdownlint compliance.
 - **Rate Limit Patch**: Added hourly token buckets and 429 handling logic in SDK core.
+- **Error Module Consolidation**: Merged duplicate `src/error/` and `src/errors/` directories into a single `src/errors/` module and updated imports.
 
 ## Next Steps
 
