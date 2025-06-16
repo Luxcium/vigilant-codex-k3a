@@ -1,18 +1,25 @@
-export interface GeneralError {
+export interface GeneralErrorPayload {
   code: number
   message: string
 }
 
-export interface OrderError extends GeneralError {
+export interface OrderErrorPayload extends GeneralErrorPayload {
   orderId: number
   orders?: unknown
 }
 
-export type QuestradeErrorResponse = GeneralError | OrderError
+export type QuestradeErrorPayload = GeneralErrorPayload | OrderErrorPayload
 
 export class QuestradeError extends Error {
-  constructor(public payload: QuestradeErrorResponse) {
+  constructor(public payload: QuestradeErrorPayload) {
     super(payload.message)
     this.name = 'QuestradeError'
+  }
+}
+
+export class OrderError extends QuestradeError {
+  constructor(public override payload: OrderErrorPayload) {
+    super(payload)
+    this.name = 'OrderError'
   }
 }

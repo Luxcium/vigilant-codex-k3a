@@ -1,4 +1,4 @@
-import { handleQuestradeError } from '../src/error';
+import { handleQuestradeError } from '../src/errors';
 
 test('order error', async () => {
   const res = {
