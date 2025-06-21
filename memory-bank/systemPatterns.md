@@ -67,6 +67,7 @@ This Memory Bank is initialized to provide a clear, adaptable template for docum
 | [projectbrief.md](./projectbrief.md) | foundation |
 | [productContext.md](./productContext.md) | defines goals |
 | [techContext.md](./techContext.md) | implementation guidance |
+| [docker-workflow.md](./docker-workflow.md) | container workflow reference |
 | [activeContext.md](./activeContext.md) | consumes patterns |
 | [progress.md](./progress.md) | tracks decisions |
 

@@ -37,10 +37,10 @@ This Memory Bank is established to ensure every project begins with a clear unde
 
 ## Dependencies and Relationships
 
-- **Depends On:** [projectbrief.md](./projectbrief.md), [systemPatterns.md](./systemPatterns.md)
-- **Required By:** [activeContext.md](./activeContext.md), [progress.md](./progress.md)
-- **Why This Order:** productContext.md defines purpose before architecture or progress can be tracked.
-- **Impact Analysis:** If outdated, user goals may diverge from implementation, leading to rework.
+- **Depends On:** [projectbrief.md](./projectbrief.md), [systemPatterns.md](./systemPatterns.md), [techContext.md](./techContext.md)
+- **Required By:** [activeContext.md](./activeContext.md), [progress.md](./progress.md), [dependencies.md](./dependencies.md)
+- **Why This Order:** `productContext.md` captures project goals before architecture or progress can be tracked.
+- **Impact Analysis:** If outdated, user goals may diverge from implementation, requiring significant rework.
 
 ## Call to Action
 

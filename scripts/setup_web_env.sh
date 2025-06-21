@@ -29,3 +29,6 @@ GIT
 fi
 
 log "Web environment setup complete"
+log "Running repository verification"
+"$PROJECT_ROOT/scripts/verify-all.sh"
+log "Verification after setup complete"

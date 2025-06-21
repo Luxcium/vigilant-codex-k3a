@@ -50,9 +50,9 @@ Refer to the centralized directory structure diagram in [systemPatterns.md](./sy
 ## Dependencies and Relationships
 
 - **Depends On:** [systemPatterns.md](./systemPatterns.md), [projectbrief.md](./projectbrief.md)
-- **Required By:** [activeContext.md](./activeContext.md), [progress.md](./progress.md)
-- **Why This Order:** techContext.md establishes tools and constraints before active work or progress tracking.
-- **Impact Analysis:** Outdated tooling information causes misaligned setups and wasted effort.
+- **Required By:** [activeContext.md](./activeContext.md), [progress.md](./progress.md), [docker-workflow.md](./docker-workflow.md), [dependencies.md](./dependencies.md)
+- **Why This Order:** `techContext.md` establishes tools and constraints before active work or progress tracking.
+- **Impact Analysis:** Outdated tooling information causes misaligned setups and wasted effort across the entire workflow.
 
 ## Call to Action
 
