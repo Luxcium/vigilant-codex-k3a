@@ -88,14 +88,7 @@ export const SymbolDetailSchema = z.object({
   optionType: OptionTypeSchema.nullable(),
   optionDurationType: OptionDurationTypeSchema.nullable(),
   optionRoot: z.string(),
-  optionContractDeliverables: z.object({
-    underlyings: z.array(z.object({
-      multiplier: z.number().int(),
-      underlyingSymbol: z.string(),
-      underlyingSymbolId: z.number().int()
-    })),
-    cashInLieu: z.number()
-  }),
+  optionContractDeliverables: OptionDeliverablesSchema,
   optionExerciseType: OptionExerciseTypeSchema.nullable(),
   listingExchange: ListingExchangeSchema,
   description: z.string(),
