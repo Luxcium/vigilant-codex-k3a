@@ -17,7 +17,7 @@ This file tracks the current work focus, recent changes, next steps, and active 
 
 ## Current Work Focus
 
-Finishing Questrade SDK core features. Implemented hourly rate-limit buckets with 429 back-off logic while continuing web integration work.
+Finishing Questrade SDK core features. Implemented hourly rate-limit buckets with 429 back-off logic while continuing web integration work. Currently implementing typed schemas for Questrade API.
 
 ## Recent Changes
 
@@ -28,6 +28,7 @@ Finishing Questrade SDK core features. Implemented hourly rate-limit buckets wit
   updated documentation for markdownlint compliance.
 - **Rate Limit Patch**: Added hourly token buckets and 429 handling logic in SDK core.
 - **Error Module Consolidation**: Merged duplicate `src/error/` and `src/errors/` directories into a single `src/errors/` module and updated imports.
+- **Questrade Types**: Added enums and account schemas with Zod for API typing.
 
 ## Next Steps
 
@@ -45,6 +46,7 @@ Finishing Questrade SDK core features. Implemented hourly rate-limit buckets wit
 ### Expansion
 - Integrate Python API routes with Next.js front end
 - Extend authentication to token-based system
+- Expand Questrade type coverage for markets and symbols
 
 ## Active Decisions
 

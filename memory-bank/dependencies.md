@@ -98,6 +98,7 @@ This file tracks all project dependencies, their relationships, and integration 
 
 
 - **TypeScript Runtime**: Core language support in `src/`
+- **Zod**: Runtime schema validation for API types
 
 - **Python Environment**: Conditional module support in `python/`
 

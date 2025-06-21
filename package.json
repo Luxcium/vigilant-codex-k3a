@@ -36,5 +36,8 @@
     ],
     "excludeInternal": true,
     "gitRevision": "main"
+  },
+  "dependencies": {
+    "zod": "^3.22.4"
   }
 }
