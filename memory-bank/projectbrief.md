@@ -31,10 +31,10 @@ This file is the foundation of the Memory Bank. It defines the core requirements
 
 ## Dependencies and Relationships
 
-- **Depends On:** _[List upstream dependencies, e.g., productContext.md, systemPatterns.md, etc.]_
-- **Required By:** _[List downstream dependencies, e.g., all other Memory Bank files]_
-- **Why This Order:** _[Explain why projectbrief.md is foundational for other documentation]_
-- **Impact Analysis:** _[Describe what happens if this file is not kept up to date or if dependencies change]_
+- **Depends On:** None — this file establishes the core rules and goals for the repository.
+- **Required By:** [productContext.md](./productContext.md), [systemPatterns.md](./systemPatterns.md), [techContext.md](./techContext.md), [docker-workflow.md](./docker-workflow.md), [activeContext.md](./activeContext.md), [progress.md](./progress.md), [dependencies.md](./dependencies.md)
+- **Why This Order:** `projectbrief.md` defines foundational requirements that every other Memory Bank file builds upon.
+- **Impact Analysis:** If this document becomes outdated, all downstream documentation and automation may diverge from the project’s objectives, leading to inconsistent workflows and rework.
 
 ## Call to Action
 

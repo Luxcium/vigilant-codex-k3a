@@ -41,6 +41,7 @@ Finishing Questrade SDK core features. Implemented hourly rate-limit buckets wit
 - Verify Next.js app starts and connects to database
 - Validate `scripts/genesis_boot.sh` initialization script
 - Run unit tests for updated rate limiter
+- Follow [testing-guide.md](./testing-guide.md) for detailed steps
 
 ### Expansion
 - Integrate Python API routes with Next.js front end

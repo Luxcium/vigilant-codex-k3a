@@ -102,12 +102,15 @@ This document provides a comprehensive workflow for creating and managing Docker
   - projectbrief.md (core project requirements)
   - systemPatterns.md (architectural patterns)
   - techContext.md (technical context)
+  - activeContext.md (current implementation focus)
+  - progress.md (feature status tracking)
 - **Required By:**
   - Development environment setup
   - Production deployment procedures
   - CI/CD pipeline configuration
+  - dependencies.md (dependency map)
 - **Why This Order:** Docker workflow must align with project architecture and technical requirements
-- **Impact Analysis:** Changes to this workflow affect entire development and deployment process
+- **Impact Analysis:** Updates to this workflow influence environment setup scripts and deployment pipelines across the project
 
 ## Next Steps
 
