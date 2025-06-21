@@ -15,6 +15,7 @@ DIRS=(
   "src/errors"
   "src/http"
   "src/client"
+  "src/api"
   "examples"
   "tests"
 )
