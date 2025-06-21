@@ -35,6 +35,7 @@ This file tracks what works, what remains to be built, current status, and known
 - Next.js app scaffolded with Prisma integration
 - SDK Rate Limiter with hourly buckets and 429 back-off logic
 - Consolidated error handling into `src/errors/` directory
+- Initial Questrade API types and schemas created under `src/api/`
 
 <!-- ai:section:whats-left -->
 ## What's Left

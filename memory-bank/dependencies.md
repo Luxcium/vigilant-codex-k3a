@@ -106,9 +106,8 @@ This file tracks all project dependencies, their relationships, and integration 
 - **Shell Scripts**: Automation and setup in `scripts/`
 
 - **Web Framework**: Next.js application in `web/` (when applicable)
-
 - **Prisma ORM**: Database schema and client under `web/prisma/`
-
+- **Zod Validation Library**: Runtime data validation for TypeScript types
 - **PostgreSQL Database**: Service defined in `docker-compose.yml`
 
 
