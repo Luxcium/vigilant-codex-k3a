@@ -1,4 +1,4 @@
-import { OAuthProvider, OAuthTokens } from '../interfaces';
+import { OAuthProvider, OAuthTokenResponse, OAuthTokens } from '../interfaces';
 
 const BASE = 'https://login.questrade.com';
 
@@ -27,7 +27,7 @@ export class AuthCodeProvider implements OAuthProvider {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: body.toString()
-    }).then(async (r) => this.parse(r));
+    }).then(async (r: Response) => this.parse(r));
   }
 
   async refreshToken(refresh: string): Promise<OAuthTokens> {
@@ -40,7 +40,7 @@ export class AuthCodeProvider implements OAuthProvider {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: body.toString()
-    }).then(async (r) => this.parse(r, refresh));
+    }).then(async (r: Response) => this.parse(r, refresh));
   }
 
   async revokeToken(token: string): Promise<void> {
@@ -53,7 +53,7 @@ export class AuthCodeProvider implements OAuthProvider {
   }
 
   private async parse(res: Response, fallbackRefresh?: string): Promise<OAuthTokens> {
-    const data = (await res.json()) as unknown;
+    const data = (await res.json()) as OAuthTokenResponse;
     return {
       access_token: data.access_token,
       refresh_token: data.refresh_token ?? fallbackRefresh ?? '',
