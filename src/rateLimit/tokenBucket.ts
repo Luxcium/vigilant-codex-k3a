@@ -48,6 +48,14 @@ export class TokenBucketLimiter {
     group.perHour.reset = reset * 1000;
   }
 
+  sync(kind: BucketKind, remaining: number, reset: number): void {
+    const group = this.buckets[kind];
+    group.perSecond.remaining = Math.min(group.perSecond.remaining, remaining);
+    group.perHour.remaining = Math.min(group.perHour.remaining, remaining);
+    group.perSecond.reset = reset * 1000;
+    group.perHour.reset = reset * 1000;
+  }
+
   private refill(group: RateLimitGroup): void {
     const now = Date.now();
     if (now >= group.perSecond.reset) {
@@ -58,5 +66,13 @@ export class TokenBucketLimiter {
       group.perHour.remaining = group.perHour.capacity;
       group.perHour.reset = now + group.perHour.refillInterval;
     }
+  }
+}
+
+export const createRateLimiter = (): { acquire: (kind: BucketKind) => Promise<void>; sync: (kind: BucketKind, remaining: number, reset: number) => void } => {
+  const limiter = new TokenBucketLimiter()
+  return {
+    acquire: (kind: BucketKind) => limiter.consume(kind),
+    sync: (kind: BucketKind, remaining: number, reset: number) => limiter.sync(kind, remaining, reset)
   }
 }

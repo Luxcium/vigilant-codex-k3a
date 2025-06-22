@@ -1,9 +1,8 @@
-import { describe, it, expect, beforeEach, afterEach } from 'vitest'
-import { save, load, clear, OAuthTokens } from '../src/auth/storage'
-import { promises as fs } from 'fs'
+import { afterEach, describe, expect, it } from 'vitest'
+import { clear, load, OAuthTokens, save } from '../auth/storage'
 
 const file = '.keys/test.json'
-const tokens:OAuthTokens = { accessToken: 'a', apiServer: 's', refreshToken: 'r', expiresAt: 0 }
+const tokens: OAuthTokens = { accessToken: 'a', apiServer: 's', refreshToken: 'r', expiresAt: 0 }
 
 describe('storage', () => {
   afterEach(async () => { await clear(file) })

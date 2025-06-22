@@ -1,5 +1,5 @@
-import { describe, it, expect } from 'vitest'
-import { categorize } from '../src/rateLimit/rules'
+import { describe, expect, it } from 'vitest'
+import { categorize } from '../rateLimit/rules'
 
 describe('categorize', () => {
   it('returns market for market urls', () => {

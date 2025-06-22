@@ -1,9 +1,9 @@
-import { describe, it, expect } from 'vitest'
-import { toQuestradeError } from '../src/errors/toError'
-import { QuestradeError } from '../src/errors/types'
+import { describe, expect, it } from 'vitest'
+import { toQuestradeError } from '../errors/toError'
+import { QuestradeError } from '../errors/types'
 
-const makeRes = (status:number, body:object) => {
-  return new Response(JSON.stringify(body), { status, headers: { 'Content-Type':'application/json' } })
+const makeRes = (status: number, body: object) => {
+  return new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json' } })
 }
 
 describe('toError', () => {

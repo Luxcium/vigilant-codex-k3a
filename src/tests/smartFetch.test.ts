@@ -1,8 +1,8 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
-import { smartFetch } from '../src'
-import { bootstrap } from '../src/auth/manual'
+import { afterEach, describe, expect, it, vi } from 'vitest'
+import { bootstrap } from '../auth/manual'
+import { smartFetch } from '../errors/smartFetch'
 
-vi.mock('../src/auth/manual', () => ({
+vi.mock('../auth/manual', () => ({
   bootstrap: vi.fn(async () => ({
     accessToken: 't',
     apiServer: '',

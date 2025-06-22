@@ -1,4 +1,5 @@
-import { AccountActivitySchema } from '../src/types/accounts';
+import { describe, expect, it } from 'vitest'
+import { AccountActivitySchema } from '../types/accounts'
 
 describe('AccountActivitySchema', () => {
   it('accepts a valid AccountActivity', () => {
@@ -17,14 +18,14 @@ describe('AccountActivitySchema', () => {
       commission: 1,
       netAmount: 99,
       type: 'Order'
-    };
-    const result = AccountActivitySchema.safeParse(input);
-    expect(result.success).toBe(true);
-  });
+    }
+    const result = AccountActivitySchema.safeParse(input)
+    expect(result.success).toBe(true)
+  })
 
   it('rejects missing fields', () => {
-    const { success, error } = AccountActivitySchema.safeParse({ tradeDate: '2024-01-01' });
-    expect(success).toBe(false);
-    expect(error?.issues.some((i: any) => i.path.includes('transactionDate'))).toBe(true);
-  });
-});
+    const { success, error } = AccountActivitySchema.safeParse({ tradeDate: '2024-01-01' })
+    expect(success).toBe(false)
+    expect(error?.issues.some((i: any) => i.path.includes('transactionDate'))).toBe(true)
+  })
+})
