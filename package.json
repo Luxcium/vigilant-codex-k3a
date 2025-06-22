@@ -2,6 +2,9 @@
   "name": "vigilant-codex-k3a",
   "version": "1.0.0",
   "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
   "main": "index.js",
   "scripts": {
     "test": "jest",
@@ -9,24 +12,24 @@
     "lint": "eslint \"src/**/*.ts\"",
     "markdownlint": "markdownlint \"**/*.md\""
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "dependencies": {
+    "zod": "^3.25.67"
+  },
   "devDependencies": {
-    "@types/jest": "^29.0.0",
-    "@types/node": "^24.0.1",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "@vitest/coverage-istanbul": "^3.2.3",
-    "eslint": "^8.0.0",
-    "jest": "^29.0.0",
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.34.1",
+    "@typescript-eslint/parser": "^8.34.1",
+    "@vitest/coverage-istanbul": "^3.2.4",
+    "eslint": "^9.29.0",
+    "jest": "^30.0.2",
     "markdownlint-cli": "^0.45.0",
-    "prettier": "^3.0.0",
-    "ts-jest": "^29.0.0",
-    "typedoc": "^0.25.3",
-    "typedoc-plugin-markdown": "^3.14.0",
+    "prettier": "^3.5.3",
+    "ts-jest": "^29.4.0",
+    "typedoc": "^0.28.5",
+    "typedoc-plugin-markdown": "^4.7.0",
     "typescript": "^5.8.3",
-    "vitest": "^3.2.3"
+    "vitest": "^3.2.4"
   },
   "typedoc": {
     "tsconfig": "tsconfig.json",
@@ -36,8 +39,5 @@
     ],
     "excludeInternal": true,
     "gitRevision": "main"
-  },
-  "dependencies": {
-    "zod": "^3.25.67"
   }
 }
