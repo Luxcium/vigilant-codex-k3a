@@ -1,4 +1,5 @@
-import { PositionSchema } from '../src/types/accounts';
+import { describe, expect, it } from 'vitest'
+import { PositionSchema } from '../types/accounts'
 
 describe('PositionSchema', () => {
   it('accepts a valid Position', () => {
@@ -15,14 +16,14 @@ describe('PositionSchema', () => {
       totalCost: 900,
       isRealTime: true,
       isUnderReorg: false
-    };
-    const result = PositionSchema.safeParse(input);
-    expect(result.success).toBe(true);
-  });
+    }
+    const result = PositionSchema.safeParse(input)
+    expect(result.success).toBe(true)
+  })
 
   it('rejects missing fields', () => {
-    const { success, error } = PositionSchema.safeParse({ symbol: 'AAPL' });
-    expect(success).toBe(false);
-    expect(error?.issues.some((i: any) => i.path.includes('symbolId'))).toBe(true);
-  });
-});
+    const { success, error } = PositionSchema.safeParse({ symbol: 'AAPL' })
+    expect(success).toBe(false)
+    expect(error?.issues.some((i: any) => i.path.includes('symbolId'))).toBe(true)
+  })
+})
