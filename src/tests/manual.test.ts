@@ -21,6 +21,5 @@ describe('bootstrap', () => {
     )
     await bootstrap('test', 'r')
     expect(storage.save).toHaveBeenCalled()
-    global.fetch = globalFetch
   })
 })
