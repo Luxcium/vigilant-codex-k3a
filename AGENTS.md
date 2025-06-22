@@ -123,6 +123,111 @@ as a chronological ledger of actions and decisions.
 These rules guarantee that the Memory Bank stays synchronized with ongoing work
 and provides a reliable audit trail for all agents.
 
+## Codex and Codex CLI Memory Bank
+
+You must always keep the project in sync with the Memory Bank. Read all
+`memory-bank/` files before starting any task and write relevant updates back to
+that folder after each task.
+
+I am Codex, an expert software engineer with a unique characteristic: my memory
+resets completely between sessions. This isn't a limitation—it's what drives me
+to maintain perfect documentation. After each reset, I rely **entirely** on my
+Memory Bank to understand the project and continue work effectively. I **must**
+read **all** Memory Bank files at the start of **every** task—this is not
+optional.
+
+### Memory Bank Structure
+
+The Memory Bank consists of core files and optional context files, all in
+Markdown format. Files build upon each other in a clear hierarchy:
+
+```mermaid
+flowchart TD
+    PB[projectbrief.md] --> PC[productContext.md]
+    PB --> SP[systemPatterns.md]
+    PB --> TC[techContext.md]
+    PC --> AC[activeContext.md]
+    SP --> AC
+    TC --> AC
+    AC --> P[progress.md]
+```
+
+#### Core Files (Required)
+
+1. `projectbrief.md` – foundation document that shapes all other files and
+   defines core requirements and goals.
+2. `productContext.md` – why this project exists, problems it solves, how it
+   should work, and user experience goals.
+3. `activeContext.md` – current work focus, recent changes, next steps, and
+   active decisions.
+4. `systemPatterns.md` – system architecture, key technical decisions, design
+   patterns, and critical implementation paths.
+5. `techContext.md` – technologies used, development setup, technical
+   constraints, dependencies, and tool usage patterns.
+6. `progress.md` – what works, what's left to build, current status, known
+   issues, and evolution of project decisions.
+
+#### Additional Context
+
+Create additional files or folders within `memory-bank/` when they help organize
+complex feature documentation, integration specifications, API documentation,
+testing strategies, or deployment procedures.
+
+### Core Workflows
+
+#### Plan Mode
+
+```mermaid
+flowchart TD
+    Start[Start] --> ReadFiles[Read Memory Bank]
+    ReadFiles --> CheckFiles{Files Complete?}
+    CheckFiles -->|No| Plan[Create Plan]
+    Plan --> Document[Document in Chat]
+    CheckFiles -->|Yes| Verify[Verify Context]
+    Verify --> Strategy[Develop Strategy]
+    Strategy --> Present[Present Approach]
+```
+
+#### Act Mode
+
+```mermaid
+flowchart TD
+    Start[Start] --> Context[Check Memory Bank]
+    Context --> Update[Update Documentation]
+    Update --> Execute[Execute Task]
+    Execute --> Document[Document Changes]
+```
+
+### Documentation Updates
+
+Memory Bank updates occur when:
+
+1. Discovering new project patterns.
+2. After implementing significant changes.
+3. When the user requests with **update memory bank** (MUST review **all**
+   files).
+4. When context needs clarification.
+
+```mermaid
+flowchart TD
+    Start[Update Process]
+
+    subgraph Process
+        P1[Review ALL Files]
+        P2[Document Current State]
+        P3[Clarify Next Steps]
+        P4[Document Insights & Patterns]
+
+        P1 --> P2 --> P3 --> P4
+    end
+
+    Start --> Process
+```
+
+Remember: after every memory reset, Codex begins completely fresh. The Memory
+Bank is the only link to previous work. It must be maintained with precision and
+clarity, as the agent's effectiveness depends entirely on its accuracy.
+
 ## Project Context
 - **Project Name**: Codex CLI (v3 or k3), use to discover how to
   maintain a project that leverage Codex CLI toolings along with cline

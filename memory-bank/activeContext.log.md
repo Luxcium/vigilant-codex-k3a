@@ -8,3 +8,4 @@
 - [2025-06-13T21:22:19Z] Removed pnpm-lock.yaml and added rule to avoid lock files; updated AGENTS.md with no-lock-files preference and activeContext with decision note.
 - [2025-06-13T22:45:12Z] Implemented rate limiter hourly buckets and 429 handling in TokenBucketLimiter and RestClient. Updated markdown check script. Verification failing due to existing lint errors.
 - [2025-06-16T04:31:11Z] Consolidated duplicate error handling into src/errors and updated imports.
+- [2025-06-22T11:22:50Z] Added detailed Memory Bank instructions to AGENTS.md.

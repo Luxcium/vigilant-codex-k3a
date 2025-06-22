@@ -28,6 +28,7 @@ Finishing Questrade SDK core features. Implemented hourly rate-limit buckets wit
   updated documentation for markdownlint compliance.
 - **Rate Limit Patch**: Added hourly token buckets and 429 handling logic in SDK core.
 - **Error Module Consolidation**: Merged duplicate `src/error/` and `src/errors/` directories into a single `src/errors/` module and updated imports.
+- **Detailed Memory Bank Instructions**: Expanded `AGENTS.md` with a comprehensive overview of required Memory Bank workflows.
 
 ## Next Steps
 
