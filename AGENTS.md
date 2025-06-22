@@ -119,6 +119,9 @@ as a chronological ledger of actions and decisions.
   features or rules evolve.
 - **Ensure verification scripts pass** after each update to keep the ledger
   consistent and markdown-lint compliant.
+- **Always keep the project in sync** by reading from `memory-bank/` before
+  starting a task and writing updates back after completion. This ensures
+  context is preserved across resets.
 
 These rules guarantee that the Memory Bank stays synchronized with ongoing work
 and provides a reliable audit trail for all agents.
