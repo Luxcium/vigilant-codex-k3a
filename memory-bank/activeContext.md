@@ -17,7 +17,16 @@ This file tracks the current work focus, recent changes, next steps, and active 
 
 ## Current Work Focus
 
-Finishing Questrade SDK core features. Implemented hourly rate-limit buckets with 429 back-off logic while continuing web integration work.
+**TEST MIGRATION AND NPM DEPENDENCY MANAGEMENT TASK COMPLETED ✅**
+
+All test files have been successfully migrated from `test/` and `tests/` directories to `src/tests/`. The package.json has been updated with CI/CD-compatible test scripts. The dependency management imperative has been enforced using command-line only approaches.
+
+**Task Status: COMPLETED**
+- ✅ 15 test files migrated to `src/tests/` with 28 tests passing
+- ✅ Package.json updated: `npm test` (CI mode), `npm run test:watch` (dev mode)  
+- ✅ Command-line only dependency management enforced
+- ✅ Old test directories removed after successful migration
+- ✅ Source code compatibility fixes applied (tokenBucket.ts, smartFetch.ts)
 
 ## Recent Changes
 
@@ -29,7 +38,7 @@ Finishing Questrade SDK core features. Implemented hourly rate-limit buckets wit
 - **Rate Limit Patch**: Added hourly token buckets and 429 handling logic in SDK core.
 - **Error Module Consolidation**: Merged duplicate `src/error/` and `src/errors/` directories into a single `src/errors/` module and updated imports.
 - **Memory Bank Protocol**: Documented Codex memory reset workflow and detailed ledger instructions in `AGENTS.md`.
-- [2025-06-22T17:30:00Z] Current State: Successfully migrated 8 test files from test/ and tests/ to src/tests/; Last Action: Migrated accountActivitySchema.test.ts with 100% coverage on types/accounts.ts; Rationale: Following autonomous one-file-at-a-time protocol to consolidate all tests in src/tests/ with full validation; Next Intent: Continue with accountSchema.test.ts migration. Note: Executing Self-Documentation Protocol. This entry reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
+- [2025-06-22T17:36:42Z] Current State: Test migration and dependency management task completed successfully with all 15 test files migrated to src/tests/ and CI/CD test configuration applied; Last Action: Updated package.json test script to use "vitest run" for CI/CD mode and added "test:watch" for development, confirmed all 28 tests passing; Rationale: Ensure npm test doesn't block in CI/CD pipelines while providing separate watch mode for development workflow; Next Intent: Task complete - all requirements fulfilled including command-line dependency management, test consolidation, and CI/CD compatibility. Note: Executing Self-Documentation Protocol. This entry reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
 
 ## Next Steps
 
