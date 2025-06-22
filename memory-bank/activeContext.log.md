@@ -20,3 +20,13 @@
 - [2025-06-22T22:36:19Z] Added tests for RestClient constructor HTTPS enforcement, rate-limit 429 handling, and post/delete wrappers; restClient.ts now 95% statements, 100% functions, 100% lines. Next Intent: Cover next easiest module.
 
 - [2025-06-22T22:37:56Z] Added tests for ImplicitProvider authorizeUrl and thrown errors; implicit.ts now 100% coverage. Next Intent: Continue covering easy auth providers.
+
+- [2025-06-22T22:47:39Z] Added tests for AuthCodeProvider authorize, exchangeCode, refreshToken, revokeToken; authCode.ts now 100% statements, 66.66% branches, 100% functions, 100% lines. Next Intent: Cover next easiest module memory token stores.
+
+- [2025-06-22T22:48:40Z] Added tests for MemoryStore load/save/clear; memory.ts now 100% statements, branches, functions, lines. Next Intent: Cover next easiest tokenStore module env.ts.
+
+- [2025-06-22T22:50:24Z] Added tests for EnvStore load/save/clear; env.ts now 100% statements, 66.66% branches, 100% functions, 100% lines. Next Intent: Cover next easiest tokenStore module file.ts.
+
+- [2025-06-22T22:52:12Z] Added default constructor test for FileStore; file.ts now 100% statements, branches, functions, lines. Next Intent: Cover next easiest tokenStore module webStorage.ts.
+
+- [2025-06-22T23:01:33Z] Added tests for WebStorageStore load/save/clear; webStorage.ts now 92.3% statements, 71.42% branches, 100% functions, 100% lines. Next Intent: Review remaining untested modules (chain.ts, file.ts, webStorage.ts coverage holes).

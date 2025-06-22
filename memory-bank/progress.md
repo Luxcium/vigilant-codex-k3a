@@ -40,6 +40,11 @@ This file tracks what works, what remains to be built, current status, and known
 - ✅ TokenBucketLimiter.handle429 branch covered.
 - ✅ RestClient constructor, 429 handling, and post/delete methods covered (restClient.ts coverage improved).
 - ✅ ImplicitProvider authorizeUrl and error paths covered (implicit.ts now 100% coverage).
+- ✅ AuthCodeProvider authorize, exchangeCode, refreshToken, revokeToken covered (authCode.ts coverage improved).
+- ✅ MemoryStore load/save/clear covered (memory.ts now 100% coverage).
+- ✅ EnvStore load/save/clear covered (env.ts coverage improved).
+- ✅ FileStore default constructor, load/save/clear covered (file.ts now 100% coverage).
+- ✅ WebStorageStore load/save/clear covered (webStorage.ts coverage improved).
 
 <!-- ai:section:whats-left -->
 ## What's Left
