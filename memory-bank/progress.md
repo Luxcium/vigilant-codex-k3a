@@ -35,6 +35,7 @@ This file tracks what works, what remains to be built, current status, and known
 - Next.js app scaffolded with Prisma integration
 - SDK Rate Limiter with hourly buckets and 429 back-off logic
 - Consolidated error handling into `src/errors/` directory
+- ✅ Coverage analysis for `src/` folder completed (overall coverage 63.46%).
 
 <!-- ai:section:whats-left -->
 ## What's Left
@@ -53,6 +54,7 @@ This file tracks what works, what remains to be built, current status, and known
 - **Create Additional Workflows:** Generate domain-specific prompt files for common development tasks (Vue.js, API development, testing, etc.)
 - **Audit File-Organization Instruction:** Review `file-organization.instructions.md` for self-referential state documentation and ensure front-matter and content align with autonomous self-documentation guidelines
 - **Review Prompt Templates:** Validate all `.prompt.md` files (including `instruction-creation-v2.prompt.md`) for leadership language, autonomy triggers, and self-updating state instructions
+- Write tests for untested modules in `src/` based on coverage report (auth/providers, auth/tokenStore, client, http/restClient.ts, rateLimit/tokenBucket.ts).
 - **Markdown-Lint Audit:** Perform a strict markdown-lint compliance audit across all documentation and scripts
 - **Cross-Reference Compliance Review:** Verify cross-file references and dependencies in `.clinerules/` and `memory-bank/` files for completeness and accuracy
 - **AI Framework Testing:** Conduct real-world tests of the AI Agent Framework workflows, including prompt and instruction generation and state updates

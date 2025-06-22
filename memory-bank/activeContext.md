@@ -38,6 +38,10 @@ All test files have been successfully migrated from `test/` and `tests/` directo
 - **Rate Limit Patch**: Added hourly token buckets and 429 handling logic in SDK core.
 - **Error Module Consolidation**: Merged duplicate `src/error/` and `src/errors/` directories into a single `src/errors/` module and updated imports.
 - **Memory Bank Protocol**: Documented Codex memory reset workflow and detailed ledger instructions in `AGENTS.md`.
+
+- [2025-06-22T22:23:13Z] Ingested Memory Bank context and agent instructions; validated absence of codex.instructions.md in root. Ready for src/ folder coverage validation.
+
+- [2025-06-22T22:27:26Z] Completed coverage analysis for `src/` folder; overall coverage at 63.46%; identified untested modules. Next Intent: Write missing tests for untested modules.
 - [2025-06-22T17:36:42Z] Current State: Test migration and dependency management task completed successfully with all 15 test files migrated to src/tests/ and CI/CD test configuration applied; Last Action: Updated package.json test script to use "vitest run" for CI/CD mode and added "test:watch" for development, confirmed all 28 tests passing; Rationale: Ensure npm test doesn't block in CI/CD pipelines while providing separate watch mode for development workflow; Next Intent: Task complete - all requirements fulfilled including command-line dependency management, test consolidation, and CI/CD compatibility. Note: Executing Self-Documentation Protocol. This entry reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
 
 ## Next Steps
@@ -48,11 +52,12 @@ All test files have been successfully migrated from `test/` and `tests/` directo
 - Update `memory-bank/progress.md` with web environment status
 - Note rate limiter patch in `memory-bank/progress.md`
 
-### Testing
+-### Testing
 - Verify Next.js app starts and connects to database
 - Validate `scripts/genesis_boot.sh` initialization script
 - Run unit tests for updated rate limiter
 - Follow [testing-guide.md](./testing-guide.md) for detailed steps
+- Add tests for untested modules in `src/` folder based on coverage report.
 
 ### Expansion
 - Integrate Python API routes with Next.js front end
