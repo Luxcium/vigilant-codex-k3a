@@ -29,6 +29,7 @@ Finishing Questrade SDK core features. Implemented hourly rate-limit buckets wit
 - **Rate Limit Patch**: Added hourly token buckets and 429 handling logic in SDK core.
 - **Error Module Consolidation**: Merged duplicate `src/error/` and `src/errors/` directories into a single `src/errors/` module and updated imports.
 - **Memory Bank Protocol**: Documented Codex memory reset workflow and detailed ledger instructions in `AGENTS.md`.
+- [2025-06-22T17:30:00Z] Current State: Successfully migrated 8 test files from test/ and tests/ to src/tests/; Last Action: Migrated accountActivitySchema.test.ts with 100% coverage on types/accounts.ts; Rationale: Following autonomous one-file-at-a-time protocol to consolidate all tests in src/tests/ with full validation; Next Intent: Continue with accountSchema.test.ts migration. Note: Executing Self-Documentation Protocol. This entry reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
 
 ## Next Steps
 
