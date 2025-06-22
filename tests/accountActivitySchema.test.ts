@@ -25,6 +25,6 @@ describe('AccountActivitySchema', () => {
   it('rejects missing fields', () => {
     const { success, error } = AccountActivitySchema.safeParse({ tradeDate: '2024-01-01' });
     expect(success).toBe(false);
-    expect(error?.issues.some(i => i.path.includes('transactionDate'))).toBe(true);
+    expect(error?.issues.some((i: any) => i.path.includes('transactionDate'))).toBe(true);
   });
 });

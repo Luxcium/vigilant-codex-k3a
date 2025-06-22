@@ -17,6 +17,6 @@ describe('AccountSchema', () => {
   it('rejects missing fields', () => {
     const { success, error } = AccountSchema.safeParse({ number: 'ABC12345' });
     expect(success).toBe(false);
-    expect(error?.issues.some(i => i.path.includes('type'))).toBe(true);
+    expect(error?.issues.some((i: any) => i.path.includes('type'))).toBe(true);
   });
 });

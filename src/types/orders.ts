@@ -1,19 +1,17 @@
 import { z } from 'zod';
 import {
-  OrderSide,
-  OrderType,
-  TimeInForce,
-  OrderState,
-  OrderAction,
-  StrategyType,
   OrderClass,
+  OrderClassSchema,
+  OrderSide,
   OrderSideSchema,
-  OrderTypeSchema,
-  TimeInForceSchema,
+  OrderState,
   OrderStateSchema,
-  OrderActionSchema,
+  OrderType,
+  OrderTypeSchema,
+  StrategyType,
   StrategyTypeSchema,
-  OrderClassSchema
+  TimeInForce,
+  TimeInForceSchema
 } from './enums';
 
 /** A single leg of a multi-leg order */

@@ -18,6 +18,6 @@ describe('BalanceSchema', () => {
   it('rejects missing fields', () => {
     const { success, error } = BalanceSchema.safeParse({ currency: 'USD' });
     expect(success).toBe(false);
-    expect(error?.issues.some(i => i.path.includes('cash'))).toBe(true);
+    expect(error?.issues.some((i: any) => i.path.includes('cash'))).toBe(true);
   });
 });

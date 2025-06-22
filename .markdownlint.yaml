@@ -1,50 +1,143 @@
+# Disable implicit enabling; require explicit declarations
+default: false
+
+# MD001: heading-increment — Heading levels should only increment by one level at a time
 MD001: true
-MD002: true
+
+# MD002: first-heading-h1 — First heading should be a top level heading (deprecated by MD041)
+MD002: false  
+
+# MD003: heading-style — Heading style
 MD003: true
+
+# MD004: ul-style — Unordered list style
 MD004: true
+
+# MD005: list-indent — Consistent indentation for list items at same level
 MD005: true
+
+# MD006: ul-start-left — Consider starting bulleted lists at the beginning of the line
 MD006: true
+
+# MD007: ul-indent — Unordered list indentation
 MD007: true
-MD008: true
+
+# MD009: no-trailing-spaces — No trailing spaces
 MD009: true
+
+# MD010: no-hard-tabs — No hard tabs
 MD010: true
+
+# MD011: no-reversed-links — No reversed links
 MD011: true
+
+# MD012: no-multiple-blanks — Multiple consecutive blank lines
 MD012: true
-MD013: true
+
+# MD013: line-length — Line length limit (disabled for practicality)
+MD013: false
+
+# MD014: commands-show-output — Dollar signs used before commands
 MD014: true
-MD015: true
-MD016: true
-MD017: true
+
+# MD018-021: no-missing-space-atx — Various heading spacing rules
 MD018: true
 MD019: true
 MD020: true
 MD021: true
+
+# MD022: blanks-around-headings — Headings surrounded by blank lines
 MD022: true
+
+# MD023: heading-start-left — Headings must start at beginning of line
 MD023: true
+
+# MD024: no-duplicate-heading — Multiple headings with same content
 MD024: true
+
+# MD025: single-title/single-h1 — Single top-level heading
 MD025: true
+
+# MD026: no-trailing-punctuation — No trailing punctuation in headings
 MD026: true
+
+# MD027: no-multiple-space-blockquote — Multiple spaces after blockquote
 MD027: true
+
+# MD028: no-blanks-blockquote — No blank lines within blockquote
 MD028: true
+
+# MD029: ol-prefix — Ordered list prefix
 MD029: true
+
+# MD030: list-marker-space — Space after list markers
 MD030: true
+
+# MD031: blanks-around-fences — Fenced code blocks surrounded by lines
 MD031: true
+
+# MD032: blanks-around-lists — Lists surrounded by blank lines
 MD032: true
+
+# MD033: no-inline-html — No inline HTML
 MD033: true
+
+# MD034: no-bare-urls — No bare URLs
 MD034: true
+
+# MD035: hr-style — Horizontal rule style
 MD035: true
+
+# MD036: no-emphasis-as-heading — No emphasis instead of headings
 MD036: true
+
+# MD037: no-space-in-emphasis — No spaces inside emphasis markers
 MD037: true
+
+# MD038: no-space-in-code — No spaces inside code span elements
 MD038: true
+
+# MD039: no-space-in-links — No spaces inside link text
 MD039: true
+
+# MD040: fenced-code-language — Fenced code blocks have language
 MD040: true
+
+# MD041: first-line-heading — First line must be heading
 MD041: true
+
+# MD042: no-empty-links — No empty links
 MD042: true
+
+# MD043: required-headings — Required heading structure
 MD043: true
+
+# MD044: proper-names — Proper names capitalization
 MD044: true
+
+# MD045: no-alt-text-missing — Images must have alt text
 MD045: true
+
+# MD046: code-block-style — Code block style
 MD046: true
+
+# MD047: single-trailing-newline — Files end with single newline
 MD047: true
+
+# MD048: code-fence-style — Code fence style
 MD048: true
+
+# MD049: emphasis-style — Emphasis style
 MD049: true
+
+# MD050: strong-style — Strong emphasis style
 MD050: true
+
+# MD051: link-fragments — Link fragments should be valid
+MD051: true
+
+# MD052: reference-links-images — Reference links and images
+MD052: true
+
+# MD053: link-image-reference-definitions — Link image references
+MD053: true

@@ -1,5 +1,5 @@
 import { toQuestradeError } from './toError'
-import { OrderError, QuestradeError, QuestradeErrorPayload } from './types'
+import { OrderError, QuestradeErrorPayload } from './types'
 
 export const handleQuestradeError = async <T>(res: Response): Promise<T> => {
   const err = await toQuestradeError(res)

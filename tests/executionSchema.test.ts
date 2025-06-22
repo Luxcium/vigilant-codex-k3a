@@ -32,6 +32,6 @@ describe('ExecutionSchema', () => {
   it('rejects missing fields', () => {
     const { success, error } = ExecutionSchema.safeParse({ symbol: 'AAPL' });
     expect(success).toBe(false);
-    expect(error?.issues.some(i => i.path.includes('symbolId'))).toBe(true);
+    expect(error?.issues.some((i: any) => i.path.includes('symbolId'))).toBe(true);
   });
 });
