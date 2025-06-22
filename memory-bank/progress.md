@@ -35,6 +35,7 @@ This file tracks what works, what remains to be built, current status, and known
 - Next.js app scaffolded with Prisma integration
 - SDK Rate Limiter with hourly buckets and 429 back-off logic
 - Consolidated error handling into `src/errors/` directory
+- Codex and Codex_CLI Memory Bank rule documented in AGENTS.md
 
 <!-- ai:section:whats-left -->
 ## What's Left

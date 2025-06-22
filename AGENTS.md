@@ -123,6 +123,11 @@ as a chronological ledger of actions and decisions.
 These rules guarantee that the Memory Bank stays synchronized with ongoing work
 and provides a reliable audit trail for all agents.
 
+## Codex and Codex_CLI Memory Bank
+- Codex CLI must always read the entire `memory-bank/` before starting work.
+- Keep the project in sync by logging every change back to `memory-bank/`.
+- This ensures the agent starts each session ready with context and maintains a reliable record.
+
 ## Project Context
 - **Project Name**: Codex CLI (v3 or k3), use to discover how to
   maintain a project that leverage Codex CLI toolings along with cline
