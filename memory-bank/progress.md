@@ -35,7 +35,11 @@ This file tracks what works, what remains to be built, current status, and known
 - Next.js app scaffolded with Prisma integration
 - SDK Rate Limiter with hourly buckets and 429 back-off logic
 - Consolidated error handling into `src/errors/` directory
-- ✅ Coverage analysis for `src/` folder completed (overall coverage 63.46%).
+- ✅ Coverage analysis for `src/` folder completed (overall coverage 63.84%).
+- ✅ handle.ts now fully covered (100%).
+- ✅ TokenBucketLimiter.handle429 branch covered.
+- ✅ RestClient constructor, 429 handling, and post/delete methods covered (restClient.ts coverage improved).
+- ✅ ImplicitProvider authorizeUrl and error paths covered (implicit.ts now 100% coverage).
 
 <!-- ai:section:whats-left -->
 ## What's Left

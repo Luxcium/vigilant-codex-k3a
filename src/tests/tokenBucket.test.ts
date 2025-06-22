@@ -36,5 +36,15 @@ describe('tokenBucket', () => {
       })
       expect(true).toBe(true)
     })
+    it('handle429 resets both buckets to zero and sets reset timers', () => {
+      const limiter = new TokenBucketLimiter()
+      const resetSec = Math.floor(Date.now() / 1000) + 5
+      limiter.handle429('account', resetSec)
+      const buckets = (limiter as any).buckets as Record<string, any>
+      expect(buckets.account.perSecond.remaining).toBe(0)
+      expect(buckets.account.perHour.remaining).toBe(0)
+      expect(buckets.account.perSecond.reset).toBe(resetSec * 1000)
+      expect(buckets.account.perHour.reset).toBe(resetSec * 1000)
+    })
   })
 })

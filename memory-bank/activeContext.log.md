@@ -11,4 +11,12 @@
 
 - [2025-06-22T22:23:13Z] Ingested Memory Bank context and agent instructions; validated absence of codex.instructions.md in root. Ready for src/ folder coverage validation.
 
-- [2025-06-22T22:27:26Z] Completed coverage analysis for src/ folder; overall coverage at 63.46%; identified untested modules. Next Intent: Write missing tests for untested modules.
+- [2025-06-22T22:27:26Z] Completed coverage analysis for src/ folder; overall coverage at 63.84%; identified untested modules. Next Intent: Write missing tests for untested modules.
+
+- [2025-06-22T22:33:04Z] Added test for handleQuestradeError non-order branch; handle.ts now fully covered (100%). Next Intent: Continue coverage on next easiest module.
+
+- [2025-06-22T22:34:58Z] Added test for TokenBucketLimiter.handle429; tokenBucket.ts now 100% statements and functions. Next Intent: Continue coverage on next easiest module.
+
+- [2025-06-22T22:36:19Z] Added tests for RestClient constructor HTTPS enforcement, rate-limit 429 handling, and post/delete wrappers; restClient.ts now 95% statements, 100% functions, 100% lines. Next Intent: Cover next easiest module.
+
+- [2025-06-22T22:37:56Z] Added tests for ImplicitProvider authorizeUrl and thrown errors; implicit.ts now 100% coverage. Next Intent: Continue covering easy auth providers.
