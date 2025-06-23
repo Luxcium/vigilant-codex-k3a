@@ -29,4 +29,16 @@
 
 - [2025-06-22T22:52:12Z] Added default constructor test for FileStore; file.ts now 100% statements, branches, functions, lines. Next Intent: Cover next easiest tokenStore module webStorage.ts.
 
-- [2025-06-22T23:01:33Z] Added tests for WebStorageStore load/save/clear; webStorage.ts now 92.3% statements, 71.42% branches, 100% functions, 100% lines. Next Intent: Review remaining untested modules (chain.ts, file.ts, webStorage.ts coverage holes).
+- [2025-06-22T23:01:33Z] Added tests for WebStorageStore load/save/clear; webStorage.ts now 92.3% statements, 71.42% branches, 100% functions, 100% lines. Next Intent: Review remaining branch coverage gaps and plan further tests.
+
+- [2025-06-22T23:42:43Z] Added tests for Account, Balance, Position, Execution, AccountActivity schemas; accounts.ts now 100% statements, branches, functions, lines. Next Intent: Cover enums.
+
+- [2025-06-22T23:43:09Z] Added tests for all enum schemas; enums.ts now 100% statements, 80% branches, 100% functions, 100% lines. Next Intent: Cover Market schemas.
+
+- [2025-06-22T23:43:46Z] Added tests for Market, Quote, OptionQuote, StrategyQuote, Candle schemas; markets.ts now 100% statements, 80% branches, 100% functions, 100% lines. Next Intent: Cover Order schemas.
+
+- [2025-06-22T23:47:25Z] Added tests for OrderLeg and Order schemas; orders.ts now 100% statements, 80% branches, 100% functions, 100% lines. Next Intent: Cover response schemas.
+
+- [2025-06-22T23:50:48Z] Added tests for response schemas (Accounts, Balances, Positions, Executions, Activities, Orders, Time, Markets, Quotes, OptionQuotes, StrategyQuotes, Candles, Symbols, SymbolSearch, OptionsChain); responses.ts now 100% statements, 80% branches, 100% functions, 100% lines. Next Intent: Cover symbols schemas.
+
+- [2025-06-22T23:56:42Z] Added tests for OptionDeliverable, MinTick, OptionDeliverables, SymbolDetail, SymbolSearchResult, OptionChain schemas; symbols.ts now 100% statements, 75% branches, 100% functions, 100% lines. Next Intent: Cover types index.

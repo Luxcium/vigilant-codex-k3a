@@ -45,6 +45,11 @@ This file tracks what works, what remains to be built, current status, and known
 - ✅ EnvStore load/save/clear covered (env.ts coverage improved).
 - ✅ FileStore default constructor, load/save/clear covered (file.ts now 100% coverage).
 - ✅ WebStorageStore load/save/clear covered (webStorage.ts coverage improved).
+- ✅ Account, Balance, Position, Execution, AccountActivity schemas covered (accounts.ts coverage improved).
+- ✅ All enum schemas covered (enums.ts coverage improved).
+- ✅ Market, Quote, OptionQuote, StrategyQuote, Candle schemas covered (markets.ts coverage improved).
+- ✅ OrderLeg and Order schemas covered (orders.ts coverage improved).
+- ✅ Response schemas covered (responses.ts coverage improved).
 
 <!-- ai:section:whats-left -->
 ## What's Left
