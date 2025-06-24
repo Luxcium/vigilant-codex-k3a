@@ -35,6 +35,21 @@ This file tracks what works, what remains to be built, current status, and known
 - Next.js app scaffolded with Prisma integration
 - SDK Rate Limiter with hourly buckets and 429 back-off logic
 - Consolidated error handling into `src/errors/` directory
+- ✅ Coverage analysis for `src/` folder completed (overall coverage 63.84%).
+- ✅ handle.ts now fully covered (100%).
+- ✅ TokenBucketLimiter.handle429 branch covered.
+- ✅ RestClient constructor, 429 handling, and post/delete methods covered (restClient.ts coverage improved).
+- ✅ ImplicitProvider authorizeUrl and error paths covered (implicit.ts now 100% coverage).
+- ✅ AuthCodeProvider authorize, exchangeCode, refreshToken, revokeToken covered (authCode.ts coverage improved).
+- ✅ MemoryStore load/save/clear covered (memory.ts now 100% coverage).
+- ✅ EnvStore load/save/clear covered (env.ts coverage improved).
+- ✅ FileStore default constructor, load/save/clear covered (file.ts now 100% coverage).
+- ✅ WebStorageStore load/save/clear covered (webStorage.ts coverage improved).
+- ✅ Account, Balance, Position, Execution, AccountActivity schemas covered (accounts.ts coverage improved).
+- ✅ All enum schemas covered (enums.ts coverage improved).
+- ✅ Market, Quote, OptionQuote, StrategyQuote, Candle schemas covered (markets.ts coverage improved).
+- ✅ OrderLeg and Order schemas covered (orders.ts coverage improved).
+- ✅ Response schemas covered (responses.ts coverage improved).
 
 <!-- ai:section:whats-left -->
 ## What's Left
@@ -53,6 +68,7 @@ This file tracks what works, what remains to be built, current status, and known
 - **Create Additional Workflows:** Generate domain-specific prompt files for common development tasks (Vue.js, API development, testing, etc.)
 - **Audit File-Organization Instruction:** Review `file-organization.instructions.md` for self-referential state documentation and ensure front-matter and content align with autonomous self-documentation guidelines
 - **Review Prompt Templates:** Validate all `.prompt.md` files (including `instruction-creation-v2.prompt.md`) for leadership language, autonomy triggers, and self-updating state instructions
+- Write tests for untested modules in `src/` based on coverage report (auth/providers, auth/tokenStore, client, http/restClient.ts, rateLimit/tokenBucket.ts).
 - **Markdown-Lint Audit:** Perform a strict markdown-lint compliance audit across all documentation and scripts
 - **Cross-Reference Compliance Review:** Verify cross-file references and dependencies in `.clinerules/` and `memory-bank/` files for completeness and accuracy
 - **AI Framework Testing:** Conduct real-world tests of the AI Agent Framework workflows, including prompt and instruction generation and state updates

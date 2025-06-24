@@ -1,15 +1,17 @@
-import { OAuthProvider, OAuthTokens } from '../interfaces';
+import { OAuthProvider, OAuthTokenResponse, OAuthTokens } from '../interfaces';
 
 const BASE = 'https://login.questrade.com';
 
 export class ManualProvider implements OAuthProvider {
   constructor(private readonly clientId: string) {}
 
-  authorizeUrl(): string {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  authorizeUrl(_scopes: string[], _state: string): string {
     throw new Error('Manual provider does not support authorization URL');
   }
 
-  async exchangeCode(): Promise<OAuthTokens> {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  async exchangeCode(_code: string): Promise<OAuthTokens> {
     throw new Error('Manual provider does not exchange authorization codes');
   }
 
@@ -24,7 +26,7 @@ export class ManualProvider implements OAuthProvider {
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: body.toString()
     });
-    const data = (await res.json()) as unknown;
+    const data = (await res.json()) as OAuthTokenResponse;
     return {
       access_token: data.access_token,
       refresh_token: data.refresh_token ?? refresh,

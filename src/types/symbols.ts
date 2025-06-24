@@ -2,13 +2,13 @@ import { z } from 'zod';
 import {
   ListingExchange,
   ListingExchangeSchema,
-  OptionType,
   OptionDurationType,
-  OptionExerciseType,
-  SecurityType,
-  OptionTypeSchema,
   OptionDurationTypeSchema,
+  OptionExerciseType,
   OptionExerciseTypeSchema,
+  OptionType,
+  OptionTypeSchema,
+  SecurityType,
   SecurityTypeSchema
 } from './enums';
 
@@ -68,6 +68,22 @@ export interface SymbolDetail {
   industrySubGroup: string;
 }
 
+export const OptionDeliverableSchema = z.object({
+  underlyingSymbol: z.string(),
+  underlyingSymbolId: z.number(),
+  multiplier: z.number(),
+});
+
+export const MinTickSchema = z.object({
+  pivot: z.number(),
+  minTick: z.number(),
+});
+
+export const OptionDeliverablesSchema = z.object({
+  underlyings: z.array(OptionDeliverableSchema),
+  cashInLieu: z.number(),
+});
+
 /** Zod schema for {@link SymbolDetail} */
 export const SymbolDetailSchema = z.object({
   symbol: z.string(),
@@ -99,7 +115,7 @@ export const SymbolDetailSchema = z.object({
   isTradable: z.boolean(),
   isQuotable: z.boolean(),
   hasOptions: z.boolean(),
-  minTicks: z.array(z.object({ pivot: z.number(), minTick: z.number() })),
+  minTicks: z.array(MinTickSchema),
   industrySector: z.string(),
   industryGroup: z.string(),
   industrySubGroup: z.string()

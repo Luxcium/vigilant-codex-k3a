@@ -17,11 +17,11 @@ This file tracks the current work focus, recent changes, next steps, and active 
 
 ## Current Work Focus
 
-**TEST MIGRATION AND NPM DEPENDENCY MANAGEMENT TASK COMPLETED ✅**
+### TEST MIGRATION AND NPM DEPENDENCY MANAGEMENT TASK COMPLETED ✅
 
 All test files have been successfully migrated from `test/` and `tests/` directories to `src/tests/`. The package.json has been updated with CI/CD-compatible test scripts. The dependency management imperative has been enforced using command-line only approaches.
 
-**Task Status: COMPLETED**
+- ### Task Status: COMPLETED
 - ✅ 15 test files migrated to `src/tests/` with 28 tests passing
 - ✅ Package.json updated: `npm test` (CI mode), `npm run test:watch` (dev mode)  
 - ✅ Command-line only dependency management enforced
@@ -38,6 +38,28 @@ All test files have been successfully migrated from `test/` and `tests/` directo
 - **Rate Limit Patch**: Added hourly token buckets and 429 handling logic in SDK core.
 - **Error Module Consolidation**: Merged duplicate `src/error/` and `src/errors/` directories into a single `src/errors/` module and updated imports.
 - **Memory Bank Protocol**: Documented Codex memory reset workflow and detailed ledger instructions in `AGENTS.md`.
+
+- [2025-06-22T22:23:13Z] Ingested Memory Bank context and agent instructions; validated absence of codex.instructions.md in root. Ready for src/ folder coverage validation.
+
+- [2025-06-22T22:27:26Z] Completed coverage analysis for `src/` folder; overall coverage at 63.84%; identified untested modules. Next Intent: Write missing tests for untested modules.
+- [2025-06-22T22:33:04Z] Added test for handleQuestradeError non-order branch; handle.ts now fully covered (100%). Next Intent: Continue coverage on next easiest module.
+- [2025-06-22T22:34:58Z] Added test for TokenBucketLimiter.handle429; tokenBucket.ts now 100% statements and functions. Next Intent: Continue coverage on next easiest module.
+
+- [2025-06-22T22:36:19Z] Added tests for RestClient constructor HTTPS enforcement, rate-limit 429 handling, and post/delete wrappers; restClient.ts now 95% statements, 100% functions, 100% lines. Next Intent: Cover next easiest module.
+
+- [2025-06-22T22:37:56Z] Added tests for ImplicitProvider authorizeUrl and thrown errors; implicit.ts now 100% coverage. Next Intent: Continue covering easy auth providers.
+- [2025-06-22T22:47:39Z] Added tests for AuthCodeProvider authorize, exchangeCode, refreshToken, revokeToken; authCode.ts now 100% statements, 66.66% branches, 100% functions, 100% lines. Next Intent: Cover next easiest module memory token stores.
+- [2025-06-22T22:48:40Z] Added tests for MemoryStore load/save/clear; memory.ts now 100% statements, branches, functions, lines. Next Intent: Cover next easiest tokenStore module env.ts.
+- [2025-06-22T22:50:24Z] Added tests for EnvStore load/save/clear; env.ts now 100% statements, 66.66% branches, 100% functions, 100% lines. Next Intent: Cover next easiest tokenStore module file.ts.
+- [2025-06-22T22:52:12Z] Added default constructor test for FileStore; file.ts now 100% statements, branches, functions, lines. Next Intent: Cover next easiest tokenStore module webStorage.ts.
+- [2025-06-22T23:01:33Z] Added tests for WebStorageStore load/save/clear; webStorage.ts now 92.3% statements, 71.42% branches, 100% functions, 100% lines. Next Intent: Review remaining branch coverage gaps and plan further tests.
+- [2025-06-22T23:47:25Z] Added tests for OrderLeg and Order schemas; orders.ts now 100% statements, 80% branches, 100% functions, 100% lines. Next Intent: Cover response schemas.
+
+- [2025-06-22T23:50:48Z] Added tests for response schemas (Accounts, Balances, Positions, Executions, Activities, Orders, Time, Markets, Quotes, OptionQuotes, StrategyQuotes, Candles, Symbols, SymbolSearch, OptionsChain); responses.ts now 100% statements, 80% branches, 100% functions, 100% lines. Next Intent: Cover symbols schemas.
+
+- [2025-06-22T23:56:42Z] Added tests for OptionDeliverable, MinTick, OptionDeliverables, SymbolDetail, SymbolSearchResult, OptionChain schemas; symbols.ts now 100% statements, 75% branches, 100% functions, 100% lines. Next Intent: Cover types index.
+
+- [2025-06-22T23:50:48Z] Added tests for response schemas (Accounts, Balances, Positions, Executions, Activities, Orders, Time, Markets, Quotes, OptionQuotes, StrategyQuotes, Candles, Symbols, SymbolSearch, OptionsChain); responses.ts now 100% statements, 80% branches, 100% functions, 100% lines. Next Intent: Cover symbols schemas.
 - [2025-06-22T17:36:42Z] Current State: Test migration and dependency management task completed successfully with all 15 test files migrated to src/tests/ and CI/CD test configuration applied; Last Action: Updated package.json test script to use "vitest run" for CI/CD mode and added "test:watch" for development, confirmed all 28 tests passing; Rationale: Ensure npm test doesn't block in CI/CD pipelines while providing separate watch mode for development workflow; Next Intent: Task complete - all requirements fulfilled including command-line dependency management, test consolidation, and CI/CD compatibility. Note: Executing Self-Documentation Protocol. This entry reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
 
 ## Next Steps
@@ -48,11 +70,12 @@ All test files have been successfully migrated from `test/` and `tests/` directo
 - Update `memory-bank/progress.md` with web environment status
 - Note rate limiter patch in `memory-bank/progress.md`
 
-### Testing
+-### Testing
 - Verify Next.js app starts and connects to database
 - Validate `scripts/genesis_boot.sh` initialization script
 - Run unit tests for updated rate limiter
 - Follow [testing-guide.md](./testing-guide.md) for detailed steps
+- Add tests for untested modules in `src/` folder based on coverage report.
 
 ### Expansion
 - Integrate Python API routes with Next.js front end

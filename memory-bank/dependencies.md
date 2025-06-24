@@ -397,6 +397,21 @@ Project Root
 - **Impact**: Enables full-stack TypeScript and Python interoperability
 
 
+### Testing Infrastructure
+
+#### Jest with TypeScript Path Aliases (2025-06-22)
+
+**Rationale:** Enables clean import paths using @/ alias for src/ directory in tests, improving maintainability and following modern TypeScript practices.
+**Depends On:** tsconfig.json baseUrl and paths configuration, TypeScript standards from .github/instructions/
+**Required By:** All test files in src/tests/ directory structure
+**Impact Analysis:** Enables mirrored directory structure in tests with clean imports, supporting comprehensive test coverage goals.
+
+- **Jest Configuration**: Updated to support @/ path aliases and focused test discovery
+- **TypeScript Config**: Added baseUrl and paths mapping for @/* to src/*
+- **Test Structure**: Mirrored src/ folder structure in src/tests/ for organized testing
+- **Coverage Goals**: Targeting full coverage except src/types/ (saved for last as requested)
+
+
 ## Call to Action
 
 > **All agents and contributors must review, update, and self-regulate this file as dependencies evolve.**  

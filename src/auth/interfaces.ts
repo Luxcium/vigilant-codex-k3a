@@ -7,6 +7,13 @@ export interface OAuthTokens {
   expiresAt: number;
 }
 
+export interface OAuthTokenResponse {
+  access_token: string;
+  refresh_token?: string;
+  expires_in: number;
+  api_server: string;
+}
+
 export interface OAuthProvider {
   authorizeUrl(scopes: string[], state: string): string;
   exchangeCode(code: string): Promise<OAuthTokens>;
