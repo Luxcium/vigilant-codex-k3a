@@ -35,6 +35,7 @@ This folder contains utility scripts for setting up, validating, and maintaining
 - `setup_project.sh` — Base scaffolding (no overwrites)
 - `setup_python_local.sh` — Sets up Python venv + dependencies
 - `setup_python_docker.sh` — Builds Python Docker image
+- `setup_agent_system.sh` — Creates the hierarchical agent system skeleton
 - `check-dependencies.sh` — Verifies memory-bank/dependencies.md structure
 - `check-memory-bank.sh` — Runs markdownlint on memory-bank/*.md
 - `validate-instructions.sh` — Lints .github/instructions/*.instructions.md
