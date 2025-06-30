@@ -67,6 +67,7 @@ All operational rules and protocols are maintained in the modular files under `.
 4. Update this README with any new rules before implementing them.
 5. Run `bash scripts/setup_web_env.sh` to scaffold the Next.js application.
 6. Run `bash scripts/setup_db_prisma.sh` to start PostgreSQL and initialize Prisma.
+7. Run `bash scripts/setup_agent_framework.sh` to initialize the multi-agent retrieval framework in `agent-framework/`.
 
 ## Top-Level Folder Conventions
 
@@ -79,6 +80,7 @@ We organize code by language and framework at the project root:
 - `scripts/` — Shell scripts for setup and automation. Only shell scripts should live here.
 
 - `python/` — Python projects, modules, and utilities.
+- `python/agent_system/` — Hierarchical multi-agent retrieval system scaffolded by `scripts/setup_agent_system.sh`.
 
 - `notebooks/` — Jupyter notebooks and related resources.
 
