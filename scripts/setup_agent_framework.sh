@@ -14,7 +14,7 @@ if [ ! -d "$AGENT_DIR" ]; then
   mkdir -p "$AGENT_DIR"
   log "Created directory $AGENT_DIR"
   cd "$AGENT_DIR"
-  yes "" | pnpm init >/dev/null
+  pnpm init -y >/dev/null
   rm -f pnpm-lock.yaml
   pnpm add -D typescript@5.8 ts-node @types/node esbuild vitest >/dev/null
   pnpm add -D p-limit pinecone-client >/dev/null
