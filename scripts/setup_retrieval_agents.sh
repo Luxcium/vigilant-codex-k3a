@@ -148,5 +148,5 @@ touch_if_missing "$AGENTS_DIR/run_example.py" "$RUN_CONTENT"
 
 log "Retrieval agent scaffold complete"
 log "Running repository verification"
-"$PROJECT_ROOT/scripts/verify-all.sh"
+bash "$PROJECT_ROOT/scripts/verify-all.sh"
 log "Verification after setup complete"
