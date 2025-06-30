@@ -9,26 +9,30 @@ export async function loadGraph(file: string): Promise<Agent> {
   return build(spec);
 }
 
-function build(node: any): Agent {
+async function build(node: any): Promise<Agent> {
   switch (node.type) {
     case 'parallel':
-      return parallel(node.children.map(build));
+      return parallel(await Promise.all(node.children.map(build)));
     case 'sequential':
-      return sequential(node.children.map(build));
+      return sequential(await Promise.all(node.children.map(build)));
     case 'router':
       const routes: Record<string, Agent> = {};
-      for (const k in node.routes) routes[k] = build(node.routes[k]);
+      for (const k in node.routes) routes[k] = await build(node.routes[k]);
       return router(routes);
     case 'loop':
-      return loop(build(node.child), node.max, node.stopWord);
+      return loop(await build(node.child), node.max, node.stopWord);
     case 'RetrieverAgent':
-      return new (require('./examples/agents/RetrieverAgent.js').RetrieverAgent)();
+      const { RetrieverAgent } = await import('./examples/agents/RetrieverAgent.js');
+      return new RetrieverAgent();
     case 'WriterAgent':
-      return new (require('./examples/agents/WriterAgent.js').WriterAgent)();
+      const { WriterAgent } = await import('./examples/agents/WriterAgent.js');
+      return new WriterAgent();
     case 'CriticAgent':
-      return new (require('./examples/agents/CriticAgent.js').CriticAgent)();
+      const { CriticAgent } = await import('./examples/agents/CriticAgent.js');
+      return new CriticAgent();
     case 'HumanGate':
-      return new (require('./examples/agents/HumanGate.js').HumanGate)();
+      const { HumanGate } = await import('./examples/agents/HumanGate.js');
+      return new HumanGate();
     default:
       throw new Error(`Unknown node type ${node.type}`);
   }
