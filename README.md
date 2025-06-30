@@ -79,6 +79,7 @@ We organize code by language and framework at the project root:
 - `scripts/` — Shell scripts for setup and automation. Only shell scripts should live here.
 
 - `python/` — Python projects, modules, and utilities.
+- `python/agent_system/` — Hierarchical multi-agent retrieval system scaffolded by `scripts/setup_agent_system.sh`.
 
 - `notebooks/` — Jupyter notebooks and related resources.
 
