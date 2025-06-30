@@ -22,7 +22,8 @@ yes "" | pnpm init >/dev/null
 
 log "Installing dev dependencies"
 pnpm add -D typescript@5.8 ts-node @types/node esbuild vitest >/dev/null
-pnpm add -D p-limit pinecone-client >/dev/null
+pnpm add -D p-limit >/dev/null
+pnpm add pinecone-client >/dev/null
 
 log "Creating tsconfig.json"
 pnpm dlx tsc --init --target es2022 --moduleResolution node >/dev/null
