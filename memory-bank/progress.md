@@ -38,8 +38,10 @@ This file tracks what works, what remains to be built, current status, and known
 - Next.js app scaffolded with Prisma integration
 - SDK Rate Limiter with hourly buckets and 429 back-off logic
 - Consolidated error handling into `src/errors/` directory
+- Hierarchical multi-agent retrieval system scaffolded under `python/agent_system` using `setup_agent_system.sh`
 - **setup_agent_framework.sh** script added to scaffold a new multi-agent
   retrieval framework under `agent-framework/`.
+
 - ✅ Coverage analysis for `src/` folder completed (overall coverage 63.84%).
 - ✅ handle.ts now fully covered (100%).
 - ✅ TokenBucketLimiter.handle429 branch covered.
