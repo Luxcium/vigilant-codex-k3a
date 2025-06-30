@@ -67,6 +67,7 @@ All operational rules and protocols are maintained in the modular files under `.
 4. Update this README with any new rules before implementing them.
 5. Run `bash scripts/setup_web_env.sh` to scaffold the Next.js application.
 6. Run `bash scripts/setup_db_prisma.sh` to start PostgreSQL and initialize Prisma.
+7. Run `bash scripts/setup_retrieval_agents.sh` to scaffold the hierarchical multi-agent retrieval system under `python/retrieval_agents`.
 
 ## Top-Level Folder Conventions
 

@@ -19,6 +19,7 @@ This file documents the technologies, development setup, technical constraints, 
 - **TypeScript 5.7**
 - **Python 3.11**
 - **Next.js 14**
+- **Hierarchical Multi-Agent Retrieval System (Python)**
 
 ## Development Setup
 
@@ -27,6 +28,7 @@ This file documents the technologies, development setup, technical constraints, 
   - `web/` for Next.js apps (when coexisting)
   - `scripts/` for shell scripts only
   - `python/` for Python code
+  - `python/retrieval_agents/` for multi-agent retrieval modules
   - `notebooks/` for Jupyter notebooks
   - All directory and file creation must be performed via scripts in `scripts/`, never manually.
 

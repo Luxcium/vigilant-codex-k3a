@@ -23,6 +23,7 @@ This file documents the system architecture, key technical decisions, design pat
 - `docker-compose.yml` manages PostgreSQL service for development.
 - `scripts/` — Shell scripts for setup and automation. Only shell scripts should live here.
 - `python/` — Python projects, modules, and utilities.
+- `python/retrieval_agents/` — Hierarchical multi-agent retrieval system scaffold.
 - `notebooks/` — Jupyter notebooks and related resources.
 
 **Rationale:**  
@@ -45,6 +46,7 @@ This Memory Bank is initialized to provide a clear, adaptable template for docum
 - All setup and file/folder creation must be performed via scripts in the `scripts/` directory, never manually.
 - Scripts must be idempotent, must not overwrite existing files, and must warn or skip if files/folders exist.
 - All documentation and scripts must be markdown-lint strict mode compliant.
+- Introduced `setup_retrieval_agents.sh` to automate creation of a hierarchical multi-agent retrieval scaffold.
 - All major technical decisions must be documented here.
 - Rationale for each decision should be clear and accessible.
 - Updates must be made as the system evolves.

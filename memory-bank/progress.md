@@ -50,6 +50,7 @@ This file tracks what works, what remains to be built, current status, and known
 - ✅ Market, Quote, OptionQuote, StrategyQuote, Candle schemas covered (markets.ts coverage improved).
 - ✅ OrderLeg and Order schemas covered (orders.ts coverage improved).
 - ✅ Response schemas covered (responses.ts coverage improved).
+- ✅ Retrieval agent scaffold script `setup_retrieval_agents.sh` creates hierarchical multi-agent system in `python/retrieval_agents`.
 
 <!-- ai:section:whats-left -->
 ## What's Left

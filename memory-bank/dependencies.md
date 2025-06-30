@@ -396,6 +396,13 @@ Project Root
 
 - **Impact**: Enables full-stack TypeScript and Python interoperability
 
+### Retrieval Agent System
+
+- **Added**: Hierarchical multi-agent retrieval scaffold via `setup_retrieval_agents.sh`
+- **Depends On**: Python environment setup scripts
+- **Required By**: Future retrieval workflows and examples
+- **Impact Analysis**: Provides a foundation for experimenting with multi-agent architectures in a contained directory
+
 
 ### Testing Infrastructure
 
