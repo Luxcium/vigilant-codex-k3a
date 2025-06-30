@@ -17,6 +17,14 @@ This file tracks the current work focus, recent changes, next steps, and active 
 
 ## Current Work Focus
 
+### MULTI-AGENT RETRIEVAL FRAMEWORK BOOTSTRAP IN PROGRESS
+
+Initializing new TypeScript project under `agent-framework/` using
+`scripts/setup_agent_framework.sh`. This will host a pattern-driven
+multi-agent retrieval system. The setup script ensures idempotent
+directory creation, dependency installation without lock files, and
+boilerplate `src/` structure.
+
 ### TEST MIGRATION AND NPM DEPENDENCY MANAGEMENT TASK COMPLETED ✅
 
 All test files have been successfully migrated from `test/` and `tests/` directories to `src/tests/`. The package.json has been updated with CI/CD-compatible test scripts. The dependency management imperative has been enforced using command-line only approaches.
@@ -38,6 +46,8 @@ All test files have been successfully migrated from `test/` and `tests/` directo
 - **Rate Limit Patch**: Added hourly token buckets and 429 handling logic in SDK core.
 - **Error Module Consolidation**: Merged duplicate `src/error/` and `src/errors/` directories into a single `src/errors/` module and updated imports.
 - **Memory Bank Protocol**: Documented Codex memory reset workflow and detailed ledger instructions in `AGENTS.md`.
+
+- [2025-06-30T02:58:44Z] Created `setup_agent_framework.sh` to bootstrap `agent-framework/` and updated README with usage instructions.
 
 - [2025-06-22T22:23:13Z] Ingested Memory Bank context and agent instructions; validated absence of codex.instructions.md in root. Ready for src/ folder coverage validation.
 
