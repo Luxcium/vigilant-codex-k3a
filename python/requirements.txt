@@ -1,2 +1,68 @@
-# Example Python requirements file
-# Add your dependencies below
+# Python Dependencies - Modern Best Practices
+# Core dependencies for development and production
+
+# Environment and configuration
+python-dotenv>=1.0.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# Data science and analysis
+numpy>=1.24.0
+pandas>=2.1.0
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.17.0
+
+# Jupyter ecosystem
+jupyter>=1.0.0
+jupyterlab>=4.0.0
+ipykernel>=6.25.0
+ipywidgets>=8.1.0
+nbformat>=5.9.0
+nbconvert>=7.8.0
+
+# Web and API development
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+httpx>=0.25.0
+requests>=2.31.0
+
+# Database and ORM
+sqlalchemy>=2.0.0
+alembic>=1.12.0
+psycopg2-binary>=2.9.0
+
+# Testing and quality assurance
+pytest>=7.4.0
+pytest-cov>=4.1.0
+pytest-asyncio>=0.21.0
+black>=23.9.0
+isort>=5.12.0
+flake8>=6.1.0
+
+# Linting and static analysis
+pylint>=3.0.0
+mypy>=1.8.0
+ruff>=0.4.0
+
+# Async and concurrency
+# Async and concurrency
+# Do NOT list asyncio here; it is part of the Python standard library (3.7+)
+aiofiles>=23.2.0
+
+# Utilities
+rich>=13.6.0
+typer>=0.9.0
+tqdm>=4.66.0
+
+# Development tools
+pre-commit>=3.5.0
+bandit>=1.7.0
+safety>=2.3.0
+
+# Machine Learning (optional, uncomment as needed)
+# torch>=2.1.0
+# tensorflow>=2.14.0
+# transformers>=4.35.0
+# openai>=1.3.0
