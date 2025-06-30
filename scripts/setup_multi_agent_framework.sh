@@ -72,6 +72,7 @@ fi
 mkdir -p src/{core,patterns,examples,cli,tests}
 log "Ensured src directory structure"
 
-cd ..
+# Restore the original working directory
+cd "$ORIGINAL_DIR"
 
 log "setup_multi_agent_framework.sh complete"
