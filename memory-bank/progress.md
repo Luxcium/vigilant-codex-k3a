@@ -38,6 +38,8 @@ This file tracks what works, what remains to be built, current status, and known
 - Next.js app scaffolded with Prisma integration
 - SDK Rate Limiter with hourly buckets and 429 back-off logic
 - Consolidated error handling into `src/errors/` directory
+- **setup_agent_framework.sh** script added to scaffold a new multi-agent
+  retrieval framework under `agent-framework/`.
 - ✅ Coverage analysis for `src/` folder completed (overall coverage 63.84%).
 - ✅ handle.ts now fully covered (100%).
 - ✅ TokenBucketLimiter.handle429 branch covered.
@@ -62,6 +64,9 @@ This file tracks what works, what remains to be built, current status, and known
 - **Test Genesis Boot-Phase Script**: Validate package manager detection and environment checks across OS/container setups
 - **Document Framework Lessons**: Capture learnings about conditional instruction design for future language environments
 - **Extend Conditional Framework**: Consider applying conditional approach to Node.js, TypeScript, and other language setups
+- **Implement Multi-Agent Retrieval Framework**: Follow the blueprint to build a
+  TypeScript 22 project under `agent-framework/` with core abstractions,
+  patterns, and CLI orchestration.
 - **Complete Web Authentication**: Finalize login flows and database migrations
 - **Wire SDK 429 Errors**: Connect error handler to rate limiter for header sync
 - Review all Memory Bank and .clinerules files for cross-reference and compliance with the new code organization standard.
@@ -79,6 +84,7 @@ This file tracks what works, what remains to be built, current status, and known
 - **Documentation Examples:** Create concrete usage examples showcasing the end-to-end autonomous workflow with AI agents
 - **Finalize Self-Review:** Incorporate this comprehensive stateful review into `progress.md` as the final task before closing this initiative
 - **Documentation Examples:** Create concrete usage examples showing the framework in action with different AI tools
+- **Bootstrap Agent Framework:** Initialize agent-framework directory and set up Node 22/TypeScript 5.8 project per blueprint.
 - ✅ **Updated Prompts README:** Comprehensive update to `.github/prompts/README.md` reflecting all 13 prompt files with proper categorization and cross-references
 - ✅ **Updated Instructions README:** Comprehensive update to `.github/instructions/README.md` reflecting all 10 instruction files with logical grouping and enhanced cross-references
 
