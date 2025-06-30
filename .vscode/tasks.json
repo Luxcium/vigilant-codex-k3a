@@ -1,0 +1,127 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Python: Setup Environment",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/setup_python_env.sh",
+      "args": ["--mode", "local"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Python: Install Dependencies",
+      "type": "shell",
+      "command": "${workspaceFolder}/python/.venv/bin/pip",
+      "args": ["install", "-r", "requirements.txt"],
+      "options": {
+        "cwd": "${workspaceFolder}/python"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Python: Run Tests",
+      "type": "shell",
+      "command": "${workspaceFolder}/python/.venv/bin/pytest",
+      "args": ["tests/", "-v", "--cov=src", "--cov-report=html"],
+      "options": {
+        "cwd": "${workspaceFolder}/python",
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}/python/src:${workspaceFolder}/python"
+        }
+      },
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Python: Lint with Pylint",
+      "type": "shell",
+      "command": "${workspaceFolder}/python/.venv/bin/pylint",
+      "args": ["src/"],
+      "options": {
+        "cwd": "${workspaceFolder}/python"
+      },
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Python: Type Check with MyPy",
+      "type": "shell",
+      "command": "${workspaceFolder}/python/.venv/bin/mypy",
+      "args": ["src/"],
+      "options": {
+        "cwd": "${workspaceFolder}/python"
+      },
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Python: Start Jupyter Lab",
+      "type": "shell",
+      "command": "${workspaceFolder}/python/.venv/bin/jupyter",
+      "args": ["lab", "--notebook-dir=${workspaceFolder}/notebooks", "--ip=0.0.0.0"],
+      "options": {
+        "cwd": "${workspaceFolder}",
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}/python/src:${workspaceFolder}/python"
+        }
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Python: Format Code",
+      "type": "shell",
+      "command": "${workspaceFolder}/python/.venv/bin/black",
+      "args": ["src/", "tests/"],
+      "options": {
+        "cwd": "${workspaceFolder}/python"
+      },
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
