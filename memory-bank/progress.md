@@ -87,6 +87,7 @@ This file tracks what works, what remains to be built, current status, and known
 - Remaining work is focused on testing the conditional framework, extending it to other languages, and practical application validation
 - All core infrastructure for AI-assisted development is in place and documented
 - **Breakthrough Achievement**: Successfully implemented truly conditional instruction framework that defers hard implementation choices to runtime
+- **New Directory**: `agent-system` initialized for multi-agent retrieval framework (offline setup).
 
 ### Contributor Log
 

@@ -1,0 +1,11 @@
+{
+  "name": "agent-system",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
