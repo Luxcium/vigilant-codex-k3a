@@ -12,5 +12,8 @@ This directory contains all Python source code, modules, and environment configu
 - `.env` — Environment variables (do not commit secrets)
 - `Dockerfile` — Container build for Python environment
 - `README.md` — Setup and usage instructions
+- `retrieval_agents/` — Hierarchical multi-agent retrieval system
+
+Run `bash scripts/setup_retrieval_agents.sh` to generate the directory if it does not exist.
 
 See [python-environment.instructions.md](../.github/instructions/python-environment.instructions.md) for full environment standards.

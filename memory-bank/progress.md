@@ -21,6 +21,7 @@ This file tracks what works, what remains to be built, current status, and known
 - Modular rules system established in `.clinerules/`
 - AI agent entry points clearly defined for all tools
 - **✅ Conditional Python Environment Framework** with parameter-driven scripts
+- **✅ Retrieval Agents Scaffold** created via `setup_retrieval_agents.sh`
 
 ### Automation
 - Autonomous state manager tracks changes
@@ -55,6 +56,7 @@ This file tracks what works, what remains to be built, current status, and known
 ## What's Left
 
 - **Test Conditional Python Framework**: Run each environment mode (local, docker_isolated, docker_volume) to validate complete functionality
+- **Implement Retrieval Agents Logic**: Flesh out supervisor and worker behaviors in `python/retrieval_agents`.
 - **Reference**: See [testing-guide.md](./testing-guide.md) for detailed steps
 - **Test Genesis Boot-Phase Script**: Validate package manager detection and environment checks across OS/container setups
 - **Document Framework Lessons**: Capture learnings about conditional instruction design for future language environments
