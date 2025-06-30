@@ -21,3 +21,4 @@ pnpm-lock.yaml
 package-lock.json
 npm-shrinkwrap.json
 yarn.lock
+agent-framework/node_modules/

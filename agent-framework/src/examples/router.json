@@ -1,0 +1,8 @@
+{
+  "type": "router",
+  "routes": {
+    "search": { "type": "RetrieverAgent" },
+    "write": { "type": "WriterAgent" },
+    "*": { "type": "CriticAgent" }
+  }
+}
