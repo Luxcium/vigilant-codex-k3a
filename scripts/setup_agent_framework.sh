@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# setup_agent_framework.sh: Initialize multi-agent retrieval framework project
 # must resolve conflicts <<<<<<< codex/initialiser-le-repo-mono-et-créer-la-structure-2025-06-3004-08-28
 # setup_agent_framework.sh: Initialize multi-agent retrieval framework directory
 set -euo pipefail
@@ -8,6 +9,28 @@ log() {
 }
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+# second merge conflict in this file commented out to be resolved by you now <<<<<<< codex/initialiser-le-repo-mono-et-créer-la-structure-2025-06-3004-08-47
+FRAMEWORK_DIR="$PROJECT_ROOT/agent-framework"
+
+if [ -d "$FRAMEWORK_DIR" ]; then
+  log "agent-framework already exists, skipping setup"
+  exit 0
+fi
+
+mkdir -p "$FRAMEWORK_DIR"
+cd "$FRAMEWORK_DIR"
+
+log "Initializing package.json"
+yes "" | pnpm init >/dev/null
+
+log "Installing dev dependencies"
+pnpm add -D typescript@5.8 ts-node @types/node esbuild vitest >/dev/null
+pnpm add -D p-limit >/dev/null
+pnpm add pinecone-client >/dev/null
+
+log "Creating tsconfig.json"
+pnpm dlx tsc --init --target es2022 --moduleResolution node >/dev/null
+# marker of the second conflict to also be resolved basically rewriting the entire file from scratch now=======
 AGENT_DIR="$PROJECT_ROOT/agent-framework"
 
 if [ ! -d "$AGENT_DIR" ]; then
@@ -94,9 +117,15 @@ cat > tsconfig.json <<'EOF'
   }
 }
 EOF
+# second merge to evalute >>>>>>> luxcium/main
 
 log "Creating source directories"
 mkdir -p src/{core,patterns,examples,cli,tests}
+
+# Remove lockfile if generated
+rm -f pnpm-lock.yaml
+
+log "agent-framework setup complete"
 
 log "Setup complete"
 # you are the ai agent who must cleverly resolve this comment out conflict >>>>>>> luxcium/main
