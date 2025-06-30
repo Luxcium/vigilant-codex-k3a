@@ -10,7 +10,10 @@ class VectorSearchTool:
         if not self.vectors.size:
             return []
         sims = self.vectors @ vector
-        norms = np.linalg.norm(self.vectors, axis=1) * np.linalg.norm(vector)
+        vector_norm = np.linalg.norm(vector)
+        if vector_norm == 0:
+            return []
+        norms = np.linalg.norm(self.vectors, axis=1) * vector_norm
         sims = sims / norms
         idx = sims.argsort()[::-1][:top_k]
         return [(self.docs[i], float(sims[i])) for i in idx]
