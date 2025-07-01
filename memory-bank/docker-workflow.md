@@ -96,6 +96,23 @@ This document provides a comprehensive workflow for creating and managing Docker
 - **Script Automation**: Idempotent container setup and management via `scripts/setup_python_docker.sh`, `scripts/setup_python_local.sh`, and related helpers
 - **Cross-Agent Collaboration**: Workflows spanning multiple AI agents
 
+### Bootstrapping Codex CLI Environment Locally
+
+To bootstrap a local Codex CLI environment with Node.js 22 and Python 3.13:
+
+1. Ensure Docker is installed and running.
+2. Run the provided `scripts/run_codex_cli.sh` script, optionally passing your project directory:
+
+   ```bash
+   bash scripts/run_codex_cli.sh /path/to/your/project
+   ```
+
+   This script will:
+   - Pull the latest `ghcr.io/openai/codex-universal:latest` image.
+   - Mount your project directory at `/workspace/<project_name>`.
+   - Set `CODEX_ENV_PYTHON_VERSION=3.13` and `CODEX_ENV_NODE_VERSION=22`.
+   - Start an interactive shell in the container at your project root.
+
 ## Dependencies
 
 - **Depends On:** 
@@ -121,6 +138,6 @@ This document provides a comprehensive workflow for creating and managing Docker
 
 ---
 
-**Last Updated:** 2025-05-25  
-**Status:** Initial Framework Created  
+**Last Updated:** 2025-07-01  
+**Status:** Added Bootstrapping Codex CLI Environment instructions  
 **Next Review:** After exotic Docker Compose approach definition

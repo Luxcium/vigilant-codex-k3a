@@ -35,6 +35,7 @@ This folder contains utility scripts for setting up, validating, and maintaining
 - `setup_project.sh` — Base scaffolding (no overwrites)
 - `setup_python_local.sh` — Sets up Python venv + dependencies
 - `setup_python_docker.sh` — Builds Python Docker image
+- `run_codex_cli.sh` — Spins up a Codex CLI container using `ghcr.io/openai/codex-universal:latest` with Node.js 22 and Python 3.13, mounting the specified project directory
 - `setup_agent_system.sh` — Creates the hierarchical agent system skeleton
 - `check-dependencies.sh` — Verifies memory-bank/dependencies.md structure
 - `check-memory-bank.sh` — Runs markdownlint on memory-bank/*.md
