@@ -30,6 +30,7 @@
     "web:start": "cd ./web/ && npm --prefix web run start"
   },
   "dependencies": {
+    "node-fetch": "^3.3.2",
     "zod": "^3.25.67"
   },
   "devDependencies": {

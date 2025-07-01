@@ -1,6 +1,8 @@
+
+import fetch, { Response as FetchResponse } from 'node-fetch';
 import { AuthManager } from '../auth/manager';
-import { TokenBucketLimiter } from '../rateLimit/tokenBucket';
 import { handleQuestradeError } from '../errors';
+import { TokenBucketLimiter } from '../rateLimit/tokenBucket';
 
 export class RestClient {
   private limiter = new TokenBucketLimiter();
@@ -33,7 +35,7 @@ export class RestClient {
       if (!Number.isNaN(reset)) this.limiter.handle429('account', reset);
       throw new Error('Rate limit exceeded');
     }
-    if (!res.ok) return handleQuestradeError(res);
+    if (!res.ok) return handleQuestradeError(res as FetchResponse);
     return res.json() as Promise<T>;
   }
 

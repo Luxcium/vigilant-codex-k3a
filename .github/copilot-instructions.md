@@ -35,7 +35,13 @@ This project supports three AI agents with distinct entry points:
 - Use dependency injection where appropriate
 - Add meaningful comments for complex algorithms
 
-## Project-Specific Guidelines
+
+## Index File Export Rule
+
+- Always use named exports in all index files (e.g., `export { Foo } from './foo'`)
+- Use the `type` keyword for type exports (e.g., `export type { Bar } from './bar'`)
+- Never use default exports or `export *` in index files
+
 
 ### Memory Bank Principles
 - Reference appropriate memory bank files when making changes

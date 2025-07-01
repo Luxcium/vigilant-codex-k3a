@@ -1,4 +1,11 @@
 
+- [2025-07-01T00:00:00Z] Current State: index.ts reviewed;
+  Last Action: Added rule to always use named exports in index files, using the 'type' keyword for type exports;
+  Rationale: To enforce consistent, explicit, and type-safe module boundaries and re-exports;
+  Next Intent: Ensure all index files and future code generation follow this export pattern.
+  Note: Executing Self-Documentation Protocol.
+  This log reaffirms that self-documentation and meta-description are ongoing requirements.
+
 - [2025-07-01T00:00:00Z] Current State: vitest.config.ts updated, README.md and dependencies.md updated;
   Last Action: Enforced strict one-test-file-at-a-time policy for Vitest, documented in README and memory bank;
   Rationale: To ensure only one test file/module is run per invocation, supporting incremental, focused test fixing and validation;
