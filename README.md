@@ -120,6 +120,22 @@ The `scripts/setup_project.sh` script now includes:
 
 All actions are self-documented and resilient to repeated runs. Review the script for detailed logic and intent.
 
+
+## Strict Test Execution Policy
+
+This project enforces a strict policy for running tests: **only one test file/module may be executed per run**. This is implemented by omitting the `include` pattern in `vitest.config.ts`, requiring explicit file input for each test run. This approach ensures that fixes are made and validated one at a time, supporting incremental and focused development.
+
+**How to run a single test file:**
+
+```bash
+npx vitest run src/tests/auth/manager.test.ts
+```
+
+**Note:**
+- Do not use `vitest run` without specifying a file, as no tests will be run by default.
+- You may validate all tests at once only before major reconfiguration or as a final check.
+
+---
 ## AI Agent Framework
 
 This project includes a modular AI agent framework for automated code generation and quality assurance. The framework is organized into two main components:

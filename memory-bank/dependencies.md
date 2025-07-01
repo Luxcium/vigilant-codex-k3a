@@ -1,3 +1,12 @@
+# Dependency: vitest.config.ts → Strict Test Execution Policy
+
+- **Depends On:** vitest.config.ts, README.md (test policy section)
+- **Required By:** All test scripts and contributors
+- **Why This Order:** The configuration enforces that only one test file/module is run per invocation, requiring explicit file input. This supports incremental, focused test fixing and validation.
+- **Impact Analysis:**
+  - Prevents accidental running of all tests, reducing noise and risk during incremental development.
+  - Contributors must specify the test file to run, which may slow down bulk validation but increases control and clarity.
+  - Major reconfiguration or final validation can still run all tests by temporarily restoring the include pattern or running files in a loop.
 # dependencies.md
 
 <!-- markdownlint-disable MD013 MD012 MD022 MD032 MD024 MD040 MD001 -->
