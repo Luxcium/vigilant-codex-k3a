@@ -46,7 +46,10 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
  ### UI Theming
 **[theme-ui-meta.instructions.md](./theme-ui-meta.instructions.md)** - Detailed instructions for browser-UI theming meta tags, including `theme-color`, `color-scheme`, and platform-specific variants. Covers syntax, dark-mode variants, multi-color support, platform quirks, and validation steps.
 
-### Code Quality
+### Validation & Debugging Checklist
+**[validation-debugging-checklist.instructions.md](./validation-debugging-checklist.instructions.md)** - A VS Code-centric checklist for validating and debugging web app manifests, meta tags, and platform integrations.
+
+ ### Code Quality
 
 ## How Instructions Work
 

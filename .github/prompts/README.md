@@ -48,6 +48,7 @@ Prompt files (`.prompt.md`) are executable templates that:
 - **[general-icon-link-tags.prompt.md](./general-icon-link-tags.prompt.md)** - Add a comprehensive set of general icon link tags to an HTML document.
 
 ### Testing & Validation
+- **[validation-debugging-checklist.prompt.md](./validation-debugging-checklist.prompt.md)** - Run a comprehensive, VS Code-native validation and debugging workflow for web apps.
 - **[test-prompt.prompt.md](./test-prompt.prompt.md)** - Test prompt to verify prompt files are working correctly
 
 ### SEO Meta Tags
