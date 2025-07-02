@@ -495,6 +495,10 @@ This project supports three AI agents with specific dependency management respon
 
 **All agents must maintain dependency tracking in this file and ensure cross-references remain accurate.**
 
+**Meta-Configuration & Manifest Standards:**
+
+All agents must consult the [when-to-use-what-matrix.instructions.md](../.github/instructions/when-to-use-what-matrix.instructions.md) for a one-page mapping of integration goals to configuration files and authoritative sources. For detailed implementation, see `.github/instructions/README.md` and `.github/prompts/README.md`.
+
 
 ---
 

@@ -1,7 +1,12 @@
 
-- [2025-07-01T00:00:00Z] Current State: Memory bank comprehensively updated with Docker environment documentation;
   Last Action: Created docker-environment.instructions.md, codex-universal-environment.prompt.md, updated all memory bank files, README files, and documentation to capture complete Docker environment knowledge;
   Rationale: Ensure future AI agents have complete access to Docker environment setup procedures, standards, and integration patterns through structured instruction and prompt files;
+ [2025-07-02T00:00:00Z] Current State: One-page 'When to Use What' matrix created and cross-referenced in all relevant README and memory bank files;
+ Last Action: Added when-to-use-what-matrix.instructions.md, updated .github/instructions/README.md, .github/prompts/README.md, memory-bank/dependencies.md, memory-bank/systemPatterns.md, and memory-bank/activeContext.md to cross-link and summarize meta-configuration and manifest standards;
+ Rationale: Ensure all agents and contributors have a single authoritative entry point for manifest/meta configuration, with clear cross-references to detailed standards and workflow automation;
+ Next Intent: All future meta-configuration and manifest work should begin with the matrix and follow cross-references for implementation details.
+ Note: Executing Self-Documentation Protocol.
+ This log reaffirms that self-documentation and meta-description are ongoing requirements.
   Next Intent: All Docker environment knowledge is now properly documented and cross-referenced for future sessions.
   Note: Executing Self-Documentation Protocol.
   This log reaffirms that self-documentation and meta-description are ongoing requirements.
@@ -164,6 +169,12 @@ All TypeScript validation schemas have been comprehensively tested using Zod val
 > **All agents and contributors must review, update, and self-regulate this file as work progresses.**  
 > **Do not proceed with new work or changes until this file accurately reflects the current state and priorities.**  
 > **Update this file immediately upon any change in work focus, plans, or decisions.**
+
+## Quick Reference: Meta-Configuration & Manifest Matrix
+
+For a one-page summary of all manifest and meta configuration goals (PWA, iOS, Windows, Chrome Extension, etc.), see:
+
+**[when-to-use-what-matrix.instructions.md](../.github/instructions/when-to-use-what-matrix.instructions.md)** — This matrix provides authoritative mapping of integration goals to configuration files and sources. For detailed implementation standards, see `.github/instructions/README.md` and `.github/prompts/README.md`.
 
 ## AI Agent Instructions
 

@@ -111,6 +111,10 @@ This Memory Bank is initialized to provide a clear, adaptable template for docum
 | [activeContext.md](./activeContext.md) | consumes patterns |
 | [progress.md](./progress.md) | tracks decisions |
 
+| [when-to-use-what-matrix.instructions.md](../.github/instructions/when-to-use-what-matrix.instructions.md) | one-page manifest/meta config mapping |
+
+> For meta-configuration and manifest standards, always start with the matrix above, then consult `.github/instructions/README.md` and `.github/prompts/README.md` for detailed implementation and workflow automation guidance.
+
 ## Call to Action
 
 > **All agents and contributors must review, update, and self-regulate this file as the system architecture and patterns evolve.**  
