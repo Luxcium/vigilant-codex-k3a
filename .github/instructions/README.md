@@ -35,6 +35,9 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 - **[instruction-authoring-standards.instructions.md](./instruction-authoring-standards.instructions.md)** - Canonical rules and structure for creating instruction files
 - **[self-documentation.instructions.md](./self-documentation.instructions.md)** - Self-documentation protocol for tracking actions and context changes
 
+### PWA Standards
+- **[pwa-manifest.instructions.md](./pwa-manifest.instructions.md)** - Progressive Web App (PWA) manifest authoring standards, installability checklists, icon requirements, validation workflows, and authoritative references for `manifest.json` and `.webmanifest` files.
+
 ### Code Quality
 - **[no_dummy-no_placeholders.instruction.md](./no_dummy-no_placeholders.instruction.md)** - Ensure all generated code uses real values instead of placeholders
 
