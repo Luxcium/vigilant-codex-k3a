@@ -38,6 +38,9 @@ Prompt files (`.prompt.md`) are executable templates that:
 ### Testing & Validation
 - **[test-prompt.prompt.md](./test-prompt.prompt.md)** - Test prompt to verify prompt files are working correctly
 
+### Social Preview & Deep Links
+- **[x-cards.prompt.md](./x-cards.prompt.md)** - Add or update X Cards (formerly Twitter Cards) meta tags in HTML head sections for rich previews on X.
+
 ## How to Use Prompts
 
 ### Manual Invocation

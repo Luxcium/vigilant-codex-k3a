@@ -117,3 +117,9 @@ instructions.
 
 **Codex CLI**: Codex CLI uses `AGENTS.md` file to manage its
 preferences and instructions.
+
+### Documentation and User Preferences
+- All documentation for instructions and prompts must be included in the respective `.github/instructions/README.md` and `.github/prompts/README.md` files. Do not use a `docs/` folder unless explicitly required by the user.
+- Always append user preferences and operational requirements to `.github/copilot-instructions.md` and reference them in all future actions.
+- When generating or updating instruction or prompt files, self-prompt to update documentation and preferences as part of the workflow.
+- This policy is mandatory for all future Copilot and agent operations in this repository.
