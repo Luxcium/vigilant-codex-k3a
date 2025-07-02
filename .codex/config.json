@@ -3,5 +3,27 @@
   "approvalMode": "suggest",
   "fullAutoErrorMode": "ask-user",
   "notify": true,
-  "INPUT_CODEX_HOME": "."
+  "INPUT_CODEX_HOME": ".",
+  "docker": {
+    "enabled": true,
+    "image": "ghcr.io/openai/codex-universal:latest",
+    "environment": {
+      "CODEX_ENV_PYTHON_VERSION": "3.13",
+      "CODEX_ENV_NODE_VERSION": "22",
+      "PYTHONPATH": "/workspace/vigilant-codex-k3a/python/src:/workspace/vigilant-codex-k3a/python",
+      "OPENAI_API_KEY": "${OPENAI_API_KEY}"
+    },
+    "volumes": {
+      "project_root": "/workspace/vigilant-codex-k3a",
+      "use_named_volumes": true,
+      "mount_strategy": "volume_not_copy"
+    },
+    "ports": {
+      "nextjs": 3000,
+      "python_dev": 8000,
+      "jupyter": 8888,
+      "vite": 5173,
+      "postgres": 5432
+    }
+  }
 }
