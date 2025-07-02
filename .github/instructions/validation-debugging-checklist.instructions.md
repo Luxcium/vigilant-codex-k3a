@@ -1,9 +1,9 @@
 ---
 applyTo: "**"
-description: "A VS Code-centric checklist for validating and debugging web app manifests, meta tags, and platform integrations."
+description: "A VS Code–centric checklist for validating and debugging web app meta tags, manifests, icons, deep links, and SEO elements using built-in tools and CLI/CI workflows."
 ---
 
-# Validation & Debugging Checklist (VS Code Edition)
+# Validation & Debugging Checklist Instructions
 
 ## 1. Overview 🔗 `#overview`
 
@@ -31,7 +31,7 @@ code --install-extension ms-edgedevtools.vscode-edge-devtools
 
 *The **Edge DevTools panel** (accessible from the Side Bar 🟣 icon) has a **Manifest** tab that shows PWA installability requirements and errors.* 
 
-## 3. React / Next.js Runtime Error Overlay 🔗 `#react-next-overlay`
+## 3. React / Next.js Overlay 🔗 `#react-next`
 
 Next.js and Create React App use a runtime error overlay for immediate feedback. When an error occurs, a full-screen red overlay (a "redbox") appears in the browser, showing the error and the exact code location. Fixing the error in VS Code and saving the file will automatically dismiss the overlay thanks to Fast Refresh.
 
