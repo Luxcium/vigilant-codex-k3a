@@ -69,6 +69,7 @@ All operational rules and protocols are maintained in the modular files under `.
 5. Run `bash scripts/setup_web_env.sh` to scaffold the Next.js application.
 6. Run `bash scripts/setup_db_prisma.sh` to start PostgreSQL and initialize Prisma.
 7. Run `bash scripts/setup_agent_framework.sh` to initialize the multi-agent retrieval framework in `agent-framework/`.
+8. Template files for this setup are stored in `templates/agent-framework` and copied during initialization.
 8. Run `bash scripts/run_codex_cli.sh /path/to/your/project` to start a Codex CLI container with Node.js 22 and Python 3.13.
 
 ## Top-Level Folder Conventions
