@@ -17,29 +17,19 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 ## Available Instructions
 
 ### Environment & Infrastructure
-- **[docker-environment.instructions.md](./docker-environment.instructions.md)** - Docker environment standards, container configuration, and Codex Universal setup guidelines
 
 ### Language Standards
-- **[typescript-standards.instructions.md](./typescript-standards.instructions.md)** - TypeScript coding standards, style guide, and best practices
-- **[python-standards.instructions.md](./python-standards.instructions.md)** - Python coding standards following PEP 8 and modern practices
-- **[python-notebook-standards.instructions.md](./python-notebook-standards.instructions.md)** - Jupyter notebook and data science standards
 
 ### Project Organization
-- **[file-organization.instructions.md](./file-organization.instructions.md)** - File and directory organization standards
 
 ### AI Agent Workflow
-- **[ai-instruction-creation.instructions.md](./ai-instruction-creation.instructions.md)** - Guidelines for AI agents creating .instructions.md files on-demand
-- **[ai-prompt-creation.instructions.md](./ai-prompt-creation.instructions.md)** - Guidelines for AI agents creating .prompt.md files on-demand
 
 ### Documentation & Standards
-- **[instruction-authoring-standards.instructions.md](./instruction-authoring-standards.instructions.md)** - Canonical rules and structure for creating instruction files
-- **[self-documentation.instructions.md](./self-documentation.instructions.md)** - Self-documentation protocol for tracking actions and context changes
 
 ### PWA Standards
-- **[pwa-manifest.instructions.md](./pwa-manifest.instructions.md)** - Progressive Web App (PWA) manifest authoring standards, installability checklists, icon requirements, validation workflows, and authoritative references for `manifest.json` and `.webmanifest` files.
+ **[windows-tiles.instructions.md](./windows-tiles.instructions.md)** - Windows Live Tiles (Start-menu & pinned-site) configuration with `browserconfig.xml`, meta tags, icon sizing, theming, caching pitfalls, and validation steps.
 
 ### Code Quality
-- **[no_dummy-no_placeholders.instruction.md](./no_dummy-no_placeholders.instruction.md)** - Ensure all generated code uses real values instead of placeholders
 
 ## How Instructions Work
 
