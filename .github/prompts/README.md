@@ -44,6 +44,9 @@ Prompt files (`.prompt.md`) are executable templates that:
 - **[vit-implementation.prompt.md](./vit-implementation.prompt.md)** - Generate a Vision Transformer (ViT) implementation with detailed documentation
 - **[theme-ui-meta.prompt.md](./theme-ui-meta.prompt.md)** - Add browser-UI theming meta tags for light/dark mode and platform-specific variants. Includes validation steps using Lighthouse and webhint.
 
+### General Icon Link Tags
+- **[general-icon-link-tags.prompt.md](./general-icon-link-tags.prompt.md)** - Add a comprehensive set of general icon link tags to an HTML document.
+
 ### Testing & Validation
 - **[test-prompt.prompt.md](./test-prompt.prompt.md)** - Test prompt to verify prompt files are working correctly
 
