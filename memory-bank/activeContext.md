@@ -1,5 +1,4 @@
-
-  Last Action: Created docker-environment.instructions.md, codex-universal-environment.prompt.md, updated all memory bank files, README files, and documentation to capture complete Docker environment knowledge;
+Last Action: Created docker-environment.instructions.md, codex-universal-environment.prompt.md, updated all memory bank files, README files, and documentation to capture complete Docker environment knowledge;
   Rationale: Ensure future AI agents have complete access to Docker environment setup procedures, standards, and integration patterns through structured instruction and prompt files;
  [2025-07-02T00:00:00Z] Current State: One-page 'When to Use What' matrix created and cross-referenced in all relevant README and memory bank files;
  Last Action: Added when-to-use-what-matrix.instructions.md, updated .github/instructions/README.md, .github/prompts/README.md, memory-bank/dependencies.md, memory-bank/systemPatterns.md, and memory-bank/activeContext.md to cross-link and summarize meta-configuration and manifest standards;
@@ -7,7 +6,10 @@
  Next Intent: All future meta-configuration and manifest work should begin with the matrix and follow cross-references for implementation details.
  Note: Executing Self-Documentation Protocol.
  This log reaffirms that self-documentation and meta-description are ongoing requirements.
-  Next Intent: All Docker environment knowledge is now properly documented and cross-referenced for future sessions.
+- [2025-07-02T00:00:00Z] Current State: UI theming meta tag standards documented and cross-referenced;
+  Last Action: Created theme-ui-meta.instructions.md and theme-ui-meta.prompt.md, updated .github/instructions/README.md, .github/prompts/README.md, and memory-bank/dependencies.md to include cross-references;
+  Rationale: Ensure all agents and contributors have a single authoritative entry point for browser-UI theming meta tags, with clear cross-references to standards and workflow automation;
+  Next Intent: All future theming meta tag work should begin with these files and follow cross-references for implementation details.
   Note: Executing Self-Documentation Protocol.
   This log reaffirms that self-documentation and meta-description are ongoing requirements.
 

@@ -42,6 +42,7 @@ Prompt files (`.prompt.md`) are executable templates that:
 ### Development Components
 - **[typescript-component.prompt.md](./typescript-component.prompt.md)** - Generate TypeScript components following project standards
 - **[vit-implementation.prompt.md](./vit-implementation.prompt.md)** - Generate a Vision Transformer (ViT) implementation with detailed documentation
+- **[theme-ui-meta.prompt.md](./theme-ui-meta.prompt.md)** - Add browser-UI theming meta tags for light/dark mode and platform-specific variants. Includes validation steps using Lighthouse and webhint.
 
 ### Testing & Validation
 - **[test-prompt.prompt.md](./test-prompt.prompt.md)** - Test prompt to verify prompt files are working correctly
