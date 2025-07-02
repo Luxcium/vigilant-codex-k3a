@@ -1,0 +1,62 @@
+version: '3.8'
+
+services:
+  codex-universal:
+    image: ghcr.io/openai/codex-universal:latest
+    container_name: vigilant-codex-k3a-codex
+    environment:
+      - CODEX_ENV_PYTHON_VERSION=3.13
+      - CODEX_ENV_NODE_VERSION=22
+      - PYTHONPATH=/workspace/vigilant-codex-k3a/python/src:/workspace/vigilant-codex-k3a/python
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    volumes:
+      # Mount the entire project as a volume
+      - .:/workspace/vigilant-codex-k3a
+      # Mount specific directories for better performance
+      - ./python:/workspace/vigilant-codex-k3a/python
+      - ./src:/workspace/vigilant-codex-k3a/src
+      - ./web:/workspace/vigilant-codex-k3a/web
+      - ./scripts:/workspace/vigilant-codex-k3a/scripts
+      - ./notebooks:/workspace/vigilant-codex-k3a/notebooks
+      - ./.codex:/workspace/vigilant-codex-k3a/.codex
+      # Create named volumes for node_modules and Python cache
+      - node_modules_cache:/workspace/vigilant-codex-k3a/node_modules
+      - python_cache:/workspace/vigilant-codex-k3a/python/.venv
+      - web_node_modules:/workspace/vigilant-codex-k3a/web/node_modules
+    working_dir: /workspace/vigilant-codex-k3a
+    stdin_open: true
+    tty: true
+    command: bash
+    ports:
+      - "3000:3000"  # Next.js dev server
+      - "8000:8000"  # Python dev server
+      - "8888:8888"  # Jupyter Lab
+      - "5173:5173"  # Vite dev server
+    networks:
+      - codex-network
+
+  # Optional: Include existing database if needed
+  db:
+    image: postgres:14-alpine
+    container_name: vigilant-codex-k3a-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: codexapp
+    ports:
+      - "5432:5432"
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    networks:
+      - codex-network
+
+volumes:
+  node_modules_cache:
+  python_cache:
+  web_node_modules:
+  db_data:
+
+networks:
+  codex-network:
+    driver: bridge

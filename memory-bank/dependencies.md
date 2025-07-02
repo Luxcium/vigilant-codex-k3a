@@ -1,7 +1,23 @@
+# Dependency: vitest.config.ts → Strict Test Execution Policy
+
+- **Depends On:** vitest.config.ts, README.md (test policy section)
+- **Required By:** All test scripts and contributors
+- **Why This Order:** The configuration enforces that only one test file/module is run per invocation, requiring explicit file input. This supports incremental, focused test fixing and validation.
+- **Impact Analysis:**
+  - Prevents accidental running of all tests, reducing noise and risk during incremental development.
+  - Contributors must specify the test file to run, which may slow down bulk validation but increases control and clarity.
+  - Major reconfiguration or final validation can still run all tests by temporarily restoring the include pattern or running files in a loop.
 # dependencies.md
 
 <!-- markdownlint-disable MD013 MD012 MD022 MD032 MD024 MD040 MD001 -->
 
+
+#### Dependency: Codex Universal Docker Environment (2025-07-01)
+
+**Rationale:** Enables local development environment matching Codex cloud setup with Node.js 22 and Python 3.13 using volume-based workflows.
+**Depends On:** Docker Engine, OpenAI API access, project structure standards
+**Required By:** All development workflows, AI agent environments, testing procedures
+**Impact Analysis:** Provides consistent development environment across all platforms and agents, eliminates environment-specific issues.
 
 #### Dependency: Conditional Python Environment Framework (2025-02-06)
 
@@ -59,6 +75,16 @@ This file tracks all project dependencies, their relationships, and integration 
 
   - `docker_volume` - Containerized with live host file mounting
 
+
+### Codex Universal Docker Environment
+
+- **Docker Engine**: Container runtime and management
+- **Codex Universal Image**: `ghcr.io/openai/codex-universal:latest` - Pre-configured development environment
+- **OpenAI API Access**: Required for API functionality within containers
+- **Volume Management**: Named volumes for dependencies, bind mounts for source code
+- **Network Configuration**: Custom bridge networks for service isolation
+- **Environment Variables**: Python 3.13, Node.js 22, API keys, paths
+- **Health Monitoring**: Container health checks and service validation
 
 ### Docker and Containerization
 
@@ -126,7 +152,30 @@ This file tracks all project dependencies, their relationships, and integration 
 
   - `PROJECT_NAME` - Container/project naming (default: my-python-app)
 
-- **Mode-Specific Scripts**:
+### Codex Universal Environment Scripts
+
+- **Runtime Management Scripts**:
+  - `scripts/setup_codex_universal.sh` - Complete environment setup and configuration
+  - `scripts/codex_start.sh` - Start Docker Compose environment with validation
+  - `scripts/codex_stop.sh` - Clean environment shutdown
+  - `scripts/codex_shell.sh` - Interactive container shell access
+  - `scripts/codex_rebuild.sh` - Update and restart with latest image
+  - `scripts/codex_run.sh` - Quick single-container development run
+  - `scripts/codex_test.sh` - Environment validation and verification
+
+- **Configuration Management**:
+  - `docker-compose.codex.yml` - Complete orchestration configuration
+  - `.dockerignore` - Optimized build context exclusions
+  - `.codex/config.json` - Codex-specific environment settings
+  - `.codex/docker.md` - Comprehensive documentation and troubleshooting
+
+- **Generated Artifacts** (script-dependent):
+  - `docker-compose.codex.yml` - Service orchestration configuration
+  - Convenience scripts for environment management
+  - `.dockerignore` file optimized for development
+  - Updated `.codex/instructions.md` with Docker environment information
+
+### Mode-Specific Scripts
 
   - `scripts/setup_python_env.sh` - Main entry point with parameter routing
 
@@ -193,6 +242,13 @@ This file tracks all project dependencies, their relationships, and integration 
 ### Prompt Files (`.github/prompts/`)
 
 
+### Prompt Files (`.github/prompts/`)
+
+- **codex-universal-environment.prompt.md**: Comprehensive Docker environment management
+  - **Depends On**: `memory-bank/docker-workflow.md`, Docker environment instruction files
+  - **Required By**: Docker environment setup workflows, container orchestration
+  - **Integration**: Codex Universal image with Node.js 22 and Python 3.13, volume-based development
+
 - **python-environment-setup.prompt.md**: Python environment mode selection and setup
 
   - **Depends On**: `memory-bank/docker-workflow.md`, conditional instruction files
@@ -228,6 +284,14 @@ This file tracks all project dependencies, their relationships, and integration 
 
 ### Instruction Files (`.github/instructions/`)
 
+
+### Instruction Files (`.github/instructions/`)
+
+- **docker-environment.instructions.md**: Comprehensive Docker environment standards
+  - **Depends On**: `memory-bank/docker-workflow.md`, container security best practices
+  - **Required By**: All Docker environment operations, container management
+  - **ApplyTo**: `**/docker-compose*.yml,**/Dockerfile*,scripts/codex_*.sh,scripts/setup_codex_universal.sh`
+  - **Integration**: Codex Universal environment, OpenAI API integration, volume-based development
 
 - **python-environment-conditional.instructions.md**: Conditional Python setup standards
 
@@ -430,6 +494,13 @@ This project supports three AI agents with specific dependency management respon
 - **VS Code Copilot** → Updates `.github/copilot-instructions.md` and instruction files
 
 **All agents must maintain dependency tracking in this file and ensure cross-references remain accurate.**
+
+**Meta-Configuration & Manifest Standards:**
+
+All agents must consult the [when-to-use-what-matrix.instructions.md](../.github/instructions/when-to-use-what-matrix.instructions.md) for a one-page mapping of integration goals to configuration files and authoritative sources. For detailed implementation, see `.github/instructions/README.md` and `.github/prompts/README.md`.
+
+**UI Theming Standards:**
+All agents must consult the [theme-ui-meta.instructions.md](../.github/instructions/theme-ui-meta.instructions.md) for detailed theming meta tag standards and the [theme-ui-meta.prompt.md](../.github/prompts/theme-ui-meta.prompt.md) for workflow automation. These files cover syntax, validation, and platform-specific quirks for `theme-color`, `color-scheme`, and related tags.
 
 
 ---

@@ -2,6 +2,12 @@
 
 This directory contains instruction files that automatically apply coding standards, guidelines, and rules to VS Code Copilot's code generation. These files work passively in the background to ensure consistency and quality.
 
+## Quick Reference: One-Page “When to Use What” Matrix
+
+**[when-to-use-what-matrix.instructions.md](./when-to-use-what-matrix.instructions.md)** — A single-page matrix mapping all major manifest/meta configuration goals (PWA, iOS, Windows, Chrome Extension, etc.) to their primary files and authoritative sources. Use this as your starting point for any integration or standards question. See detailed standards in the specific instruction files below.
+
+> For meta-configuration, manifest, and platform integration, always consult this matrix first, then refer to the detailed instruction files for implementation specifics. All Copilot, Cline AI, and Codex CLI agents should cross-reference this file and the related README files in `.github/prompts/` and `memory-bank/` for full context.
+
 ## What are Instruction Files?
 
 Instruction files (`.instructions.md`) are automatic guidelines that:
@@ -16,24 +22,34 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 
 ## Available Instructions
 
+### Environment & Infrastructure
+
 ### Language Standards
-- **[typescript-standards.instructions.md](./typescript-standards.instructions.md)** - TypeScript coding standards, style guide, and best practices
-- **[python-standards.instructions.md](./python-standards.instructions.md)** - Python coding standards following PEP 8 and modern practices
-- **[python-notebook-standards.instructions.md](./python-notebook-standards.instructions.md)** - Jupyter notebook and data science standards
 
 ### Project Organization
-- **[file-organization.instructions.md](./file-organization.instructions.md)** - File and directory organization standards
 
 ### AI Agent Workflow
-- **[ai-instruction-creation.instructions.md](./ai-instruction-creation.instructions.md)** - Guidelines for AI agents creating .instructions.md files on-demand
-- **[ai-prompt-creation.instructions.md](./ai-prompt-creation.instructions.md)** - Guidelines for AI agents creating .prompt.md files on-demand
 
 ### Documentation & Standards
-- **[instruction-authoring-standards.instructions.md](./instruction-authoring-standards.instructions.md)** - Canonical rules and structure for creating instruction files
-- **[self-documentation.instructions.md](./self-documentation.instructions.md)** - Self-documentation protocol for tracking actions and context changes
 
-### Code Quality
-- **[no_dummy-no_placeholders.instruction.md](./no_dummy-no_placeholders.instruction.md)** - Ensure all generated code uses real values instead of placeholders
+### PWA Standards
+ **[windows-tiles.instructions.md](./windows-tiles.instructions.md)** - Windows Live Tiles (Start-menu & pinned-site) configuration with `browserconfig.xml`, meta tags, icon sizing, theming, caching pitfalls, and validation steps.
+ **[x-cards.instructions.md](./x-cards.instructions.md)** - X Cards (formerly Twitter Cards) metadata standards, required tags, card types, validation, and boilerplate.
+ **[social-preview-and-deep-links.instructions.md](./social-preview-and-deep-links.instructions.md)** - Open Graph, X Cards, Facebook App Links, and Android App Links metadata and validator workflows.
+
+### General Icon Link Tags
+**[general-icon-link-tags.instructions.md](./general-icon-link-tags.instructions.md)** - Instructions for implementing a comprehensive set of link tags for favicons and app icons across all platforms.
+
+ ### SEO Meta Tags
+**[seo-meta-tags.instructions.md](./seo-meta-tags.instructions.md)** - Instructions for implementing fundamental SEO meta tags for discoverability, crawling, and social previews.
+
+ ### UI Theming
+**[theme-ui-meta.instructions.md](./theme-ui-meta.instructions.md)** - Detailed instructions for browser-UI theming meta tags, including `theme-color`, `color-scheme`, and platform-specific variants. Covers syntax, dark-mode variants, multi-color support, platform quirks, and validation steps.
+
+### Validation & Debugging Checklist
+**[validation-debugging-checklist.instructions.md](./validation-debugging-checklist.instructions.md)** - A VS Code-centric checklist for validating and debugging web app manifests, meta tags, and platform integrations.
+
+ ### Code Quality
 
 ## How Instructions Work
 

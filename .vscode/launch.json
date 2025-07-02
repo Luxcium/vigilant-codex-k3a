@@ -1,0 +1,59 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/python/.env",
+      "cwd": "${workspaceFolder}/python",
+      "python": "${workspaceFolder}/python/.venv/bin/python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/python/src:${workspaceFolder}/python"
+      }
+    },
+    {
+      "name": "Python: Main Module",
+      "type": "python",
+      "request": "launch",
+      "module": "vigilant_codex",
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/python/.env",
+      "cwd": "${workspaceFolder}/python",
+      "python": "${workspaceFolder}/python/.venv/bin/python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/python/src:${workspaceFolder}/python"
+      }
+    },
+    {
+      "name": "Python: Tests",
+      "type": "python",
+      "request": "launch",
+      "module": "pytest",
+      "args": ["tests/", "-v"],
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/python/.env",
+      "cwd": "${workspaceFolder}/python",
+      "python": "${workspaceFolder}/python/.venv/bin/python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/python/src:${workspaceFolder}/python"
+      }
+    },
+    {
+      "name": "Python: FastAPI Server",
+      "type": "python",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["vigilant_codex.api.main:app", "--reload", "--host", "0.0.0.0", "--port", "8000"],
+      "console": "integratedTerminal",
+      "envFile": "${workspaceFolder}/python/.env",
+      "cwd": "${workspaceFolder}/python",
+      "python": "${workspaceFolder}/python/.venv/bin/python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/python/src:${workspaceFolder}/python"
+      }
+    }
+  ]
+}

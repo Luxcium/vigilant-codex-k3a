@@ -7,7 +7,7 @@ This file is **VS Code Copilot's primary instruction file and entry point**.
 This project supports three AI agents with distinct entry points:
 - **VS Code Copilot (YOU)** → `.github/copilot-instructions.md` (THIS IS YOUR ENTRY POINT)
 - **Cline AI** → `.clinerules/main-rules.md` (Cline AI's primary instruction file)
-- **Codex CLI** → `AGENTS.md` (Codex CLI's primary instruction file)
+- **Codex** and **Codex CLI** → `AGENTS.md` (Codex and Codex CLI's primary instruction file)
 
 # Project-Wide Guidelines for Codex CLI
 
@@ -35,7 +35,13 @@ This project supports three AI agents with distinct entry points:
 - Use dependency injection where appropriate
 - Add meaningful comments for complex algorithms
 
-## Project-Specific Guidelines
+
+## Index File Export Rule
+
+- Always use named exports in all index files (e.g., `export { Foo } from './foo'`)
+- Use the `type` keyword for type exports (e.g., `export type { Bar } from './bar'`)
+- Never use default exports or `export *` in index files
+
 
 ### Memory Bank Principles
 - Reference appropriate memory bank files when making changes
@@ -111,3 +117,9 @@ instructions.
 
 **Codex CLI**: Codex CLI uses `AGENTS.md` file to manage its
 preferences and instructions.
+
+### Documentation and User Preferences
+- All documentation for instructions and prompts must be included in the respective `.github/instructions/README.md` and `.github/prompts/README.md` files. Do not use a `docs/` folder unless explicitly required by the user.
+- Always append user preferences and operational requirements to `.github/copilot-instructions.md` and reference them in all future actions.
+- When generating or updating instruction or prompt files, self-prompt to update documentation and preferences as part of the workflow.
+- This policy is mandatory for all future Copilot and agent operations in this repository.

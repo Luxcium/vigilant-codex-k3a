@@ -2,6 +2,14 @@
 
 This directory contains reusable prompt files that can be invoked by VS Code Copilot to execute specific workflows and tasks. Each prompt file represents a complete, standalone workflow that can be triggered manually.
 
+## Quick Reference: Meta-Configuration & Manifest Matrix
+
+For a one-page summary of all manifest and meta configuration goals (PWA, iOS, Windows, Chrome Extension, etc.), see:
+
+**[when-to-use-what-matrix.instructions.md](../instructions/when-to-use-what-matrix.instructions.md)** — This matrix provides authoritative mapping of integration goals to configuration files and sources. For detailed implementation standards, see the corresponding instruction files in `.github/instructions/README.md`.
+
+This README focuses on workflow automation and validation prompts. For meta-configuration and manifest standards, always start with the matrix above, then consult the detailed instructions.
+
 ## What are Prompt Files?
 
 Prompt files (`.prompt.md`) are executable templates that:
@@ -11,6 +19,9 @@ Prompt files (`.prompt.md`) are executable templates that:
 - Use tools to perform actions like file creation, code generation, or terminal commands
 
 ## Available Prompts
+
+### Environment & Infrastructure
+- **[codex-universal-environment.prompt.md](./codex-universal-environment.prompt.md)** - Generate and manage Codex Universal Docker environments with comprehensive configuration
 
 ### Template Management
 - **[template-manager.prompt.md](./template-manager.prompt.md)** - Master template manager for intelligent prompt and instruction file creation
@@ -31,9 +42,20 @@ Prompt files (`.prompt.md`) are executable templates that:
 ### Development Components
 - **[typescript-component.prompt.md](./typescript-component.prompt.md)** - Generate TypeScript components following project standards
 - **[vit-implementation.prompt.md](./vit-implementation.prompt.md)** - Generate a Vision Transformer (ViT) implementation with detailed documentation
+- **[theme-ui-meta.prompt.md](./theme-ui-meta.prompt.md)** - Add browser-UI theming meta tags for light/dark mode and platform-specific variants. Includes validation steps using Lighthouse and webhint.
+
+### General Icon Link Tags
+- **[general-icon-link-tags.prompt.md](./general-icon-link-tags.prompt.md)** - Add a comprehensive set of general icon link tags to an HTML document.
 
 ### Testing & Validation
+- **[validation-debugging-checklist.prompt.md](./validation-debugging-checklist.prompt.md)** - Run a comprehensive, VS Code-native validation and debugging workflow for web apps.
 - **[test-prompt.prompt.md](./test-prompt.prompt.md)** - Test prompt to verify prompt files are working correctly
+
+### SEO Meta Tags
+- **[seo-meta-tags.prompt.md](./seo-meta-tags.prompt.md)** - Add essential SEO meta tags to an HTML document.
+
+### Social Preview & Deep Links
+- **[x-cards.prompt.md](./x-cards.prompt.md)** - Add or update X Cards (formerly Twitter Cards) meta tags in HTML head sections for rich previews on X.
 
 ## How to Use Prompts
 

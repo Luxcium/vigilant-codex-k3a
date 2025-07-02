@@ -30,7 +30,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "[typescript]": {
-    "editor.defaultFormatter": "vscode.typescript-language-features"
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // "accessibility.signals.chatResponseReceived": {
   //   "sound": "auto"
@@ -131,7 +131,45 @@
   },
   "polyglot-notebook.logLevel": "Warn",
   "polyglot-notebook.suppressPromptToSaveDefaults": true,
-  "python.defaultInterpreterPath": "/bin/python",
+  "python.defaultInterpreterPath": "${workspaceFolder}/python/.venv/bin/python",
+  "python.terminal.activateEnvironment": true,
+  "python.terminal.activateEnvInCurrentTerminal": true,
+  "python.envFile": "${workspaceFolder}/python/.env",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}/python/src",
+    "${workspaceFolder}/python"
+  ],
+  "python.autoComplete.extraPaths": [
+    "${workspaceFolder}/python/src",
+    "${workspaceFolder}/python"
+  ],
+  "jupyter.defaultKernel": "Python 3",
+  "jupyter.interactiveWindow.textEditor.executeSelection": true,
+  "jupyter.askForKernelRestart": false,
+  "jupyter.runStartupCommands": [
+    "%load_ext autoreload",
+    "%autoreload 2",
+    "import sys; sys.path.append('${workspaceFolder}/python/src')"
+  ],
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [
+    "python/tests"
+  ],
+  "python.testing.unittestEnabled": false,
+  "python.testing.autoTestDiscoverOnSaveEnabled": true,
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": true,
+  "python.linting.mypyEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black",
+  "python.sortImports.args": ["--profile", "black"],
+  "python.terminal.executeInFileDir": true,
+  "python.terminal.focusAfterLaunch": true,
+  "files.associations": {
+    "*.py": "python",
+    "requirements*.txt": "pip-requirements",
+    ".env*": "dotenv"
+  },
   "remote.defaultExtensionsIfInstalledLocally": [
     "GitHub.copilot",
     "GitHub.copilot-chat",

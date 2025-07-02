@@ -28,9 +28,14 @@
     "test:types:watch": "vitest src/tests/types/",
     "docs": "typedoc --options typedoc.json",
     "lint": "eslint \"src/**/*.ts\"",
-    "markdownlint": "markdownlint \"**/*.md\""
+    "markdownlint": "markdownlint \"**/*.md\"",
+    "dev": "cd ./web/ && npm install && npm run dev",
+    "web:build": "cd ./web/ && npm --prefix web run build",
+    "web:start": "cd ./web/ && npm --prefix web run start"
   },
   "dependencies": {
+    "@openai/codex": "^0.1.2505172129",
+    "node-fetch": "^3.3.2",
     "zod": "^3.25.67"
   },
   "devDependencies": {
