@@ -28,6 +28,8 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 
 ### PWA Standards
  **[windows-tiles.instructions.md](./windows-tiles.instructions.md)** - Windows Live Tiles (Start-menu & pinned-site) configuration with `browserconfig.xml`, meta tags, icon sizing, theming, caching pitfalls, and validation steps.
+ **[x-cards.instructions.md](./x-cards.instructions.md)** - X Cards (formerly Twitter Cards) metadata standards, required tags, card types, validation, and boilerplate.
+ **[social-preview-and-deep-links.instructions.md](./social-preview-and-deep-links.instructions.md)** - Open Graph, X Cards, Facebook App Links, and Android App Links metadata and validator workflows.
 
 ### Code Quality
 
