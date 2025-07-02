@@ -47,6 +47,9 @@ Prompt files (`.prompt.md`) are executable templates that:
 ### Testing & Validation
 - **[test-prompt.prompt.md](./test-prompt.prompt.md)** - Test prompt to verify prompt files are working correctly
 
+### SEO Meta Tags
+- **[seo-meta-tags.prompt.md](./seo-meta-tags.prompt.md)** - Add essential SEO meta tags to an HTML document.
+
 ### Social Preview & Deep Links
 - **[x-cards.prompt.md](./x-cards.prompt.md)** - Add or update X Cards (formerly Twitter Cards) meta tags in HTML head sections for rich previews on X.
 

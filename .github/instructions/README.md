@@ -37,7 +37,10 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
  **[x-cards.instructions.md](./x-cards.instructions.md)** - X Cards (formerly Twitter Cards) metadata standards, required tags, card types, validation, and boilerplate.
  **[social-preview-and-deep-links.instructions.md](./social-preview-and-deep-links.instructions.md)** - Open Graph, X Cards, Facebook App Links, and Android App Links metadata and validator workflows.
 
-### UI Theming
+### SEO Meta Tags
+**[seo-meta-tags.instructions.md](./seo-meta-tags.instructions.md)** - Instructions for implementing fundamental SEO meta tags for discoverability, crawling, and social previews.
+
+ ### UI Theming
 **[theme-ui-meta.instructions.md](./theme-ui-meta.instructions.md)** - Detailed instructions for browser-UI theming meta tags, including `theme-color`, `color-scheme`, and platform-specific variants. Covers syntax, dark-mode variants, multi-color support, platform quirks, and validation steps.
 
 ### Code Quality
