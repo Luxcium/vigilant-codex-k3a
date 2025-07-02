@@ -12,6 +12,9 @@ Prompt files (`.prompt.md`) are executable templates that:
 
 ## Available Prompts
 
+### Environment & Infrastructure
+- **[codex-universal-environment.prompt.md](./codex-universal-environment.prompt.md)** - Generate and manage Codex Universal Docker environments with comprehensive configuration
+
 ### Template Management
 - **[template-manager.prompt.md](./template-manager.prompt.md)** - Master template manager for intelligent prompt and instruction file creation
 - **[ai-template-manager.prompt.md](./ai-template-manager.prompt.md)** - Enhanced template manager with comprehensive guidelines

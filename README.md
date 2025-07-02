@@ -110,6 +110,48 @@ Code is organized by language and framework at the project root:
 5. Jupyter notebooks and related data science resources go in `notebooks/`
 6. Each directory should maintain its own README.md with specific setup and usage instructions
 
+## Development Environment
+
+### Codex Universal Docker Environment
+
+This project provides a standardized development environment using the Codex Universal Docker image with Node.js 22 and Python 3.13. The environment uses volume-based development for instant file changes without rebuilds.
+
+#### Quick Start
+
+```bash
+# Set OpenAI API key (required for API access)
+export OPENAI_API_KEY="your-api-key-here"
+
+# Setup complete environment
+./scripts/setup_codex_universal.sh
+
+# Start development environment
+./scripts/codex_start.sh
+
+# Enter container for development
+./scripts/codex_shell.sh
+```
+
+#### Environment Features
+
+- **Pre-configured Runtimes**: Node.js 22 and Python 3.13
+- **Volume-Based Development**: Instant file changes without container rebuilds
+- **API Integration**: OpenAI API key passed from host environment
+- **Multi-Service Support**: Databases, caches, and development servers
+- **Health Monitoring**: Container health checks and validation
+- **Cross-Platform**: Works on Linux, macOS, and Windows with Docker
+
+#### Available Scripts
+
+- `setup_codex_universal.sh` - Complete environment setup
+- `codex_start.sh` - Start development environment
+- `codex_stop.sh` - Stop environment
+- `codex_shell.sh` - Enter container shell
+- `codex_rebuild.sh` - Rebuild with latest image
+- `codex_test.sh` - Verify environment setup
+
+See `scripts/README.md` for comprehensive documentation and troubleshooting.
+
 ## Script Validation and Logging
 
 The `scripts/setup_project.sh` script now includes:

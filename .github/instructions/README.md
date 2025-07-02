@@ -16,6 +16,9 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 
 ## Available Instructions
 
+### Environment & Infrastructure
+- **[docker-environment.instructions.md](./docker-environment.instructions.md)** - Docker environment standards, container configuration, and Codex Universal setup guidelines
+
 ### Language Standards
 - **[typescript-standards.instructions.md](./typescript-standards.instructions.md)** - TypeScript coding standards, style guide, and best practices
 - **[python-standards.instructions.md](./python-standards.instructions.md)** - Python coding standards following PEP 8 and modern practices
