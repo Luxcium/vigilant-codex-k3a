@@ -15,7 +15,7 @@ python/.env
 node_modules/
 .coverage/
 coverage/
-docs/
+!docs/
 # Package manager lock files
 pnpm-lock.yaml
 package-lock.json
