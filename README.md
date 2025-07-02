@@ -5,7 +5,7 @@
 This project supports three AI agents, each with their own entry point and instruction files:
 
 - **Cline AI** → `.clinerules/main-rules.md` (primary entry point for Cline AI)
-- **Codex CLI** → `AGENTS.md` (primary entry point for Codex CLI)
+- **Codex** and **Codex CLI** → `AGENTS.md` (primary entry point for Codex and Codex CLI)
 - **VS Code Copilot** → `.github/copilot-instructions.md` (primary entry point for VS Code Copilot)
 
 ### Agent-Specific Instructions
@@ -34,9 +34,10 @@ All operational rules and protocols are maintained in the modular files under `.
     - `README.md` (file)
     - `AGENTS.md` (file, replaces any use of `codex.md`)
     - `memory-bank/dependencies.md` (file)
+    
 ## AGENTS.md Migration
 
-- `AGENTS.md` is now the default repository context/instructions markdown file for Codex CLI and related tools.
+- `AGENTS.md` is now the default repository context/instructions markdown file for Codex and Codex CLI and related tools.
 - All references to `codex.md` in scripts, documentation, and templates must be replaced with `AGENTS.md`.
 - New and existing projects must include an `AGENTS.md` file at the root.
 - Workflows and automation should ignore `codex.md` and use `AGENTS.md` exclusively.

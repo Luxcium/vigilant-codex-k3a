@@ -1,5 +1,132 @@
-export * from './client/QuestradeClient';
-export * from './auth/interfaces';
-export * from './auth/manager';
-export * from './http/restClient';
-export * from './types';
+// Client exports
+export { QuestradeClient } from './client/QuestradeClient';
+export type { QuestradeClientOptions } from './client/QuestradeClient';
+
+// Authentication interfaces and manager
+export type {
+    OAuthProvider,
+    OAuthTokenResponse,
+    OAuthTokens,
+    TokenStore
+} from './auth/interfaces';
+export { AuthManager } from './auth/manager';
+
+// HTTP client
+export { RestClient } from './http/restClient';
+
+
+
+export {
+    AccountActivitySchema,
+    AccountBalancesResponseSchema,
+    AccountSchema,
+    AccountsResponseSchema,
+    AccountStatusSchema,
+    AccountTypeSchema,
+    ActivitiesResponseSchema,
+    BalanceSchema,
+    CandleIntervalSchema,
+    CandleSchema,
+    CandlesResponseSchema,
+    ClientAccountTypeSchema,
+    CurrencySchema,
+    ExecutionSchema,
+    ExecutionsResponseSchema,
+    ListingExchangeSchema,
+    MarketSchema,
+    MarketsResponseSchema,
+    MinTickSchema,
+    OptionChainSchema,
+    OptionDeliverableSchema,
+    OptionDeliverablesSchema,
+    OptionDurationTypeSchema,
+    OptionExerciseTypeSchema,
+    OptionQuoteSchema,
+    OptionQuotesResponseSchema,
+    OptionsChainResponseSchema,
+    OptionTypeSchema,
+    OrderActionSchema,
+    OrderClassSchema,
+    OrderLegSchema,
+    OrderResponseSchema,
+    OrderSchema,
+    OrderSideSchema,
+    OrdersResponseSchema,
+    OrderStateFilterSchema,
+    OrderStateSchema,
+    OrderTypeSchema,
+    PositionSchema,
+    PositionsResponseSchema,
+    QuoteSchema,
+    QuotesResponseSchema,
+    SecurityTypeSchema,
+    StrategyQuoteSchema,
+    StrategyQuotesResponseSchema,
+    StrategyTypeSchema,
+    SymbolDetailSchema,
+    SymbolSearchResponseSchema,
+    SymbolSearchResultSchema,
+    SymbolsResponseSchema,
+    TickTypeSchema,
+    TimeInForceSchema,
+    TimeResponseSchema
+} from './types';
+export type {
+    Account,
+    AccountActivity,
+    AccountBalancesResponse,
+    AccountsResponse,
+    AccountStatus,
+    AccountType,
+    ActivitiesResponse,
+    Balance,
+    Candle,
+    CandleInterval,
+    CandlesResponse,
+    ChainPerExpiryDate,
+    ChainPerRoot,
+    ChainPerStrikePrice,
+    ClientAccountType,
+    Currency,
+    Execution,
+    ExecutionsResponse,
+    ListingExchange,
+    Market,
+    MarketsResponse,
+    MinTick,
+    OptionChain,
+    OptionDeliverable,
+    OptionDeliverables,
+    OptionDurationType,
+    OptionExerciseType,
+    OptionQuote,
+    OptionQuotesResponse,
+    OptionsChainResponse,
+    OptionType,
+    Order,
+    OrderAction,
+    OrderClass,
+    OrderLeg,
+    OrderResponse,
+    OrderSide,
+    OrdersResponse,
+    OrderState,
+    OrderStateFilter,
+    OrderType,
+    Position,
+    PositionsResponse,
+    Quote,
+    QuotesResponse,
+    SecurityType,
+    StrategyQuote,
+    StrategyQuotesResponse,
+    StrategyType,
+    SymbolDetail,
+    SymbolSearchResponse,
+    SymbolSearchResult,
+    SymbolsResponse,
+    TickType,
+    TimeInForce,
+    TimeResponse
+} from './types';
+
