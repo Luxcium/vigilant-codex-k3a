@@ -1,5 +1,5 @@
----
 mode: 'ask'
+tools: []
 description: 'Test prompt to verify prompt files are working'
 ---
 

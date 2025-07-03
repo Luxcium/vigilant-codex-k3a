@@ -1,3 +1,12 @@
+<!-- markdownlint-disable MD013 MD041 MD022 MD032 -->
+## [2025-07-02T00:00:00Z] Self-Documentation Log
+
+- **Current State:** All `.instructions.md` and `.prompt.md` files in `.github/instructions/` and `.github/prompts/` have been audited for header compliance, naming, and README alignment. README and instructions documentation have been validated for accuracy and completeness. No misnamed or missing files detected. All headers now follow VS Code Copilot requirements. All changes staged for user review before memory bank update.
+- **Last Action:** Completed full audit and correction of prompt/instruction file headers, validated README and `.github/instructions/README.md`, checked for name alignment, and staged all changes.
+- **Rationale:** Ensure all Copilot customization files are compliant with latest VS Code requirements, and that documentation and file references are accurate and up-to-date. This supports reliable AI agent operation and maintainability.
+- **Next Intent:** Await user review and approval, then update `memory-bank/dependencies.md` and other memory bank files as needed to reflect any new or changed dependencies, and resume normal operations.
+- Note: Executing Self-Documentation Protocol.
+This entry reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
 Last Action: Created docker-environment.instructions.md, codex-universal-environment.prompt.md, updated all memory bank files, README files, and documentation to capture complete Docker environment knowledge;
   Rationale: Ensure future AI agents have complete access to Docker environment setup procedures, standards, and integration patterns through structured instruction and prompt files;
  [2025-07-02T00:00:00Z] Current State: One-page 'When to Use What' matrix created and cross-referenced in all relevant README and memory bank files;

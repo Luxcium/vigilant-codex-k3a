@@ -1,3 +1,10 @@
+
+---
+mode: 'agent'
+tools: ['codebase', 'terminal', 'file_search']
+description: 'Guide the user through Python environment setup with conditional workflows'
+---
+
 # Python Environment Setup Prompt
 
 ## Context
