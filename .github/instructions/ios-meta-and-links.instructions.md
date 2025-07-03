@@ -1,6 +1,5 @@
 ---
 applyTo: "public/index.html,src/**/*.html,.well-known/apple-app-site-association"
-description: "Apple Safari & iOS home-screen + Universal Links integration standards"
 ---
 
 # iOS Meta Tags & Universal Links Guide
