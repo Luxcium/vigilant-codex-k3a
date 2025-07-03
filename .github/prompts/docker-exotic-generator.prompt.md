@@ -1,3 +1,9 @@
+---
+mode: 'agent'
+tools: ['filesystem', 'terminal', 'codebase']
+description: 'Generate advanced Docker configurations with exotic patterns'
+---
+
 # Docker Exotic Configuration Generator
 
 ## Description

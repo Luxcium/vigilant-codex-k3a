@@ -1,6 +1,5 @@
 ---
 applyTo: "public/index.html,src/**/*.html,.well-known/assetlinks.json"
-description: "Social preview (Open Graph, Twitter Cards) and deep-linking (App Links) meta/configuration"
 ---
 
 # Social Preview & Deep Links Standards

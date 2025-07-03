@@ -1,6 +1,5 @@
 ---
 applyTo: "**/manifest*.json,**/*.webmanifest"
-description: "Progressive Web App (PWA) manifest authoring standards"
 ---
 
 # PWA Manifest Authoring Standards

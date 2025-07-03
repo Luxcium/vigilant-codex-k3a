@@ -1,3 +1,9 @@
+---
+mode: 'agent'
+tools: ['codebase', 'terminalLastCommand', 'file_search']
+description: 'Set up Python environment with conditional modes'
+---
+
 # Python Environment Setup Prompt
 
 ## Context
