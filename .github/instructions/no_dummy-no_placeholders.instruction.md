@@ -1,3 +1,7 @@
+---
+applyTo: "**"
+---
+
 # Instruction: Code Generation – Real Values over Placeholders
 
 It is essential that all code generated in this repository adheres to the principle of using real, concrete values instead of placeholders or dummy segments. This guideline ensures that all code is immediately executable and functional, enhancing the reliability and quality of our codebase.

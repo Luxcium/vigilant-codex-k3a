@@ -1,6 +1,5 @@
 ---
 applyTo: "**/*.{html,tsx,jsx}"
-description: "Instructions for implementing fundamental SEO meta tags for discoverability, crawling, and social previews."
 ---
 
 # SEO Meta Tags Instructions
