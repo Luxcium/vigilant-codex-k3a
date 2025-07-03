@@ -1,6 +1,5 @@
 ---
 applyTo: "public/index.html,src/**/*.html"
-description: "X Cards (formerly Twitter Cards) metadata and validation standards"
 ---
 
 # X Cards Metadata Standards

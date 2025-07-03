@@ -1,3 +1,12 @@
+---
+mode: 'agent'
+tools:
+  - codebase
+  - terminalLastCommand
+  - file_search
+description: 'Interactive setup for Python environments using the conditional framework'
+---
+
 # Python Environment Setup Prompt
 
 ## Context

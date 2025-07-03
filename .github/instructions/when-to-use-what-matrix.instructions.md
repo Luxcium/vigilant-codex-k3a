@@ -1,6 +1,5 @@
 ---
 applyTo: "**/*"
-description: "One-Page ‘When to Use What’ Matrix mapping integration goals to configuration files"
 ---
 
 # One-Page “When to Use What” Matrix

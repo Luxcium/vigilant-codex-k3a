@@ -1,6 +1,5 @@
 ---
 applyTo: "**/*.{html,tsx,jsx}"
-description: "Instructions for implementing a comprehensive set of link tags for favicons and app icons across all platforms."
 ---
 
 # General Icon Link Tags Instructions

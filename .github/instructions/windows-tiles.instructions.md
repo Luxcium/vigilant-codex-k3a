@@ -1,6 +1,5 @@
 ---
 applyTo: "public/browserconfig.xml,public/index.html,src/**/*.html"
-description: "Windows Tiles (Start-menu & pinned-site) configuration"
 ---
 
 # Windows Tiles Configuration
