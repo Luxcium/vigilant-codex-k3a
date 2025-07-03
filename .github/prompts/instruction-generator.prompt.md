@@ -1,6 +1,6 @@
 ---
 mode: 'agent'
-tools: ['filesystem', 'codebase', 'semantic_search']
+tools: [  'codebase',  ]
 description: 'Generate *.instructions.md files with proper structure and content based on coding standards requirements'
 ---
 

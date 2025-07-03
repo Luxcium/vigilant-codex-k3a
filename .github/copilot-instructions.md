@@ -64,9 +64,9 @@ This project supports three AI agents with distinct entry points:
 - Avoid circular dependencies; if unavoidable, provide strong justification
 - Implement bidirectional tracking for all dependencies
 
-### File and Directory Management
-- All file/directory creation must be done via scripts
-- Scripts must be idempotent and never overwrite existing files
+## File and Directory Management
+- All file/directory creation should be done via scripts when possible
+- Scripts should be idempotent and never overwrite existing files
 - Document all file structure rules in README.md before implementation
 - Follow markdown-lint strict mode requirements for all documentation
 
@@ -81,17 +81,17 @@ This project supports three AI agents with distinct entry points:
 
 ## Documentation Requirements
 
-- Update documentation before making code changes
+- Update documentation before making code changes when relevant
 - Follow markdown-lint strict mode requirements
-- Keep memory bank files current and cross-referenced
-- Document all system patterns and technical context updates
+- Keep memory bank files current and cross-referenced when appropriate
+- Document all system patterns and technical context updates as needed
 - Ensure proper dependency tracking in dependencies.md
 
 ## Session-Sticky Preferences
 
 Whenever the user requests an operational preference (e.g. "reply
-quickly"), each agent will store preferences in their own instruction
-files, those preferences must be recorded as to persist across
+quickly"), each agent should store preferences in their own instruction
+files, and those preferences should be recorded to persist across
 sessions until explicitly changed. Preferences are stored in this
 section for VS Code (github) Copilot.
 
@@ -120,6 +120,6 @@ preferences and instructions.
 
 ### Documentation and User Preferences
 - All documentation for instructions and prompts must be included in the respective `.github/instructions/README.md` and `.github/prompts/README.md` files. Do not use a `docs/` folder unless explicitly required by the user.
-- Always append user preferences and operational requirements to `.github/copilot-instructions.md` and reference them in all future actions.
+- When possible, append user preferences and operational requirements to `.github/copilot-instructions.md` and reference them in future actions.
 - When generating or updating instruction or prompt files, self-prompt to update documentation and preferences as part of the workflow.
-- This policy is mandatory for all future Copilot and agent operations in this repository.
+- This policy is recommended for all future Copilot and agent operations in this repository.
