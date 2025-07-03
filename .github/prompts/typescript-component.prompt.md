@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['codebase', 'filesystem']
-description: 'Create production-ready TypeScript components following Codex CLI standards'
----
+mode: 'agent'
+description: 'Generate a TypeScript React component.'
 
 Your goal is to generate a ${input:componentType:Select component type (class|interface|function|module)} named ${input:componentName} following Codex CLI TypeScript standards.
 

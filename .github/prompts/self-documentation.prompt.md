@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['filesystem', 'codebase', 'terminalLastCommand']
-description: 'Execute and append self-documentation entries following the Self-Documentation Protocol'
----
+mode: 'agent'
+description: 'Automate self-documentation protocol.'
 
 # Self-Documentation Execution
 

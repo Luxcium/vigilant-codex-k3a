@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['fetch','codebase']
+mode: 'agent'
 description: 'Generate *.instructions.md files with proper structure and content'
----
 
 # Generate *.instructions.md File
 

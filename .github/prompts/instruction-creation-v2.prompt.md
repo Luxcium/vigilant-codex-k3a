@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['filesystem', 'codebase']
-description: 'Generate *.instructions.md files with proper structure and content'
----
+mode: 'agent'
+description: 'Generate .instructions.md files with improved structure.'
 
 # Generate *.instructions.md File
 

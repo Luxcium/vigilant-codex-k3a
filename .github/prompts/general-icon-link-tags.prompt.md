@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['codebase', 'file_search', 'semantic_search']
-description: 'Add a comprehensive set of general icon link tags to an HTML document.'
----
+mode: 'agent'
+description: 'Generate icon and link tags for all platforms.'
 
 # Add General Icon Link Tags
 

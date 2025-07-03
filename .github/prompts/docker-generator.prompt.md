@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['codebase', 'terminalLastCommand', 'file_search']
-description: 'Generate parametrized Docker configurations following security and optimization best practices'
----
+mode: 'agent'
+description: 'Generate Dockerfiles and Compose files.'
 
 # Docker Configuration Generator
 

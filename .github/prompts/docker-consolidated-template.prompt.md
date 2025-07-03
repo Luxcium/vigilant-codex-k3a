@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['filesystem', 'terminal', 'codebase']
-description: 'Consolidated Docker & Dev Container workflow template following four-phase approach with exotic patterns and security-first principles'
----
+mode: 'agent'
+description: 'Generate a consolidated Docker Compose template.'
 
 # Docker & Dev Container Workflow Template
 

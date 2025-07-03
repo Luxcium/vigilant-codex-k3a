@@ -1,8 +1,5 @@
----
 mode: 'agent'
-tools: ['codebase', 'terminalLastCommand', 'file_search', 'semantic_search']
 description: 'Generate optimized prompt and instruction files following project standards'
----
 
 # AI Agent Template Manager
 
@@ -36,11 +33,9 @@ I will help you generate well-structured prompt and instruction files for your A
 > **Note:** All instruction files must comply with [instruction-authoring-standards.instructions.md](../instructions/instruction-authoring-standards.instructions.md).
 
 ```markdown
----
 applyTo: "${input:applyTo:Glob pattern for scope (e.g., **/*.ts)}"
----
-
-# ${input:title:Instruction File Title}
+mode: 'agent'
+description: 'Generate optimized prompt and instruction files following project standards'
 
 ## Purpose
 

@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['codebase', 'file_search', 'semantic_search']
+mode: 'agent'
 description: 'Add essential SEO meta tags to an HTML document.'
----
 
 # Add Essential SEO Meta Tags
 

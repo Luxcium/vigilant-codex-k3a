@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['codebase', 'terminalLastCommand', 'file_search', 'semantic_search']
-description: 'Master template manager for intelligent prompt and instruction file creation, updates, and optimization'
----
+mode: 'agent'
+description: 'Generate and manage prompt/instruction templates.'
 
 # Master Template Manager
 
@@ -54,7 +52,7 @@ applyTo: "{glob-pattern}"  # e.g., "**/*.ts", "**/tests/**", "**"
 ## {Section Name}
 - {Single, clear statement per rule}
 - {Use active voice and imperative mood}
-- {Reference other files}: [related-file](./related.instructions.md)
+- {Reference other files}: \[related-file]\(\./related.instructions.md)
 
 ## {Another Section}
 - {Keep rules atomic and testable}

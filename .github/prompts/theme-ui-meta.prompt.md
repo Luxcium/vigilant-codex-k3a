@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['filesystem', 'terminal', 'codebase']
-description: 'Add browser-UI theming meta tags for light/dark mode and platform-specific variants.'
----
+mode: 'agent'
+description: 'Generate theme UI meta tags for browser theming.'
 
 > **Prompt**
 > *“Add browser-UI theming meta tags: `theme-color` for light +#3367d6 and dark +#101010 (media

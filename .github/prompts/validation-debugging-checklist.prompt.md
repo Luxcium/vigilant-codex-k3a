@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['codebase', 'terminal', 'simpleBrowser', 'run_vs_code_task']
-description: 'Run a comprehensive, VS Code-native validation and debugging workflow for web apps.'
----
+mode: 'agent'
+description: 'Validation and debugging checklist for web app meta and manifest.'
 
 # VS Code-Native Validation & Debugging
 

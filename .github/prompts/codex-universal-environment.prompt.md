@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['codebase', 'terminalLastCommand', 'file_search', 'semantic_search']
-description: 'Generate and manage Codex Universal Docker environments with comprehensive configuration'
----
+mode: 'agent'
+description: 'Setup a universal environment for Codex agents.'
 
 # Codex Universal Docker Environment Manager
 

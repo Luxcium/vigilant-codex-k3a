@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['filesystem', 'terminal', 'codebase']
-description: 'Generate modular Docker configurations with separate build/run Dockerfiles, volume mounting strategies, and CLI parameterization following modular development patterns'
----
+mode: 'agent'
+description: 'Generate a modular Docker Compose workflow.'
 
 # Docker Modular Workflow Generator
 

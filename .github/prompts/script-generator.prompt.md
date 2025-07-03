@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['codebase', 'terminalLastCommand', 'file_search']
-description: 'Generate resilient, reusable scripts for project automation with comprehensive error handling'
----
+mode: 'agent'
+description: 'Generate shell scripts for project automation.'
 
 # Script Generator
 
