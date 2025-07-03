@@ -1,6 +1,5 @@
 ---
 applyTo: "**"
-description: "A VS Code–centric checklist for validating and debugging web app meta tags, manifests, icons, deep links, and SEO elements using built-in tools and CLI/CI workflows."
 ---
 
 # Validation & Debugging Checklist Instructions

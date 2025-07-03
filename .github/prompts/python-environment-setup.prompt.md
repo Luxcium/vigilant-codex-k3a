@@ -1,3 +1,9 @@
+---
+mode: 'agent'
+tools: ['codebase', 'terminalLastCommand']
+description: 'Guide users through Python environment setup using the conditional framework'
+---
+
 # Python Environment Setup Prompt
 
 ## Context

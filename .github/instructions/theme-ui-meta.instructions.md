@@ -1,6 +1,5 @@
 ---
 applyTo: "**/*"
-description: "Detailed instructions for browser-UI theming meta tags"
 ---
 
 # Theme UI Meta Tags

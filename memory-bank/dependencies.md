@@ -309,7 +309,7 @@ This file tracks all project dependencies, their relationships, and integration 
 
 - **file-organization.instructions.md**: Project structure standards
 
-- **no_dummy-no_placeholders.instruction.md**: Real configuration requirements
+- **no_dummy-no_placeholders.instructions.md**: Real configuration requirements
 
 
 ### Memory Bank Files

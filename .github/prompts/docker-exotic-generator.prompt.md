@@ -1,3 +1,9 @@
+---
+mode: 'agent'
+tools: ['filesystem', 'terminal', 'codebase']
+description: 'Generate advanced Docker configurations with exotic patterns'
+---
+
 # Docker Exotic Configuration Generator
 
 ## Description
@@ -21,7 +27,7 @@ Apply the following instruction files during code generation:
 - `.github/instructions/python-standards.instructions.md` for Python code
 - `.github/instructions/python-notebook-standards.instructions.md` for Jupyter notebooks
 - `.github/instructions/file-organization.instructions.md` for project structure
-- `.github/instructions/no_dummy-no_placeholders.instruction.md` for real, executable configurations
+- `.github/instructions/no_dummy-no_placeholders.instructions.md` for real, executable configurations
 
 ## Parametric Inputs
 
@@ -342,7 +348,7 @@ Provide the following deliverables:
 
 ### Instruction Files  
 - [file-organization.instructions.md](../instructions/file-organization.instructions.md) - Project structure standards
-- [no_dummy-no_placeholders.instruction.md](../instructions/no_dummy-no_placeholders.instruction.md) - Real configuration requirements
+- [no_dummy-no_placeholders.instructions.md](../instructions/no_dummy-no_placeholders.instructions.md) - Real configuration requirements
 - [self-documentation.instructions.md](../instructions/self-documentation.instructions.md) - Documentation protocols
 
 ### Memory Bank Files
