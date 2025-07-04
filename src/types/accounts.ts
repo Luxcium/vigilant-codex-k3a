@@ -66,7 +66,7 @@ export interface Position {
   closedPnl: number;
   openPnl: number;
   totalCost: number;
-  isRealTime: boolean;
+  isRealTime: boolean | string;
   isUnderReorg: boolean;
 }
 
@@ -82,7 +82,7 @@ export const PositionSchema = z.object({
   closedPnl: z.number(),
   openPnl: z.number(),
   totalCost: z.number(),
-  isRealTime: z.boolean(),
+  isRealTime: z.union([z.boolean(), z.string()]),
   isUnderReorg: z.boolean()
 });
 

@@ -55,15 +55,17 @@ export interface Quote {
   lowPrice: number | null;
   vwap: number | null;
   isDelayed: boolean;
+  isHalted: boolean;
 }
 
 /** Zod schema for {@link Quote} */
-export const QuoteSchema = z.object({
-  symbol: z.string(),
-  symbolId: z.number().int(),
-  tier: z.string(),
-  bidPrice: z.number().nullable(),
-  bidSize: z.number().nullable(),
+export const QuoteSchema = z
+  .object({
+    symbol: z.string(),
+    symbolId: z.number().int(),
+    tier: z.string(),
+    bidPrice: z.number().nullable(),
+    bidSize: z.number().nullable(),
   askPrice: z.number().nullable(),
   askSize: z.number().nullable(),
   lastTradePrice: z.number().nullable(),
@@ -75,9 +77,21 @@ export const QuoteSchema = z.object({
   openPrice: z.number().nullable(),
   highPrice: z.number().nullable(),
   lowPrice: z.number().nullable(),
-  vwap: z.number().nullable(),
-  isDelayed: z.boolean()
-});
+  vwap: z.number().nullable().optional(),
+  VWAP: z.number().nullable().optional(),
+  isDelayed: z.boolean().optional(),
+  delay: z.number().int().optional(),
+  isHalted: z.boolean().optional()
+  })
+  .transform((data) => {
+    const { VWAP, delay, isDelayed, vwap, isHalted, ...rest } = data;
+    return {
+      ...rest,
+      vwap: vwap ?? VWAP ?? null,
+      isDelayed: isDelayed ?? (delay !== undefined ? delay !== 0 : false),
+      isHalted: isHalted ?? false
+    };
+  });
 
 /** Option quote with Greeks */
 export interface OptionQuote extends Quote {
@@ -118,6 +132,14 @@ export interface StrategyQuote {
   askPrice: number | null;
   underlying: string;
   underlyingId: number;
+  openPrice: number | null;
+  volatility: number | null;
+  delta: number | null;
+  gamma: number | null;
+  theta: number | null;
+  vega: number | null;
+  rho: number | null;
+  isRealTime: boolean | null;
 }
 
 /** Zod schema for {@link StrategyQuote} */
@@ -126,7 +148,15 @@ export const StrategyQuoteSchema = z.object({
   bidPrice: z.number().nullable(),
   askPrice: z.number().nullable(),
   underlying: z.string(),
-  underlyingId: z.number().int()
+  underlyingId: z.number().int(),
+  openPrice: z.number().nullable(),
+  volatility: z.number().nullable(),
+  delta: z.number().nullable(),
+  gamma: z.number().nullable(),
+  theta: z.number().nullable(),
+  vega: z.number().nullable(),
+  rho: z.number().nullable(),
+  isRealTime: z.boolean().nullable()
 });
 
 /** OHLC candle */
