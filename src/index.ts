@@ -14,6 +14,11 @@ export { AuthManager } from './auth/manager';
 // HTTP client
 export { RestClient } from './http/restClient';
 
+// Helper utilities
+export { fetchCandles }
+  from './helpers/candles';
+export type { CandlesParams } from './helpers/candles';
+
 
 
 export {
@@ -127,6 +132,8 @@ export type {
     SymbolsResponse,
     TickType,
     TimeInForce,
-    TimeResponse
+    TimeResponse,
+    ApiError,
+    ApiErrorSchema
 } from './types';
 
