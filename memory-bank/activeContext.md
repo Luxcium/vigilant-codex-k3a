@@ -5,7 +5,10 @@
    Rationale: Ensure all REST endpoint schemas match official documentation and enable reliable error validation;
    Next Intent: Validate remaining endpoints and incrementally improve coverage;
    Note: Executing Self-Documentation Protocol.
+
  - [2025-07-04T04:17:05Z] Current State: Candle helper exported and tests created; verification scripts failing due to missing dependencies; Next Intent: secure environment dependencies or adjust scripts.
+
+
 
 - **Current State:** All `.instructions.md` and `.prompt.md` files in `.github/instructions/` and `.github/prompts/` have been audited for header compliance, naming, and README alignment. README and instructions documentation have been validated for accuracy and completeness. No misnamed or missing files detected. All headers now follow VS Code Copilot requirements. All changes staged for user review before memory bank update.
 - **Last Action:** Completed full audit and correction of prompt/instruction file headers, validated README and `.github/instructions/README.md`, checked for name alignment, and staged all changes.
