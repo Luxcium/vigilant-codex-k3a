@@ -18,7 +18,6 @@ export default tseslint.config(
       '@stylistic/comma-dangle': ['error', 'always-multiline'],
       '@stylistic/object-curly-spacing': ['error', 'always'],
       '@stylistic/arrow-parens': ['error', 'as-needed'],
-      '@stylistic/space-before-function-paren': ['error', 'never'],
       '@stylistic/brace-style': ['error', '1tbs'],
       '@stylistic/array-bracket-spacing': ['error', 'never'],
       '@stylistic/space-infix-ops': 'error',
