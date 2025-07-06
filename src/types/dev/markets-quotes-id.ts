@@ -64,7 +64,7 @@ export interface MarketQuotesByIdsRequest {
  */
 export type MarketQuotesRequest =
   | MarketQuotesByIdRequest
-  | MarketQuotesByIdsRequest;
+  | MarketQuotesByIdsRequest
 
 /**
  * @public
