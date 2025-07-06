@@ -12,16 +12,8 @@
  */
 
 import { z } from 'zod';
-import type {
-    CurrencyCode,
-    ListingExchange,
-    SecurityType,
-} from './enums';
-import {
-    CURRENCY_CODES,
-    LISTING_EXCHANGES,
-    SECURITY_TYPES,
-} from './enums';
+import type { CurrencyCode, ListingExchange, SecurityType } from './enums';
+import { CURRENCY_CODES, LISTING_EXCHANGES, SECURITY_TYPES } from './enums';
 
 //──────────────────────────────────────────────────────────────────────────────
 // 1. Input Shapes – Request Parameters
@@ -118,14 +110,14 @@ export interface EquitySymbol {
  * Zod schema for validating an EquitySymbol.
  */
 export const EquitySymbolSchema = z.object({
-  symbol:          z.string().min(1),
-  symbolId:        z.number().int().positive(),
-  description:     z.string().min(1),
-  securityType:    z.enum(SECURITY_TYPES),
+  symbol: z.string().min(1),
+  symbolId: z.number().int().positive(),
+  description: z.string().min(1),
+  securityType: z.enum(SECURITY_TYPES),
   listingExchange: z.enum(LISTING_EXCHANGES),
-  isQuotable:      z.boolean(),
-  isTradable:      z.boolean(),
-  currency:        z.enum(CURRENCY_CODES),
+  isQuotable: z.boolean(),
+  isTradable: z.boolean(),
+  currency: z.enum(CURRENCY_CODES),
 });
 
 /**
