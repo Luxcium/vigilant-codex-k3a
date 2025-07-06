@@ -1,23 +1,22 @@
 {
- "terminal.integrated.env.linux": {
-        "CODEX_HOME": "${workspaceFolder}/.codex"
-    },
-    // Ensure instruction files are also enabled (they work together)
+  "terminal.integrated.env.linux": {
+    "CODEX_HOME": "${workspaceFolder}/.codex"
+  },
+  // Ensure instruction files are also enabled (they work together)
   "github.copilot.chat.codeGeneration.useInstructionFiles": true,
-  
+
   // Add instructions file locations to work alongside prompts
   "chat.instructionsFilesLocations": {
     ".github/instructions": true
   },
-  
+
   // Ensure prompt files are explicitly enabled
   "chat.promptFiles": true,
-  
+
   // Your existing prompt location is correct
   "chat.promptFilesLocations": {
     ".github/prompts": true
-  }
-  ,
+  },
   "typescript.tsserver.maxTsServerMemory": 8192,
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.localEchoLatencyThreshold": 30,
@@ -27,9 +26,6 @@
   },
   "[markdown]": {
     "diffEditor.ignoreTrimWhitespace": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // "accessibility.signals.chatResponseReceived": {
@@ -83,18 +79,7 @@
   // "files.trimTrailingWhitespace": true,
   //                                                               ――
   // ―― CODEACTIONSONSAVE BEHAVIOUR:
-  "editor.codeActionsOnSave": {
-    "source.addMissingImports": "explicit",
-    "source.autoFix": "always",
-    // "source.sort.json": "always",
-    "source.fixAll": "always",
-    "source.fixAll.eslint": "explicit",
-    "source.fixAll.prettier": "always",
-    "source.organizeImports": "explicit",
-    "source.sortImports": "always",
-
-    "source.fixAll.ts": "explicit"
-  },
+  // ...existing code...
   "editor.inlineSuggest.showToolbar": "always",
   "editor.minimap.renderCharacters": false,
   "editor.minimap.showSlider": "always",
@@ -113,7 +98,7 @@
   //   "scminput": false
   // },
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
-  "jupyter.askForKernelRestart": false,
+  // ...existing code...
   "makefile.configureOnOpen": true,
   // ],
   "material-icon-theme.folders.associations": {
@@ -152,9 +137,7 @@
     "import sys; sys.path.append('${workspaceFolder}/python/src')"
   ],
   "python.testing.pytestEnabled": true,
-  "python.testing.pytestArgs": [
-    "python/tests"
-  ],
+  "python.testing.pytestArgs": ["python/tests"],
   "python.testing.unittestEnabled": false,
   "python.testing.autoTestDiscoverOnSaveEnabled": true,
   "python.linting.enabled": true,
@@ -1195,7 +1178,7 @@
   "chat.editor.fontSize": 14,
   "chat.editor.fontWeight": "normal",
   "chat.editor.wordWrap": "on",
- 
+
   // ========================================
   // Experimental and Preview Features
   // ========================================
@@ -1204,7 +1187,7 @@
   // ========================================
   // Instructions and Prompt Files
   // ========================================
- 
+
   "chat.sendElementsToChat.enabled": true,
   // Experimental features
   "chat.tools.autoApprove": true,
@@ -1334,47 +1317,39 @@
     }
   ],
   // ========================================
-  // Additional VS Code Settings for Copilot
+  // Formatting and Linting Settings
   // ========================================
-  // General editor settings that enhance Copilot experience
-  "editor.suggestSelection": "first",
-  "editor.tabCompletion": "on",
-  "editor.wordBasedSuggestions": "allDocuments",
-  // Agent mode features
-  "github.copilot.chat.agent.autoFix": true,
-  "github.copilot.chat.agent.runTasks": true,
-  "github.copilot.chat.agent.thinkingTool": true,
+  // Prettier as default formatter for JS/TS
+  // Formatting and Linting Settings (deduplicated)
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true
+  },
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  // ESLint auto fix on save (string array form)
+  "editor.codeActionsOnSave": ["source.fixAll", "source.fixAll.eslint"],
+  // Prettier config path (if needed)
+  // "prettier.configPath": ".prettierrc",
+  // ESLint config path (if needed)
+  // "eslint.options": { "configFile": "eslint.config.mjs" },
   // ========================================
-  // Custom Instructions for Different Tasks
-  // ========================================
-  // 1. Code generation instructions
-  "github.copilot.chat.codeGeneration.instructions": [
-    {
-      "text": "Use TypeScript and follow the Airbnb style guide for all generated code."
-    },
-    {
-      "text": "Follow strict type checking with proper interfaces and type safety."
-    },
-    {
-      "text": "Reference memory bank files and maintain dependency tracking in dependencies.md."
-    }
-  ],
-  // Enable advanced features
-  "github.copilot.chat.codesearch.enabled": true,
-  // 4. Commit message generation instructions
-  "github.copilot.chat.commitMessageGeneration.instructions": [
-    {
-      "text": "Follow the Conventional Commits format (feat:, fix:, docs:, refactor:, test:, chore:). Keep messages under 72 characters."
-    },
-    {
-      "text": "Reference related issues and pull requests when applicable."
-    }
-  ],
-  "github.copilot.chat.copilotDebugCommand.enabled": true,
-  "github.copilot.chat.editor.temporalContext.enabled": true,
-  "github.copilot.chat.edits.suggestRelatedFilesFromGitHistory": true,
-  // ========================================
-  // Context and Temporal Features
   // ========================================
   // Include recent files as context
   "github.copilot.chat.edits.temporalContext.enabled": true,
@@ -1412,17 +1387,7 @@
   // Terminal integration
   "github.copilot.chat.terminalChatLocation": "terminal",
   // 2. Test generation instructions
-  "github.copilot.chat.testGeneration.instructions": [
-    {
-      "text": "Write tests using Jest with TypeScript. Ensure each function has both positive and negative test cases."
-    },
-    {
-      "text": "Include unit tests, integration tests, and edge case coverage."
-    },
-    {
-      "text": "Follow the testing patterns documented in the project's memory bank."
-    }
-  ],
+  // Copilot instructions moved to .github/copilot-instructions.md as required
   // ========================================
   // Chat and Interaction Settings
   // ========================================

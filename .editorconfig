@@ -1,0 +1,28 @@
+# EditorConfig helps maintain consistent coding styles
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+charset = utf-8
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
+
+[*.json]
+indent_size = 2
+
+[*.ts]
+indent_size = 2
+
+[*.js]
+indent_size = 2
+
+[*.tsx]
+indent_size = 2
+
+[*.jsx]
+indent_size = 2
