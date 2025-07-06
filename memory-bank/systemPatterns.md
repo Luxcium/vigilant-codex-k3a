@@ -98,6 +98,43 @@ This Memory Bank is initialized to provide a clear, adaptable template for docum
 - **Instruction File Pattern**: Create specific instruction files for different domains (docker-environment.instructions.md)
 - **Prompt File Pattern**: Generate comprehensive workflow automation with context requirements
 - **Memory Bank Integration Pattern**: Update all relevant memory bank files with architectural decisions and dependencies
+
+### Testing Architecture Patterns
+
+#### **Module-Level Mocking Pattern**
+
+- Use `vi.mock('module-name')` for external dependencies (node-fetch, AuthManager)
+- Place mocks at the top of test files before imports
+- Provide realistic mock implementations that match actual API contracts
+- Avoid real network requests or external service dependencies in tests
+
+#### **Async Test Pattern**
+
+- Use proper async/await patterns for all async operations
+- Remove fake timers when testing real async behavior (setTimeout, Promise resolution)
+- Test timeout scenarios with appropriate test timeout configurations
+- Use direct method testing for time-sensitive operations (refill methods)
+
+#### **Edge Case Coverage Pattern**
+
+- Test error scenarios: 429 rate limits, non-ok responses, network failures
+- Test data validation: NaN handling, invalid headers, malformed responses
+- Test boundary conditions: empty responses, missing parameters, default values
+- Test constructor variations: with/without optional parameters
+
+#### **Test Isolation Pattern**
+
+- Each test file should be completely independent
+- Mock all external dependencies and services
+- Use beforeEach/afterEach hooks for cleanup
+- Maintain CommonJS compatibility when required by existing codebase
+
+#### **Coverage Achievement Pattern**
+
+- Target 90%+ branch coverage as minimum threshold
+- Use Istanbul coverage reporting for detailed metrics
+- Focus on uncovered branches and edge cases
+- Validate both positive and negative test scenarios
 - **Cross-Agent Compatibility Pattern**: Ensure configurations work across VS Code Copilot, Cline AI, and Codex CLI
 
 - **Command Pattern**
