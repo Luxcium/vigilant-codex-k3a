@@ -13,7 +13,7 @@
 
 import { z } from 'zod';
 import type { CurrencyCode, ListingExchange } from './enums';
-import { LISTING_EXCHANGES } from './enums';
+import { CURRENCY_CODES, LISTING_EXCHANGES } from './enums';
 
 //──────────────────────────────────────────────────────────────────────────────
 // 1. Input Shape – No parameters for GET /v1/markets
@@ -90,14 +90,14 @@ export const MarketSchema = z.object({
   tradingVenues: z.array(z.enum(LISTING_EXCHANGES)).nonempty(),
   defaultTradingVenue: z.enum(LISTING_EXCHANGES),
   primaryOrderRoutes: z.array(z.string()).nonempty(),
-  secondaryOrderRoutes: z.array(z.string()).optional(),
-  level1Feeds: z.array(z.string()).optional(),
+  secondaryOrderRoutes: z.array(z.string()).nonempty(),
+  level1Feeds: z.array(z.string()).nonempty(),
   level2Feeds: z.array(z.string()).optional(),
   extendedStartTime: z.string().datetime(),
   startTime: z.string().datetime(),
   endTime: z.string().datetime(),
   extendedEndTime: z.string().datetime(),
-  currency: z.string().min(1) as unknown as z.ZodType<CurrencyCode>,
+  currency: z.enum(CURRENCY_CODES),
   snapQuotesLimit: z.number().int().nonnegative(),
 });
 
@@ -122,7 +122,7 @@ export const MarketsResponseSchema = z.object({
  * @public
  * Parses and validates raw JSON into `MarketsResponse`.
  *
- * @param json - Raw API response payload.
+ * @param json – Raw API response payload.
  * @returns Validated markets response object.
  * @throws ZodError if the payload does not match schema.
  */
