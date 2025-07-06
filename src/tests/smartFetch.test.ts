@@ -54,14 +54,12 @@ describe('smartFetch', () => {
   });
 
   it('throws QuestradeError on failure', async () => {
-    const fetchMock = vi
-      .fn()
-      .mockResolvedValue(
-        new Response('{"code":1002,"message":"bad"}', {
-          status: 400,
-          headers: { 'Content-Type': 'application/json' },
-        })
-      );
+    const fetchMock = vi.fn().mockResolvedValue(
+      new Response('{"code":1002,"message":"bad"}', {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' },
+      })
+    );
     const fetchQ = smartFetch(fetchMock);
     await expect(fetchQ('c')).rejects.toThrow('bad');
   });
