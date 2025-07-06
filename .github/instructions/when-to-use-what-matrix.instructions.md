@@ -1,6 +1,6 @@
 ---
-applyTo: "**/*"
-description: "One-Page ‘When to Use What’ Matrix mapping integration goals to configuration files"
+applyTo: '**/*'
+description: 'One-Page ‘When to Use What’ Matrix mapping integration goals to configuration files'
 ---
 
 # One-Page “When to Use What” Matrix
@@ -23,30 +23,30 @@ This matrix condenses all key manifest and meta configurations into a single ref
 
 ## Copilot Workflow
 
-1. **Scan** repository for all referenced files (`*.webmanifest`, `manifest.json`, `*.webapp`, `config.xml`, extensions/**/*/manifest.json). ([developer.mozilla.org][1], [docs.tizen.org][13])
+1. **Scan** repository for all referenced files (`*.webmanifest`, `manifest.json`, `*.webapp`, `config.xml`, extensions/\*_/_/manifest.json). ([developer.mozilla.org][1], [docs.tizen.org][13])
 2. **Generate or update** missing manifests/meta tags using project metadata (IDs, icons, display modes).
 3. **Validate** each configuration with platform tools:
+   - Chrome DevTools Lighthouse & `npx web-app-manifest-validator` ([developer.mozilla.org][1])
+   - Xcode AASA Validator & Apple Universal Links Tester ([developer.android.com][10])
+   - RealFaviconGenerator / Windows Tile Checker ([speckyboy.com][4])
+   - Android Studio App Links Assistant ([developer.android.com][15])
 
-   * Chrome DevTools Lighthouse & `npx web-app-manifest-validator` ([developer.mozilla.org][1])
-   * Xcode AASA Validator & Apple Universal Links Tester ([developer.android.com][10])
-   * RealFaviconGenerator / Windows Tile Checker ([speckyboy.com][4])
-   * Android Studio App Links Assistant ([developer.android.com][15])
 4. **Document** results in `.github/prompts/README.md` and `.github/instructions/README.md`.
 
 > ⚠️ Ensure this file remains at the project root or alongside other `.instructions.md` files—**do not** place in a `docs/` folder.
 
-[1]: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Manifest?utm_source=chatgpt.com "Web application manifest - Progressive web apps - MDN Web Docs"
-[2]: https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html?utm_source=chatgpt.com "Configuring Web Applications - Apple Developer"
-[3]: https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html?utm_source=chatgpt.com "Creating Pinned Tab Icons - Apple Developer"
-[4]: https://speckyboy.com/modern-favicon-icon-development/?utm_source=chatgpt.com "Modern Favicon Development Techniques & Best Practices"
-[5]: https://blog.giantgeek.com/?p=1418&utm_source=chatgpt.com "“msapplication-config” and browserconfig.xml - Giant Geek Blog"
-[6]: https://web.dev/learn/html/metadata?utm_source=chatgpt.com "Metadata | web.dev"
-[7]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta?utm_source=chatgpt.com "<meta>: The metadata element - HTML - MDN Web Docs - Mozilla"
-[8]: https://ogp.me/?utm_source=chatgpt.com "The Open Graph protocol"
-[9]: https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards?utm_source=chatgpt.com "About Twitter Cards | Docs | Twitter Developer Platform - X"
-[10]: https://developer.android.com/training/app-links/verify-android-applinks?utm_source=chatgpt.com "Verify Android App Links | App architecture - Android Developers"
-[11]: https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data?utm_source=chatgpt.com "Intro to How Structured Data Markup Works | Google Search Central"
-[12]: https://stackoverflow.com/questions/36725046/examples-of-when-to-use-the-manifest-meta-data-tag?utm_source=chatgpt.com "Examples of when to use the manifest meta-data tag - Stack Overflow"
-[13]: https://docs.tizen.org/application/tizen-studio/web-tools/config-editor/?utm_source=chatgpt.com "Configuring Applications | Tizen Docs"
-[14]: https://developer.chrome.com/docs/extensions/reference/manifest?utm_source=chatgpt.com "Manifest file format - Chrome for Developers"
-[15]: https://developer.android.com/studio/write/app-link-indexing?utm_source=chatgpt.com "Add Android App Links | Android Studio"
+[1]: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Manifest?utm_source=chatgpt.com 'Web application manifest - Progressive web apps - MDN Web Docs'
+[2]: https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html?utm_source=chatgpt.com 'Configuring Web Applications - Apple Developer'
+[3]: https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html?utm_source=chatgpt.com 'Creating Pinned Tab Icons - Apple Developer'
+[4]: https://speckyboy.com/modern-favicon-icon-development/?utm_source=chatgpt.com 'Modern Favicon Development Techniques & Best Practices'
+[5]: https://blog.giantgeek.com/?p=1418&utm_source=chatgpt.com '“msapplication-config” and browserconfig.xml - Giant Geek Blog'
+[6]: https://web.dev/learn/html/metadata?utm_source=chatgpt.com 'Metadata | web.dev'
+[7]: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta?utm_source=chatgpt.com '<meta>: The metadata element - HTML - MDN Web Docs - Mozilla'
+[8]: https://ogp.me/?utm_source=chatgpt.com 'The Open Graph protocol'
+[9]: https://developer.twitter.com/en/docs/tweets/optimize-with-cards/overview/abouts-cards?utm_source=chatgpt.com 'About Twitter Cards | Docs | Twitter Developer Platform - X'
+[10]: https://developer.android.com/training/app-links/verify-android-applinks?utm_source=chatgpt.com 'Verify Android App Links | App architecture - Android Developers'
+[11]: https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data?utm_source=chatgpt.com 'Intro to How Structured Data Markup Works | Google Search Central'
+[12]: https://stackoverflow.com/questions/36725046/examples-of-when-to-use-the-manifest-meta-data-tag?utm_source=chatgpt.com 'Examples of when to use the manifest meta-data tag - Stack Overflow'
+[13]: https://docs.tizen.org/application/tizen-studio/web-tools/config-editor/?utm_source=chatgpt.com 'Configuring Applications | Tizen Docs'
+[14]: https://developer.chrome.com/docs/extensions/reference/manifest?utm_source=chatgpt.com 'Manifest file format - Chrome for Developers'
+[15]: https://developer.android.com/studio/write/app-link-indexing?utm_source=chatgpt.com 'Add Android App Links | Android Studio'

@@ -1,13 +1,9 @@
 {
-  "entryPoints": [
-    "src/index.ts"
-  ],
+  "entryPoints": ["src/index.ts"],
   "out": "docs",
   "tsconfig": "tsconfig.typedoc.json",
   "excludeInternal": true,
   "gitRevision": "main",
-  "plugin": [
-    "typedoc-plugin-markdown"
-  ],
+  "plugin": ["typedoc-plugin-markdown"],
   "entryDocument": "README.md"
 }

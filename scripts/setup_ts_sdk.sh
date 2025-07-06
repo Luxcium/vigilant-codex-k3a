@@ -29,16 +29,16 @@ fi
 # package.json
 if [ ! -f package.json ]; then
   log "Initializing package.json"
-  yes "" | pnpm init >/dev/null
+  yes "" | pnpm init > /dev/null
 fi
 
 log "Installing dev dependencies"
-pnpm add -D typescript @types/node vitest >/dev/null
+pnpm add -D typescript @types/node vitest > /dev/null
 
 # tsconfig
 if [ ! -f tsconfig.json ]; then
   log "Creating tsconfig.json"
-  npx tsc --init --strict >/dev/null
+  npx tsc --init --strict > /dev/null
 fi
 
 log "TypeScript SDK setup complete"

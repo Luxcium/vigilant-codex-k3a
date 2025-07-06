@@ -1,5 +1,5 @@
 ---
-applyTo: "**"
+applyTo: '**'
 ---
 
 # File Organization Standards
@@ -19,7 +19,7 @@ applyTo: "**"
 - Place all prompt files in `.github/prompts/` directory
 - Place all instruction files in `.github/instructions/` directory
 - Use kebab-case naming convention for all files
-- Follow pattern: `{domain}-{purpose}.{type}.md` 
+- Follow pattern: `{domain}-{purpose}.{type}.md`
 - Type is one of `prompt` or `instruction`
 - Group related files by domain or feature area
 - Maintain alphabetical ordering within directories
@@ -93,8 +93,8 @@ applyTo: "**"
 - Check for broken links in documentation
 - Ensure consistent naming conventions across project
 - Verify all scripts are idempotent and safe to run
- - Test file organization changes in development environment
- - Maintain markdown-lint compliance for all documentation files
+- Test file organization changes in development environment
+- Maintain markdown-lint compliance for all documentation files
 
 ## Self-Referential State Documentation
 
@@ -105,6 +105,7 @@ applyTo: "**"
 ## Call to Action
 
 > **AI Agents and Contributors Leadership:**
+>
 > - Autonomously update stateful Memory Bank files upon any change to this instruction file.
 > - Use leadership language to drive accountability and project consistency.
 > - Ensure this instruction file remains up-to-date before executing any tasks governed by file organization standards.

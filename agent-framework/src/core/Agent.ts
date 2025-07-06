@@ -1,4 +1,7 @@
-export interface Observation { content: string; meta?: Record<string, any>; }
+export interface Observation {
+  content: string;
+  meta?: Record<string, any>;
+}
 
 export interface AgentContext {
   memory: Memory;

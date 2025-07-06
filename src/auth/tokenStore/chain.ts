@@ -10,10 +10,10 @@ export const chainStores = (...stores: TokenStore[]): TokenStore => {
       return null;
     },
     async save(t: OAuthTokens) {
-      await Promise.all(stores.map((s) => s.save(t)));
+      await Promise.all(stores.map(s => s.save(t)));
     },
     async clear() {
-      await Promise.all(stores.map((s) => s.clear()));
-    }
+      await Promise.all(stores.map(s => s.clear()));
+    },
   };
 };

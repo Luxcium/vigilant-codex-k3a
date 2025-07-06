@@ -11,12 +11,14 @@ This folder contains **autonomous initialization templates** for the Codex CLI p
 ## Templates Available
 
 ### Core Templates
+
 - `project-template/` - Full project initialization template
-- `feature-template/` - New feature development template  
+- `feature-template/` - New feature development template
 - `script-template/` - Automation script creation template
 - `ai-agent-template/` - New AI agent workflow template
 
 ### Configuration Templates
+
 - `typescript-module-template/` - TypeScript module with standards
 - `python-module-template/` - Python module with standards
 - `notebook-template/` - Jupyter notebook with ML standards
@@ -35,14 +37,16 @@ When an AI agent needs to create new components:
 ## State Management Integration
 
 All templates integrate with our autonomous state management:
+
 - Auto-update `memory-bank/progress.md`
-- Auto-update `memory-bank/dependencies.md` 
+- Auto-update `memory-bank/dependencies.md`
 - Auto-update `memory-bank/activeContext.md`
 - Cross-reference with existing `.prompt.md` and `.instructions.md` files
 
 ## Configuration-Driven Approach
 
 Templates use variables that are automatically populated:
+
 - `{{PROJECT_NAME}}` - Current project name
 - `{{TIMESTAMP}}` - Current timestamp
 - `{{COMPONENT_TYPE}}` - Type of component being created

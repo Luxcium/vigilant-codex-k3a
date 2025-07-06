@@ -19,8 +19,6 @@
  * @see https://typedoc.org/documents/Tags._enum.html for `@enum` guidance ([typedoc.org](https://typedoc.org/documents/Tags._enum.html?utm_source=chatgpt.com))
  */
 
- 
-
 type Labels<T extends readonly string[]> = Record<T[number], string>;
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -32,7 +30,7 @@ type Labels<T extends readonly string[]> = Record<T[number], string>;
  *
  * @enum CurrencyCode
  * @remarks
- * • **USD** — United States dollar  
+ * • **USD** — United States dollar
  * • **CAD** — Canadian dollar
  *
  * @example
@@ -42,12 +40,9 @@ type Labels<T extends readonly string[]> = Record<T[number], string>;
  * }
  * ```
  */
-export const CURRENCY_CODES = [
-  'USD',
-  'CAD',
-] as const;
+export const CURRENCY_CODES = ['USD', 'CAD'] as const;
 
-export type CurrencyCode = typeof CURRENCY_CODES[number];
+export type CurrencyCode = (typeof CURRENCY_CODES)[number];
 
 export const CurrencyLabels: Labels<typeof CURRENCY_CODES> = {
   USD: 'US dollar',
@@ -63,16 +58,16 @@ export const CurrencyLabels: Labels<typeof CURRENCY_CODES> = {
  *
  * @enum ListingExchange
  * @remarks
- * • **TSX** — Toronto Stock Exchange  
- * • **TSXV** — Toronto Venture Exchange  
- * • **CNSX** — Canadian National Stock Exchange  
- * • **MX** — Montreal Exchange  
- * • **NASDAQ** — NASDAQ  
- * • **NYSE** — New York Stock Exchange  
- * • **NYSEAM** — NYSE AMERICAN  
- * • **ARCA** — NYSE Arca  
- * • **OPRA** — Option Reporting Authority  
- * • **PinkSheets** — Pink Sheets  
+ * • **TSX** — Toronto Stock Exchange
+ * • **TSXV** — Toronto Venture Exchange
+ * • **CNSX** — Canadian National Stock Exchange
+ * • **MX** — Montreal Exchange
+ * • **NASDAQ** — NASDAQ
+ * • **NYSE** — New York Stock Exchange
+ * • **NYSEAM** — NYSE AMERICAN
+ * • **ARCA** — NYSE Arca
+ * • **OPRA** — Option Reporting Authority
+ * • **PinkSheets** — Pink Sheets
  * • **OTCBB** — OTC Bulletin Board
  */
 export const LISTING_EXCHANGES = [
@@ -88,7 +83,7 @@ export const LISTING_EXCHANGES = [
   'PinkSheets',
   'OTCBB',
 ] as const;
-export type ListingExchange = typeof LISTING_EXCHANGES[number];
+export type ListingExchange = (typeof LISTING_EXCHANGES)[number];
 export const ListingExchangeLabels: Labels<typeof LISTING_EXCHANGES> = {
   TSX: 'Toronto Stock Exchange',
   TSXV: 'Toronto Venture Exchange',
@@ -112,21 +107,21 @@ export const ListingExchangeLabels: Labels<typeof LISTING_EXCHANGES> = {
  *
  * @enum AccountType
  * @remarks
- * • **Cash** — Cash account  
- * • **Margin** — Margin account  
- * • **TFSA** — Tax‑Free Savings Account  
- * • **RRSP** — Registered Retirement Savings Plan  
- * • **FHSA** — First Home Savings Account  
- * • **SRRSP** — Spousal RRSP  
- * • **LRRSP** — Locked‑In RRSP  
- * • **LIRA** — Locked‑In Retirement Account  
- * • **LIF** — Life Income Fund  
- * • **RIF** — Retirement Income Fund  
- * • **SRIF** — Spousal RIF  
- * • **LRIF** — Locked‑In RIF  
- * • **RRIF** — Registered RIF  
- * • **PRIF** — Prescribed RIF  
- * • **RESP** — Individual Registered Education Savings Plan  
+ * • **Cash** — Cash account
+ * • **Margin** — Margin account
+ * • **TFSA** — Tax‑Free Savings Account
+ * • **RRSP** — Registered Retirement Savings Plan
+ * • **FHSA** — First Home Savings Account
+ * • **SRRSP** — Spousal RRSP
+ * • **LRRSP** — Locked‑In RRSP
+ * • **LIRA** — Locked‑In Retirement Account
+ * • **LIF** — Life Income Fund
+ * • **RIF** — Retirement Income Fund
+ * • **SRIF** — Spousal RIF
+ * • **LRIF** — Locked‑In RIF
+ * • **RRIF** — Registered RIF
+ * • **PRIF** — Prescribed RIF
+ * • **RESP** — Individual Registered Education Savings Plan
  * • **FRESP** — Family RESP
  */
 export const ACCOUNT_TYPES = [
@@ -147,7 +142,7 @@ export const ACCOUNT_TYPES = [
   'RESP',
   'FRESP',
 ] as const;
-export type AccountType = typeof ACCOUNT_TYPES[number];
+export type AccountType = (typeof ACCOUNT_TYPES)[number];
 export const AccountTypeLabels: Labels<typeof ACCOUNT_TYPES> = {
   Cash: 'Cash account',
   Margin: 'Margin account',
@@ -176,15 +171,15 @@ export const AccountTypeLabels: Labels<typeof ACCOUNT_TYPES> = {
  *
  * @enum ClientAccountType
  * @remarks
- * • **Individual** — Held by an individual  
- * • **Joint** — Held jointly (e.g., spouses)  
- * • **Informal Trust** — Informal trust  
- * • **Corporation** — Corporate entity  
- * • **Formal Trust** — Formal trust  
- * • **Partnership** — Partnership entity  
- * • **Sole Proprietorship** — Sole proprietor  
- * • **Family** — Family account  
- * • **Joint and Informal Trust** — Joint + informal trust  
+ * • **Individual** — Held by an individual
+ * • **Joint** — Held jointly (e.g., spouses)
+ * • **Informal Trust** — Informal trust
+ * • **Corporation** — Corporate entity
+ * • **Formal Trust** — Formal trust
+ * • **Partnership** — Partnership entity
+ * • **Sole Proprietorship** — Sole proprietor
+ * • **Family** — Family account
+ * • **Joint and Informal Trust** — Joint + informal trust
  * • **Institution** — Institutional account
  */
 export const CLIENT_ACCOUNT_TYPES = [
@@ -199,18 +194,19 @@ export const CLIENT_ACCOUNT_TYPES = [
   'Joint and Informal Trust',
   'Institution',
 ] as const;
-export type ClientAccountType = typeof CLIENT_ACCOUNT_TYPES[number];
+export type ClientAccountType = (typeof CLIENT_ACCOUNT_TYPES)[number];
 export const ClientAccountTypeLabels: Labels<typeof CLIENT_ACCOUNT_TYPES> = {
-  Individual: 'Account held by an individual',
-  Joint: 'Account held jointly by several individuals',
+  'Individual': 'Account held by an individual',
+  'Joint': 'Account held jointly by several individuals',
   'Informal Trust': 'Non-individual account held by an informal trust',
-  Corporation: 'Non-individual account held by a corporation',
+  'Corporation': 'Non-individual account held by a corporation',
   'Formal Trust': 'Non-individual account held by a formal trust',
-  Partnership: 'Non-individual account held by a partnership',
+  'Partnership': 'Non-individual account held by a partnership',
   'Sole Proprietorship': 'Non-individual account held by a sole proprietorship',
-  Family: 'Account held by a family',
-  'Joint and Informal Trust': 'Non-individual account held by a joint and informal trust',
-  Institution: 'Non-individual account held by an institution',
+  'Family': 'Account held by a family',
+  'Joint and Informal Trust':
+    'Non-individual account held by a joint and informal trust',
+  'Institution': 'Non-individual account held by an institution',
 };
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -229,7 +225,7 @@ export const ACCOUNT_STATUSES = [
   'Liquidate Only',
   'Closed',
 ] as const;
-export type AccountStatus = typeof ACCOUNT_STATUSES[number];
+export type AccountStatus = (typeof ACCOUNT_STATUSES)[number];
 
 // ────────────────────────────────────────────────────────────────────────────
 // TickType
@@ -241,7 +237,7 @@ export type AccountStatus = typeof ACCOUNT_STATUSES[number];
  * @enum TickType
  */
 export const TICK_TYPES = ['Up', 'Down', 'Equal'] as const;
-export type TickType = typeof TICK_TYPES[number];
+export type TickType = (typeof TICK_TYPES)[number];
 export const TickTypeLabels: Labels<typeof TICK_TYPES> = {
   Up: 'Designates an uptick',
   Down: 'Designates a downtick',
@@ -258,17 +254,22 @@ export const TickTypeLabels: Labels<typeof TICK_TYPES> = {
  * @enum OptionType
  */
 export const OPTION_TYPES = ['Call', 'Put'] as const;
-export type OptionType = typeof OPTION_TYPES[number];
+export type OptionType = (typeof OPTION_TYPES)[number];
 
 /** Option expiry cycles recognised by the API. */
-export const OPTION_DURATION_TYPES = ['Weekly', 'Monthly', 'Quarterly', 'LEAP'] as const;
-export type OptionDurationType = typeof OPTION_DURATION_TYPES[number];
+export const OPTION_DURATION_TYPES = [
+  'Weekly',
+  'Monthly',
+  'Quarterly',
+  'LEAP',
+] as const;
+export type OptionDurationType = (typeof OPTION_DURATION_TYPES)[number];
 
 /** Exercise styles.
  * @enum OptionExerciseType
  */
 export const OPTION_EXERCISE_TYPES = ['American', 'European'] as const;
-export type OptionExerciseType = typeof OPTION_EXERCISE_TYPES[number];
+export type OptionExerciseType = (typeof OPTION_EXERCISE_TYPES)[number];
 
 // ────────────────────────────────────────────────────────────────────────────
 // SecurityType
@@ -279,8 +280,16 @@ export type OptionExerciseType = typeof OPTION_EXERCISE_TYPES[number];
  *
  * @enum SecurityType
  */
-export const SECURITY_TYPES = ['Stock', 'Option', 'Bond', 'Right', 'Gold', 'MutualFund', 'Index'] as const;
-export type SecurityType = typeof SECURITY_TYPES[number];
+export const SECURITY_TYPES = [
+  'Stock',
+  'Option',
+  'Bond',
+  'Right',
+  'Gold',
+  'MutualFund',
+  'Index',
+] as const;
+export type SecurityType = (typeof SECURITY_TYPES)[number];
 
 // ────────────────────────────────────────────────────────────────────────────
 // Order‑related literals
@@ -288,4 +297,4 @@ export type SecurityType = typeof SECURITY_TYPES[number];
 
 /** Filters when querying order history. */
 export const ORDER_STATE_FILTER_TYPES = ['All', 'Open', 'Closed'] as const;
-export type OrderStateFilterType = typeof ORDER_STATE_FILTER_TYPES
+export type OrderStateFilterType = typeof ORDER_STATE_FILTER_TYPES;

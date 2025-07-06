@@ -1,4 +1,3 @@
-
 ---
 mode: 'agent'
 tools: ['codebase', 'terminal', 'file_search']
@@ -16,16 +15,19 @@ This prompt helps users set up Python development environments following the con
 Before proceeding, please choose your Python environment setup mode:
 
 ### Option 1: Local Virtual Environment (ENV_MODE=local)
+
 - **Best for:** Active development, debugging, IDE integration
 - **Requirements:** Python 3.11+ installed on host system
 - **Trade-offs:** Fast iteration, but depends on host Python version
 
-### Option 2: Docker Isolated (ENV_MODE=docker_isolated)  
+### Option 2: Docker Isolated (ENV_MODE=docker_isolated)
+
 - **Best for:** Reproducible builds, CI/CD, deployment testing
 - **Requirements:** Docker installed
 - **Trade-offs:** Complete isolation, but slower code iteration (requires rebuilds)
 
 ### Option 3: Docker Volume Mount (ENV_MODE=docker_volume)
+
 - **Best for:** Container benefits with live code editing
 - **Requirements:** Docker installed
 - **Trade-offs:** Live editing + isolation, but file permission complexity
@@ -49,11 +51,13 @@ Once you've chosen your mode:
 The setup process will create these files based on your chosen mode:
 
 **Always created:**
+
 - `python/requirements.txt` (if not exists)
 - `python/.env.example`
 - Updated `python/README.md`
 
 **Mode-specific:**
+
 - Local: Virtual environment in `python/.venv/`
 - Docker Isolated: `python/Dockerfile` with code copy
 - Docker Volume: `python/Dockerfile` + `docker-compose.yml` with volume mounts
@@ -61,6 +65,7 @@ The setup process will create these files based on your chosen mode:
 ## Quality Checklist
 
 Before considering setup complete:
+
 - [ ] Environment activates successfully
 - [ ] Dependencies install without errors
 - [ ] Environment variables load correctly
@@ -77,6 +82,7 @@ Before considering setup complete:
 ## Next Steps
 
 After setup completion:
+
 1. Update Memory Bank files per Self-Documentation Protocol
 2. Test the environment with a simple Python script
 3. Document any mode-specific discoveries or issues

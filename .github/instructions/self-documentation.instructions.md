@@ -1,5 +1,5 @@
 ---
-applyTo: "**"
+applyTo: '**'
 ---
 
 # Self-Documentation Protocol
@@ -35,9 +35,9 @@ applyTo: "**"
 ## Examples
 
 ```markdown
-- [2025-05-26T16:59:00Z] Current State: generated prompt-manager; 
-  Last Action: created ai-template-manager.prompt.md; 
-  Rationale: scaffold prompt template; 
+- [2025-05-26T16:59:00Z] Current State: generated prompt-manager;
+  Last Action: created ai-template-manager.prompt.md;
+  Rationale: scaffold prompt template;
   Next Intent: update instruction patterns.
   Note: Executing Self-Documentation Protocol.
   This log reaffirms that self-documentation and meta-description are ongoing requirements.

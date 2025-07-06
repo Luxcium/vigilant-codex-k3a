@@ -1,6 +1,6 @@
 ---
-applyTo: "**/*.{html,tsx,jsx}"
-description: "Instructions for implementing a comprehensive set of link tags for favicons and app icons across all platforms."
+applyTo: '**/*.{html,tsx,jsx}'
+description: 'Instructions for implementing a comprehensive set of link tags for favicons and app icons across all platforms.'
 ---
 
 # General Icon Link Tags Instructions
@@ -14,14 +14,14 @@ The `<link rel="icon">` tag and its variations are essential for displaying your
 
 ## 2. Essential Icon Link Tags 🔗 `#essential-tags`
 
-| Tag                      | Example                                                                      | Notes                                                                 |
-| ------------------------ | ---------------------------------------------------------------------------- | --------------------------------------------------------------------- |
-| `icon` (ICO/PNG)         | `<link rel="icon" href="/favicon.ico">`                                      | Legacy default, typically 16x16 or 32x32. Still a crucial fallback.   |
-| `icon` (SVG)             | `<link rel="icon" type="image/svg+xml" href="/icon.svg">`                    | Scales perfectly; preferred by modern browsers.                       |
+| Tag                      | Example                                                                      | Notes                                                                  |
+| ------------------------ | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `icon` (ICO/PNG)         | `<link rel="icon" href="/favicon.ico">`                                      | Legacy default, typically 16x16 or 32x32. Still a crucial fallback.    |
+| `icon` (SVG)             | `<link rel="icon" type="image/svg+xml" href="/icon.svg">`                    | Scales perfectly; preferred by modern browsers.                        |
 | `icon` (PNG, multi-size) | `<link rel="icon" sizes="32x32" href="/favicon-32.png">`                     | Provide multiple sizes for high-resolution screens (e.g., 16, 32, 48). |
-| `shortcut icon`          | `<link rel="shortcut icon" href="/favicon.ico">`                             | Required for older IE/Edge versions; now a safe, redundant fallback.  |
-| `apple-touch-icon`       | `<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">` | Icon for iOS home screen web apps. Does not need `rel="icon"`.        |
-| `manifest`               | `<link rel="manifest" href="/manifest.webmanifest">`                         | Links to the PWA manifest, which defines icons for Android.           |
+| `shortcut icon`          | `<link rel="shortcut icon" href="/favicon.ico">`                             | Required for older IE/Edge versions; now a safe, redundant fallback.   |
+| `apple-touch-icon`       | `<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">` | Icon for iOS home screen web apps. Does not need `rel="icon"`.         |
+| `manifest`               | `<link rel="manifest" href="/manifest.webmanifest">`                         | Links to the PWA manifest, which defines icons for Android.            |
 
 ## 3. Design & Size Recommendations 🔗 `#design`
 
@@ -34,7 +34,7 @@ The `<link rel="icon">` tag and its variations are essential for displaying your
 
 - Place all icon `<link>` tags within the `<head>` section of your HTML.
 - Position them as early as possible, before any primary CSS, scripts, or the manifest link.
-- For modern browser support, declare the SVG icon *before* the `.ico` and `.png` fallbacks.
+- For modern browser support, declare the SVG icon _before_ the `.ico` and `.png` fallbacks.
 
 ## 5. Example Boilerplate 🔗 `#boilerplate`
 
@@ -43,19 +43,19 @@ The `<link rel="icon">` tag and its variations are essential for displaying your
   <!-- ... other head elements like title, charset, viewport ... -->
 
   <!-- Scalable Vector Icon for modern browsers -->
-  <link rel="icon" type="image/svg+xml" href="/icon.svg">
+  <link rel="icon" type="image/svg+xml" href="/icon.svg" />
 
   <!-- Fallback icon for older browsers -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.ico" sizes="any" />
 
   <!-- Apple Touch Icon for iOS home screen -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 
   <!-- PWA Manifest for Android icons -->
-  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="manifest" href="/manifest.webmanifest" />
 
   <!-- (Optional but safe) Redundant fallback for very old browsers -->
-  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="shortcut icon" href="/favicon.ico" />
 
   <!-- ... other meta tags, links, and scripts ... -->
 </head>
@@ -66,6 +66,7 @@ The `<link rel="icon">` tag and its variations are essential for displaying your
 Use these tools to ensure your icons are configured correctly:
 
 **Browser Commands & Tools:**
+
 ```bash
 # Preview cached favicons in Chrome-based browsers
 open "chrome://favicon-internals/"
@@ -75,6 +76,7 @@ open "https://realfavicongenerator.net/favicon_checker"
 ```
 
 **Manual Testing:**
+
 - Add your site to the home screen on both Android and iOS devices to check the `apple-touch-icon` and manifest icons.
 - View your site in a browser tab and in your bookmarks bar.
 - Switch your OS between light and dark modes to check icon visibility and contrast.

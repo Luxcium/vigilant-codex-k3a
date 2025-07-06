@@ -26,15 +26,15 @@ All operational rules and protocols are maintained in the modular files under `.
 1. All setup actions (mkdir, touch, etc.) must be performed via scripts in the `scripts/` directory.
 2. Scripts must never overwrite existing files or folders; they must check for existence and skip or warn if present.
 3. The following structure must exist at the project root:
-    - `.github/` (directory)
-    - `.vscode/` (directory)
-    - `memory-bank/` (directory)
-    - `.gitignore` (file)
-    - `.clinerules` (file)
-    - `README.md` (file)
-    - `AGENTS.md` (file, replaces any use of `codex.md`)
-    - `memory-bank/dependencies.md` (file)
-    
+   - `.github/` (directory)
+   - `.vscode/` (directory)
+   - `memory-bank/` (directory)
+   - `.gitignore` (file)
+   - `.clinerules` (file)
+   - `README.md` (file)
+   - `AGENTS.md` (file, replaces any use of `codex.md`)
+   - `memory-bank/dependencies.md` (file)
+
 ## AGENTS.md Migration
 
 - `AGENTS.md` is now the default repository context/instructions markdown file for Codex and Codex CLI and related tools.
@@ -70,7 +70,7 @@ All operational rules and protocols are maintained in the modular files under `.
 6. Run `bash scripts/setup_db_prisma.sh` to start PostgreSQL and initialize Prisma.
 7. Run `bash scripts/setup_agent_framework.sh` to initialize the multi-agent retrieval framework in `agent-framework/`.
 8. Template files for this setup are stored in `templates/agent-framework` and copied during initialization.
-8. Run `bash scripts/run_codex_cli.sh /path/to/your/project` to start a Codex CLI container with Node.js 22 and Python 3.13.
+9. Run `bash scripts/run_codex_cli.sh /path/to/your/project` to start a Codex CLI container with Node.js 22 and Python 3.13.
 
 ## Top-Level Folder Conventions
 
@@ -157,6 +157,7 @@ See `scripts/README.md` for comprehensive documentation and troubleshooting.
 ## Script Validation and Logging
 
 The `scripts/setup_project.sh` script now includes:
+
 - File existence and size checks before writing
 - Directory creation with `mkdir -p` and validation
 - Logging of all actions (creation, skipping, size reporting)
@@ -164,7 +165,6 @@ The `scripts/setup_project.sh` script now includes:
 - Clear annotations and comments explaining each validation step
 
 All actions are self-documented and resilient to repeated runs. Review the script for detailed logic and intent.
-
 
 ## Strict Test Execution Policy
 
@@ -177,10 +177,12 @@ npx vitest run src/tests/auth/manager.test.ts
 ```
 
 **Note:**
+
 - Do not use `vitest run` without specifying a file, as no tests will be run by default.
 - You may validate all tests at once only before major reconfiguration or as a final check.
 
 ---
+
 ## AI Agent Framework
 
 This project includes a modular AI agent framework for automated code generation and quality assurance. The framework is organized into two main components:
@@ -188,6 +190,7 @@ This project includes a modular AI agent framework for automated code generation
 ### Prompt Files (`.github/prompts/`)
 
 Parametric prompt templates for AI-assisted development workflows:
+
 - **`ai-template-manager.prompt.md`** — Enhanced template generation with parametric inputs
 - **`script-generator.prompt.md`** — Resilient automation script generation
 - **`docker-generator.prompt.md`** — Parameterized Docker configuration generation
@@ -197,6 +200,7 @@ Parametric prompt templates for AI-assisted development workflows:
 ### Instruction Files (`.github/instructions/`)
 
 Coding standards that are automatically applied during AI-assisted development:
+
 - **`typescript-standards.instructions.md`** — Comprehensive TypeScript coding standards
 - **`python-standards.instructions.md`** — PEP 8 and modern Python practices
 - **`python-notebook-standards.instructions.md`** — Jupyter notebook standards and ML best practices

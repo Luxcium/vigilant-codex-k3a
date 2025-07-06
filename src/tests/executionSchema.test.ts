@@ -1,7 +1,7 @@
-import { describe, expect, it } from 'vitest'
-import { ExecutionSchema } from '../types/accounts'
+import { describe, expect, it } from 'vitest';
+import { ExecutionSchema } from '../types/accounts';
 
-const now = new Date().toISOString()
+const now = new Date().toISOString();
 
 describe('ExecutionSchema', () => {
   it('accepts a valid Execution', () => {
@@ -24,15 +24,17 @@ describe('ExecutionSchema', () => {
       executionFee: 1,
       secFee: 1,
       canadianExecutionFee: 1,
-      parentId: 0
-    }
-    const result = ExecutionSchema.safeParse(input)
-    expect(result.success).toBe(true)
-  })
+      parentId: 0,
+    };
+    const result = ExecutionSchema.safeParse(input);
+    expect(result.success).toBe(true);
+  });
 
   it('rejects missing fields', () => {
-    const { success, error } = ExecutionSchema.safeParse({ symbol: 'AAPL' })
-    expect(success).toBe(false)
-    expect(error?.issues.some((i: any) => i.path.includes('symbolId'))).toBe(true)
-  })
-})
+    const { success, error } = ExecutionSchema.safeParse({ symbol: 'AAPL' });
+    expect(success).toBe(false);
+    expect(error?.issues.some((i: any) => i.path.includes('symbolId'))).toBe(
+      true
+    );
+  });
+});

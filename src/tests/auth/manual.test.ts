@@ -1,6 +1,14 @@
 import { bootstrap } from '@/auth/manual';
 import * as storage from '@/auth/storage';
-import { afterEach, beforeEach, describe, expect, it, vi, type MockedFunction } from 'vitest';
+import {
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+  type MockedFunction,
+} from 'vitest';
 
 // Mock the storage module
 vi.mock('@/auth/storage');
@@ -109,7 +117,9 @@ describe('auth/manual', () => {
     it('should handle fetch errors', async () => {
       mockFetch.mockRejectedValue(new Error('Network error'));
 
-      await expect(bootstrap(clientId, refreshToken)).rejects.toThrow('Network error');
+      await expect(bootstrap(clientId, refreshToken)).rejects.toThrow(
+        'Network error'
+      );
       expect(storage.save).not.toHaveBeenCalled();
     });
 
@@ -121,7 +131,9 @@ describe('auth/manual', () => {
       };
       mockFetch.mockResolvedValue(mockResponse);
 
-      await expect(bootstrap(clientId, refreshToken)).rejects.toThrow('Invalid JSON');
+      await expect(bootstrap(clientId, refreshToken)).rejects.toThrow(
+        'Invalid JSON'
+      );
       expect(storage.save).not.toHaveBeenCalled();
     });
 
@@ -132,9 +144,13 @@ describe('auth/manual', () => {
         status: 200,
       };
       mockFetch.mockResolvedValue(mockResponse);
-      (storage.save as MockedFunction<typeof storage.save>).mockRejectedValue(new Error('Storage error'));
+      (storage.save as MockedFunction<typeof storage.save>).mockRejectedValue(
+        new Error('Storage error')
+      );
 
-      await expect(bootstrap(clientId, refreshToken)).rejects.toThrow('Storage error');
+      await expect(bootstrap(clientId, refreshToken)).rejects.toThrow(
+        'Storage error'
+      );
     });
 
     it('should calculate correct expiration time', async () => {

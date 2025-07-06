@@ -32,7 +32,7 @@ export const MarketSchema = z.object({
   endTime: z.string(),
   extendedEndTime: z.string(),
   currency: CurrencySchema,
-  snapQuotesLimit: z.number().int()
+  snapQuotesLimit: z.number().int(),
 });
 
 /** Quote for equities and other instruments */
@@ -80,17 +80,17 @@ const RawQuoteSchema = z.object({
   VWAP: z.number().nullable().optional(),
   isDelayed: z.boolean().optional(),
   delay: z.number().int().optional(),
-  isHalted: z.boolean().optional()
+  isHalted: z.boolean().optional(),
 });
 
 /** Zod schema for {@link Quote} */
-export const QuoteSchema = RawQuoteSchema.transform((data) => {
+export const QuoteSchema = RawQuoteSchema.transform(data => {
   const { VWAP, delay, isDelayed, vwap, isHalted, ...rest } = data;
   return {
     ...rest,
     vwap: vwap ?? VWAP ?? null,
     isDelayed: isDelayed ?? (delay !== undefined ? delay !== 0 : false),
-    isHalted: isHalted ?? false
+    isHalted: isHalted ?? false,
   };
 });
 
@@ -123,14 +123,14 @@ export const OptionQuoteSchema = RawQuoteSchema.extend({
   theta: z.number().nullable(),
   vega: z.number().nullable(),
   rho: z.number().nullable(),
-  openInterest: z.number().nullable()
-}).transform((data) => {
+  openInterest: z.number().nullable(),
+}).transform(data => {
   const { VWAP, delay, isDelayed, vwap, isHalted, ...rest } = data;
   return {
     ...rest,
     vwap: vwap ?? VWAP ?? null,
     isDelayed: isDelayed ?? (delay !== undefined ? delay !== 0 : false),
-    isHalted: isHalted ?? false
+    isHalted: isHalted ?? false,
   };
 });
 
@@ -165,7 +165,7 @@ export const StrategyQuoteSchema = z.object({
   theta: z.number().nullable().optional(),
   vega: z.number().nullable().optional(),
   rho: z.number().nullable().optional(),
-  isRealTime: z.boolean().nullable().optional()
+  isRealTime: z.boolean().nullable().optional(),
 });
 
 /** OHLC candle */
@@ -187,5 +187,5 @@ export const CandleSchema = z.object({
   high: z.number(),
   low: z.number(),
   close: z.number(),
-  volume: z.number()
+  volume: z.number(),
 });

@@ -1,6 +1,6 @@
 ---
-applyTo: "**/manifest*.json,**/*.webmanifest"
-description: "Progressive Web App (PWA) manifest authoring standards"
+applyTo: '**/manifest*.json,**/*.webmanifest'
+description: 'Progressive Web App (PWA) manifest authoring standards'
 ---
 
 # PWA Manifest Authoring Standards
@@ -42,9 +42,10 @@ A Web App Manifest is a JSON resource that enables Progressive Web Apps (PWAs) t
 
 ```bash
 # Lint JSON structure locally
-npm i -D web-app-manifest-validator      # CLI tool → errors to stderr
+npm i -D web-app-manifest-validator # CLI tool → errors to stderr
 npx web-app-manifest-validator manifest.json
 ```
+
 ([npmjs.com][13])
 
 - Run **Lighthouse → PWA → Installability** to verify mandatory members. ([developer.chrome.com][5])
@@ -63,12 +64,21 @@ npx web-app-manifest-validator manifest.json
   "theme_color": "#3367d6", // Address bar and UI theme color
   "background_color": "#ffffff", // Splash screen background color
   "icons": [
-    { "src": "/icons/192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" }, // Required maskable icon
-    { "src": "/icons/512.png", "sizes": "512x512", "type": "image/png" } // Large icon for install prompt
+    {
+      "src": "/icons/192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable",
+    }, // Required maskable icon
+    { "src": "/icons/512.png", "sizes": "512x512", "type": "image/png" }, // Large icon for install prompt
   ],
   "shortcuts": [
-    { "name": "Inbox", "url": "/inbox", "icons": [{ "src": "/icons/inbox.png", "sizes": "96x96" }] } // Quick action
-  ]
+    {
+      "name": "Inbox",
+      "url": "/inbox",
+      "icons": [{ "src": "/icons/inbox.png", "sizes": "96x96" }],
+    }, // Quick action
+  ],
 }
 ```
 

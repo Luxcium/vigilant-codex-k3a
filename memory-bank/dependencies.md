@@ -7,10 +7,10 @@
   - Prevents accidental running of all tests, reducing noise and risk during incremental development.
   - Contributors must specify the test file to run, which may slow down bulk validation but increases control and clarity.
   - Major reconfiguration or final validation can still run all tests by temporarily restoring the include pattern or running files in a loop.
+
 # dependencies.md
 
 <!-- markdownlint-disable MD013 MD012 MD022 MD032 MD024 MD040 MD001 -->
-
 
 #### Dependency: Codex Universal Docker Environment (2025-07-01)
 
@@ -26,14 +26,11 @@
 **Required By:** scripts/setup_python_env.sh and related scripts
 **Impact Analysis:** Provides flexible environments without hard-coded assumptions.
 
-
 ## Purpose
 
 This file tracks all project dependencies, their relationships, and integration points. It serves as a comprehensive dependency map for any project, enabling proper management and coordination between components.
 
-
 ## Structure
-
 
 - **Core Dependencies:** Essential project dependencies and their purposes.
 
@@ -45,17 +42,11 @@ This file tracks all project dependencies, their relationships, and integration 
 
 - **Call to Action:** Instructions for agents to update and self-regulate this file.
 
-
 ---
-
-
-
 
 ## Core Dependencies
 
-
 ### Conditional Python Environment Framework
-
 
 - **Python 3.11+**: Core language runtime (for local mode)
 
@@ -68,13 +59,11 @@ This file tracks all project dependencies, their relationships, and integration 
 - **Docker Compose**: Multi-container orchestration (docker_volume mode, optional)
 
 - **Parameter System**: ENV_MODE runtime decision framework
-
   - `local` - Host-based virtual environment
 
   - `docker_isolated` - Fully containerized with no host dependencies
 
   - `docker_volume` - Containerized with live host file mounting
-
 
 ### Codex Universal Docker Environment
 
@@ -88,13 +77,11 @@ This file tracks all project dependencies, their relationships, and integration 
 
 ### Docker and Containerization
 
-
 - **Docker Engine**: Container runtime and management
 
 - **Docker Compose**: Multi-container orchestration
 
 - **Container Images**: Base images for development and production
-
   - `python:3.11-slim` - Minimal Python runtime for Docker modes
 
   - `node:18-alpine` - Minimal Node.js runtime
@@ -105,9 +92,7 @@ This file tracks all project dependencies, their relationships, and integration 
 
 - **Container Registries**: Image storage and distribution
 
-
 ### AI Agent Framework
-
 
 - **Memory Bank System**: Cross-referencing and documentation framework
 
@@ -119,9 +104,7 @@ This file tracks all project dependencies, their relationships, and integration 
 
 - **Genesis Boot-Phase Script**: Checks Node dependencies, container state, and Git repo
 
-
 ### Project Structure Dependencies
-
 
 - **TypeScript Runtime**: Core language support in `src/`
 
@@ -137,15 +120,11 @@ This file tracks all project dependencies, their relationships, and integration 
 
 - **PostgreSQL Database**: Service defined in `docker-compose.yml`
 
-
 ## Development Dependencies
-
 
 ### Conditional Python Environment System
 
-
 - **Runtime Parameter System**:
-
   - `ENV_MODE` - Primary mode selector (local, docker_isolated, docker_volume)
 
   - `PYTHON_VERSION` - Python version specification (default: 3.11)
@@ -177,16 +156,15 @@ This file tracks all project dependencies, their relationships, and integration 
 
 ### Mode-Specific Scripts
 
-  - `scripts/setup_python_env.sh` - Main entry point with parameter routing
+- `scripts/setup_python_env.sh` - Main entry point with parameter routing
 
-  - `scripts/setup_python_local.sh` - Local virtual environment setup
+- `scripts/setup_python_local.sh` - Local virtual environment setup
 
-  - `scripts/setup_python_docker_isolated.sh` - Isolated Docker environment
+- `scripts/setup_python_docker_isolated.sh` - Isolated Docker environment
 
-  - `scripts/setup_python_docker_volume.sh` - Volume-mounted Docker environment
+- `scripts/setup_python_docker_volume.sh` - Volume-mounted Docker environment
 
 - **Generated Artifacts** (mode-dependent):
-
   - `python/requirements.txt` - Python dependencies (all modes)
 
   - `python/.env.example` - Environment variable template (all modes)
@@ -201,31 +179,24 @@ This file tracks all project dependencies, their relationships, and integration 
 
   - `python/README.md` - Mode-specific documentation (generated per mode)
 
-
 ### Docker Workflow Dependencies
 
-
 - **Dockerfile Variants**:
-
   - `Dockerfile.dev` - Development container configuration
 
   - `Dockerfile.prod` - Production-optimized multi-stage build
 
 - **Docker Compose Configurations**:
-
   - `docker-compose.yml` - Base orchestration
 
   - `docker-compose.override.yml` - Development overrides
 
 - **Dev Container Configuration**:
-
   - `.devcontainer/devcontainer.json` - VS Code integration
 
   - `.devcontainer/docker-compose.yml` - Dev container orchestration
 
-
 ### Security and Compliance
-
 
 - **Vulnerability Scanning**: Container security validation
 
@@ -235,12 +206,9 @@ This file tracks all project dependencies, their relationships, and integration 
 
 - **Secret Management**: Secure configuration handling via .env files
 
-
 ## AI Agent Dependencies
 
-
 ### Prompt Files (`.github/prompts/`)
-
 
 ### Prompt Files (`.github/prompts/`)
 
@@ -250,7 +218,6 @@ This file tracks all project dependencies, their relationships, and integration 
   - **Integration**: Codex Universal image with Node.js 22 and Python 3.13, volume-based development
 
 - **python-environment-setup.prompt.md**: Python environment mode selection and setup
-
   - **Depends On**: `memory-bank/docker-workflow.md`, conditional instruction files
 
   - **Required By**: Python environment setup workflows, mode selection
@@ -258,7 +225,6 @@ This file tracks all project dependencies, their relationships, and integration 
   - **Integration**: Three-mode conditional system, runtime parameter selection
 
 - **docker-exotic-generator.prompt.md**: Advanced Docker configuration generation
-
   - **Depends On**: `memory-bank/docker-workflow.md`, instruction files
 
   - **Required By**: Container setup workflows, multi-environment deployments
@@ -266,7 +232,6 @@ This file tracks all project dependencies, their relationships, and integration 
   - **Integration**: Four-phase Docker workflow, exotic pattern implementation
 
 - **docker-consolidated-template.prompt.md**: Consolidated Docker workflow template
-
   - **Depends On**: Validated four-phase approach, security best practices
 
   - **Required By**: Standardized Docker implementations across all AI agents
@@ -274,16 +239,13 @@ This file tracks all project dependencies, their relationships, and integration 
   - **Integration**: Simplified template following consolidated recommendations from external agent evaluation
 
 - **docker-modular-workflow.prompt.md**: Modular Docker build/run workflow generator
-
   - **Depends On**: Modular development patterns, volume mounting strategies
 
   - **Required By**: Development workflows requiring build/run separation
 
   - **Integration**: Volume-first development, CLI parameterization, multi-service orchestration
 
-
 ### Instruction Files (`.github/instructions/`)
-
 
 ### Instruction Files (`.github/instructions/`)
 
@@ -294,7 +256,6 @@ This file tracks all project dependencies, their relationships, and integration 
   - **Integration**: Codex Universal environment, OpenAI API integration, volume-based development
 
 - **python-environment-conditional.instructions.md**: Conditional Python setup standards
-
   - **Depends On**: `memory-bank/systemPatterns.md`, Docker workflow patterns
 
   - **Required By**: All Python environment setup operations
@@ -311,21 +272,16 @@ This file tracks all project dependencies, their relationships, and integration 
 
 - **no_dummy-no_placeholders.instruction.md**: Real configuration requirements
 
-
 ### Memory Bank Files
 
-
 - **docker-workflow.md**: Enhanced four-phase containerization workflow
-
   - **Depends On**: `systemPatterns.md`, `techContext.md`, `projectbrief.md`
 
   - **Required By**: Docker prompt files, container automation scripts
 
   - **Integration**: AI agent collaboration, exotic pattern documentation
 
-
 ## Cross-References and Relationships
-
 
 ### Conditional Python Environment Integration
 
@@ -341,7 +297,6 @@ This file tracks all project dependencies, their relationships, and integration 
     └── Updates: memory-bank/dependencies.md (this file)
 ```
 
-
 ### Script Dependency Flow
 
 ```
@@ -355,7 +310,6 @@ scripts/setup_python_env.sh (main entry)
 └── Reports: Next steps and activation instructions
 ```
 
-
 ### AI Agent Collaboration Flow
 
 ```
@@ -367,7 +321,6 @@ User Request → GitHub Copilot/Cline AI/Codex CLI
 ├── Generates: Mode-specific configurations and documentation
 └── Updates: Memory Bank documentation per Self-Documentation Protocol
 ```
-
 
 ### Project Structure Dependencies
 
@@ -389,9 +342,7 @@ Project Root
     └── instructions/ → Conditional coding standards
 ```
 
-
 ## Dependencies and Relationships
-
 
 - **Depends On**: projectbrief.md (project scope), systemPatterns.md (architecture), techContext.md (technical context)
 
@@ -401,15 +352,11 @@ Project Root
 
 - **Impact Analysis**: Changes to dependencies affect entire AI Agent Framework and development workflow
 
-
 ## Recent Additions
-
 
 ### Conditional Python Environment Framework
 
-
 - **Added**: Complete conditional framework replacing hard-coded Python setup
-
   - `python-environment-conditional.instructions.md` - Parameter-driven conditional instructions
 
   - `python-environment-setup.prompt.md` - User-facing mode selection prompt
@@ -423,7 +370,6 @@ Project Root
   - `setup_python_docker_volume.sh` - Volume-mounted Docker with live editing
 
 - **Parameter System**: ENV_MODE runtime decision framework
-
   - Defers implementation choices to script execution time
 
   - Supports switching between modes without rebuilding project structure
@@ -431,16 +377,13 @@ Project Root
   - Generates mode-appropriate documentation and configurations
 
 - **Integration**: Three AI agent collaboration with conditional logic
-
   - VS Code Copilot applies conditional instructions via `applyTo: "python/**"`
 
   - Cline AI follows `.clinerules/` protocols for conditional setup
 
   - Codex CLI executes script-driven conditional automation
 
-
 ### AI Agent Framework Enhancement
-
 
 - **Improved**: Cross-referencing between prompt files and Memory Bank
 
@@ -450,16 +393,13 @@ Project Root
 
 - **Integration**: VS Code Copilot, Cline AI, and Codex CLI collaboration
 
-
 ### Web Application Stack
-
 
 - **Added**: Next.js application scaffolded via `setup_web_env.sh`
 
 - **Added**: PostgreSQL and Prisma setup via `setup_db_prisma.sh`
 
 - **Impact**: Enables full-stack TypeScript and Python interoperability
-
 
 ### Testing Infrastructure
 
@@ -471,10 +411,9 @@ Project Root
 **Impact Analysis:** Enables mirrored directory structure in tests with clean imports, supporting comprehensive test coverage goals.
 
 - **Jest Configuration**: Updated to support @/ path aliases and focused test discovery
-- **TypeScript Config**: Added baseUrl and paths mapping for @/* to src/*
+- **TypeScript Config**: Added baseUrl and paths mapping for @/_ to src/_
 - **Test Structure**: Mirrored src/ folder structure in src/tests/ for organized testing
 - **Coverage Goals**: Targeting full coverage except src/types/ (saved for last as requested)
-
 
 ## Call to Action
 
@@ -482,14 +421,13 @@ Project Root
 > **Do not add new dependencies without documenting them here and their relationships.**  
 > **Update this file immediately upon any change in project dependencies, tools, or integration points.**
 
-
 ## AI Agent Instructions
 
 This project supports three AI agents with specific dependency management responsibilities:
 
 - **Cline AI** → Updates `.clinerules/` dependencies and learning protocols
 
-- **Codex CLI** → Updates `AGENTS.md` context and script dependencies  
+- **Codex CLI** → Updates `AGENTS.md` context and script dependencies
 
 - **VS Code Copilot** → Updates `.github/copilot-instructions.md` and instruction files
 
@@ -501,7 +439,6 @@ All agents must consult the [when-to-use-what-matrix.instructions.md](../.github
 
 **UI Theming Standards:**
 All agents must consult the [theme-ui-meta.instructions.md](../.github/instructions/theme-ui-meta.instructions.md) for detailed theming meta tag standards and the [theme-ui-meta.prompt.md](../.github/prompts/theme-ui-meta.prompt.md) for workflow automation. These files cover syntax, validation, and platform-specific quirks for `theme-color`, `color-scheme`, and related tags.
-
 
 ---
 

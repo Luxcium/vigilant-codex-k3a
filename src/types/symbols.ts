@@ -9,7 +9,7 @@ import {
   OptionType,
   OptionTypeSchema,
   SecurityType,
-  SecurityTypeSchema
+  SecurityTypeSchema,
 } from './enums';
 
 /** Underlying deliverable component */
@@ -118,7 +118,7 @@ export const SymbolDetailSchema = z.object({
   minTicks: z.array(MinTickSchema),
   industrySector: z.string(),
   industryGroup: z.string(),
-  industrySubGroup: z.string()
+  industrySubGroup: z.string(),
 });
 
 /** Result from symbol search */
@@ -140,7 +140,7 @@ export const SymbolSearchResultSchema = z.object({
   securityType: SecurityTypeSchema,
   listingExchange: ListingExchangeSchema,
   isTradable: z.boolean(),
-  isQuotable: z.boolean()
+  isQuotable: z.boolean(),
 });
 
 /** Option chain structures */
@@ -170,19 +170,25 @@ export interface OptionChain {
 
 /** Zod schema for {@link OptionChain} */
 export const OptionChainSchema = z.object({
-  options: z.array(z.object({
-    expiryDate: z.string(),
-    description: z.string(),
-    listingExchange: ListingExchangeSchema,
-    optionExerciseType: OptionExerciseTypeSchema,
-    chainPerRoot: z.array(z.object({
-      root: z.string(),
-      multiplier: z.number().int(),
-      chainPerStrikePrice: z.array(z.object({
-        strikePrice: z.number(),
-        callSymbolId: z.number().int(),
-        putSymbolId: z.number().int()
-      }))
-    }))
-  }))
+  options: z.array(
+    z.object({
+      expiryDate: z.string(),
+      description: z.string(),
+      listingExchange: ListingExchangeSchema,
+      optionExerciseType: OptionExerciseTypeSchema,
+      chainPerRoot: z.array(
+        z.object({
+          root: z.string(),
+          multiplier: z.number().int(),
+          chainPerStrikePrice: z.array(
+            z.object({
+              strikePrice: z.number(),
+              callSymbolId: z.number().int(),
+              putSymbolId: z.number().int(),
+            })
+          ),
+        })
+      ),
+    })
+  ),
 });

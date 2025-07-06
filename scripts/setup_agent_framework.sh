@@ -23,8 +23,8 @@ log "Copying template package.json"
 cp "$TEMPLATE_DIR/package.json" package.json
 
 log "Installing dev dependencies"
-pnpm install >/dev/null 2>&1 || true
-pnpm add -D typescript@5.8 ts-node @types/node esbuild vitest p-limit pinecone-client >/dev/null
+pnpm install > /dev/null 2>&1 || true
+pnpm add -D typescript@5.8 ts-node @types/node esbuild vitest p-limit pinecone-client > /dev/null
 
 log "Copying tsconfig template"
 cp "$TEMPLATE_DIR/tsconfig.json" tsconfig.json
@@ -41,4 +41,3 @@ fi
 log "Agent framework setup complete"
 "$PROJECT_ROOT/scripts/verify-all.sh"
 log "Verification after setup complete"
-

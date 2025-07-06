@@ -8,7 +8,7 @@ log() {
 
 cd "$(dirname "$0")/../python"
 
-if docker image inspect my-python-app >/dev/null 2>&1; then
+if docker image inspect my-python-app > /dev/null 2>&1; then
   log "Docker image 'my-python-app' already exists"
 else
   log "Building Docker image 'my-python-app'"

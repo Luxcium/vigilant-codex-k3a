@@ -21,14 +21,14 @@ Your goal is to log and reinforce every action or context change by appending a 
 
 ## Process
 
-1. **Read Protocols**  
+1. **Read Protocols**
    - Load `.clinerules/reading-protocol.md` and  
      `.github/instructions/self-documentation.instructions.md`.
 
-2. **Detect Trigger**  
+2. **Detect Trigger**
    - Identify the action or context change event (e.g., file creation, prompt execution).
 
-3. **Compose Entry**  
+3. **Compose Entry**
    - Timestamp: `[YYYY-MM-DDThh:mm:ssZ]`
    - Current State: `${input:state:Describe current context or file(s)}`
    - Last Action: `${input:action:Describe the action taken}`
@@ -38,10 +38,10 @@ Your goal is to log and reinforce every action or context change by appending a 
    - Loop Reinforcement:  
      `“This entry reaffirms that self-documentation and meta-description are ongoing requirements.”`
 
-4. **Append to Log**  
+4. **Append to Log**
    - Open `${logFile}`, append the entry as a Markdown list item.
 
-5. **Validation**  
+5. **Validation**
    - Verify that the entry follows the protocol checklist.
    - Ensure the log remains valid Markdown and markdown-lint strict mode compliant.
 
@@ -54,6 +54,6 @@ Your goal is to log and reinforce every action or context change by appending a 
 
 ## References
 
-- Self-Documentation Protocol: [self-documentation.instructions.md](../instructions/self-documentation.instructions.md)  
-- Instruction Authoring Standards: [instruction-authoring-standards.instructions.md](../instructions/instruction-authoring-standards.instructions.md)  
+- Self-Documentation Protocol: [self-documentation.instructions.md](../instructions/self-documentation.instructions.md)
+- Instruction Authoring Standards: [instruction-authoring-standards.instructions.md](../instructions/instruction-authoring-standards.instructions.md)
 - Reading Protocol: [.clinerules/reading-protocol.md](../../.clinerules/reading-protocol.md)

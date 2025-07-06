@@ -9,12 +9,14 @@ I will help you create, configure, and manage Docker environments using the code
 ## Context Requirements
 
 ### Project Information
+
 - **Project Name**: `${input:projectName:Enter project name (default: auto-detected from directory)}`
 - **Environment Type**: `${input:envType:development|staging|production}`
 - **Required Services**: `${input:services:Database, cache, message broker, etc.}`
 - **OpenAI API Access**: `${input:needsOpenAI:yes|no|conditional}`
 
 ### Configuration Scope
+
 - **Setup Type**: `${input:setupType:full|minimal|testing}`
 - **Volume Strategy**: `${input:volumeStrategy:development|production|hybrid}`
 - **Network Requirements**: `${input:networkReqs:simple|complex|service-mesh}`
@@ -24,12 +26,14 @@ I will help you create, configure, and manage Docker environments using the code
 ### 1. Environment Analysis and Validation
 
 **Project Structure Assessment:**
+
 - Analyze existing project structure and dependencies
 - Identify required runtime versions and services
 - Detect existing Docker configurations and conflicts
 - Validate host system requirements (Docker daemon, ports, etc.)
 
 **Requirements Gathering:**
+
 - Determine container requirements based on project type
 - Identify required environment variables and secrets
 - Plan volume mounting strategy for development workflow
@@ -38,12 +42,14 @@ I will help you create, configure, and manage Docker environments using the code
 ### 2. Docker Configuration Generation
 
 **Core Configuration Files:**
+
 - Generate `docker-compose.codex.yml` with codex-universal service
 - Create comprehensive environment variable configuration
 - Implement volume mounting strategy for development workflow
 - Configure networking with proper service isolation
 
 **Script Generation:**
+
 - Create `scripts/setup_codex_universal.sh` - Complete environment setup
 - Generate `scripts/codex_start.sh` - Start development environment
 - Implement `scripts/codex_stop.sh` - Clean environment shutdown
@@ -54,12 +60,14 @@ I will help you create, configure, and manage Docker environments using the code
 ### 3. Security and Best Practices Implementation
 
 **Security Configuration:**
+
 - Implement non-root user configuration where applicable
 - Configure proper secret management for API keys
 - Apply principle of least privilege for container permissions
 - Implement health checks and monitoring capabilities
 
 **Volume Security:**
+
 - Configure appropriate volume permissions
 - Implement data protection strategies
 - Set up backup and recovery procedures
@@ -68,12 +76,14 @@ I will help you create, configure, and manage Docker environments using the code
 ### 4. Documentation and Integration
 
 **Comprehensive Documentation:**
+
 - Update `.codex/docker.md` with complete setup procedures
 - Generate troubleshooting guides and common issue resolution
 - Document all configuration options and customization procedures
 - Create quick reference guides for development workflow
 
 **Memory Bank Integration:**
+
 - Update `memory-bank/docker-workflow.md` with new patterns
 - Document dependencies in `memory-bank/dependencies.md`
 - Record architectural decisions in `memory-bank/systemPatterns.md`
@@ -113,14 +123,14 @@ services:
     tty: true
     command: bash
     ports:
-      - "3000:3000"  # Next.js dev server
-      - "8000:8000"  # Python dev server
-      - "8888:8888"  # Jupyter Lab
-      - "5173:5173"  # Vite dev server
+      - '3000:3000' # Next.js dev server
+      - '8000:8000' # Python dev server
+      - '8888:8888' # Jupyter Lab
+      - '5173:5173' # Vite dev server
     networks:
       - codex-network
     healthcheck:
-      test: ["CMD", "node", "--version"]
+      test: ['CMD', 'node', '--version']
       interval: 30s
       timeout: 10s
       retries: 3
@@ -163,41 +173,42 @@ log_error() { echo -e "${RED}[ERROR]${NC} $1"; }
 
 # Validation functions
 check_docker() {
-    if ! command -v docker &> /dev/null; then
-        log_error "Docker is not installed or not in PATH"
-        exit 1
-    fi
-    if ! docker info &> /dev/null; then
-        log_error "Docker daemon is not running"
-        exit 1
-    fi
+  if ! command -v docker &> /dev/null; then
+    log_error "Docker is not installed or not in PATH"
+    exit 1
+  fi
+  if ! docker info &> /dev/null; then
+    log_error "Docker daemon is not running"
+    exit 1
+  fi
 }
 
 check_openai_key() {
-    if [[ -z "${OPENAI_API_KEY:-}" ]]; then
-        log_warning "OPENAI_API_KEY environment variable is not set"
-        log_info "You can set it with: export OPENAI_API_KEY=your_key_here"
-    else
-        log_success "OPENAI_API_KEY is available"
-    fi
+  if [[ -z "${OPENAI_API_KEY:-}" ]]; then
+    log_warning "OPENAI_API_KEY environment variable is not set"
+    log_info "You can set it with: export OPENAI_API_KEY=your_key_here"
+  else
+    log_success "OPENAI_API_KEY is available"
+  fi
 }
 
 # Main implementation
 main() {
-    log_info "Starting ${SCRIPT_PURPOSE}..."
-    check_docker
-    check_openai_key
-    # Implementation specific to script purpose
+  log_info "Starting ${SCRIPT_PURPOSE}..."
+  check_docker
+  check_openai_key
+  # Implementation specific to script purpose
 }
 
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    main "$@"
+  main "$@"
 fi
 ```
 
 ## Environment Validation Checklist
 
 ### Pre-Setup Validation
+
 - [ ] Docker daemon is running and accessible
 - [ ] Required ports are available (3000, 8000, 8888, 5173, 5432)
 - [ ] Sufficient disk space for images and volumes
@@ -205,6 +216,7 @@ fi
 - [ ] Proper permissions for volume mounting
 
 ### Post-Setup Validation
+
 - [ ] Container starts successfully with correct runtime versions
 - [ ] Environment variables are properly configured
 - [ ] Volume mounts work correctly with file changes
@@ -214,6 +226,7 @@ fi
 - [ ] All convenience scripts function properly
 
 ### Documentation Validation
+
 - [ ] All configuration files are properly documented
 - [ ] Troubleshooting guides are accurate and helpful
 - [ ] Memory bank files are updated with new dependencies
@@ -223,18 +236,21 @@ fi
 ## Integration Requirements
 
 ### Memory Bank Updates
+
 - Update `docker-workflow.md` with codex-universal specific patterns
 - Document new dependencies in `dependencies.md`
 - Record architectural decisions in `systemPatterns.md`
 - Update `activeContext.md` with implementation progress
 
 ### Cross-Agent Compatibility
+
 - Ensure configurations work with VS Code Copilot
 - Verify compatibility with Cline AI workflows
 - Test integration with Codex CLI automation
 - Document agent-specific considerations
 
 ### Project Structure Integration
+
 - Align with existing TypeScript and Python standards
 - Integrate with current file organization patterns
 - Maintain compatibility with existing development workflows
@@ -243,18 +259,21 @@ fi
 ## Expected Deliverables
 
 ### Configuration Files
+
 - `docker-compose.codex.yml` - Complete orchestration configuration
 - `scripts/setup_codex_universal.sh` - Comprehensive setup automation
 - Complete set of convenience scripts for environment management
 - `.dockerignore` file optimized for development workflow
 
 ### Documentation
+
 - `.codex/docker.md` - Complete environment documentation
 - Updated memory bank files with new dependencies and patterns
 - Troubleshooting guides and common issue resolution
 - Quick start guides and reference documentation
 
 ### Validation Assets
+
 - `scripts/codex_test.sh` - Environment validation script
 - Health check configurations for all services
 - Performance monitoring and optimization guidelines
@@ -263,18 +282,21 @@ fi
 ## Quality Assurance Standards
 
 ### Configuration Validation
+
 - All YAML syntax is valid and properly formatted
 - Environment variables are correctly configured
 - Volume mounts function properly with appropriate permissions
 - Network configuration enables proper service communication
 
 ### Script Quality
+
 - All scripts follow bash best practices with proper error handling
 - Scripts are idempotent and safe to run multiple times
 - Comprehensive logging and user feedback
 - Proper validation of prerequisites and dependencies
 
 ### Documentation Quality
+
 - All procedures can be followed from scratch
 - Troubleshooting guides address common issues
 - Cross-references between files are accurate

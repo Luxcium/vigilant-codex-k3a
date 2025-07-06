@@ -62,7 +62,7 @@ main() {
     log "Running on host"
   fi
 
-  if git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+  if git rev-parse --is-inside-work-tree > /dev/null 2>&1; then
     local branch
     branch=$(git rev-parse --abbrev-ref HEAD)
     log "Git branch: $branch"

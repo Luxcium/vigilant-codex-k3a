@@ -2,7 +2,7 @@ mode: 'agent'
 mode: 'agent'
 description: 'Generate .instructions.md files with improved structure.'
 
-# Generate *.instructions.md File
+# Generate \*.instructions.md File
 
 Your goal is to create a properly structured `.instructions.md` file based on explicit user requirements for coding standards, guidelines, or project rules.
 
@@ -15,6 +15,7 @@ Your goal is to create a properly structured `.instructions.md` file based on ex
 ## Requirements
 
 ### File Structure Standards
+
 - Include proper front matter with applyTo pattern
 - Use single H1 title describing the standards
 - Organize content with H2 for major categories
@@ -22,12 +23,14 @@ Your goal is to create a properly structured `.instructions.md` file based on ex
 - Format rules as bullet points with imperative language
 
 ### ApplyTo Pattern Selection
+
 - Use `"**"` for global project rules
 - Use `"**/*.{ext}"` for language-specific rules
 - Use `"**/folder/**"` for directory-specific rules
 - Use `"**/*.{test,spec}.*"` for testing-specific rules
 
 ### Content Quality Requirements
+
 - Write rules as imperative statements using action verbs
 - Begin rules with "Use", "Implement", "Ensure", "Apply", "Follow"
 - Be specific and actionable in every rule statement
@@ -35,6 +38,7 @@ Your goal is to create a properly structured `.instructions.md` file based on ex
 - Include code examples in fenced blocks when beneficial
 
 ## Process
+
 1. **Analyze User Requirements**
    - Determine scope of standards needed
    - Identify target file types or directories
@@ -45,38 +49,50 @@ Your goal is to create a properly structured `.instructions.md` file based on ex
 3. **Structure Content by Standards Type**
 
 #### For Coding Style Standards
+
 ```markdown
 ## Naming Conventions
+
 - [Specific naming rules]
 
 ## Type Definitions
+
 - [Type usage rules]
 
 ## Code Organization
+
 - [Import and structure rules]
 ```
 
 #### For Architectural Patterns
+
 ```markdown
 ## Component Structure
+
 - [Organization rules]
 
 ## File Organization
+
 - [Directory and naming rules]
 
 ## Design Patterns
+
 - [Pattern implementation rules]
 ```
 
 #### For Security Practices
+
 ```markdown
 ## Input Validation
+
 - [Validation rules]
 
 ## Authentication
+
 - [Auth implementation rules]
 
 ## Data Protection
+
 - [Security requirement rules]
 ```
 
@@ -94,66 +110,82 @@ Your goal is to create a properly structured `.instructions.md` file based on ex
 ## Content Templates
 
 ### Global Standards
+
 ```markdown
 ---
-applyTo: "**"
+applyTo: '**'
 ---
+
 # ${standardsType} Standards
 
 ## General Principles
+
 - [Universal rule 1]
 - [Universal rule 2]
 
 ## Implementation Guidelines
+
 - [Specific implementation rule]
 - [Another implementation rule]
 
 ## Quality Requirements
+
 - [Quality standard 1]
 - [Quality standard 2]
 ```
 
 ### Language-Specific Standards
+
 ```markdown
 ---
-applyTo: "**/*.{ext}"
+applyTo: '**/*.{ext}'
 ---
+
 # ${language} ${standardsType} Standards
 
 ## Syntax Preferences
+
 - [Language-specific syntax rule]
 - [Another syntax rule]
 
 ## Best Practices
+
 - [Framework-specific pattern]
 - [Performance optimization rule]
 
 ## Anti-patterns
+
 - Never [bad practice]
 - Avoid [problematic pattern]
 ```
 
 ### Domain-Specific Guidelines
+
 ```markdown
 ---
-applyTo: "**/domain/**"
+applyTo: '**/domain/**'
 ---
+
 # ${domain} ${standardsType} Guidelines
 
 ## Domain Rules
+
 - [Business logic constraint]
 - [Domain-specific requirement]
 
 ## Technical Implementation
+
 - Use [pattern] for [purpose]
 - Implement [feature] using [approach]
 
 ## Validation Requirements
+
 - [Domain validation rule]
 - [Data integrity rule]
 ```
 
 ## Quality Assurance Checklist
+
 - [ ] ApplyTo pattern matches intended scope accurately
 - [ ] All rules use imperative language consistently
 - [ ] Examples provided for complex rules
@@ -163,6 +195,7 @@ applyTo: "**/domain/**"
 - [ ] Cross-references are accurate and helpful
 
 ## Success Criteria
+
 - Front matter includes proper applyTo pattern
 - Content follows hierarchical organization
 - Headings use proper levels
@@ -174,6 +207,7 @@ applyTo: "**/domain/**"
 - ApplyTo pattern matches user requirements
 
 ## Error Prevention
+
 - Avoid task execution lists (use prompts instead)
 - Avoid vague or subjective language
 - Do not omit applyTo front matter
@@ -181,6 +215,7 @@ applyTo: "**/domain/**"
 - Avoid over-constraining without clear benefit
 
 ## Validation Steps
+
 - Test each rule for clarity and specificity
 - Verify AI agents interpret and follow instructions
 - Confirm rules improve code quality measurably
@@ -188,6 +223,7 @@ applyTo: "**/domain/**"
 - Ensure guidelines scale with project growth
 
 ## Output Format
+
 - Proper front matter with applyTo pattern
 - Clear title describing the standards
 - Organized rule categories

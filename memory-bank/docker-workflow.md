@@ -1,4 +1,5 @@
 # Docker Workflow Documentation
+
 <!-- markdownlint-disable MD013 MD022 MD032 MD041 MD009 -->
 
 ## Purpose
@@ -27,9 +28,11 @@ This document provides a comprehensive workflow for creating and managing Docker
 ## Enhanced Four-Phase Workflow
 
 ### Phase 1: Design & Planning
+
 **Objective**: Define comprehensive container requirements and exotic patterns
 
 **Planning Checklist:**
+
 - ❏ Target runtime versions (Node.js 22, Python 3.13 for Codex Universal)
 - ❏ Required services (databases, caches, message brokers)
 - ❏ Network strategy (bridge, overlay, host, custom drivers)
@@ -42,6 +45,7 @@ This document provides a comprehensive workflow for creating and managing Docker
 - ❏ Development workflow optimization (volume vs copy strategies)
 
 **Exotic Pattern Considerations:**
+
 - Custom network drivers and service mesh integration
 - Advanced health checks with recovery mechanisms
 - Dynamic service discovery and load balancing
@@ -49,9 +53,11 @@ This document provides a comprehensive workflow for creating and managing Docker
 - Multi-stage builds with optimization strategies
 
 ### Phase 2: Container Creation
+
 **Objective**: Implement secure, optimized containers with development and production variants
 
 **Security-First Approach:**
+
 - Use minimal base images (`-alpine`, `-slim` variants)
 - Run containers as non-root users
 - Implement multi-stage builds for production optimization
@@ -59,15 +65,18 @@ This document provides a comprehensive workflow for creating and managing Docker
 - Apply principle of least privilege
 
 **Development vs Production Variants:**
+
 - `Dockerfile.dev` - Hot reload, debugging tools, development dependencies
 - `Dockerfile.prod` - Optimized, minimal, production-ready
 - Environment-specific configurations and overrides
 - Automated testing and validation for both variants
 
 ### Phase 3: Exotic Docker Compose Implementation
+
 **Objective**: Implement advanced orchestration patterns and exotic configurations
 
 **Advanced Patterns:**
+
 - **Named Networks**: Custom bridge and overlay networks with labels
 - **Compose Overrides**: Cascading configuration files (`docker-compose.override.yml`)
 - **Health Check Orchestration**: Advanced health validation and dependency management
@@ -77,6 +86,7 @@ This document provides a comprehensive workflow for creating and managing Docker
 - **Volume Management**: Advanced volume patterns and data persistence strategies
 
 **Exotic Configuration Examples:**
+
 - Container intercept configurations for network traffic analysis
 - Custom init systems and signal handling
 - Advanced logging and monitoring integration
@@ -84,9 +94,11 @@ This document provides a comprehensive workflow for creating and managing Docker
 - Multi-architecture builds and deployment
 
 ### Phase 4: Documentation & AI Agent Integration
+
 **Objective**: Create comprehensive documentation and AI agent automation
 
 **Documentation Requirements:**
+
 - Complete setup and replication procedures
 - Troubleshooting guides with common issues and solutions
 - Security validation and compliance checklists
@@ -94,6 +106,7 @@ This document provides a comprehensive workflow for creating and managing Docker
 - Integration with existing project structure
 
 **AI Agent Integration:**
+
 - **Prompt Files**: Generate Docker configurations based on project context
 - **Instruction Files**: Coding standards for containerized applications including Docker environment standards
 - **Memory Bank Updates**: Track dependencies and architectural decisions
@@ -176,7 +189,7 @@ To bootstrap a local Codex CLI environment with Node.js 22 and Python 3.13:
 
 ## Dependencies
 
-- **Depends On:** 
+- **Depends On:**
   - projectbrief.md (core project requirements)
   - systemPatterns.md (architectural patterns)
   - techContext.md (technical context)

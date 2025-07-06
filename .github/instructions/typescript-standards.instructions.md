@@ -1,5 +1,5 @@
 ---
-applyTo: "**/*.ts,**/*.tsx"
+applyTo: '**/*.ts,**/*.tsx'
 ---
 
 # TypeScript Coding Standards
@@ -15,7 +15,7 @@ applyTo: "**/*.ts,**/*.tsx"
 - Use PascalCase for class names, interfaces, and type aliases
 - Use camelCase for variables, functions, and methods
 - Use UPPER_SNAKE_CASE for module-level constants
-- Prefix private class members with underscore (_)
+- Prefix private class members with underscore (\_)
 - Use meaningful, semantic variable and function names
 
 ## Type System Usage

@@ -5,6 +5,7 @@ This file is **VS Code Copilot's primary instruction file and entry point**.
 ## Three AI Agent System
 
 This project supports three AI agents with distinct entry points:
+
 - **VS Code Copilot (YOU)** → `.github/copilot-instructions.md` (THIS IS YOUR ENTRY POINT)
 - **Cline AI** → `.clinerules/main-rules.md` (Cline AI's primary instruction file)
 - **Codex** and **Codex CLI** → `AGENTS.md` (Codex and Codex CLI's primary instruction file)
@@ -14,6 +15,7 @@ This project supports three AI agents with distinct entry points:
 ## General Coding Standards
 
 ### TypeScript Standards
+
 - Use TypeScript for all new scripts and application code
 - Follow the Airbnb TypeScript style guide
 - Use strict type checking with `"strict": true` in tsconfig.json
@@ -22,6 +24,7 @@ This project supports three AI agents with distinct entry points:
 - Add JSDoc comments for public APIs and complex logic
 
 ### Python Standards
+
 - Follow PEP 8 style guidelines
 - Use type hints for all function parameters and return types
 - Organize imports: standard library, third-party, local
@@ -29,12 +32,12 @@ This project supports three AI agents with distinct entry points:
 - Use virtual environments for dependency isolation
 
 ### Code Organization
+
 - Create small, single-purpose functions (≤25 lines)
 - Implement modular architecture with clear separation of concerns
 - Place related functionality in separate files under dedicated directories
 - Use dependency injection where appropriate
 - Add meaningful comments for complex algorithms
-
 
 ## Index File Export Rule
 
@@ -42,8 +45,8 @@ This project supports three AI agents with distinct entry points:
 - Use the `type` keyword for type exports (e.g., `export type { Bar } from './bar'`)
 - Never use default exports or `export *` in index files
 
-
 ### Memory Bank Principles
+
 - Reference appropriate memory bank files when making changes
 - Update dependency relationships in dependencies.md when adding new features
 - Follow the reading protocol from .clinerules/reading-protocol.md
@@ -51,6 +54,7 @@ This project supports three AI agents with distinct entry points:
 - Cross-reference related documents using markdown links
 
 ### ML Model Standards
+
 - Include model cards for all ML models (input format, output format, limitations)
 - Document dataset preprocessing steps and rationale
 - Prefer reproducible model training with fixed random seeds
@@ -58,6 +62,7 @@ This project supports three AI agents with distinct entry points:
 - Document all hyperparameters used during training
 
 ### Dependency Management
+
 - Track all dependencies in dependencies.md
 - Justify every dependency with a clear "why" explanation
 - Analyze impact of dependency changes throughout the system
@@ -65,6 +70,7 @@ This project supports three AI agents with distinct entry points:
 - Implement bidirectional tracking for all dependencies
 
 ## File and Directory Management
+
 - All file/directory creation should be done via scripts when possible
 - Scripts should be idempotent and never overwrite existing files
 - Document all file structure rules in README.md before implementation
@@ -73,6 +79,7 @@ This project supports three AI agents with distinct entry points:
 ## Machine Learning Notebook Guidelines
 
 ### Vision Transformer Standards
+
 - Provide clear documentation of model architecture parameters
 - Include data preprocessing and augmentation explanations
 - Document inference procedures and post-processing steps
@@ -96,10 +103,12 @@ sessions until explicitly changed. Preferences are stored in this
 section for VS Code (github) Copilot.
 
 Current Preferences:
+
 - **None set**: No special preferences currently active, !!!this shall be
   removed when a first preference is set!!!.
 
 To add or update preferences:
+
 1. Edit this section following the strictest set of markdown-lint
    guidelines
 2. Add preference here above as a bullet with format:
@@ -119,6 +128,7 @@ instructions.
 preferences and instructions.
 
 ### Documentation and User Preferences
+
 - All documentation for instructions and prompts must be included in the respective `.github/instructions/README.md` and `.github/prompts/README.md` files. Do not use a `docs/` folder unless explicitly required by the user.
 - When possible, append user preferences and operational requirements to `.github/copilot-instructions.md` and reference them in future actions.
 - When generating or updating instruction or prompt files, self-prompt to update documentation and preferences as part of the workflow.

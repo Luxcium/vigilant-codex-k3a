@@ -1,10 +1,6 @@
 import type { Agent } from '../core/Agent.js';
 
-export const loop = (
-  agent: Agent,
-  max = 5,
-  stopWord = 'DONE'
-): Agent => ({
+export const loop = (agent: Agent, max = 5, stopWord = 'DONE'): Agent => ({
   id: 'Loop',
   describe: () => `Iterates until "${stopWord}" or ${max} turns`,
   async act(input, ctx) {

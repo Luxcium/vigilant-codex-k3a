@@ -1,6 +1,6 @@
 ---
-applyTo: "public/index.html,src/**/*.html,.well-known/apple-app-site-association"
-description: "Apple Safari & iOS home-screen + Universal Links integration standards"
+applyTo: 'public/index.html,src/**/*.html,.well-known/apple-app-site-association'
+description: 'Apple Safari & iOS home-screen + Universal Links integration standards'
 ---
 
 # iOS Meta Tags & Universal Links Guide
@@ -19,7 +19,7 @@ for best practices. ([developer.apple.com][1], [brainhub.eu][2])
 `apple-mobile-web-app-title` – Overrides `short_name` on iOS ≤ 17.
 
 > **Note:** iOS 17+ may honour the PWA manifest for `name`, but these meta tags remain critical on
-older devices. ([brainhub.eu][2])
+> older devices. ([brainhub.eu][2])
 
 ## 3 Touch Icons 🔗 [#touch-icons]
 
@@ -28,8 +28,9 @@ older devices. ([brainhub.eu][2])
 2. Declare each in `<head>`:
 
    ```html
-   <link rel="apple-touch-icon" sizes="180x180" href="/icons/ios-180.png">
+   <link rel="apple-touch-icon" sizes="180x180" href="/icons/ios-180.png" />
    ```
+
 3. Prefer un-rounded glyphs; iOS applies its own mask. ([webhint.io][5])
 4. Store icons under `/icons/` for cache-busting via query-string. ([fastcomet.com][6])
 
@@ -38,8 +39,10 @@ older devices. ([brainhub.eu][2])
 Smart App Banners promote App Store install or open within Safari:
 
 ```html
-<meta name="apple-itunes-app"
-      content="app-id=123456789, app-argument=https://example.com/deeplink">
+<meta
+  name="apple-itunes-app"
+  content="app-id=123456789, app-argument=https://example.com/deeplink"
+/>
 ```
 
 - Optionally add Android fallback banners via a JS polyfill. ([dunnsolutions.com][8])
@@ -47,6 +50,7 @@ Smart App Banners promote App Store install or open within Safari:
 ## 5 Universal Links (`apple-app-site-association`) 🔗 [#universal-links]
 
 ### 5.1 File location 🔗 [#file-location]
+
 Host at `https://example.com/.well-known/apple-app-site-association` (no extension, no redirects,
 `application/json`). ([developer.apple.com][9], [developer.apple.com][10])
 
@@ -59,7 +63,7 @@ Host at `https://example.com/.well-known/apple-app-site-association` (no extensi
     "details": [
       {
         "appID": "ABCDE12345.com.example.app",
-        "paths": [ "/news/*", "/profile/*" ]
+        "paths": ["/news/*", "/profile/*"]
       }
     ]
   }
@@ -67,12 +71,13 @@ Host at `https://example.com/.well-known/apple-app-site-association` (no extensi
 ```
 
 ### 5.3 Xcode setup 🔗 [#xcode-setup]
+
 Add `Associated Domains` entitlement → `applinks:example.com`. ([developer.apple.com][11])
 
 ### 5.4 Gotchas 🔗 [#gotchas]
 
-* Max file size 128 KB; omit whitespace. ([developer.apple.com][9])
-* Wildcards allowed only at segment ends (`*` or `?`). ([developer.apple.com][9])
+- Max file size 128 KB; omit whitespace. ([developer.apple.com][9])
+- Wildcards allowed only at segment ends (`*` or `?`). ([developer.apple.com][9])
 
 ## 6 Validation Workflow 🔗 [#validation]
 
@@ -90,12 +95,19 @@ Use Apple’s Hosted File Tester (`universal-links.dev`) for production checks. 
 
 ```html
 <!-- Full-screen & title -->
-<meta name="apple-mobile-web-app-capable"          content="yes"> <!-- Enable standalone -->
-<meta name="apple-mobile-web-app-status-bar-style" content="default"> <!-- Status-bar style -->
-<meta name="apple-mobile-web-app-title"            content="Example"> <!-- iOS app title -->
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<!-- Enable standalone -->
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<!-- Status-bar style -->
+<meta name="apple-mobile-web-app-title" content="Example" />
+<!-- iOS app title -->
 <!-- Smart App Banner -->
-<meta name="apple-itunes-app" content="app-id=123456789, app-argument=https://example.com/deeplink"> <!-- App banner -->
-``` 
+<meta
+  name="apple-itunes-app"
+  content="app-id=123456789, app-argument=https://example.com/deeplink"
+/>
+<!-- App banner -->
+```
 
 ## 8 Further Reading 🔗 [#further-reading]
 

@@ -13,7 +13,7 @@ WEB_DIR="$PROJECT_ROOT/web"
 COMPOSE_FILE="$PROJECT_ROOT/docker-compose.yml"
 if ! grep -q "service:\s*db" "$COMPOSE_FILE" && ! grep -q "db:" "$COMPOSE_FILE"; then
   log "Adding postgres service to docker-compose.yml"
-  cat >> "$COMPOSE_FILE" <<'YML'
+  cat >> "$COMPOSE_FILE" << 'YML'
   db:
     image: postgres:14-alpine
     restart: always
@@ -42,7 +42,7 @@ fi
 # Create Prisma schema if not present
 SCHEMA="$WEB_DIR/prisma/schema.prisma"
 if [ ! -f "$SCHEMA" ]; then
-  cat > "$SCHEMA" <<'PRS'
+  cat > "$SCHEMA" << 'PRS'
 Datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")

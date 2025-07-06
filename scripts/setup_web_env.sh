@@ -19,7 +19,7 @@ fi
 
 GITIGNORE="$PROJECT_ROOT/.gitignore"
 if [ -f "$GITIGNORE" ] && ! grep -q "web/node_modules" "$GITIGNORE"; then
-  cat >> "$GITIGNORE" <<'GIT'
+  cat >> "$GITIGNORE" << 'GIT'
 # Node environment
 web/node_modules/
 web/.next/

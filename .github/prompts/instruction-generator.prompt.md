@@ -1,6 +1,6 @@
 ---
 mode: 'agent'
-tools: [  'codebase',  ]
+tools: ['codebase']
 description: 'Generate *.instructions.md files with proper structure and content based on coding standards requirements'
 ---
 
@@ -53,38 +53,50 @@ Your goal is to create a properly structured `.instructions.md` file based on th
 3. **Structure Content by Standards Type**
 
    **For Coding Style Standards:**
+
    ```markdown
    ## Style Guidelines
+
    - [Specific style rules]
-   
+
    ## Naming Conventions
+
    - [Naming rules]
-   
+
    ## Code Organization
+
    - [Import and structure rules]
    ```
 
    **For Architectural Patterns:**
+
    ```markdown
    ## Component Structure
+
    - [Organization rules]
-   
+
    ## File Organization
+
    - [Directory and naming rules]
-   
+
    ## Design Patterns
+
    - [Pattern implementation rules]
    ```
 
    **For Security Practices:**
+
    ```markdown
    ## Input Validation
+
    - [Validation rules]
-   
+
    ## Authentication
+
    - [Auth implementation rules]
-   
+
    ## Data Protection
+
    - [Security requirement rules]
    ```
 
@@ -103,64 +115,76 @@ Your goal is to create a properly structured `.instructions.md` file based on th
 ## Content Templates
 
 ### Global Standards Template
+
 ```markdown
 ---
-applyTo: "**"
+applyTo: '**'
 ---
 
 # ${standardsType} Standards
 
 ## General Principles
+
 - [Universal rule 1]
 - [Universal rule 2]
 
 ## Implementation Guidelines
+
 - [Specific implementation rule]
 - [Another implementation rule]
 
 ## Quality Requirements
+
 - [Quality standard 1]
 - [Quality standard 2]
 ```
 
 ### Language-Specific Template
+
 ```markdown
 ---
-applyTo: "**/*.{ext}"
+applyTo: '**/*.{ext}'
 ---
 
 # ${language} ${standardsType} Standards
 
 ## Syntax Preferences
+
 - [Language-specific syntax rule]
 - [Another syntax rule]
 
 ## Best Practices
+
 - [Framework-specific pattern]
 - [Performance optimization rule]
 
 ## Anti-patterns to Avoid
+
 - Never [bad practice]
 - Avoid [problematic pattern]
 ```
 
 ### Domain-Specific Template
+
 ```markdown
 ---
-applyTo: "**/domain/**"
+applyTo: '**/domain/**'
 ---
 
 # ${domain} ${standardsType} Guidelines
 
 ## Domain Rules
+
 - [Business logic constraint]
 - [Domain-specific requirement]
 
 ## Technical Implementation
+
 - Use [pattern] for [purpose]
 - Implement [feature] using [approach]
 
 ## Validation Requirements
+
 - [Domain validation rule]
 - [Data integrity rule]
 ```
@@ -185,18 +209,21 @@ applyTo: "**/domain/**"
 ## Success Criteria
 
 ### File Structure Validation
+
 - Front matter includes proper applyTo pattern
 - Content follows hierarchical organization
 - All headings use appropriate levels
 - Code blocks include language specifications
 
 ### Content Quality Validation
+
 - Every rule is actionable and specific
 - Language is consistently imperative
 - Examples support rule clarity
 - No vague or subjective terms used
 
 ### Scope Alignment Validation
+
 - ApplyTo pattern matches user requirements
 - Content depth appropriate for scope
 - Rules are enforceable within specified context
@@ -205,6 +232,7 @@ applyTo: "**/domain/**"
 ## Error Prevention
 
 ### Common Mistakes to Avoid
+
 - Never create task execution lists (use prompts instead)
 - Never use vague or subjective language
 - Never create rules that conflict with language/framework defaults
@@ -212,6 +240,7 @@ applyTo: "**/domain/**"
 - Never omit the applyTo front matter pattern
 
 ### Quality Assurance Standards
+
 - Always verify rules can be applied consistently
 - Ensure AI agents can interpret and follow each rule
 - Confirm rules improve code quality measurably

@@ -11,18 +11,18 @@
 
 import { z } from 'zod';
 import {
-    CURRENCY_CODES,
-    CurrencyCode,
-    LISTING_EXCHANGES,
-    ListingExchange,
-    OPTION_DURATION_TYPES,
-    OPTION_EXERCISE_TYPES,
-    OPTION_TYPES,
-    OptionDurationType,
-    OptionExerciseType,
-    OptionType,
-    SECURITY_TYPES,
-    SecurityType,
+  CURRENCY_CODES,
+  CurrencyCode,
+  LISTING_EXCHANGES,
+  ListingExchange,
+  OPTION_DURATION_TYPES,
+  OPTION_EXERCISE_TYPES,
+  OPTION_TYPES,
+  OptionDurationType,
+  OptionExerciseType,
+  OptionType,
+  SECURITY_TYPES,
+  SecurityType,
 } from './enums';
 
 //──────────────────────────────────────────────────────────────────────────────
@@ -101,8 +101,14 @@ export type SymbolDetailsRequest =
  */
 export const SymbolDetailsRequestSchema = z.discriminatedUnion('variant', [
   z.object({ variant: z.literal('byId'), id: z.number().int().positive() }),
-  z.object({ variant: z.literal('byIds'), ids: z.array(z.number().int().positive()).nonempty() }),
-  z.object({ variant: z.literal('byNames'), names: z.array(z.string().min(1)).nonempty() }),
+  z.object({
+    variant: z.literal('byIds'),
+    ids: z.array(z.number().int().positive()).nonempty(),
+  }),
+  z.object({
+    variant: z.literal('byNames'),
+    names: z.array(z.string().min(1)).nonempty(),
+  }),
 ]);
 
 //──────────────────────────────────────────────────────────────────────────────
@@ -222,40 +228,42 @@ export interface SymbolDetail {
  * Zod schema for validating SymbolDetail objects.
  */
 export const SymbolDetailSchema = z.object({
-  symbol:           z.string().min(1),
-  symbolId:         z.number().int().positive(),
-  prevDayClosePrice:z.number(),
-  highPrice52:      z.number(),
-  lowPrice52:       z.number(),
-  averageVol3Months:z.number().int().nonnegative(),
+  symbol: z.string().min(1),
+  symbolId: z.number().int().positive(),
+  prevDayClosePrice: z.number(),
+  highPrice52: z.number(),
+  lowPrice52: z.number(),
+  averageVol3Months: z.number().int().nonnegative(),
   averageVol20Days: z.number().int().nonnegative(),
-  outstandingShares:z.number().int().nonnegative(),
-  eps:               z.number(),
-  pe:                z.number(),
-  dividend:          z.number(),
-  yield:             z.number(),
-  exDate:            z.string().datetime(),
-  marketCap:         z.number(),
-  tradeUnit:         z.number().int().positive(),
-  optionType:        z.enum(OPTION_TYPES).nullable(),
-  optionDurationType:z.enum(OPTION_DURATION_TYPES).nullable(),
-  optionRoot:        z.string().nullable(),
+  outstandingShares: z.number().int().nonnegative(),
+  eps: z.number(),
+  pe: z.number(),
+  dividend: z.number(),
+  yield: z.number(),
+  exDate: z.string().datetime(),
+  marketCap: z.number(),
+  tradeUnit: z.number().int().positive(),
+  optionType: z.enum(OPTION_TYPES).nullable(),
+  optionDurationType: z.enum(OPTION_DURATION_TYPES).nullable(),
+  optionRoot: z.string().nullable(),
   optionContractDeliverables: z.unknown(),
-  optionExerciseType:z.enum(OPTION_EXERCISE_TYPES).nullable(),
-  listingExchange:   z.enum(LISTING_EXCHANGES),
-  description:       z.string().min(1),
-  securityType:      z.enum(SECURITY_TYPES),
-  optionExpiryDate:  z.string().nullable(),
-  dividendDate:      z.string().nullable(),
+  optionExerciseType: z.enum(OPTION_EXERCISE_TYPES).nullable(),
+  listingExchange: z.enum(LISTING_EXCHANGES),
+  description: z.string().min(1),
+  securityType: z.enum(SECURITY_TYPES),
+  optionExpiryDate: z.string().nullable(),
+  dividendDate: z.string().nullable(),
   optionStrikePrice: z.number().nullable(),
-  isTradable:        z.boolean(),
-  isQuotable:        z.boolean(),
-  hasOptions:        z.boolean(),
-  currency:          z.enum(CURRENCY_CODES),
-  minTicks:          z.array(z.object({ pivot: z.number(), minTick: z.number().positive() })),
-  industrySector:    z.string().nullable(),
-  industryGroup:     z.string().nullable(),
-  industrySubGroup:  z.string().nullable(),
+  isTradable: z.boolean(),
+  isQuotable: z.boolean(),
+  hasOptions: z.boolean(),
+  currency: z.enum(CURRENCY_CODES),
+  minTicks: z.array(
+    z.object({ pivot: z.number(), minTick: z.number().positive() })
+  ),
+  industrySector: z.string().nullable(),
+  industryGroup: z.string().nullable(),
+  industrySubGroup: z.string().nullable(),
 });
 
 /**
@@ -271,7 +279,9 @@ export interface SymbolDetailsResponse {
  * @public
  * Schema validating the full response envelope.
  */
-export const SymbolDetailsResponseSchema = z.object({ symbols: z.array(SymbolDetailSchema) });
+export const SymbolDetailsResponseSchema = z.object({
+  symbols: z.array(SymbolDetailSchema),
+});
 
 /**
  * @public

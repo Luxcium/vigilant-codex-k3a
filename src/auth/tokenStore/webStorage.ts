@@ -13,7 +13,8 @@ export class WebStorageStore implements TokenStore {
   constructor(private readonly key = 'qt_tokens') {}
 
   async load(): Promise<OAuthTokens | null> {
-    if (typeof globalThis === 'undefined' || !this.hasLocalStorage()) return null;
+    if (typeof globalThis === 'undefined' || !this.hasLocalStorage())
+      return null;
     const window = globalThis as unknown as WindowWithLocalStorage;
     const val = window.localStorage.getItem(this.key);
     return val ? (JSON.parse(val) as OAuthTokens) : null;
@@ -34,8 +35,10 @@ export class WebStorageStore implements TokenStore {
   }
 
   private hasLocalStorage(): boolean {
-    return typeof globalThis !== 'undefined' && 
-           'localStorage' in globalThis && 
-           globalThis.localStorage !== null;
+    return (
+      typeof globalThis !== 'undefined' &&
+      'localStorage' in globalThis &&
+      globalThis.localStorage !== null
+    );
   }
 }

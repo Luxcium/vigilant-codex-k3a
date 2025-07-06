@@ -1,6 +1,14 @@
 import { OAuthProvider, OAuthTokens, TokenStore } from '@/auth/interfaces';
 import { AuthManager } from '@/auth/manager';
-import { afterEach, beforeEach, describe, expect, it, vi, type MockedFunction } from 'vitest';
+import {
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+  type MockedFunction,
+} from 'vitest';
 
 describe('AuthManager', () => {
   let mockProvider: OAuthProvider;
@@ -50,7 +58,9 @@ describe('AuthManager', () => {
 
   describe('getAccessToken', () => {
     it('should return access token when valid tokens exist', async () => {
-      (mockStore.load as MockedFunction<typeof mockStore.load>).mockResolvedValue(mockTokens);
+      (
+        mockStore.load as MockedFunction<typeof mockStore.load>
+      ).mockResolvedValue(mockTokens);
 
       const accessToken = await authManager.getAccessToken();
 
@@ -59,9 +69,13 @@ describe('AuthManager', () => {
     });
 
     it('should throw error when no tokens are available', async () => {
-      (mockStore.load as MockedFunction<typeof mockStore.load>).mockResolvedValue(null);
+      (
+        mockStore.load as MockedFunction<typeof mockStore.load>
+      ).mockResolvedValue(null);
 
-      await expect(authManager.getAccessToken()).rejects.toThrow('No tokens available');
+      await expect(authManager.getAccessToken()).rejects.toThrow(
+        'No tokens available'
+      );
       expect(mockStore.load).toHaveBeenCalledTimes(1);
     });
 
@@ -76,13 +90,21 @@ describe('AuthManager', () => {
         expiresAt: Date.now() + 3600000,
       };
 
-      (mockStore.load as MockedFunction<typeof mockStore.load>).mockResolvedValue(expiredTokens);
-      (mockProvider.refreshToken as MockedFunction<typeof mockProvider.refreshToken>).mockResolvedValue(refreshedTokens);
+      (
+        mockStore.load as MockedFunction<typeof mockStore.load>
+      ).mockResolvedValue(expiredTokens);
+      (
+        mockProvider.refreshToken as MockedFunction<
+          typeof mockProvider.refreshToken
+        >
+      ).mockResolvedValue(refreshedTokens);
 
       const accessToken = await authManager.getAccessToken();
 
       expect(accessToken).toBe('new-access-token');
-      expect(mockProvider.refreshToken).toHaveBeenCalledWith('refresh-token-456');
+      expect(mockProvider.refreshToken).toHaveBeenCalledWith(
+        'refresh-token-456'
+      );
       expect(mockStore.save).toHaveBeenCalledWith(refreshedTokens);
     });
 
@@ -96,8 +118,14 @@ describe('AuthManager', () => {
         access_token: 'new-access-token',
       };
 
-      (mockStore.load as MockedFunction<typeof mockStore.load>).mockResolvedValue(expiredTokens);
-      (mockProvider.refreshToken as MockedFunction<typeof mockProvider.refreshToken>).mockResolvedValue(refreshedTokens);
+      (
+        mockStore.load as MockedFunction<typeof mockStore.load>
+      ).mockResolvedValue(expiredTokens);
+      (
+        mockProvider.refreshToken as MockedFunction<
+          typeof mockProvider.refreshToken
+        >
+      ).mockResolvedValue(refreshedTokens);
 
       // Make multiple concurrent requests
       const promises = [
@@ -109,7 +137,7 @@ describe('AuthManager', () => {
       const results = await Promise.all(promises);
 
       // All should return the same refreshed token
-      results.forEach((token) => {
+      results.forEach(token => {
         expect(token).toBe('new-access-token');
       });
 
@@ -120,7 +148,9 @@ describe('AuthManager', () => {
 
   describe('getApiServer', () => {
     it('should return API server URL when valid tokens exist', async () => {
-      (mockStore.load as MockedFunction<typeof mockStore.load>).mockResolvedValue(mockTokens);
+      (
+        mockStore.load as MockedFunction<typeof mockStore.load>
+      ).mockResolvedValue(mockTokens);
 
       const apiServer = await authManager.getApiServer();
 
@@ -129,9 +159,13 @@ describe('AuthManager', () => {
     });
 
     it('should throw error when no tokens are available', async () => {
-      (mockStore.load as MockedFunction<typeof mockStore.load>).mockResolvedValue(null);
+      (
+        mockStore.load as MockedFunction<typeof mockStore.load>
+      ).mockResolvedValue(null);
 
-      await expect(authManager.getApiServer()).rejects.toThrow('No tokens available');
+      await expect(authManager.getApiServer()).rejects.toThrow(
+        'No tokens available'
+      );
     });
 
     it('should refresh tokens and return API server when tokens are close to expiry', async () => {
@@ -144,19 +178,29 @@ describe('AuthManager', () => {
         api_server: 'https://api-new.example.com',
       };
 
-      (mockStore.load as MockedFunction<typeof mockStore.load>).mockResolvedValue(expiredTokens);
-      (mockProvider.refreshToken as MockedFunction<typeof mockProvider.refreshToken>).mockResolvedValue(refreshedTokens);
+      (
+        mockStore.load as MockedFunction<typeof mockStore.load>
+      ).mockResolvedValue(expiredTokens);
+      (
+        mockProvider.refreshToken as MockedFunction<
+          typeof mockProvider.refreshToken
+        >
+      ).mockResolvedValue(refreshedTokens);
 
       const apiServer = await authManager.getApiServer();
 
       expect(apiServer).toBe('https://api-new.example.com');
-      expect(mockProvider.refreshToken).toHaveBeenCalledWith('refresh-token-456');
+      expect(mockProvider.refreshToken).toHaveBeenCalledWith(
+        'refresh-token-456'
+      );
     });
   });
 
   describe('revokeAll', () => {
     it('should revoke tokens and clear store when tokens exist', async () => {
-      (mockStore.load as MockedFunction<typeof mockStore.load>).mockResolvedValue(mockTokens);
+      (
+        mockStore.load as MockedFunction<typeof mockStore.load>
+      ).mockResolvedValue(mockTokens);
       const mockRevokeToken = vi.fn().mockResolvedValue(undefined);
       mockProvider.revokeToken = mockRevokeToken;
 
@@ -170,7 +214,9 @@ describe('AuthManager', () => {
     });
 
     it('should clear store even when no revoke method is available', async () => {
-      (mockStore.load as MockedFunction<typeof mockStore.load>).mockResolvedValue(mockTokens);
+      (
+        mockStore.load as MockedFunction<typeof mockStore.load>
+      ).mockResolvedValue(mockTokens);
       delete mockProvider.revokeToken;
 
       // Load tokens first
@@ -189,8 +235,12 @@ describe('AuthManager', () => {
     });
 
     it('should handle revoke token errors gracefully', async () => {
-      (mockStore.load as MockedFunction<typeof mockStore.load>).mockResolvedValue(mockTokens);
-      const mockRevokeToken = vi.fn().mockRejectedValue(new Error('Revoke failed'));
+      (
+        mockStore.load as MockedFunction<typeof mockStore.load>
+      ).mockResolvedValue(mockTokens);
+      const mockRevokeToken = vi
+        .fn()
+        .mockRejectedValue(new Error('Revoke failed'));
       mockProvider.revokeToken = mockRevokeToken;
 
       // Load tokens first
@@ -208,11 +258,21 @@ describe('AuthManager', () => {
         expiresAt: Date.now() + 30000,
       };
 
-      (mockStore.load as MockedFunction<typeof mockStore.load>).mockResolvedValue(expiredTokens);
-      (mockProvider.refreshToken as MockedFunction<typeof mockProvider.refreshToken>).mockRejectedValue(new Error('Refresh failed'));
+      (
+        mockStore.load as MockedFunction<typeof mockStore.load>
+      ).mockResolvedValue(expiredTokens);
+      (
+        mockProvider.refreshToken as MockedFunction<
+          typeof mockProvider.refreshToken
+        >
+      ).mockRejectedValue(new Error('Refresh failed'));
 
-      await expect(authManager.getAccessToken()).rejects.toThrow('Refresh failed');
-      expect(mockProvider.refreshToken).toHaveBeenCalledWith('refresh-token-456');
+      await expect(authManager.getAccessToken()).rejects.toThrow(
+        'Refresh failed'
+      );
+      expect(mockProvider.refreshToken).toHaveBeenCalledWith(
+        'refresh-token-456'
+      );
     });
 
     it('should handle store save failure during refresh', async () => {
@@ -225,12 +285,22 @@ describe('AuthManager', () => {
         access_token: 'new-access-token',
       };
 
-      (mockStore.load as MockedFunction<typeof mockStore.load>).mockResolvedValue(expiredTokens);
-      (mockProvider.refreshToken as MockedFunction<typeof mockProvider.refreshToken>).mockResolvedValue(refreshedTokens);
-      (mockStore.save as MockedFunction<typeof mockStore.save>).mockRejectedValue(new Error('Save failed'));
+      (
+        mockStore.load as MockedFunction<typeof mockStore.load>
+      ).mockResolvedValue(expiredTokens);
+      (
+        mockProvider.refreshToken as MockedFunction<
+          typeof mockProvider.refreshToken
+        >
+      ).mockResolvedValue(refreshedTokens);
+      (
+        mockStore.save as MockedFunction<typeof mockStore.save>
+      ).mockRejectedValue(new Error('Save failed'));
 
       await expect(authManager.getAccessToken()).rejects.toThrow('Save failed');
-      expect(mockProvider.refreshToken).toHaveBeenCalledWith('refresh-token-456');
+      expect(mockProvider.refreshToken).toHaveBeenCalledWith(
+        'refresh-token-456'
+      );
       expect(mockStore.save).toHaveBeenCalledWith(refreshedTokens);
     });
   });
@@ -242,7 +312,9 @@ describe('AuthManager', () => {
         expiresAt: Date.now() + 60000, // Exactly 60 seconds (refresh margin)
       };
 
-      (mockStore.load as MockedFunction<typeof mockStore.load>).mockResolvedValue(marginTokens);
+      (
+        mockStore.load as MockedFunction<typeof mockStore.load>
+      ).mockResolvedValue(marginTokens);
 
       const accessToken = await authManager.getAccessToken();
 
@@ -261,13 +333,21 @@ describe('AuthManager', () => {
         access_token: 'refreshed-token',
       };
 
-      (mockStore.load as MockedFunction<typeof mockStore.load>).mockResolvedValue(almostExpiredTokens);
-      (mockProvider.refreshToken as MockedFunction<typeof mockProvider.refreshToken>).mockResolvedValue(refreshedTokens);
+      (
+        mockStore.load as MockedFunction<typeof mockStore.load>
+      ).mockResolvedValue(almostExpiredTokens);
+      (
+        mockProvider.refreshToken as MockedFunction<
+          typeof mockProvider.refreshToken
+        >
+      ).mockResolvedValue(refreshedTokens);
 
       const accessToken = await authManager.getAccessToken();
 
       expect(accessToken).toBe('refreshed-token');
-      expect(mockProvider.refreshToken).toHaveBeenCalledWith('refresh-token-456');
+      expect(mockProvider.refreshToken).toHaveBeenCalledWith(
+        'refresh-token-456'
+      );
     });
   });
 });

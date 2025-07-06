@@ -1,7 +1,15 @@
 import type { OAuthTokens } from '@/auth/interfaces';
 import * as manual from '@/auth/manual';
 import { scheduleAutoRefresh } from '@/auth/scheduler';
-import { afterEach, beforeEach, describe, expect, it, vi, type MockedFunction } from 'vitest';
+import {
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+  type MockedFunction,
+} from 'vitest';
 
 // Mock the manual module
 vi.mock('@/auth/manual');
@@ -9,14 +17,14 @@ vi.mock('@/auth/manual');
 describe('auth/scheduler', () => {
   const clientId = 'test-client-id';
   const refreshToken = 'test-refresh-token';
-  
+
   let mockBootstrap: MockedFunction<typeof manual.bootstrap>;
   let timeoutSpy: any;
 
   beforeEach(() => {
     vi.clearAllMocks();
     vi.useFakeTimers();
-    
+
     mockBootstrap = manual.bootstrap as MockedFunction<typeof manual.bootstrap>;
     timeoutSpy = vi.spyOn(global, 'setTimeout');
   });
@@ -87,7 +95,7 @@ describe('auth/scheduler', () => {
 
       expect(timeoutSpy).toHaveBeenCalled();
       const delay = timeoutSpy.mock.calls[0][1];
-      
+
       // Should be approximately 240000ms (5 minutes - 1 minute buffer)
       expect(delay).toBeGreaterThan(230000);
       expect(delay).toBeLessThan(250000);
@@ -138,7 +146,7 @@ describe('auth/scheduler', () => {
 
     it('should continue after error recovery', async () => {
       const mockTokens = createMockTokens(300000);
-      
+
       // First call fails, second succeeds
       mockBootstrap
         .mockRejectedValueOnce(new Error('Network error'))

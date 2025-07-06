@@ -1,6 +1,6 @@
-import { describe, expect, it } from 'vitest'
-import { ApiErrorSchema } from '../../../src/types/apiError'
-import { OrderSchema } from '../../../src/types/orders'
+import { describe, expect, it } from 'vitest';
+import { ApiErrorSchema } from '../../../src/types/apiError';
+import { OrderSchema } from '../../../src/types/orders';
 
 describe('ApiErrorSchema', () => {
   it('parses valid payload', () => {
@@ -41,12 +41,12 @@ describe('ApiErrorSchema', () => {
       isInsider: false,
       isLimitOffsetInDollar: false,
       userId: 0,
-      placementCommission: 0
-    })
-    const obj = { code: 1, message: 'err', orderId: 1, orders: [order] }
-    expect(ApiErrorSchema.parse(obj)).toEqual(obj)
-  })
+      placementCommission: 0,
+    });
+    const obj = { code: 1, message: 'err', orderId: 1, orders: [order] };
+    expect(ApiErrorSchema.parse(obj)).toEqual(obj);
+  });
   it('invalid payload throws', () => {
-    expect(() => ApiErrorSchema.parse({})).toThrow()
-  })
-})
+    expect(() => ApiErrorSchema.parse({})).toThrow();
+  });
+});

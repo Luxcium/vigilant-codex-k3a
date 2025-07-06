@@ -11,9 +11,9 @@ echo "Testing OpenAI API key availability in container..."
 
 # Check if container is running
 if ! docker ps | grep "${PROJECT_NAME}-codex" > /dev/null; then
-    echo "Error: Codex container is not running"
-    echo "Start it with: ./scripts/codex_start.sh"
-    exit 1
+  echo "Error: Codex container is not running"
+  echo "Start it with: ./scripts/codex_start.sh"
+  exit 1
 fi
 
 # Test API key in container

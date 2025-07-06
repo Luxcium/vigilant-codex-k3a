@@ -1,6 +1,6 @@
 ---
-applyTo: "**"
-description: "A VS Code–centric checklist for validating and debugging web app meta tags, manifests, icons, deep links, and SEO elements using built-in tools and CLI/CI workflows."
+applyTo: '**'
+description: 'A VS Code–centric checklist for validating and debugging web app meta tags, manifests, icons, deep links, and SEO elements using built-in tools and CLI/CI workflows.'
 ---
 
 # Validation & Debugging Checklist Instructions
@@ -29,7 +29,7 @@ code --install-extension ms-edgedevtools.vscode-edge-devtools
 # Press ⌘⇧P (or Ctrl+Shift+P) → 'Simple Browser: Show' → http://localhost:3000
 ```
 
-*The **Edge DevTools panel** (accessible from the Side Bar 🟣 icon) has a **Manifest** tab that shows PWA installability requirements and errors.* 
+_The **Edge DevTools panel** (accessible from the Side Bar 🟣 icon) has a **Manifest** tab that shows PWA installability requirements and errors._
 
 ## 3. React / Next.js Overlay 🔗 `#react-next`
 
@@ -126,12 +126,12 @@ jobs:
 
 ## 10. Common VS Code Troubleshooting Tips 🔗 `#gotchas`
 
-| Issue                               | Fix                                                                    |
-| ----------------------------------- | ---------------------------------------------------------------------- |
-| Live Preview port 5500 in use       | Change `livePreview.port` in your VS Code `settings.json`.             |
-| Manifest changes not applying       | Hard refresh (`⇧⌘R`) in Simple Browser or use the Edge DevTools **Application** panel to unregister the Service Worker. |
-| React/Next.js overlay is stuck      | Delete the `.next/` or `build/` directory and restart the dev server.   |
-| Simple Browser shows old content    | Use `⌘⇧P` → `Simple Browser: Clear Cache`.                             |
+| Issue                            | Fix                                                                                                                     |
+| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Live Preview port 5500 in use    | Change `livePreview.port` in your VS Code `settings.json`.                                                              |
+| Manifest changes not applying    | Hard refresh (`⇧⌘R`) in Simple Browser or use the Edge DevTools **Application** panel to unregister the Service Worker. |
+| React/Next.js overlay is stuck   | Delete the `.next/` or `build/` directory and restart the dev server.                                                   |
+| Simple Browser shows old content | Use `⌘⇧P` → `Simple Browser: Clear Cache`.                                                                              |
 
 ## 11. Further Reading 🔗 `#reading`
 

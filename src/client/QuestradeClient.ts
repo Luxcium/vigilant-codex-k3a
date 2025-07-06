@@ -34,8 +34,8 @@ export class QuestradeClient {
   }
 
   public async time(): Promise<Date> {
-  // Explicit return type for constructor is not needed, but for clarity:
-  // constructor(opts: QuestradeClientOptions)
+    // Explicit return type for constructor is not needed, but for clarity:
+    // constructor(opts: QuestradeClientOptions)
     const client = await this.client();
     const res = await client.get<{ time: number }>('/time');
     return new Date(res.time);

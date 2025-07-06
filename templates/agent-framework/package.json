@@ -2,11 +2,16 @@
   "name": "agent-framework",
   "version": "1.0.0",
   "description": "Multi-agent retrieval framework scaffold",
-  "main": "dist/index.js",
-  "keywords": ["multi-agent", "retrieval", "framework", "typescript"],
-  "author": "Benjamin Vincent (Luxcium)",
+  "keywords": [
+    "multi-agent",
+    "retrieval",
+    "framework",
+    "typescript"
+  ],
   "license": "MIT",
+  "author": "Benjamin Vincent (Luxcium)",
   "type": "module",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "vitest"

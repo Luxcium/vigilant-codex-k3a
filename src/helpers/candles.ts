@@ -2,7 +2,7 @@ import { RestClient } from '../http/restClient';
 import {
   CandleInterval,
   CandlesResponse,
-  CandlesResponseSchema
+  CandlesResponseSchema,
 } from '../types';
 
 export interface CandlesParams {

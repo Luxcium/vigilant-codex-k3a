@@ -16,10 +16,9 @@ else
   log "Directory $AGENT_DIR already exists"
 fi
 
-
 # README
 if [ ! -f "$AGENT_DIR/README.md" ]; then
-  cat > "$AGENT_DIR/README.md" <<'FILE'
+  cat > "$AGENT_DIR/README.md" << 'FILE'
 # Agent System
 
 This module implements a hierarchical multi-agent retrieval system.
@@ -31,7 +30,7 @@ fi
 
 # __init__.py
 if [ ! -f "$AGENT_DIR/__init__.py" ]; then
-  cat > "$AGENT_DIR/__init__.py" <<'FILE'
+  cat > "$AGENT_DIR/__init__.py" << 'FILE'
 from .memory import Memory
 from .tools import VectorSearchTool
 from .agents import Agent, WorkerAgent, SupervisorAgent
@@ -49,7 +48,7 @@ fi
 
 # memory.py
 if [ ! -f "$AGENT_DIR/memory.py" ]; then
-  cat > "$AGENT_DIR/memory.py" <<'FILE'
+  cat > "$AGENT_DIR/memory.py" << 'FILE'
 from collections import defaultdict
 from typing import Any, List, DefaultDict
 
@@ -68,7 +67,7 @@ fi
 
 # tools.py
 if [ ! -f "$AGENT_DIR/tools.py" ]; then
-  cat > "$AGENT_DIR/tools.py" <<'FILE'
+  cat > "$AGENT_DIR/tools.py" << 'FILE'
 from typing import List, Tuple
 import numpy as np
 
@@ -91,7 +90,7 @@ fi
 
 # agents.py
 if [ ! -f "$AGENT_DIR/agents.py" ]; then
-  cat > "$AGENT_DIR/agents.py" <<'FILE'
+  cat > "$AGENT_DIR/agents.py" << 'FILE'
 from typing import Any, Dict, List
 import numpy as np
 from .memory import Memory

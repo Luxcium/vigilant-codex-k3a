@@ -1,4 +1,3 @@
-
 ---
 mode: 'agent'
 tools: ['codebase', 'file_search', 'terminal']
@@ -14,8 +13,9 @@ Generate advanced Docker configurations with exotic patterns, multi-environment 
 ## Context Requirements
 
 You are working in a VS Code workspace with the following project structure:
+
 - `src/` — TypeScript source code
-- `python/` — Python modules and utilities  
+- `python/` — Python modules and utilities
 - `notebooks/` — Jupyter notebooks
 - `scripts/` — Shell scripts for automation
 - `memory-bank/` — Project context and dependencies
@@ -24,6 +24,7 @@ You are working in a VS Code workspace with the following project structure:
 ## Instructions Integration
 
 Apply the following instruction files during code generation:
+
 - `.github/instructions/typescript-standards.instructions.md` for TypeScript code
 - `.github/instructions/python-standards.instructions.md` for Python code
 - `.github/instructions/python-notebook-standards.instructions.md` for Jupyter notebooks
@@ -35,12 +36,14 @@ Apply the following instruction files during code generation:
 Define your inputs using the format: `${input:variableName:defaultValue}`
 
 ### Required Parameters
+
 - **${input:projectName:my-app}** — Name of the project/application
 - **${input:environment:development}** — Target environment (development, staging, production, all)
 - **${input:runtimeVersion:node:18-alpine}** — Base runtime and version
 - **${input:serviceType:web-app}** — Service type (web-app, api, microservice, full-stack, database)
 
-### Optional Parameters  
+### Optional Parameters
+
 - **${input:includeDatabase:postgresql}** — Database service to include (postgresql, mysql, mongodb, redis, none)
 - **${input:networkPattern:bridge}** — Network strategy (bridge, overlay, host, custom)
 - **${input:exoticPatterns:health-checks}** — Exotic patterns to implement (health-checks, service-discovery, load-balancing, scaling, multi-arch)
@@ -53,12 +56,14 @@ Define your inputs using the format: `${input:variableName:defaultValue}`
 Generate comprehensive Docker configurations following the enhanced four-phase workflow with exotic patterns, security-first approach, and multi-environment support. This prompt creates production-ready containerization with advanced orchestration patterns.
 
 ### Primary Objectives
+
 1. **Phase 1 Implementation**: Design and plan container architecture with exotic patterns
 2. **Phase 2 Execution**: Create secure, optimized Dockerfiles for development and production
 3. **Phase 3 Orchestration**: Implement advanced Docker Compose configurations with exotic patterns
 4. **Phase 4 Integration**: Generate comprehensive documentation and AI agent integration
 
 ### Success Criteria
+
 - [ ] All four phases of docker-workflow.md are completed
 - [ ] Security-first approach implemented (non-root users, minimal images, vulnerability scanning)
 - [ ] Multi-environment configurations generated (dev, staging, production)
@@ -71,6 +76,7 @@ Generate comprehensive Docker configurations following the enhanced four-phase w
 ## Implementation Steps
 
 ### Phase 1: Design & Planning
+
 **Objective**: Define comprehensive container requirements and exotic patterns
 
 1. **Architecture Analysis**
@@ -92,9 +98,11 @@ Generate comprehensive Docker configurations following the enhanced four-phase w
    - Design container intercept points for debugging and monitoring
 
 ### Phase 2: Container Creation
+
 **Objective**: Implement secure, optimized containers with development and production variants
 
 1. **Development Dockerfile** (`Dockerfile.dev`)
+
    ```dockerfile
    FROM ${input:runtimeVersion}
    # Install package manager (pnpm for Node.js, pip for Python)
@@ -112,6 +120,7 @@ Generate comprehensive Docker configurations following the enhanced four-phase w
    ```
 
 2. **Production Dockerfile** (`Dockerfile.prod`) with Multi-Stage Build
+
    ```dockerfile
    FROM ${input:runtimeVersion} AS build
    RUN npm install -g pnpm
@@ -138,11 +147,13 @@ Generate comprehensive Docker configurations following the enhanced four-phase w
    - Add health check endpoints and validation
 
 ### Phase 3: Exotic Docker Compose Implementation
+
 **Objective**: Implement advanced orchestration patterns and exotic configurations
 
 1. **Base Docker Compose** (`docker-compose.yml`)
+
    ```yaml
-   version: "3.9"
+   version: '3.9'
    services:
      ${input:projectName}:
        build:
@@ -157,13 +168,13 @@ Generate comprehensive Docker configurations following the enhanced four-phase w
          NODE_ENV: production
          DATABASE_URL: postgresql://user:pass@db:5432/${input:projectName}
        healthcheck:
-         test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+         test: ['CMD', 'curl', '-f', 'http://localhost:8080/health']
          interval: 30s
          timeout: 10s
          retries: 3
        ports:
-         - "8080:8080"
-   
+         - '8080:8080'
+
      db:
        image: postgres:14-alpine
        networks:
@@ -175,23 +186,24 @@ Generate comprehensive Docker configurations following the enhanced four-phase w
        volumes:
          - postgres-data:/var/lib/postgresql/data
        healthcheck:
-         test: ["CMD-SHELL", "pg_isready -U appuser"]
+         test: ['CMD-SHELL', 'pg_isready -U appuser']
          interval: 30s
          timeout: 10s
-   
+
    networks:
      app-net:
        driver: bridge
        labels:
-         com.${input:projectName}.network: "main"
-   
+         com.${input:projectName}.network: 'main'
+
    volumes:
      postgres-data:
    ```
 
 2. **Development Override** (`docker-compose.override.yml`)
+
    ```yaml
-   version: "3.9"
+   version: '3.9'
    services:
      ${input:projectName}:
        build:
@@ -200,7 +212,7 @@ Generate comprehensive Docker configurations following the enhanced four-phase w
          - .:/workspace
          - /workspace/node_modules
        ports:
-         - "3000:3000"
+         - '3000:3000'
        environment:
          NODE_ENV: development
    ```
@@ -212,24 +224,29 @@ Generate comprehensive Docker configurations following the enhanced four-phase w
    - Multi-architecture support and optimization
 
 ### Phase 4: Documentation & AI Agent Integration
+
 **Objective**: Create comprehensive documentation and AI agent automation
 
 1. **Quick Start Documentation**
+
    ```markdown
    # ${input:projectName} Docker Setup
-   
+
    ## Quick Start
+
    1. Clone repository: `git clone <repo-url>`
    2. Build and run: `docker-compose up --build -d`
    3. Verify health: `docker ps` (ensure all services are "healthy")
    4. Access application: http://localhost:8080
-   
+
    ## Development Mode
+
    1. Use override: `docker-compose -f docker-compose.yml -f docker-compose.override.yml up --build`
    2. Access dev server: http://localhost:3000
    ```
 
 2. **Dev Container Configuration** (if `${input:includeDevContainer}` is true)
+
    ```json
    {
      "name": "${input:projectName} Dev Container",
@@ -241,10 +258,7 @@ Generate comprehensive Docker configurations following the enhanced four-phase w
      "remoteUser": "appuser",
      "customizations": {
        "vscode": {
-         "extensions": [
-           "ms-azuretools.vscode-docker",
-           "dbaeumer.vscode-eslint"
-         ]
+         "extensions": ["ms-azuretools.vscode-docker", "dbaeumer.vscode-eslint"]
        }
      }
    }
@@ -260,6 +274,7 @@ Generate comprehensive Docker configurations following the enhanced four-phase w
 ## Memory Bank Integration
 
 ### Required Updates
+
 - **`memory-bank/dependencies.md`** — Add Docker service dependencies, image repositories, and network configurations
 - **`memory-bank/activeContext.md`** — Update current containerization work and exotic patterns implemented
 - **`memory-bank/progress.md`** — Log completion of Docker workflow phases and deployment milestones
@@ -267,7 +282,9 @@ Generate comprehensive Docker configurations following the enhanced four-phase w
 - **`memory-bank/techContext.md`** — Document container architecture and infrastructure decisions
 
 ### Cross-References
+
 Reference these files for context:
+
 - `memory-bank/projectbrief.md` — Project requirements and containerization goals
 - `memory-bank/techContext.md` — Technical architecture and infrastructure decisions
 - `memory-bank/systemPatterns.md` — Container orchestration patterns and conventions
@@ -276,6 +293,7 @@ Reference these files for context:
 ## Quality Assurance
 
 ### Docker Configuration Checks
+
 - [ ] All Dockerfiles use minimal base images (`-alpine` or `-slim` variants)
 - [ ] Non-root users configured in all containers
 - [ ] Multi-stage builds implemented for production optimizations
@@ -286,6 +304,7 @@ Reference these files for context:
 - [ ] Volume strategies align with `${input:volumeStrategy}` requirements
 
 ### Security Validation
+
 - [ ] Vulnerability scanning commands included
 - [ ] Least privilege principles applied
 - [ ] No hardcoded secrets or credentials
@@ -294,6 +313,7 @@ Reference these files for context:
 - [ ] Resource limits and constraints defined
 
 ### Exotic Patterns Validation
+
 - [ ] Requested `${input:exoticPatterns}` successfully implemented
 - [ ] Advanced health checks with recovery mechanisms
 - [ ] Service discovery and load balancing configured
@@ -301,6 +321,7 @@ Reference these files for context:
 - [ ] Container intercept points functional
 
 ### Documentation Checks
+
 - [ ] Quick start guide provides complete setup instructions
 - [ ] Troubleshooting guide covers common issues
 - [ ] Dev container configuration works with VS Code
@@ -343,16 +364,19 @@ Provide the following deliverables:
 ## Related Files
 
 ### Prompt Files
+
 - [script-generator.prompt.md](./script-generator.prompt.md) - Generate Docker automation scripts
 - [memory-bank-update.prompt.md](./memory-bank-update.prompt.md) - Update Memory Bank documentation
 - [dependency-management.prompt.md](./dependency-management.prompt.md) - Track Docker dependencies
 
-### Instruction Files  
+### Instruction Files
+
 - [file-organization.instructions.md](../instructions/file-organization.instructions.md) - Project structure standards
 - [no_dummy-no_placeholders.instruction.md](../instructions/no_dummy-no_placeholders.instruction.md) - Real configuration requirements
 - [self-documentation.instructions.md](../instructions/self-documentation.instructions.md) - Documentation protocols
 
 ### Memory Bank Files
+
 - [docker-workflow.md](../../memory-bank/docker-workflow.md) - Enhanced four-phase workflow
 - [dependencies.md](../../memory-bank/dependencies.md) - Project dependency tracking
 - [techContext.md](../../memory-bank/techContext.md) - Technical architecture context
@@ -361,10 +385,11 @@ Provide the following deliverables:
 ## Usage Examples
 
 ### VS Code Copilot
+
 ```
 @workspace Use the docker-exotic-generator.prompt.md prompt to generate Docker configurations for:
 - Project: ${input:projectName}
-- Environment: ${input:environment} 
+- Environment: ${input:environment}
 - Runtime: ${input:runtimeVersion}
 - Service Type: ${input:serviceType}
 - Database: ${input:includeDatabase}
@@ -372,6 +397,7 @@ Provide the following deliverables:
 ```
 
 ### Cline AI
+
 ```
 Use docker-exotic-generator.prompt.md to create comprehensive Docker setup with:
 - Full-stack application containerization
@@ -382,6 +408,7 @@ Use docker-exotic-generator.prompt.md to create comprehensive Docker setup with:
 ```
 
 ### Codex CLI
+
 ```bash
 # Generate full-stack Docker configuration
 codex generate --prompt=docker-exotic-generator.prompt.md \

@@ -21,15 +21,15 @@ log() {
 }
 
 warn() {
-    echo -e "${YELLOW}[WARNING]${NC} $1"
+  echo -e "${YELLOW}[WARNING]${NC} $1"
 }
 
 error() {
-    echo -e "${RED}[ERROR]${NC} $1"
+  echo -e "${RED}[ERROR]${NC} $1"
 }
 
 success() {
-    echo -e "${GREEN}[SUCCESS]${NC} $1"
+  echo -e "${GREEN}[SUCCESS]${NC} $1"
 }
 
 log "Setting up local Python virtual environment..."
@@ -39,9 +39,9 @@ log "Project Name: $PROJECT_NAME"
 
 # Check if Python is available
 if ! command -v python3 &> /dev/null; then
-    error "python3 is not installed or not in PATH"
-    error "Please install Python 3.11+ and try again"
-    exit 1
+  error "python3 is not installed or not in PATH"
+  error "Please install Python 3.11+ and try again"
+  exit 1
 fi
 
 # Check Python version
@@ -51,8 +51,8 @@ log "Found Python version: $PYTHON_ACTUAL_VERSION"
 # Create requirements.txt if it doesn't exist
 REQUIREMENTS_FILE="$PYTHON_DIR/requirements.txt"
 if [ ! -f "$REQUIREMENTS_FILE" ]; then
-    log "Creating requirements.txt..."
-    cat > "$REQUIREMENTS_FILE" << EOF
+  log "Creating requirements.txt..."
+  cat > "$REQUIREMENTS_FILE" << EOF
 # Python dependencies for local virtual environment
 # Add your project dependencies below
 
@@ -61,9 +61,9 @@ if [ ! -f "$REQUIREMENTS_FILE" ]; then
 # python-dotenv>=1.0.0
 # pytest>=7.0.0
 EOF
-    success "Created requirements.txt"
+  success "Created requirements.txt"
 else
-    log "requirements.txt already exists"
+  log "requirements.txt already exists"
 fi
 
 # Navigate to python directory
@@ -71,11 +71,11 @@ cd "$PYTHON_DIR"
 
 # Create virtual environment if it doesn't exist
 if [ ! -d .venv ]; then
-    log "Creating virtual environment..."
-    python3 -m venv .venv
-    success "Virtual environment created"
+  log "Creating virtual environment..."
+  python3 -m venv .venv
+  success "Virtual environment created"
 else
-    log "Virtual environment already exists"
+  log "Virtual environment already exists"
 fi
 
 # Activate virtual environment
@@ -88,16 +88,16 @@ pip install --upgrade pip
 
 # Install dependencies if requirements.txt exists and has content
 if [ -f requirements.txt ] && [ -s requirements.txt ]; then
-    # Check if requirements.txt has actual dependencies (not just comments)
-    if grep -v '^#' requirements.txt | grep -v '^$' | grep -q .; then
-        log "Installing dependencies from requirements.txt..."
-        pip install -r requirements.txt
-        success "Dependencies installed"
-    else
-        log "requirements.txt contains no dependencies, skipping installation"
-    fi
+  # Check if requirements.txt has actual dependencies (not just comments)
+  if grep -v '^#' requirements.txt | grep -v '^$' | grep -q .; then
+    log "Installing dependencies from requirements.txt..."
+    pip install -r requirements.txt
+    success "Dependencies installed"
+  else
+    log "requirements.txt contains no dependencies, skipping installation"
+  fi
 else
-    log "No requirements.txt found or file is empty"
+  log "No requirements.txt found or file is empty"
 fi
 
 # Update python/README.md with local instructions
@@ -253,10 +253,10 @@ success "Updated README.md with local environment instructions"
 # Test the environment
 log "Testing Python installation..."
 if python --version; then
-    success "Python is working correctly in virtual environment"
+  success "Python is working correctly in virtual environment"
 else
-    error "Python test failed"
-    exit 1
+  error "Python test failed"
+  exit 1
 fi
 
 success "Local Python virtual environment setup completed!"

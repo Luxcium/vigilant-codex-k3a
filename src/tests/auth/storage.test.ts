@@ -2,7 +2,14 @@ import type { OAuthTokens } from '@/auth/storage';
 import { clear, load, save } from '@/auth/storage';
 import { promises as fs } from 'fs';
 import { dirname } from 'path';
-import { beforeEach, describe, expect, it, vi, type MockedFunction } from 'vitest';
+import {
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+  type MockedFunction,
+} from 'vitest';
 
 // Mock fs and path modules
 vi.mock('fs', () => ({
@@ -36,7 +43,9 @@ describe('auth/storage', () => {
   describe('load', () => {
     it('should load tokens from existing file', async () => {
       const mockFileContent = JSON.stringify(mockTokens);
-      (fs.readFile as MockedFunction<typeof fs.readFile>).mockResolvedValue(mockFileContent);
+      (fs.readFile as MockedFunction<typeof fs.readFile>).mockResolvedValue(
+        mockFileContent
+      );
 
       const result = await load(testFilePath);
 
@@ -56,7 +65,9 @@ describe('auth/storage', () => {
     });
 
     it('should return null when file contains invalid JSON', async () => {
-      (fs.readFile as MockedFunction<typeof fs.readFile>).mockResolvedValue('invalid json');
+      (fs.readFile as MockedFunction<typeof fs.readFile>).mockResolvedValue(
+        'invalid json'
+      );
 
       const result = await load(testFilePath);
 
@@ -80,7 +91,9 @@ describe('auth/storage', () => {
 
     beforeEach(() => {
       (dirname as MockedFunction<typeof dirname>).mockReturnValue(mockDirname);
-      (fs.mkdir as MockedFunction<typeof fs.mkdir>).mockResolvedValue(undefined);
+      (fs.mkdir as MockedFunction<typeof fs.mkdir>).mockResolvedValue(
+        undefined
+      );
       (fs.writeFile as MockedFunction<typeof fs.writeFile>).mockResolvedValue();
       (fs.chmod as MockedFunction<typeof fs.chmod>).mockResolvedValue();
     });
@@ -108,7 +121,9 @@ describe('auth/storage', () => {
         new Error('Permission denied')
       );
 
-      await expect(save(testFilePath, mockTokens)).rejects.toThrow('Permission denied');
+      await expect(save(testFilePath, mockTokens)).rejects.toThrow(
+        'Permission denied'
+      );
       expect(fs.writeFile).not.toHaveBeenCalled();
       expect(fs.chmod).not.toHaveBeenCalled();
     });
@@ -127,7 +142,9 @@ describe('auth/storage', () => {
         new Error('Permission denied')
       );
 
-      await expect(save(testFilePath, mockTokens)).rejects.toThrow('Permission denied');
+      await expect(save(testFilePath, mockTokens)).rejects.toThrow(
+        'Permission denied'
+      );
       expect(fs.writeFile).toHaveBeenCalled();
     });
 
@@ -142,7 +159,11 @@ describe('auth/storage', () => {
       await save(testFilePath, complexTokens);
 
       const expectedJson = JSON.stringify(complexTokens, null, 2);
-      expect(fs.writeFile).toHaveBeenCalledWith(testFilePath, expectedJson, 'utf8');
+      expect(fs.writeFile).toHaveBeenCalledWith(
+        testFilePath,
+        expectedJson,
+        'utf8'
+      );
     });
   });
 
@@ -175,7 +196,9 @@ describe('auth/storage', () => {
     it('should handle save and load cycle', async () => {
       // Mock successful save
       (dirname as MockedFunction<typeof dirname>).mockReturnValue('/test/path');
-      (fs.mkdir as MockedFunction<typeof fs.mkdir>).mockResolvedValue(undefined);
+      (fs.mkdir as MockedFunction<typeof fs.mkdir>).mockResolvedValue(
+        undefined
+      );
       (fs.writeFile as MockedFunction<typeof fs.writeFile>).mockResolvedValue();
       (fs.chmod as MockedFunction<typeof fs.chmod>).mockResolvedValue();
 
@@ -184,7 +207,9 @@ describe('auth/storage', () => {
 
       // Mock successful load
       const expectedJson = JSON.stringify(mockTokens, null, 2);
-      (fs.readFile as MockedFunction<typeof fs.readFile>).mockResolvedValue(expectedJson);
+      (fs.readFile as MockedFunction<typeof fs.readFile>).mockResolvedValue(
+        expectedJson
+      );
 
       // Load tokens
       const result = await load(testFilePath);
@@ -195,7 +220,9 @@ describe('auth/storage', () => {
     it('should handle clear after save', async () => {
       // Mock successful save
       (dirname as MockedFunction<typeof dirname>).mockReturnValue('/test/path');
-      (fs.mkdir as MockedFunction<typeof fs.mkdir>).mockResolvedValue(undefined);
+      (fs.mkdir as MockedFunction<typeof fs.mkdir>).mockResolvedValue(
+        undefined
+      );
       (fs.writeFile as MockedFunction<typeof fs.writeFile>).mockResolvedValue();
       (fs.chmod as MockedFunction<typeof fs.chmod>).mockResolvedValue();
 

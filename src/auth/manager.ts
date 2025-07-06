@@ -5,7 +5,10 @@ export class AuthManager {
   private refreshing: Promise<OAuthTokens> | null = null;
   private readonly refreshMargin = 60_000; // 60s
 
-  constructor(private readonly provider: OAuthProvider, private readonly store: TokenStore) {}
+  constructor(
+    private readonly provider: OAuthProvider,
+    private readonly store: TokenStore
+  ) {}
 
   private async ensure(): Promise<OAuthTokens | null> {
     if (!this.tokens) {
@@ -22,12 +25,14 @@ export class AuthManager {
 
   private async refresh(): Promise<OAuthTokens> {
     if (!this.refreshing) {
-      this.refreshing = this.provider.refreshToken(this.tokens!.refresh_token).then(async (t) => {
-        this.tokens = t;
-        await this.store.save(t);
-        this.refreshing = null;
-        return t;
-      });
+      this.refreshing = this.provider
+        .refreshToken(this.tokens!.refresh_token)
+        .then(async t => {
+          this.tokens = t;
+          await this.store.save(t);
+          this.refreshing = null;
+          return t;
+        });
     }
     return this.refreshing;
   }

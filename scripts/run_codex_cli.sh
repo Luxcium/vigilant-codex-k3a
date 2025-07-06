@@ -5,7 +5,7 @@ log() {
   echo "[$(date -u +'%Y-%m-%dT%H:%M:%SZ')] $*"
 }
 
-if ! command -v docker >/dev/null 2>&1; then
+if ! command -v docker > /dev/null 2>&1; then
   log "ERROR: 'docker' command not found. Please install Docker."
   exit 1
 fi

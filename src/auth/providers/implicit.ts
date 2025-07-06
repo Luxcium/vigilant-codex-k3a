@@ -3,7 +3,10 @@ import { OAuthProvider, OAuthTokens } from '../interfaces';
 const BASE = 'https://login.questrade.com';
 
 export class ImplicitProvider implements OAuthProvider {
-  constructor(private readonly clientId: string, private readonly redirectUri: string) {}
+  constructor(
+    private readonly clientId: string,
+    private readonly redirectUri: string
+  ) {}
 
   authorizeUrl(scopes: string[], state: string): string {
     const params = new URLSearchParams({
@@ -11,7 +14,7 @@ export class ImplicitProvider implements OAuthProvider {
       response_type: 'token',
       redirect_uri: this.redirectUri,
       scope: scopes.join(','),
-      state
+      state,
     });
     return `${BASE}/oauth2/authorize?${params.toString()}`;
   }

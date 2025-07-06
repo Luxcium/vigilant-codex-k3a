@@ -1,6 +1,6 @@
 ---
-applyTo: "**/*.{html,tsx,jsx}"
-description: "Instructions for implementing fundamental SEO meta tags for discoverability, crawling, and social previews."
+applyTo: '**/*.{html,tsx,jsx}'
+description: 'Instructions for implementing fundamental SEO meta tags for discoverability, crawling, and social previews.'
 ---
 
 # SEO Meta Tags Instructions
@@ -15,15 +15,15 @@ Fundamental meta tags like `description`, `robots`, and `canonical` are crucial 
 
 ## 2. Essential SEO Meta Tags 🔗 `#essential`
 
-| Tag                      | Example                                                                     | Notes                                       |
-| ------------------------ | --------------------------------------------------------------------------- | ------------------------------------------- |
-| `description`            | `<meta name="description" content="...">`                                   | Shown as SERP snippet; aim for ≤ 160 chars. |
-| `robots`                 | `<meta name="robots" content="index,follow">`                               | Controls crawling and indexing behavior.    |
-| `canonical`              | `<link rel="canonical" href="...">`                                         | Prevents duplicate content issues.          |
-| `keywords`               | `<meta name="keywords" content="...">`                                      | Largely ignored by Google; low priority.    |
-| `author`                 | `<meta name="author" content="...">`                                        | Identifies the content author; used by some platforms. |
+| Tag                      | Example                                                                     | Notes                                                    |
+| ------------------------ | --------------------------------------------------------------------------- | -------------------------------------------------------- |
+| `description`            | `<meta name="description" content="...">`                                   | Shown as SERP snippet; aim for ≤ 160 chars.              |
+| `robots`                 | `<meta name="robots" content="index,follow">`                               | Controls crawling and indexing behavior.                 |
+| `canonical`              | `<link rel="canonical" href="...">`                                         | Prevents duplicate content issues.                       |
+| `keywords`               | `<meta name="keywords" content="...">`                                      | Largely ignored by Google; low priority.                 |
+| `author`                 | `<meta name="author" content="...">`                                        | Identifies the content author; used by some platforms.   |
 | `viewport`               | `<meta name="viewport" content="width=device-width,initial-scale=1">`       | Essential for mobile-friendliness and responsive design. |
-| `article:published_time` | `<meta property="article:published_time" content="2025-07-02T10:00-04:00">` | For news/blog rich results; uses Open Graph property. |
+| `article:published_time` | `<meta property="article:published_time" content="2025-07-02T10:00-04:00">` | For news/blog rich results; uses Open Graph property.    |
 
 ## 3. Placement & Syntax 🔗 `#placement`
 
@@ -39,25 +39,31 @@ Fundamental meta tags like `description`, `robots`, and `canonical` are crucial 
   <!-- ... other head elements like title, charset ... -->
 
   <!-- Essential for responsive design -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Page description for SERPs (Search Engine Result Pages) -->
-  <meta name="description" content="A concise and compelling description of the page content, under 160 characters.">
+  <meta
+    name="description"
+    content="A concise and compelling description of the page content, under 160 characters."
+  />
 
   <!-- Instructions for search engine crawlers -->
-  <meta name="robots" content="index, follow">
+  <meta name="robots" content="index, follow" />
 
   <!-- The canonical URL for this page to prevent duplicate content -->
-  <link rel="canonical" href="https://www.example.com/your-canonical-page-url">
+  <link
+    rel="canonical"
+    href="https://www.example.com/your-canonical-page-url"
+  />
 
   <!-- Author of the content -->
-  <meta name="author" content="Your Name or Company Name">
+  <meta name="author" content="Your Name or Company Name" />
 
   <!-- For blog posts or articles -->
-  <meta property="article:published_time" content="2025-07-02T10:00:00-04:00">
+  <meta property="article:published_time" content="2025-07-02T10:00:00-04:00" />
 
   <!-- (Optional, low-impact) Keywords for the page -->
-  <meta name="keywords" content="keyword1, keyword2, keyword3">
+  <meta name="keywords" content="keyword1, keyword2, keyword3" />
 
   <!-- ... other meta tags, links, and scripts ... -->
 </head>
@@ -68,6 +74,7 @@ Fundamental meta tags like `description`, `robots`, and `canonical` are crucial 
 You can use various online tools to validate your implementation:
 
 **Browser Commands:**
+
 ```bash
 # Google Mobile-Friendly Test
 open "https://search.google.com/test/mobile-friendly"
@@ -77,6 +84,7 @@ open "https://search.google.com/test/rich-results"
 ```
 
 **Free Online Checkers & Tools:**
+
 - **Google Search Console:** The most important tool for monitoring your site's health, including indexing issues.
 - **Screaming Frog SEO Spider:** A powerful desktop crawler to audit your site's meta tags in bulk (free for up to 500 URLs).
 - **Ahrefs/Moz/SEMrush:** These platforms offer free site audit tools that check for common SEO issues.

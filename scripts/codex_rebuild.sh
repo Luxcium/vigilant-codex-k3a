@@ -8,8 +8,8 @@ PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
 
 # Check for OpenAI API key
 if [[ -z "${OPENAI_API_KEY:-}" ]]; then
-    echo "Warning: OPENAI_API_KEY environment variable is not set"
-    echo "The container will start without the OpenAI API key"
+  echo "Warning: OPENAI_API_KEY environment variable is not set"
+  echo "The container will start without the OpenAI API key"
 fi
 
 echo "Rebuilding Codex Universal environment..."

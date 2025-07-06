@@ -11,8 +11,8 @@ services:
       - jupyter-data:/home/appuser/.jupyter
       - python-cache:/home/appuser/.cache
     ports:
-      - "8888:8888"  # Jupyter Lab
-      - "8000:8000"  # FastAPI
+      - '8888:8888' # Jupyter Lab
+      - '8000:8000' # FastAPI
     environment:
       - JUPYTER_ENABLE_LAB=yes
       - JUPYTER_TOKEN=vigilant-codex-dev
@@ -22,7 +22,7 @@ services:
       - vigilant-codex
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8888/lab/api/status"]
+      test: ['CMD', 'curl', '-f', 'http://localhost:8888/lab/api/status']
       interval: 30s
       timeout: 10s
       retries: 3
@@ -34,7 +34,7 @@ services:
       target: production
     container_name: vigilant-codex-python-prod
     ports:
-      - "8001:8000"  # FastAPI production
+      - '8001:8000' # FastAPI production
     env_file:
       - .env
     environment:
@@ -55,12 +55,12 @@ services:
     volumes:
       - postgres-data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - '5432:5432'
     networks:
       - vigilant-codex
     restart: unless-stopped
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      test: ['CMD-SHELL', 'pg_isready -U postgres']
       interval: 5s
       timeout: 5s
       retries: 5
@@ -69,14 +69,14 @@ services:
     image: redis:7-alpine
     container_name: vigilant-codex-redis
     ports:
-      - "6379:6379"
+      - '6379:6379'
     volumes:
       - redis-data:/data
     networks:
       - vigilant-codex
     restart: unless-stopped
     healthcheck:
-      test: ["CMD", "redis-cli", "ping"]
+      test: ['CMD', 'redis-cli', 'ping']
       interval: 5s
       timeout: 3s
       retries: 5

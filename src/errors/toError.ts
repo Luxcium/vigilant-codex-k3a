@@ -5,7 +5,9 @@ import { QuestradeError, QuestradeErrorPayload } from './types';
 /**
  * Convert an HTTP response to a structured `QuestradeError`.
  */
-export const toQuestradeError = async (res: FetchResponse): Promise<QuestradeError> => {
+export const toQuestradeError = async (
+  res: FetchResponse
+): Promise<QuestradeError> => {
   const data = (await res.json()) as QuestradeErrorPayload;
   const key = `${res.status}:${data.code}`;
   const msg = CODE_MAP[key] ?? data.message;

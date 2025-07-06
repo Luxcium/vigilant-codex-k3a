@@ -19,12 +19,12 @@ export class ManualProvider implements OAuthProvider {
     const body = new URLSearchParams({
       grant_type: 'refresh_token',
       refresh_token: refresh,
-      client_id: this.clientId
+      client_id: this.clientId,
     });
     const res = await fetch(`${BASE}/oauth2/token`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: body.toString()
+      body: body.toString(),
     });
     const data = (await res.json()) as OAuthTokenResponse;
     return {
@@ -32,7 +32,7 @@ export class ManualProvider implements OAuthProvider {
       refresh_token: data.refresh_token ?? refresh,
       expires_in: data.expires_in,
       api_server: data.api_server,
-      expiresAt: Date.now() + data.expires_in * 1000
+      expiresAt: Date.now() + data.expires_in * 1000,
     };
   }
 }

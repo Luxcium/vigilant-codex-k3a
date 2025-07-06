@@ -18,220 +18,220 @@ NC='\033[0m' # No Color
 
 # Helper functions
 log_info() {
-    echo -e "${BLUE}[INFO]${NC} $1"
+  echo -e "${BLUE}[INFO]${NC} $1"
 }
 
 log_success() {
-    echo -e "${GREEN}[SUCCESS]${NC} $1"
+  echo -e "${GREEN}[SUCCESS]${NC} $1"
 }
 
 log_warning() {
-    echo -e "${YELLOW}[WARNING]${NC} $1"
+  echo -e "${YELLOW}[WARNING]${NC} $1"
 }
 
 log_error() {
-    echo -e "${RED}[ERROR]${NC} $1"
+  echo -e "${RED}[ERROR]${NC} $1"
 }
 
 # AI Decision Matrix - When to create prompts (from Pair 05 guidelines)
 should_create_prompt() {
-    local task_type="$1"
-    local frequency="$2"
-    local complexity="$3"
-    
-    # Decision logic based on comprehensive guidelines
-    case "$task_type" in
-        "code-generation"|"debugging"|"refactoring"|"testing")
-            if [[ "$frequency" == "high" || "$complexity" == "complex" ]]; then
-                return 0  # Should create prompt
-            fi
-            ;;
-        "documentation"|"deployment"|"architecture")
-            return 0  # Always create for these types
-            ;;
-        "simple-task"|"one-off")
-            if [[ "$complexity" == "complex" ]]; then
-                return 0  # Create only if complex
-            else
-                return 1  # Skip simple one-offs
-            fi
-            ;;
-    esac
-    return 1  # Default: don't create
+  local task_type="$1"
+  local frequency="$2"
+  local complexity="$3"
+
+  # Decision logic based on comprehensive guidelines
+  case "$task_type" in
+    "code-generation" | "debugging" | "refactoring" | "testing")
+      if [[ "$frequency" == "high" || "$complexity" == "complex" ]]; then
+        return 0 # Should create prompt
+      fi
+      ;;
+    "documentation" | "deployment" | "architecture")
+      return 0 # Always create for these types
+      ;;
+    "simple-task" | "one-off")
+      if [[ "$complexity" == "complex" ]]; then
+        return 0 # Create only if complex
+      else
+        return 1 # Skip simple one-offs
+      fi
+      ;;
+  esac
+  return 1 # Default: don't create
 }
 
 # AI Decision Logic for Prompt Creation (from Pair 06)
 trigger_recognition() {
-    local user_request="$1"
-    
-    # Check for explicit prompt creation triggers
-    if [[ "$user_request" =~ (create|make|generate).*prompt.*file|need.*reusable.*prompt|setup.*prompt.*file ]]; then
-        return 0  # Should create prompt
-    fi
-    
-    # Check for exclusion patterns
-    if [[ "$user_request" =~ direct.*code|immediate.*task|one-time|simple.*explanation ]]; then
-        return 1  # Should NOT create prompt
-    fi
-    
-    return 0  # Default to creating prompt if unclear
+  local user_request="$1"
+
+  # Check for explicit prompt creation triggers
+  if [[ "$user_request" =~ (create|make|generate).*prompt.*file|need.*reusable.*prompt|setup.*prompt.*file ]]; then
+    return 0 # Should create prompt
+  fi
+
+  # Check for exclusion patterns
+  if [[ "$user_request" =~ direct.*code|immediate.*task|one-time|simple.*explanation ]]; then
+    return 1 # Should NOT create prompt
+  fi
+
+  return 0 # Default to creating prompt if unclear
 }
 
 # Intent analysis for determining prompt characteristics
 analyze_intent() {
-    local task_description="$1"
-    local intent_analysis=""
-    
-    # Task pattern identification
-    if [[ "$task_description" =~ repeatable|multiple|reusable ]]; then
-        intent_analysis="$intent_analysis repeatable"
-    fi
-    
-    if [[ "$task_description" =~ multi-step|workflow|process ]]; then
-        intent_analysis="$intent_analysis multi-step"
-    fi
-    
-    if [[ "$task_description" =~ transform|refactor|modify ]]; then
-        intent_analysis="$intent_analysis transformative"
-    fi
-    
-    if [[ "$task_description" =~ analysis|review|explain ]]; then
-        intent_analysis="$intent_analysis informational"
-    fi
-    
-    echo "$intent_analysis"
+  local task_description="$1"
+  local intent_analysis=""
+
+  # Task pattern identification
+  if [[ "$task_description" =~ repeatable|multiple|reusable ]]; then
+    intent_analysis="$intent_analysis repeatable"
+  fi
+
+  if [[ "$task_description" =~ multi-step|workflow|process ]]; then
+    intent_analysis="$intent_analysis multi-step"
+  fi
+
+  if [[ "$task_description" =~ transform|refactor|modify ]]; then
+    intent_analysis="$intent_analysis transformative"
+  fi
+
+  if [[ "$task_description" =~ analysis|review|explain ]]; then
+    intent_analysis="$intent_analysis informational"
+  fi
+
+  echo "$intent_analysis"
 }
 
 # Determine appropriate mode based on task requirements
 determine_mode() {
-    local task_type="$1"
-    
-    case "$task_type" in
-        *multi-step*|*workflow*|*generation*)
-            echo "agent"
-            ;;
-        *transform*|*refactor*|*modify*)
-            echo "edit"
-            ;;
-        *analysis*|*review*|*informational*)
-            echo "ask"
-            ;;
-        *)
-            echo "agent"  # Default to agent mode
-            ;;
-    esac
+  local task_type="$1"
+
+  case "$task_type" in
+    *multi-step* | *workflow* | *generation*)
+      echo "agent"
+      ;;
+    *transform* | *refactor* | *modify*)
+      echo "edit"
+      ;;
+    *analysis* | *review* | *informational*)
+      echo "ask"
+      ;;
+    *)
+      echo "agent" # Default to agent mode
+      ;;
+  esac
 }
 
 # Select tools based on Codex CLI project context
 select_tools() {
-    local technology="$1"
-    local task_type="$2"
-    local tools=""
-    
-    # Base tools for different technologies
-    case "$technology" in
-        *typescript*)
-            tools="codebase filesystem"
-            ;;
-        *python*)
-            tools="codebase filesystem terminal"
-            ;;
-        *nextjs*)
-            tools="codebase filesystem terminal"
-            ;;
-        *shell*|*script*)
-            tools="filesystem terminal"
-            ;;
-        *notebook*)
-            tools="codebase filesystem"
-            ;;
-        *)
-            tools="codebase filesystem"  # Default
-            ;;
-    esac
-    
-    # Add additional tools based on task type
-    if [[ "$task_type" =~ terminal|command|install ]]; then
-        if [[ ! "$tools" =~ terminal ]]; then
-            tools="$tools terminal"
-        fi
+  local technology="$1"
+  local task_type="$2"
+  local tools=""
+
+  # Base tools for different technologies
+  case "$technology" in
+    *typescript*)
+      tools="codebase filesystem"
+      ;;
+    *python*)
+      tools="codebase filesystem terminal"
+      ;;
+    *nextjs*)
+      tools="codebase filesystem terminal"
+      ;;
+    *shell* | *script*)
+      tools="filesystem terminal"
+      ;;
+    *notebook*)
+      tools="codebase filesystem"
+      ;;
+    *)
+      tools="codebase filesystem" # Default
+      ;;
+  esac
+
+  # Add additional tools based on task type
+  if [[ "$task_type" =~ terminal|command|install ]]; then
+    if [[ ! "$tools" =~ terminal ]]; then
+      tools="$tools terminal"
     fi
-    
-    echo "$tools"
+  fi
+
+  echo "$tools"
 }
 
 # Auto-detect prompt requirements based on project context
 analyze_project_context() {
-    local context_info=""
-    
-    # Check for TypeScript files
-    if find . -name "*.ts" -type f | head -1 | grep -q .; then
-        context_info="$context_info typescript"
-    fi
-    
-    # Check for Python files
-    if find . -name "*.py" -type f | head -1 | grep -q .; then
-        context_info="$context_info python"
-    fi
-    
-    # Check for React/Vue components
-    if find . -name "*.vue" -o -name "*.jsx" -o -name "*.tsx" -type f | head -1 | grep -q .; then
-        context_info="$context_info frontend"
-    fi
-    
-    # Check for Docker files
-    if [[ -f "Dockerfile" || -f "docker-compose.yml" ]]; then
-        context_info="$context_info docker"
-    fi
-    
-    echo "$context_info"
+  local context_info=""
+
+  # Check for TypeScript files
+  if find . -name "*.ts" -type f | head -1 | grep -q .; then
+    context_info="$context_info typescript"
+  fi
+
+  # Check for Python files
+  if find . -name "*.py" -type f | head -1 | grep -q .; then
+    context_info="$context_info python"
+  fi
+
+  # Check for React/Vue components
+  if find . -name "*.vue" -o -name "*.jsx" -o -name "*.tsx" -type f | head -1 | grep -q .; then
+    context_info="$context_info frontend"
+  fi
+
+  # Check for Docker files
+  if [[ -f "Dockerfile" || -f "docker-compose.yml" ]]; then
+    context_info="$context_info docker"
+  fi
+
+  echo "$context_info"
 }
 
 # Create prompts directory if it doesn't exist
 ensure_prompts_dir() {
-    if [[ ! -d "$PROMPTS_DIR" ]]; then
-        log_info "Creating prompts directory: $PROMPTS_DIR"
-        mkdir -p "$PROMPTS_DIR"
-    fi
+  if [[ ! -d "$PROMPTS_DIR" ]]; then
+    log_info "Creating prompts directory: $PROMPTS_DIR"
+    mkdir -p "$PROMPTS_DIR"
+  fi
 }
 
 # Validate prompt file name
 validate_filename() {
-    local filename="$1"
-    
-    if [[ ! "$filename" =~ ^[a-z][a-z0-9-]*\.prompt\.md$ ]]; then
-        log_error "Invalid filename format: $filename"
-        log_info "Expected format: [lowercase-with-dashes].prompt.md"
-        log_info "Example: vue-component-generator.prompt.md"
-        return 1
-    fi
-    
-    return 0
+  local filename="$1"
+
+  if [[ ! "$filename" =~ ^[a-z][a-z0-9-]*\.prompt\.md$ ]]; then
+    log_error "Invalid filename format: $filename"
+    log_info "Expected format: [lowercase-with-dashes].prompt.md"
+    log_info "Example: vue-component-generator.prompt.md"
+    return 1
+  fi
+
+  return 0
 }
 
 # Check if file already exists
 check_file_exists() {
-    local filepath="$1"
-    
-    if [[ -f "$filepath" ]]; then
-        log_warning "File already exists: $filepath"
-        read -p "Do you want to overwrite it? (y/N): " -n 1 -r
-        echo
-        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-            log_info "Operation cancelled."
-            exit 0
-        fi
+  local filepath="$1"
+
+  if [[ -f "$filepath" ]]; then
+    log_warning "File already exists: $filepath"
+    read -p "Do you want to overwrite it? (y/N): " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+      log_info "Operation cancelled."
+      exit 0
     fi
+  fi
 }
 
 # Generate prompt file template
 generate_prompt_template() {
-    local filename="$1"
-    local title="$2"
-    local description="$3"
-    local filepath="$PROMPTS_DIR/$filename"
-    
-    cat > "$filepath" << EOF
+  local filename="$1"
+  local title="$2"
+  local description="$3"
+  local filepath="$PROMPTS_DIR/$filename"
+
+  cat > "$filepath" << EOF
 # $title
 
 ## Description
@@ -400,25 +400,25 @@ codex generate --prompt=$filename --params="componentName=MyComponent,targetDire
 \`\`\`
 EOF
 
-    log_success "Generated prompt file: $filepath"
+  log_success "Generated prompt file: $filepath"
 }
 
 # Update dependencies.md with new prompt file
 update_dependencies() {
-    local filename="$1"
-    local dependencies_file="memory-bank/dependencies.md"
-    
-    if [[ -f "$dependencies_file" ]]; then
-        log_info "Don't forget to update $dependencies_file with the new prompt file dependencies"
-        log_info "Add entry for: .github/prompts/$filename"
-    else
-        log_warning "Dependencies file not found: $dependencies_file"
-    fi
+  local filename="$1"
+  local dependencies_file="memory-bank/dependencies.md"
+
+  if [[ -f "$dependencies_file" ]]; then
+    log_info "Don't forget to update $dependencies_file with the new prompt file dependencies"
+    log_info "Add entry for: .github/prompts/$filename"
+  else
+    log_warning "Dependencies file not found: $dependencies_file"
+  fi
 }
 
 # Display usage information
 show_usage() {
-    cat << EOF
+  cat << EOF
 AI Agent Framework - Prompt File Generator
 
 Usage: $0 [OPTIONS]
@@ -449,64 +449,64 @@ EOF
 
 # Main function
 main() {
-    local filename=""
-    local title=""
-    local description=""
-    
-    # Parse command line arguments
-    while [[ $# -gt 0 ]]; do
-        case $1 in
-            -h|--help)
-                show_usage
-                exit 0
-                ;;
-            -n|--name)
-                filename="$2"
-                shift 2
-                ;;
-            -t|--title)
-                title="$2"
-                shift 2
-                ;;
-            -d|--desc)
-                description="$2"
-                shift 2
-                ;;
-            *)
-                log_error "Unknown option: $1"
-                show_usage
-                exit 1
-                ;;
-        esac
-    done
-    
-    # Validate required arguments
-    if [[ -z "$filename" || -z "$title" || -z "$description" ]]; then
-        log_error "Missing required arguments"
+  local filename=""
+  local title=""
+  local description=""
+
+  # Parse command line arguments
+  while [[ $# -gt 0 ]]; do
+    case $1 in
+      -h | --help)
+        show_usage
+        exit 0
+        ;;
+      -n | --name)
+        filename="$2"
+        shift 2
+        ;;
+      -t | --title)
+        title="$2"
+        shift 2
+        ;;
+      -d | --desc)
+        description="$2"
+        shift 2
+        ;;
+      *)
+        log_error "Unknown option: $1"
         show_usage
         exit 1
-    fi
-    
-    # Validate and process
-    log_info "Generating prompt file: $filename"
-    
-    ensure_prompts_dir
-    validate_filename "$filename" || exit 1
-    
-    local filepath="$PROMPTS_DIR/$filename"
-    check_file_exists "$filepath"
-    
-    generate_prompt_template "$filename" "$title" "$description"
-    update_dependencies "$filename"
-    
-    log_success "Prompt file generation completed!"
-    log_info "Next steps:"
-    log_info "1. Edit the generated file to customize the specific workflow"
-    log_info "2. Update memory-bank/dependencies.md with new relationships"
-    log_info "3. Test the prompt file with VS Code Copilot, Cline AI, or Codex CLI"
+        ;;
+    esac
+  done
+
+  # Validate required arguments
+  if [[ -z "$filename" || -z "$title" || -z "$description" ]]; then
+    log_error "Missing required arguments"
+    show_usage
+    exit 1
+  fi
+
+  # Validate and process
+  log_info "Generating prompt file: $filename"
+
+  ensure_prompts_dir
+  validate_filename "$filename" || exit 1
+
+  local filepath="$PROMPTS_DIR/$filename"
+  check_file_exists "$filepath"
+
+  generate_prompt_template "$filename" "$title" "$description"
+  update_dependencies "$filename"
+
+  log_success "Prompt file generation completed!"
+  log_info "Next steps:"
+  log_info "1. Edit the generated file to customize the specific workflow"
+  log_info "2. Update memory-bank/dependencies.md with new relationships"
+  log_info "3. Test the prompt file with VS Code Copilot, Cline AI, or Codex CLI"
 }
 
 # Run main function if script is executed directly
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    main "$@"
+  main "$@"
 fi

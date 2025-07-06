@@ -21,67 +21,67 @@ NC='\033[0m' # No Color
 
 # Logging functions
 log_info() {
-    echo -e "${BLUE}[INFO]${NC} $1"
+  echo -e "${BLUE}[INFO]${NC} $1"
 }
 
 log_success() {
-    echo -e "${GREEN}[SUCCESS]${NC} $1"
+  echo -e "${GREEN}[SUCCESS]${NC} $1"
 }
 
 log_warning() {
-    echo -e "${YELLOW}[WARNING]${NC} $1"
+  echo -e "${YELLOW}[WARNING]${NC} $1"
 }
 
 log_error() {
-    echo -e "${RED}[ERROR]${NC} $1"
+  echo -e "${RED}[ERROR]${NC} $1"
 }
 
 # Check if Docker is available
 check_docker() {
-    if ! command -v docker &> /dev/null; then
-        log_error "Docker is not installed or not in PATH"
-        exit 1
-    fi
+  if ! command -v docker &> /dev/null; then
+    log_error "Docker is not installed or not in PATH"
+    exit 1
+  fi
 
-    if ! docker info &> /dev/null; then
-        log_error "Docker daemon is not running"
-        exit 1
-    fi
+  if ! docker info &> /dev/null; then
+    log_error "Docker daemon is not running"
+    exit 1
+  fi
 }
 
 # Check if OpenAI API key is available
 check_openai_key() {
-    if [[ -z "${OPENAI_API_KEY:-}" ]]; then
-        log_warning "OPENAI_API_KEY environment variable is not set"
-        log_info "The container will start without the OpenAI API key"
-        log_info "You can set it later with: export OPENAI_API_KEY=your_key_here"
-    else
-        log_success "OPENAI_API_KEY is available and will be passed to the container"
-    fi
+  if [[ -z "${OPENAI_API_KEY:-}" ]]; then
+    log_warning "OPENAI_API_KEY environment variable is not set"
+    log_info "The container will start without the OpenAI API key"
+    log_info "You can set it later with: export OPENAI_API_KEY=your_key_here"
+  else
+    log_success "OPENAI_API_KEY is available and will be passed to the container"
+  fi
 }
 
 # Pull the latest codex-universal image
 pull_image() {
-    log_info "Pulling latest codex-universal image..."
-    if docker pull "$IMAGE_NAME"; then
-        log_success "Successfully pulled $IMAGE_NAME"
-    else
-        log_error "Failed to pull $IMAGE_NAME"
-        exit 1
-    fi
+  log_info "Pulling latest codex-universal image..."
+  if docker pull "$IMAGE_NAME"; then
+    log_success "Successfully pulled $IMAGE_NAME"
+  else
+    log_error "Failed to pull $IMAGE_NAME"
+    exit 1
+  fi
 }
 
 # Create .codex directory if it doesn't exist
 setup_codex_directory() {
-    local codex_dir="$PROJECT_ROOT/.codex"
-    
-    if [[ ! -d "$codex_dir" ]]; then
-        log_info "Creating .codex directory..."
-        mkdir -p "$codex_dir"
-        
-        # Create basic config if it doesn't exist
-        if [[ ! -f "$codex_dir/config.json" ]]; then
-            cat > "$codex_dir/config.json" << EOF
+  local codex_dir="$PROJECT_ROOT/.codex"
+
+  if [[ ! -d "$codex_dir" ]]; then
+    log_info "Creating .codex directory..."
+    mkdir -p "$codex_dir"
+
+    # Create basic config if it doesn't exist
+    if [[ ! -f "$codex_dir/config.json" ]]; then
+      cat > "$codex_dir/config.json" << EOF
 {
   "model": "gpt-4.1-mini",
   "approvalMode": "suggest",
@@ -90,21 +90,21 @@ setup_codex_directory() {
   "INPUT_CODEX_HOME": "."
 }
 EOF
-        fi
-        
-        log_success "Created .codex directory and configuration"
-    else
-        log_info ".codex directory already exists"
     fi
+
+    log_success "Created .codex directory and configuration"
+  else
+    log_info ".codex directory already exists"
+  fi
 }
 
 # Create Docker Compose file for codex-universal
 create_docker_compose() {
-    local compose_file="$PROJECT_ROOT/docker-compose.codex.yml"
-    
-    log_info "Creating Docker Compose file for codex-universal..."
-    
-    cat > "$compose_file" << EOF
+  local compose_file="$PROJECT_ROOT/docker-compose.codex.yml"
+
+  log_info "Creating Docker Compose file for codex-universal..."
+
+  cat > "$compose_file" << EOF
 version: '3.8'
 
 services:
@@ -169,15 +169,15 @@ networks:
     driver: bridge
 EOF
 
-    log_success "Created docker-compose.codex.yml"
+  log_success "Created docker-compose.codex.yml"
 }
 
 # Create convenience scripts
 create_convenience_scripts() {
-    local scripts_dir="$PROJECT_ROOT/scripts"
-    
-    # Script to start the environment
-    cat > "$scripts_dir/codex_start.sh" << 'EOF'
+  local scripts_dir="$PROJECT_ROOT/scripts"
+
+  # Script to start the environment
+  cat > "$scripts_dir/codex_start.sh" << 'EOF'
 #!/bin/bash
 # Start Codex Universal Environment
 
@@ -208,8 +208,8 @@ echo "  - 5173: Vite development server"
 echo "  - 5432: PostgreSQL database"
 EOF
 
-    # Script to enter the container shell
-    cat > "$scripts_dir/codex_shell.sh" << 'EOF'
+  # Script to enter the container shell
+  cat > "$scripts_dir/codex_shell.sh" << 'EOF'
 #!/bin/bash
 # Enter Codex Universal Container Shell
 
@@ -223,8 +223,8 @@ echo "Entering Codex Universal container..."
 docker exec -it "${PROJECT_NAME}-codex" bash
 EOF
 
-    # Script to stop the environment
-    cat > "$scripts_dir/codex_stop.sh" << 'EOF'
+  # Script to stop the environment
+  cat > "$scripts_dir/codex_stop.sh" << 'EOF'
 #!/bin/bash
 # Stop Codex Universal Environment
 
@@ -240,8 +240,8 @@ docker-compose -f docker-compose.codex.yml down
 echo "Environment stopped."
 EOF
 
-    # Script to rebuild and restart
-    cat > "$scripts_dir/codex_rebuild.sh" << 'EOF'
+  # Script to rebuild and restart
+  cat > "$scripts_dir/codex_rebuild.sh" << 'EOF'
 #!/bin/bash
 # Rebuild and Restart Codex Universal Environment
 
@@ -271,23 +271,23 @@ docker-compose -f docker-compose.codex.yml up -d --force-recreate
 echo "Environment rebuilt and restarted."
 EOF
 
-    # Make scripts executable
-    chmod +x "$scripts_dir/codex_start.sh"
-    chmod +x "$scripts_dir/codex_shell.sh"
-    chmod +x "$scripts_dir/codex_stop.sh"
-    chmod +x "$scripts_dir/codex_rebuild.sh"
-    
-    log_success "Created convenience scripts"
+  # Make scripts executable
+  chmod +x "$scripts_dir/codex_start.sh"
+  chmod +x "$scripts_dir/codex_shell.sh"
+  chmod +x "$scripts_dir/codex_stop.sh"
+  chmod +x "$scripts_dir/codex_rebuild.sh"
+
+  log_success "Created convenience scripts"
 }
 
 # Create .dockerignore for better performance
 create_dockerignore() {
-    local dockerignore_file="$PROJECT_ROOT/.dockerignore"
-    
-    if [[ ! -f "$dockerignore_file" ]]; then
-        log_info "Creating .dockerignore file..."
-        
-        cat > "$dockerignore_file" << EOF
+  local dockerignore_file="$PROJECT_ROOT/.dockerignore"
+
+  if [[ ! -f "$dockerignore_file" ]]; then
+    log_info "Creating .dockerignore file..."
+
+    cat > "$dockerignore_file" << EOF
 # Version control
 .git
 .gitignore
@@ -336,23 +336,23 @@ tmp
 temp
 *.tmp
 EOF
-        
-        log_success "Created .dockerignore file"
-    else
-        log_info ".dockerignore already exists"
-    fi
+
+    log_success "Created .dockerignore file"
+  else
+    log_info ".dockerignore already exists"
+  fi
 }
 
 # Update .codex/instructions.md with Docker information
 update_codex_instructions() {
-    local codex_instructions="$PROJECT_ROOT/.codex/instructions.md"
-    
-    if [[ -f "$codex_instructions" ]]; then
-        log_info "Updating .codex/instructions.md with Docker environment information..."
-        
-        # Check if Docker section already exists
-        if ! grep -q "## Docker Environment" "$codex_instructions"; then
-            cat >> "$codex_instructions" << EOF
+  local codex_instructions="$PROJECT_ROOT/.codex/instructions.md"
+
+  if [[ -f "$codex_instructions" ]]; then
+    log_info "Updating .codex/instructions.md with Docker environment information..."
+
+    # Check if Docker section already exists
+    if ! grep -q "## Docker Environment" "$codex_instructions"; then
+      cat >> "$codex_instructions" << EOF
 
 ## Docker Environment
 
@@ -384,37 +384,37 @@ This project uses the codex-universal Docker image for development with:
 - 5173: Vite development server
 - 5432: PostgreSQL database
 EOF
-            log_success "Updated .codex/instructions.md"
-        else
-            log_info "Docker section already exists in .codex/instructions.md"
-        fi
+      log_success "Updated .codex/instructions.md"
+    else
+      log_info "Docker section already exists in .codex/instructions.md"
     fi
+  fi
 }
 
 # Main execution
 main() {
-    log_info "Setting up Codex Universal Docker environment for $PROJECT_NAME"
-    
-    check_docker
-    check_openai_key
-    setup_codex_directory
-    pull_image
-    create_docker_compose
-    create_convenience_scripts
-    create_dockerignore
-    update_codex_instructions
-    
-    log_success "Codex Universal environment setup complete!"
-    echo
-    log_info "To get started:"
-    echo "  1. Run: scripts/codex_start.sh"
-    echo "  2. Enter container: scripts/codex_shell.sh"
-    echo "  3. Verify versions: node --version && python --version"
-    echo
-    log_info "The environment uses volumes instead of COPY operations for better development experience."
+  log_info "Setting up Codex Universal Docker environment for $PROJECT_NAME"
+
+  check_docker
+  check_openai_key
+  setup_codex_directory
+  pull_image
+  create_docker_compose
+  create_convenience_scripts
+  create_dockerignore
+  update_codex_instructions
+
+  log_success "Codex Universal environment setup complete!"
+  echo
+  log_info "To get started:"
+  echo "  1. Run: scripts/codex_start.sh"
+  echo "  2. Enter container: scripts/codex_shell.sh"
+  echo "  3. Verify versions: node --version && python --version"
+  echo
+  log_info "The environment uses volumes instead of COPY operations for better development experience."
 }
 
 # Run main function if script is executed directly
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
-    main "$@"
+  main "$@"
 fi

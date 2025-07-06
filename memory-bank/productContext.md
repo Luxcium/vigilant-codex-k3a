@@ -1,10 +1,13 @@
 # productContext.md
+
 <!-- markdownlint-disable MD013 MD022 MD032 MD041 -->
 
 ## Purpose
+
 This file explains the underlying motivation, intended outcomes, and user experience goals for any project. It provides context for why the project exists and how it should function, independent of any specific topic at initialization.
 
 ## Structure
+
 - **Why:** The rationale for the project’s existence.
 - **Problems to Solve:** General challenges or needs addressed.
 - **How It Should Work:** Principles for operation and user experience.

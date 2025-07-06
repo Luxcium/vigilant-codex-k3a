@@ -90,7 +90,11 @@
       "label": "Python: Start Jupyter Lab",
       "type": "shell",
       "command": "${workspaceFolder}/python/.venv/bin/jupyter",
-      "args": ["lab", "--notebook-dir=${workspaceFolder}/notebooks", "--ip=0.0.0.0"],
+      "args": [
+        "lab",
+        "--notebook-dir=${workspaceFolder}/notebooks",
+        "--ip=0.0.0.0"
+      ],
       "options": {
         "cwd": "${workspaceFolder}",
         "env": {

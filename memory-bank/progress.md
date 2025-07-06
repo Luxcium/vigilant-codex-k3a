@@ -4,17 +4,19 @@
 
 - [2025-07-04T04:17:05Z] Task: Added candle helper and tests, exported in index; verification scripts failing due to missing markdownlint and vitest.
 
-
 - [2025-02-06T22:19:00Z] Task: Conditional Python environment framework completed; Created parameter-driven system with ENV_MODE routing (local, docker_isolated, docker_volume), comprehensive scripts, and mode-specific documentation generation. Replaced hard-coded approach with true runtime decision deferral. See .github/instructions/python-environment-conditional.instructions.md and .github/prompts/python-environment-setup.prompt.md for complete framework. Note: Executing Self-Documentation Protocol. This entry reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
 - [2025-06-24T00:00:00Z] Completed: Agentic automation of VS Code Python environment, including settings, launch, tasks, auto-setup script, and documentation. All changes logged and environment is now robust and developer-friendly.
   Note: Executing Self-Documentation Protocol.
   This log reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
+
 # progress.md
 
 ## Purpose
+
 This file tracks what works, what remains to be built, current status, and known issues for any project. It provides a clear, up-to-date snapshot of project progress, independent of any specific topic at initialization.
 
 ## Structure
+
 - **What Works:** Features or components that are complete and functional.
 - **What's Left:** Remaining tasks or features to build.
 - **Current Status:** Overall project health and milestones.
@@ -24,9 +26,11 @@ This file tracks what works, what remains to be built, current status, and known
 ---
 
 ## What Works
+
 <!-- ai:section:what-works -->
 
 ### Development Environment
+
 - **✅ Codex Universal Docker Environment** with Node.js 22 and Python 3.13
 - **✅ Volume-based development workflow** for instant file changes without rebuilds
 - **✅ OpenAI API integration** with host environment key passing
@@ -36,17 +40,20 @@ This file tracks what works, what remains to be built, current status, and known
 - **✅ Cross-platform compatibility** with Docker standardization
 
 ### AI Framework
+
 - Modular rules system established in `.clinerules/`
 - AI agent entry points clearly defined for all tools
 - **✅ Conditional Python Environment Framework** with parameter-driven scripts
 
 ### Automation
+
 - Autonomous state manager tracks changes
 - Multipurpose initialization system under `init/`
 - Enhanced prompt generator and context-aware templates
 - Genesis boot-phase script for dependency checks and environment validation
 
 ### Docs
+
 - Repository documentation updated to reference new rules
 - Python standards instruction file published
 - VS Code settings updated for Copilot 1.101+
@@ -74,6 +81,7 @@ This file tracks what works, what remains to be built, current status, and known
 - ✅ Response schemas covered (responses.ts coverage improved).
 
 <!-- ai:section:whats-left -->
+
 ## What's Left
 
 - **Test Conditional Python Framework**: Run each environment mode (local, docker_isolated, docker_volume) to validate complete functionality
@@ -116,9 +124,9 @@ This file tracks what works, what remains to be built, current status, and known
 
 ### Contributor Log
 
-| Name | Date | Contribution |
-| --- | --- | --- |
-| user | 2025-02-06 | Initial framework |
+| Name | Date       | Contribution             |
+| ---- | ---------- | ------------------------ |
+| user | 2025-02-06 | Initial framework        |
 | user | 2025-06-04 | Next.js and Prisma setup |
 
 ## Known Issues
@@ -151,6 +159,7 @@ This file tracks what works, what remains to be built, current status, and known
 ## AI Agent Instructions
 
 This project supports three AI agents with specific entry points:
+
 - **Cline AI** → `.clinerules/main-rules.md` (Cline AI's primary instruction file)
 - **Codex CLI** → `AGENTS.md` (Codex CLI's primary instruction file)
 - **VS Code Copilot** → `.github/copilot-instructions.md` (VS Code Copilot's primary instruction file)
@@ -179,6 +188,7 @@ Successfully completed implementation of conditional Python environment framewor
    - Automatic documentation generation per chosen mode
 
 ### Latest Achievement: Conditional Framework Completion
+
 - **✅ Conditional Instructions**: Parameter-driven instruction file with mode-specific sections
 - **✅ User-Facing Prompt**: Clear mode selection and setup guidance
 - **✅ Script Automation**: Complete script system with validation and testing
@@ -187,12 +197,14 @@ Successfully completed implementation of conditional Python environment framewor
 - **✅ Memory Bank Updates**: Complete documentation of conditional framework
 
 ### Framework Innovation
+
 - **Breakthrough**: First successful implementation of truly conditional instruction framework
 - **Scalable**: Pattern can be extended to other language environments
 - **AI-Agent Compatible**: Works seamlessly with all three AI agents
 - **User-Centric**: Defers decisions to users rather than making assumptions
 
 ### Next Milestone
+
 - Test the complete conditional framework across all three modes
 - Document lessons learned for extending to other language environments
 - Consider implementing conditional frameworks for Node.js, TypeScript, and web development setups

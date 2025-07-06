@@ -5,7 +5,10 @@ export interface GraphNode {
   edges: string[];
 }
 
-export const network = (nodes: Record<string, GraphNode>, root: string): Agent => ({
+export const network = (
+  nodes: Record<string, GraphNode>,
+  root: string
+): Agent => ({
   id: 'Network',
   describe: () => 'Graph-based agent network',
   async act(input, ctx) {

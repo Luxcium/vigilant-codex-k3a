@@ -1,6 +1,6 @@
 ---
-applyTo: "public/browserconfig.xml,public/index.html,src/**/*.html"
-description: "Windows Tiles (Start-menu & pinned-site) configuration"
+applyTo: 'public/browserconfig.xml,public/index.html,src/**/*.html'
+description: 'Windows Tiles (Start-menu & pinned-site) configuration'
 ---
 
 # Windows Tiles Configuration
@@ -17,7 +17,7 @@ but are superseded on Windows 11 by Widgets. See Microsoft docs and MDN. ([stack
 | Element             | Pixel size | Used for                                          |
 | ------------------- | ---------- | ------------------------------------------------- |
 | `square70x70logo`   | 70×70      | small tile (optional) ([learn.microsoft.com][3])  |
-| `square150x150logo` | 150×150    | *required* medium tile ([learn.microsoft.com][3]) |
+| `square150x150logo` | 150×150    | _required_ medium tile ([learn.microsoft.com][3]) |
 | `wide310x150logo`   | 310×150    | wide tile (optional) ([hanselman.com][4])         |
 | `square310x310logo` | 310×310    | large tile (optional) ([learn.microsoft.com][3])  |
 
@@ -44,9 +44,9 @@ but are superseded on Windows 11 by Widgets. See Microsoft docs and MDN. ([stack
 ## 4 Head-Level Meta Tag Shortcuts 🔗 [#meta-tags]
 
 ```html
-<meta name="msapplication-TileColor" content="#2b5797">
-<meta name="msapplication-TileImage" content="/icons/win-310.png">
-<meta name="msapplication-config"   content="/browserconfig.xml">
+<meta name="msapplication-TileColor" content="#2b5797" />
+<meta name="msapplication-TileImage" content="/icons/win-310.png" />
+<meta name="msapplication-config" content="/browserconfig.xml" />
 ```
 
 Explicit `msapplication-config` overrides any `browserconfig.xml`. Setting `content="none"`
@@ -79,10 +79,14 @@ Then pin site via Edge → More tools → Pin to Start and inspect Start menu ti
 
 ```html
 <!-- Tile meta tags & manifest -->
-<meta name="msapplication-TileColor" content="#2b5797"> <!-- Theme color -->
-<meta name="msapplication-TileImage" content="/icons/win-150.png"> <!-- Medium tile icon -->
-<meta name="msapplication-config" content="/browserconfig.xml"> <!-- Browser config XML -->
-<link rel="manifest" href="/manifest.webmanifest"> <!-- PWA manifest link -->
+<meta name="msapplication-TileColor" content="#2b5797" />
+<!-- Theme color -->
+<meta name="msapplication-TileImage" content="/icons/win-150.png" />
+<!-- Medium tile icon -->
+<meta name="msapplication-config" content="/browserconfig.xml" />
+<!-- Browser config XML -->
+<link rel="manifest" href="/manifest.webmanifest" />
+<!-- PWA manifest link -->
 ```
 
 ```xml

@@ -1,4 +1,3 @@
-
 ---
 mode: 'agent'
 description: 'Generate optimized prompt and instruction files following project standards'
@@ -35,8 +34,8 @@ I will help you generate well-structured prompt and instruction files for your A
 
 > **Note:** All instruction files must comply with [instruction-authoring-standards.instructions.md](../instructions/instruction-authoring-standards.instructions.md).
 
-```markdown
-applyTo: "${input:applyTo:Glob pattern for scope (e.g., **/*.ts)}"
+````markdown
+applyTo: "${input:applyTo:Glob pattern for scope (e.g., \*_/_.ts)}"
 mode: 'agent'
 description: 'Generate optimized prompt and instruction files following project standards'
 
@@ -60,9 +59,10 @@ ${input:purpose:Define the standards, rules, or guidelines for this scope.}
 ${input:examples:```typescript
 // Example code demonstrating the standard
 interface ExampleInterface {
-  readonly id: string;
-  name: string;
+readonly id: string;
+name: string;
 }
+
 ```}
 
 ## Cross-References
@@ -82,6 +82,7 @@ interface ExampleInterface {
 - [ ] Cross-references included.
 - [ ] Markdown-lint strict mode compliance.
 ```
+````
 
 ### Prompt File Template
 

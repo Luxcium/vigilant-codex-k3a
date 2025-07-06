@@ -17,19 +17,19 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 log() {
-    echo -e "${BLUE}[$(date +'%Y-%m-%d %H:%M:%S')]${NC} $1"
+  echo -e "${BLUE}[$(date +'%Y-%m-%d %H:%M:%S')]${NC} $1"
 }
 
 warn() {
-    echo -e "${YELLOW}[WARNING]${NC} $1"
+  echo -e "${YELLOW}[WARNING]${NC} $1"
 }
 
 error() {
-    echo -e "${RED}[ERROR]${NC} $1"
+  echo -e "${RED}[ERROR]${NC} $1"
 }
 
 success() {
-    echo -e "${GREEN}[SUCCESS]${NC} $1"
+  echo -e "${GREEN}[SUCCESS]${NC} $1"
 }
 
 log "Setting up Docker volume-mounted Python environment..."
@@ -39,25 +39,25 @@ log "Project Name: $PROJECT_NAME"
 
 # Check if Docker is available
 if ! command -v docker &> /dev/null; then
-    error "Docker is not installed or not in PATH"
-    error "Please install Docker and try again"
-    exit 1
+  error "Docker is not installed or not in PATH"
+  error "Please install Docker and try again"
+  exit 1
 fi
 
 # Check if docker-compose is available
 if ! command -v docker-compose &> /dev/null; then
-    warn "docker-compose not found, will use docker run commands instead"
-    USE_COMPOSE=false
+  warn "docker-compose not found, will use docker run commands instead"
+  USE_COMPOSE=false
 else
-    USE_COMPOSE=true
-    log "docker-compose found, will create compose configuration"
+  USE_COMPOSE=true
+  log "docker-compose found, will create compose configuration"
 fi
 
 # Create requirements.txt if it doesn't exist
 REQUIREMENTS_FILE="$PYTHON_DIR/requirements.txt"
 if [ ! -f "$REQUIREMENTS_FILE" ]; then
-    log "Creating requirements.txt..."
-    cat > "$REQUIREMENTS_FILE" << EOF
+  log "Creating requirements.txt..."
+  cat > "$REQUIREMENTS_FILE" << EOF
 # Python dependencies for volume-mounted Docker environment
 # Add your project dependencies below
 
@@ -67,27 +67,27 @@ if [ ! -f "$REQUIREMENTS_FILE" ]; then
 # pytest>=7.0.0
 # jupyter>=1.0.0
 EOF
-    success "Created requirements.txt"
+  success "Created requirements.txt"
 else
-    log "requirements.txt already exists"
+  log "requirements.txt already exists"
 fi
 
 # Create Dockerfile for volume-mounted environment
 DOCKERFILE="$PYTHON_DIR/Dockerfile"
 if [ -f "$DOCKERFILE" ]; then
-    warn "Dockerfile already exists"
-    read -p "Do you want to overwrite it? (y/N): " -n 1 -r
-    echo
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-        log "Skipping Dockerfile creation"
-    else
-        rm "$DOCKERFILE"
-    fi
+  warn "Dockerfile already exists"
+  read -p "Do you want to overwrite it? (y/N): " -n 1 -r
+  echo
+  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    log "Skipping Dockerfile creation"
+  else
+    rm "$DOCKERFILE"
+  fi
 fi
 
 if [ ! -f "$DOCKERFILE" ]; then
-    log "Creating Dockerfile for volume-mounted environment..."
-    cat > "$DOCKERFILE" << EOF
+  log "Creating Dockerfile for volume-mounted environment..."
+  cat > "$DOCKERFILE" << EOF
 # Python Docker Volume-Mounted Environment
 FROM python:${PYTHON_VERSION}-slim
 
@@ -127,26 +127,26 @@ ENV PYTHONPATH=/app
 # Default command - keep container running for interactive use
 CMD ["bash"]
 EOF
-    success "Created Dockerfile for volume-mounted environment"
+  success "Created Dockerfile for volume-mounted environment"
 fi
 
 # Create docker-compose.yml if docker-compose is available
 if [ "$USE_COMPOSE" = true ]; then
-    COMPOSE_FILE="$PYTHON_DIR/docker-compose.yml"
-    if [ -f "$COMPOSE_FILE" ]; then
-        warn "docker-compose.yml already exists"
-        read -p "Do you want to overwrite it? (y/N): " -n 1 -r
-        echo
-        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-            log "Skipping docker-compose.yml creation"
-        else
-            rm "$COMPOSE_FILE"
-        fi
+  COMPOSE_FILE="$PYTHON_DIR/docker-compose.yml"
+  if [ -f "$COMPOSE_FILE" ]; then
+    warn "docker-compose.yml already exists"
+    read -p "Do you want to overwrite it? (y/N): " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+      log "Skipping docker-compose.yml creation"
+    else
+      rm "$COMPOSE_FILE"
     fi
+  fi
 
-    if [ ! -f "$COMPOSE_FILE" ]; then
-        log "Creating docker-compose.yml..."
-        cat > "$COMPOSE_FILE" << EOF
+  if [ ! -f "$COMPOSE_FILE" ]; then
+    log "Creating docker-compose.yml..."
+    cat > "$COMPOSE_FILE" << EOF
 version: '3.8'
 
 services:
@@ -179,15 +179,15 @@ volumes:
   pip-cache:
     driver: local
 EOF
-        success "Created docker-compose.yml"
-    fi
+    success "Created docker-compose.yml"
+  fi
 fi
 
 # Create .dockerignore if it doesn't exist
 DOCKERIGNORE="$PYTHON_DIR/.dockerignore"
 if [ ! -f "$DOCKERIGNORE" ]; then
-    log "Creating .dockerignore..."
-    cat > "$DOCKERIGNORE" << EOF
+  log "Creating .dockerignore..."
+  cat > "$DOCKERIGNORE" << EOF
 # Docker ignore file for Python volume-mounted environment
 .git
 .gitignore
@@ -218,9 +218,9 @@ Dockerfile
 .dockerignore
 docker-compose.yml
 EOF
-    success "Created .dockerignore"
+  success "Created .dockerignore"
 else
-    log ".dockerignore already exists"
+  log ".dockerignore already exists"
 fi
 
 # Update python/README.md with volume-mounted instructions
@@ -229,7 +229,7 @@ log "Updating README.md with Docker volume-mounted instructions..."
 
 COMPOSE_INSTRUCTIONS=""
 if [ "$USE_COMPOSE" = true ]; then
-    COMPOSE_INSTRUCTIONS="
+  COMPOSE_INSTRUCTIONS="
 ## Using Docker Compose (Recommended)
 
 ### Start the development environment:
@@ -256,7 +256,7 @@ python your_script.py
 docker-compose down
 \`\`\`"
 else
-    COMPOSE_INSTRUCTIONS="
+  COMPOSE_INSTRUCTIONS="
 ## Using Docker Run Commands
 
 Since docker-compose is not available, use these docker run commands:"
@@ -394,28 +394,28 @@ log "Building Docker image..."
 cd "$PYTHON_DIR"
 
 if docker build -t "$PROJECT_NAME" .; then
-    success "Docker image built successfully!"
-    
-    # Test the setup
-    log "Testing volume mount functionality..."
-    if [ "$USE_COMPOSE" = true ]; then
-        log "Testing with docker-compose..."
-        if docker-compose run --rm python python --version; then
-            success "Docker compose setup is working correctly"
-        else
-            warn "Docker compose test failed, but image was built"
-        fi
+  success "Docker image built successfully!"
+
+  # Test the setup
+  log "Testing volume mount functionality..."
+  if [ "$USE_COMPOSE" = true ]; then
+    log "Testing with docker-compose..."
+    if docker-compose run --rm python python --version; then
+      success "Docker compose setup is working correctly"
     else
-        log "Testing with docker run..."
-        if docker run --rm -v "$(pwd):/app" -w /app "$PROJECT_NAME" python --version; then
-            success "Volume mount setup is working correctly"
-        else
-            warn "Volume mount test failed, but image was built"
-        fi
+      warn "Docker compose test failed, but image was built"
     fi
+  else
+    log "Testing with docker run..."
+    if docker run --rm -v "$(pwd):/app" -w /app "$PROJECT_NAME" python --version; then
+      success "Volume mount setup is working correctly"
+    else
+      warn "Volume mount test failed, but image was built"
+    fi
+  fi
 else
-    error "Docker build failed"
-    exit 1
+  error "Docker build failed"
+  exit 1
 fi
 
 success "Docker volume-mounted environment setup completed!"
@@ -427,10 +427,10 @@ log "  3. Edit .env with your environment variables"
 log "  4. Add your Python code to the python/ directory"
 
 if [ "$USE_COMPOSE" = true ]; then
-    log "  5. Start development environment: docker-compose up -d"
-    log "  6. Enter container for development: docker-compose exec python bash"
+  log "  5. Start development environment: docker-compose up -d"
+  log "  6. Enter container for development: docker-compose exec python bash"
 else
-    log "  5. Run development container: docker run --rm -it -v \$(pwd):/app -w /app --env-file .env $PROJECT_NAME bash"
+  log "  5. Run development container: docker run --rm -it -v \$(pwd):/app -w /app --env-file .env $PROJECT_NAME bash"
 fi
 
 log "  7. Your code changes will be immediately reflected in the container!"

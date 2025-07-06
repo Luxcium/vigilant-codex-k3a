@@ -16,26 +16,26 @@ BLUE='\033[0;34m'
 NC='\033[0m'
 
 log_info() {
-    echo -e "${BLUE}[INFO]${NC} $1"
+  echo -e "${BLUE}[INFO]${NC} $1"
 }
 
 log_success() {
-    echo -e "${GREEN}[SUCCESS]${NC} $1"
+  echo -e "${GREEN}[SUCCESS]${NC} $1"
 }
 
 # Check if we're in a project directory
 if [[ ! -f "package.json" && ! -f "pyproject.toml" && ! -f "requirements.txt" ]]; then
-    echo "Warning: This doesn't appear to be a project directory"
-    echo "Make sure you're in your project root before running this script"
+  echo "Warning: This doesn't appear to be a project directory"
+  echo "Make sure you're in your project root before running this script"
 fi
 
 # Check for OpenAI API key
 if [[ -z "${OPENAI_API_KEY:-}" ]]; then
-    echo "Warning: OPENAI_API_KEY environment variable is not set"
-    echo "The container will start without the OpenAI API key"
-    echo "You can set it with: export OPENAI_API_KEY=your_key_here"
+  echo "Warning: OPENAI_API_KEY environment variable is not set"
+  echo "The container will start without the OpenAI API key"
+  echo "You can set it with: export OPENAI_API_KEY=your_key_here"
 else
-    log_success "OPENAI_API_KEY is available"
+  log_success "OPENAI_API_KEY is available"
 fi
 
 log_info "Pulling latest codex-universal image..."

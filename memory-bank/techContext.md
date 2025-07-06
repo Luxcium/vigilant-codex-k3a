@@ -1,10 +1,13 @@
 # techContext.md
+
 <!-- markdownlint-disable MD013 MD022 MD032 MD041 MD005 MD007 -->
 
 ## Purpose
+
 This file documents the technologies, development setup, technical constraints, and dependencies for any project. It provides a clear reference for all technical aspects, independent of any specific project topic at initialization.
 
 ## Structure
+
 - **Technologies Used:** General categories and rationale.
 - **Development Setup:** Environment and tooling guidelines.
 - **Technical Constraints:** Known limitations or requirements.
@@ -31,6 +34,7 @@ This file documents the technologies, development setup, technical constraints, 
   - All directory and file creation must be performed via scripts in `scripts/`, never manually.
 
 Refer to the centralized directory structure diagram in [systemPatterns.md](./systemPatterns.md) for the latest and authoritative version.
+
 - Document environment setup and configuration.
 - Ensure instructions are clear for onboarding new agents or contributors.
 - Update as tooling or setup changes.
@@ -38,7 +42,7 @@ Refer to the centralized directory structure diagram in [systemPatterns.md](./sy
 ## Technical Constraints
 
 - Codebase organization must follow the standard described in [systemPatterns.md](./systemPatterns.md).
- - All setup and file/folder creation must follow the patterns in [.clinerules/pattern-examples.md](../.clinerules/pattern-examples.md).
+- All setup and file/folder creation must follow the patterns in [.clinerules/pattern-examples.md](../.clinerules/pattern-examples.md).
 - List any known limitations or requirements.
 - Update as new constraints are discovered or resolved.
 

@@ -36,9 +36,9 @@ Ensure that all generated code is immediately executable and free from non-funct
 
 ## Expected Result
 
-- No output contains non-functional placeholders or “dummy” variables.  
-- All generated code is ready-to-run or usable as a real function/module/script.  
-- Refactoring, automation, and team workflows become more reliable and less error-prone.  
+- No output contains non-functional placeholders or “dummy” variables.
+- All generated code is ready-to-run or usable as a real function/module/script.
+- Refactoring, automation, and team workflows become more reliable and less error-prone.
 - Consistent, high-quality code generation across all developer tools and workflows.
 
 ---

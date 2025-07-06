@@ -28,10 +28,10 @@ services:
     tty: true
     command: bash
     ports:
-      - "3000:3000"  # Next.js dev server
-      - "8000:8000"  # Python dev server
-      - "8888:8888"  # Jupyter Lab
-      - "5173:5173"  # Vite dev server
+      - '3000:3000' # Next.js dev server
+      - '8000:8000' # Python dev server
+      - '8888:8888' # Jupyter Lab
+      - '5173:5173' # Vite dev server
     networks:
       - codex-network
 
@@ -45,7 +45,7 @@ services:
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: codexapp
     ports:
-      - "5432:5432"
+      - '5432:5432'
     volumes:
       - db_data:/var/lib/postgresql/data
     networks:

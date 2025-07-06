@@ -19,13 +19,13 @@ export const bootstrap = async (
     refresh_token: refreshToken,
   });
   const res = await fetch(ENDPOINT, { method: 'POST', body });
-  const data = await res.json() as {
+  const data = (await res.json()) as {
     access_token: string;
     api_server: string;
     expires_in: number;
     refresh_token?: string;
   };
-  
+
   const tokens: OAuthTokens = {
     access_token: data.access_token,
     refresh_token: data.refresh_token || refreshToken,
@@ -33,7 +33,7 @@ export const bootstrap = async (
     api_server: data.api_server,
     expiresAt: Date.now() + data.expires_in * 1000,
   };
-  
+
   // Convert to storage format for saving
   const storageTokens = {
     accessToken: tokens.access_token,
@@ -41,7 +41,7 @@ export const bootstrap = async (
     apiServer: tokens.api_server,
     expiresAt: tokens.expiresAt,
   };
-  
+
   await save(`.keys/qs-tokens.${clientId}.json`, storageTokens);
   return tokens;
 };

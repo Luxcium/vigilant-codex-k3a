@@ -20,7 +20,7 @@ else
 fi
 
 log "Verifying Markdown compliance…"
-if command -v markdownlint >/dev/null; then
+if command -v markdownlint > /dev/null; then
   markdownlint --config .markdownlint.yaml "$FILE" || {
     echo "[ERROR] $FILE failed markdownlint."
     exit 1
