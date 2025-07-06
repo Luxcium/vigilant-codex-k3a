@@ -4,7 +4,6 @@
  * @packageDocumentation
  *
  * Development copy: Types & Schemas for **GET /v1/symbols/:id/options**
- * (src/types/dev/symbols-id-options.ts)
  *
  * @remarks
  * This module provides TypeScript types and Zod schemas for the Option Chain
@@ -13,14 +12,8 @@
  */
 
 import { z } from 'zod';
-import type {
-    ListingExchange,
-    OptionExerciseType,
-} from './enums';
-import {
-    LISTING_EXCHANGES,
-    OPTION_EXERCISE_TYPES,
-} from './enums';
+import type { ListingExchange, OptionExerciseType } from './enums';
+import { LISTING_EXCHANGES, OPTION_EXERCISE_TYPES } from './enums';
 
 //──────────────────────────────────────────────────────────────────────────────
 // 1. Input Shape – Request Parameter
@@ -70,9 +63,9 @@ export interface ChainPerStrikePrice {
  * Zod schema for ChainPerStrikePrice.
  */
 const ChainPerStrikePriceSchema = z.object({
-  strikePrice:    z.number(),
-  callSymbolId:   z.number().int().positive(),
-  putSymbolId:    z.number().int().positive(),
+  strikePrice: z.number(),
+  callSymbolId: z.number().int().positive(),
+  putSymbolId: z.number().int().positive(),
 });
 
 /**
@@ -80,11 +73,14 @@ const ChainPerStrikePriceSchema = z.object({
  * Represents all strike entries under a given option root.
  */
 export interface ChainPerRoot {
-  /** @remarks Option root symbol (e.g., "MSFT"). */
-  optionRoot: string;
+  /** @remarks Option root symbol (e.g., "BMO"). */
+  root: string;
 
   /** @remarks List of strikes with call/put symbol IDs. */
   chainPerStrikePrice: ChainPerStrikePrice[];
+
+  /** @remarks Number of shares deliverable per contract (e.g., 100). */
+  multiplier: number;
 }
 
 /**
@@ -92,8 +88,9 @@ export interface ChainPerRoot {
  * Zod schema for ChainPerRoot.
  */
 const ChainPerRootSchema = z.object({
-  optionRoot:           z.string().min(1),
-  chainPerStrikePrice:  z.array(ChainPerStrikePriceSchema),
+  root: z.string().min(1),
+  chainPerStrikePrice: z.array(ChainPerStrikePriceSchema),
+  multiplier: z.number().int().positive(),
 });
 
 /**
@@ -122,11 +119,11 @@ export interface ChainPerExpiryDate {
  * Zod schema for ChainPerExpiryDate.
  */
 const ChainPerExpiryDateSchema = z.object({
-  expiryDate:         z.string().datetime(),
-  description:        z.string().min(1),
-  listingExchange:    z.enum(LISTING_EXCHANGES),
+  expiryDate: z.string().datetime(),
+  description: z.string().min(1),
+  listingExchange: z.enum(LISTING_EXCHANGES),
   optionExerciseType: z.enum(OPTION_EXERCISE_TYPES),
-  chainPerRoot:       z.array(ChainPerRootSchema),
+  chainPerRoot: z.array(ChainPerRootSchema),
 });
 
 /**
@@ -135,7 +132,7 @@ const ChainPerExpiryDateSchema = z.object({
  */
 export interface SymbolOptionsResponse {
   /** @remarks Array of option chains grouped by expiry. */
-  symbols: ChainPerExpiryDate[];
+  options: ChainPerExpiryDate[];
 }
 
 /**
@@ -143,7 +140,7 @@ export interface SymbolOptionsResponse {
  * Zod schema for SymbolOptionsResponse.
  */
 export const SymbolOptionsResponseSchema = z.object({
-  symbols: z.array(ChainPerExpiryDateSchema),
+  options: z.array(ChainPerExpiryDateSchema),
 });
 
 /**
