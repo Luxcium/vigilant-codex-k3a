@@ -16,18 +16,18 @@ describe('WebStorageStore', () => {
   beforeEach(() => {
     // Reset mock localStorage
     const localStorageMock = {
-      store: {} as Record<string, string>,
+      store: new Map<string, string>(),
       getItem(key: string) {
-        return this.store[key] ?? null;
+        return this.store.get(key) ?? null;
       },
       setItem(key: string, value: string) {
-        this.store[key] = value;
+        this.store.set(key, value);
       },
       removeItem(key: string) {
-        delete this.store[key];
+        this.store.delete(key);
       },
     };
-    // @ts-ignore
+    // @ts-expect-error Testing localStorage mock
     globalThis.localStorage = localStorageMock;
   });
 
@@ -44,5 +44,37 @@ describe('WebStorageStore', () => {
     await store.save(sample);
     await store.clear();
     await expect(store.load()).resolves.toBeNull();
+  });
+
+  it('returns null when localStorage is not available', async () => {
+    const originalLocalStorage = globalThis.localStorage;
+    // @ts-expect-error Testing localStorage unavailable
+    delete globalThis.localStorage;
+    await expect(store.load()).resolves.toBeNull();
+    globalThis.localStorage = originalLocalStorage;
+  });
+
+  it('returns null when localStorage is null', async () => {
+    const originalLocalStorage = globalThis.localStorage;
+    // @ts-expect-error Testing edge case where localStorage is null
+    globalThis.localStorage = null;
+    await expect(store.load()).resolves.toBeNull();
+
+    // Should also handle save/clear gracefully
+    await expect(store.save(sample)).resolves.toBeUndefined();
+    await expect(store.clear()).resolves.toBeUndefined();
+
+    globalThis.localStorage = originalLocalStorage;
+  });
+
+  it('uses default key when no key provided in constructor', async () => {
+    const defaultStore = new WebStorageStore(); // This should use default 'qt_tokens' key
+    await defaultStore.save(sample);
+
+    // Verify it's stored under the default key
+    const localStorageMock = globalThis.localStorage as any;
+    expect(localStorageMock.store.has('qt_tokens')).toBe(true);
+
+    await expect(defaultStore.load()).resolves.toEqual(sample);
   });
 });

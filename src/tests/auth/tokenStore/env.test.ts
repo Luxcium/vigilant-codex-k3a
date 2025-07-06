@@ -37,4 +37,12 @@ describe('EnvStore', () => {
     await store.clear();
     await expect(store.load()).resolves.toBeNull();
   });
+
+  it('uses default key when no varName provided', async () => {
+    const defaultStore = new EnvStore();
+    await defaultStore.save(sample);
+    expect(process.env.QT_TOKENS).toBeDefined();
+    await defaultStore.clear();
+    expect(process.env.QT_TOKENS).toBeUndefined();
+  });
 });

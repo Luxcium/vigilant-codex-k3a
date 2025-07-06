@@ -4,15 +4,12 @@
   },
   // Ensure instruction files are also enabled (they work together)
   "github.copilot.chat.codeGeneration.useInstructionFiles": true,
-
   // Add instructions file locations to work alongside prompts
   "chat.instructionsFilesLocations": {
     ".github/instructions": true
   },
-
   // Ensure prompt files are explicitly enabled
   "chat.promptFiles": true,
-
   // Your existing prompt location is correct
   "chat.promptFilesLocations": {
     ".github/prompts": true
@@ -20,7 +17,6 @@
   "typescript.tsserver.maxTsServerMemory": 8192,
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.localEchoLatencyThreshold": 30,
-
   "[jsonc]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -106,14 +102,6 @@
     "eslint-plugin": "rules",
     "prompts": "log"
   },
-  "mcp": {
-    "servers": {
-      "console-ninja": {
-        "args": ["-y", "-c", "node ~/.console-ninja/mcp/"],
-        "command": "npx"
-      }
-    }
-  },
   "polyglot-notebook.logLevel": "Warn",
   "polyglot-notebook.suppressPromptToSaveDefaults": true,
   "python.defaultInterpreterPath": "${workspaceFolder}/python/.venv/bin/python",
@@ -131,21 +119,10 @@
   "jupyter.defaultKernel": "Python 3",
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "jupyter.askForKernelRestart": false,
-  "jupyter.runStartupCommands": [
-    "%load_ext autoreload",
-    "%autoreload 2",
-    "import sys; sys.path.append('${workspaceFolder}/python/src')"
-  ],
   "python.testing.pytestEnabled": true,
   "python.testing.pytestArgs": ["python/tests"],
   "python.testing.unittestEnabled": false,
   "python.testing.autoTestDiscoverOnSaveEnabled": true,
-  "python.linting.enabled": true,
-  "python.linting.pylintEnabled": true,
-  "python.linting.mypyEnabled": true,
-  "python.linting.flake8Enabled": true,
-  "python.formatting.provider": "black",
-  "python.sortImports.args": ["--profile", "black"],
   "python.terminal.executeInFileDir": true,
   "python.terminal.focusAfterLaunch": true,
   "files.associations": {
@@ -162,7 +139,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "workbench.colorTheme": "Pop N' Lock Theme by Luxcium ✨ Alexis's Black ⛷",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.productIconTheme": "bootstrap-product-icons",
+  "workbench.productIconTheme": "Default",
   "workbench.secondarySideBar.showLabels": false,
   /*
   |-····-----------------------------------------------------------――··-|
@@ -1178,7 +1155,6 @@
   "chat.editor.fontSize": 14,
   "chat.editor.fontWeight": "normal",
   "chat.editor.wordWrap": "on",
-
   // ========================================
   // Experimental and Preview Features
   // ========================================
@@ -1187,7 +1163,6 @@
   // ========================================
   // Instructions and Prompt Files
   // ========================================
-
   "chat.sendElementsToChat.enabled": true,
   // Experimental features
   "chat.tools.autoApprove": true,

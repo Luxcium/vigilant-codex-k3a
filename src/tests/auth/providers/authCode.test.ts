@@ -64,4 +64,20 @@ describe('AuthCodeProvider', () => {
       expect.objectContaining({ method: 'POST' })
     );
   });
+
+  it('exchangeCode handles missing refresh_token with empty fallback', async () => {
+    const mockResponse = {
+      access_token: 'at3',
+      expires_in: 30,
+      api_server: 'https://api3',
+      // no refresh_token in response
+    };
+    vi.spyOn(global, 'fetch').mockResolvedValueOnce(
+      new Response(JSON.stringify(mockResponse))
+    );
+    const tokens = await provider.exchangeCode('authcode2');
+    expect(tokens.access_token).toBe('at3');
+    expect(tokens.refresh_token).toBe(''); // should default to empty string
+    expect(tokens.expires_in).toBe(30);
+  });
 });

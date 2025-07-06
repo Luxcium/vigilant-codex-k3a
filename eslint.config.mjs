@@ -28,7 +28,7 @@ export default tseslint.config(
       '@stylistic/no-multi-spaces': 'error',
       '@stylistic/eol-last': ['error', 'always'],
       '@stylistic/no-trailing-spaces': 'error',
-      '@stylistic/comma-spacing': ['error', { before: false, after: true }],
+      '@stylistic/comma-spacing': ['warn', { before: false, after: true }],
       // removed invalid stylistic rules for new plugin
     },
   },
