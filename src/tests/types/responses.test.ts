@@ -1,31 +1,25 @@
 import { describe, expect, it } from 'vitest'
-import { z } from 'zod'
-import {
-  AccountsResponseSchema,
-  AccountBalancesResponseSchema,
-  PositionsResponseSchema,
-  ExecutionsResponseSchema,
-  ActivitiesResponseSchema,
-  OrdersResponseSchema,
-  OrderResponseSchema,
-  TimeResponseSchema,
-  MarketsResponseSchema,
-  QuotesResponseSchema,
-  OptionQuotesResponseSchema,
-  StrategyQuotesResponseSchema,
-  CandlesResponseSchema,
-  SymbolsResponseSchema,
-  SymbolSearchResponseSchema,
-  OrderResponseSchema as AliasOrderResponseSchema,
-  OrderResponseSchema as OrdersResponseAliasSchema
-} from '../../../src/types/responses'
-import { AccountSchema } from '../../../src/types/accounts'
-import { BalanceSchema } from '../../../src/types/accounts'
-import { PositionSchema } from '../../../src/types/accounts'
-import { ExecutionSchema } from '../../../src/types/accounts'
-import { AccountActivitySchema } from '../../../src/types/accounts'
+import { AccountActivitySchema, AccountSchema, BalanceSchema, ExecutionSchema, PositionSchema } from '../../../src/types/accounts'
+import { CandleSchema, MarketSchema, OptionQuoteSchema, QuoteSchema, StrategyQuoteSchema } from '../../../src/types/markets'
 import { OrderSchema } from '../../../src/types/orders'
-import { MarketSchema, QuoteSchema, OptionQuoteSchema, StrategyQuoteSchema, CandleSchema } from '../../../src/types/markets'
+import {
+  AccountBalancesResponseSchema,
+  AccountsResponseSchema,
+  ActivitiesResponseSchema,
+  OrderResponseSchema as AliasOrderResponseSchema,
+  CandlesResponseSchema,
+  ExecutionsResponseSchema,
+  MarketsResponseSchema,
+  OptionQuotesResponseSchema,
+  OrderResponseSchema as OrdersResponseAliasSchema,
+  OrdersResponseSchema,
+  PositionsResponseSchema,
+  QuotesResponseSchema,
+  StrategyQuotesResponseSchema,
+  SymbolSearchResponseSchema,
+  SymbolsResponseSchema,
+  TimeResponseSchema
+} from '../../../src/types/responses'
 import { SymbolDetailSchema, SymbolSearchResultSchema } from '../../../src/types/symbols'
 
 describe('Response schemas', () => {

@@ -1,12 +1,11 @@
 import { describe, expect, it } from 'vitest'
 import {
+  CandleSchema,
   MarketSchema,
-  QuoteSchema,
   OptionQuoteSchema,
-  StrategyQuoteSchema,
-  CandleSchema
-} from '../../../src/types/markets'
-
+  QuoteSchema,
+  StrategyQuoteSchema
+} from '../../../src/types/markets.js'
 describe('Market related schemas', () => {
   it('valid MarketSchema parses', () => {
     const obj = {

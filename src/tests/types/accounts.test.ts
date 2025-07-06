@@ -1,11 +1,10 @@
 import { describe, expect, it } from 'vitest'
-import { z } from 'zod'
 import {
+  AccountActivitySchema,
   AccountSchema,
   BalanceSchema,
-  PositionSchema,
   ExecutionSchema,
-  AccountActivitySchema
+  PositionSchema
 } from '../../../src/types/accounts'
 
 describe('Account related schemas', () => {
