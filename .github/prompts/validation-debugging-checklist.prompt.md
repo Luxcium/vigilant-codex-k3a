@@ -1,6 +1,8 @@
-mode: 'agent'
+
+---
 mode: 'agent'
 description: 'Validation and debugging checklist for web app meta and manifest.'
+---
 
 # VS Code-Native Validation & Debugging
 

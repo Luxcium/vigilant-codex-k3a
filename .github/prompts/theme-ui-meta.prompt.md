@@ -1,6 +1,8 @@
-mode: 'agent'
+
+---
 mode: 'agent'
 description: 'Generate theme UI meta tags for browser theming.'
+---
 
 > **Prompt**
 > *“Add browser-UI theming meta tags: `theme-color` for light +#3367d6 and dark +#101010 (media

@@ -1,5 +1,8 @@
+
+---
 mode: 'agent'
 description: 'Generate optimized prompt and instruction files following project standards'
+---
 
 # AI Agent Template Manager
 

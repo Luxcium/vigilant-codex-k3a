@@ -1,6 +1,8 @@
-mode: 'agent'
+
+---
 mode: 'agent'
 description: 'Add essential SEO meta tags to an HTML document.'
+---
 
 # Add Essential SEO Meta Tags
 

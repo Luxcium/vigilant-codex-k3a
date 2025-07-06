@@ -1,6 +1,8 @@
-mode: 'agent'
+
+---
 mode: 'agent'
 description: 'Generate Dockerfiles and Compose files.'
+---
 
 # Docker Configuration Generator
 
