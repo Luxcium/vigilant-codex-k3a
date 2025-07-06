@@ -4,6 +4,7 @@
  * @packageDocumentation
  *
  * Development copy: Types & Schemas for **GET /v1/markets/quotes/:id**
+ * (src/types/dev/markets-quotes-id.ts)
  *
  * @remarks
  * This module provides TypeScript request/response types and Zod schemas
@@ -24,16 +25,10 @@ import { TICK_TYPES } from './enums';
  * Request parameters for Level 1 market quotes.
  */
 export interface MarketQuotesByIdRequest {
-  /**
-   * @remarks
-   * Variant indicating a single-symbol request via path `/markets/quotes/:id`.
-   */
+  /** @remarks Variant for a single-symbol request via path `/markets/quotes/:id`. */
   variant: 'byId';
 
-  /**
-   * @remarks
-   * Internal symbol identifier (positive integer).
-   */
+  /** @remarks Internal symbol identifier (positive integer). */
   id: number;
 }
 
@@ -42,29 +37,22 @@ export interface MarketQuotesByIdRequest {
  * Request parameters for Level 1 market quotes for multiple symbols.
  */
 export interface MarketQuotesByIdsRequest {
-  /**
-   * @remarks
-   * Variant indicating a multi-symbol request via query `?ids=`.
-   */
+  /** @remarks Variant for multi-symbol request via query `?ids=`. */
   variant: 'byIds';
 
-  /**
-   * @remarks
-   * Array of internal symbol identifiers.
-   */
+  /** @remarks Array of internal symbol identifiers. */
   ids: number[];
 }
 
 /**
  * @public
- * Union type covering both single- and multi-symbol quote requests.
+ * Union of valid market quotes request shapes.
  *
- * @remarks
- * Exactly one of `byId` or `byIds` must be provided to satisfy the API.
+ * @remarks Exactly one variant must be provided.
  */
 export type MarketQuotesRequest =
   | MarketQuotesByIdRequest
-  | MarketQuotesByIdsRequest
+  | MarketQuotesByIdsRequest;
 
 /**
  * @public
@@ -93,8 +81,8 @@ export interface Quote {
   /** @remarks Internal symbol identifier. */
   symbolId: number;
 
-  /** @remarks Market tier (e.g., "Tier1"). */
-  tier: string;
+  /** @remarks Market tier (may be empty when unspecified). */
+  tier: string | null;
 
   /** @remarks Current bid price. */
   bidPrice: number;
@@ -109,7 +97,7 @@ export interface Quote {
   askSize: number;
 
   /** @remarks Last trade price during regular trading hours. */
-  astTradeTrHrs: number;
+  lastTradePriceTrHrs: number;
 
   /** @remarks Price of the last trade. */
   lastTradePrice: number;
@@ -119,6 +107,9 @@ export interface Quote {
 
   /** @remarks Direction of the last trade (Up, Down, Equal). */
   lastTradeTick: TickType;
+
+  /** @remarks Timestamp of the last trade in ISO-8601 format. */
+  lastTradeTime: string;
 
   /** @remarks Total traded volume for the day. */
   volume: number;
@@ -132,8 +123,8 @@ export interface Quote {
   /** @remarks Lowest price of the trading day. */
   lowPrice: number;
 
-  /** @remarks Whether this quote is delayed (`true`) or real-time (`false`). */
-  delay: boolean;
+  /** @remarks Whether this quote is delayed (true) or real-time (false). */
+  delay: boolean | number;
 
   /** @remarks Whether trading in this symbol is halted. */
   isHalted: boolean;
@@ -146,20 +137,21 @@ export interface Quote {
 export const QuoteSchema = z.object({
   symbol: z.string().min(1),
   symbolId: z.number().int().positive(),
-  tier: z.string().min(1),
+  tier: z.union([z.string().min(1), z.literal('')]).nullable(),
   bidPrice: z.number(),
   bidSize: z.number().int().nonnegative(),
   askPrice: z.number(),
   askSize: z.number().int().nonnegative(),
-  astTradeTrHrs: z.number(),
+  lastTradePriceTrHrs: z.number(),
   lastTradePrice: z.number(),
   lastTradeSize: z.number().int().nonnegative(),
   lastTradeTick: z.enum(TICK_TYPES),
+  lastTradeTime: z.string().datetime(),
   volume: z.number().int().nonnegative(),
   openPrice: z.number(),
   highPrice: z.number(),
   lowPrice: z.number(),
-  delay: z.boolean(),
+  delay: z.union([z.boolean(), z.number().int()]),
   isHalted: z.boolean(),
 });
 
@@ -187,5 +179,11 @@ export const MarketQuotesResponseSchema = z.object({
  * @param json - Raw API response payload.
  * @returns Validated market quotes response.
  * @throws ZodError if the payload does not match schema.
+ *
+ * @example
+ * ```ts
+ * const resp = parseMarketQuotesResponse(apiData);
+ * console.log(resp.quotes[0].symbol);
+ * ```
  */
 export const parseMarketQuotesResponse = MarketQuotesResponseSchema.parse;
