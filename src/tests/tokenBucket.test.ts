@@ -72,53 +72,68 @@ describe('tokenBucket', () => {
       expect(buckets.account.perHour.remaining).toBe(beforeHour);
     });
 
-    it('refill method works correctly for both buckets', async () => {
-      vi.useFakeTimers();
+    it('refill method works correctly for both buckets', () => {
       const limiter = new TokenBucketLimiter();
       const buckets = (limiter as any).buckets as Record<string, any>;
+      const refillMethod = (limiter as any).refill.bind(limiter);
 
-      // Consume all tokens
-      await limiter.consume('account');
-      await limiter.consume('account');
+      const group = buckets.account;
 
       // Set reset times in the past to trigger refill
       const pastTime = Date.now() - 1000;
-      buckets.account.perSecond.reset = pastTime;
-      buckets.account.perHour.reset = pastTime;
+      group.perSecond.reset = pastTime;
+      group.perHour.reset = pastTime;
 
       // Set remaining to 0 to verify refill works
-      buckets.account.perSecond.remaining = 0;
-      buckets.account.perHour.remaining = 0;
+      group.perSecond.remaining = 0;
+      group.perHour.remaining = 0;
 
-      // This should trigger refill internally and succeed
-      await limiter.consume('account');
+      // Call refill directly
+      refillMethod(group);
 
       // Verify refill happened - tokens should be refilled
-      expect(buckets.account.perSecond.remaining).toBeGreaterThan(0);
-      expect(buckets.account.perHour.remaining).toBeGreaterThan(0);
-
-      vi.useRealTimers();
+      expect(group.perSecond.remaining).toBe(group.perSecond.capacity);
+      expect(group.perHour.remaining).toBe(group.perHour.capacity);
     });
 
-    it('refill works for individual buckets', async () => {
-      vi.useFakeTimers();
+    it('refill works for individual buckets', () => {
       const limiter = new TokenBucketLimiter();
       const buckets = (limiter as any).buckets as Record<string, any>;
+      const refillMethod = (limiter as any).refill.bind(limiter);
 
-      // Consume tokens
-      await limiter.consume('account');
+      const group = buckets.account;
 
       // Test second bucket refill only
-      buckets.account.perSecond.reset = Date.now() - 1000;
-      buckets.account.perSecond.remaining = 0;
-      buckets.account.perHour.reset = Date.now() + 1000; // Future time
+      group.perSecond.reset = Date.now() - 1000;
+      group.perSecond.remaining = 0;
+      group.perHour.reset = Date.now() + 1000; // Future time
+      group.perHour.remaining = 10; // Some tokens remain
 
-      await limiter.consume('account');
+      refillMethod(group);
 
       // Verify only second bucket was refilled
-      expect(buckets.account.perSecond.remaining).toBeGreaterThan(0);
+      expect(group.perSecond.remaining).toBe(group.perSecond.capacity);
+      expect(group.perHour.remaining).toBe(10); // Should remain unchanged
+    });
 
-      vi.useRealTimers();
+    it('refill works for hour bucket only', () => {
+      const limiter = new TokenBucketLimiter();
+      const buckets = (limiter as any).buckets as Record<string, any>;
+      const refillMethod = (limiter as any).refill.bind(limiter);
+
+      const group = buckets.account;
+
+      // Test hour bucket refill only
+      group.perSecond.reset = Date.now() + 1000; // Future time
+      group.perSecond.remaining = 5; // Some tokens remain
+      group.perHour.reset = Date.now() - 1000; // Past time
+      group.perHour.remaining = 0;
+
+      refillMethod(group);
+
+      // Verify only hour bucket was refilled
+      expect(group.perSecond.remaining).toBe(5); // Should remain unchanged
+      expect(group.perHour.remaining).toBe(group.perHour.capacity);
     });
   });
 });
