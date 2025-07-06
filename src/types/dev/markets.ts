@@ -29,6 +29,13 @@ export type MarketsRequest = Record<string, never>;
  * @public
  * Zod schema validating an empty request object for Markets.
  */
+/**
+ * @public
+ * Zod schema validating an empty request object for Markets.
+ *
+ * @remarks
+ * This object must be empty to satisfy the endpoint contract.
+ */
 export const MarketsRequestSchema = z.object({}).strict();
 
 //──────────────────────────────────────────────────────────────────────────────
@@ -125,5 +132,12 @@ export const MarketsResponseSchema = z.object({
  * @param json – Raw API response payload.
  * @returns Validated markets response object.
  * @throws ZodError if the payload does not match schema.
+
+ * @example
+ * ```ts
+ * const data = await fetchJson('/v1/markets');
+ * const resp = parseMarketsResponse(data);
+ * console.log(resp.markets.map(m => m.name));
+ * ```
  */
 export const parseMarketsResponse = MarketsResponseSchema.parse;
