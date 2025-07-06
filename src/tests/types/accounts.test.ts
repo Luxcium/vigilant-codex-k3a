@@ -57,6 +57,23 @@ describe('Account related schemas', () => {
     }
     expect(PositionSchema.parse(obj)).toEqual(obj)
   })
+  it('PositionSchema allows string isRealTime', () => {
+    const obj = {
+      symbol: 'AAPL',
+      symbolId: 1,
+      openQuantity: 5,
+      closedQuantity: 2,
+      currentMarketValue: 500,
+      currentPrice: 100,
+      averageEntryPrice: 90,
+      closedPnl: 10,
+      openPnl: 5,
+      totalCost: 450,
+      isRealTime: 'Individual',
+      isUnderReorg: false
+    }
+    expect(PositionSchema.parse(obj)).toEqual(obj)
+  })
   it('invalid PositionSchema throws', () => {
     expect(() => PositionSchema.parse({})).toThrow()
   })

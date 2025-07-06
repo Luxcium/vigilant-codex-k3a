@@ -59,3 +59,6 @@ export type {
     AccountBalancesResponse, AccountsResponse, ActivitiesResponse, CandlesResponse, ExecutionsResponse, MarketsResponse, OptionQuotesResponse, OptionsChainResponse, OrderResponse, OrdersResponse, PositionsResponse, QuotesResponse, StrategyQuotesResponse, SymbolSearchResponse, SymbolsResponse, TimeResponse
 } from './responses';
 
+export { ApiErrorSchema } from './apiError';
+export type { ApiError } from './apiError';
+
