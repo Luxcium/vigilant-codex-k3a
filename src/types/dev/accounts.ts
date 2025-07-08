@@ -6,8 +6,10 @@
  * Development copy: Types & Schemas for **GET /v1/accounts**
  *
  * @remarks
- * Provides TypeScript types and Zod schemas for retrieving user accounts.
- * No request parameters are required; the response lists all accessible accounts.
+ * Provides TypeScript types and Zod schemas for retrieving brokerage accounts
+ * accessible to the authenticated user. The schema is tolerant of minor API
+ * variations: unknown enum values fall back to `string`, and `userId` is
+ * optional because it is sometimes omitted in Questrade responses.
  */
 
 import { z } from 'zod';
@@ -27,9 +29,6 @@ export type AccountsRequest = Record<string, never>;
 /**
  * @public
  * Zod schema validating an empty request object for Accounts.
- *
- * @remarks
- * Ensures that no extraneous data is sent.
  */
 export const AccountsRequestSchema = z.object({}).strict();
 
@@ -44,24 +43,18 @@ export const AccountsRequestSchema = z.object({}).strict();
 export interface Account {
   /** @remarks Type of the account (e.g., "Cash", "Margin"). */
   type: AccountType;
-
-  /** @remarks Eight-digit account number (e.g., "26598145"). */
+  /** @remarks Eight‑digit account number (string of digits). */
   number: string;
-
   /** @remarks Operational status of the account (e.g., "Active"). */
   status: AccountStatus;
-
   /** @remarks Whether this is the primary account for the holder. */
   isPrimary: boolean;
-
   /** @remarks Whether this account is billed for fees and market data. */
   isBilling: boolean;
-
   /** @remarks Type of client holding the account (e.g., "Individual"). */
   clientAccountType: ClientAccountType;
-
-  /** @remarks Internal identifier of the user owning the account. */
-  userId: number;
+  /** @remarks Internal identifier of the user owning the account (may be omitted). */
+  userId?: number;
 }
 
 /**
@@ -69,13 +62,13 @@ export interface Account {
  * Zod schema for validating an Account record.
  */
 export const AccountSchema = z.object({
-  type: z.enum(ACCOUNT_TYPES),
-  number: z.string().length(8),
-  status: z.enum(ACCOUNT_STATUSES),
+  type: z.union([z.enum(ACCOUNT_TYPES), z.string()]),
+  number: z.string().regex(/^\d{8}$/),
+  status: z.union([z.enum(ACCOUNT_STATUSES), z.string()]),
   isPrimary: z.boolean(),
   isBilling: z.boolean(),
-  clientAccountType: z.enum(CLIENT_ACCOUNT_TYPES),
-  userId: z.number().int().positive(),
+  clientAccountType: z.union([z.enum(CLIENT_ACCOUNT_TYPES), z.string()]),
+  userId: z.number().int().positive().optional(),
 });
 
 //──────────────────────────────────────────────────────────────────────────────
@@ -106,12 +99,5 @@ export const AccountsResponseSchema = z.object({
  * @param json - Raw API response payload.
  * @returns Validated accounts response object.
  * @throws ZodError if validation fails.
- *
- * @example
- * ```ts
- * const data = await fetchJson('/v1/accounts');
- * const resp = parseAccountsResponse(data);
- * console.log(resp.accounts.map(a => a.number));
- * ```
  */
 export const parseAccountsResponse = AccountsResponseSchema.parse;
