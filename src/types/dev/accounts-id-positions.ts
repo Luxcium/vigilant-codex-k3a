@@ -42,18 +42,30 @@ export const AccountPositionsRequestSchema = z.object({
  * A single open/closed position in the account.
  */
 export interface Position {
-  symbol: string /** Position symbol. */;
-  symbolId: number /** Internal symbol identifier. */;
-  openQuantity: number /** Shares/contracts still open. */;
-  closedQuantity: number /** Portion closed today. */;
-  currentMarketValue: number /** Market value (qty × price). */;
-  currentPrice: number /** Current market price. */;
-  averageEntryPrice: number /** Average acquisition price. */;
-  closedPnL: number /** Realized profit/loss. */;
-  openPnL: number /** Unrealized profit/loss. */;
-  totalCost: number /** Aggregate cost basis. */;
-  isRealTime: boolean /** Whether PnL uses real‑time quote. */;
-  isUnderReorg: boolean /** Symbol under corporate reorg flag. */;
+  /** Position symbol (e.g., "AAPL"). */
+  symbol: string;
+  /** Internal symbol identifier. */
+  symbolId: number;
+  /** Quantity remaining open. */
+  openQuantity: number;
+  /** Portion of the position closed today. */
+  closedQuantity?: number;
+  /** Market value of the position (qty × price). */
+  currentMarketValue?: number;
+  /** Current market price. */
+  currentPrice?: number;
+  /** Average price paid. */
+  averageEntryPrice?: number;
+  /** Realized profit/loss. */
+  closedPnl?: number;
+  /** Unrealized profit/loss. */
+  openPnl?: number;
+  /** Aggregate cost basis. */
+  totalCost?: number | boolean;
+  /** Whether real-time quote was used. */
+  isRealTime?: boolean | string;
+  /** Symbol under corporate reorg flag. */
+  isUnderReorg?: boolean;
 }
 
 /** Zod schema for Position. */
@@ -61,15 +73,15 @@ export const PositionSchema = z.object({
   symbol: z.string().min(1),
   symbolId: z.number().int().positive(),
   openQuantity: z.number(),
-  closedQuantity: z.number(),
-  currentMarketValue: z.number(),
-  currentPrice: z.number(),
-  averageEntryPrice: z.number(),
-  closedPnL: z.number(),
-  openPnL: z.number(),
-  totalCost: z.number(),
-  isRealTime: z.boolean(),
-  isUnderReorg: z.boolean(),
+  closedQuantity: z.number().optional(),
+  currentMarketValue: z.number().optional(),
+  currentPrice: z.number().optional(),
+  averageEntryPrice: z.number().optional(),
+  closedPnl: z.number().optional(),
+  openPnl: z.number().optional(),
+  totalCost: z.union([z.number(), z.boolean()]).optional(),
+  isRealTime: z.union([z.boolean(), z.string()]).optional(),
+  isUnderReorg: z.boolean().optional(),
 });
 
 //──────────────────────────────────────────────────────────────────────────────
