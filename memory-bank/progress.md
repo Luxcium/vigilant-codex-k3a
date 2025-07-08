@@ -7,8 +7,27 @@
 
 - [2025-02-06T22:19:00Z] Task: Conditional Python environment framework completed; Created parameter-driven system with ENV_MODE routing (local, docker_isolated, docker_volume), comprehensive scripts, and mode-specific documentation generation. Replaced hard-coded approach with true runtime decision deferral. See .github/instructions/python-environment-conditional.instructions.md and .github/prompts/python-environment-setup.prompt.md for complete framework. Note: Executing Self-Documentation Protocol. This entry reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
 - [2025-06-24T00:00:00Z] Completed: Agentic automation of VS Code Python environment, including settings, launch, tasks, auto-setup script, and documentation. All changes logged and environment is now robust and developer-friendly.
+- [2025-06-23T09:00:00Z] Task: Configured ESLint and Prettier; added `eslint.config.mjs`, `prettier.config.mjs`, and Husky pre-commit hooks to enforce linting and formatting rules. Note: Executing Self-Documentation Protocol.
+- [2025-06-23T14:30:00Z] Task: Updated `tsconfig.json` to enable strict type checking (`strict`, `strictNullChecks`) and added path alias `@/` mapping to `src/`. Note: Executing Self-Documentation Protocol.
+- [2025-06-23T17:15:00Z] Task: Migrated from Jest to Vitest; created `vitest.config.ts`, removed `jest.config.js`, updated CI pipeline to use `npx vitest run`, and validated initial tests. Note: Executing Self-Documentation Protocol.
+- [2025-06-22T17:36:42Z] Task: Migrated unit tests into `src/tests/`; configured Vitest single-file execution and watch mode; updated `package.json` scripts (`test:ci`, `test:watch`); initial 28 tests passing. Note: Executing Self-Documentation Protocol.
+- [2025-06-22T22:23:13Z] Task: Added non-order branch tests for `handleQuestradeError`; `handle.ts` achieved 100% coverage. Note: Executing Self-Documentation Protocol.
+- [2025-06-22T22:34:58Z] Task: Added tests for `MemoryStore` load/save/clear; `memory.ts` achieved 100% coverage. Note: Executing Self-Documentation Protocol.
+- [2025-06-22T22:48:40Z] Task: Added default constructor and CRUD tests for `FileStore`; `file.ts` achieved 100% coverage. Note: Executing Self-Documentation Protocol.
+- [2025-06-22T23:01:33Z] Task: Enhanced tests for `WebStorageStore` covering default key and null storage scenarios; `webStorage.ts` branch coverage improved. Note: Executing Self-Documentation Protocol.
+- [2025-06-22T23:47:25Z] Task: Added `OrderLeg` and `Order` schema tests; `orders.ts` branch coverage improved. Note: Executing Self-Documentation Protocol.
+- [2025-06-22T23:50:48Z] Task: Added comprehensive response schema tests; `responses.ts` branch coverage improved. Note: Executing Self-Documentation Protocol.
+- [2025-06-22T23:56:42Z] Task: Added symbol schema tests; `symbols.ts` branch coverage improved. Note: Executing Self-Documentation Protocol.
   Note: Executing Self-Documentation Protocol.
   This log reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
+- [2025-06-22T17:36:42Z] Task: Migrated unit tests into `src/tests/`, configured Vitest with strict single-file invocation policy and watch mode; updated `package.json` scripts (`test:ci`, `test:watch`), and validated initial 28 tests passing. Note: Executing Self-Documentation Protocol.
+- [2025-06-22T22:23:13Z] Task: Added `handleQuestradeError` non-order branch tests; `handle.ts` now fully covered (100%). Note: Executing Self-Documentation Protocol.
+- [2025-06-22T22:34:58Z] Task: Added tests for `MemoryStore` load/save/clear; `memory.ts` now fully covered (100%). Note: Executing Self-Documentation Protocol.
+- [2025-06-22T22:48:40Z] Task: Added default constructor and CRUD tests for `FileStore`; `file.ts` now fully covered (100%). Note: Executing Self-Documentation Protocol.
+- [2025-06-22T23:01:33Z] Task: Enhanced tests for `WebStorageStore` including default key and localStorage null scenarios; `webStorage.ts` branch coverage improved. Note: Executing Self-Documentation Protocol.
+- [2025-06-22T23:47:25Z] Task: Added tests for `OrderLeg` and `Order` schemas; `orders.ts` branch coverage improved. Note: Executing Self-Documentation Protocol.
+- [2025-06-22T23:50:48Z] Task: Added comprehensive response schema tests; `responses.ts` branch coverage improved. Note: Executing Self-Documentation Protocol.
+- [2025-06-22T23:56:42Z] Task: Added symbol schema tests; `symbols.ts` branch coverage improved. Note: Executing Self-Documentation Protocol.
 
 # progress.md
 

@@ -8,6 +8,9 @@
   "chat.instructionsFilesLocations": {
     ".github/instructions": true
   },
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    { "file": ".copilot-commit-message-instructions.md", "enabled": true }
+  ],
   // Ensure prompt files are explicitly enabled
   "chat.promptFiles": true,
   // Your existing prompt location is correct
@@ -24,28 +27,6 @@
     "diffEditor.ignoreTrimWhitespace": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // "accessibility.signals.chatResponseReceived": {
-  //   "sound": "auto"
-  // },
-  // "prettier.configPath": ".prettierrc",
-  // "[typescript]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
-  // },
-  // "[javascript]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
-  // },
-  // "[json]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
-  // },
-  // "[html]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
-  // },
-  // "[css]": {
-  //   "editor.defaultFormatter": "esbenp.prettier-vscode"
-  // },
-  // "[markdown]": {
-  //   "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-  // },
   // #endregion: FORMAT BEHAVIOUR                                       !
   /*
   |-···----------------------------------------------------------···-|
