@@ -25,7 +25,7 @@ import type { CurrencyCode } from './enums';
  */
 export interface AccountBalancesRequest {
   /**
-   * @remarks Eight-digit account number (path parameter).
+   * Eight-digit account number (path parameter).
    */
   id: string;
 }
@@ -47,25 +47,25 @@ export const AccountBalancesRequestSchema = z.object({
  * Represents a balance summary for a currency.
  */
 export interface Balance {
-  /** @remarks Currency code (ISO-4217, e.g., "USD" or "CAD"). */
+  /** Currency code (ISO-4217, e.g., "USD" or "CAD"). */
   currency: CurrencyCode | string;
 
-  /** @remarks Current cash balance. */
+  /** Current cash balance. */
   cash: number;
 
-  /** @remarks Market value of all securities in the account in this currency. */
+  /** Market value of all securities in the account in this currency. */
   marketValue: number;
 
-  /** @remarks Equity = cash + marketValue. */
+  /** Equity = cash + marketValue. */
   totalEquity: number;
 
-  /** @remarks Buying power for this currency side of the account. */
+  /** Buying power for this currency side of the account. */
   buyingPower: number;
 
-  /** @remarks Maintenance excess for this currency side of the account. */
+  /** Maintenance excess for this currency side of the account. */
   maintenanceExcess: number;
 
-  /** @remarks Whether real-time data was used to calculate values. */
+  /** Whether real-time data was used to calculate values. */
   isRealTime: boolean;
 }
 
@@ -92,16 +92,16 @@ export const BalanceSchema = z.object({
  * Response envelope for GET /v1/accounts/:id/balances.
  */
 export interface AccountBalancesResponse {
-  /** @remarks Per-currency balances as of now. */
+  /** Per-currency balances as of now. */
   perCurrencyBalances: Balance[];
 
-  /** @remarks Combined balances across all currencies. */
+  /** Combined balances across all currencies. */
   combinedBalances: Balance[];
 
-  /** @remarks Start-of-day per-currency balances. */
+  /** Start-of-day per-currency balances. */
   sodPerCurrencyBalances: Balance[];
 
-  /** @remarks Start-of-day combined balances across all currencies. */
+  /** Start-of-day combined balances across all currencies. */
   sodCombinedBalances: Balance[];
 }
 

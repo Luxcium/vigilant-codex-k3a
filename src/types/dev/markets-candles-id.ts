@@ -24,13 +24,13 @@ import type { CandleInterval } from './enums';
  * Request parameters for historical candlesticks of a single symbol.
  */
 export interface MarketsCandlesRequest {
-  /** @remarks Internal symbol identifier (positive integer, path param). */
+  /** Internal symbol identifier (positive integer, path param). */
   id: number;
-  /** @remarks ISO‑8601 timestamp for the first candle (inclusive). */
+  /** ISO‑8601 timestamp for the first candle (inclusive). */
   startTime: string;
-  /** @remarks ISO‑8601 timestamp for the last candle (exclusive). */
+  /** ISO‑8601 timestamp for the last candle (exclusive). */
   endTime: string;
-  /** @remarks Timeframe of each candlestick. */
+  /** Timeframe of each candlestick. */
   interval: CandleInterval;
 }
 
@@ -54,19 +54,19 @@ export const MarketsCandlesRequestSchema = z.object({
  * One OHLCV candlestick.
  */
 export interface Candle {
-  /** @remarks Candle start timestamp (ISO‑8601). */
+  /** Candle start timestamp (ISO‑8601). */
   start: string;
-  /** @remarks Candle end timestamp (ISO‑8601). */
+  /** Candle end timestamp (ISO‑8601). */
   end: string;
-  /** @remarks Opening price. */
+  /** Opening price. */
   open: number;
-  /** @remarks Highest price within interval. */
+  /** Highest price within interval. */
   high: number;
-  /** @remarks Lowest price within interval. */
+  /** Lowest price within interval. */
   low: number;
-  /** @remarks Closing price. */
+  /** Closing price. */
   close: number;
-  /** @remarks Traded volume. */
+  /** Traded volume. */
   volume: number;
 }
 
@@ -89,7 +89,7 @@ export const CandleSchema = z.object({
  * Response envelope for the candlestick endpoint.
  */
 export interface MarketsCandlesResponse {
-  /** @remarks List of candlesticks for the requested range. */
+  /** List of candlesticks for the requested range. */
   candles: Candle[];
 }
 

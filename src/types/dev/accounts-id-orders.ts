@@ -25,27 +25,27 @@ import type { OrderStateFilterType } from './enums';
  */
 export interface AccountOrdersRequest {
   /**
-   * @remarks Eight-digit account number (path parameter).
+   * Eight-digit account number (path parameter).
    */
   id: string;
 
   /**
-   * @remarks ISO-8601 start of time range (inclusive). Defaults to start of day.
+   * ISO-8601 start of time range (inclusive). Defaults to start of day.
    */
   startTime?: string;
 
   /**
-   * @remarks ISO-8601 end of time range (inclusive). Defaults to end of day.
+   * ISO-8601 end of time range (inclusive). Defaults to end of day.
    */
   endTime?: string;
 
   /**
-   * @remarks Filter to include all, only open, or only closed orders.
+   * Filter to include all, only open, or only closed orders.
    */
   stateFilter?: OrderStateFilterType;
 
   /**
-   * @remarks Specific order ID to retrieve details for a single order.
+   * Specific order ID to retrieve details for a single order.
    */
   orderId?: number;
 }
@@ -71,16 +71,16 @@ export const AccountOrdersRequestSchema = z.object({
  * One leg/component of a multi-leg strategy order.
  */
 export interface OrderLeg {
-  /** @remarks Strategy type for multi-leg order (e.g., "Custom"). */
+  /** Strategy type for multi-leg order (e.g., "Custom"). */
   strategyType: string;
 
-  /** @remarks Trigger price for stop-leg orders. */
+  /** Trigger price for stop-leg orders. */
   triggerStopPrice?: number;
 
-  /** @remarks Internal group identifier for this order chain. */
+  /** Internal group identifier for this order chain. */
   orderGroupId?: number;
 
-  /** @remarks Bracket order class (e.g., "Primary"). */
+  /** Bracket order class (e.g., "Primary"). */
   orderClass?: string;
 }
 
@@ -220,7 +220,7 @@ export const OrderSchema = z.object({
  * Response envelope for GET /v1/accounts/:id/orders.
  */
 export interface AccountOrdersResponse {
-  /** @remarks Array of orders in the account. */
+  /** Array of orders in the account. */
   orders: Order[];
 }
 

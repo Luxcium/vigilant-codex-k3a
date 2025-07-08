@@ -48,43 +48,43 @@ export const MarketsRequestSchema = z.object({}).strict();
  * feed codes, session times, and currency.
  */
 export interface Market {
-  /** @remarks Market name (e.g., "TSX"). */
+  /** Market name (e.g., "TSX"). */
   name: string;
 
-  /** @remarks Supported trading venue codes. */
+  /** Supported trading venue codes. */
   tradingVenues: ListingExchange[];
 
-  /** @remarks Default trading venue code. */
+  /** Default trading venue code. */
   defaultTradingVenue: ListingExchange;
 
-  /** @remarks Primary order route codes (free-form, evolving). */
+  /** Primary order route codes (free-form, evolving). */
   primaryOrderRoutes: string[];
 
-  /** @remarks Secondary order route codes (free-form, evolving). */
+  /** Secondary order route codes (free-form, evolving). */
   secondaryOrderRoutes: string[];
 
-  /** @remarks Level 1 market data feed codes (free-form). */
+  /** Level 1 market data feed codes (free-form). */
   level1Feeds: string[];
 
-  /** @remarks Level 2 market data feed codes (free-form). */
+  /** Level 2 market data feed codes (free-form). */
   level2Feeds: string[];
 
-  /** @remarks Pre-market opening time (ISO-8601 string). */
+  /** Pre-market opening time (ISO-8601 string). */
   extendedStartTime: string;
 
-  /** @remarks Regular market opening time (ISO-8601 string). */
+  /** Regular market opening time (ISO-8601 string). */
   startTime: string;
 
-  /** @remarks Regular market closing time (ISO-8601 string). */
+  /** Regular market closing time (ISO-8601 string). */
   endTime: string;
 
-  /** @remarks Extended market closing time (ISO-8601 string). */
+  /** Extended market closing time (ISO-8601 string). */
   extendedEndTime: string;
 
-  /** @remarks Currency code in ISO-4217 format. */
+  /** Currency code in ISO-4217 format. */
   currency: CurrencyCode;
 
-  /** @remarks Maximum number of snap quotes retrievable. */
+  /** Maximum number of snap quotes retrievable. */
   snapQuotesLimit: number;
 }
 
@@ -113,7 +113,7 @@ export const MarketSchema = z.object({
  * Response envelope for GET /v1/markets.
  */
 export interface MarketsResponse {
-  /** @remarks List of supported markets. */
+  /** List of supported markets. */
   markets: Market[];
 }
 

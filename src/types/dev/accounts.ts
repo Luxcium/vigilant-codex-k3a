@@ -13,7 +13,7 @@
  */
 
 /**
- * @remarks Handles account-related operations and data structures.
+ * Handles account-related operations and data structures.
  */
 
 import { z } from 'zod';
@@ -45,19 +45,19 @@ export const GetAccountsRequestSchema = z.object({}).strict();
  * Details of a brokerage account accessible by the user.
  */
 export interface Account {
-  /** @remarks Type of the account (e.g., "Cash", "Margin"). */
+  /** Type of the account (e.g., "Cash", "Margin"). */
   type: AccountType;
-  /** @remarks Eight‑digit account number (string of digits). */
+  /** Eight‑digit account number (string of digits). */
   number: string;
-  /** @remarks Operational status of the account (e.g., "Active"). */
+  /** Operational status of the account (e.g., "Active"). */
   status: AccountStatus;
-  /** @remarks Whether this is the primary account for the holder. */
+  /** Whether this is the primary account for the holder. */
   isPrimary: boolean;
-  /** @remarks Whether this account is billed for fees and market data. */
+  /** Whether this account is billed for fees and market data. */
   isBilling: boolean;
-  /** @remarks Type of client holding the account (e.g., "Individual"). */
+  /** Type of client holding the account (e.g., "Individual"). */
   clientAccountType: ClientAccountType;
-  /** @remarks Internal identifier of the user owning the account (may be omitted). */
+  /** Internal identifier of the user owning the account (may be omitted). */
   userId?: number;
 }
 
@@ -84,7 +84,7 @@ export const AccountSchema = z.object({
  * Response envelope for GET /v1/accounts.
  */
 export interface GetAccountsResponse {
-  /** @remarks Array of account records for the authenticated user. */
+  /** Array of account records for the authenticated user. */
   accounts: Account[];
 }
 

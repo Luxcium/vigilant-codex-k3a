@@ -21,7 +21,7 @@ import { z } from 'zod';
  * Request parameters for the positions endpoint.
  */
 export interface AccountPositionsRequest {
-  /** @remarks The eight‑digit account number (path parameter). */
+  /** The eight‑digit account number (path parameter). */
   id: string;
 }
 
@@ -42,29 +42,29 @@ export const AccountPositionsRequestSchema = z.object({
  * A single open/closed position in the account.
  */
 export interface Position {
-  /** @remarks Position symbol (e.g., "AAPL"). */
+  /** Position symbol (e.g., "AAPL"). */
   symbol: string;
-  /** @remarks Internal symbol identifier. */
+  /** Internal symbol identifier. */
   symbolId: number;
-  /** @remarks Quantity remaining open. */
+  /** Quantity remaining open. */
   openQuantity: number;
-  /** @remarks Portion of the position closed today. */
+  /** Portion of the position closed today. */
   closedQuantity?: number;
-  /** @remarks Market value of the position (qty × price). */
+  /** Market value of the position (qty × price). */
   currentMarketValue?: number;
-  /** @remarks Current market price. */
+  /** Current market price. */
   currentPrice?: number;
-  /** @remarks Average price paid. */
+  /** Average price paid. */
   averageEntryPrice?: number;
-  /** @remarks Realized profit/loss. */
+  /** Realized profit/loss. */
   closedPnl?: number;
-  /** @remarks Unrealized profit/loss. */
+  /** Unrealized profit/loss. */
   openPnl?: number;
-  /** @remarks Aggregate cost basis. */
+  /** Aggregate cost basis. */
   totalCost?: number | boolean;
-  /** @remarks Whether real-time quote was used. */
+  /** Whether real-time quote was used. */
   isRealTime?: boolean | string;
-  /** @remarks Symbol under corporate reorg flag. */
+  /** Symbol under corporate reorg flag. */
   isUnderReorg?: boolean;
 }
 
@@ -96,7 +96,7 @@ export const PositionSchema = z.object({
  * Response envelope for account positions.
  */
 export interface AccountPositionsResponse {
-  /** @remarks Array of position records in the account. */
+  /** Array of position records in the account. */
   positions: Position[];
 }
 

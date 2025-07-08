@@ -120,106 +120,106 @@ export const SymbolDetailsRequestSchema = z.discriminatedUnion('variant', [
  * Full details for a single symbol returned by the API.
  */
 export interface SymbolDetail {
-  /** @remarks Questrade symbology (e.g., "TD.TO"). */
+  /** Questrade symbology (e.g., "TD.TO"). */
   symbol: string;
 
-  /** @remarks Unique internal symbol ID. */
+  /** Unique internal symbol ID. */
   symbolId: number;
 
-  /** @remarks Closing price from the previous trading day. */
+  /** Closing price from the previous trading day. */
   prevDayClosePrice: number;
 
-  /** @remarks 52-week high price. */
+  /** 52-week high price. */
   highPrice52: number;
 
-  /** @remarks 52-week low price. */
+  /** 52-week low price. */
   lowPrice52: number;
 
-  /** @remarks Average trading volume over the past 3 months. */
+  /** Average trading volume over the past 3 months. */
   averageVol3Months: number;
 
-  /** @remarks Average trading volume over the past 20 days. */
+  /** Average trading volume over the past 20 days. */
   averageVol20Days: number;
 
-  /** @remarks Total shares outstanding. */
+  /** Total shares outstanding. */
   outstandingShares: number;
 
-  /** @remarks Trailing 12-month earnings per share. */
+  /** Trailing 12-month earnings per share. */
   eps: number;
 
-  /** @remarks Trailing 12-month price-to-earnings ratio. */
+  /** Trailing 12-month price-to-earnings ratio. */
   pe: number;
 
-  /** @remarks Dividend amount paid per share. */
+  /** Dividend amount paid per share. */
   dividend: number;
 
-  /** @remarks Dividend yield (dividend / prevDayClosePrice). */
+  /** Dividend yield (dividend / prevDayClosePrice). */
   yield: number;
 
-  /** @remarks Dividend ex-date, ISO 8601 string. */
+  /** Dividend ex-date, ISO 8601 string. */
   exDate: string;
 
-  /** @remarks Market capitalization (outstandingShares × prevDayClosePrice). */
+  /** Market capitalization (outstandingShares × prevDayClosePrice). */
   marketCap: number;
 
-  /** @remarks Board-lot or contract size (typically 1). */
+  /** Board-lot or contract size (typically 1). */
   tradeUnit: number;
 
-  /** @remarks Option type if applicable (Call/Put). */
+  /** Option type if applicable (Call/Put). */
   optionType: OptionType | null;
 
-  /** @remarks Option expiration cycle if applicable. */
+  /** Option expiration cycle if applicable. */
   optionDurationType: OptionDurationType | null;
 
-  /** @remarks Root symbol for options, if applicable. */
+  /** Root symbol for options, if applicable. */
   optionRoot: string | null;
 
-  /** @remarks Raw deliverables data (to be defined). */
+  /** Raw deliverables data (to be defined). */
   optionContractDeliverables: unknown;
 
-  /** @remarks Exercise style for options. */
+  /** Exercise style for options. */
   optionExerciseType: OptionExerciseType | null;
 
-  /** @remarks Primary exchange where the symbol is listed. */
+  /** Primary exchange where the symbol is listed. */
   listingExchange: ListingExchange;
 
-  /** @remarks Descriptive name of the security. */
+  /** Descriptive name of the security. */
   description: string;
 
-  /** @remarks Security classification (Stock, Option, etc.). */
+  /** Security classification (Stock, Option, etc.). */
   securityType: SecurityType;
 
-  /** @remarks Option expiry date if applicable, ISO 8601 string. */
+  /** Option expiry date if applicable, ISO 8601 string. */
   optionExpiryDate: string | null;
 
-  /** @remarks Dividend declaration date, ISO 8601 string. */
+  /** Dividend declaration date, ISO 8601 string. */
   dividendDate: string | null;
 
-  /** @remarks Strike price for options if applicable. */
+  /** Strike price for options if applicable. */
   optionStrikePrice: number | null;
 
-  /** @remarks Whether the symbol can be traded. */
+  /** Whether the symbol can be traded. */
   isTradable: boolean;
 
-  /** @remarks Whether the symbol can be quoted. */
+  /** Whether the symbol can be quoted. */
   isQuotable: boolean;
 
-  /** @remarks Whether the symbol has listed options. */
+  /** Whether the symbol has listed options. */
   hasOptions: boolean;
 
-  /** @remarks Currency code, ISO 4217. */
+  /** Currency code, ISO 4217. */
   currency: CurrencyCode;
 
-  /** @remarks Tick size rules: pivot → minTick. */
+  /** Tick size rules: pivot → minTick. */
   minTicks: { pivot: number; minTick: number }[];
 
-  /** @remarks Industry sector classification (free-form). */
+  /** Industry sector classification (free-form). */
   industrySector: string | null;
 
-  /** @remarks Industry group classification (free-form). */
+  /** Industry group classification (free-form). */
   industryGroup: string | null;
 
-  /** @remarks Industry subgroup classification (free-form). */
+  /** Industry subgroup classification (free-form). */
   industrySubGroup: string | null;
 }
 
@@ -271,7 +271,7 @@ export const SymbolDetailSchema = z.object({
  * Response envelope for the Symbol Details endpoint.
  */
 export interface SymbolDetailsResponse {
-  /** @remarks Array of symbol detail objects. */
+  /** Array of symbol detail objects. */
   symbols: SymbolDetail[];
 }
 

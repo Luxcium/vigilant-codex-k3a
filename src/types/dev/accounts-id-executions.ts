@@ -22,11 +22,11 @@ import { z } from 'zod';
  * Request parameters for retrieving account executions.
  */
 export interface AccountExecutionsRequest {
-  /** @remarks Eight-digit account number (path parameter). */
+  /** Eight-digit account number (path parameter). */
   id: string;
-  /** @remarks ISO-8601 start of time range (inclusive). */
+  /** ISO-8601 start of time range (inclusive). */
   startTime?: string;
-  /** @remarks ISO-8601 end of time range (inclusive). */
+  /** ISO-8601 end of time range (inclusive). */
   endTime?: string;
 }
 
@@ -49,47 +49,47 @@ export const AccountExecutionsRequestSchema = z.object({
  * Details of a single trade execution.
  */
 export interface Execution {
-  /** @remarks Symbol of the executed security. */
+  /** Symbol of the executed security. */
   symbol: string;
-  /** @remarks Internal symbol identifier. */
+  /** Internal symbol identifier. */
   symbolId: number;
-  /** @remarks Number of shares/contracts executed. */
+  /** Number of shares/contracts executed. */
   quantity: number;
-  /** @remarks Client side of the order (Buy, Sell, etc.). */
+  /** Client side of the order (Buy, Sell, etc.). */
   side: string;
-  /** @remarks Execution price. */
+  /** Execution price. */
   price: number;
-  /** @remarks Internal execution identifier. */
+  /** Internal execution identifier. */
   id: number;
-  /** @remarks Internal identifier of the related order. */
+  /** Internal identifier of the related order. */
   orderId: number;
-  /** @remarks Internal identifier of the order chain. */
+  /** Internal identifier of the order chain. */
   orderChainId: number;
-  /** @remarks Market-provided execution identifier. */
+  /** Market-provided execution identifier. */
   exchangeExecId: string;
-  /** @remarks Timestamp of the execution (ISO-8601). */
+  /** Timestamp of the execution (ISO-8601). */
   timestamp: string;
-  /** @remarks Manual notes entered by Trade Desk staff, if any. */
+  /** Manual notes entered by Trade Desk staff, if any. */
   notes?: string;
-  /** @remarks Venue where the execution originated. */
+  /** Venue where the execution originated. */
   venue: string;
-  /** @remarks Total execution cost (price × quantity). */
+  /** Total execution cost (price × quantity). */
   totalCost: number;
-  /** @remarks Commission charged for order placement. */
+  /** Commission charged for order placement. */
   orderPlacementCommission?: number;
-  /** @remarks Questrade commission on execution. */
+  /** Questrade commission on execution. */
   commission?: number;
-  /** @remarks Liquidity fee charged by venue. */
+  /** Liquidity fee charged by venue. */
   executionFee?: number;
-  /** @remarks SEC fee on U.S. sales. */
+  /** SEC fee on U.S. sales. */
   secFee?: number;
-  /** @remarks TSX additional execution fee. */
+  /** TSX additional execution fee. */
   canadianExecutionFee?: number;
-  /** @remarks Parent order identifier, if applicable. */
+  /** Parent order identifier, if applicable. */
   parentId?: number;
-  /** @remarks Whether real-time data was used. */
+  /** Whether real-time data was used. */
   isRealTime: boolean;
-  /** @remarks Whether a symbol is under corporate reorganization. */
+  /** Whether a symbol is under corporate reorganization. */
   isUnderReorg: boolean;
 }
 
@@ -130,7 +130,7 @@ export const ExecutionSchema = z.object({
  * Response envelope for GET /v1/accounts/:id/executions.
  */
 export interface AccountExecutionsResponse {
-  /** @remarks Array of execution records for the account. */
+  /** Array of execution records for the account. */
   executions: Execution[];
 }
 

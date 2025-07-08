@@ -23,11 +23,11 @@ import type { CurrencyCode } from './enums';
  * Request parameters for the activities endpoint.
  */
 export interface AccountActivitiesRequest {
-  /** @remarks Eight-digit account number (path parameter). */
+  /** Eight-digit account number (path parameter). */
   id: string;
-  /** @remarks ISO-8601 start of time range (inclusive). */
+  /** ISO-8601 start of time range (inclusive). */
   startTime?: string;
-  /** @remarks ISO-8601 end of time range (inclusive). */
+  /** ISO-8601 end of time range (inclusive). */
   endTime?: string;
 }
 
@@ -93,7 +93,7 @@ export const AccountActivitySchema = z.object({
  * Response envelope for account activities.
  */
 export interface AccountActivitiesResponse {
-  /** @remarks Array of account activity records. */
+  /** Array of account activity records. */
   activities: AccountActivity[];
 }
 

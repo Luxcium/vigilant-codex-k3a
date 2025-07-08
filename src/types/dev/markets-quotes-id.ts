@@ -25,10 +25,10 @@ import { TICK_TYPES } from './enums';
  * Request parameters for Level 1 market quotes.
  */
 export interface MarketQuotesByIdRequest {
-  /** @remarks Variant for a single-symbol request via path `/markets/quotes/:id`. */
+  /** Variant for a single-symbol request via path `/markets/quotes/:id`. */
   variant: 'byId';
 
-  /** @remarks Internal symbol identifier (positive integer). */
+  /** Internal symbol identifier (positive integer). */
   id: number;
 }
 
@@ -37,10 +37,10 @@ export interface MarketQuotesByIdRequest {
  * Request parameters for Level 1 market quotes for multiple symbols.
  */
 export interface MarketQuotesByIdsRequest {
-  /** @remarks Variant for multi-symbol request via query `?ids=`. */
+  /** Variant for multi-symbol request via query `?ids=`. */
   variant: 'byIds';
 
-  /** @remarks Array of internal symbol identifiers. */
+  /** Array of internal symbol identifiers. */
   ids: number[];
 }
 
@@ -48,7 +48,7 @@ export interface MarketQuotesByIdsRequest {
  * @public
  * Union of valid market quotes request shapes.
  *
- * @remarks Exactly one variant must be provided.
+ * Exactly one variant must be provided.
  */
 export type MarketQuotesRequest =
   | MarketQuotesByIdRequest
@@ -75,58 +75,58 @@ export const MarketQuotesRequestSchema = z.discriminatedUnion('variant', [
  * A single Level 1 market quote.
  */
 export interface Quote {
-  /** @remarks Symbol name in Questrade symbology. */
+  /** Symbol name in Questrade symbology. */
   symbol: string;
 
-  /** @remarks Internal symbol identifier. */
+  /** Internal symbol identifier. */
   symbolId: number;
 
-  /** @remarks Market tier (may be empty when unspecified). */
+  /** Market tier (may be empty when unspecified). */
   tier: string | null;
 
-  /** @remarks Current bid price. */
+  /** Current bid price. */
   bidPrice: number;
 
-  /** @remarks Quantity at the bid price. */
+  /** Quantity at the bid price. */
   bidSize: number;
 
-  /** @remarks Current ask price. */
+  /** Current ask price. */
   askPrice: number;
 
-  /** @remarks Quantity at the ask price. */
+  /** Quantity at the ask price. */
   askSize: number;
 
-  /** @remarks Last trade price during regular trading hours. */
+  /** Last trade price during regular trading hours. */
   lastTradePriceTrHrs: number;
 
-  /** @remarks Price of the last trade. */
+  /** Price of the last trade. */
   lastTradePrice: number;
 
-  /** @remarks Quantity of the last trade. */
+  /** Quantity of the last trade. */
   lastTradeSize: number;
 
-  /** @remarks Direction of the last trade (Up, Down, Equal). */
+  /** Direction of the last trade (Up, Down, Equal). */
   lastTradeTick: TickType;
 
-  /** @remarks Timestamp of the last trade in ISO-8601 format. */
+  /** Timestamp of the last trade in ISO-8601 format. */
   lastTradeTime: string;
 
-  /** @remarks Total traded volume for the day. */
+  /** Total traded volume for the day. */
   volume: number;
 
-  /** @remarks Opening price of the trading day. */
+  /** Opening price of the trading day. */
   openPrice: number;
 
-  /** @remarks Highest price of the trading day. */
+  /** Highest price of the trading day. */
   highPrice: number;
 
-  /** @remarks Lowest price of the trading day. */
+  /** Lowest price of the trading day. */
   lowPrice: number;
 
-  /** @remarks Whether this quote is delayed (true) or real-time (false). */
+  /** Whether this quote is delayed (true) or real-time (false). */
   delay: boolean | number;
 
-  /** @remarks Whether trading in this symbol is halted. */
+  /** Whether trading in this symbol is halted. */
   isHalted: boolean;
 }
 
@@ -160,7 +160,7 @@ export const QuoteSchema = z.object({
  * Response envelope for GET /v1/markets/quotes/:id.
  */
 export interface MarketQuotesResponse {
-  /** @remarks Array of Level 1 quotes. */
+  /** Array of Level 1 quotes. */
   quotes: Quote[];
 }
 

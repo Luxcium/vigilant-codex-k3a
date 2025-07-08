@@ -48,13 +48,13 @@ export const SymbolOptionsRequestSchema = z.object({
  * Represents a call/put option at a specific strike price.
  */
 export interface ChainPerStrikePrice {
-  /** @remarks Option strike price. */
+  /** Option strike price. */
   strikePrice: number;
 
-  /** @remarks Identifier of the call option symbol. */
+  /** Identifier of the call option symbol. */
   callSymbolId: number;
 
-  /** @remarks Identifier of the put option symbol. */
+  /** Identifier of the put option symbol. */
   putSymbolId: number;
 }
 
@@ -73,13 +73,13 @@ const ChainPerStrikePriceSchema = z.object({
  * Represents all strike entries under a given option root.
  */
 export interface ChainPerRoot {
-  /** @remarks Option root symbol (e.g., "BMO"). */
+  /** Option root symbol (e.g., "BMO"). */
   root: string;
 
-  /** @remarks List of strikes with call/put symbol IDs. */
+  /** List of strikes with call/put symbol IDs. */
   chainPerStrikePrice: ChainPerStrikePrice[];
 
-  /** @remarks Number of shares deliverable per contract (e.g., 100). */
+  /** Number of shares deliverable per contract (e.g., 100). */
   multiplier: number;
 }
 
@@ -98,19 +98,19 @@ const ChainPerRootSchema = z.object({
  * Represents option chain details grouped by expiry date.
  */
 export interface ChainPerExpiryDate {
-  /** @remarks Option expiry date in ISO-8601 format. */
+  /** Option expiry date in ISO-8601 format. */
   expiryDate: string;
 
-  /** @remarks Description of the underlying option. */
+  /** Description of the underlying option. */
   description: string;
 
-  /** @remarks Primary listing exchange code. */
+  /** Primary listing exchange code. */
   listingExchange: ListingExchange;
 
-  /** @remarks Style of exercise (American/European). */
+  /** Style of exercise (American/European). */
   optionExerciseType: OptionExerciseType;
 
-  /** @remarks Option roots with associated strike chains. */
+  /** Option roots with associated strike chains. */
   chainPerRoot: ChainPerRoot[];
 }
 
@@ -131,7 +131,7 @@ const ChainPerExpiryDateSchema = z.object({
  * Response envelope for GET /v1/symbols/:id/options.
  */
 export interface SymbolOptionsResponse {
-  /** @remarks Array of option chains grouped by expiry. */
+  /** Array of option chains grouped by expiry. */
   options: ChainPerExpiryDate[];
 }
 
