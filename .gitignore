@@ -22,3 +22,5 @@ package-lock.json
 npm-shrinkwrap.json
 yarn.lock
 agent-framework/node_modules/
+src/types/dev/anterior-conversation.txt
+src/types/dev/Archive.zip
