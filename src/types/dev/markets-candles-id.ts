@@ -1,21 +1,41 @@
+// src/types/dev/markets-candles-id.ts
+
 /**
  * @packageDocumentation
  *
  * Development copy: Types & Schemas for **GET /v1/markets/candles/:id**
  *
  * @remarks
- * Provides strongly-typed request/response structures and Zod validation for
+ * Provides strongly‑typed request/response structures and Zod validation for
  * retrieving historical OHLCV candlestick data (up to 2 000 records per call)
  * from Questrade.
  */
 
 import { z } from 'zod';
-import { CandleIntervalSchema } from '../enums';
-import type { CandleInterval } from '../enums';
+// import { CandleIntervalSchema } from './enums';
+import type { CandleInterval } from './enums';
+export const CandleIntervalSchema = z.enum([
+  'OneMinute',
+  'TwoMinutes',
+  'ThreeMinutes',
+  'FourMinutes',
+  'FiveMinutes',
+  'TenMinutes',
+  'FifteenMinutes',
+  'TwentyMinutes',
+  'HalfHour',
+  'OneHour',
+  'TwoHours',
+  'FourHours',
+  'OneDay',
+  'OneWeek',
+  'OneMonth',
+  'OneYear',
+]);
 
-// ──────────────────────────────────────────────────────────────────────────────
+//──────────────────────────────────────────────────────────────────────────────
 // 1. Input Shape – Request Parameters
-// ──────────────────────────────────────────────────────────────────────────────
+//──────────────────────────────────────────────────────────────────────────────
 
 /**
  * @public
@@ -32,7 +52,10 @@ export interface MarketsCandlesRequest {
   interval: CandleInterval;
 }
 
-/** Zod schema validating the request parameters. */
+/**
+ * @public
+ * Zod schema validating the request parameters.
+ */
 export const MarketsCandlesRequestSchema = z.object({
   id: z.number().int().positive(),
   startTime: z.string().datetime(),
@@ -40,25 +63,35 @@ export const MarketsCandlesRequestSchema = z.object({
   interval: CandleIntervalSchema,
 });
 
-// ──────────────────────────────────────────────────────────────────────────────
+//──────────────────────────────────────────────────────────────────────────────
 // 2. Response Shapes – Candle Record
-// ──────────────────────────────────────────────────────────────────────────────
+//──────────────────────────────────────────────────────────────────────────────
 
 /**
  * @public
  * One OHLCV candlestick.
  */
 export interface Candle {
-  start: string /** Candle start timestamp (ISO 8601). */;
-  end: string /** Candle end timestamp   (ISO 8601). */;
-  open: number /** Opening price. */;
-  high: number /** Highest price within interval. */;
-  low: number /** Lowest price within interval. */;
-  close: number /** Closing price. */;
-  volume: number /** Traded volume. */;
+  /** @remarks Candle start timestamp (ISO‑8601). */
+  start: string;
+  /** @remarks Candle end timestamp (ISO‑8601). */
+  end: string;
+  /** @remarks Opening price. */
+  open: number;
+  /** @remarks Highest price within interval. */
+  high: number;
+  /** @remarks Lowest price within interval. */
+  low: number;
+  /** @remarks Closing price. */
+  close: number;
+  /** @remarks Traded volume. */
+  volume: number;
 }
 
-/** Zod schema for a Candle. */
+/**
+ * @public
+ * Zod schema for a Candle.
+ */
 export const CandleSchema = z.object({
   start: z.string().datetime(),
   end: z.string().datetime(),
@@ -78,7 +111,10 @@ export interface MarketsCandlesResponse {
   candles: Candle[];
 }
 
-/** Zod schema validating the response envelope. */
+/**
+ * @public
+ * Zod schema validating the response envelope.
+ */
 export const MarketsCandlesResponseSchema = z.object({
   candles: z.array(CandleSchema),
 });
@@ -90,5 +126,12 @@ export const MarketsCandlesResponseSchema = z.object({
  * @param json - Raw API response payload.
  * @returns Validated response object.
  * @throws ZodError if validation fails.
+ *
+ * @example
+ * ```ts
+ * const data = await fetchJson('/v1/markets/candles/38738?...');
+ * const resp = parseMarketsCandlesResponse(data);
+ * console.log(resp.candles[0].open);
+ * ```
  */
 export const parseMarketsCandlesResponse = MarketsCandlesResponseSchema.parse;

@@ -19,6 +19,8 @@
  * @see https://typedoc.org/documents/Tags._enum.html for `@enum` guidance ([typedoc.org](https://typedoc.org/documents/Tags._enum.html?utm_source=chatgpt.com))
  */
 
+import { z } from 'zod'; // retained for future zod‑schema helpers
+
 type Labels<T extends readonly string[]> = Record<T[number], string>;
 
 // ────────────────────────────────────────────────────────────────────────────
@@ -298,3 +300,55 @@ export type SecurityType = (typeof SECURITY_TYPES)[number];
 /** Filters when querying order history. */
 export const ORDER_STATE_FILTER_TYPES = ['All', 'Open', 'Closed'] as const;
 export type OrderStateFilterType = typeof ORDER_STATE_FILTER_TYPES;
+
+// ────────────────────────────────────────────────────────────────────────────
+// HistoricalDataGranularity (Candle intervals)
+// ────────────────────────────────────────────────────────────────────────────
+/**
+ * Supported intervals for historical OHLCV candlestick data.
+ *
+ * @enum CandleInterval
+ * @remarks
+ * • **OneMinute** — One candlestick per 1 minute
+ * • **TwoMinutes** — One candlestick per 2 minutes
+ * • **ThreeMinutes** — One candlestick per 3 minutes
+ * • **FourMinutes** — One candlestick per 4 minutes
+ * • **FiveMinutes** — One candlestick per 5 minutes
+ * • **TenMinutes** — One candlestick per 10 minutes
+ * • **FifteenMinutes** — One candlestick per 15 minutes
+ * • **TwentyMinutes** — One candlestick per 20 minutes
+ * • **HalfHour** — One candlestick per 30 minutes
+ * • **OneHour** — One candlestick per 1 hour
+ * • **TwoHours** — One candlestick per 2 hours
+ * • **FourHours** — One candlestick per 4 hours
+ * • **OneDay** — One candlestick per 1 day
+ * • **OneWeek** — One candlestick per 1 week
+ * • **OneMonth** — One candlestick per 1 month
+ * • **OneYear** — One candlestick per 1 year
+ */
+export const CANDLE_INTERVALS = [
+  'OneMinute',
+  'TwoMinutes',
+  'ThreeMinutes',
+  'FourMinutes',
+  'FiveMinutes',
+  'TenMinutes',
+  'FifteenMinutes',
+  'TwentyMinutes',
+  'HalfHour',
+  'OneHour',
+  'TwoHours',
+  'FourHours',
+  'OneDay',
+  'OneWeek',
+  'OneMonth',
+  'OneYear',
+] as const;
+
+export type CandleInterval = (typeof CANDLE_INTERVALS)[number];
+
+/**
+ * @public
+ * Zod schema for validating CandleInterval values.
+ */
+export const CandleIntervalSchema = z.enum(CANDLE_INTERVALS);
