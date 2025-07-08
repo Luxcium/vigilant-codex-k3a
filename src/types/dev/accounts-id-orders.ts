@@ -100,119 +100,61 @@ const OrderLegSchema = z.object({
  * Details of a single order in an account.
  */
 export interface Order {
-  /** @remarks Internal order identifier. */
+  /** Internal order identifier. */
   id: number;
-
-  /** @remarks Symbol in Questrade symbology (e.g., "TD.TO"). */
   symbol: string;
-
-  /** @remarks Internal symbol identifier. */
   symbolId: number;
-
-  /** @remarks Total quantity ordered. */
   totalQuantity: number;
-
-  /** @remarks Quantity yet to be filled. */
   openQuantity: number;
-
-  /** @remarks Quantity already filled. */
   filledQuantity: number;
-
-  /** @remarks Quantity cancelled without fill. */
   canceledQuantity: number;
-
-  /** @remarks Order side (e.g., "Buy", "Sell"). */
   side: string;
-
-  /** @remarks Order type (e.g., "Market"). */
-  orderType: string;
-
-  /** @remarks Limit price, if applicable. */
-  limitPrice?: number;
-
-  /** @remarks Stop price, if applicable. */
-  stopPrice?: number;
-
-  /** @remarks All-or-none special instruction. */
+  /** Order price type (e.g., “Market”). Alias: `type`. */
+  orderType?: string;
+  /** Raw field name in API sometimes returned as `type`. */
+  type?: string;
+  limitPrice?: number | null;
+  stopPrice?: number | null;
   isAllOrNone: boolean;
-
-  /** @remarks Anonymous special instruction. */
   isAnonymous: boolean;
-
-  /** @remarks Iceberg quantity, if applicable. */
-  icebergQuantity?: number;
-
-  /** @remarks Minimum fill quantity, if applicable. */
-  minQuantity?: number;
-
-  /** @remarks Average execution price. */
-  avgExecPrice?: number;
-
-  /** @remarks Last execution price. */
-  lastExecPrice?: number;
-
-  /** @remarks Order source. */
+  /** Iceberg quantity (alias `icebergQty`). */
+  icebergQuantity?: number | null;
+  icebergQty?: number | null;
+  minQuantity?: number | null;
+  avgExecPrice?: number | null;
+  lastExecPrice?: number | null;
   source: string;
-
-  /** @remarks Time-in-force instruction. */
   timeInForce: string;
-
-  /** @remarks Good-Till-Date, if applicable. */
-  gtdDate?: string;
-
-  /** @remarks Current state of the order. */
+  gtdDate?: string | null;
   state: OrderStateFilterType | string;
-
-  /** @remarks Rejection reason, if any. */
   clientReasonStr?: string;
-
-  /** @remarks Chain identifier for multi-leg orders. */
   chainId?: number;
-
-  /** @remarks Order creation timestamp. */
   creationTime: string;
-
-  /** @remarks Last update timestamp. */
   updateTime: string;
-
-  /** @remarks Manual notes from Trade Desk staff. */
   notes?: string;
-
-  /** @remarks Primary route code. */
   primaryRoute?: string;
-
-  /** @remarks Secondary route code. */
   secondaryRoute?: string;
-
-  /** @remarks Order route name. */
   orderRoute?: string;
-
-  /** @remarks Venue holding non-marketable portion. */
   venueHoldingOrder?: string;
-
-  /** @remarks Total commission charged. */
   commissionCharged?: number;
-
-  /** @remarks Exchange-provided order identifier. */
+  /** API typo alias: `comissionCharged`. */
+  comissionCharged?: number;
   exchangeOrderId?: string;
-
-  /** @remarks Flag for significant shareholders. */
   isSignificantShareholder?: boolean;
-
-  /** @remarks Insider status flag. */
+  /** API typo alias: `isSignificantShareHolder`. */
+  isSignificantShareHolder?: boolean;
   isInsider?: boolean;
-
-  /** @remarks Whether limit offset is in dollars. */
   isLimitOffsetInDollar?: boolean;
-
-  /** @remarks User identifier who placed the order. */
   userId?: number;
-
-  /** @remarks Phone placement commission. */
-  placementCommission?: number;
-
-  /** @remarks Multi-leg order components. */
+  placementCommission?: number | null;
   legs?: OrderLeg[];
+  /** Root‑level strategy fields (present in some payloads). */
+  strategyType?: string;
+  triggerStopPrice?: number | null;
+  orderGroupId?: number;
+  orderClass?: string | null;
+  /** Present in some payloads. */
+  mainChainId?: number;
 }
 
 /**
@@ -228,18 +170,20 @@ export const OrderSchema = z.object({
   filledQuantity: z.number().int(),
   canceledQuantity: z.number().int(),
   side: z.string().min(1),
-  orderType: z.string().min(1),
-  limitPrice: z.number().optional(),
-  stopPrice: z.number().optional(),
+  orderType: z.string().min(1).optional(),
+  type: z.string().min(1).optional(),
+  limitPrice: z.number().nullable().optional(),
+  stopPrice: z.number().nullable().optional(),
   isAllOrNone: z.boolean(),
   isAnonymous: z.boolean(),
-  icebergQuantity: z.number().int().optional(),
-  minQuantity: z.number().int().optional(),
-  avgExecPrice: z.number().optional(),
-  lastExecPrice: z.number().optional(),
+  icebergQuantity: z.number().nullable().optional(),
+  icebergQty: z.number().nullable().optional(),
+  minQuantity: z.number().nullable().optional(),
+  avgExecPrice: z.number().nullable().optional(),
+  lastExecPrice: z.number().nullable().optional(),
   source: z.string().min(1),
   timeInForce: z.string().min(1),
-  gtdDate: z.string().datetime().optional(),
+  gtdDate: z.string().datetime().nullable().optional(),
   state: z.union([z.enum(ORDER_STATE_FILTER_TYPES), z.string()]),
   clientReasonStr: z.string().optional(),
   chainId: z.number().int().positive().optional(),
@@ -251,13 +195,20 @@ export const OrderSchema = z.object({
   orderRoute: z.string().optional(),
   venueHoldingOrder: z.string().optional(),
   commissionCharged: z.number().optional(),
-  exchangeOrderId: z.string().min(1).optional(),
+  comissionCharged: z.number().optional(),
+  exchangeOrderId: z.string().optional(),
   isSignificantShareholder: z.boolean().optional(),
+  isSignificantShareHolder: z.boolean().optional(),
   isInsider: z.boolean().optional(),
   isLimitOffsetInDollar: z.boolean().optional(),
   userId: z.number().int().positive().optional(),
-  placementCommission: z.number().optional(),
+  placementCommission: z.number().nullable().optional(),
   legs: z.array(OrderLegSchema).optional(),
+  strategyType: z.string().optional(),
+  triggerStopPrice: z.number().nullable().optional(),
+  orderGroupId: z.number().optional(),
+  orderClass: z.string().nullable().optional(),
+  mainChainId: z.number().optional(),
 });
 
 //──────────────────────────────────────────────────────────────────────────────
