@@ -9,8 +9,12 @@
     ".github/instructions": true
   },
   "github.copilot.chat.commitMessageGeneration.instructions": [
-    { "file": ".copilot-commit-message-instructions.md", "enabled": true }
+    {
+      "file": ".github/instructions/use-conventional-commits.instructions.md",
+      "enabled": true
+    }
   ],
+
   // Ensure prompt files are explicitly enabled
   "chat.promptFiles": true,
   // Your existing prompt location is correct
@@ -38,7 +42,7 @@
   },
   "console-ninja.featureSet": "Community",
   "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
-  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.ignoreTrimWhitespace": true,
   /*
   |-···----------------------------------------------------------···-|
     */

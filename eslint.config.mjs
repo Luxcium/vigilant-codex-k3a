@@ -1,6 +1,7 @@
 import js from '@eslint/js';
 import tseslint from 'typescript-eslint';
 import stylistic from '@stylistic/eslint-plugin';
+import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default tseslint.config(
   js.configs.recommended,
@@ -12,23 +13,28 @@ export default tseslint.config(
       '@stylistic': stylistic,
     },
     rules: {
-      '@stylistic/semi': 'error',
-      '@stylistic/quotes': ['error', 'single', { avoidEscape: true }],
-      '@stylistic/indent': ['error', 2],
-      '@stylistic/comma-dangle': ['error', 'always-multiline'],
-      '@stylistic/object-curly-spacing': ['error', 'always'],
-      '@stylistic/arrow-parens': ['error', 'as-needed'],
-      '@stylistic/brace-style': ['error', '1tbs'],
-      '@stylistic/array-bracket-spacing': ['error', 'never'],
-      '@stylistic/space-infix-ops': 'error',
-      '@stylistic/keyword-spacing': ['error', { before: true, after: true }],
-      '@stylistic/space-before-blocks': ['error', 'always'],
-      '@stylistic/space-in-parens': ['error', 'never'],
-      '@stylistic/no-multi-spaces': 'error',
-      '@stylistic/eol-last': ['error', 'always'],
-      '@stylistic/no-trailing-spaces': 'error',
-      '@stylistic/comma-spacing': ['warn', { before: false, after: true }],
-      // removed invalid stylistic rules for new plugin
+      // Auto-fixable style rules as warnings (not errors)
+      '@stylistic/semi': 'warn',
+      '@stylistic/quotes': ['warn', 'single', {avoidEscape: true}],
+      '@stylistic/indent': ['warn', 2],
+      '@stylistic/comma-dangle': ['warn', 'always-multiline'],
+      '@stylistic/arrow-parens': ['warn', 'as-needed'],
+      '@stylistic/brace-style': ['warn', '1tbs'],
+      '@stylistic/array-bracket-spacing': ['warn', 'never'],
+      '@stylistic/space-infix-ops': 'warn',
+      '@stylistic/keyword-spacing': ['warn', {before: true, after: true}],
+      '@stylistic/space-before-blocks': ['warn', 'always'],
+      '@stylistic/no-multi-spaces': 'warn',
+      '@stylistic/eol-last': ['warn', 'always'],
+      '@stylistic/no-trailing-spaces': 'warn',
+      '@stylistic/comma-spacing': ['warn', {before: false, after: true}],
+
+      // Align with Prettier defaults to avoid conflicts
+      '@stylistic/object-curly-spacing': ['warn', 'always'], // Matches Prettier bracketSpacing: true
+      '@stylistic/template-curly-spacing': ['warn', 'never'], // Matches Prettier default
+
+      // Remove space-in-parens rule that conflicts with Prettier
+      '@stylistic/space-in-parens': 'off',
     },
   },
   {
@@ -39,5 +45,7 @@ export default tseslint.config(
   },
   {
     ignores: ['node_modules/**', 'web/**', 'coverage/**', '*.js', '*.mjs'],
-  }
+  },
+  // Add prettier config last to disable any remaining conflicting rules
+  eslintConfigPrettier
 );

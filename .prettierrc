@@ -12,7 +12,7 @@
   "jsxSingleQuote": false,
   "arrowParens": "avoid",
   "bracketSameLine": true,
-  "bracketSpacing": false,
+  "bracketSpacing": true,
   "embeddedLanguageFormatting": "auto",
   "htmlWhitespaceSensitivity": "css",
   "semi": true,
