@@ -11,9 +11,9 @@
  * for full IntelliSense coverage.
  */
 
-import { z } from 'zod';
-import type { CurrencyCode, ListingExchange, SecurityType } from './enums';
-import { CURRENCY_CODES, LISTING_EXCHANGES, SECURITY_TYPES } from './enums';
+import {z} from 'zod';
+import type {CurrencyCode, ListingExchange, SecurityType} from './enums';
+import {CURRENCY_CODES, LISTING_EXCHANGES, SECURITY_TYPES} from './enums';
 
 //──────────────────────────────────────────────────────────────────────────────
 // 1. Input Shapes – Request Parameters
@@ -135,6 +135,8 @@ export interface SymbolsSearchResponse {
 /**
  * @public
  * Zod schema for validating SymbolsSearchResponse.
+ * @remarks
+ * This schema ensures the response contains an array of EquitySymbol objects.
  */
 export const SymbolsSearchResponseSchema = z.object({
   symbols: z.array(EquitySymbolSchema),
