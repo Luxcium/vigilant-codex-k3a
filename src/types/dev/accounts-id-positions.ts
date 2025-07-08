@@ -42,33 +42,36 @@ export const AccountPositionsRequestSchema = z.object({
  * A single open/closed position in the account.
  */
 export interface Position {
-  /** Position symbol (e.g., "AAPL"). */
+  /** @remarks Position symbol (e.g., "AAPL"). */
   symbol: string;
-  /** Internal symbol identifier. */
+  /** @remarks Internal symbol identifier. */
   symbolId: number;
-  /** Quantity remaining open. */
+  /** @remarks Quantity remaining open. */
   openQuantity: number;
-  /** Portion of the position closed today. */
+  /** @remarks Portion of the position closed today. */
   closedQuantity?: number;
-  /** Market value of the position (qty × price). */
+  /** @remarks Market value of the position (qty × price). */
   currentMarketValue?: number;
-  /** Current market price. */
+  /** @remarks Current market price. */
   currentPrice?: number;
-  /** Average price paid. */
+  /** @remarks Average price paid. */
   averageEntryPrice?: number;
-  /** Realized profit/loss. */
+  /** @remarks Realized profit/loss. */
   closedPnl?: number;
-  /** Unrealized profit/loss. */
+  /** @remarks Unrealized profit/loss. */
   openPnl?: number;
-  /** Aggregate cost basis. */
+  /** @remarks Aggregate cost basis. */
   totalCost?: number | boolean;
-  /** Whether real-time quote was used. */
+  /** @remarks Whether real-time quote was used. */
   isRealTime?: boolean | string;
-  /** Symbol under corporate reorg flag. */
+  /** @remarks Symbol under corporate reorg flag. */
   isUnderReorg?: boolean;
 }
 
-/** Zod schema for Position. */
+/**
+ * @public
+ * Zod schema for Position.
+ */
 export const PositionSchema = z.object({
   symbol: z.string().min(1),
   symbolId: z.number().int().positive(),
@@ -97,7 +100,10 @@ export interface AccountPositionsResponse {
   positions: Position[];
 }
 
-/** Zod schema for the envelope. */
+/**
+ * @public
+ * Zod schema for the envelope.
+ */
 export const AccountPositionsResponseSchema = z.object({
   positions: z.array(PositionSchema),
 });

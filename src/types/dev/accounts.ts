@@ -12,6 +12,10 @@
  * optional because it is sometimes omitted in Questrade responses.
  */
 
+/**
+ * @remarks Handles account-related operations and data structures.
+ */
+
 import { z } from 'zod';
 import { ACCOUNT_TYPES, ACCOUNT_STATUSES, CLIENT_ACCOUNT_TYPES } from './enums';
 import type { AccountType, AccountStatus, ClientAccountType } from './enums';
@@ -24,13 +28,13 @@ import type { AccountType, AccountStatus, ClientAccountType } from './enums';
  * @public
  * No parameters are required or allowed for the Accounts endpoint.
  */
-export type AccountsRequest = Record<string, never>;
+export interface GetAccountsRequest {}
 
 /**
  * @public
  * Zod schema validating an empty request object for Accounts.
  */
-export const AccountsRequestSchema = z.object({}).strict();
+export const GetAccountsRequestSchema = z.object({}).strict();
 
 //──────────────────────────────────────────────────────────────────────────────
 // 2. Response Shapes – Account Records
@@ -79,7 +83,7 @@ export const AccountSchema = z.object({
  * @public
  * Response envelope for GET /v1/accounts.
  */
-export interface AccountsResponse {
+export interface GetAccountsResponse {
   /** @remarks Array of account records for the authenticated user. */
   accounts: Account[];
 }
@@ -88,7 +92,7 @@ export interface AccountsResponse {
  * @public
  * Zod schema for validating the AccountsResponse envelope.
  */
-export const AccountsResponseSchema = z.object({
+export const GetAccountsResponseSchema = z.object({
   accounts: z.array(AccountSchema),
 });
 
@@ -100,4 +104,4 @@ export const AccountsResponseSchema = z.object({
  * @returns Validated accounts response object.
  * @throws ZodError if validation fails.
  */
-export const parseAccountsResponse = AccountsResponseSchema.parse;
+export const parseGetAccountsResponse = GetAccountsResponseSchema.parse;

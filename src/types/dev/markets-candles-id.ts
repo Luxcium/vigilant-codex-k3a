@@ -12,26 +12,8 @@
  */
 
 import { z } from 'zod';
-// import { CandleIntervalSchema } from './enums';
+import { CandleIntervalSchema } from './enums';
 import type { CandleInterval } from './enums';
-export const CandleIntervalSchema = z.enum([
-  'OneMinute',
-  'TwoMinutes',
-  'ThreeMinutes',
-  'FourMinutes',
-  'FiveMinutes',
-  'TenMinutes',
-  'FifteenMinutes',
-  'TwentyMinutes',
-  'HalfHour',
-  'OneHour',
-  'TwoHours',
-  'FourHours',
-  'OneDay',
-  'OneWeek',
-  'OneMonth',
-  'OneYear',
-]);
 
 //──────────────────────────────────────────────────────────────────────────────
 // 1. Input Shape – Request Parameters
