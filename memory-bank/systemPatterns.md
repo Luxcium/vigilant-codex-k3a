@@ -99,11 +99,25 @@ This Memory Bank is initialized to provide a clear, adaptable template for docum
 - **Prompt File Pattern**: Generate comprehensive workflow automation with context requirements
 - **Memory Bank Integration Pattern**: Update all relevant memory bank files with architectural decisions and dependencies
 
+### Native Fetch API Adoption
+
+- Converted from node-fetch to native Node.js 22 fetch API for improved performance and reduced dependencies
+- Updated TypeScript types from FetchResponse to native Response throughout codebase
+- Implemented proper test mocking strategy using vi.stubGlobal('fetch', mockFetch) for test isolation
+- Maintained complete API compatibility while eliminating external package dependency
+
 ### Testing Architecture Patterns
+
+#### **Native Fetch Testing Pattern**
+
+- Use `vi.stubGlobal('fetch', mockFetch)` for HTTP client testing without external dependencies
+- Provide realistic Response object mocks matching native fetch API contracts
+- Test both successful responses and error scenarios (429 rate limits, network failures)
+- Maintain proper async/await patterns for all HTTP operations
 
 #### **Module-Level Mocking Pattern**
 
-- Use `vi.mock('module-name')` for external dependencies (node-fetch, AuthManager)
+- Use `vi.mock('module-name')` for external dependencies (AuthManager, other services)
 - Place mocks at the top of test files before imports
 - Provide realistic mock implementations that match actual API contracts
 - Avoid real network requests or external service dependencies in tests

@@ -1,36 +1,4 @@
 {
-  "terminal.integrated.env.linux": {
-    "CODEX_HOME": "${workspaceFolder}/.codex"
-  },
-  // Ensure instruction files are also enabled (they work together)
-  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
-  // Add instructions file locations to work alongside prompts
-  "chat.instructionsFilesLocations": {
-    ".github/instructions": true
-  },
-  "github.copilot.chat.commitMessageGeneration.instructions": [
-    {
-      "file": ".github/instructions/use-conventional-commits.instructions.md",
-      "enabled": true
-    }
-  ],
-
-  // Ensure prompt files are explicitly enabled
-  "chat.promptFiles": true,
-  // Your existing prompt location is correct
-  "chat.promptFilesLocations": {
-    ".github/prompts": true
-  },
-  "typescript.tsserver.maxTsServerMemory": 8192,
-  "terminal.integrated.persistentSessionReviveProcess": "never",
-  "terminal.integrated.localEchoLatencyThreshold": 30,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[markdown]": {
-    "diffEditor.ignoreTrimWhitespace": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   // #endregion: FORMAT BEHAVIOUR                                       !
   /*
   |-···----------------------------------------------------------···-|
@@ -70,15 +38,12 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "always",
-  "github.copilot.chat.completionContext.typescript.mode": "on",
-  "github.copilot.chat.languageContext.typescript.enabled": true,
   // "github.copilot.enable": {
   //   "*": true,
   //   "markdown": true,
   //   "plaintext": true,
   //   "scminput": false
   // },
-  "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
   // ...existing code...
   "makefile.configureOnOpen": true,
   // ],
@@ -1312,65 +1277,12 @@
   // ========================================
   // ========================================
   // Include recent files as context
-  "github.copilot.chat.edits.temporalContext.enabled": true,
   // ========================================
   // Testing and Debugging Integration
   // ========================================
   // Testing features
-  "github.copilot.chat.generateTests.codeLens": true,
-  "github.copilot.chat.newWorkspaceCreation.enabled": true,
   // 5. Pull request title and description generation instructions
-  "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
-    {
-      "text": "Start with a concise summary. List key changes as bullet points. Reference related issues and include breaking changes if any."
-    },
-    {
-      "text": "Include testing instructions and deployment considerations."
-    }
-  ],
-  // 3. Code review instructions
-  "github.copilot.chat.reviewSelection.instructions": [
-    {
-      "text": "Check for modularity, proper TypeScript types, comprehensive error handling, and code comments."
-    },
-    {
-      "text": "Verify compliance with project coding standards and memory bank guidelines."
-    },
-    {
-      "text": "Ensure no direct mutations of shared state and proper dependency management."
-    }
-  ],
-  "github.copilot.chat.scopeSelection": true,
-  "github.copilot.chat.setupTests.enabled": true,
-  // Debugging features
-  "github.copilot.chat.startDebugging.enabled": true,
-  // Terminal integration
-  "github.copilot.chat.terminalChatLocation": "terminal",
-  // 2. Test generation instructions
-  // Copilot instructions moved to .github/copilot-instructions.md as required
-  // ========================================
-  // Chat and Interaction Settings
-  // ========================================
-  // Chat behavior
-  "github.copilot.chat.useProjectTemplates": true,
-  // Code actions and suggestions
-  "github.copilot.editor.enableCodeActions": true,
-  // ========================================
-  // GitHub Copilot Core Settings
-  // ========================================
-  // Enable Copilot features
-  "github.copilot.enable": {
-    "*": true,
-    "markdown": true
-  },
-  // ========================================
-  // Code Generation and Editing
-  // ========================================
-  // Next Edit Suggestions (Copilot NES)
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "github.copilot.renameSuggestions.triggerAutomatically": true,
-  "inlineChat.lineEmptyHint": true,
-  "inlineChat.lineNaturalLanguageHint": true,
+
   // Notebook integration
   "notebook.experimental.generate": true,
   // "todo-tree.highlights.foregroundColourScheme": [
@@ -2093,7 +2005,7 @@
   "todo-tree.tree.subTagClickUrl": "", // new items
   "todo-tree.tree.tagsOnly": true,
   "todo-tree.tree.tooltipFormat": "${filepath}, line ${line}",
-  "todo-tree.tree.trackFile": true
+  "todo-tree.tree.trackFile": true,
   // "todo-tree.filtering.excludedWorkspaces": [], // new items
   // "todo-tree.filtering.ignoreGitSubmodules": false,
   // "todo-tree.filtering.includedWorkspaces": [], // new items
@@ -2157,4 +2069,82 @@
   /*
   |-····-----------------------------------------------------------··-|
     */
+
+  "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
+  "github.copilot.chat.edits.temporalContext.enabled": true,
+  "github.copilot.chat.generateTests.codeLens": true,
+  "github.copilot.chat.newWorkspaceCreation.enabled": true,
+  "github.copilot.chat.completionContext.typescript.mode": "on",
+  "github.copilot.chat.languageContext.typescript.enabled": true,
+
+  // Ensure instruction files are also enabled (they work together)
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  // Add instructions file locations to work alongside prompts
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true
+  },
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "file": ".github/instructions/use-conventional-commits.instructions.md",
+      "enabled": true
+    }
+  ],
+  "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
+    {
+      "text": "Start with a concise summary. List key changes as bullet points. Reference related issues and include breaking changes if any."
+    },
+    {
+      "text": "Include testing instructions and deployment considerations."
+    }
+  ],
+  // 3. Code review instructions
+  "github.copilot.chat.reviewSelection.instructions": [
+    {
+      "text": "Check for modularity, proper TypeScript types, comprehensive error handling, and code comments."
+    },
+    {
+      "text": "Verify compliance with project coding standards and memory bank guidelines."
+    },
+    {
+      "text": "Ensure no direct mutations of shared state and proper dependency management."
+    }
+  ],
+
+  "github.copilot.enable": {
+    "*": true
+  },
+  "github.copilot.chat.scopeSelection": true,
+  "github.copilot.chat.setupTests.enabled": true,
+  "github.copilot.chat.startDebugging.enabled": true,
+  "github.copilot.chat.terminalChatLocation": "terminal",
+  "github.copilot.chat.useProjectTemplates": true,
+  "github.copilot.editor.enableCodeActions": true,
+
+  // ========================================
+  // Code Generation and Editing
+  // ========================================
+  // Next Edit Suggestions (Copilot NES)
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.renameSuggestions.triggerAutomatically": true,
+  "inlineChat.lineEmptyHint": true,
+  "inlineChat.lineNaturalLanguageHint": true,
+  // Ensure prompt files are explicitly enabled
+  "chat.promptFiles": true,
+  // Your existing prompt location is correct
+  "chat.promptFilesLocations": {
+    ".github/prompts": true
+  },
+  "typescript.tsserver.maxTsServerMemory": 8192,
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.localEchoLatencyThreshold": 30,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "diffEditor.ignoreTrimWhitespace": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.env.linux": {
+    "CODEX_HOME": "${workspaceFolder}/.codex"
+  }
 }

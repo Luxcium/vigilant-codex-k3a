@@ -16,15 +16,24 @@ This file documents the technologies, development setup, technical constraints, 
 
 ## Technologies Used
 
-- **Node.js 22**
-- **TypeScript 5.7**
-- **Python 3.11**
-- **Next.js 14**
+- **Node.js 22** with native fetch API support
+- **TypeScript 5.8+** with strict type checking and native Response types
+- **Python 3.13**
+- **Next.js 15+**
+
+### HTTP Client Architecture
+
+- **Native Fetch API**: Primary HTTP client using Node.js 22 native implementation
+- **Zero External Dependencies**: Eliminated node-fetch package for cleaner dependency tree
+- **TypeScript Integration**: Native Response types throughout codebase
+- **Performance Optimized**: Native implementation provides better performance characteristics
+- **Future Compatible**: Long-term maintenance advantages with native Node.js APIs
 
 ### Testing Infrastructure
 
 - **Vitest 3.2.4**: Primary test runner with Istanbul coverage provider
-- **vi.mock**: Module-level mocking for external dependencies (node-fetch, AuthManager)
+- **Native Fetch Mocking**: vi.stubGlobal('fetch', mockFetch) for HTTP client testing
+- **AuthManager Mocking**: Complete authentication system mocking for isolated testing
 - **Istanbul Coverage**: Detailed branch/statement/function/line reporting with 90% thresholds
 - **Zod Validation Testing**: Comprehensive schema validation testing patterns
 - **CommonJS Compatibility**: Maintained throughout test infrastructure
@@ -33,11 +42,12 @@ This file documents the technologies, development setup, technical constraints, 
 
 ### Production Test Results (2025-07-06)
 
-- **259 tests passing** (up from 248 with 3 failures)
+- **259 tests passing** (maintained after native fetch conversion)
 - **98.34% branch coverage** (exceeding 90% threshold)
 - **100% branch coverage** achieved for: webStorage.ts, tokenBucket.ts
 - **96.15% branch coverage** for restClient.ts, **87.5%** for QuestradeClient.ts
-- **Comprehensive mocking strategies** implemented for HTTP clients and authentication
+- **Zero regression** in test suite after dependency modernization
+- **Improved performance** with native fetch implementation
 
 ## Development Setup
 

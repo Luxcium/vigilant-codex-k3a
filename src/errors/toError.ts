@@ -1,4 +1,3 @@
-import { Response as FetchResponse } from 'node-fetch';
 import { CODE_MAP } from './codes';
 import { QuestradeError, QuestradeErrorPayload } from './types';
 
@@ -6,7 +5,7 @@ import { QuestradeError, QuestradeErrorPayload } from './types';
  * Convert an HTTP response to a structured `QuestradeError`.
  */
 export const toQuestradeError = async (
-  res: FetchResponse
+  res: Response
 ): Promise<QuestradeError> => {
   const data = (await res.json()) as QuestradeErrorPayload;
   const key = `${res.status}:${data.code}`;

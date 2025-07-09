@@ -70,7 +70,7 @@
     // "inlineSourceMap": true,                          /* Include sourcemap files inside the emitted JavaScript. */
     // "noEmit": true,                                   /* Disable emitting files from a compilation. */
     // "outFile": "./",                                  /* Specify a file that bundles all outputs into one JavaScript file. If 'declaration' is true, also designates a file that bundles all .d.ts output. */
-    // "outDir": "./",                                   /* Specify an output folder for all emitted files. */
+    "outDir": "./dist" /* Specify an output folder for all emitted files. */,
     // "removeComments": true,                           /* Disable emitting comments. */
     // "importHelpers": true,                            /* Allow importing helper functions from tslib once per project, instead of including them per-file. */
     // "downlevelIteration": true,                       /* Emit more compliant, but verbose and less performant JavaScript for iteration. */
@@ -122,7 +122,16 @@
     "skipLibCheck": true /* Skip type checking all .d.ts files. */
   },
   "include": ["src/**/*"],
-  "exclude": ["node_modules", "web/**/*"]
+  "exclude": [
+    "node_modules",
+    "web/**/*",
+    "dist/**/*",
+    "test/**/*",
+    "**/tests/**/*",
+    "coverage/**/*",
+    "build/**/*",
+    "scripts/**/*"
+  ]
 }
 
 // KEEP COMMENTS AND OPTIONS IN THE FILE FOR REFERENCING

@@ -2,13 +2,28 @@
 
 This file is **VS Code Copilot's primary instruction file and entry point**.
 
+## CRITICAL MEMORY BANK PROTOCOL
+
+**IMPERATIVE REQUIREMENT**: I MUST synchronize the memory bank on EVERY task execution:
+
+1. **READ FIRST**: Read ALL memory bank files at the start of EVERY task (not optional)
+2. **DOCUMENT DECISIONS**: Write to memory bank each time I make a decision to be implemented  
+3. **WRITE BEFORE END**: Update memory bank just before completing any task
+4. **STATE PRESERVATION**: Ensure my state will not be lost if interrupted
+
+**Memory Bank Files to Always Check/Update**:
+- `memory-bank/activeContext.md` (current work focus - MOST CRITICAL)
+- `memory-bank/progress.md` (track what works, what's left)
+- `memory-bank/dependencies.md` (track relationships)
+- `memory-bank/systemPatterns.md` (technical decisions)
+- `memory-bank/techContext.md` (technologies, constraints)
+
 ## Three AI Agent System
 
 This project supports three AI agents with distinct entry points:
 
 - **VS Code Copilot (YOU)** → `.github/copilot-instructions.md` (THIS IS YOUR ENTRY POINT)
-- **Cline AI** → `.clinerules/main-rules.md` (Cline AI's primary instruction file)
-- **Codex** and **Codex CLI** → `AGENTS.md` (Codex and Codex CLI's primary instruction file)
+- **Other AI Agents** → Use their respective entry points and memory bank protocols
 
 
 ## General Coding Standards

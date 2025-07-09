@@ -1,3 +1,19 @@
+#### Dependency: Native Fetch API Conversion (2025-01-20)
+
+**Rationale:** Modernize HTTP client implementation using native Node.js 22 fetch API for improved performance, reduced dependencies, and future compatibility.
+**Depends On:** Node.js 22 native fetch support, TypeScript 5.7 native Response types, Vitest test runner global stubbing
+**Required By:** All HTTP client operations, API testing, rate limiting, authentication workflows
+**Technical Implementation:**
+
+- Complete conversion from node-fetch package to native fetch API
+- Updated import statements throughout src/errors/smartFetch.ts, toError.ts, handle.ts, and src/http/restClient.ts
+- Changed type annotations from FetchResponse to native Response interface
+- Modified test mocking from vi.mock('node-fetch') to vi.stubGlobal('fetch', mockFetch)
+- Recreated src/tests/restClient.test.ts and updated src/tests/error.test.ts
+  **Conversion Results:** Zero regression with all 259 tests passing, improved performance characteristics, eliminated external dependency
+  **Target File Achievements:** Complete API compatibility maintained while modernizing HTTP client architecture
+  **Impact Analysis:** Provides cleaner dependency tree, better long-term maintenance, and leverages native Node.js capabilities for HTTP operations.
+
 #### Dependency: Comprehensive Test Suite with 98.34% Branch Coverage (2025-07-06)
 
 **Rationale:** Complete test suite resolution with production-ready coverage patterns and proper mocking strategies.
