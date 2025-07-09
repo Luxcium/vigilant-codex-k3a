@@ -78,13 +78,15 @@
     "requirements*.txt": "pip-requirements",
     ".env*": "dotenv"
   },
-  "remote.defaultExtensionsIfInstalledLocally": [
-    "GitHub.copilot",
-    "GitHub.copilot-chat",
-    "GitHub.vscode-pull-request-github"
-  ],
+  // "remote.defaultExtensionsIfInstalledLocally": [
+  //   "GitHub.copilot",
+  //   "GitHub.copilot-chat",
+  //   "GitHub.vscode-pull-request-github"
+  // ],
   // "terminal.integrated.env.linux": {},
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "eslint.codeActionsOnSave.mode": "all",
   "workbench.colorTheme": "Pop N' Lock Theme by Luxcium ✨ Alexis's Black ⛷",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.productIconTheme": "Default",
@@ -1237,18 +1239,6 @@
   "editor.formatOnType": true,
   // ESLint auto fix on save (string array form)
   "editor.codeActionsOnSave": ["source.fixAll", "source.fixAll.eslint"],
-  // Prettier config path (if needed)
-  // "prettier.configPath": ".prettierrc",
-  // ESLint config path (if needed)
-  // "eslint.options": { "configFile": "eslint.config.mjs" },
-  // ========================================
-  // ========================================
-  // Include recent files as context
-  // ========================================
-  // Testing and Debugging Integration
-  // ========================================
-  // Testing features
-  // 5. Pull request title and description generation instructions
 
   // Notebook integration
   "notebook.experimental.generate": true,
@@ -2041,27 +2031,26 @@
   "chat.commandCenter.enabled": true,
   "chat.detectParticipant.enabled": true,
   "chat.editing.autoAcceptDelay": 20,
-  // ========================================
-  // Chat Appearance
-  // ========================================
   "chat.editor.fontFamily": "Consolas, 'Courier New', monospace",
   "chat.editor.fontSize": 14,
   "chat.editor.fontWeight": "normal",
   "chat.editor.wordWrap": "on",
-  // ========================================
-  // Experimental and Preview Features
-  // ========================================
-  // Model Context Protocol (MCP) support
+  "chat.edits2.enabled": true,
+  "chat.editRequests": "inline",
+  "chat.extensionTools.enabled": true,
+  "chat.modeFilesLocations": {
+    ".github/chatmodes": true
+  },
   "chat.mcp.enabled": true,
-  // ========================================
-  // Instructions and Prompt Files
-  // ========================================
   "chat.promptFiles": true,
   "chat.promptFilesLocations": {
     ".github/prompts": true
   },
   "chat.instructionsFilesLocations": {
     ".github/instructions": true
+  },
+  "chat.implicitContext.enabled": {
+    "panel": "always"
   },
   "chat.sendElementsToChat.enabled": true,
   "chat.tools.autoApprove": true,
