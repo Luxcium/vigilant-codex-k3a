@@ -8,7 +8,6 @@
     "javascript": "node --trace-deprecation",
     "typescript": "ts-node"
   },
-  "console-ninja.featureSet": "Community",
   "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
   "diffEditor.ignoreTrimWhitespace": true,
   /*
@@ -66,7 +65,6 @@
     "${workspaceFolder}/python/src",
     "${workspaceFolder}/python"
   ],
-  "jupyter.defaultKernel": "Python 3",
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "jupyter.askForKernelRestart": false,
   "python.testing.pytestEnabled": true,
@@ -1084,38 +1082,7 @@
       "tag": "XXX"
     }
   ],
-  // ========================================
-  // Agent Mode and Advanced Features
-  // ========================================
-  // Enable agent mode (requires VS Code 1.99+)
-  "chat.agent.enabled": true,
-  "chat.agent.maxRequests": 25,
-  // ========================================
-  // UI and UX Settings
-  // ========================================
-  // Command center and UI
-  "chat.commandCenter.enabled": true,
-  "chat.detectParticipant.enabled": true,
-  // Edit confirmation settings
-  "chat.editing.autoAcceptDelay": 0,
-  // ========================================
-  // Chat Appearance
-  // ========================================
-  "chat.editor.fontFamily": "Consolas, 'Courier New', monospace",
-  "chat.editor.fontSize": 14,
-  "chat.editor.fontWeight": "normal",
-  "chat.editor.wordWrap": "on",
-  // ========================================
-  // Experimental and Preview Features
-  // ========================================
-  // Model Context Protocol (MCP) support
-  "chat.mcp.enabled": true,
-  // ========================================
-  // Instructions and Prompt Files
-  // ========================================
-  "chat.sendElementsToChat.enabled": true,
-  // Experimental features
-  "chat.tools.autoApprove": true,
+
   "editor.inlineSuggest.edits.allowCodeShifting": "horizontal",
   "editor.inlineSuggest.edits.renderSideBySide": "auto",
   // Inline suggestions
@@ -2069,24 +2036,69 @@
   /*
   |-····-----------------------------------------------------------··-|
     */
-
-  "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
-  "github.copilot.chat.edits.temporalContext.enabled": true,
-  "github.copilot.chat.generateTests.codeLens": true,
-  "github.copilot.chat.newWorkspaceCreation.enabled": true,
-  "github.copilot.chat.completionContext.typescript.mode": "on",
-  "github.copilot.chat.languageContext.typescript.enabled": true,
-
-  // Ensure instruction files are also enabled (they work together)
-  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
-  // Add instructions file locations to work alongside prompts
+  "chat.agent.enabled": true,
+  "chat.agent.maxRequests": 15,
+  "chat.commandCenter.enabled": true,
+  "chat.detectParticipant.enabled": true,
+  "chat.editing.autoAcceptDelay": 20,
+  // ========================================
+  // Chat Appearance
+  // ========================================
+  "chat.editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "chat.editor.fontSize": 14,
+  "chat.editor.fontWeight": "normal",
+  "chat.editor.wordWrap": "on",
+  // ========================================
+  // Experimental and Preview Features
+  // ========================================
+  // Model Context Protocol (MCP) support
+  "chat.mcp.enabled": true,
+  // ========================================
+  // Instructions and Prompt Files
+  // ========================================
+  "chat.promptFiles": true,
+  "chat.promptFilesLocations": {
+    ".github/prompts": true
+  },
   "chat.instructionsFilesLocations": {
     ".github/instructions": true
   },
+  "chat.sendElementsToChat.enabled": true,
+  "chat.tools.autoApprove": true,
+  "github.copilot.chat.agent.autoFix": true,
+  "github.copilot.chat.agent.currentEditorContext.enabled": true,
+  "github.copilot.chat.agent.runTasks": true,
+  "github.copilot.chat.agent.thinkingTool": true,
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.completionContext.typescript.mode": "on",
+  "github.copilot.chat.copilotDebugCommand.enabled": true,
+  "github.copilot.chat.editor.temporalContext.enabled": false,
+  "github.copilot.chat.edits.temporalContext.enabled": true,
+  "github.copilot.chat.generateTests.codeLens": true,
+  "github.copilot.chat.languageContext.fix.typescript.enabled": true,
+  "github.copilot.chat.languageContext.inline.typescript.enabled": true,
+  "github.copilot.chat.languageContext.typescript.enabled": true,
+  "github.copilot.chat.newWorkspaceCreation.enabled": true,
+  "github.copilot.chat.reviewSelection.enabled": true,
+  "github.copilot.chat.scopeSelection": true,
+  "github.copilot.chat.setupTests.enabled": true,
+  "github.copilot.chat.startDebugging.enabled": true,
+  "github.copilot.chat.summarizeAgentConversationHistory.enabled": true,
+  "github.copilot.chat.terminalChatLocation": "terminal",
+  "github.copilot.chat.useProjectTemplates": true,
+  "github.copilot.editor.enableCodeActions": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.nextEditSuggestions.fixes": true,
+  "github.copilot.renameSuggestions.triggerAutomatically": true,
+  "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
+  "inlineChat.enableV2": true,
+  "inlineChat.hideOnRequest": false,
+  "inlineChat.lineEmptyHint": true,
+  "inlineChat.lineNaturalLanguageHint": true,
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
-      "file": ".github/instructions/use-conventional-commits.instructions.md",
-      "enabled": true
+      "file": ".github/instructions/use-conventional-commits.instructions.md"
     }
   ],
   "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
@@ -2097,7 +2109,6 @@
       "text": "Include testing instructions and deployment considerations."
     }
   ],
-  // 3. Code review instructions
   "github.copilot.chat.reviewSelection.instructions": [
     {
       "text": "Check for modularity, proper TypeScript types, comprehensive error handling, and code comments."
@@ -2113,27 +2124,7 @@
   "github.copilot.enable": {
     "*": true
   },
-  "github.copilot.chat.scopeSelection": true,
-  "github.copilot.chat.setupTests.enabled": true,
-  "github.copilot.chat.startDebugging.enabled": true,
-  "github.copilot.chat.terminalChatLocation": "terminal",
-  "github.copilot.chat.useProjectTemplates": true,
-  "github.copilot.editor.enableCodeActions": true,
-
   // ========================================
-  // Code Generation and Editing
-  // ========================================
-  // Next Edit Suggestions (Copilot NES)
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "github.copilot.renameSuggestions.triggerAutomatically": true,
-  "inlineChat.lineEmptyHint": true,
-  "inlineChat.lineNaturalLanguageHint": true,
-  // Ensure prompt files are explicitly enabled
-  "chat.promptFiles": true,
-  // Your existing prompt location is correct
-  "chat.promptFilesLocations": {
-    ".github/prompts": true
-  },
   "typescript.tsserver.maxTsServerMemory": 8192,
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.localEchoLatencyThreshold": 30,
