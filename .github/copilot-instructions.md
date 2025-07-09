@@ -10,7 +10,6 @@ This project supports three AI agents with distinct entry points:
 - **Cline AI** → `.clinerules/main-rules.md` (Cline AI's primary instruction file)
 - **Codex** and **Codex CLI** → `AGENTS.md` (Codex and Codex CLI's primary instruction file)
 
-# Project-Wide Guidelines for Codex CLI
 
 ## General Coding Standards
 
