@@ -1,4 +1,4 @@
-import { z } from 'zod/v3/external.cjs';
+import { z } from 'zod';
 
 /**
  * @public
