@@ -3,16 +3,17 @@
 This directory contains all Python source code, modules, and environment configuration for the project.
 
 ## Purpose
+
 - Store all Python application and library code.
 - Maintain environment setup files (requirements.txt, .env, Dockerfile).
 - Support both local and Docker-based development workflows.
 
 ## Structure
+
 - `requirements.txt` — Python dependencies
 - `.env` — Environment variables (do not commit secrets)
 - `Dockerfile` — Container build for Python environment
 - `README.md` — Setup and usage instructions
-
 
 ## Using Jupyter Notebooks
 
@@ -39,10 +40,10 @@ All Jupyter notebooks in the `notebooks/` directory use this Python environment.
 
 All dependencies for notebooks and code are managed in `requirements.txt`.
 
-
 ## VS Code Integration
 
 VS Code is automatically configured to:
+
 - **Auto-activate** the Python virtual environment in terminals
 - **Load environment variables** from `.env` file
 - **Set correct Python interpreter** for coding and debugging
@@ -80,12 +81,12 @@ Access via: `Ctrl+Shift+P` → "Tasks: Run Task"
 
 ```bash
 # In any VS Code terminal (auto-activated environment):
-pytest                    # Run tests
-start-jupyter            # Launch Jupyter Lab
-run-tests                # Run tests with coverage
-lint-code                # Run pylint
-format-code              # Format with black
-type-check               # Run mypy type checking
+pytest        # Run tests
+start-jupyter # Launch Jupyter Lab
+run-tests     # Run tests with coverage
+lint-code     # Run pylint
+format-code   # Format with black
+type-check    # Run mypy type checking
 ```
 
 ## Structure
@@ -108,7 +109,7 @@ python/
 
 Notebooks in the [`notebooks/`](../notebooks/) directory automatically use this Python environment:
 
-1. **Kernel selection**: Choose "Python 3 (ipykernel)" 
+1. **Kernel selection**: Choose "Python 3 (ipykernel)"
 2. **Auto-imports**: Source code from `src/` is available
 3. **Environment variables**: Loaded from `.env`
 4. **Dependencies**: Same as main Python environment

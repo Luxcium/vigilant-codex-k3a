@@ -2,9 +2,16 @@
 
 This directory contains instruction files that automatically apply coding standards, guidelines, and rules to VS Code Copilot's code generation. These files work passively in the background to ensure consistency and quality.
 
+## Quick Reference: One-Page “When to Use What” Matrix
+
+**[when-to-use-what-matrix.instructions.md](./when-to-use-what-matrix.instructions.md)** — A single-page matrix mapping all major manifest/meta configuration goals (PWA, iOS, Windows, Chrome Extension, etc.) to their primary files and authoritative sources. Use this as your starting point for any integration or standards question. See detailed standards in the specific instruction files below.
+
+> For meta-configuration, manifest, and platform integration, always consult this matrix first, then refer to the detailed instruction files for implementation specifics. All Copilot, Cline AI, and Codex CLI agents should cross-reference this file and the related README files in `.github/prompts/` and `memory-bank/` for full context.
+
 ## What are Instruction Files?
 
 Instruction files (`.instructions.md`) are automatic guidelines that:
+
 - Apply persistent coding standards and rules
 - Work automatically in the background during code generation
 - Modify AI behavior based on file patterns and context
@@ -16,29 +23,46 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 
 ## Available Instructions
 
+### Environment & Infrastructure
+
 ### Language Standards
-- **[typescript-standards.instructions.md](./typescript-standards.instructions.md)** - TypeScript coding standards, style guide, and best practices
-- **[python-standards.instructions.md](./python-standards.instructions.md)** - Python coding standards following PEP 8 and modern practices
-- **[python-notebook-standards.instructions.md](./python-notebook-standards.instructions.md)** - Jupyter notebook and data science standards
 
 ### Project Organization
-- **[file-organization.instructions.md](./file-organization.instructions.md)** - File and directory organization standards
 
 ### AI Agent Workflow
-- **[ai-instruction-creation.instructions.md](./ai-instruction-creation.instructions.md)** - Guidelines for AI agents creating .instructions.md files on-demand
-- **[ai-prompt-creation.instructions.md](./ai-prompt-creation.instructions.md)** - Guidelines for AI agents creating .prompt.md files on-demand
 
 ### Documentation & Standards
-- **[instruction-authoring-standards.instructions.md](./instruction-authoring-standards.instructions.md)** - Canonical rules and structure for creating instruction files
-- **[self-documentation.instructions.md](./self-documentation.instructions.md)** - Self-documentation protocol for tracking actions and context changes
+
+### PWA Standards
+
+**[windows-tiles.instructions.md](./windows-tiles.instructions.md)** - Windows Live Tiles (Start-menu & pinned-site) configuration with `browserconfig.xml`, meta tags, icon sizing, theming, caching pitfalls, and validation steps.
+**[x-cards.instructions.md](./x-cards.instructions.md)** - X Cards (formerly Twitter Cards) metadata standards, required tags, card types, validation, and boilerplate.
+**[social-preview-and-deep-links.instructions.md](./social-preview-and-deep-links.instructions.md)** - Open Graph, X Cards, Facebook App Links, and Android App Links metadata and validator workflows.
+
+### General Icon Link Tags
+
+**[general-icon-link-tags.instructions.md](./general-icon-link-tags.instructions.md)** - Instructions for implementing a comprehensive set of link tags for favicons and app icons across all platforms.
+
+### SEO Meta Tags
+
+**[seo-meta-tags.instructions.md](./seo-meta-tags.instructions.md)** - Instructions for implementing fundamental SEO meta tags for discoverability, crawling, and social previews.
+
+### UI Theming
+
+**[theme-ui-meta.instructions.md](./theme-ui-meta.instructions.md)** - Detailed instructions for browser-UI theming meta tags, including `theme-color`, `color-scheme`, and platform-specific variants. Covers syntax, dark-mode variants, multi-color support, platform quirks, and validation steps.
+
+### Validation & Debugging Checklist
+
+**[validation-debugging-checklist.instructions.md](./validation-debugging-checklist.instructions.md)** - A VS Code-centric checklist for validating and debugging web app manifests, meta tags, and platform integrations.
 
 ### Code Quality
-- **[no_dummy-no_placeholders.instruction.md](./no_dummy-no_placeholders.instruction.md)** - Ensure all generated code uses real values instead of placeholders
 
 ## How Instructions Work
 
 ### Automatic Application
+
 Instructions are automatically applied based on their `applyTo` patterns:
+
 - `**` - Applies to all files in the workspace
 - `**/*.ts` - Applies only to TypeScript files
 - `**/src/**` - Applies only to files in src directory
@@ -46,6 +70,7 @@ Instructions are automatically applied based on their `applyTo` patterns:
 - `ai-agents` - Special pattern for AI agent behavior
 
 ### Background Operation
+
 - Instructions are invisible during prompt composition
 - They supplement your existing chat requests automatically
 - Listed under "References" section in Copilot responses for auditability
@@ -57,18 +82,20 @@ All instruction files follow this standard structure:
 
 ```markdown
 ---
-applyTo: "glob-pattern"
+applyTo: 'glob-pattern'
 ---
 
 # Standards Title
 
 ## Category Name
+
 - Use imperative language for rules
 - Be specific and actionable
 - Include examples when helpful
 - Cross-reference related files
 
 ## Another Category
+
 - Write rules as statements, not suggestions
 - Avoid vague terms like "appropriate" or "good"
 - Specify exceptions explicitly when they exist
@@ -78,17 +105,18 @@ applyTo: "glob-pattern"
 
 Common `applyTo` patterns:
 
-| Pattern | Description | Example Use Case |
-|---------|-------------|------------------|
-| `**` | All files | Global project standards |
-| `**/*.{ext}` | Language-specific | TypeScript, Python rules |
-| `**/folder/**` | Directory-specific | API, component standards |
-| `**/*.{test,spec}.*` | Test files | Testing guidelines |
-| `ai-agents` | AI agent behavior | Workflow and creation guidelines |
+| Pattern              | Description        | Example Use Case                 |
+| -------------------- | ------------------ | -------------------------------- |
+| `**`                 | All files          | Global project standards         |
+| `**/*.{ext}`         | Language-specific  | TypeScript, Python rules         |
+| `**/folder/**`       | Directory-specific | API, component standards         |
+| `**/*.{test,spec}.*` | Test files         | Testing guidelines               |
+| `ai-agents`          | AI agent behavior  | Workflow and creation guidelines |
 
 ## Best Practices
 
 ### Writing Instructions
+
 1. Use imperative mood ("Use", "Implement", "Ensure")
 2. Be specific and actionable in every rule
 3. Avoid subjective terms ("good", "appropriate", "proper")
@@ -96,6 +124,7 @@ Common `applyTo` patterns:
 5. Cross-reference related instruction files
 
 ### Organizing Instructions
+
 1. Group related rules under logical headings
 2. Keep file scope focused and specific
 3. Avoid overlapping or conflicting rules
@@ -103,6 +132,7 @@ Common `applyTo` patterns:
 5. Maintain proper heading hierarchy
 
 ### Maintenance
+
 1. Review instructions regularly for relevance
 2. Update when coding standards evolve
 3. Test rule clarity with team members
@@ -112,6 +142,7 @@ Common `applyTo` patterns:
 ## Instruction Precedence
 
 When multiple instruction files apply to the same code:
+
 1. More specific paths override general ones
 2. Later rules in same file override earlier ones
 3. Linked instructions apply in addition to current file
@@ -119,6 +150,7 @@ When multiple instruction files apply to the same code:
 ## Quality Assurance
 
 All instruction files must:
+
 - [ ] Include proper front matter with applyTo pattern
 - [ ] Use imperative language consistently
 - [ ] Contain actionable, specific rules
@@ -129,41 +161,53 @@ All instruction files must:
 ## Usage Examples
 
 ### Global Standards
+
 ```markdown
 ---
-applyTo: "**"
+applyTo: '**'
 ---
+
 # Global Project Standards
+
 - Follow consistent naming conventions across all languages
 - Include proper error handling in all functions
 ```
 
 ### Language-Specific Rules
+
 ```markdown
 ---
-applyTo: "**/*.ts"
+applyTo: '**/*.ts'
 ---
+
 # TypeScript Standards
+
 - Use strict type checking with "strict": true
 - Prefer interfaces over type aliases for object shapes
 ```
 
 ### Domain-Specific Guidelines
+
 ```markdown
 ---
-applyTo: "**/api/**"
+applyTo: '**/api/**'
 ---
+
 # API Design Standards
+
 - Use RESTful conventions for all endpoints
 - Include proper HTTP status codes in responses
 ```
 
 ### AI Agent Behavior
+
 ```markdown
 ---
-applyTo: "ai-agents"
+applyTo: 'ai-agents'
 ---
+
 # AI Agent Instructions
+
 - Create instruction files only when user explicitly requests standards
 - Use imperative language for all rules
 - Include proper cross-references to related files
@@ -172,6 +216,7 @@ applyTo: "ai-agents"
 ## Cross-References
 
 ### Related Prompts
+
 - [Instruction Generator](../prompts/instruction-generator.prompt.md) - Create new instruction files
 - [Template Manager](../prompts/template-manager.prompt.md) - Manage instruction file lifecycle
 - [AI Template Manager](../prompts/ai-template-manager.prompt.md) - Enhanced template management
@@ -179,6 +224,7 @@ applyTo: "ai-agents"
 - [Instruction Creation V2](../prompts/instruction-creation-v2.prompt.md) - Enhanced instruction file creation
 
 ### Memory Bank Integration
+
 - Update [dependencies.md](../../memory-bank/dependencies.md) when adding instruction dependencies
 - Reference [systemPatterns.md](../../memory-bank/systemPatterns.md) for architectural patterns
 - Follow [.clinerules/reading-protocol.md](../../.clinerules/reading-protocol.md) for documentation standards
@@ -186,6 +232,7 @@ applyTo: "ai-agents"
 ## Contributing
 
 When adding new instructions:
+
 1. Determine appropriate scope and applyTo pattern
 2. Use the [instruction generator prompt](../prompts/instruction-generator.prompt.md)
 3. Follow established naming conventions
@@ -196,6 +243,7 @@ When adding new instructions:
 ## Configuration
 
 Instructions are enabled in VS Code through:
+
 - `github.copilot.chat.codeGeneration.useInstructionFiles: true`
 - `github.copilot.chat.codeGeneration.instructionsPath: ".github/instructions"`
 

@@ -1,5 +1,5 @@
-import { AuthManager } from '../auth/manager';
 import { OAuthProvider, TokenStore } from '../auth/interfaces';
+import { AuthManager } from '../auth/manager';
 import { RestClient } from '../http/restClient';
 
 export interface QuestradeClientOptions {
@@ -16,7 +16,11 @@ export class QuestradeClient {
   private rest?: RestClient;
 
   constructor(private readonly opts: QuestradeClientOptions) {
-    const store = opts.tokenStore ?? { load: async () => null, save: async () => {}, clear: async () => {} };
+    const store = opts.tokenStore ?? {
+      load: async (): Promise<null> => null,
+      save: async (): Promise<void> => {},
+      clear: async (): Promise<void> => {},
+    };
     if (!opts.provider) throw new Error('OAuth provider required');
     this.auth = new AuthManager(opts.provider, store);
   }
@@ -29,7 +33,9 @@ export class QuestradeClient {
     return this.rest;
   }
 
-  async time(): Promise<Date> {
+  public async time(): Promise<Date> {
+    // Explicit return type for constructor is not needed, but for clarity:
+    // constructor(opts: QuestradeClientOptions)
     const client = await this.client();
     const res = await client.get<{ time: number }>('/time');
     return new Date(res.time);

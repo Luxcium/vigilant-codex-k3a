@@ -5,7 +5,9 @@ import { loop } from './patterns/loop.js';
 import type { Agent } from './core/Agent.js';
 
 export async function loadGraph(file: string): Promise<Agent> {
-  const spec = await import(file, { assert: { type: 'json' } }).then((m) => m.default);
+  const spec = await import(file, { assert: { type: 'json' } }).then(
+    m => m.default
+  );
   return build(spec);
 }
 
@@ -22,7 +24,9 @@ async function build(node: any): Promise<Agent> {
     case 'loop':
       return loop(await build(node.child), node.max, node.stopWord);
     case 'RetrieverAgent':
-      const { RetrieverAgent } = await import('./examples/agents/RetrieverAgent.js');
+      const { RetrieverAgent } = await import(
+        './examples/agents/RetrieverAgent.js'
+      );
       return new RetrieverAgent();
     case 'WriterAgent':
       const { WriterAgent } = await import('./examples/agents/WriterAgent.js');

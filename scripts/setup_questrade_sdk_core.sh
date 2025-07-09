@@ -2,7 +2,7 @@
 # setup_questrade_sdk_core.sh: scaffold Questrade SDK directory structure
 set -euo pipefail
 
-log(){ echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] $1"; }
+log() { echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] $1"; }
 
 PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$PROJECT_ROOT"

@@ -1,7 +1,0 @@
-node_modules
-src/errors/smartFetch.ts
-src/auth/manual.ts
-src/auth/scheduler.ts
-src/auth/storage.ts
-src/rateLimit/rules.ts
-tests/*.ts

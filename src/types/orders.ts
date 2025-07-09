@@ -11,7 +11,7 @@ import {
   StrategyType,
   StrategyTypeSchema,
   TimeInForce,
-  TimeInForceSchema
+  TimeInForceSchema,
 } from './enums';
 
 /** A single leg of a multi-leg order */
@@ -27,7 +27,7 @@ export const OrderLegSchema = z.object({
   strategyType: StrategyTypeSchema,
   triggerStopPrice: z.number().nullable(),
   orderGroupId: z.number().int(),
-  orderClass: OrderClassSchema
+  orderClass: OrderClassSchema,
 });
 
 /** Detailed order information */
@@ -111,5 +111,5 @@ export const OrderSchema = z.object({
   isLimitOffsetInDollar: z.boolean(),
   userId: z.number().int(),
   placementCommission: z.number(),
-  legs: z.array(OrderLegSchema).optional()
+  legs: z.array(OrderLegSchema).optional(),
 });

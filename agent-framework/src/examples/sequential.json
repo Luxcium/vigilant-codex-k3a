@@ -1,7 +1,4 @@
 {
   "type": "sequential",
-  "children": [
-    { "type": "RetrieverAgent" },
-    { "type": "WriterAgent" }
-  ]
+  "children": [{ "type": "RetrieverAgent" }, { "type": "WriterAgent" }]
 }

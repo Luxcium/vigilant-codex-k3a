@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['filesystem', 'terminal', 'codebase']
-description: 'Generate modular Docker configurations with separate build/run Dockerfiles, volume mounting strategies, and CLI parameterization following modular development patterns'
----
+mode: 'agent'
+description: 'Generate a modular Docker Compose workflow.'
 
 # Docker Modular Workflow Generator
 
@@ -13,11 +11,12 @@ Generate modular Docker configurations with separate build and run Dockerfiles, 
 ## Context Requirements
 
 You are working in a development environment with:
+
 - **Operating System**: Linux (Fedora KDE, Ubuntu, etc.) or compatible
 - **Node.js Management**: fnm, nvm, or direct Node.js installation
 - **Project Structure**:
   - `src/` — TypeScript/JavaScript source code
-  - `python/` — Python modules and utilities  
+  - `python/` — Python modules and utilities
   - `notebooks/` — Jupyter notebooks
   - `scripts/` — Shell scripts for automation
   - `memory-bank/` — Project context and dependencies
@@ -26,6 +25,7 @@ You are working in a development environment with:
 ## Instructions Integration
 
 Apply the following instruction files during code generation:
+
 - `.github/instructions/typescript-standards.instructions.md` for TypeScript code
 - `.github/instructions/python-standards.instructions.md` for Python code
 - `.github/instructions/file-organization.instructions.md` for project structure
@@ -36,12 +36,14 @@ Apply the following instruction files during code generation:
 Define your inputs using the format: `${input:variableName:defaultValue}`
 
 ### Required Parameters
+
 - **${input:projectName:my-app}** — Name of the project/application
 - **${input:runtimeVersion:node:18-alpine}** — Base runtime and version (node:18-alpine, python:3.11-slim, etc.)
 - **${input:packageManager:pnpm}** — Package manager (pnpm, npm, yarn)
 - **${input:buildTarget:dist}** — Build output directory
 
-### Optional Parameters  
+### Optional Parameters
+
 - **${input:nodeEnv:development}** — Default NODE_ENV value
 - **${input:devPort:3000}** — Development server port
 - **${input:prodPort:8080}** — Production server port
@@ -54,12 +56,14 @@ Define your inputs using the format: `${input:variableName:defaultValue}`
 Generate a complete modular Docker setup with separate build and run configurations, emphasizing volume mounting for development and parameterized CLI usage for flexible deployment scenarios.
 
 ### Primary Objectives
+
 1. **Modular Dockerfile Creation**: Generate separate `Dockerfile.build` and `Dockerfile.run` for distinct purposes
 2. **Volume-First Development**: Implement volume mounting strategies instead of copy-heavy approaches
 3. **CLI Parameterization**: Enable extensive build args and environment variable configuration
 4. **Multi-Service Orchestration**: Create parameterizable Docker Compose configurations
 
 ### Success Criteria
+
 - [ ] Separate Dockerfiles for build and run phases created
 - [ ] Volume mounting configured for development workflow
 - [ ] CLI commands documented with build args and environment variables
@@ -107,6 +111,14 @@ RUN ${input:packageManager} run build
 
 # Create production node_modules
 RUN ${input:packageManager} install --prod --frozen-lockfile
+ compilation and dependency installation
+ARG RUNTIME_VERSION=${input:runtimeVersion}
+FROM ${RUNTIME_VERSION} AS builder
+
+# Install package manager
+RUN npm install -g ${input:packageManager}
+
+# Set working directory
 ```
 
 #### 1.2. Runtime Dockerfile (`Dockerfile.run`)
@@ -195,7 +207,7 @@ docker run \
 #### 3.1. Base Docker Compose (`docker-compose.yml`)
 
 ```yaml
-version: "3.9"
+version: '3.9'
 
 services:
   ${input:projectName}:
@@ -208,14 +220,14 @@ services:
         RUNTIME_VERSION: ${input:runtimeVersion}
         BUILD_TARGET: ${input:buildTarget}
     image: ${input:projectName}:dev
-    command: ["${input:packageManager}", "run", "dev"]
+    command: ['${input:packageManager}', 'run', 'dev']
     volumes:
       # Mount source code for development
       - ./src:/app/src:ro
       # Persist node_modules in named volume
       - ${input:projectName}_node_modules:/app/node_modules
     ports:
-      - "${input:devPort}:${input:devPort}"
+      - '${input:devPort}:${input:devPort}'
     environment:
       NODE_ENV: ${input:nodeEnv}
     depends_on:
@@ -232,14 +244,14 @@ services:
     volumes:
       - db_data:/var/lib/postgresql/data
     ports:
-      - "5432:5432"
+      - '5432:5432'
     networks:
       - ${input:projectName}-network
 
   redis:
     image: redis:7-alpine
     ports:
-      - "6379:6379"
+      - '6379:6379'
     networks:
       - ${input:projectName}-network
 
@@ -255,7 +267,7 @@ networks:
 #### 3.2. Production Override (`docker-compose.prod.yml`)
 
 ```yaml
-version: "3.9"
+version: '3.9'
 
 services:
   ${input:projectName}:
@@ -264,10 +276,10 @@ services:
       args:
         NODE_ENV: production
     image: ${input:projectName}:prod
-    command: ["node", "${input:buildTarget}/index.js"]
-    volumes: []  # No volume mounting in production
+    command: ['node', '${input:buildTarget}/index.js']
+    volumes: [] # No volume mounting in production
     ports:
-      - "${input:prodPort}:${input:prodPort}"
+      - '${input:prodPort}:${input:prodPort}'
     environment:
       NODE_ENV: production
 ```
@@ -330,12 +342,15 @@ echo "Production deployment ready at http://localhost:${PROD_PORT}"
 ## Memory Bank Integration
 
 ### Required Updates
+
 - **`memory-bank/dependencies.md`** — Add modular Docker workflow dependencies
 - **`memory-bank/docker-workflow.md`** — Document modular build/run patterns
 - **`memory-bank/techContext.md`** — Record volume mounting and CLI parameterization decisions
 
 ### Cross-References
+
 Reference these files for context:
+
 - `memory-bank/projectbrief.md` — Project requirements and containerization goals
 - `memory-bank/systemPatterns.md` — Modular architecture patterns
 - `memory-bank/docker-workflow.md` — Four-phase workflow integration
@@ -343,6 +358,7 @@ Reference these files for context:
 ## Quality Assurance
 
 ### Modular Configuration Checks
+
 - [ ] Separate Dockerfiles for build and run phases
 - [ ] Build arguments have default values (e.g., `ARG NODE_ENV=production`)
 - [ ] Volume mounting configured for development workflow
@@ -350,12 +366,14 @@ Reference these files for context:
 - [ ] CLI commands are documented with parameterization
 
 ### Volume Strategy Validation
+
 - [ ] Development uses volume mounting for source code
 - [ ] Production excludes unnecessary volumes
 - [ ] Named volumes persist important data (node_modules, database)
 - [ ] Volume permissions properly configured
 
 ### CLI Parameterization Checks
+
 - [ ] All build arguments configurable via command line
 - [ ] Environment variables properly defaulted
 - [ ] Scripts provided for common workflows
@@ -398,6 +416,7 @@ Provide the following deliverables:
 ## Usage Examples
 
 ### VS Code Copilot
+
 ```
 @workspace Use docker-modular-workflow.prompt.md to create modular Docker setup for:
 - Project: ${input:projectName}
@@ -407,6 +426,7 @@ Provide the following deliverables:
 ```
 
 ### Cline AI
+
 ```
 Generate modular Docker configuration with:
 - Separate build and run Dockerfiles
@@ -416,7 +436,9 @@ Generate modular Docker configuration with:
 ```
 
 ### Codex CLI
+
 ```bash
 # Generate modular Docker workflow
 codex generate --prompt=docker-modular-workflow.prompt.md \
   --params="projectName=my-modular-app,runtimeVersion=node:18-alpine,packageManager=pnpm,volumeStrategy=source-mount"
+```

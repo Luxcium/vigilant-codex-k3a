@@ -1,20 +1,18 @@
----
 mode: 'agent'
-tools: ['codebase', 'filesystem']
-description: 'Create production-ready TypeScript components following Codex CLI standards'
----
+mode: 'agent'
+description: 'Generate a TypeScript React component.'
 
 Your goal is to generate a ${input:componentType:Select component type (class|interface|function|module)} named ${input:componentName} following Codex CLI TypeScript standards.
 
 ## Requirements
 
-* Use TypeScript with strict type checking enabled
-* Follow Airbnb TypeScript style guide
-* Include comprehensive JSDoc comments for all public APIs
-* Implement proper error handling and validation
-* Use semantic, descriptive naming conventions
-* Add unit tests for all public methods/functions
-* Reference [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
+- Use TypeScript with strict type checking enabled
+- Follow Airbnb TypeScript style guide
+- Include comprehensive JSDoc comments for all public APIs
+- Implement proper error handling and validation
+- Use semantic, descriptive naming conventions
+- Add unit tests for all public methods/functions
+- Reference [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
 
 ## Process
 
@@ -37,6 +35,7 @@ Your goal is to generate a ${input:componentType:Select component type (class|in
 ## Templates Reference
 
 Use templates from ${workspaceFolder}/init/ directory:
+
 - `typescript-module-template/` for module structure
 - `documentation-template/` for README and API docs
 
@@ -53,6 +52,7 @@ Use templates from ${workspaceFolder}/init/ directory:
 ## Quality Assurance
 
 Before completion, verify:
+
 - No lint errors or warnings
 - All imports are properly typed
 - Consistent naming conventions throughout

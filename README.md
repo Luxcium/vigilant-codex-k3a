@@ -5,7 +5,7 @@
 This project supports three AI agents, each with their own entry point and instruction files:
 
 - **Cline AI** → `.clinerules/main-rules.md` (primary entry point for Cline AI)
-- **Codex CLI** → `AGENTS.md` (primary entry point for Codex CLI)
+- **Codex** and **Codex CLI** → `AGENTS.md` (primary entry point for Codex and Codex CLI)
 - **VS Code Copilot** → `.github/copilot-instructions.md` (primary entry point for VS Code Copilot)
 
 ### Agent-Specific Instructions
@@ -26,17 +26,18 @@ All operational rules and protocols are maintained in the modular files under `.
 1. All setup actions (mkdir, touch, etc.) must be performed via scripts in the `scripts/` directory.
 2. Scripts must never overwrite existing files or folders; they must check for existence and skip or warn if present.
 3. The following structure must exist at the project root:
-    - `.github/` (directory)
-    - `.vscode/` (directory)
-    - `memory-bank/` (directory)
-    - `.gitignore` (file)
-    - `.clinerules` (file)
-    - `README.md` (file)
-    - `AGENTS.md` (file, replaces any use of `codex.md`)
-    - `memory-bank/dependencies.md` (file)
+   - `.github/` (directory)
+   - `.vscode/` (directory)
+   - `memory-bank/` (directory)
+   - `.gitignore` (file)
+   - `.clinerules` (file)
+   - `README.md` (file)
+   - `AGENTS.md` (file, replaces any use of `codex.md`)
+   - `memory-bank/dependencies.md` (file)
+
 ## AGENTS.md Migration
 
-- `AGENTS.md` is now the default repository context/instructions markdown file for Codex CLI and related tools.
+- `AGENTS.md` is now the default repository context/instructions markdown file for Codex and Codex CLI and related tools.
 - All references to `codex.md` in scripts, documentation, and templates must be replaced with `AGENTS.md`.
 - New and existing projects must include an `AGENTS.md` file at the root.
 - Workflows and automation should ignore `codex.md` and use `AGENTS.md` exclusively.
@@ -68,6 +69,8 @@ All operational rules and protocols are maintained in the modular files under `.
 5. Run `bash scripts/setup_web_env.sh` to scaffold the Next.js application.
 6. Run `bash scripts/setup_db_prisma.sh` to start PostgreSQL and initialize Prisma.
 7. Run `bash scripts/setup_agent_framework.sh` to initialize the multi-agent retrieval framework in `agent-framework/`.
+8. Template files for this setup are stored in `templates/agent-framework` and copied during initialization.
+9. Run `bash scripts/run_codex_cli.sh /path/to/your/project` to start a Codex CLI container with Node.js 22 and Python 3.13.
 
 ## Top-Level Folder Conventions
 
@@ -109,9 +112,52 @@ Code is organized by language and framework at the project root:
 5. Jupyter notebooks and related data science resources go in `notebooks/`
 6. Each directory should maintain its own README.md with specific setup and usage instructions
 
+## Development Environment
+
+### Codex Universal Docker Environment
+
+This project provides a standardized development environment using the Codex Universal Docker image with Node.js 22 and Python 3.13. The environment uses volume-based development for instant file changes without rebuilds.
+
+#### Quick Start
+
+```bash
+# Set OpenAI API key (required for API access)
+export OPENAI_API_KEY="your-api-key-here"
+
+# Setup complete environment
+./scripts/setup_codex_universal.sh
+
+# Start development environment
+./scripts/codex_start.sh
+
+# Enter container for development
+./scripts/codex_shell.sh
+```
+
+#### Environment Features
+
+- **Pre-configured Runtimes**: Node.js 22 and Python 3.13
+- **Volume-Based Development**: Instant file changes without container rebuilds
+- **API Integration**: OpenAI API key passed from host environment
+- **Multi-Service Support**: Databases, caches, and development servers
+- **Health Monitoring**: Container health checks and validation
+- **Cross-Platform**: Works on Linux, macOS, and Windows with Docker
+
+#### Available Scripts
+
+- `setup_codex_universal.sh` - Complete environment setup
+- `codex_start.sh` - Start development environment
+- `codex_stop.sh` - Stop environment
+- `codex_shell.sh` - Enter container shell
+- `codex_rebuild.sh` - Rebuild with latest image
+- `codex_test.sh` - Verify environment setup
+
+See `scripts/README.md` for comprehensive documentation and troubleshooting.
+
 ## Script Validation and Logging
 
 The `scripts/setup_project.sh` script now includes:
+
 - File existence and size checks before writing
 - Directory creation with `mkdir -p` and validation
 - Logging of all actions (creation, skipping, size reporting)
@@ -120,6 +166,23 @@ The `scripts/setup_project.sh` script now includes:
 
 All actions are self-documented and resilient to repeated runs. Review the script for detailed logic and intent.
 
+## Strict Test Execution Policy
+
+This project enforces a strict policy for running tests: **only one test file/module may be executed per run**. This is implemented by omitting the `include` pattern in `vitest.config.ts`, requiring explicit file input for each test run. This approach ensures that fixes are made and validated one at a time, supporting incremental and focused development.
+
+**How to run a single test file:**
+
+```bash
+npx vitest run src/tests/auth/manager.test.ts
+```
+
+**Note:**
+
+- Do not use `vitest run` without specifying a file, as no tests will be run by default.
+- You may validate all tests at once only before major reconfiguration or as a final check.
+
+---
+
 ## AI Agent Framework
 
 This project includes a modular AI agent framework for automated code generation and quality assurance. The framework is organized into two main components:
@@ -127,6 +190,7 @@ This project includes a modular AI agent framework for automated code generation
 ### Prompt Files (`.github/prompts/`)
 
 Parametric prompt templates for AI-assisted development workflows:
+
 - **`ai-template-manager.prompt.md`** — Enhanced template generation with parametric inputs
 - **`script-generator.prompt.md`** — Resilient automation script generation
 - **`docker-generator.prompt.md`** — Parameterized Docker configuration generation
@@ -136,6 +200,7 @@ Parametric prompt templates for AI-assisted development workflows:
 ### Instruction Files (`.github/instructions/`)
 
 Coding standards that are automatically applied during AI-assisted development:
+
 - **`typescript-standards.instructions.md`** — Comprehensive TypeScript coding standards
 - **`python-standards.instructions.md`** — PEP 8 and modern Python practices
 - **`python-notebook-standards.instructions.md`** — Jupyter notebook standards and ML best practices

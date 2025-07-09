@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest'
-import { BalanceSchema } from '../types/accounts'
+import { describe, expect, it } from 'vitest';
+import { BalanceSchema } from '../types/accounts';
 
 describe('BalanceSchema', () => {
   it('accepts a valid Balance', () => {
@@ -10,15 +10,15 @@ describe('BalanceSchema', () => {
       totalEquity: 250,
       buyingPower: 200,
       maintenanceExcess: 50,
-      isRealTime: true
-    }
-    const result = BalanceSchema.safeParse(input)
-    expect(result.success).toBe(true)
-  })
+      isRealTime: true,
+    };
+    const result = BalanceSchema.safeParse(input);
+    expect(result.success).toBe(true);
+  });
 
   it('rejects missing fields', () => {
-    const { success, error } = BalanceSchema.safeParse({ currency: 'USD' })
-    expect(success).toBe(false)
-    expect(error?.issues.some((i: any) => i.path.includes('cash'))).toBe(true)
-  })
-})
+    const { success, error } = BalanceSchema.safeParse({ currency: 'USD' });
+    expect(success).toBe(false);
+    expect(error?.issues.some((i: any) => i.path.includes('cash'))).toBe(true);
+  });
+});

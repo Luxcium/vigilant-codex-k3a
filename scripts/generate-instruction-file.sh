@@ -13,85 +13,89 @@ PROMPTS_DIR=".github/prompts"
 GENERATOR_PROMPT_FOR_AI_FILLING="$PROMPTS_DIR/instruction-generator.prompt.md"
 
 # Colors for output
-RED=\'\\033[0;31m\'
-GREEN=\'\\033[0;32m\'
-YELLOW=\'\\033[1;33m\'
-BLUE=\'\\033[0;34m\'
+RED=\'\\033[0
+31m\'
+GREEN=\'\\033[0
+32m\'
+YELLOW=\'\\033[1
+33m\'
+BLUE=\'\\033[0
+34m\'
 NC=\'\\033[0m\' # No Color
 
 # Helper functions
 log_info() {
-    echo -e "${BLUE}[INFO]${NC} $1"
+  echo -e "${BLUE}[INFO]${NC} $1"
 }
 
 log_success() {
-    echo -e "${GREEN}[SUCCESS]${NC} $1"
+  echo -e "${GREEN}[SUCCESS]${NC} $1"
 }
 
 log_warning() {
-    echo -e "${YELLOW}[WARNING]${NC} $1"
+  echo -e "${YELLOW}[WARNING]${NC} $1"
 }
 
 log_error() {
-    echo -e "${RED}[ERROR]${NC} $1"
+  echo -e "${RED}[ERROR]${NC} $1"
 }
 
 # Check if the conceptual generator prompt (for AI content filling) exists
 check_conceptual_generator_prompt() {
-    if [[ ! -f "$GENERATOR_PROMPT_FOR_AI_FILLING" ]]; then
-        log_warning "Conceptual AI content generation prompt not found: $GENERATOR_PROMPT_FOR_AI_FILLING"
-        log_info "This prompt would typically be used by an AI to populate the generated instruction file."
-        log_info "You can proceed to create the template, but ensure such a prompt exists or is created for AI-assisted content filling."
-    fi
+  if [[ ! -f "$GENERATOR_PROMPT_FOR_AI_FILLING" ]]; then
+    log_warning "Conceptual AI content generation prompt not found: $GENERATOR_PROMPT_FOR_AI_FILLING"
+    log_info "This prompt would typically be used by an AI to populate the generated instruction file."
+    log_info "You can proceed to create the template, but ensure such a prompt exists or is created for AI-assisted content filling."
+  fi
 }
 
 # Create instructions directory if it doesn't exist
 ensure_instructions_dir() {
-    if [[ ! -d "$INSTRUCTIONS_DIR" ]]; then
-        log_info "Creating instructions directory: $INSTRUCTIONS_DIR"
-        mkdir -p "$INSTRUCTIONS_DIR"
-    fi
+  if [[ ! -d "$INSTRUCTIONS_DIR" ]]; then
+    log_info "Creating instructions directory: $INSTRUCTIONS_DIR"
+    mkdir -p "$INSTRUCTIONS_DIR"
+  fi
 }
 
 # Validate instruction file name
 validate_filename() {
-    local filename="$1"
-    
-    if [[ ! "$filename" =~ ^[a-z][a-z0-9-]*\\.instructions\\.md$ ]]; then
-        log_error "Invalid filename format: $filename"
-        log_info "Expected format: [lowercase-with-dashes].instructions.md"
-        log_info "Example: vue-component-standards.instructions.md"
-        return 1
-    fi
-    
-    return 0
+  local filename="$1"
+
+  if [[ ! "$filename" =~ ^[a-z][a-z0-9-]*\\.instructions\\.md$ ]]; then
+    log_error "Invalid filename format: $filename"
+    log_info "Expected format: [lowercase-with-dashes].instructions.md"
+    log_info "Example: vue-component-standards.instructions.md"
+    return 1
+  fi
+
+  return 0
 }
 
 # Check if file already exists
 check_file_exists() {
-    local filepath="$1"
-    
-    if [[ -f "$filepath" ]]; then
-        log_warning "File already exists: $filepath"
-        read -p "Do you want to overwrite it? (y/N): " -n 1 -r
-        echo
-        if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-            log_info "Operation cancelled."
-            exit 0
-        fi
+  local filepath="$1"
+
+  if [[ -f "$filepath" ]]; then
+    log_warning "File already exists: $filepath"
+    read -p "Do you want to overwrite it? (y/N): " -n 1 -r
+    echo
+    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+      log_info "Operation cancelled."
+      exit 0
     fi
+  fi
 }
 
 # Generate instruction file content based on type
 generate_instruction_file_content() {
-    local filename="$1"
-    local apply_to="$2"
-    local description="$3"
-    local instruction_type="$4"
-    local filepath="$INSTRUCTIONS_DIR/$filename"
+  local filename="$1"
+  local apply_to="$2"
+  local description="$3"
+  local instruction_type="$4"
+  local filepath="$INSTRUCTIONS_DIR/$filename"
 
-    # Common header
-    cat > "$filepath" << EOF
+  # Common header
+  cat > "$filepath" << EOF
 ---
 applyTo: "$apply_to"
 # title: "$description" # Optional: For VS Code UI, as per ai-instruction-creation.instructions.md
@@ -101,10 +105,10 @@ applyTo: "$apply_to"
 # $description
 EOF
 
-    # Type-specific content
-    case "$instruction_type" in
-        "language")
-            cat >> "$filepath" << EOF
+  # Type-specific content
+  case "$instruction_type" in
+    "language")
+      cat >> "$filepath" << EOF
 
 ## Naming Conventions
 - <!-- Rule for classes and interfaces (e.g., PascalCase) -->
@@ -132,9 +136,9 @@ EOF
 ## Imports/Modules
 - <!-- Rule for import organization and module structure -->
 EOF
-            ;;
-        "architecture")
-            cat >> "$filepath" << EOF
+      ;;
+    "architecture")
+      cat >> "$filepath" << EOF
 
 ## Directory Structure
 - <!-- Rules for organizing files and folders -->
@@ -156,9 +160,9 @@ EOF
 - <!-- Standards for API endpoint naming, request/response formats -->
 - <!-- Versioning strategy -->
 EOF
-            ;;
-        "security")
-            cat >> "$filepath" << EOF
+      ;;
+    "security")
+      cat >> "$filepath" << EOF
 
 ## Input Validation
 - <!-- Rules for validating all external inputs -->
@@ -181,9 +185,9 @@ EOF
 ## Dependency Security
 - <!-- Rules for vetting and updating dependencies -->
 EOF
-            ;;
-        "testing")
-            cat >> "$filepath" << EOF
+      ;;
+    "testing")
+      cat >> "$filepath" << EOF
 
 ## Test Structure & Organization
 - <!-- Where to place test files -->
@@ -201,9 +205,9 @@ EOF
 ## Test Data Management
 - <!-- How to manage and generate test data -->
 EOF
-            ;;
-        "documentation")
-            cat >> "$filepath" << EOF
+      ;;
+    "documentation")
+      cat >> "$filepath" << EOF
 
 ## Code Comments
 - <!-- Standards for inline comments, JSDoc, Python docstrings, etc. -->
@@ -219,9 +223,9 @@ EOF
 ## Markdown Style
 - <!-- Adherence to markdown-lint or other style guides -->
 EOF
-            ;;
-        "file-org")
-            cat >> "$filepath" << EOF
+      ;;
+    "file-org")
+      cat >> "$filepath" << EOF
 
 ## Top-Level Directory Structure
 - <!-- Purpose of each main directory (e.g., src, tests, docs, scripts) -->
@@ -238,9 +242,9 @@ EOF
 ## Configuration Files
 - <!-- Location and management of config files -->
 EOF
-            ;;
-        *) # Default or "general"
-            cat >> "$filepath" << EOF
+      ;;
+    *) # Default or "general"
+      cat >> "$filepath" << EOF
 
 ## Overview
 <!-- Brief description of the purpose and scope of these instructions. -->
@@ -258,11 +262,11 @@ EOF
 <!-- Add more sections as needed based on the specific standards being defined. -->
 <!-- Refer to .github/instructions/ai-instruction-creation.instructions.md for comprehensive guidance on how an AI should populate this file. -->
 EOF
-            ;;
-    esac
+      ;;
+  esac
 
-    # Common footer (Cross-Reference, Quality Checklist)
-    cat >> "$filepath" << EOF
+  # Common footer (Cross-Reference, Quality Checklist)
+  cat >> "$filepath" << EOF
 
 ## Cross-Reference Integration
 
@@ -286,27 +290,27 @@ EOF
 - [ ] **Markdown Linting**: Ensure content is markdown-lint compliant.
 EOF
 
-    log_success "Generated instruction file template: $filepath"
-    log_info "Please populate this file with specific rules."
-    log_info "An AI can assist with this, guided by .github/instructions/ai-instruction-creation.instructions.md and potentially using $GENERATOR_PROMPT_FOR_AI_FILLING."
+  log_success "Generated instruction file template: $filepath"
+  log_info "Please populate this file with specific rules."
+  log_info "An AI can assist with this, guided by .github/instructions/ai-instruction-creation.instructions.md and potentially using $GENERATOR_PROMPT_FOR_AI_FILLING."
 }
 
 # Update dependencies.md with new instruction file
 update_dependencies_reminder() {
-    local filename="$1"
-    local dependencies_file="memory-bank/dependencies.md"
-    
-    if [[ -f "$dependencies_file" ]]; then
-        log_info "Don't forget to update $dependencies_file with the new instruction file dependencies."
-        log_info "Add entry for: $INSTRUCTIONS_DIR/$filename"
-    else
-        log_warning "Dependencies file not found: $dependencies_file. Cannot provide reminder to update it."
-    fi
+  local filename="$1"
+  local dependencies_file="memory-bank/dependencies.md"
+
+  if [[ -f "$dependencies_file" ]]; then
+    log_info "Don't forget to update $dependencies_file with the new instruction file dependencies."
+    log_info "Add entry for: $INSTRUCTIONS_DIR/$filename"
+  else
+    log_warning "Dependencies file not found: $dependencies_file. Cannot provide reminder to update it."
+  fi
 }
 
 # Display usage information
 show_usage() {
-    cat << EOF
+  cat << EOF
 AI Agent Framework - Instruction File Generator
 
 Usage: $0 -n <filename> -a <apply_to_glob> -d <description> [-t <type>]
@@ -345,78 +349,78 @@ EOF
 
 # Main function
 main() {
-    local filename=""
-    local apply_to=""
-    local description=""
-    local instruction_type="general" # Default type
-    
-    # Parse command line arguments
-    while [[ $# -gt 0 ]]; do
-        case $1 in
-            -h|--help)
-                show_usage
-                exit 0
-                ;;
-            -n|--name)
-                filename="$2"
-                shift # past argument
-                shift # past value
-                ;;
-            -a|--apply-to)
-                apply_to="$2"
-                shift # past argument
-                shift # past value
-                ;;
-            -d|--desc)
-                description="$2"
-                shift # past argument
-                shift # past value
-                ;;
-            -t|--type)
-                instruction_type="$2"
-                shift # past argument
-                shift # past value
-                ;;
-            *)    # unknown option
-                log_error "Unknown option: $1"
-                show_usage
-                exit 1
-                ;;
-        esac
-    done
-    
-    # Validate required arguments
-    if [[ -z "$filename" || -z "$apply_to" || -z "$description" ]]; then
-        log_error "Missing required arguments."
+  local filename=""
+  local apply_to=""
+  local description=""
+  local instruction_type="general" # Default type
+
+  # Parse command line arguments
+  while [[ $# -gt 0 ]]; do
+    case $1 in
+      -h | --help)
+        show_usage
+        exit 0
+        ;;
+      -n | --name)
+        filename="$2"
+        shift # past argument
+        shift # past value
+        ;;
+      -a | --apply-to)
+        apply_to="$2"
+        shift # past argument
+        shift # past value
+        ;;
+      -d | --desc)
+        description="$2"
+        shift # past argument
+        shift # past value
+        ;;
+      -t | --type)
+        instruction_type="$2"
+        shift # past argument
+        shift # past value
+        ;;
+      *) # unknown option
+        log_error "Unknown option: $1"
         show_usage
         exit 1
-    fi
-
-    # Validate filename format
-    if ! validate_filename "$filename"; then
-        exit 1
-    fi
-
-    # Validate instruction type
-    case "$instruction_type" in
-        "language"|"architecture"|"security"|"testing"|"documentation"|"file-org"|"general")
-            # Valid type
-            ;;
-        *)
-            log_error "Invalid instruction type: $instruction_type"
-            log_info "Valid types are: language, architecture, security, testing, documentation, file-org, general"
-            exit 1
-            ;;
+        ;;
     esac
-    
-    ensure_instructions_dir
-    check_conceptual_generator_prompt # Check for the AI filling prompt
-    
-    local full_filepath="$INSTRUCTIONS_DIR/$filename"
-    check_file_exists "$full_filepath" # Handles overwrite confirmation
-    
-    generate_instruction_file_content "$filename" "$apply_to" "$description" "$instruction_type"
-    update_dependencies_reminder "$filename"
+  done
+
+  # Validate required arguments
+  if [[ -z "$filename" || -z "$apply_to" || -z "$description" ]]; then
+    log_error "Missing required arguments."
+    show_usage
+    exit 1
+  fi
+
+  # Validate filename format
+  if ! validate_filename "$filename"; then
+    exit 1
+  fi
+
+  # Validate instruction type
+  case "$instruction_type" in
+    "language" | "architecture" | "security" | "testing" | "documentation" | "file-org" | "general")
+      # Valid type
+      ;;
+    *)
+      log_error "Invalid instruction type: $instruction_type"
+      log_info "Valid types are: language, architecture, security, testing, documentation, file-org, general"
+      exit 1
+      ;;
+  esac
+
+  ensure_instructions_dir
+  check_conceptual_generator_prompt # Check for the AI filling prompt
+
+  local full_filepath="$INSTRUCTIONS_DIR/$filename"
+  check_file_exists "$full_filepath" # Handles overwrite confirmation
+
+  generate_instruction_file_content "$filename" "$apply_to" "$description" "$instruction_type"
+  update_dependencies_reminder "$filename"
 }
 
 # Entry point

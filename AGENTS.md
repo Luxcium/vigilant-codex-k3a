@@ -42,7 +42,7 @@ scripts, and templates going forward.
 - All agents and contributors must follow the instructions and context
   provided in this file.
 - Update this file as project context or operational rules evolve.
- 
+
 - All agents and contributors must always respect the highest level of
   markdown-lint strictness.
 - All agents and contributors must never delete any existing content
@@ -220,6 +220,7 @@ Bank is the sole link across sessions, so maintain it with precision and keep
 verification scripts passing.
 
 ## Project Context
+
 - **Project Name**: Codex CLI (v3 or k3), use to discover how to
   maintain a project that leverage Codex CLI toolings along with cline
   ai and the vscode copilot agents and tools. We will create together,
@@ -326,10 +327,10 @@ section using markdown-lint compliant syntax.
 
 Why this is best here
 
- * **Single source of truth**: AGENTS.md is already our central
-   “how we work” doc.
- * **Cross-agent**: Applies to Codex-CLI, Cline AI, and Copilot
-   Chat all at once.
+- **Single source of truth**: AGENTS.md is already our central
+  “how we work” doc.
+- **Cross-agent**: Applies to Codex-CLI, Cline AI, and Copilot
+  Chat all at once.
 
 NEVER REMOVE ONLY ADD (or update) AUTOMATICALLY THIS FILE TO RECORD
 PREFERENCES FOR THE USER AND TO SET A STATEFUL AND SOULFUL EXPERIENCE
@@ -345,9 +346,11 @@ sessions until explicitly changed. Preferences are stored in this
 section for codex cli.
 
 Current Preferences:
+
 - **no-lock-files**: Package manager lock files (pnpm-lock.yaml, package-lock.json, npm-shrinkwrap.json, yarn.lock) must not be generated or committed until further notice.
 
 To add or update preferences:
+
 1. Edit this section following the strictest set of markdown-lint
    guidelines
 2. Add preference here above as a bullet with format:

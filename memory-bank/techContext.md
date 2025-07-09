@@ -1,10 +1,11 @@
 # techContext.md
-<!-- markdownlint-disable MD013 MD022 MD032 MD041 MD005 MD007 -->
 
 ## Purpose
+
 This file documents the technologies, development setup, technical constraints, and dependencies for any project. It provides a clear reference for all technical aspects, independent of any specific project topic at initialization.
 
 ## Structure
+
 - **Technologies Used:** General categories and rationale.
 - **Development Setup:** Environment and tooling guidelines.
 - **Technical Constraints:** Known limitations or requirements.
@@ -20,6 +21,24 @@ This file documents the technologies, development setup, technical constraints, 
 - **Python 3.11**
 - **Next.js 14**
 
+### Testing Infrastructure
+
+- **Vitest 3.2.4**: Primary test runner with Istanbul coverage provider
+- **vi.mock**: Module-level mocking for external dependencies (node-fetch, AuthManager)
+- **Istanbul Coverage**: Detailed branch/statement/function/line reporting with 90% thresholds
+- **Zod Validation Testing**: Comprehensive schema validation testing patterns
+- **CommonJS Compatibility**: Maintained throughout test infrastructure
+- **Test Isolation**: No real network requests or external dependencies in test suite
+- **Edge Case Coverage**: Comprehensive testing of error scenarios, NaN handling, and timeout management
+
+### Production Test Results (2025-07-06)
+
+- **259 tests passing** (up from 248 with 3 failures)
+- **98.34% branch coverage** (exceeding 90% threshold)
+- **100% branch coverage** achieved for: webStorage.ts, tokenBucket.ts
+- **96.15% branch coverage** for restClient.ts, **87.5%** for QuestradeClient.ts
+- **Comprehensive mocking strategies** implemented for HTTP clients and authentication
+
 ## Development Setup
 
 - The project root must be organized by language and framework as specified in [systemPatterns.md](./systemPatterns.md):
@@ -31,6 +50,7 @@ This file documents the technologies, development setup, technical constraints, 
   - All directory and file creation must be performed via scripts in `scripts/`, never manually.
 
 Refer to the centralized directory structure diagram in [systemPatterns.md](./systemPatterns.md) for the latest and authoritative version.
+
 - Document environment setup and configuration.
 - Ensure instructions are clear for onboarding new agents or contributors.
 - Update as tooling or setup changes.
@@ -38,7 +58,7 @@ Refer to the centralized directory structure diagram in [systemPatterns.md](./sy
 ## Technical Constraints
 
 - Codebase organization must follow the standard described in [systemPatterns.md](./systemPatterns.md).
- - All setup and file/folder creation must follow the patterns in [.clinerules/pattern-examples.md](../.clinerules/pattern-examples.md).
+- All setup and file/folder creation must follow the patterns in [.clinerules/pattern-examples.md](../.clinerules/pattern-examples.md).
 - List any known limitations or requirements.
 - Update as new constraints are discovered or resolved.
 

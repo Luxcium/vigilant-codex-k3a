@@ -9,7 +9,7 @@ import {
   Currency,
   CurrencySchema,
   OrderAction,
-  OrderActionSchema
+  OrderActionSchema,
 } from './enums';
 
 /** Basic account information */
@@ -29,7 +29,7 @@ export const AccountSchema = z.object({
   status: AccountStatusSchema,
   isPrimary: z.boolean(),
   isBilling: z.boolean(),
-  clientAccountType: ClientAccountTypeSchema
+  clientAccountType: ClientAccountTypeSchema,
 });
 
 /** Per-currency balance information */
@@ -51,7 +51,7 @@ export const BalanceSchema = z.object({
   totalEquity: z.number(),
   buyingPower: z.number(),
   maintenanceExcess: z.number(),
-  isRealTime: z.boolean()
+  isRealTime: z.boolean(),
 });
 
 /** Position in an account */
@@ -66,7 +66,7 @@ export interface Position {
   closedPnl: number;
   openPnl: number;
   totalCost: number;
-  isRealTime: boolean;
+  isRealTime: boolean | string;
   isUnderReorg: boolean;
 }
 
@@ -82,10 +82,9 @@ export const PositionSchema = z.object({
   closedPnl: z.number(),
   openPnl: z.number(),
   totalCost: z.number(),
-  isRealTime: z.boolean(),
-  isUnderReorg: z.boolean()
+  isRealTime: z.union([z.boolean(), z.string()]),
+  isUnderReorg: z.boolean(),
 });
-
 
 /** Execution fill within an account */
 export interface Execution {
@@ -129,7 +128,7 @@ export const ExecutionSchema = z.object({
   executionFee: z.number(),
   secFee: z.number(),
   canadianExecutionFee: z.number().int(),
-  parentId: z.number().int()
+  parentId: z.number().int(),
 });
 
 /** Entry in account activity log */
@@ -164,5 +163,5 @@ export const AccountActivitySchema = z.object({
   grossAmount: z.number(),
   commission: z.number(),
   netAmount: z.number(),
-  type: z.string()
+  type: z.string(),
 });

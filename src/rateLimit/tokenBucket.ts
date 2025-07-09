@@ -4,13 +4,33 @@ import { RULES } from './rules';
 export class TokenBucketLimiter {
   private buckets: Record<BucketKind, RateLimitGroup> = {
     account: {
-      perSecond: { capacity: RULES.account.rps, refillInterval: 1000, remaining: RULES.account.rps, reset: Date.now() },
-      perHour: { capacity: RULES.account.rph, refillInterval: 3600_000, remaining: RULES.account.rph, reset: Date.now() }
+      perSecond: {
+        capacity: RULES.account.rps,
+        refillInterval: 1000,
+        remaining: RULES.account.rps,
+        reset: Date.now(),
+      },
+      perHour: {
+        capacity: RULES.account.rph,
+        refillInterval: 3600_000,
+        remaining: RULES.account.rph,
+        reset: Date.now(),
+      },
     },
     market: {
-      perSecond: { capacity: RULES.market.rps, refillInterval: 1000, remaining: RULES.market.rps, reset: Date.now() },
-      perHour: { capacity: RULES.market.rph, refillInterval: 3600_000, remaining: RULES.market.rph, reset: Date.now() }
-    }
+      perSecond: {
+        capacity: RULES.market.rps,
+        refillInterval: 1000,
+        remaining: RULES.market.rps,
+        reset: Date.now(),
+      },
+      perHour: {
+        capacity: RULES.market.rph,
+        refillInterval: 3600_000,
+        remaining: RULES.market.rph,
+        reset: Date.now(),
+      },
+    },
   };
 
   async consume(kind: BucketKind): Promise<void> {
@@ -20,7 +40,7 @@ export class TokenBucketLimiter {
         group.perSecond.reset - Date.now(),
         group.perHour.reset - Date.now()
       );
-      await new Promise((r) => setTimeout(r, Math.max(delay, 50)));
+      await new Promise(r => setTimeout(r, Math.max(delay, 50)));
       this.refill(group);
     }
     group.perSecond.remaining -= 1;
@@ -29,8 +49,14 @@ export class TokenBucketLimiter {
 
   hydrate(kind: BucketKind, headers: Record<string, string>): void {
     const group = this.buckets[kind];
-    const secondRem = Number(headers['x-ratelimit-remaining-second'] ?? headers['x-ratelimit-remaining']);
-    const secondReset = Number(headers['x-ratelimit-reset-second'] ?? headers['x-ratelimit-reset']) * 1000;
+    const secondRem = Number(
+      headers['x-ratelimit-remaining-second'] ??
+        headers['x-ratelimit-remaining']
+    );
+    const secondReset =
+      Number(
+        headers['x-ratelimit-reset-second'] ?? headers['x-ratelimit-reset']
+      ) * 1000;
     const hourRem = Number(headers['x-ratelimit-remaining-hour']);
     const hourReset = Number(headers['x-ratelimit-reset-hour']) * 1000;
 
@@ -69,10 +95,14 @@ export class TokenBucketLimiter {
   }
 }
 
-export const createRateLimiter = (): { acquire: (kind: BucketKind) => Promise<void>; sync: (kind: BucketKind, remaining: number, reset: number) => void } => {
-  const limiter = new TokenBucketLimiter()
+export const createRateLimiter = (): {
+  acquire: (kind: BucketKind) => Promise<void>;
+  sync: (kind: BucketKind, remaining: number, reset: number) => void;
+} => {
+  const limiter = new TokenBucketLimiter();
   return {
     acquire: (kind: BucketKind) => limiter.consume(kind),
-    sync: (kind: BucketKind, remaining: number, reset: number) => limiter.sync(kind, remaining, reset)
-  }
-}
+    sync: (kind: BucketKind, remaining: number, reset: number) =>
+      limiter.sync(kind, remaining, reset),
+  };
+};

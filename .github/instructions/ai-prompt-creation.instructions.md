@@ -1,12 +1,13 @@
 ---
-applyTo: "ai-agents"
+applyTo: 'ai-agents'
 ---
 
-# AI Agent Instructions: Creating *.prompt.md Files On-Demand
+# AI Agent Instructions: Creating \*.prompt.md Files On-Demand
 
 ## TRIGGER RECOGNITION
 
 **You create a prompt file ONLY when the user explicitly requests:**
+
 - "Create a prompt file for [task]"
 - "Make a prompt for [workflow]"
 - "Generate a .prompt.md that [does X]"
@@ -14,6 +15,7 @@ applyTo: "ai-agents"
 - "Setup a prompt file for [process]"
 
 **DO NOT create prompt files when user asks for:**
+
 - Direct code generation
 - Immediate task execution
 - One-time solutions
@@ -24,6 +26,7 @@ applyTo: "ai-agents"
 When user requests a prompt file, analyze:
 
 ### 1. TASK PATTERN IDENTIFICATION
+
 ```
 Is this task:
 ├─ Repeatable? → Include ${input:variableName} variables
@@ -33,6 +36,7 @@ Is this task:
 ```
 
 ### 2. SCOPE DETERMINATION FOR CODEX CLI PROJECT
+
 ```
 What does user want to automate:
 ├─ TypeScript development? → Focus on ts/tsx file generation
@@ -44,6 +48,7 @@ What does user want to automate:
 ```
 
 ### 3. CONTEXT REQUIREMENTS
+
 ```
 What context will the prompt need:
 ├─ File references? → Use ${file}, ${workspaceFolder}
@@ -56,6 +61,7 @@ What context will the prompt need:
 ## DECISION TREE: PROMPT CONSTRUCTION
 
 ### Step 1: Determine Mode
+
 ```yaml
 IF task requires:
   - Multiple file operations (TypeScript modules, Python packages)
@@ -77,6 +83,7 @@ ELSE:
 ```
 
 ### Step 2: Select Tools for Codex CLI Context
+
 ```yaml
 Task involves → Required tools:
 TypeScript development → ['codebase', 'filesystem']
@@ -91,16 +98,19 @@ Dependency management → ['terminal', 'filesystem']
 ### Step 3: Structure Content Based on Task Type
 
 #### Code Generation Prompts
+
 ```markdown
 Your goal is to generate ${input:componentType} following Codex CLI standards.
 
 ## Requirements
-* Use TypeScript with strict type checking
-* Follow Airbnb style guide
-* Include JSDoc comments for public APIs
-* Reference [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
+
+- Use TypeScript with strict type checking
+- Follow Airbnb style guide
+- Include JSDoc comments for public APIs
+- Reference [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
 
 ## Process
+
 1. Analyze ${workspaceFolder} structure
 2. Create ${input:componentName} in appropriate directory
 3. Implement core functionality with proper types
@@ -108,21 +118,25 @@ Your goal is to generate ${input:componentType} following Codex CLI standards.
 5. Update dependencies.md if new dependencies added
 
 ## References
+
 - Standards: [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
 - Project structure: [file-organization.instructions.md](../instructions/file-organization.instructions.md)
 ```
 
 #### Workflow Automation Prompts
+
 ```markdown
 Your goal is to automate ${input:workflowName} for the Codex CLI project.
 
 ## Requirements
-* Create idempotent scripts in scripts/ directory
-* Use bash with proper error handling (set -euo pipefail)
-* Update autonomous-state-manager.sh when completed
-* Follow shell scripting best practices
+
+- Create idempotent scripts in scripts/ directory
+- Use bash with proper error handling (set -euo pipefail)
+- Update autonomous-state-manager.sh when completed
+- Follow shell scripting best practices
 
 ## Process
+
 1. Analyze current workflow requirements
 2. Create automation script with validation
 3. Test script for idempotency
@@ -133,12 +147,13 @@ Your goal is to automate ${input:workflowName} for the Codex CLI project.
 ## CONTENT GENERATION RULES
 
 ### Variable Usage Decision Logic
+
 ```yaml
 Use Variables When:
   componentName: User will specify different names → ${input:componentName}
   projectType: Multiple project types → ${input:projectType:typescript|python|nextjs}
   outputPath: User chooses location → ${input:outputPath:Enter target directory}
-  
+
 Don't Use Variables For:
   Fixed standards: Always reference typescript-standards.instructions.md
   Project structure: Always use established directory patterns
@@ -146,12 +161,13 @@ Don't Use Variables For:
 ```
 
 ### Reference Inclusion Logic
+
 ```yaml
 Always Reference:
   - Relevant .instructions.md files for standards
   - memory-bank/dependencies.md for dependency tracking
   - init/ templates for project bootstrapping
-  
+
 Conditionally Reference:
   - External APIs only if task requires integration
   - Third-party libraries only if task needs specific packages
@@ -161,6 +177,7 @@ Conditionally Reference:
 ## VALIDATION CHECKLIST
 
 Before generating prompt file, ensure:
+
 - [ ] Task is truly repeatable (not one-time)
 - [ ] Mode selection aligns with task complexity
 - [ ] Tool permissions match requirements
@@ -172,6 +189,7 @@ Before generating prompt file, ensure:
 ## OUTPUT FORMAT REQUIREMENTS
 
 ### File Naming
+
 ```
 Format: {domain}-{purpose}.prompt.md
 Examples:
@@ -182,6 +200,7 @@ Examples:
 ```
 
 ### Required Sections
+
 ```markdown
 ---
 mode: 'agent'|'edit'|'ask'
@@ -192,24 +211,29 @@ description: 'Brief task description'
 Your goal is to [specific outcome].
 
 ## Requirements
-* [Specific technical requirements]
-* [Quality standards]
-* [Project-specific constraints]
+
+- [Specific technical requirements]
+- [Quality standards]
+- [Project-specific constraints]
 
 ## Process
+
 1. [Clear step-by-step instructions]
 
 ## References
+
 - [Links to relevant .instructions.md files]
 - [Links to templates in init/]
 
 ## Success Criteria
+
 - [ ] [Measurable outcomes]
 ```
 
 ## CODEX CLI PROJECT CONTEXT
 
 ### Supported Technology Stack
+
 - **TypeScript**: Strict typing, Airbnb style guide
 - **Python**: PEP 8, type hints, virtual environments
 - **NextJS**: Web applications when UI needed
@@ -217,6 +241,7 @@ Your goal is to [specific outcome].
 - **Jupyter Notebooks**: ML/data science workflows
 
 ### Project-Specific Patterns
+
 - All files created via scripts (idempotent)
 - Memory bank integration required
 - Autonomous state management via autonomous-state-manager.sh

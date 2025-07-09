@@ -1,28 +1,40 @@
 import js from '@eslint/js';
-import typescript from '@typescript-eslint/eslint-plugin';
-import typescriptParser from '@typescript-eslint/parser';
+import tseslint from 'typescript-eslint';
+import stylistic from '@stylistic/eslint-plugin';
+import eslintConfigPrettier from 'eslint-config-prettier';
 
-export default [
+export default tseslint.config(
   js.configs.recommended,
+  tseslint.configs.recommended,
+  tseslint.configs.strict,
+  tseslint.configs.stylistic,
   {
-    files: ['src/**/*.ts', 'src/**/*.tsx'],
-    languageOptions: {
-      parser: typescriptParser,
-      parserOptions: {
-        ecmaVersion: 2022,
-        sourceType: 'module',
-        project: ['./tsconfig.json'],
-      },
-    },
     plugins: {
-      '@typescript-eslint': typescript,
+      '@stylistic': stylistic,
     },
     rules: {
-      ...typescript.configs.recommended.rules,
-      '@typescript-eslint/no-unused-vars': ['error'],
-      '@typescript-eslint/explicit-function-return-type': 'warn',
-      '@typescript-eslint/no-explicit-any': 'warn',
-      '@typescript-eslint/no-var-requires': 'error',
+      // Auto-fixable style rules as warnings (not errors)
+      '@stylistic/semi': 'warn',
+      '@stylistic/quotes': ['warn', 'single', {avoidEscape: true}],
+      '@stylistic/indent': ['warn', 2],
+      '@stylistic/comma-dangle': ['warn', 'always-multiline'],
+      '@stylistic/arrow-parens': ['warn', 'as-needed'],
+      '@stylistic/brace-style': ['warn', '1tbs'],
+      '@stylistic/array-bracket-spacing': ['warn', 'never'],
+      '@stylistic/space-infix-ops': 'warn',
+      '@stylistic/keyword-spacing': ['warn', {before: true, after: true}],
+      '@stylistic/space-before-blocks': ['warn', 'always'],
+      '@stylistic/no-multi-spaces': 'warn',
+      '@stylistic/eol-last': ['warn', 'always'],
+      '@stylistic/no-trailing-spaces': 'warn',
+      '@stylistic/comma-spacing': ['warn', {before: false, after: true}],
+
+      // Align with Prettier defaults to avoid conflicts
+      '@stylistic/object-curly-spacing': ['warn', 'always'], // Matches Prettier bracketSpacing: true
+      '@stylistic/template-curly-spacing': ['warn', 'never'], // Matches Prettier default
+
+      // Remove space-in-parens rule that conflicts with Prettier
+      '@stylistic/space-in-parens': 'off',
     },
   },
   {
@@ -32,12 +44,8 @@ export default [
     },
   },
   {
-    ignores: [
-      'node_modules/**',
-      'web/**',
-      'coverage/**',
-      '*.js',
-      '*.mjs',
-    ],
+    ignores: ['node_modules/**', 'web/**', 'coverage/**', '*.js', '*.mjs'],
   },
-];
+  // Add prettier config last to disable any remaining conflicting rules
+  eslintConfigPrettier
+);

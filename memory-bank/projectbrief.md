@@ -1,11 +1,15 @@
 # projectbrief.md
+
 <!-- markdownlint-disable MD013 MD022 MD032 MD041 -->
+
 STATUS: 🟢 Active
 
 ## Purpose
+
 This file is the foundation of the Memory Bank. It defines the core requirements, goals, and scope for any project. It is the primary source of truth for all subsequent documentation and must be maintained with precision.
 
 ## Structure
+
 - **Purpose:** Why this Memory Bank exists.
 - **Scope:** What is included and excluded.
 - **Core Requirements:** High-level objectives and constraints.
@@ -45,6 +49,7 @@ This file is the foundation of the Memory Bank. It defines the core requirements
 ## AI Agent Instructions
 
 This project supports three AI agents with specific entry points:
+
 - **Cline AI** → `.clinerules/main-rules.md` (Cline AI's primary instruction file)
 - **Codex CLI** → `AGENTS.md` (Codex CLI's primary instruction file)
 - **VS Code Copilot** → `.github/copilot-instructions.md` (VS Code Copilot's primary instruction file)

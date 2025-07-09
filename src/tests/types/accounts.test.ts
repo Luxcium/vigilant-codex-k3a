@@ -1,12 +1,11 @@
-import { describe, expect, it } from 'vitest'
-import { z } from 'zod'
+import { describe, expect, it } from 'vitest';
 import {
+  AccountActivitySchema,
   AccountSchema,
   BalanceSchema,
-  PositionSchema,
   ExecutionSchema,
-  AccountActivitySchema
-} from '../../../src/types/accounts'
+  PositionSchema,
+} from '../../../src/types/accounts';
 
 describe('Account related schemas', () => {
   it('valid AccountSchema parses correctly', () => {
@@ -16,13 +15,13 @@ describe('Account related schemas', () => {
       status: 'Active',
       isPrimary: true,
       isBilling: false,
-      clientAccountType: 'Individual'
-    }
-    expect(AccountSchema.parse(obj)).toEqual(obj)
-  })
+      clientAccountType: 'Individual',
+    };
+    expect(AccountSchema.parse(obj)).toEqual(obj);
+  });
   it('invalid AccountSchema throws', () => {
-    expect(() => AccountSchema.parse({})).toThrow()
-  })
+    expect(() => AccountSchema.parse({})).toThrow();
+  });
 
   it('valid BalanceSchema parses correctly', () => {
     const obj = {
@@ -32,13 +31,13 @@ describe('Account related schemas', () => {
       totalEquity: 300,
       buyingPower: 400,
       maintenanceExcess: 50,
-      isRealTime: false
-    }
-    expect(BalanceSchema.parse(obj)).toEqual(obj)
-  })
+      isRealTime: false,
+    };
+    expect(BalanceSchema.parse(obj)).toEqual(obj);
+  });
   it('invalid BalanceSchema throws', () => {
-    expect(() => BalanceSchema.parse({})).toThrow()
-  })
+    expect(() => BalanceSchema.parse({})).toThrow();
+  });
 
   it('valid PositionSchema parses correctly', () => {
     const obj = {
@@ -53,13 +52,30 @@ describe('Account related schemas', () => {
       openPnl: 5,
       totalCost: 450,
       isRealTime: true,
-      isUnderReorg: false
-    }
-    expect(PositionSchema.parse(obj)).toEqual(obj)
-  })
+      isUnderReorg: false,
+    };
+    expect(PositionSchema.parse(obj)).toEqual(obj);
+  });
+  it('PositionSchema allows string isRealTime', () => {
+    const obj = {
+      symbol: 'AAPL',
+      symbolId: 1,
+      openQuantity: 5,
+      closedQuantity: 2,
+      currentMarketValue: 500,
+      currentPrice: 100,
+      averageEntryPrice: 90,
+      closedPnl: 10,
+      openPnl: 5,
+      totalCost: 450,
+      isRealTime: 'Individual',
+      isUnderReorg: false,
+    };
+    expect(PositionSchema.parse(obj)).toEqual(obj);
+  });
   it('invalid PositionSchema throws', () => {
-    expect(() => PositionSchema.parse({})).toThrow()
-  })
+    expect(() => PositionSchema.parse({})).toThrow();
+  });
 
   it('valid ExecutionSchema parses correctly', () => {
     const obj = {
@@ -81,13 +97,13 @@ describe('Account related schemas', () => {
       executionFee: 1,
       secFee: 1,
       canadianExecutionFee: 0,
-      parentId: 0
-    }
-    expect(ExecutionSchema.parse(obj)).toEqual(obj)
-  })
+      parentId: 0,
+    };
+    expect(ExecutionSchema.parse(obj)).toEqual(obj);
+  });
   it('invalid ExecutionSchema throws', () => {
-    expect(() => ExecutionSchema.parse({})).toThrow()
-  })
+    expect(() => ExecutionSchema.parse({})).toThrow();
+  });
 
   it('valid AccountActivitySchema parses correctly', () => {
     const obj = {
@@ -104,11 +120,11 @@ describe('Account related schemas', () => {
       grossAmount: 1500,
       commission: 1,
       netAmount: 1499,
-      type: 'Trade'
-    }
-    expect(AccountActivitySchema.parse(obj)).toEqual(obj)
-  })
+      type: 'Trade',
+    };
+    expect(AccountActivitySchema.parse(obj)).toEqual(obj);
+  });
   it('invalid AccountActivitySchema throws', () => {
-    expect(() => AccountActivitySchema.parse({})).toThrow()
-  })
-})
+    expect(() => AccountActivitySchema.parse({})).toThrow();
+  });
+});

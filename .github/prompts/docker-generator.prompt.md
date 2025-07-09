@@ -1,7 +1,6 @@
 ---
 mode: 'agent'
-tools: ['codebase', 'terminalLastCommand', 'file_search']
-description: 'Generate parametrized Docker configurations following security and optimization best practices'
+description: 'Generate Dockerfiles and Compose files.'
 ---
 
 # Docker Configuration Generator
@@ -27,6 +26,7 @@ Docker configurations will support flexible parametrization through:
 **Purpose**: Local development with hot-reload and debugging capabilities
 
 **Features**:
+
 - Volume mounting for source code
 - Development dependency inclusion
 - Debug port exposure
@@ -38,6 +38,7 @@ Docker configurations will support flexible parametrization through:
 **Purpose**: Automated testing and CI/CD integration
 
 **Features**:
+
 - Test dependency inclusion
 - Coverage reporting setup
 - Mock service configuration
@@ -49,6 +50,7 @@ Docker configurations will support flexible parametrization through:
 **Purpose**: Pre-production validation and integration testing
 
 **Features**:
+
 - Production-like configuration
 - Performance monitoring setup
 - Security scanning integration
@@ -60,6 +62,7 @@ Docker configurations will support flexible parametrization through:
 **Purpose**: Optimized deployment with security and performance focus
 
 **Features**:
+
 - Multi-stage build optimization
 - Security hardening
 - Resource constraint definition
@@ -75,8 +78,8 @@ Docker configurations will support flexible parametrization through:
 FROM node:18.19.0-alpine3.18 AS base
 
 # Security: Create non-root user
-RUN addgroup -g 1001 -S nodejs && \
-    adduser -S nextjs -u 1001
+RUN addgroup -g 1001 -S nodejs \
+ && adduser -S nextjs -u 1001
 ```
 
 ### Multi-Stage Build Pattern
@@ -130,7 +133,7 @@ services:
       - DATABASE_URL=${DATABASE_URL}
       - API_KEY=${API_KEY}
     ports:
-      - "${APP_PORT:-3000}:3000"
+      - '${APP_PORT:-3000}:3000'
     volumes:
       - ./src:/app/src:ro
     depends_on:
@@ -159,7 +162,7 @@ services:
 
 ```yaml
 healthcheck:
-  test: ["CMD", "curl", "-f", "http://localhost:3000/health"]
+  test: ['CMD', 'curl', '-f', 'http://localhost:3000/health']
   interval: 30s
   timeout: 10s
   retries: 3
@@ -191,7 +194,7 @@ environment:
   - NODE_ENV=${NODE_ENV:-production}
   - LOG_LEVEL=${LOG_LEVEL:-info}
   - DATABASE_URL=${DATABASE_URL}
-  
+
   # Feature flags
   - ENABLE_METRICS=${ENABLE_METRICS:-false}
   - ENABLE_TRACING=${ENABLE_TRACING:-false}

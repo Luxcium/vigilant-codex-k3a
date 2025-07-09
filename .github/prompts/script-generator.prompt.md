@@ -1,8 +1,6 @@
----
 mode: 'agent'
-tools: ['codebase', 'terminalLastCommand', 'file_search']
-description: 'Generate resilient, reusable scripts for project automation with comprehensive error handling'
----
+mode: 'agent'
+description: 'Generate shell scripts for project automation.'
 
 # Script Generator
 
@@ -35,6 +33,7 @@ I will help you create resilient, reusable scripts for automating project tasks.
 **Purpose**: Initialize project environment and dependencies
 
 **Features**:
+
 - Environment validation and setup
 - Dependency installation and verification
 - Configuration file generation
@@ -48,6 +47,7 @@ I will help you create resilient, reusable scripts for automating project tasks.
 **Purpose**: Compile and package application components
 
 **Features**:
+
 - Source code compilation
 - Asset bundling and optimization
 - Package generation
@@ -61,6 +61,7 @@ I will help you create resilient, reusable scripts for automating project tasks.
 **Purpose**: Execute automated tests with configurable scope
 
 **Features**:
+
 - Test suite execution
 - Coverage reporting
 - Performance benchmarking
@@ -74,6 +75,7 @@ I will help you create resilient, reusable scripts for automating project tasks.
 **Purpose**: Automate deployment processes
 
 **Features**:
+
 - Environment preparation
 - Application deployment
 - Service configuration
@@ -87,6 +89,7 @@ I will help you create resilient, reusable scripts for automating project tasks.
 **Purpose**: Create boilerplate code or configurations
 
 **Features**:
+
 - Template-based code generation
 - Configuration file creation
 - Documentation generation

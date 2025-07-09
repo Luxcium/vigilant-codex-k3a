@@ -1,8 +1,8 @@
 ---
-applyTo: "**"
+applyTo: '**'
 ---
 
-# AI Agent Instructions: Creating *.instructions.md Files
+# AI Agent Instructions: Creating \*.instructions.md Files
 
 ## Trigger Recognition Rules
 
@@ -32,7 +32,7 @@ applyTo: "**"
 
 ```yaml
 ---
-applyTo: "glob-pattern-here"
+applyTo: 'glob-pattern-here'
 ---
 ```
 

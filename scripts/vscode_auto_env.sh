@@ -14,44 +14,44 @@ cd "${WORKSPACE_FOLDER:-$(pwd)}"
 
 # Check if Python virtual environment exists
 if [ -f "python/.venv/bin/activate" ]; then
-    echo -e "${GREEN}✓ Activating Python virtual environment${NC}"
-    source python/.venv/bin/activate
-    
-    # Set PYTHONPATH
-    export PYTHONPATH="${PWD}/python/src:${PWD}/python:${PYTHONPATH}"
-    
-    # Load environment variables if .env exists
-    if [ -f "python/.env" ]; then
-        echo -e "${GREEN}✓ Loading environment variables from .env${NC}"
-        set -a
-        source python/.env
-        set +a
-    fi
-    
-    # Display Python info
-    echo -e "${GREEN}✓ Python environment ready${NC}"
-    echo "  Python: $(python --version)"
-    echo "  Virtual env: ${VIRTUAL_ENV}"
-    echo "  Working directory: $(pwd)"
-    
-    # Add helpful aliases
-    alias pytest="python -m pytest"
-    alias pip-install="pip install"
-    alias pip-freeze="pip freeze > requirements.txt"
-    alias start-jupyter="jupyter lab --notebook-dir=./notebooks --ip=0.0.0.0"
-    alias run-tests="pytest tests/ -v --cov=src"
-    alias lint-code="pylint src/"
-    alias format-code="black src/ tests/"
-    alias type-check="mypy src/"
-    
-    echo -e "${GREEN}✓ Helpful aliases added:${NC}"
-    echo "  pytest, pip-install, pip-freeze"
-    echo "  start-jupyter, run-tests, lint-code"
-    echo "  format-code, type-check"
-    
+  echo -e "${GREEN}✓ Activating Python virtual environment${NC}"
+  source python/.venv/bin/activate
+
+  # Set PYTHONPATH
+  export PYTHONPATH="${PWD}/python/src:${PWD}/python:${PYTHONPATH}"
+
+  # Load environment variables if .env exists
+  if [ -f "python/.env" ]; then
+    echo -e "${GREEN}✓ Loading environment variables from .env${NC}"
+    set -a
+    source python/.env
+    set +a
+  fi
+
+  # Display Python info
+  echo -e "${GREEN}✓ Python environment ready${NC}"
+  echo "  Python: $(python --version)"
+  echo "  Virtual env: ${VIRTUAL_ENV}"
+  echo "  Working directory: $(pwd)"
+
+  # Add helpful aliases
+  alias pytest="python -m pytest"
+  alias pip-install="pip install"
+  alias pip-freeze="pip freeze > requirements.txt"
+  alias start-jupyter="jupyter lab --notebook-dir=./notebooks --ip=0.0.0.0"
+  alias run-tests="pytest tests/ -v --cov=src"
+  alias lint-code="pylint src/"
+  alias format-code="black src/ tests/"
+  alias type-check="mypy src/"
+
+  echo -e "${GREEN}✓ Helpful aliases added:${NC}"
+  echo "  pytest, pip-install, pip-freeze"
+  echo "  start-jupyter, run-tests, lint-code"
+  echo "  format-code, type-check"
+
 else
-    echo -e "${BLUE}⚠ Python virtual environment not found${NC}"
-    echo "Run: ./scripts/setup_python_env.sh --mode local"
+  echo -e "${BLUE}⚠ Python virtual environment not found${NC}"
+  echo "Run: ./scripts/setup_python_env.sh --mode local"
 fi
 
 echo -e "${GREEN}🚀 Ready for Python development!${NC}"

@@ -1,9 +1,6 @@
-import { describe, expect, it } from 'vitest'
-import { z } from 'zod'
-import {
-  OrderLegSchema,
-  OrderSchema
-} from '../../../src/types/orders'
+import { describe, expect, it } from 'vitest';
+import { z } from 'zod';
+import { OrderLegSchema, OrderSchema } from '../../../src/types/orders';
 
 describe('Order related schemas', () => {
   it('valid OrderLegSchema parses', () => {
@@ -11,13 +8,13 @@ describe('Order related schemas', () => {
       strategyType: 'CoveredCall',
       triggerStopPrice: null,
       orderGroupId: 1,
-      orderClass: 'Primary'
-    }
-    expect(OrderLegSchema.parse(obj)).toEqual(obj)
-  })
+      orderClass: 'Primary',
+    };
+    expect(OrderLegSchema.parse(obj)).toEqual(obj);
+  });
   it('invalid OrderLegSchema throws', () => {
-    expect(() => OrderLegSchema.parse({})).toThrow()
-  })
+    expect(() => OrderLegSchema.parse({})).toThrow();
+  });
 
   it('valid OrderSchema parses without legs', () => {
     const obj = {
@@ -57,17 +54,17 @@ describe('Order related schemas', () => {
       isInsider: false,
       isLimitOffsetInDollar: false,
       userId: 10,
-      placementCommission: 1
-    }
-    expect(OrderSchema.parse(obj)).toMatchObject(obj)
-  })
+      placementCommission: 1,
+    };
+    expect(OrderSchema.parse(obj)).toMatchObject(obj);
+  });
   it('valid OrderSchema parses with legs', () => {
     const leg = OrderLegSchema.parse({
       strategyType: 'CoveredCall',
       triggerStopPrice: null,
       orderGroupId: 1,
-      orderClass: 'Primary'
-    })
+      orderClass: 'Primary',
+    });
     const base = {
       id: 1,
       symbol: 'ABC',
@@ -105,12 +102,12 @@ describe('Order related schemas', () => {
       isInsider: false,
       isLimitOffsetInDollar: false,
       userId: 10,
-      placementCommission: 1
-    }
-    const obj = { ...base, legs: [leg] }
-    expect(OrderSchema.parse(obj)).toEqual(obj)
-  })
+      placementCommission: 1,
+    };
+    const obj = { ...base, legs: [leg] };
+    expect(OrderSchema.parse(obj)).toEqual(obj);
+  });
   it('invalid OrderSchema throws', () => {
-    expect(() => OrderSchema.parse({})).toThrow()
-  })
-})
+    expect(() => OrderSchema.parse({})).toThrow();
+  });
+});

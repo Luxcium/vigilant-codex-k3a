@@ -1,10 +1,9 @@
 ---
 mode: 'agent'
-tools: ['filesystem', 'codebase']
 description: 'Generate *.instructions.md files with proper structure and content'
 ---
 
-# Generate *.instructions.md File
+# Generate \*.instructions.md File
 
 Your goal is to create a properly structured `.instructions.md` file based on the user's requirements for coding standards, guidelines, or project rules.
 
@@ -26,10 +25,10 @@ Your goal is to create a properly structured `.instructions.md` file based on th
 
 ### ApplyTo Pattern Selection
 
-- Use "**" for global project rules
-- Use "**/*.{ext}" for language-specific rules
+- Use "\*\*" for global project rules
+- Use "\*_/_.{ext}" for language-specific rules
 - Use "**/folder/**" for directory-specific rules
-- Use "**/*.{test,spec}.*" for testing-specific rules
+- Use "\*_/_.{test,spec}.\*" for testing-specific rules
 
 ### Content Quality Requirements
 
@@ -56,12 +55,15 @@ Your goal is to create a properly structured `.instructions.md` file based on th
 
    ```markdown
    ## Naming Conventions
+
    - [Specific naming rules]
-   
+
    ## Type Definitions
+
    - [Type usage rules]
-   
+
    ## Code Organization
+
    - [Import and structure rules]
    ```
 
@@ -69,12 +71,15 @@ Your goal is to create a properly structured `.instructions.md` file based on th
 
    ```markdown
    ## Component Structure
+
    - [Organization rules]
-   
+
    ## File Organization
+
    - [Directory and naming rules]
-   
+
    ## Design Patterns
+
    - [Pattern implementation rules]
    ```
 
@@ -82,24 +87,25 @@ Your goal is to create a properly structured `.instructions.md` file based on th
 
    ```markdown
    ## Input Validation
+
    - [Validation rules]
-   
+
    ## Authentication
+
    - [Auth implementation rules]
-   
+
    ## Data Protection
+
    - [Security requirement rules]
    ```
 
 4. **Write Specific Rules**
-
    - Formulate each rule as an imperative statement
    - Include examples for complex or ambiguous rules
    - Specify exceptions explicitly when they exist
    - Cross-reference related instruction files when appropriate
 
 5. **Validate Content**
-
    - Ensure all rules are actionable and measurable
    - Check for conflicts with existing standards
    - Verify proper markdown formatting
@@ -111,20 +117,23 @@ Your goal is to create a properly structured `.instructions.md` file based on th
 
 ```markdown
 ---
-applyTo: "**"
+applyTo: '**'
 ---
 
 # ${standardsType} Standards
 
 ## General Principles
+
 - [Universal rule 1]
 - [Universal rule 2]
 
 ## Implementation Guidelines
+
 - [Specific implementation rule]
 - [Another implementation rule]
 
 ## Quality Requirements
+
 - [Quality standard 1]
 - [Quality standard 2]
 ```
@@ -133,20 +142,23 @@ applyTo: "**"
 
 ```markdown
 ---
-applyTo: "**/*.{ext}"
+applyTo: '**/*.{ext}'
 ---
 
 # ${language} ${standardsType} Standards
 
 ## Syntax Preferences
+
 - [Language-specific syntax rule]
 - [Another syntax rule]
 
 ## Best Practices
+
 - [Framework-specific pattern]
 - [Performance optimization rule]
 
 ## Anti-patterns to Avoid
+
 - Never [bad practice]
 - Avoid [problematic pattern]
 ```
@@ -155,20 +167,23 @@ applyTo: "**/*.{ext}"
 
 ```markdown
 ---
-applyTo: "**/domain/**"
+applyTo: '**/domain/**'
 ---
 
 # ${domain} ${standardsType} Guidelines
 
 ## Domain Rules
+
 - [Business logic constraint]
 - [Domain-specific requirement]
 
 ## Technical Implementation
+
 - Use [pattern] for [purpose]
 - Implement [feature] using [approach]
 
 ## Validation Requirements
+
 - [Domain validation rule]
 - [Data integrity rule]
 ```
@@ -193,23 +208,27 @@ applyTo: "**/domain/**"
 ## Success Criteria
 
 ### File Structure Validation
+
 - Front matter includes proper applyTo pattern
 - Content follows hierarchical organization
 - All headings use appropriate levels
 - Code blocks include language specifications
 
 ### Content Quality Validation
+
 - Every rule is actionable and specific
 - Language is consistently imperative
 - Examples support rule clarity
 - No vague or subjective terms used
 
 ### Scope Alignment Validation
+
 - ApplyTo pattern matches user requirements
 
 ## Error Prevention
 
 ### Avoid These Common Mistakes
+
 - Creating task execution lists (use prompts instead)
 - Using vague or subjective language
 - Omitting the applyTo front matter pattern
@@ -217,6 +236,7 @@ applyTo: "**/domain/**"
 - Over-constraining without clear benefit
 
 ### Validation Steps
+
 - Test each rule for clarity and specificity
 - Verify AI agents can interpret and follow rules
 - Confirm rules improve code quality measurably

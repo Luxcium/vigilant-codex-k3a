@@ -3,6 +3,7 @@ mode: 'agent'
 tools: ['codebase', 'terminalLastCommand']
 description: 'Update memory bank documentation with proper cross-references'
 ---
+
 # Memory Bank Documentation Update
 
 Your task is to help me update memory bank documentation following our established standards and protocols.
@@ -22,6 +23,7 @@ The Codex CLI project maintains a structured "Memory Bank" documentation system 
 ## Task Workflow
 
 ### 1. Reading Protocol
+
 - First, follow the reading protocol from `.clinerules/reading-protocol.md`
 - Read all memory bank files in the correct order:
   1. AGENTS.md (repository context/instructions)
@@ -33,23 +35,27 @@ The Codex CLI project maintains a structured "Memory Bank" documentation system 
   7. progress.md (status)
 
 ### 2. Documentation Updates
+
 - Identify which memory bank files need updates
 - Make changes while preserving the existing structure
 - Follow the writing protocol from `.clinerules/writing-protocol.md`
 - Ensure changes are properly cross-referenced across files
 
 ### 3. Dependency Management
+
 - Update the `dependencies.md` file if relationships change
 - Include "why" explanations and impact analysis
 - Maintain bidirectional tracking for all dependencies
 
 ### 4. Compliance Verification
+
 - Verify that all changes follow the markdown-lint requirements
 - Check for consistency across all memory bank files
 - Follow the verification protocol from `.clinerules/verification.md`
 - Ensure all file structure changes are done via scripts
 
 ## Output Format
+
 - Provide well-structured updates for the memory bank files
 - Include proper cross-references between files
 - Maintain consistent formatting and structure

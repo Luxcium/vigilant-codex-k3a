@@ -17,19 +17,19 @@ BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
 log() {
-    echo -e "${BLUE}[$(date +'%Y-%m-%d %H:%M:%S')]${NC} $1"
+  echo -e "${BLUE}[$(date +'%Y-%m-%d %H:%M:%S')]${NC} $1"
 }
 
 warn() {
-    echo -e "${YELLOW}[WARNING]${NC} $1"
+  echo -e "${YELLOW}[WARNING]${NC} $1"
 }
 
 error() {
-    echo -e "${RED}[ERROR]${NC} $1"
+  echo -e "${RED}[ERROR]${NC} $1"
 }
 
 success() {
-    echo -e "${GREEN}[SUCCESS]${NC} $1"
+  echo -e "${GREEN}[SUCCESS]${NC} $1"
 }
 
 log "Setting up Docker isolated Python environment..."
@@ -39,16 +39,16 @@ log "Project Name: $PROJECT_NAME"
 
 # Check if Docker is available
 if ! command -v docker &> /dev/null; then
-    error "Docker is not installed or not in PATH"
-    error "Please install Docker and try again"
-    exit 1
+  error "Docker is not installed or not in PATH"
+  error "Please install Docker and try again"
+  exit 1
 fi
 
 # Create requirements.txt if it doesn't exist
 REQUIREMENTS_FILE="$PYTHON_DIR/requirements.txt"
 if [ ! -f "$REQUIREMENTS_FILE" ]; then
-    log "Creating requirements.txt..."
-    cat > "$REQUIREMENTS_FILE" << EOF
+  log "Creating requirements.txt..."
+  cat > "$REQUIREMENTS_FILE" << EOF
 # Python dependencies for isolated Docker environment
 # Add your project dependencies below
 
@@ -57,27 +57,27 @@ if [ ! -f "$REQUIREMENTS_FILE" ]; then
 # python-dotenv>=1.0.0
 # pytest>=7.0.0
 EOF
-    success "Created requirements.txt"
+  success "Created requirements.txt"
 else
-    log "requirements.txt already exists"
+  log "requirements.txt already exists"
 fi
 
 # Create Dockerfile for isolated environment
 DOCKERFILE="$PYTHON_DIR/Dockerfile"
 if [ -f "$DOCKERFILE" ]; then
-    warn "Dockerfile already exists"
-    read -p "Do you want to overwrite it? (y/N): " -n 1 -r
-    echo
-    if [[ ! $REPLY =~ ^[Yy]$ ]]; then
-        log "Skipping Dockerfile creation"
-    else
-        rm "$DOCKERFILE"
-    fi
+  warn "Dockerfile already exists"
+  read -p "Do you want to overwrite it? (y/N): " -n 1 -r
+  echo
+  if [[ ! $REPLY =~ ^[Yy]$ ]]; then
+    log "Skipping Dockerfile creation"
+  else
+    rm "$DOCKERFILE"
+  fi
 fi
 
 if [ ! -f "$DOCKERFILE" ]; then
-    log "Creating Dockerfile for isolated environment..."
-    cat > "$DOCKERFILE" << EOF
+  log "Creating Dockerfile for isolated environment..."
+  cat > "$DOCKERFILE" << EOF
 # Python Docker Isolated Environment
 FROM python:${PYTHON_VERSION}-slim
 
@@ -109,14 +109,14 @@ USER app
 # Set default command
 CMD ["python", "--version"]
 EOF
-    success "Created Dockerfile for isolated environment"
+  success "Created Dockerfile for isolated environment"
 fi
 
 # Create .dockerignore if it doesn't exist
 DOCKERIGNORE="$PYTHON_DIR/.dockerignore"
 if [ ! -f "$DOCKERIGNORE" ]; then
-    log "Creating .dockerignore..."
-    cat > "$DOCKERIGNORE" << EOF
+  log "Creating .dockerignore..."
+  cat > "$DOCKERIGNORE" << EOF
 # Docker ignore file for Python isolated environment
 .git
 .gitignore
@@ -145,9 +145,9 @@ README.md
 Dockerfile
 .dockerignore
 EOF
-    success "Created .dockerignore"
+  success "Created .dockerignore"
 else
-    log ".dockerignore already exists"
+  log ".dockerignore already exists"
 fi
 
 # Update python/README.md with isolated instructions
@@ -267,16 +267,16 @@ log "Building Docker image to verify setup..."
 cd "$PYTHON_DIR"
 
 if docker build -t "$PROJECT_NAME" .; then
-    success "Docker image built successfully!"
-    log "Testing Python installation..."
-    if docker run --rm "$PROJECT_NAME" python --version; then
-        success "Python is working correctly in the container"
-    else
-        warn "Python test failed, but image was built"
-    fi
+  success "Docker image built successfully!"
+  log "Testing Python installation..."
+  if docker run --rm "$PROJECT_NAME" python --version; then
+    success "Python is working correctly in the container"
+  else
+    warn "Python test failed, but image was built"
+  fi
 else
-    error "Docker build failed"
-    exit 1
+  error "Docker build failed"
+  exit 1
 fi
 
 success "Docker isolated environment setup completed!"

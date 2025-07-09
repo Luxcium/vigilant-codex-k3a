@@ -1,5 +1,5 @@
 ---
-applyTo: "**/*.py"
+applyTo: '**/*.py'
 ---
 
 # Python Coding Standards
@@ -31,7 +31,7 @@ applyTo: "**/*.py"
 - Follow PEP 8 import order: standard library, third-party, local
 - Group imports by category with blank lines between groups
 - Use absolute imports whenever possible
-- Avoid wildcard imports (from module import *)
+- Avoid wildcard imports (from module import \*)
 - Use relative imports only within packages
 - Place imports at the top of the file after module docstring
 - Use parentheses for multi-line imports

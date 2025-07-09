@@ -1,4 +1,5 @@
 # Docker Workflow Documentation
+
 <!-- markdownlint-disable MD013 MD022 MD032 MD041 MD009 -->
 
 ## Purpose
@@ -24,11 +25,15 @@ This document provides a comprehensive workflow for creating and managing Docker
 
 ## Enhanced Four-Phase Workflow
 
+## Enhanced Four-Phase Workflow
+
 ### Phase 1: Design & Planning
+
 **Objective**: Define comprehensive container requirements and exotic patterns
 
 **Planning Checklist:**
-- ❏ Target runtime versions (Node.js, Python, etc.)
+
+- ❏ Target runtime versions (Node.js 22, Python 3.13 for Codex Universal)
 - ❏ Required services (databases, caches, message brokers)
 - ❏ Network strategy (bridge, overlay, host, custom drivers)
 - ❏ Volume strategy (bind mounts, named volumes, tmpfs)
@@ -36,8 +41,11 @@ This document provides a comprehensive workflow for creating and managing Docker
 - ❏ Environment-specific requirements (dev vs staging vs production)
 - ❏ Health check and monitoring strategies
 - ❏ Scaling and deployment patterns
+- ❏ OpenAI API integration requirements
+- ❏ Development workflow optimization (volume vs copy strategies)
 
 **Exotic Pattern Considerations:**
+
 - Custom network drivers and service mesh integration
 - Advanced health checks with recovery mechanisms
 - Dynamic service discovery and load balancing
@@ -45,9 +53,11 @@ This document provides a comprehensive workflow for creating and managing Docker
 - Multi-stage builds with optimization strategies
 
 ### Phase 2: Container Creation
+
 **Objective**: Implement secure, optimized containers with development and production variants
 
 **Security-First Approach:**
+
 - Use minimal base images (`-alpine`, `-slim` variants)
 - Run containers as non-root users
 - Implement multi-stage builds for production optimization
@@ -55,15 +65,18 @@ This document provides a comprehensive workflow for creating and managing Docker
 - Apply principle of least privilege
 
 **Development vs Production Variants:**
+
 - `Dockerfile.dev` - Hot reload, debugging tools, development dependencies
 - `Dockerfile.prod` - Optimized, minimal, production-ready
 - Environment-specific configurations and overrides
 - Automated testing and validation for both variants
 
 ### Phase 3: Exotic Docker Compose Implementation
+
 **Objective**: Implement advanced orchestration patterns and exotic configurations
 
 **Advanced Patterns:**
+
 - **Named Networks**: Custom bridge and overlay networks with labels
 - **Compose Overrides**: Cascading configuration files (`docker-compose.override.yml`)
 - **Health Check Orchestration**: Advanced health validation and dependency management
@@ -73,6 +86,7 @@ This document provides a comprehensive workflow for creating and managing Docker
 - **Volume Management**: Advanced volume patterns and data persistence strategies
 
 **Exotic Configuration Examples:**
+
 - Container intercept configurations for network traffic analysis
 - Custom init systems and signal handling
 - Advanced logging and monitoring integration
@@ -80,9 +94,11 @@ This document provides a comprehensive workflow for creating and managing Docker
 - Multi-architecture builds and deployment
 
 ### Phase 4: Documentation & AI Agent Integration
+
 **Objective**: Create comprehensive documentation and AI agent automation
 
 **Documentation Requirements:**
+
 - Complete setup and replication procedures
 - Troubleshooting guides with common issues and solutions
 - Security validation and compliance checklists
@@ -90,15 +106,90 @@ This document provides a comprehensive workflow for creating and managing Docker
 - Integration with existing project structure
 
 **AI Agent Integration:**
+
 - **Prompt Files**: Generate Docker configurations based on project context
-- **Instruction Files**: Coding standards for containerized applications
+- **Instruction Files**: Coding standards for containerized applications including Docker environment standards
 - **Memory Bank Updates**: Track dependencies and architectural decisions
-- **Script Automation**: Idempotent container setup and management via `scripts/setup_python_docker.sh`, `scripts/setup_python_local.sh`, and related helpers
-- **Cross-Agent Collaboration**: Workflows spanning multiple AI agents
+- **Script Automation**: Idempotent container setup and management via `scripts/setup_codex_universal.sh`, `scripts/codex_*.sh`, and related helpers
+- **Cross-Agent Collaboration**: Workflows spanning multiple AI agents with Codex Universal environment support
+- **Environment Standardization**: Consistent development environments across all AI agents and platforms
+
+### Bootstrapping Codex Universal Environment Locally
+
+To bootstrap a local Codex Universal environment with Node.js 22 and Python 3.13:
+
+#### Complete Environment Setup (Recommended)
+
+1. Ensure Docker is installed and running.
+2. Set your OpenAI API key: `export OPENAI_API_KEY="your-api-key-here"`
+3. Run the setup script to create the complete environment:
+
+   ```bash
+   ./scripts/setup_codex_universal.sh
+   ```
+
+   This script will:
+   - Pull the latest `ghcr.io/openai/codex-universal:latest` image
+   - Create `docker-compose.codex.yml` with complete orchestration
+   - Generate convenience scripts for environment management
+   - Set up volume mounting for development workflow
+   - Configure OpenAI API key passing from host environment
+
+4. Start the development environment:
+
+   ```bash
+   ./scripts/codex_start.sh
+   ```
+
+5. Enter the container for development:
+
+   ```bash
+   ./scripts/codex_shell.sh
+   ```
+
+#### Quick Development Run (Alternative)
+
+For quick testing without full environment setup:
+
+```bash
+# Set API key
+export OPENAI_API_KEY="your-api-key-here"
+
+# Quick run
+./scripts/codex_run.sh
+```
+
+This provides immediate access to the Codex Universal environment with your project mounted.
+
+#### Environment Features
+
+- **Node.js 22** and **Python 3.13** pre-configured
+- **Volume-based development** - instant file changes without rebuilds
+- **OpenAI API integration** - seamless API access within containers
+- **Multi-service support** - databases, caches, development servers
+- **Convenience scripts** - streamlined development workflow
+- **Health monitoring** - container health checks and validation
+
+### Bootstrapping Codex CLI Environment Locally
+
+To bootstrap a local Codex CLI environment with Node.js 22 and Python 3.13:
+
+1. Ensure Docker is installed and running.
+2. Run the provided `scripts/run_codex_cli.sh` script, optionally passing your project directory:
+
+   ```bash
+   bash scripts/run_codex_cli.sh /path/to/your/project
+   ```
+
+   This script will:
+   - Pull the latest `ghcr.io/openai/codex-universal:latest` image.
+   - Mount your project directory at `/workspace/<project_name>`.
+   - Set `CODEX_ENV_PYTHON_VERSION=3.13` and `CODEX_ENV_NODE_VERSION=22`.
+   - Start an interactive shell in the container at your project root.
 
 ## Dependencies
 
-- **Depends On:** 
+- **Depends On:**
   - projectbrief.md (core project requirements)
   - systemPatterns.md (architectural patterns)
   - techContext.md (technical context)
@@ -121,6 +212,6 @@ This document provides a comprehensive workflow for creating and managing Docker
 
 ---
 
-**Last Updated:** 2025-05-25  
-**Status:** Initial Framework Created  
+**Last Updated:** 2025-07-01  
+**Status:** Added Bootstrapping Codex CLI Environment instructions  
 **Next Review:** After exotic Docker Compose approach definition

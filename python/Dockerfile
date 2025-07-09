@@ -3,17 +3,17 @@ FROM python:3.11-slim as base
 
 # Set environment variables
 ENV PYTHONUNBUFFERED=1 \
-    PYTHONDONTWRITEBYTECODE=1 \
-    PIP_NO_CACHE_DIR=1 \
-    PIP_DISABLE_PIP_VERSION_CHECK=1 \
-    PIP_DEFAULT_TIMEOUT=100
+  PYTHONDONTWRITEBYTECODE=1 \
+  PIP_NO_CACHE_DIR=1 \
+  PIP_DISABLE_PIP_VERSION_CHECK=1 \
+  PIP_DEFAULT_TIMEOUT=100
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    build-essential \
-    curl \
-    git \
-    && rm -rf /var/lib/apt/lists/*
+  build-essential \
+  curl \
+  git \
+  && rm -rf /var/lib/apt/lists/*
 
 # Create non-root user
 RUN useradd --create-home --shell /bin/bash --uid 1000 appuser
@@ -23,8 +23,8 @@ WORKDIR /app
 
 # Copy and install Python dependencies
 COPY requirements.txt pyproject.toml ./
-RUN pip install --upgrade pip && \
-    pip install -r requirements.txt
+RUN pip install --upgrade pip \
+  && pip install -r requirements.txt
 
 # Development stage
 FROM base as development
@@ -59,7 +59,7 @@ USER appuser
 
 # Health check
 HEALTHCHECK --interval=30s --timeout=30s --start-period=5s --retries=3 \
-    CMD python -c "import sys; sys.exit(0)"
+  CMD python -c "import sys; sys.exit(0)"
 
 # Default command for production
 CMD ["python", "-m", "uvicorn", "vigilant_codex.api.main:app", "--host", "0.0.0.0", "--port", "8000"]

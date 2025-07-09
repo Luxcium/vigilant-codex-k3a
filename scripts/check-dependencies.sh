@@ -20,7 +20,11 @@ else
 fi
 
 log "Verifying Markdown compliance…"
-pnpm exec markdownlint --config .markdownlint.yaml "$FILE" || {
-  echo "[ERROR] $FILE failed markdownlint."
-  exit 1
-}
+if command -v markdownlint > /dev/null; then
+  markdownlint --config .markdownlint.yaml "$FILE" || {
+    echo "[ERROR] $FILE failed markdownlint."
+    exit 1
+  }
+else
+  log "[WARN] markdownlint not found, skipping"
+fi

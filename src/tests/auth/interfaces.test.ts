@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import {
-    OAuthProvider,
-    OAuthTokenResponse,
-    OAuthTokens,
-    TokenStore
+  OAuthProvider,
+  OAuthTokenResponse,
+  OAuthTokens,
+  TokenStore,
 } from '../../auth/interfaces';
 
 describe('OAuthTokens', () => {
@@ -13,7 +13,7 @@ describe('OAuthTokens', () => {
       refresh_token: 'test_refresh_token',
       expires_in: 3600,
       api_server: 'https://api.example.com',
-      expiresAt: Date.now() + 3600 * 1000
+      expiresAt: Date.now() + 3600 * 1000,
     };
 
     expect(tokens.access_token).toBe('test_access_token');
@@ -29,7 +29,7 @@ describe('OAuthTokens', () => {
       refresh_token: 'test',
       expires_in: 7200,
       api_server: 'https://api.example.com',
-      expiresAt: Date.now()
+      expiresAt: Date.now(),
     };
 
     expect(tokens.expires_in).toBe(7200);
@@ -41,7 +41,7 @@ describe('OAuthTokenResponse', () => {
     const response: OAuthTokenResponse = {
       access_token: 'test_access_token',
       expires_in: 3600,
-      api_server: 'https://api.example.com'
+      api_server: 'https://api.example.com',
     };
 
     expect(response.access_token).toBe('test_access_token');
@@ -55,7 +55,7 @@ describe('OAuthTokenResponse', () => {
       access_token: 'test_access_token',
       refresh_token: 'test_refresh_token',
       expires_in: 3600,
-      api_server: 'https://api.example.com'
+      api_server: 'https://api.example.com',
     };
 
     expect(response.refresh_token).toBe('test_refresh_token');
@@ -71,7 +71,7 @@ describe('OAuthProvider interface', () => {
         expect(typeof state).toBe('string');
         return 'https://auth.example.com';
       },
-      
+
       exchangeCode: async (code: string): Promise<OAuthTokens> => {
         expect(typeof code).toBe('string');
         return {
@@ -79,10 +79,10 @@ describe('OAuthProvider interface', () => {
           refresh_token: 'test',
           expires_in: 3600,
           api_server: 'https://api.example.com',
-          expiresAt: Date.now()
+          expiresAt: Date.now(),
         };
       },
-      
+
       refreshToken: async (refresh: string): Promise<OAuthTokens> => {
         expect(typeof refresh).toBe('string');
         return {
@@ -90,14 +90,14 @@ describe('OAuthProvider interface', () => {
           refresh_token: 'new_refresh',
           expires_in: 3600,
           api_server: 'https://api.example.com',
-          expiresAt: Date.now()
+          expiresAt: Date.now(),
         };
       },
 
       revokeToken: async (token: string): Promise<void> => {
         expect(typeof token).toBe('string');
         return;
-      }
+      },
     };
 
     expect(typeof mockProvider.authorizeUrl).toBe('function');
@@ -117,10 +117,10 @@ describe('TokenStore interface', () => {
           refresh_token: 'test',
           expires_in: 3600,
           api_server: 'https://api.example.com',
-          expiresAt: Date.now()
+          expiresAt: Date.now(),
         };
       },
-      
+
       save: async (t: OAuthTokens): Promise<void> => {
         expect(typeof t.access_token).toBe('string');
         expect(typeof t.refresh_token).toBe('string');
@@ -129,10 +129,10 @@ describe('TokenStore interface', () => {
         expect(typeof t.expiresAt).toBe('number');
         return;
       },
-      
+
       clear: async (): Promise<void> => {
         return;
-      }
+      },
     };
 
     expect(typeof mockStore.load).toBe('function');

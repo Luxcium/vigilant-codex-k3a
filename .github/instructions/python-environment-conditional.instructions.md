@@ -1,5 +1,5 @@
 ---
-applyTo: "python/**"
+applyTo: 'python/**'
 ---
 
 # Python Environment Setup - Conditional Instructions

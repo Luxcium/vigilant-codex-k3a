@@ -1,8 +1,5 @@
 {
   "type": "hierarchical",
   "supervisor": { "type": "CriticAgent" },
-  "children": [
-    { "type": "RetrieverAgent" },
-    { "type": "WriterAgent" }
-  ]
+  "children": [{ "type": "RetrieverAgent" }, { "type": "WriterAgent" }]
 }

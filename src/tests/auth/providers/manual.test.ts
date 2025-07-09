@@ -41,11 +41,11 @@ describe('ManualProvider', () => {
         access_token: 'new-access-token',
         refresh_token: 'new-refresh-token',
         expires_in: 3600,
-        api_server: 'https://api.questrade.com'
+        api_server: 'https://api.questrade.com',
       };
 
       mockFetch.mockResolvedValueOnce({
-        json: vi.fn().mockResolvedValueOnce(mockResponse)
+        json: vi.fn().mockResolvedValueOnce(mockResponse),
       });
 
       const result = await provider.refreshToken('old-refresh-token');
@@ -55,7 +55,7 @@ describe('ManualProvider', () => {
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-          body: 'grant_type=refresh_token&refresh_token=old-refresh-token&client_id=test-client-id'
+          body: 'grant_type=refresh_token&refresh_token=old-refresh-token&client_id=test-client-id',
         }
       );
 
@@ -64,7 +64,7 @@ describe('ManualProvider', () => {
         refresh_token: 'new-refresh-token',
         expires_in: 3600,
         api_server: 'https://api.questrade.com',
-        expiresAt: expect.any(Number)
+        expiresAt: expect.any(Number),
       });
 
       // Verify expiresAt is calculated correctly (within 1 second tolerance)
@@ -76,12 +76,12 @@ describe('ManualProvider', () => {
       const mockResponse = {
         access_token: 'new-access-token',
         expires_in: 3600,
-        api_server: 'https://api.questrade.com'
+        api_server: 'https://api.questrade.com',
         // No refresh_token in response
       };
 
       mockFetch.mockResolvedValueOnce({
-        json: vi.fn().mockResolvedValueOnce(mockResponse)
+        json: vi.fn().mockResolvedValueOnce(mockResponse),
       });
 
       const result = await provider.refreshToken('fallback-refresh-token');
@@ -94,11 +94,11 @@ describe('ManualProvider', () => {
         access_token: 'new-access-token',
         refresh_token: null,
         expires_in: 3600,
-        api_server: 'https://api.questrade.com'
+        api_server: 'https://api.questrade.com',
       };
 
       mockFetch.mockResolvedValueOnce({
-        json: vi.fn().mockResolvedValueOnce(mockResponse)
+        json: vi.fn().mockResolvedValueOnce(mockResponse),
       });
 
       const result = await provider.refreshToken('fallback-refresh-token');
@@ -116,7 +116,7 @@ describe('ManualProvider', () => {
 
     it('should propagate JSON parsing errors', async () => {
       mockFetch.mockResolvedValueOnce({
-        json: vi.fn().mockRejectedValueOnce(new Error('Invalid JSON'))
+        json: vi.fn().mockRejectedValueOnce(new Error('Invalid JSON')),
       });
 
       await expect(provider.refreshToken('refresh-token')).rejects.toThrow(

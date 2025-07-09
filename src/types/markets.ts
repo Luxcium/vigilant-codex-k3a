@@ -32,7 +32,7 @@ export const MarketSchema = z.object({
   endTime: z.string(),
   extendedEndTime: z.string(),
   currency: CurrencySchema,
-  snapQuotesLimit: z.number().int()
+  snapQuotesLimit: z.number().int(),
 });
 
 /** Quote for equities and other instruments */
@@ -55,10 +55,11 @@ export interface Quote {
   lowPrice: number | null;
   vwap: number | null;
   isDelayed: boolean;
+  isHalted: boolean;
 }
 
-/** Zod schema for {@link Quote} */
-export const QuoteSchema = z.object({
+/** Raw Zod schema for {@link Quote}, before transformations */
+const RawQuoteSchema = z.object({
   symbol: z.string(),
   symbolId: z.number().int(),
   tier: z.string(),
@@ -75,8 +76,22 @@ export const QuoteSchema = z.object({
   openPrice: z.number().nullable(),
   highPrice: z.number().nullable(),
   lowPrice: z.number().nullable(),
-  vwap: z.number().nullable(),
-  isDelayed: z.boolean()
+  vwap: z.number().nullable().optional(),
+  VWAP: z.number().nullable().optional(),
+  isDelayed: z.boolean().optional(),
+  delay: z.number().int().optional(),
+  isHalted: z.boolean().optional(),
+});
+
+/** Zod schema for {@link Quote} */
+export const QuoteSchema = RawQuoteSchema.transform(data => {
+  const { VWAP, delay, isDelayed, vwap, isHalted, ...rest } = data;
+  return {
+    ...rest,
+    vwap: vwap ?? VWAP ?? null,
+    isDelayed: isDelayed ?? (delay !== undefined ? delay !== 0 : false),
+    isHalted: isHalted ?? false,
+  };
 });
 
 /** Option quote with Greeks */
@@ -96,7 +111,7 @@ export interface OptionQuote extends Quote {
 }
 
 /** Zod schema for {@link OptionQuote} */
-export const OptionQuoteSchema = QuoteSchema.extend({
+export const OptionQuoteSchema = RawQuoteSchema.extend({
   underlying: z.string(),
   underlyingId: z.number().int(),
   expiryDate: z.string(),
@@ -108,7 +123,15 @@ export const OptionQuoteSchema = QuoteSchema.extend({
   theta: z.number().nullable(),
   vega: z.number().nullable(),
   rho: z.number().nullable(),
-  openInterest: z.number().nullable()
+  openInterest: z.number().nullable(),
+}).transform(data => {
+  const { VWAP, delay, isDelayed, vwap, isHalted, ...rest } = data;
+  return {
+    ...rest,
+    vwap: vwap ?? VWAP ?? null,
+    isDelayed: isDelayed ?? (delay !== undefined ? delay !== 0 : false),
+    isHalted: isHalted ?? false,
+  };
 });
 
 /** Strategy quote for option strategies */
@@ -118,6 +141,14 @@ export interface StrategyQuote {
   askPrice: number | null;
   underlying: string;
   underlyingId: number;
+  openPrice: number | null;
+  volatility: number | null;
+  delta: number | null;
+  gamma: number | null;
+  theta: number | null;
+  vega: number | null;
+  rho: number | null;
+  isRealTime: boolean | null;
 }
 
 /** Zod schema for {@link StrategyQuote} */
@@ -126,7 +157,15 @@ export const StrategyQuoteSchema = z.object({
   bidPrice: z.number().nullable(),
   askPrice: z.number().nullable(),
   underlying: z.string(),
-  underlyingId: z.number().int()
+  underlyingId: z.number().int(),
+  openPrice: z.number().nullable().optional(),
+  volatility: z.number().nullable().optional(),
+  delta: z.number().nullable().optional(),
+  gamma: z.number().nullable().optional(),
+  theta: z.number().nullable().optional(),
+  vega: z.number().nullable().optional(),
+  rho: z.number().nullable().optional(),
+  isRealTime: z.boolean().nullable().optional(),
 });
 
 /** OHLC candle */
@@ -148,5 +187,5 @@ export const CandleSchema = z.object({
   high: z.number(),
   low: z.number(),
   close: z.number(),
-  volume: z.number()
+  volume: z.number(),
 });

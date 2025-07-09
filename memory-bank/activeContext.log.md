@@ -42,3 +42,5 @@
 - [2025-06-22T23:50:48Z] Added tests for response schemas (Accounts, Balances, Positions, Executions, Activities, Orders, Time, Markets, Quotes, OptionQuotes, StrategyQuotes, Candles, Symbols, SymbolSearch, OptionsChain); responses.ts now 100% statements, 80% branches, 100% functions, 100% lines. Next Intent: Cover symbols schemas.
 
 - [2025-06-22T23:56:42Z] Added tests for OptionDeliverable, MinTick, OptionDeliverables, SymbolDetail, SymbolSearchResult, OptionChain schemas; symbols.ts now 100% statements, 75% branches, 100% functions, 100% lines. Next Intent: Cover types index.
+
+- [2025-07-04T04:17:05Z] Updated Questrade schemas, added ApiError helper, new candles utilities and tests; verification scripts fail due to missing markdownlint and vitest.

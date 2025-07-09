@@ -7,8 +7,8 @@ export const parallel = (agents: Agent[]): Agent => ({
   async act(input, ctx) {
     const limit = pLimit(agents.length);
     const outs = await Promise.all(
-      agents.map((a) => limit(() => a.act(input, ctx)))
+      agents.map(a => limit(() => a.act(input, ctx)))
     );
-    return { content: outs.map((o) => o.content).join('\n') };
+    return { content: outs.map(o => o.content).join('\n') };
   },
 });

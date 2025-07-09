@@ -3,6 +3,7 @@ mode: 'agent'
 tools: ['codebase', 'terminalLastCommand']
 description: 'Generate a Vision Transformer (ViT) implementation with detailed documentation'
 ---
+
 # Vision Transformer (ViT) Implementation
 
 Your task is to help me create a complete Vision Transformer (ViT) implementation following our project's coding standards and documentation requirements.
@@ -16,6 +17,7 @@ Your task is to help me create a complete Vision Transformer (ViT) implementatio
 ## Implementation Details
 
 ### Model Architecture
+
 - Create a configurable ViT implementation with the following parameters:
   - Image size (default: 224x224)
   - Patch size (default: 16x16)
@@ -27,6 +29,7 @@ Your task is to help me create a complete Vision Transformer (ViT) implementatio
   - Number of classes (default: 1000)
 
 ### Code Structure
+
 - Implement the model in a modular way with separate files for:
   - Main ViT class
   - Transformer encoder
@@ -37,6 +40,7 @@ Your task is to help me create a complete Vision Transformer (ViT) implementatio
   - Classification head
 
 ### Documentation
+
 - Include a comprehensive model card
 - Document preprocessing steps
 - Include inference examples
@@ -45,6 +49,7 @@ Your task is to help me create a complete Vision Transformer (ViT) implementatio
 - Include performance benchmarks
 
 ## Output Format
+
 - Provide well-structured TypeScript code
 - Adhere to the project's organization principles
 - Include detailed comments and documentation
@@ -52,6 +57,7 @@ Your task is to help me create a complete Vision Transformer (ViT) implementatio
 - Include test cases to validate functionality
 
 ## References
+
 - Include proper attribution to the original paper
 - Reference any third-party code or inspirations
 - Document any deviations from the original architecture
