@@ -264,3 +264,5 @@ This project supports three AI agents with specific entry points:
 **See [.clinerules/process-evolution.md](../.clinerules/process-evolution.md), [.clinerules/verification.md](../.clinerules/verification.md), and [.clinerules/learning-journal.md](../.clinerules/learning-journal.md) for required protocols and self-regulation guidance.**
 
 ---
+- [2025-07-10T01:47:25Z] Added tsdoc-typedoc instructions, chatmode, and prompt to .github directories for TSDoc/TypeDoc documentation workflow.
+- [2025-07-10T02:25:55Z] Expanded tsdoc-typedoc instruction set with comprehensive reference sections and added verification notes.
