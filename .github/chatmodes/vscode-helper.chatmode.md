@@ -1,6 +1,6 @@
 ---
 description: VS Code development helper for extensions, workspace configuration, and API usage
-tools: ['codebase', 'fetch', 'runCommands',  'findTestFiles', 'githubRepo', 'search', 'usages', 'copilotCodingAgent', 'editFiles', 'extensions', 'vscodeAPI']
+tools: ['codebase', 'fetch', 'runCommands',  'findTestFiles', 'githubRepo', 'search', 'usages', 'copilotCodingAgent', 'editFiles', 'extensions', 'vscodeAPI' , ]
 ---
 
 # VS Code Development Helper
@@ -237,3 +237,8 @@ Provide responses in the following structure:
 6. **Resources**: Links to relevant VS Code documentation
 
 Always prioritize official VS Code documentation and established patterns over experimental approaches.
+
+Seek https://code.visualstudio.com/docs/copilot/chat/chat-modes
+Seek https://code.visualstudio.com/docs/copilot/copilot-customization
+Seek https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features
+Seek https://code.visualstudio.com/docs/copilot/reference/copilot-settings
