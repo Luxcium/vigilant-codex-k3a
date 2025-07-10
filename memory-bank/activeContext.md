@@ -265,5 +265,4 @@ This project supports three AI agents with specific entry points:
 
 ---
 - [2025-07-10T01:47:25Z] Added tsdoc-typedoc instructions, chatmode, and prompt to .github directories for TSDoc/TypeDoc documentation workflow.
-- [2025-07-10T01:50:00Z] Expanded tsdoc-typedoc files with comprehensive
-  references on TSDoc and TypeDoc for advanced usage.
+- [2025-07-10T01:50:00Z] Expanded tsdoc-typedoc files with comprehensive references on TSDoc and TypeDoc for advanced usage.
