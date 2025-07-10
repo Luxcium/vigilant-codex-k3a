@@ -1,6 +1,6 @@
 ---
 mode: "agent"
-tools: ["search","editFiles","runCommands"]
+tools: ["search", "editFiles", "runCommands", "validateDocs"]
 description: "Generate comprehensive TSDoc comments and TypeDoc setup for a TypeScript module"
 ---
 
