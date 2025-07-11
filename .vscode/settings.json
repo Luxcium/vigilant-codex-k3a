@@ -2060,7 +2060,6 @@
   "github.copilot.chat.agent.thinkingTool": true,
   "github.copilot.chat.codeGeneration.useInstructionFiles": true,
   "github.copilot.chat.codesearch.enabled": true,
-  "github.copilot.chat.completionContext.typescript.mode": "on",
   "github.copilot.chat.copilotDebugCommand.enabled": true,
   "github.copilot.chat.editor.temporalContext.enabled": false,
   "github.copilot.chat.edits.temporalContext.enabled": true,
