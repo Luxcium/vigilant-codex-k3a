@@ -1,0 +1,48 @@
+{
+  "recommendations": [
+    // Python Development
+    "ms-python.python",
+    "ms-python.debugpy",
+    "ms-python.pylint",
+    "ms-python.black-formatter",
+    "ms-python.mypy-type-checker",
+    "ms-toolsai.jupyter",
+
+    // TypeScript/JavaScript Development
+    "ms-vscode.vscode-typescript-next",
+    "bradlc.vscode-tailwindcss",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+
+    // Docker & DevOps
+    "ms-azuretools.vscode-docker",
+    "ms-vscode-remote.remote-containers",
+    "ms-vscode-remote.remote-ssh",
+
+    // GitHub & Git
+    "github.copilot",
+    "github.copilot-chat",
+    "github.vscode-pull-request-github",
+    "eamodio.gitlens",
+
+    // Code Quality & Documentation
+    "aaron-bond.better-comments",
+    "gruntfuggly.todo-tree",
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint",
+    "ms-vscode.vscode-json",
+
+    // Testing
+    "vitest.explorer",
+    "ms-python.pytest",
+
+    // Themes & UI
+    "pkief.material-icon-theme",
+    "luxcium.pop-n-lock-theme-vscode",
+
+    // Productivity
+    "ms-vscode.vscode-speech",
+    "ms-vscode.hexeditor",
+    "ms-vscode.live-server"
+  ]
+}

@@ -76,7 +76,16 @@
   "files.associations": {
     "*.py": "python",
     "requirements*.txt": "pip-requirements",
-    ".env*": "dotenv"
+    ".env*": "dotenv",
+    "*.ts": "typescript",
+    "*.js": "javascript",
+    "*.json": "jsonc",
+    "Dockerfile*": "dockerfile",
+    "docker-compose*.yml": "dockercompose",
+    "*.md": "markdown",
+    "*.instructions.md": "markdown",
+    "*.prompt.md": "markdown",
+    "*.chatmode.md": "markdown"
   },
   // "remote.defaultExtensionsIfInstalledLocally": [
   //   "GitHub.copilot",
@@ -2125,5 +2134,27 @@
   },
   "terminal.integrated.env.linux": {
     "CODEX_HOME": "${workspaceFolder}/.codex"
-  }
+  },
+
+  // ========================================
+  // Task and Launch Configuration
+  // ========================================
+  "tasks.showOutput": "always",
+  "tasks.problemMatchers.fileLocation": "relative",
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.showBreakpointsInOverviewRuler": true,
+  "debug.console.fontSize": 14,
+  "debug.console.fontFamily": "Consolas, 'Courier New', monospace",
+
+  // ========================================
+  // Quick Actions and Shortcuts
+  // ========================================
+  "workbench.action.quickOpen.triggerMode": "openEditors",
+  "workbench.quickOpen.preserveInput": true,
+  "workbench.commandPalette.preserveInput": true,
+
+  // ========================================
+  // Project-Specific Extensions
+  // ========================================
+  "extensions.ignoreRecommendations": true
 }

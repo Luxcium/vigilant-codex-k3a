@@ -16,6 +16,38 @@
       "problemMatcher": []
     },
     {
+      "label": "Python: Full Setup & Test",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Python: Setup Environment",
+        "Python: Install Dependencies",
+        "Python: Run Tests"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Python: Quality Check",
+      "dependsOrder": "parallel",
+      "dependsOn": [
+        "Python: Lint with Pylint",
+        "Python: Type Check with MyPy",
+        "Python: Format Code"
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
       "label": "Python: Install Dependencies",
       "type": "shell",
       "command": "${workspaceFolder}/python/.venv/bin/pip",
@@ -126,6 +158,91 @@
         "panel": "shared"
       },
       "problemMatcher": []
+    },
+    {
+      "label": "TypeScript: Build",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "build"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": ["$tsc"]
+    },
+    {
+      "label": "TypeScript: Test",
+      "type": "shell",
+      "command": "npm",
+      "args": ["test"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "TypeScript: Test Watch",
+      "type": "shell",
+      "command": "npm",
+      "args": ["run", "test:watch"],
+      "group": "test",
+      "isBackground": true,
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker: Start Codex",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/codex_start.sh",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Docker: Stop Codex",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/codex_stop.sh",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Full Project Setup",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Python: Setup Environment",
+        "Python: Install Dependencies",
+        "TypeScript: Build"
+      ],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
     }
   ]
 }

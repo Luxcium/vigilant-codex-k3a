@@ -1,0 +1,76 @@
+{
+    "TypeScript Interface": {
+        "prefix": "tsinterface",
+        "body": [
+            "/**",
+            " * ${2:Interface description}",
+            " */",
+            "export interface ${1:InterfaceName} {",
+            "  ${3:property}: ${4:type};",
+            "}"
+        ],
+        "description": "TypeScript interface template"
+    },
+    "TypeScript Function": {
+        "prefix": "tsfunc",
+        "body": [
+            "/**",
+            " * ${3:Function description}",
+            " * @param ${4:param} ${5:Parameter description}",
+            " * @returns ${6:Return description}",
+            " */",
+            "export function ${1:functionName}(${4:param}: ${7:type}): ${8:ReturnType} {",
+            "  ${9:// Implementation}",
+            "  return ${10:result};",
+            "}"
+        ],
+        "description": "TypeScript function template"
+    },
+    "TypeScript Class": {
+        "prefix": "tsclass",
+        "body": [
+            "/**",
+            " * ${2:Class description}",
+            " */",
+            "export class ${1:ClassName} {",
+            "  /**",
+            "   * ${3:Constructor description}",
+            "   * @param ${4:param} ${5:Parameter description}",
+            "   */",
+            "  constructor(private readonly ${4:param}: ${6:type}) {}",
+            "  ",
+            "  /**",
+            "   * ${7:Method description}",
+            "   * @returns ${8:Return description}",
+            "   */",
+            "  public ${9:methodName}(): ${10:ReturnType} {",
+            "    ${11:// Implementation}",
+            "    return ${12:result};",
+            "  }",
+            "}"
+        ],
+        "description": "TypeScript class template"
+    },
+    "Vitest Test": {
+        "prefix": "vitest",
+        "body": [
+            "import { describe, it, expect } from 'vitest';",
+            "import { ${1:importName} } from '${2:./module}';",
+            "",
+            "describe('${3:TestSuite}', () => {",
+            "  it('${4:should behave correctly}', () => {",
+            "    // Arrange",
+            "    ${5:// Setup test data}",
+            "    ",
+            "    // Act",
+            "    ${6:// Execute function}",
+            "    ",
+            "    // Assert",
+            "    ${7:// Verify results}",
+            "    expect(${8:actual}).toBe(${9:expected});",
+            "  });",
+            "});"
+        ],
+        "description": "Vitest test template"
+    }
+}

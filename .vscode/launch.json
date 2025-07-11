@@ -3,7 +3,7 @@
   "configurations": [
     {
       "name": "Python: Current File",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "program": "${file}",
       "console": "integratedTerminal",
@@ -16,7 +16,7 @@
     },
     {
       "name": "Python: Main Module",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "module": "vigilant_codex",
       "console": "integratedTerminal",
@@ -29,7 +29,7 @@
     },
     {
       "name": "Python: Tests",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "module": "pytest",
       "args": ["tests/", "-v"],
@@ -43,7 +43,7 @@
     },
     {
       "name": "Python: FastAPI Server",
-      "type": "python",
+      "type": "debugpy",
       "request": "launch",
       "module": "uvicorn",
       "args": [
@@ -61,6 +61,57 @@
       "env": {
         "PYTHONPATH": "${workspaceFolder}/python/src:${workspaceFolder}/python"
       }
+    },
+    {
+      "name": "TypeScript: Debug Current File",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/ts-node",
+      "args": ["${file}"],
+      "cwd": "${workspaceFolder}",
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "TypeScript: Debug Tests",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/node_modules/.bin/vitest",
+      "args": ["run", "--reporter=verbose"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Node.js: Debug Current File",
+      "type": "node",
+      "request": "launch",
+      "program": "${file}",
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Docker: Debug in Container",
+      "type": "node",
+      "request": "attach",
+      "address": "localhost",
+      "port": 9229,
+      "localRoot": "${workspaceFolder}",
+      "remoteRoot": "/workspace"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Debug Full Stack",
+      "configurations": [
+        "Python: FastAPI Server",
+        "TypeScript: Debug Current File"
+      ],
+      "stopAll": true
+    },
+    {
+      "name": "Debug Tests (All)",
+      "configurations": ["Python: Tests", "TypeScript: Debug Tests"],
+      "stopAll": true
     }
   ]
 }
