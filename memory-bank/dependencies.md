@@ -29,6 +29,22 @@
   **Target File Achievements:** webStorage.ts 100%, tokenBucket.ts 100%, restClient.ts 96.15%, QuestradeClient.ts 87.5%
   **Impact Analysis:** Provides robust foundation for ongoing development with comprehensive test isolation and realistic scenarios.
 
+#### Dependency: Notebook Specialist Chat Mode and Integration (2025-07-10)
+
+**Rationale:** Comprehensive Jupyter notebook development support with full VS Code integration, leveraging extended capabilities for enhanced data science workflows.
+**Depends On:** VS Code Notebook API, Jupyter extension, Python environment framework, established project standards
+**Required By:** Data science workflows, ML model development, research documentation, notebook-based analysis
+**Technical Implementation:**
+
+- notebook-specialist.chatmode.md - Comprehensive chat mode with notebook development, VS Code integration, and ML workflow support
+- vscode-notebook-integration.instructions.md - VS Code notebook API integration standards and configuration
+- notebook-development-workflow.prompt.md - Automated workflow for notebook creation, optimization, and management
+- Integration with python-notebook-standards.instructions.md for consistent quality standards
+- Memory bank integration for progress tracking and dependency management
+  **Integration Results:** Full VS Code notebook API utilization, custom command support, automated workflow management, ML experiment tracking
+  **Target Capabilities:** Advanced cell execution control, custom renderers, performance profiling, reproducible research workflows
+  **Impact Analysis:** Enables sophisticated notebook development with VS Code extended capabilities while maintaining project standards and memory bank protocols.
+
 # dependencies.md
 
 <!-- markdownlint-disable MD013 MD012 MD022 MD032 MD024 MD040 MD001 -->
@@ -266,6 +282,11 @@ This file tracks all project dependencies, their relationships, and integration 
 
   - **Integration**: Volume-first development, CLI parameterization, multi-service orchestration
 
+- **notebook-development-workflow.prompt.md**: Comprehensive notebook development workflow automation
+  - **Depends On**: VS Code Notebook API, python-notebook-standards.instructions.md, vscode-notebook-integration.instructions.md
+  - **Required By**: Jupyter notebook development, data science workflows, ML experimentation
+  - **Integration**: VS Code extended capabilities, notebook-specialist chat mode, memory bank synchronization
+
 ### Instruction Files (`.github/instructions/`)
 
 ### Instruction Files (`.github/instructions/`)
@@ -292,6 +313,12 @@ This file tracks all project dependencies, their relationships, and integration 
 - **file-organization.instructions.md**: Project structure standards
 
 - **no_dummy-no_placeholders.instruction.md**: Real configuration requirements
+
+- **vscode-notebook-integration.instructions.md**: VS Code notebook API integration standards
+  - **Depends On**: VS Code Notebook API, Jupyter extension, python-notebook-standards.instructions.md
+  - **Required By**: All notebook development workflows, VS Code notebook optimization
+  - **ApplyTo**: `**/*.ipynb`
+  - **Integration**: VS Code extended capabilities, custom commands, notebook automation
 
 ### Memory Bank Files
 
