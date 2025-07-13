@@ -1,5 +1,5 @@
 ---
-mode: 'agent'
+mode: 'plan'
 description: 'Canonical Next.js + Prisma folder structure and authoring standards for web/src/'
 ---
 
