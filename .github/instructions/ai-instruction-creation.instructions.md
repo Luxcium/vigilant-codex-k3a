@@ -1,5 +1,6 @@
 ---
-applyTo: 'ai-agents'
+applyTo: '**/*.md'
+description: 'Standards for creating AI agent instruction files; covers triggers, scope, naming, and validation.'
 ---
 
 # AI Agent Instructions: Creating \*.instructions.md Files On-Demand
