@@ -247,3 +247,8 @@ applyTo: 'web/**'
 4.  **MENTALLY TEST**: If you (as an AI) were to follow these rules, what code/structure would result? Does it match the user's intent?
 5.  **MAINTAINABILITY**: Rules should be foundational and relatively stable.
 6.  **Update `autonomous-state-manager.sh`**: After creating/updating an instruction file, ensure the project state reflects this change, potentially by calling the state manager script. (This part is for the script that _calls_ you, or for you if you have terminal access to update project state).
+
+Define common guidelines or rules for tasks like generating code, performing code reviews, or generating commit messages. Custom instructions describe the conditions in which the AI should perform operate (how a task should be done).
+Specify coding practices, preferred technologies, or project requirements, so generated code follows your standards.
+Set rules for code reviews, such as checking for security vulnerabilities or performance issues.
+Provide instructions for generating commit messages or pull request titles and descriptions.
