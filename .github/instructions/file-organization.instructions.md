@@ -1,5 +1,6 @@
 ---
 applyTo: '**'
+description: 'Comprehensive standards for file and directory organization, naming, documentation, and memory bank integration across the entire project.'
 ---
 
 # File Organization Standards

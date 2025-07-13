@@ -1,5 +1,6 @@
 ---
 applyTo: '**/docker-compose*.yml,**/Dockerfile*,scripts/codex_*.sh,scripts/setup_codex_universal.sh'
+description: 'Comprehensive standards for Docker, Compose, and container management scripts in the Codex environment.'
 ---
 
 # Docker Environment Standards
