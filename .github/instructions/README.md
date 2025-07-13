@@ -21,7 +21,7 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 > **Authoring Standard:**  
 > Before creating or updating any instruction file, consult [instruction-authoring-standards.instructions.md](./instruction-authoring-standards.instructions.md) for the canonical rules, structure, and validation checklist. All `.instructions.md` files must comply with this standard for consistency and markdown-lint strictness.
 
-## Available Instructions (26 Files)
+## Available Instructions (25 Files)
 
 ### AI Agent Workflow & Creation
 
@@ -59,7 +59,7 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 
 **[use-conventional-commits.instructions.md](./use-conventional-commits.instructions.md)** - Conventional commit standards for consistent version control and automated changelog generation.
 
-**[no_dummy-no_placeholders.instruction.md](./no_dummy-no_placeholders.instruction.md)** - Standards requiring real, functional configurations instead of placeholder or dummy content.
+**[no_dummy-no_placeholders.instructions.md](./no_dummy-no_placeholders.instructions.md)** - Standards requiring real, functional configurations instead of placeholder or dummy content.
 
 ### Web Standards & Meta Configuration
 
