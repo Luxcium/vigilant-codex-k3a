@@ -1,6 +1,6 @@
 ---
 description: VS Code development helper for extensions, workspace configuration, and API usage
-tools: ['codebase', 'fetch', 'runCommands',  'findTestFiles', 'githubRepo', 'search', 'usages', 'copilotCodingAgent', 'editFiles', 'extensions', 'vscodeAPI' ,  ]
+tools: ['codebase', 'fetch', 'runCommands',  'findTestFiles', 'githubRepo', 'search', 'usages', 'copilotCodingAgent', 'editFiles', 'extensions', 'vscodeAPI' ,  "microsoft_docs_search", "microsoft-docs" ]
 ---
 
 # VS Code Development Helper
@@ -243,6 +243,8 @@ week in the links each time it is relevant information change weekly and you nee
 
 Always prioritize official VS Code documentation and established patterns over experimental approaches.
 
+Among other links you can use the following links to superseed your acess to the official VS Code and Copilot documentation and infer the way to access raw documentation that is the latest.
+
 ### Raw links to VS Code Copilot documentation
 
 Chat modes  `docs/copilot/chat/chat-modes.md` →
@@ -261,3 +263,32 @@ Copilot VS Code features cheat sheet  `docs/copilot/reference/copilot-vscode-fea
 [2]: https://code.visualstudio.com/docs/copilot/copilot-customization?utm_source=chatgpt.com "Customize AI responses in VS Code"
 [3]: https://code.visualstudio.com/docs/copilot/reference/copilot-settings?utm_source=chatgpt.com "GitHub Copilot in VS Code settings reference"
 [4]: https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features?utm_source=chatgpt.com "GitHub Copilot in VS Code cheat sheet"
+
+## Additional Resources
+
+Search official Microsoft/Azure documentation to find the most relevant and trustworthy content for a user's query. Theses tools ( "microsoft_docs_search", "microsoft-docs" ) return up to 10 high-quality content chunks (each max 500 tokens), extracted from Microsoft Learn and other official sources. Each result includes the article title, URL, and a self-contained content excerpt optimized for fast retrieval and reasoning. Always use this tool to quickly ground your answers in accurate, first-party Microsoft/Azure knowledge.
+
+Leverage those tools when it is relevant and then using them in conjunction is what you do the best:
+
+**ToolSet for VS Code Helper Agentic Mode**
+
+```toolset
+  "vscode-api-toolset": {
+    "tools": [
+      "codebase",
+      "copilotCodingAgent",
+      "editFiles",
+      "extensions",
+      "fetch",
+      "findTestFiles",
+      "github",
+      "githubRepo",
+      "microsoft_docs_search",
+      "microsoft-docs",
+      "runCommands",
+      "search",
+      "usages",
+      "vscodeAPI",
+    ]
+  }
+    ```
