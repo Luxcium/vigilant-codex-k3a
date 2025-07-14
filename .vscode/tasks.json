@@ -232,48 +232,46 @@
       "label": "Start Web Dev Server",
       "type": "shell",
       "command": "pnpm",
-      "args": ["dev"],
-      "options": {
-        "cwd": "${workspaceFolder}/web"
-      },
-      "group": {
-        "kind": "build",
-        "isDefault": true
-      },
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated"
-      },
+      "args": ["run", "web:dev"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "dedicated" },
       "problemMatcher": []
     },
     {
-      "label": "Web: Build Production",
+      "label": "Web: Lint",
       "type": "shell",
       "command": "pnpm",
-      "args": ["build"],
-      "options": {
-        "cwd": "${workspaceFolder}/web"
-      },
+      "args": ["run", "web:lint"],
+      "group": "test",
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": ["$eslint-stylish"]
+    },
+    {
+      "label": "Web: Format",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["run", "web:format"],
       "group": "build",
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated"
-      },
+      "presentation": { "reveal": "always", "panel": "dedicated" },
       "problemMatcher": []
     },
     {
-      "label": "Web: Start Production Server",
+      "label": "Web: Test",
       "type": "shell",
       "command": "pnpm",
-      "args": ["start", "--", "-H", "0.0.0.0"],
-      "options": {
-        "cwd": "${workspaceFolder}/web"
-      },
+      "args": ["run", "web:test"],
+      "group": "test",
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Web: Preview",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["run", "web:preview"],
       "group": "build",
-      "presentation": {
-        "reveal": "always",
-        "panel": "dedicated"
-      },
+      "presentation": { "reveal": "always", "panel": "dedicated" },
       "problemMatcher": []
     },
     {

@@ -4,9 +4,12 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "dev": "next dev --turbopack",
+    "dev": "next dev --hostname 0.0.0.0",
+    "format": "prettier --write \"src/**/*.{js,ts,tsx,jsx}\"",
     "lint": "next lint",
-    "start": "next start"
+    "preview": "pnpm run build && pnpm run start",
+    "start": "next start --hostname 0.0.0.0",
+    "test": "vitest"
   },
   "dependencies": {
     "@prisma/client": "^5.15.0",

@@ -96,6 +96,7 @@
       "program": "${workspaceFolder}/web/node_modules/.bin/next",
       "args": ["dev"],
       "cwd": "${workspaceFolder}/web",
+      "preLaunchTask": "Start Web Dev Server",
       "autoAttachChildProcesses": true,
       "outFiles": ["${workspaceFolder}/web/.next/**/*.js"],
       "skipFiles": ["<node_internals>/**"],
