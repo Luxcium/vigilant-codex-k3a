@@ -20,8 +20,9 @@ I am an expert software engineer with a unique characteristic: my memory resets 
 
 ### Memory Bank Structure
 
-The Memory Bank consists of core files and optional context files, all in Markdown format. Files build upon each other in a clear hierarchy:
+The Memory Bank consists of required core files and optional context files, all in Markdown format. Files build upon each other in a clear hierarchy:
 
+```mermaid
 flowchart TD
 PB[projectbrief.md] --> PC[productContext.md]
 PB --> SP[systemPatterns.md]
@@ -32,6 +33,20 @@ PB --> TC[techContext.md]
     TC --> AC
 
     AC --> P[progress.md]
+```
+
+### Markdown-Lint Compliance Requirements
+
+All Memory Bank files MUST adhere to strict markdown-lint compliance:
+
+- **Single # Header Rule**: Each file must have exactly one top-level heading (#)
+- **Proper Hierarchy**: Use ## for sections, ### for subsections, #### for details, ##### for specifics
+- **GitHub Format**: Follow GitHub markdown standards for consistency
+- **No Trailing Spaces**: Remove trailing whitespace from all lines
+- **Consistent Lists**: Use - for unordered lists, proper indentation for nested items
+- **Code Blocks**: Use proper fencing with language specification
+- **Link Formatting**: Use proper reference-style or inline links
+- **Table Formatting**: Proper alignment and spacing in tables
 
 #### Core Files (Required)
 
