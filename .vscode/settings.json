@@ -98,11 +98,11 @@
   "eslint.codeActionsOnSave.mode": "all",
   "workbench.colorTheme": "Pop N' Lock Theme by Luxcium ✨ Alexis's Black ⛷",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.productIconTheme": "Default",
+  "workbench.productIconTheme": "material-product-icons",
   /*
   |-····-----------------------------------------------------------――··-|
-    */
-  // #region: editor.rulers [scminput]                                       !
+  */
+  // #region: editor.rulers [scminput]
   "[scminput]": {
     "editor.rulers": [
       {
