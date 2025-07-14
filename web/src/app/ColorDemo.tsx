@@ -9,8 +9,8 @@ export default function ColorDemo() {
   (window as any).triggerError();
   return (
     <div
-      className={styles.container}
-      style={{ backgroundColor: color } as React.CSSProperties}>
+      className={`${styles.container} ${styles.dynamicColor}`}
+      style={{ '--dynamic-color': color } as React.CSSProperties}>
       <h2>Color Demo Component</h2>
       <p>This box changes color in watch mode.</p>
       <label htmlFor="color-input">
