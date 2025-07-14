@@ -89,6 +89,8 @@ Prompt files (`.prompt.md`) are executable templates that:
 
 **[validation-debugging-checklist.prompt.md](./validation-debugging-checklist.prompt.md)** - Run comprehensive, VS Code-native validation and debugging workflow for web apps with manifest validation and platform testing.
 
+**[edge-devtools-debugging.prompt.md](./edge-devtools-debugging.prompt.md)** - Automated Microsoft Edge DevTools configuration and debugging setup workflow with comprehensive CSS variables solution and launch configuration management.
+
 **[test-prompt.prompt.md](./test-prompt.prompt.md)** - Test prompt to verify prompt files are working correctly and validate the prompt execution system.
 
 ## How to Use Prompts
@@ -171,7 +173,7 @@ Prompts support these variable types:
 ### Web Standards Implementation
 - **Meta Tags**: theme-ui-meta, seo-meta-tags, x-cards
 - **Icons & Favicons**: general-icon-link-tags
-- **Validation**: validation-debugging-checklist
+- **Validation**: validation-debugging-checklist, edge-devtools-debugging
 
 ### AI Agent Framework
 - **Template Management**: template-manager, ai-template-manager

@@ -1,3 +1,22 @@
+#### Dependency: Microsoft Edge DevTools Integration and CSS Variables Solution (2025-07-14)
+
+**Rationale:** Comprehensive Edge DevTools debugging capabilities with protocol compliance restoration and CSS variables solution for no-inline-styles warning resolution.
+**Depends On:** Microsoft Edge DevTools VS Code Extension (ms-edgedevtools.vscode-edge-devtools), Microsoft Edge browser, Next.js development environment, TypeScript source maps
+**Required By:** Web development debugging workflows, mobile testing, performance analysis, CSS styling without inline styles violations
+**Technical Implementation:**
+
+- Complete edge-devtools-debugging.instructions.md creation following strict protocol requirements in .github/instructions/
+- Comprehensive VS Code settings configuration with Edge DevTools extension settings, warning controls, and panel management
+- Individual launch configurations for standard debugging, headless mode, mobile emulation, attach mode, and direct DevTools access
+- Compound debugging workflows for complete web development, mobile testing, performance analysis, and headless testing
+- CSS variables solution implementation using `style={{ '--dynamic-color': value }}` with CSS classes containing `var(--custom-property, fallback)`
+- ESLint configuration updates to support CSS variables pattern while maintaining code quality standards
+- User data directory isolation with proper browser arguments and security configurations for development-only usage
+- Path mapping and source map configuration for Next.js projects with TypeScript support
+**Resolution Results:** No-inline-styles warning completely resolved through CSS variables pattern, comprehensive debugging environment established, protocol compliance restored
+**Target Configuration Achievements:** Complete Edge DevTools integration with mobile testing, performance analysis, and automated testing capabilities
+**Impact Analysis:** Enables professional web development debugging with CSS styling compliance, mobile testing capabilities, and comprehensive performance analysis while maintaining strict protocol adherence and security best practices.
+
 #### Dependency: README Drift Resolution and Documentation Synchronization (2025-07-13)
 
 **Rationale:** Resolve significant documentation drift between README files and ensure accurate representation of the sophisticated Vigilant Codex K3a polyvalent AI development workspace.

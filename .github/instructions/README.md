@@ -85,6 +85,8 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 
 ### Quality Assurance & Validation
 
+**[edge-devtools-debugging.instructions.md](./edge-devtools-debugging.instructions.md)** - Microsoft Edge DevTools integration and debugging configuration standards for VS Code development workflows with comprehensive CSS variables solution and launch configurations.
+
 **[validation-debugging-checklist.instructions.md](./validation-debugging-checklist.instructions.md)** - VS Code-centric validation and debugging checklist for web app manifests, meta tags, and platform integrations.
 
 ## How Instructions Work

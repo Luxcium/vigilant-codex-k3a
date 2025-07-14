@@ -233,6 +233,7 @@ Stateful documentation for AI agent collaboration:
 
 - **Custom Tasks** - 13 compound tasks for parallel/sequential execution
 - **Launch Configurations** - 9 debugging setups with compound debugging
+- **Edge DevTools Integration** - Microsoft Edge DevTools support with CSS variables solution
 - **Code Snippets** - Python and TypeScript templates
 - **Extension Recommendations** - 25+ curated extensions
 - **Notebook API** - Advanced Jupyter integration with custom commands

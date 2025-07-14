@@ -163,13 +163,14 @@ This Memory Bank is initialized to provide a clear, adaptable template for docum
 - **README Drift Resolution**: Systematic documentation synchronization ensuring all README files accurately represent workspace sophistication and capabilities.
 - **Design Rationale**: Enable polyvalent AI-human collaboration for rapid, robust application development across multiple languages and frameworks with persistent context and automated workflow execution.
 
-### Notebook Specialist Integration Pattern
+### Microsoft Edge DevTools Integration Pattern
 
-- **Notebook Specialist Chat Mode**: Implemented notebook-specialist.chatmode.md for advanced Jupyter notebook development, execution, and analysis workflows leveraging VS Code extended capabilities.
-- **VS Code Notebook API Integration**: Adopted vscode-notebook-integration.instructions.md for cell execution control, kernel management, and custom command automation.
-- **Automated Notebook Workflow**: Created notebook-development-workflow.prompt.md for comprehensive notebook creation, optimization, and management.
-- **Memory Bank Synchronization**: Updated activeContext.md, progress.md, and dependencies.md to reflect new notebook capabilities and integration points.
-- **Design Rationale**: Enable sophisticated notebook development and ML experimentation with reproducible research workflows, performance profiling, and cross-environment compatibility.
+- **Comprehensive Debugging Configuration**: Implemented edge-devtools-debugging.instructions.md with complete Edge DevTools VS Code integration including individual configurations (standard, headless, mobile emulation, attach mode) and compound workflows (web development, mobile testing, performance analysis, headless testing).
+- **CSS Variables Solution**: Resolved no-inline-styles warning through CSS custom properties pattern using `style={{ '--dynamic-color': value }}` with CSS classes containing `var(--custom-property, fallback)` for dynamic styling without inline styles violations.
+- **Launch Configuration Architecture**: Established comprehensive launch.json setup with proper path mapping, source map support, user data directory isolation, and security configurations for Next.js projects with TypeScript support.
+- **Protocol Compliance Framework**: Strict adherence to .github/instructions/ file organization protocol, removing unauthorized .vscode documentation and maintaining proper instruction file standards with version control and dependency tracking.
+- **VS Code Settings Integration**: Complete Edge DevTools extension configuration with diagnostic settings, port configuration, panel controls, warning management, and development-specific browser arguments with security considerations.
+- **Design Rationale**: Enable professional web development debugging with mobile testing, performance analysis, and automated testing scenarios while maintaining protocol compliance and security best practices through proper configuration management.
 
 ## Component Relationships
 
