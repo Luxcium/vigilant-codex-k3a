@@ -28,10 +28,10 @@ To ensure the AI agent and VS Code editor are aware of runtime errors, overlays,
 ## Process
 
 1. Start the dev server using the appropriate VS Code task or terminal command.
-2. Open the Simple Browser in VS Code (`Simple Browser: Show` → `http://localhost:3000`).
-3. Enable browser instrumentation and console log monitoring tools.
+2. Open the Simple Browser in VS Code (`Simple Browser: Show` → open in simple browser #openSimpleBrowser).
+3. Enable browser instrumentation and console log monitoring tools. 
 4. Observe the browser for error overlays, redboxes, or console errors.
-5. Document any errors or overlays in the editor and agent context.
+5. Document any errors or overlays in the editor and agent context.   
 6. Suggest fixes or next steps based on observed errors.
 
 ## Expected Output
