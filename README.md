@@ -331,3 +331,32 @@ npm run test:coverage
 > **Built for AI-Human Collaboration** - This workspace represents a sophisticated foundation for polyvalent application development with advanced AI agent integration, comprehensive testing, and stateful documentation systems.
 
 **Last Updated**: 2025-01-13 | **Status**: Production-Ready | **Coverage**: 98.34%
+
+## Web Development Workflow with AI Agents
+
+Leverage AI-assisted VS Code tasks and npm script aliases to co-develop the Next.js application in real time:
+
+### Root-level npm script aliases
+- **pnpm run web:dev**: Start Next.js in development mode (HMR, error overlays)
+- **pnpm run web:lint**: Run ESLint for the web folder
+- **pnpm run web:format**: Auto-format web code with Prettier
+- **pnpm run web:test**: Run web tests
+- **pnpm run web:build**: Build optimized production bundle
+- **pnpm run web:preview**: Build and start production server
+
+### VS Code Tasks
+Use **Run Task** (Ctrl+Shift+B) or the Command Palette to run:
+- **Web: Dev Server** (web:dev)
+- **Web: Lint** (web:lint)
+- **Web: Format** (web:format)
+- **Web: Test** (web:test)
+- **Web: Preview** (web:preview)
+
+Errors and warnings from linting or build tasks appear in the Problems pane.
+
+### AI Agent Integration
+In **Agent Mode**, use Copilot Chat prompts to automate workflows:
+- `/launch-browser-monitor`: Launch Simple Browser, enable instrumentation, and monitor errors
+- `/analyze-issue`: Review runtime overlays and log console errors; suggest fixes
+
+Custom prompts and instructions are located in `.github/prompts/` and `.github/instructions/`.

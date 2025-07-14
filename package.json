@@ -34,9 +34,10 @@
     "web:dev": "pnpm --filter ./web dev",
     "web:format": "pnpm --filter ./web format",
     "web:lint": "pnpm --filter ./web lint",
-    "web:preview": "pnpm run web:build && pnpm run web:start",
+    "web:preview": "pnpm --filter ./web preview",
     "web:start": "pnpm --filter ./web start",
-    "web:test": "pnpm --filter ./web test"
+    "web:test": "pnpm --filter ./web test",
+    "web:test:watch": "pnpm --filter ./web test:watch"
   },
   "dependencies": {
     "@openai/codex": "^0.1.2505172129",

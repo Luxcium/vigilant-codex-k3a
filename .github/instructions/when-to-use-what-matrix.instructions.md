@@ -1,6 +1,6 @@
 ---
-applyTo: '**/*'
-description: 'One-Page ‘When to Use What’ Matrix mapping integration goals to configuration files'
+applyTo: 'web/**'
+description: 'One-Page ‘When to Use What’ Matrix mapping integration goals to configuration files, this is the most relevant when developing the web application.'
 ---
 
 # One-Page “When to Use What” Matrix
