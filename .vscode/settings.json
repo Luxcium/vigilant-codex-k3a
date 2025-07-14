@@ -1249,6 +1249,18 @@
   // ESLint auto fix on save (string array form)
   "editor.codeActionsOnSave": ["source.fixAll", "source.fixAll.eslint"],
 
+  // Microsoft Edge DevTools Configuration
+  "edge.devtools.enableInlineStyling": false,
+  "edge.devtools.warnings.inlineStyles": "disabled",
+  "edge.devtools.linting.enabled": false,
+  "edge.devtools.issues.enabled": false,
+  "edge.devtools.autoAttach": false,
+  "edge.devtools.network.enabled": true,
+  "edge.devtools.console.enabled": true,
+  "edge.devtools.elements.enabled": true,
+  "edge.devtools.application.enabled": true,
+  "edge.devtools.sources.enabled": true,
+
   // Notebook integration
   "notebook.experimental.generate": true,
   // "todo-tree.highlights.foregroundColourScheme": [

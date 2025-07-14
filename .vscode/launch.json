@@ -114,6 +114,114 @@
       "port": 9229,
       "localRoot": "${workspaceFolder}",
       "remoteRoot": "/workspace"
+    },
+    {
+      "type": "msedge",
+      "name": "Launch Microsoft Edge",
+      "request": "launch",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222",
+        "--disable-web-security",
+        "--disable-features=VizDisplayCompositor"
+      ],
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/web",
+      "sourceMaps": true,
+      "userDataDir": "${workspaceFolder}/.vscode/edge-data",
+      "presentation": {
+        "hidden": false,
+        "group": "browser",
+        "order": 1
+      }
+    },
+    {
+      "type": "msedge",
+      "name": "Launch Microsoft Edge in headless mode",
+      "request": "launch",
+      "runtimeArgs": [
+        "--headless",
+        "--remote-debugging-port=9222",
+        "--disable-gpu"
+      ],
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/web",
+      "sourceMaps": true,
+      "userDataDir": "${workspaceFolder}/.vscode/edge-data-headless",
+      "presentation": {
+        "hidden": true,
+        "group": "browser",
+        "order": 2
+      }
+    },
+    {
+      "type": "vscode-edge-devtools.debug",
+      "name": "Open Edge DevTools",
+      "request": "attach",
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/web",
+      "port": 9222,
+      "pathMapping": {
+        "/": "${workspaceFolder}/web/",
+        "/_next": "${workspaceFolder}/web/.next/",
+        "/static": "${workspaceFolder}/web/public/"
+      },
+      "presentation": {
+        "hidden": true,
+        "group": "devtools",
+        "order": 1
+      }
+    },
+    {
+      "type": "msedge",
+      "name": "Attach to existing Edge instance",
+      "request": "attach",
+      "port": 9222,
+      "webRoot": "${workspaceFolder}/web",
+      "sourceMaps": true,
+      "presentation": {
+        "hidden": false,
+        "group": "browser",
+        "order": 3
+      }
+    },
+    {
+      "type": "msedge",
+      "name": "Launch Edge with DevTools Extensions",
+      "request": "launch",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222",
+        "--disable-web-security",
+        "--allow-running-insecure-content",
+        "--disable-features=VizDisplayCompositor"
+      ],
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/web",
+      "sourceMaps": true,
+      "userDataDir": "${workspaceFolder}/.vscode/edge-data-ext",
+      "skipFiles": ["node_modules/**", "${workspaceFolder}/web/.next/**"],
+      "presentation": {
+        "hidden": false,
+        "group": "browser",
+        "order": 4
+      }
+    },
+    {
+      "type": "msedge",
+      "name": "Debug Mobile View (DevTools)",
+      "request": "launch",
+      "runtimeArgs": [
+        "--remote-debugging-port=9222",
+        "--user-agent=Mozilla/5.0 (iPhone; CPU iPhone OS 14_7_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.1.2 Mobile/15E148 Safari/604.1"
+      ],
+      "url": "http://localhost:3000",
+      "webRoot": "${workspaceFolder}/web",
+      "sourceMaps": true,
+      "userDataDir": "${workspaceFolder}/.vscode/edge-data-mobile",
+      "presentation": {
+        "hidden": false,
+        "group": "browser",
+        "order": 5
+      }
     }
   ],
   "compounds": [
@@ -129,6 +237,74 @@
       "name": "Debug Tests (All)",
       "configurations": ["Python: Tests", "TypeScript: Debug Tests"],
       "stopAll": true
+    },
+    {
+      "name": "Web Development (Complete)",
+      "configurations": [
+        "Next.js debug full-stack",
+        "Launch Microsoft Edge",
+        "Open Edge DevTools"
+      ],
+      "stopAll": true,
+      "presentation": {
+        "hidden": false,
+        "group": "web-dev",
+        "order": 1
+      }
+    },
+    {
+      "name": "Frontend + Edge DevTools",
+      "configurations": [
+        "Next.js debug full-stack",
+        "Launch Microsoft Edge",
+        "Open Edge DevTools"
+      ],
+      "stopAll": true,
+      "presentation": {
+        "hidden": false,
+        "group": "web-dev",
+        "order": 2
+      }
+    },
+    {
+      "name": "Mobile Testing Workflow",
+      "configurations": [
+        "Next.js debug full-stack",
+        "Debug Mobile View (DevTools)"
+      ],
+      "stopAll": true,
+      "presentation": {
+        "hidden": false,
+        "group": "web-dev",
+        "order": 3
+      }
+    },
+    {
+      "name": "Performance Analysis Suite",
+      "configurations": [
+        "Next.js debug full-stack",
+        "Launch Edge with DevTools Extensions",
+        "Open Edge DevTools"
+      ],
+      "stopAll": true,
+      "presentation": {
+        "hidden": false,
+        "group": "web-dev",
+        "order": 4
+      }
+    },
+    {
+      "name": "Headless Testing Environment",
+      "configurations": [
+        "Python: FastAPI Server",
+        "Launch Microsoft Edge in headless mode"
+      ],
+      "stopAll": true,
+      "presentation": {
+        "hidden": true,
+        "group": "testing",
+        "order": 1
+      }
     }
   ]
 }

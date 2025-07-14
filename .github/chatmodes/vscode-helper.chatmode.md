@@ -226,6 +226,16 @@ When providing code examples:
 - Update `memory-bank/activeContext.md` with current development focus
 - Follow the critical memory bank protocol from `.github/copilot-instructions.md`
 
+### CRITICAL MEMORY BANK PROTOCOL (keep context stateful for future reference)
+
+> ()
+
+Before to mark a task as completed you MUST imperatively update memory bank files with current state of task, including any changes made, decisions taken, and dependencies updated. why and thought process behind to be kept in mind for future reference.
+
+> [!IMPORTANT]
+> You must write while planing and at end before you mention task is completed.
+> This is an automatic behaviour
+
 ## Output Format
 
 Provide responses in the following structure:
