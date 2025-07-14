@@ -273,3 +273,4 @@ Successfully completed implementation of conditional Python environment framewor
 - Test the complete conditional framework across all three modes
 - Document lessons learned for extending to other language environments
 - Consider implementing conditional frameworks for Node.js, TypeScript, and web development setups
+- Add VS Code tasks for Next.js dev server and build

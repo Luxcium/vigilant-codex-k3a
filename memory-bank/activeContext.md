@@ -1,5 +1,13 @@
 <!-- markdownlint-disable MD013 MD041 MD022 MD032 -->
 
+## [2025-07-14T06:24:39Z] Self-Documentation Log
+- [2025-07-14T06:24:39Z] Current State: VS Code tasks added for Next.js development;
+  Last Action: Created "Web: Dev Server" and "Web: Build" tasks in `.vscode/tasks.json` and added `start-web-dev-server.prompt.md` for Copilot assistance;
+  Rationale: Automate launching and building the web app via VS Code as requested by the user;
+  Next Intent: Run the new tasks to verify the server starts correctly and document results;
+  Note: Executing Self-Documentation Protocol.
+  This entry reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
+
 ## [2025-07-13T11:07:00Z] Self-Documentation Log
 
 - [2025-07-13T11:07:00Z] Current State: Comprehensive README drift resolution and Memory Bank synchronization completed;
