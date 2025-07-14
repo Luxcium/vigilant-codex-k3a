@@ -90,6 +90,22 @@
       "console": "integratedTerminal"
     },
     {
+      "name": "Next.js debug full-stack",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/web/node_modules/.bin/next",
+      "args": ["dev"],
+      "cwd": "${workspaceFolder}/web",
+      "autoAttachChildProcesses": true,
+      "outFiles": ["${workspaceFolder}/web/.next/**/*.js"],
+      "skipFiles": ["<node_internals>/**"],
+      "serverReadyAction": {
+        "pattern": "started server on",
+        "uriFormat": "http://localhost:3000",
+        "action": "debugWithChrome"
+      }
+    },
+    {
       "name": "Docker: Debug in Container",
       "type": "node",
       "request": "attach",
