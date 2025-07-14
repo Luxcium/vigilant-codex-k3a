@@ -194,6 +194,11 @@ This entry reaffirms that all actions and context changes must be documented and
 
 - [2025-07-11T09:00:00Z] Current State: Notebook specialist chat mode, instruction, and prompt files created and integrated; Last Action: Implemented notebook-specialist.chatmode.md, vscode-notebook-integration.instructions.md, and notebook-development-workflow.prompt.md for comprehensive Jupyter notebook support and VS Code integration; Rationale: Enable advanced notebook development, execution, and analysis workflows leveraging VS Code extended capabilities and project standards; Next Intent: Update progress.md and systemPatterns.md to reflect new notebook capabilities and ensure memory bank synchronization. Note: Executing Self-Documentation Protocol. This entry reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
 
+- [2025-07-14T06:24:34Z] Current State: Web server automation tasks added;
+  Last Action: Added Start Web Dev Server, Build Web App, and Serve Web Build tasks to `.vscode/tasks.json` and created `start-web-server.instructions.md`. Updated `.github/instructions/README.md` to reference the new file;
+  Rationale: Simplify Next.js development and deployment in VS Code with consistent tasks and Copilot guidance;
+  Next Intent: Validate tasks via VS Code and update documentation if issues occur;
+  Note: Executing Self-Documentation Protocol.
 ## Next Steps
 
 ### Documentation Updates

@@ -5,7 +5,10 @@
       "label": "Python: Setup Environment",
       "type": "shell",
       "command": "${workspaceFolder}/scripts/setup_python_env.sh",
-      "args": ["--mode", "local"],
+      "args": [
+        "--mode",
+        "local"
+      ],
       "group": "build",
       "presentation": {
         "echo": true,
@@ -51,7 +54,11 @@
       "label": "Python: Install Dependencies",
       "type": "shell",
       "command": "${workspaceFolder}/python/.venv/bin/pip",
-      "args": ["install", "-r", "requirements.txt"],
+      "args": [
+        "install",
+        "-r",
+        "requirements.txt"
+      ],
       "options": {
         "cwd": "${workspaceFolder}/python"
       },
@@ -68,7 +75,12 @@
       "label": "Python: Run Tests",
       "type": "shell",
       "command": "${workspaceFolder}/python/.venv/bin/pytest",
-      "args": ["tests/", "-v", "--cov=src", "--cov-report=html"],
+      "args": [
+        "tests/",
+        "-v",
+        "--cov=src",
+        "--cov-report=html"
+      ],
       "options": {
         "cwd": "${workspaceFolder}/python",
         "env": {
@@ -88,7 +100,9 @@
       "label": "Python: Lint with Pylint",
       "type": "shell",
       "command": "${workspaceFolder}/python/.venv/bin/pylint",
-      "args": ["src/"],
+      "args": [
+        "src/"
+      ],
       "options": {
         "cwd": "${workspaceFolder}/python"
       },
@@ -105,7 +119,9 @@
       "label": "Python: Type Check with MyPy",
       "type": "shell",
       "command": "${workspaceFolder}/python/.venv/bin/mypy",
-      "args": ["src/"],
+      "args": [
+        "src/"
+      ],
       "options": {
         "cwd": "${workspaceFolder}/python"
       },
@@ -146,7 +162,10 @@
       "label": "Python: Format Code",
       "type": "shell",
       "command": "${workspaceFolder}/python/.venv/bin/black",
-      "args": ["src/", "tests/"],
+      "args": [
+        "src/",
+        "tests/"
+      ],
       "options": {
         "cwd": "${workspaceFolder}/python"
       },
@@ -163,7 +182,10 @@
       "label": "TypeScript: Build",
       "type": "shell",
       "command": "npm",
-      "args": ["run", "build"],
+      "args": [
+        "run",
+        "build"
+      ],
       "group": "build",
       "presentation": {
         "echo": true,
@@ -171,13 +193,17 @@
         "focus": false,
         "panel": "shared"
       },
-      "problemMatcher": ["$tsc"]
+      "problemMatcher": [
+        "$tsc"
+      ]
     },
     {
       "label": "TypeScript: Test",
       "type": "shell",
       "command": "npm",
-      "args": ["test"],
+      "args": [
+        "test"
+      ],
       "group": "test",
       "presentation": {
         "echo": true,
@@ -191,7 +217,10 @@
       "label": "TypeScript: Test Watch",
       "type": "shell",
       "command": "npm",
-      "args": ["run", "test:watch"],
+      "args": [
+        "run",
+        "test:watch"
+      ],
       "group": "test",
       "isBackground": true,
       "presentation": {
@@ -242,6 +271,60 @@
         "reveal": "always",
         "focus": false,
         "panel": "shared"
+      }
+    },
+    {
+      "label": "Start Web Dev Server",
+      "type": "shell",
+      "command": "pnpm",
+      "args": [
+        "dev"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/web"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Build Web App",
+      "type": "shell",
+      "command": "pnpm",
+      "args": [
+        "build"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/web"
+      },
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Serve Web Build",
+      "type": "shell",
+      "command": "pnpm",
+      "args": [
+        "start"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}/web"
+      },
+      "problemMatcher": [],
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
       }
     }
   ]

@@ -21,7 +21,7 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 > **Authoring Standard:**  
 > Before creating or updating any instruction file, consult [instruction-authoring-standards.instructions.md](./instruction-authoring-standards.instructions.md) for the canonical rules, structure, and validation checklist. All `.instructions.md` files must comply with this standard for consistency and markdown-lint strictness.
 
-## Available Instructions (25 Files)
+## Available Instructions (26 Files)
 
 ### AI Agent Workflow & Creation
 
@@ -42,6 +42,7 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 **[python-environment.instructions.md](./python-environment.instructions.md)** - Traditional Python environment setup standards and best practices for local development workflows.
 
 **[vscode-notebook-integration.instructions.md](./vscode-notebook-integration.instructions.md)** - VS Code Notebook API integration standards for advanced Jupyter notebook development, execution control, and automation.
+**[start-web-server.instructions.md](./start-web-server.instructions.md)** - VS Code task guidance for running `pnpm dev`, building, and serving the web app.
 
 ### Language Standards
 
