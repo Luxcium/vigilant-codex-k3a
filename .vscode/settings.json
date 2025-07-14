@@ -304,6 +304,7 @@
       "strikethrough": false,
       // ||=================================================================||
       "tag": "||=="
+      // "backgroundColor": "#F806"
     },
     {
       "backgroundColor": "#7C25",
@@ -2184,5 +2185,173 @@
   // ========================================
   // Project-Specific Extensions
   // ========================================
-  "extensions.ignoreRecommendations": true
+  // ========================================
+  // View Header Icons Configuration
+  // ========================================
+
+  // Always show icons in view headers
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.tree.indent": 12,
+  "workbench.list.openMode": "doubleClick",
+
+  // Explorer view header icons
+  "explorer.compactFolders": false,
+  "explorer.decorations.badges": true,
+  "explorer.decorations.colors": true,
+  "explorer.sortOrder": "type",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, .npmrc"
+  },
+
+  // Outline view header icons
+  "outline.icons": true,
+  "outline.problems.enabled": true,
+  "outline.problems.badges": true,
+  "outline.problems.colors": true,
+  "outline.showFiles": true,
+  "outline.showModules": true,
+  "outline.showPackages": true,
+  "outline.showClasses": true,
+  "outline.showMethods": true,
+  "outline.showProperties": true,
+  "outline.showFields": true,
+  "outline.showConstructors": true,
+  "outline.showEnums": true,
+  "outline.showInterfaces": true,
+  "outline.showFunctions": true,
+  "outline.showVariables": true,
+  "outline.showConstants": true,
+  "outline.showStrings": true,
+  "outline.showNumbers": true,
+  "outline.showBooleans": true,
+  "outline.showArrays": true,
+  "outline.showObjects": true,
+  "outline.showKeys": true,
+  "outline.showNull": true,
+  "outline.showEnumMembers": true,
+  "outline.showStructs": true,
+  "outline.showEvents": true,
+  "outline.showOperators": true,
+  "outline.showTypeParameters": true,
+
+  // Timeline view header icons
+  "timeline.showIcons": true,
+  "timeline.excludeSources": [],
+
+  // Extensions view header icons
+  "extensions.ignoreRecommendations": false,
+
+  // Search view header icons
+  "search.showLineNumbers": true,
+  "search.smartCase": true,
+  "search.useGlobalIgnoreFiles": true,
+  "search.useIgnoreFiles": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/tmp": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.vscode": true,
+    "**/.next": true,
+    "**/out": true
+  },
+
+  // Git/SCM view header icons
+  "scm.alwaysShowRepositories": true,
+  "scm.autoReveal": true,
+  "scm.defaultViewMode": "tree",
+  "scm.repositories.visible": 10,
+
+  // Problems view header icons
+  "problems.showCurrentInStatus": true,
+  "problems.sortOrder": "severity",
+  "problems.decorations.enabled": true,
+
+  // Debug view header icons
+  "debug.showInStatusBar": "always",
+  "debug.showSubSessionsInToolBar": true,
+
+  // Terminal view header icons
+  "terminal.integrated.showExitAlert": false,
+  "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.tabs.location": "left",
+  "terminal.integrated.tabs.showActions": "always",
+  "terminal.integrated.tabs.showActiveTerminal": "always",
+
+  // Test view header icons (if you have test extensions)
+  "testing.automaticallyOpenPeekView": "never",
+  "testing.showAllMessages": true,
+
+  // Workbench activity bar and side bar icons
+  "workbench.activityBar.location": "default",
+  "workbench.sideBar.location": "left",
+  "workbench.panel.defaultLocation": "bottom",
+
+  // Icon theme configuration (based on your Material Icon Theme)
+  "material-icon-theme.folders.theme": "specific",
+  "material-icon-theme.folders.color": "#90a4ae",
+  "material-icon-theme.hidesExplorerArrows": false,
+  "material-icon-theme.opacity": 1,
+  "material-icon-theme.saturation": 1,
+
+  // Breadcrumb icons
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.icons": true,
+  "breadcrumbs.showFiles": true,
+  "breadcrumbs.showKeys": true,
+  "breadcrumbs.showProperties": true,
+  "breadcrumbs.showClasses": true,
+  "breadcrumbs.showMethods": true,
+  "breadcrumbs.showFunctions": true,
+  "breadcrumbs.showVariables": true,
+  "breadcrumbs.showConstants": true,
+  "breadcrumbs.showEnums": true,
+  "breadcrumbs.showEnumMembers": true,
+  "breadcrumbs.showInterfaces": true,
+  "breadcrumbs.showModules": true,
+  "breadcrumbs.showPackages": true,
+  "breadcrumbs.showStructs": true,
+  "breadcrumbs.showEvents": true,
+  "breadcrumbs.showOperators": true,
+  "breadcrumbs.showTypeParameters": true,
+  "breadcrumbs.showConstructors": true,
+  "breadcrumbs.showBooleans": true,
+  "breadcrumbs.showArrays": true,
+  "breadcrumbs.showObjects": true,
+  "breadcrumbs.showNull": true,
+  "breadcrumbs.showNumbers": true,
+  "breadcrumbs.showStrings": true,
+
+  // Editor tab icons
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.wrapTabs": true,
+  "workbench.editor.decorations.badges": true,
+  "workbench.editor.decorations.colors": true,
+  "workbench.editor.labelFormat": "default",
+  "workbench.editor.showIcons": true,
+
+  // Status bar icons
+  "workbench.statusBar.visible": true,
+
+  // Additional visual enhancements
+  "workbench.tips.enabled": true,
+  "workbench.hover.delay": 500,
+  "workbench.reduceMotion": "off",
+  "workbench.tree.expandMode": "singleClick",
+  "workbench.list.defaultFindMode": "highlight",
+  "workbench.list.typeNavigationMode": "automatic",
+  "workbench.list.multiSelectModifier": "ctrlCmd",
+  "workbench.list.smoothScrolling": true
 }
