@@ -1,0 +1,11 @@
+.container {
+  padding: 32px;
+  border-radius: 8px;
+  color: #fff;
+}
+.input {
+  margin-top: 16px;
+}
+.label {
+  margin-left: 8px;
+}
