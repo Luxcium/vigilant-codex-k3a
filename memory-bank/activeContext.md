@@ -1,4 +1,4 @@
-<!-- markdownlint-disable MD013 MD041 MD022 MD032 -->
+<!-- markdownlint-disable MD013 MD041 MD022 MD032 MD012 MD026 MD024 MD007 -->
 
 ## [2025-07-13T11:07:00Z] Self-Documentation Log
 
@@ -80,7 +80,7 @@ Rationale: To ensure only one test file/module is run per invocation, supporting
 Next Intent: Continue incremental test fixing and validation, update documentation and dependencies as needed.
 Note: Executing Self-Documentation Protocol.
 This log reaffirms that self-documentation and meta-description are ongoing requirements.
-<!-- markdownlint-disable MD013 MD041 MD022 MD032 -->
+<!-- markdownlint-disable MD013 MD041 MD022 MD032 MD012 MD026 MD024 MD007 -->
 
 ## [2025-06-04]
 
@@ -261,3 +261,4 @@ This project supports three AI agents with specific entry points:
 - [2025-07-10T01:47:25Z] Added tsdoc-typedoc instructions, chatmode, and prompt to .github directories for TSDoc/TypeDoc documentation workflow.
 - [2025-07-10T02:22:00Z] Expanded tsdoc-typedoc files with comprehensive Annex A and Annex B references and added verification blocks.
 - [2025-07-10T16:30:00Z] Current State: Chat mode development consultation initiated; Last Action: Analyzed existing chat modes (vscode-helper, plan, tsdoc-typedoc) and project structure to understand current capabilities and identify opportunities for new mode development; Rationale: User requested help developing new VS Code chat mode based on extended capabilities - need to understand specific goals before creating tailored solution; Next Intent: Await user input on specific workflow/challenge to address, then create comprehensive chat mode following established patterns. Note: Executing Self-Documentation Protocol. This entry reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
+- [2025-07-30T00:00:00Z] Current State: Added VS Code task entries for starting, building, and running the Next.js app; Last Action: Created web-dev-server.instructions.md and updated .vscode/tasks.json with Web: Start Dev Server, Web: Build, and Web: Start Prod Server tasks; Rationale: Automate development and deployment workflows for the web application; Next Intent: Validate new tasks via VS Code Task Runner and document results. Note: Executing Self-Documentation Protocol.

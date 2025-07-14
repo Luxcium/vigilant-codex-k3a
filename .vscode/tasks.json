@@ -229,6 +229,51 @@
       "problemMatcher": []
     },
     {
+      "label": "Web: Start Dev Server",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["dev"],
+      "options": {
+        "cwd": "${workspaceFolder}/web"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Web: Build",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["build"],
+      "options": {
+        "cwd": "${workspaceFolder}/web"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Web: Start Prod Server",
+      "type": "shell",
+      "command": "pnpm",
+      "args": ["start"],
+      "options": {
+        "cwd": "${workspaceFolder}/web"
+      },
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
       "label": "Full Project Setup",
       "dependsOrder": "sequence",
       "dependsOn": [
