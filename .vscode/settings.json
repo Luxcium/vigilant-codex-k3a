@@ -2294,7 +2294,7 @@
   "testing.showAllMessages": true,
 
   // Workbench activity bar and side bar icons
-  "workbench.activityBar.location": "default",
+  "workbench.activityBar.location": "hidden",
   "workbench.sideBar.location": "left",
   "workbench.panel.defaultLocation": "bottom",
 

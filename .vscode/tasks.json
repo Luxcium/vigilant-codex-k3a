@@ -289,6 +289,35 @@
         "focus": false,
         "panel": "shared"
       }
+    },
+    {
+      "label": "Web Development Environment",
+      "dependsOrder": "sequence",
+      "dependsOn": ["Start Web Dev Server"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated"
+      },
+      "problemMatcher": [],
+      "isBackground": true
+    },
+    {
+      "label": "Web Quality Check",
+      "dependsOrder": "parallel",
+      "dependsOn": ["Web: Lint", "Web: Format", "Web: Test"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "dedicated"
+      }
     }
   ]
 }

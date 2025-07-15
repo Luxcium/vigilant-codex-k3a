@@ -4,15 +4,13 @@ import styles from './ColorDemo.module.css';
 
 export default function ColorDemo() {
   const [color, setColor] = useState('#3367d6');
-  // Introduce a runtime error: undefined function call
-  // eslint-disable-next-line
-  (window as any).triggerError();
+
   return (
     <div
       className={`${styles.container} ${styles.dynamicColor}`}
       style={{ '--dynamic-color': color } as React.CSSProperties}>
-      <h2>Color Demo Component</h2>
-      <p>This box changes color in watch mode.</p>
+      <h2>🎨 Interactive Color Demo</h2>
+      <p>🔥 Live coding session activated! Watch this change in real-time.</p>
       <label htmlFor="color-input">
         Pick a color:
         <input
