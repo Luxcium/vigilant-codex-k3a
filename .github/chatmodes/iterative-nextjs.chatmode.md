@@ -3,20 +3,23 @@ description: Iterative Next.js development with live browser preview, hot reload
 tools:
   [
     'codebase',
-    'fetch',
-    'runCommands',
-    'findTestFiles',
-    'githubRepo',
-    'search',
-    'usages',
     'copilotCodingAgent',
     'editFiles',
     'extensions',
-    'vscodeAPI',
+    'fetch',
+    'findTestFiles',
+    'githubRepo',
     'microsoft_docs_search',
     'microsoft-docs',
-    'terminals',
     'openSimpleBrowser',
+    'runCommands',
+    'runTasks',
+    'search',
+    'terminalLastCommand',
+    'terminals',
+    'terminalSelection',
+    'usages',
+    'vscodeAPI',
   ]
 ---
 

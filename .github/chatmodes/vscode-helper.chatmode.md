@@ -1,6 +1,23 @@
 ---
-description: VS Code development helper for extensions, workspace configuration, and API usage
-tools: ['codebase', 'fetch', 'runCommands',  'findTestFiles', 'githubRepo', 'search', 'usages', 'copilotCodingAgent', 'editFiles', 'extensions', 'vscodeAPI' ,  "microsoft_docs_search", "microsoft-docs" ]
+description: VS Code development helper for extensions, workspace configuration, and API usage and anything related to this project in vscode.
+tools: [
+  'codebase', 
+  'copilotCodingAgent',
+  'editFiles',
+  'extensions',
+  'fetch',
+  'findTestFiles',
+  'github',
+  'githubRepo',
+  'microsoft_docs_search',
+  'microsoft-docs',
+  'problems',
+  'runCommands',
+  'runTasks',
+  'search',
+  'usages',
+  'vscodeAPI',
+]
 ---
 
 # VS Code Development Helper
