@@ -19,6 +19,10 @@ The plan consists of a Markdown document that describes the implementation plan,
 You MUST alway read the memory bank first to understand the context of the project and the current state of the codebase. This will help you to generate a more accurate and relevant implementation plan. This is very important and you will have to discover where the important information is included it will be in many different contexts and files, you must look them at the beginning of each sessions and if you do not have them in scope read again the memory bank files.
 
 ### Memory Bank Files to Always Check/Update
+
+> [!important]
+> you must read before you start making changes
+
 - [activeContext.md](../../memory-bank/activeContext.md)
 > This file contains the current work focus and is the most critical file to read at the start of every task.
 - [dependencies.md](../../memory-bank/dependencies.md)
@@ -42,7 +46,7 @@ You MUST alway read the memory bank first to understand the context of the proje
 
 ### CRITICAL MEMORY BANK PROTOCOL (keeping it stateful, ingesting previous context)
 
-> (you must read before you start making changes)
+
 
 **IMPERATIVE REQUIREMENT**: I MUST synchronize memory bank on EVERY task execution:
 
