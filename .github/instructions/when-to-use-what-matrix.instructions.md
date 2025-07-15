@@ -20,6 +20,10 @@ This matrix condenses all key manifest and meta configurations into a single ref
 | Legacy Firefox OS App                | `manifest.webapp` ([stackoverflow.com][12])                                                                                                  | –                                                                                       |
 | Tizen Web & Widget                   | `config.xml` (`<widget …>`) ([docs.tizen.org][13])                                                                                           | –                                                                                       |
 | Chrome Extension (Manifest V3)       | `manifest.json` (`manifest_version: 3`) ([developer.chrome.com][14])                                                                         | –                                                                                       |
+| **Next.js Component Selection**       | **Component Decision Matrix** ([nextjs-component-patterns.instructions.md][15])                                                               | **Server Action Implementation** ([prisma-server-actions.instructions.md][16])           |
+| **React Server Components**          | **Server Component (default)** - Data fetching, static content, SEO                                                                          | **Client Component (`'use client'`)** - Interactivity, hooks, browser APIs              |
+| **Database Operations**              | **Server Actions (`'use server'`)** - Mutations, form handling, validation                                                                    | **Prisma Client** - Database queries, ORM operations                                    |
+| **Data Flow Architecture**           | **Server → Client Props** - Serializable data only (no functions)                                                                           | **Client → Server Actions** - Form data, user interactions                              |
 
 ## Copilot Workflow
 
@@ -50,3 +54,5 @@ This matrix condenses all key manifest and meta configurations into a single ref
 [13]: https://docs.tizen.org/application/tizen-studio/web-tools/config-editor/?utm_source=chatgpt.com 'Configuring Applications | Tizen Docs'
 [14]: https://developer.chrome.com/docs/extensions/reference/manifest?utm_source=chatgpt.com 'Manifest file format - Chrome for Developers'
 [15]: https://developer.android.com/studio/write/app-link-indexing?utm_source=chatgpt.com 'Add Android App Links | Android Studio'
+[16]: ./nextjs-component-patterns.instructions.md 'Next.js Component Pattern Selection'
+[17]: ./prisma-server-actions.instructions.md 'Prisma with Next.js Server Actions'

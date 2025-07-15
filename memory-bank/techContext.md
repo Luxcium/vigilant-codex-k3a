@@ -29,6 +29,51 @@ This file documents the technologies, development setup, technical constraints, 
 - **Performance Optimized**: Native implementation provides better performance characteristics
 - **Future Compatible**: Long-term maintenance advantages with native Node.js APIs
 
+### Next.js v15+ Architecture
+
+- **App Router**: `/app` directory with Server Components by default
+- **Server Actions**: Use `'use server'` for mutations instead of API routes
+- **Client Components**: Use `'use client'` for interactivity, state, and browser APIs
+- **Prisma ORM**: Database access with PostgreSQL backend
+- **Docker Integration**: Containerized PostgreSQL development environment
+
+### Component Architecture Rules
+
+#### Server Component Usage (Default)
+- Data fetching from databases or APIs
+- Static content and SEO-friendly elements
+- Server-side computations and transformations
+- Environment variable access and secrets
+- Initial page rendering and layout
+
+#### Client Component Usage (`'use client'`)
+- Interactive UI requiring state management (`useState`, `useEffect`)
+- Event handlers (`onClick`, `onChange`, `onSubmit`)
+- Browser-only APIs (`window`, `localStorage`, `navigator`)
+- Third-party client-side libraries
+- Custom hooks and context providers
+
+#### Server Actions Usage (`'use server'`)
+- Database mutations (CREATE, UPDATE, DELETE operations)
+- Form submissions and data validation
+- Authentication and authorization logic
+- Cache revalidation (`revalidatePath`, `revalidateTag`)
+- Redirects after successful operations
+
+### Serialization and Data Flow
+
+#### Serializable Props (Server to Client)
+- **Allowed**: Strings, numbers, booleans, arrays, plain objects, Dates, null, undefined
+- **Not Allowed**: Functions, symbols, classes, DOM elements, complex objects
+- **Pattern**: Pass data as props, define event handlers in Client Components
+- **Alternative**: Use Server Actions for server-side function calls
+
+#### Progressive Enhancement
+- Forms work without JavaScript enabled
+- Client-side validation enhances user experience
+- Server-side validation always enforced
+- Graceful degradation for disabled JavaScript
+
 ### Testing Infrastructure
 
 - **Vitest 3.2.4**: Primary test runner with Istanbul coverage provider

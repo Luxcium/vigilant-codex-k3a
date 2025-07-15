@@ -106,6 +106,32 @@ This Memory Bank is initialized to provide a clear, adaptable template for docum
 - Implemented proper test mocking strategy using vi.stubGlobal('fetch', mockFetch) for test isolation
 - Maintained complete API compatibility while eliminating external package dependency
 
+### Next.js Component Architecture Patterns
+
+#### Client-Server Boundary Rules
+- **`'use client'` Directive**: Place at top of file, before imports, only at component entry points
+- **Serializable Props**: Props passed from Server to Client Components must be serializable (no functions, symbols, or non-serializable objects)
+- **Minimize Client Bundle**: Use Server Components by default, Client Components only when necessary
+- **Server Actions**: Use `'use server'` for mutations instead of API routes
+
+#### Component Decision Matrix
+| Context | Component Type | Use `'use client'` | Use Server Component | Use Server Actions |
+|---------|----------------|-------------------|---------------------|-------------------|
+| Data fetching (initial) | Data loading | ❌ | ✅ | ❌ |
+| User interaction | Button clicks, forms | ✅ | ❌ | ❌ |
+| State management | useState, useEffect | ✅ | ❌ | ❌ |
+| Database mutations | Create, update, delete | ❌ | ❌ | ✅ |
+| Browser APIs | localStorage, window | ✅ | ❌ | ❌ |
+| SEO content | Static text, meta | ❌ | ✅ | ❌ |
+| Authentication | Login forms, logout | ✅ (UI) | ✅ (validation) | ✅ (actions) |
+| Third-party libraries | Client-side only | ✅ | ❌ | ❌ |
+
+#### Implementation Patterns
+- **Composition Pattern**: Nest Client Components inside Server Components for clear separation
+- **Split Pattern**: Complex components split into Server (data) + Client (interaction) parts
+- **Progressive Enhancement**: Forms work without JavaScript, enhanced with client-side validation
+- **Revalidation Pattern**: Server Actions use `revalidatePath()` and `revalidateTag()` for cache updates
+
 ### Testing Architecture Patterns
 
 #### **Native Fetch Testing Pattern**

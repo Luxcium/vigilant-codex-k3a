@@ -1,43 +1,38 @@
-import ColorDemo from './ColorDemo';
+import { prisma } from '@/lib/prisma';
+import PostForm from '@/components/post-form';
+import PostList from '@/components/post-list';
 
-export default function Home() {
+export default async function Home() {
+  // Fetch posts on server
+  const posts = await prisma.post.findMany({
+    orderBy: { createdAt: 'desc' },
+    take: 10,
+    select: {
+      id: true,
+      title: true,
+      content: true,
+      likes: true,
+      createdAt: true,
+    },
+  });
+
   return (
-    <main
-      style={{
-        padding: '2rem',
-        fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-        background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        minHeight: '100vh',
-        color: 'white',
-      }}>
-      <h1
-        style={{
-          fontSize: '2.5rem',
-          marginBottom: '1rem',
-          textAlign: 'center',
-          textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
-        }}>
-        🚀 Iterative Development Environment - Ready!
+    <div className="container mx-auto px-4 py-8">
+      <h1 className="text-3xl font-bold mb-8">
+        Next.js v15 + Prisma + PostgreSQL
       </h1>
-      <p
-        style={{
-          fontSize: '1.2rem',
-          marginBottom: '2rem',
-          textAlign: 'center',
-          opacity: '0.9',
-        }}>
-        This page demonstrates live hot-reload in action. Changes appear
-        instantly!
-      </p>
-      <div
-        style={{
-          background: 'rgba(255,255,255,0.1)',
-          padding: '2rem',
-          borderRadius: '12px',
-          backdropFilter: 'blur(10px)',
-        }}>
-        <ColorDemo />
+
+      <div className="grid gap-8 md:grid-cols-2">
+        <div>
+          <h2 className="text-xl font-semibold mb-4">Create Post</h2>
+          <PostForm />
+        </div>
+
+        <div>
+          <h2 className="text-xl font-semibold mb-4">Recent Posts</h2>
+          <PostList posts={posts} />
+        </div>
       </div>
-    </main>
+    </div>
   );
 }
