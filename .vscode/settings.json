@@ -2168,8 +2168,7 @@
   // ========================================
   // Task and Launch Configuration
   // ========================================
-  "tasks.showOutput": "always",
-  "tasks.problemMatchers.fileLocation": "relative",
+
   "debug.allowBreakpointsEverywhere": true,
   "debug.showBreakpointsInOverviewRuler": true,
   "debug.console.fontSize": 14,
@@ -2241,10 +2240,6 @@
   "outline.showOperators": true,
   "outline.showTypeParameters": true,
 
-  // Timeline view header icons
-  "timeline.showIcons": true,
-  "timeline.excludeSources": [],
-
   // Extensions view header icons
   "extensions.ignoreRecommendations": false,
 
@@ -2294,7 +2289,7 @@
   "testing.showAllMessages": true,
 
   // Workbench activity bar and side bar icons
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "default",
   "workbench.sideBar.location": "left",
   "workbench.panel.defaultLocation": "bottom",
 
