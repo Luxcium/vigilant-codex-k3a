@@ -2,6 +2,7 @@ import { createRateLimiter } from '../rateLimit/tokenBucket';
 import { categorize } from '../rateLimit/rules';
 import { bootstrap } from '../auth/manual';
 import { toQuestradeError } from './toError';
+import type { GeneralErrorPayload } from './types';
 
 const rl = createRateLimiter();
 
@@ -19,7 +20,7 @@ export const smartFetch =
   ): Promise<Response> => {
     const cat = categorize(url);
     await rl.acquire(cat);
-    let res = await baseFetch(url, init);
+    let res: Response = await baseFetch(url, init);
     const remaining = parseInt(
       res.headers.get('X-RateLimit-Remaining') ?? '',
       10
@@ -34,14 +35,18 @@ export const smartFetch =
       return smartFetch(baseFetch)(url, init);
     }
     const clone = res.clone();
-    const payload: any = await clone.json().catch(() => ({}));
+    const payload = (await clone
+      .json()
+      .catch(() => ({}))) as GeneralErrorPayload;
     if (
-      (res.status === 401 || payload.code === 1017) &&
+      (res.status === 401 || payload?.code === 1017) &&
       init.clientId &&
       init.refreshToken
     ) {
       await bootstrap(init.clientId, init.refreshToken);
       const { clientId, refreshToken, ...rest } = init;
+      void clientId; // avoid unused variable warning
+      void refreshToken; // avoid unused variable warning
       res = await baseFetch(url, rest);
     }
     if (!res.ok) throw await toQuestradeError(res);

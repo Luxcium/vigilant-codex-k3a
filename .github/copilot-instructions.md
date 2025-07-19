@@ -2,22 +2,38 @@
 
 This file is **VS Code Copilot's primary instruction file and entry point**.
 
+## CRITICAL MEMORY BANK PROTOCOL (keeping it stateful, ingesting previous context)
+
+> (you must read before you start making changes)
+
+**IMPERATIVE REQUIREMENT**: I MUST synchronize memory bank on EVERY task execution:
+
+1. **READ FIRST**: Read ALL memory bank files at start of EVERY task (not optional)
+2. **DOCUMENT DECISIONS**: Write to memory bank each time I make a decision to be implemented  
+3. **WRITE BEFORE END**: Update memory bank just before completing any task
+4. **STATE PRESERVATION**: Ensure my state will not be lost if interrupted
+
+**Memory Bank Files to Always Check/Update**:
+- `memory-bank/activeContext.md` (current work focus - MOST CRITICAL)
+- `memory-bank/progress.md` (track what works, what's left)
+- `memory-bank/dependencies.md` (track relationships)
+- `memory-bank/systemPatterns.md` (technical decisions)
+- `memory-bank/techContext.md` (technologies, constraints)
+
 ## Three AI Agent System
 
 This project supports three AI agents with distinct entry points:
 
 - **VS Code Copilot (YOU)** → `.github/copilot-instructions.md` (THIS IS YOUR ENTRY POINT)
-- **Cline AI** → `.clinerules/main-rules.md` (Cline AI's primary instruction file)
-- **Codex** and **Codex CLI** → `AGENTS.md` (Codex and Codex CLI's primary instruction file)
+- **Other AI Agents** → Use their respective entry points and memory bank protocols
 
-# Project-Wide Guidelines for Codex CLI
 
 ## General Coding Standards
 
 ### TypeScript Standards
 
 - Use TypeScript for all new scripts and application code
-- Follow the Airbnb TypeScript style guide
+- Follow Airbnb TypeScript style guide
 - Use strict type checking with `"strict": true` in tsconfig.json
 - Prefer interfaces over type aliases for object shapes
 - Use descriptive, semantic variable and function names
@@ -42,14 +58,14 @@ This project supports three AI agents with distinct entry points:
 ## Index File Export Rule
 
 - Always use named exports in all index files (e.g., `export { Foo } from './foo'`)
-- Use the `type` keyword for type exports (e.g., `export type { Bar } from './bar'`)
+- Use `type` keyword for type exports (e.g., `export type { Bar } from './bar'`)
 - Never use default exports or `export *` in index files
 
 ### Memory Bank Principles
 
 - Reference appropriate memory bank files when making changes
 - Update dependency relationships in dependencies.md when adding new features
-- Follow the reading protocol from .clinerules/reading-protocol.md
+- Follow reading protocol from .clinerules/reading-protocol.md
 - Document all design decisions and their rationales
 - Cross-reference related documents using markdown links
 
@@ -65,7 +81,7 @@ This project supports three AI agents with distinct entry points:
 
 - Track all dependencies in dependencies.md
 - Justify every dependency with a clear "why" explanation
-- Analyze impact of dependency changes throughout the system
+- Analyze impact of dependency changes throughout system
 - Avoid circular dependencies; if unavoidable, provide strong justification
 - Implement bidirectional tracking for all dependencies
 
@@ -96,7 +112,7 @@ This project supports three AI agents with distinct entry points:
 
 ## Session-Sticky Preferences
 
-Whenever the user requests an operational preference (e.g. "reply
+Whenever user requests an operational preference (e.g. "reply
 quickly"), each agent should store preferences in their own instruction
 files, and those preferences should be recorded to persist across
 sessions until explicitly changed. Preferences are stored in this
@@ -109,14 +125,14 @@ Current Preferences:
 
 To add or update preferences:
 
-1. Edit this section following the strictest set of markdown-lint
+1. Edit this section following strictest set of markdown-lint
    guidelines
 2. Add preference here above as a bullet with format:
    **{preference-name}**: {preference-description}
 
-<!-- All agents (Codex-CLI, Cline AI, and VS Code Copilot Chat) must use their own instruction files to manage preferences. -->
+<!-- All agents (Codex-CLI, Cline AI, and VS Code Copilot Chat) MUST use their own instruction files to manage preferences. -->
 
-**Cline AI**: Cline AI uses files housed in the `.clinerules/`
+**Cline AI**: Cline AI uses files housed in `.clinerules/`
 directory to organize automatically their operational preferences and
 instructions.
 
@@ -129,7 +145,14 @@ preferences and instructions.
 
 ### Documentation and User Preferences
 
-- All documentation for instructions and prompts must be included in the respective `.github/instructions/README.md` and `.github/prompts/README.md` files. Do not use a `docs/` folder unless explicitly required by the user.
+- All documentation for instructions and prompts MUST be included in respective `.github/instructions/README.md` and `.github/prompts/README.md` files. Do not use a `docs/` folder unless explicitly required by user.
 - When possible, append user preferences and operational requirements to `.github/copilot-instructions.md` and reference them in future actions.
-- When generating or updating instruction or prompt files, self-prompt to update documentation and preferences as part of the workflow.
+- When generating or updating instruction or prompt files, self-prompt to update documentation and preferences as part of workflow.
 - This policy is recommended for all future Copilot and agent operations in this repository.
+
+
+## CRITICAL MEMORY BANK PROTOCOL (keep context stateful for future reference)
+
+> (you must write at end before you mention task is completed)
+
+Before to mark a task as completed you MUST imperatively update memory bank files with current state of task, including any changes made, decisions taken, and dependencies updated. why and thought process behind to be kept in mind for future reference.

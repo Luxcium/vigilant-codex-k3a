@@ -1,23 +1,218 @@
-#### Dependency: Comprehensive Test Suite with 98.34% Branch Coverage (2025-07-06)
-
-**Rationale:** Complete test suite resolution with production-ready coverage patterns and proper mocking strategies.
-**Depends On:** Vitest test runner, vi.mock module mocking, Istanbul coverage provider, Node-fetch HTTP library
-**Required By:** All development workflows, CI/CD pipelines, code quality assurance
-**Technical Implementation:**
-
-- Module-level mocking with `vi.mock('node-fetch')` for HTTP client tests
-- AuthManager mocking for client tests to avoid authentication requirements
-- Timeout resolution by removing problematic fake timers in rate limiting tests
-- Edge case coverage including NaN handling, error responses, and refill logic
-  **Coverage Results:** 259 tests passing (up from 248 with 3 failures), 98.34% branch coverage
-  **Target File Achievements:** webStorage.ts 100%, tokenBucket.ts 100%, restClient.ts 96.15%, QuestradeClient.ts 87.5%
-  **Impact Analysis:** Provides robust foundation for ongoing development with comprehensive test isolation and realistic scenarios.
-
 # dependencies.md
 
-<!-- markdownlint-disable MD013 MD012 MD022 MD032 MD024 MD040 MD001 -->
+## Purpose
 
-#### Dependency: Codex Universal Docker Environment (2025-07-01)
+This file tracks all project dependencies, their relationships, and integration points for the Vigilant Codex K3a polyvalent AI development workspace. It serves as a comprehensive dependency map enabling proper management and coordination between components across multiple languages, frameworks, and AI agents.
+
+## Structure
+
+- **Core Dependencies** - Essential runtime and development dependencies
+- **Development Dependencies** - Tools and utilities for development workflow
+- **AI Agent Dependencies** - Files and systems required for AI agent collaboration
+- **Cross-References** - Dependency relationships and integration points
+- **Historical Changes Archive** - Chronological record of major dependency changes
+- **Dependencies and Relationships** - File relationships and impact analysis
+- **Call to Action** - Instructions for maintaining this file
+
+---
+
+## Core Dependencies
+
+### TypeScript/Node.js Core Stack
+
+- **Node.js 22** - Runtime with native fetch API support
+- **TypeScript 5.8+** - Strict type checking with native Response types
+- **Native Fetch API** - HTTP client using Node.js 22 native implementation
+- **Vitest 3.2.4** - Test runner with Istanbul coverage provider (98.34% coverage)
+- **Prisma ORM** - Database integration with PostgreSQL backend
+
+### Next.js v15+ Web Application Stack
+
+- **Next.js 15+** - App Router with Server Components by default
+- **Server Actions** - Form handling and mutations with `'use server'`
+- **Client Components** - Interactive UI with `'use client'` for state management
+- **PostgreSQL** - Database service via Docker Compose
+- **Docker Integration** - Containerized development environment
+
+### Python Development Environment
+
+- **Python 3.13** - Core language runtime
+- **Conditional Environment Framework** - Runtime mode selection:
+  - `local` - Host-based virtual environment with direct IDE integration
+  - `docker_isolated` - Fully containerized with complete isolation
+  - `docker_volume` - Containerized with live host file mounting
+- **Jupyter Notebooks** - VS Code integration with advanced API support
+- **pip/virtualenv** - Package management across all environment modes
+
+### Docker Orchestration Platform
+
+- **Codex Universal Environment** - `ghcr.io/openai/codex-universal:latest`
+- **Node.js 22 + Python 3.13** - Pre-configured development environment
+- **Volume-Based Development** - Instant file changes without container rebuilds
+- **OpenAI API Integration** - Seamless API access within containers
+- **Multi-Service Support** - PostgreSQL, Redis, development servers
+- **Health Monitoring** - Comprehensive service validation
+
+## Development Dependencies
+
+### Testing Infrastructure
+
+- **Vitest 3.2.4** - Primary test runner with Istanbul coverage
+- **259 Tests Passing** - Zero regression development with 98.34% branch coverage
+- **Native Fetch Mocking** - `vi.stubGlobal('fetch', mockFetch)` for HTTP isolation
+- **AuthManager Mocking** - Complete authentication system mocking
+- **Edge Case Coverage** - NaN handling, timeout management, error scenarios
+- **CommonJS Compatibility** - Maintained throughout test infrastructure
+
+### Code Quality & Formatting
+
+- **ESLint** - JavaScript/TypeScript linting with strict rules
+- **Prettier** - Code formatting with consistent style
+- **Markdown-Lint** - Documentation formatting compliance
+- **Husky** - Pre-commit hooks for code quality enforcement
+- **TypeScript Strict Mode** - Enhanced type checking and null safety
+
+### Container Development Tools
+
+- **Docker Engine** - Container runtime and management
+- **Docker Compose** - Multi-service orchestration
+- **Dev Container Configuration** - VS Code integration with `.devcontainer/`
+- **Security Scanning** - Container vulnerability validation
+- **Non-root User Configuration** - Security best practices (UID 1000)
+
+## AI Agent Dependencies
+
+### Memory Bank System
+
+- **Stateful Documentation** - Persistent context across development sessions
+- **Cross-File Dependencies** - Comprehensive dependency tracking
+- **Self-Documentation Protocol** - Automatic context preservation
+- **Memory Reset Resilience** - Complete project understanding from documentation
+- **Markdown-Lint Compliance** - Strict formatting standards for all files
+
+### Three AI Agent Ecosystem
+
+- **Cline AI** - Primary development agent (`.clinerules/main-rules.md`)
+- **Codex CLI** - Terminal automation and orchestration (`AGENTS.md`)
+- **VS Code Copilot** - Code generation (`.github/copilot-instructions.md`)
+- **Cross-Agent Workflows** - Sophisticated collaboration patterns
+- **Stateful Collaboration** - Memory bank integration across all agents
+
+### Instruction & Prompt Framework
+
+- **26 Instruction Files** - Automated coding standards in `.github/instructions/`
+- **27 Prompt Files** - Executable workflow templates in `.github/prompts/`
+- **Conditional Architecture** - Runtime decision frameworks
+- **Parameter-Driven Configuration** - ENV_MODE and similar runtime selection
+- **Quality Assurance Standards** - Comprehensive validation and testing patterns
+
+## Cross-References and Relationships
+
+### Memory Bank File Hierarchy
+
+```
+projectbrief.md (foundation)
+├── productContext.md (purpose & goals)
+├── systemPatterns.md (architecture & decisions)
+├── techContext.md (technologies & constraints)
+└── activeContext.md (current state)
+    └── progress.md (achievements & status)
+        └── dependencies.md (this file)
+```
+
+### AI Agent Collaboration Flow
+
+```
+User Request → AI Agent (Cline/Codex/Copilot)
+├── Reads: Memory Bank files (mandatory at session start)
+├── Applies: Instruction files for coding standards
+├── Executes: Prompt files for workflow automation
+├── Updates: Memory Bank with architectural decisions
+└── Maintains: Cross-session context preservation
+```
+
+### Conditional Environment Integration
+
+```
+ENV_MODE Parameter Selection
+├── local: Host virtual environment
+│   ├── Dependencies: Python 3.13, pip, virtualenv
+│   └── Generated: .venv/, requirements.txt, local README
+├── docker_isolated: Fully containerized
+│   ├── Dependencies: Docker Engine, custom image
+│   └── Generated: Dockerfile, .dockerignore, isolated README
+└── docker_volume: Container + live editing
+    ├── Dependencies: Docker Compose, volume mounting
+    └── Generated: docker-compose.yml, volume README
+```
+
+## Historical Changes Archive
+
+### [2025-07-14] Microsoft Edge DevTools Integration
+
+**Rationale:** Comprehensive Edge DevTools debugging with protocol compliance restoration and CSS variables solution.
+**Technical Implementation:** Complete VS Code configuration, launch setups for debugging/mobile/performance analysis, CSS variables pattern for no-inline-styles compliance.
+**Impact:** Professional web debugging with mobile testing and security best practices.
+
+### [2025-07-13] README Drift Resolution
+
+**Rationale:** Synchronized documentation between instruction files, prompt files, and main README to accurately represent workspace sophistication.
+**Technical Implementation:** Analysis of 26 instruction files and 27 prompt files, complete README reconstruction reflecting AI agent ecosystem.
+**Impact:** Proper workspace representation for AI agents and developers.
+
+### [2025-07-20] Native Fetch API Conversion
+
+**Rationale:** Modernized HTTP client using Node.js 22 native fetch for performance and reduced dependencies.
+**Technical Implementation:** Complete conversion from node-fetch, updated TypeScript types, modified test mocking strategies.
+**Impact:** Zero regression with 259 tests passing, improved performance characteristics.
+
+### [2025-07-06] Test Suite Achievement
+
+**Rationale:** Comprehensive test coverage with production-ready patterns and proper isolation.
+**Technical Implementation:** Module-level mocking, AuthManager isolation, edge case coverage, timeout resolution.
+**Impact:** 98.34% branch coverage, robust foundation for ongoing development.
+
+### [2025-07-01] Codex Universal Environment
+
+**Rationale:** Standardized Docker development environment with OpenAI API integration.
+**Technical Implementation:** Volume-based development, multi-service orchestration, health monitoring.
+**Impact:** Consistent development across platforms and AI agents.
+
+### [2025-02-06] Conditional Python Framework
+
+**Rationale:** Runtime environment selection without hard-coded implementation choices.
+**Technical Implementation:** Parameter-driven scripts, mode-specific configurations, comprehensive documentation generation.
+**Impact:** Revolutionary approach to environment management with AI agent compatibility.
+
+## Dependencies and Relationships
+
+- **Depends On:** [projectbrief.md](./projectbrief.md), [systemPatterns.md](./systemPatterns.md), [techContext.md](./techContext.md)
+- **Required By:** All AI agents, development workflows, automation scripts, instruction files, prompt files
+- **Why This Order:** Dependencies must be documented before implementation to ensure proper integration and impact analysis
+- **Impact Analysis:** Changes to dependencies affect the entire AI Agent Framework, development workflows, and cross-session context preservation
+
+## Call to Action
+
+> **All agents and contributors must review, update, and self-regulate this file as dependencies evolve.**  
+> **Do not add new dependencies without documenting them here and their relationships.**  
+> **Update this file immediately upon any change in project dependencies, tools, or integration points.**  
+> **Maintain strict markdown-lint compliance and proper cross-referencing at all times.**
+
+## AI Agent Instructions
+
+This project supports three AI agents with specific dependency management responsibilities:
+
+- **Cline AI** → Updates `.clinerules/` dependencies and learning protocols
+- **Codex CLI** → Updates `AGENTS.md` context and script dependencies
+- **VS Code Copilot** → Updates `.github/copilot-instructions.md` and instruction files
+
+**All agents must maintain dependency tracking in this file and ensure cross-references remain accurate.**
+
+**For meta-configuration standards, consult [when-to-use-what-matrix.instructions.md](../.github/instructions/when-to-use-what-matrix.instructions.md) for authoritative mapping of integration goals to configuration files.**
+
+---
+
+**Last Updated:** 2025-07-18 | **Status:** Production-Ready Dependencies | **Coverage:** 98.34%
 
 **Rationale:** Enables local development environment matching Codex cloud setup with Node.js 22 and Python 3.13 using volume-based workflows.
 **Depends On:** Docker Engine, OpenAI API access, project structure standards
@@ -250,6 +445,11 @@ This file tracks all project dependencies, their relationships, and integration 
 
   - **Integration**: Volume-first development, CLI parameterization, multi-service orchestration
 
+- **notebook-development-workflow.prompt.md**: Comprehensive notebook development workflow automation
+  - **Depends On**: VS Code Notebook API, python-notebook-standards.instructions.md, vscode-notebook-integration.instructions.md
+  - **Required By**: Jupyter notebook development, data science workflows, ML experimentation
+  - **Integration**: VS Code extended capabilities, notebook-specialist chat mode, memory bank synchronization
+
 ### Instruction Files (`.github/instructions/`)
 
 ### Instruction Files (`.github/instructions/`)
@@ -276,6 +476,12 @@ This file tracks all project dependencies, their relationships, and integration 
 - **file-organization.instructions.md**: Project structure standards
 
 - **no_dummy-no_placeholders.instruction.md**: Real configuration requirements
+
+- **vscode-notebook-integration.instructions.md**: VS Code notebook API integration standards
+  - **Depends On**: VS Code Notebook API, Jupyter extension, python-notebook-standards.instructions.md
+  - **Required By**: All notebook development workflows, VS Code notebook optimization
+  - **ApplyTo**: `**/*.ipynb`
+  - **Integration**: VS Code extended capabilities, custom commands, notebook automation
 
 ### Memory Bank Files
 

@@ -30,12 +30,18 @@
     "test:types": "vitest run src/tests/types/",
     "test:types:watch": "vitest src/tests/types/",
     "test:watch": "vitest",
-    "web:build": "cd ./web/ && npm --prefix web run build",
-    "web:start": "cd ./web/ && npm --prefix web run start"
+    "web:build": "pnpm --filter ./web build",
+    "web:dev": "pnpm --filter ./web dev",
+    "web:format": "pnpm --filter ./web format",
+    "web:lint": "pnpm --filter ./web lint",
+    "web:preview": "pnpm --filter ./web preview",
+    "web:start": "pnpm --filter ./web start",
+    "web:test": "pnpm --filter ./web test",
+    "web:test:watch": "pnpm --filter ./web test:watch"
   },
   "dependencies": {
     "@openai/codex": "^0.1.2505172129",
-    "node-fetch": "^3.3.2",
+    "@prisma/client": "^6.11.1",
     "zod": "^3.25.67"
   },
   "devDependencies": {

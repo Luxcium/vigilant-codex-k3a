@@ -1,4 +1,3 @@
-import fetch, { Response as FetchResponse } from 'node-fetch';
 import { AuthManager } from '../auth/manager';
 import { handleQuestradeError } from '../errors';
 import { TokenBucketLimiter } from '../rateLimit/tokenBucket';
@@ -21,7 +20,7 @@ export class RestClient {
   ): Promise<T> {
     const url = this.baseUrl + path;
     await this.limiter.consume('account');
-    const res = await fetch(url, {
+    const res: Response = await fetch(url, {
       method,
       headers: {
         Authorization: `Bearer ${await this.auth.getAccessToken()}`,
@@ -45,7 +44,7 @@ export class RestClient {
       if (!Number.isNaN(reset)) this.limiter.handle429('account', reset);
       throw new Error('Rate limit exceeded');
     }
-    if (!res.ok) return handleQuestradeError(res as FetchResponse);
+    if (!res.ok) return handleQuestradeError(res);
     return res.json() as Promise<T>;
   }
 

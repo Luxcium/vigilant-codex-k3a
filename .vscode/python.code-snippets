@@ -1,0 +1,50 @@
+{
+    "Python Test Function": {
+        "prefix": "pytest",
+        "body": [
+            "def test_${1:function_name}():",
+            "    \"\"\"Test ${1:function_name}.\"\"\"",
+            "    # Arrange",
+            "    ${2:# Setup test data}",
+            "    ",
+            "    # Act",
+            "    ${3:# Execute function}",
+            "    ",
+            "    # Assert",
+            "    ${4:# Verify results}",
+            "    assert ${5:condition}"
+        ],
+        "description": "Python test function template"
+    },
+    "Python FastAPI Route": {
+        "prefix": "fastapi",
+        "body": [
+            "@app.${1:get}(\"/${2:endpoint}\")",
+            "async def ${3:function_name}(${4:parameters}):",
+            "    \"\"\"${5:Description}.\"\"\"",
+            "    try:",
+            "        ${6:# Implementation}",
+            "        return {\"message\": \"${7:success}\"}",
+            "    except Exception as e:",
+            "        raise HTTPException(status_code=500, detail=str(e))"
+        ],
+        "description": "FastAPI route template"
+    },
+    "Python Class": {
+        "prefix": "pyclass",
+        "body": [
+            "class ${1:ClassName}:",
+            "    \"\"\"${2:Class description}.\"\"\"",
+            "    ",
+            "    def __init__(self, ${3:parameters}):",
+            "        \"\"\"Initialize ${1:ClassName}.\"\"\"",
+            "        ${4:# Initialize attributes}",
+            "    ",
+            "    def ${5:method_name}(self, ${6:parameters}):",
+            "        \"\"\"${7:Method description}.\"\"\"",
+            "        ${8:# Method implementation}",
+            "        return ${9:result}"
+        ],
+        "description": "Python class template"
+    }
+}

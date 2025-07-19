@@ -25,14 +25,20 @@ import type { AccountType, AccountStatus, ClientAccountType } from './enums';
 //──────────────────────────────────────────────────────────────────────────────
 
 /**
- * @public
  * No parameters are required or allowed for the Accounts endpoint.
+ *
+ * @remarks
+ * This type represents an empty object, enforcing that only an object with no properties is valid.
+ * Use this type instead of an empty interface to comply with ESLint and TypeScript best practices.
+ *
+ * @public
  */
-export interface GetAccountsRequest {}
+export type GetAccountsRequest = object;
 
 /**
- * @public
  * Zod schema validating an empty request object for Accounts.
+ *
+ * @public
  */
 export const GetAccountsRequestSchema = z.object({}).strict();
 
@@ -41,8 +47,9 @@ export const GetAccountsRequestSchema = z.object({}).strict();
 //──────────────────────────────────────────────────────────────────────────────
 
 /**
- * @public
  * Details of a brokerage account accessible by the user.
+ *
+ * @public
  */
 export interface Account {
   /** Type of the account (e.g., "Cash", "Margin"). */
@@ -62,8 +69,9 @@ export interface Account {
 }
 
 /**
- * @public
  * Zod schema for validating an Account record.
+ *
+ * @public
  */
 export const AccountSchema = z.object({
   type: z.union([z.enum(ACCOUNT_TYPES), z.string()]),
@@ -80,8 +88,9 @@ export const AccountSchema = z.object({
 //──────────────────────────────────────────────────────────────────────────────
 
 /**
- * @public
  * Response envelope for GET /v1/accounts.
+ *
+ * @public
  */
 export interface GetAccountsResponse {
   /** Array of account records for the authenticated user. */
@@ -89,19 +98,21 @@ export interface GetAccountsResponse {
 }
 
 /**
- * @public
  * Zod schema for validating the AccountsResponse envelope.
+ *
+ * @public
  */
 export const GetAccountsResponseSchema = z.object({
   accounts: z.array(AccountSchema),
 });
 
 /**
- * @public
  * Parses and validates raw JSON into `AccountsResponse`.
  *
  * @param json - Raw API response payload.
  * @returns Validated accounts response object.
  * @throws ZodError if validation fails.
+ *
+ * @public
  */
 export const parseGetAccountsResponse = GetAccountsResponseSchema.parse;

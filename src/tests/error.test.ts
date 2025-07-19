@@ -1,5 +1,4 @@
 import { describe, expect, it } from 'vitest';
-import { Response } from 'node-fetch';
 import { handleQuestradeError, QuestradeError } from '../errors/index.js';
 
 describe('error handling', () => {

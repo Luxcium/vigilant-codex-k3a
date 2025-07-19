@@ -1,0 +1,14 @@
+.container {
+  padding: 32px;
+  border-radius: 8px;
+  color: #fff;
+}
+.dynamicColor {
+  background-color: var(--dynamic-color, #3367d6);
+}
+.input {
+  margin-top: 16px;
+}
+.label {
+  margin-left: 8px;
+}

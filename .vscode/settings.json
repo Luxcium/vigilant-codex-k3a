@@ -1,36 +1,4 @@
 {
-  "terminal.integrated.env.linux": {
-    "CODEX_HOME": "${workspaceFolder}/.codex"
-  },
-  // Ensure instruction files are also enabled (they work together)
-  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
-  // Add instructions file locations to work alongside prompts
-  "chat.instructionsFilesLocations": {
-    ".github/instructions": true
-  },
-  "github.copilot.chat.commitMessageGeneration.instructions": [
-    {
-      "file": ".github/instructions/use-conventional-commits.instructions.md",
-      "enabled": true
-    }
-  ],
-
-  // Ensure prompt files are explicitly enabled
-  "chat.promptFiles": true,
-  // Your existing prompt location is correct
-  "chat.promptFilesLocations": {
-    ".github/prompts": true
-  },
-  "typescript.tsserver.maxTsServerMemory": 8192,
-  "terminal.integrated.persistentSessionReviveProcess": "never",
-  "terminal.integrated.localEchoLatencyThreshold": 30,
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[markdown]": {
-    "diffEditor.ignoreTrimWhitespace": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   // #endregion: FORMAT BEHAVIOUR                                       !
   /*
   |-···----------------------------------------------------------···-|
@@ -40,7 +8,6 @@
     "javascript": "node --trace-deprecation",
     "typescript": "ts-node"
   },
-  "console-ninja.featureSet": "Community",
   "containers.containerClient": "com.microsoft.visualstudio.containers.docker",
   "diffEditor.ignoreTrimWhitespace": true,
   /*
@@ -70,15 +37,12 @@
   "git.autofetch": true,
   "git.confirmSync": false,
   "git.openRepositoryInParentFolders": "always",
-  "github.copilot.chat.completionContext.typescript.mode": "on",
-  "github.copilot.chat.languageContext.typescript.enabled": true,
   // "github.copilot.enable": {
   //   "*": true,
   //   "markdown": true,
   //   "plaintext": true,
   //   "scminput": false
   // },
-  "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
   // ...existing code...
   "makefile.configureOnOpen": true,
   // ],
@@ -101,7 +65,6 @@
     "${workspaceFolder}/python/src",
     "${workspaceFolder}/python"
   ],
-  "jupyter.defaultKernel": "Python 3",
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "jupyter.askForKernelRestart": false,
   "python.testing.pytestEnabled": true,
@@ -113,23 +76,33 @@
   "files.associations": {
     "*.py": "python",
     "requirements*.txt": "pip-requirements",
-    ".env*": "dotenv"
+    ".env*": "dotenv",
+    "*.ts": "typescript",
+    "*.js": "javascript",
+    "*.json": "jsonc",
+    "Dockerfile*": "dockerfile",
+    "docker-compose*.yml": "dockercompose",
+    "*.md": "markdown",
+    "*.instructions.md": "markdown",
+    "*.prompt.md": "markdown",
+    "*.chatmode.md": "markdown"
   },
-  "remote.defaultExtensionsIfInstalledLocally": [
-    "GitHub.copilot",
-    "GitHub.copilot-chat",
-    "GitHub.vscode-pull-request-github"
-  ],
+  // "remote.defaultExtensionsIfInstalledLocally": [
+  //   "GitHub.copilot",
+  //   "GitHub.copilot-chat",
+  //   "GitHub.vscode-pull-request-github"
+  // ],
   // "terminal.integrated.env.linux": {},
   "typescript.updateImportsOnFileMove.enabled": "always",
+  "editor.formatOnSaveMode": "modificationsIfAvailable",
+  "eslint.codeActionsOnSave.mode": "all",
   "workbench.colorTheme": "Pop N' Lock Theme by Luxcium ✨ Alexis's Black ⛷",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.productIconTheme": "Default",
-  "workbench.secondarySideBar.showLabels": false,
+  "workbench.productIconTheme": "material-product-icons",
   /*
   |-····-----------------------------------------------------------――··-|
-    */
-  // #region: editor.rulers [scminput]                                       !
+  */
+  // #region: editor.rulers [scminput]
   "[scminput]": {
     "editor.rulers": [
       {
@@ -331,6 +304,7 @@
       "strikethrough": false,
       // ||=================================================================||
       "tag": "||=="
+      // "backgroundColor": "#F806"
     },
     {
       "backgroundColor": "#7C25",
@@ -1119,38 +1093,7 @@
       "tag": "XXX"
     }
   ],
-  // ========================================
-  // Agent Mode and Advanced Features
-  // ========================================
-  // Enable agent mode (requires VS Code 1.99+)
-  "chat.agent.enabled": true,
-  "chat.agent.maxRequests": 25,
-  // ========================================
-  // UI and UX Settings
-  // ========================================
-  // Command center and UI
-  "chat.commandCenter.enabled": true,
-  "chat.detectParticipant.enabled": true,
-  // Edit confirmation settings
-  "chat.editing.autoAcceptDelay": 0,
-  // ========================================
-  // Chat Appearance
-  // ========================================
-  "chat.editor.fontFamily": "Consolas, 'Courier New', monospace",
-  "chat.editor.fontSize": 14,
-  "chat.editor.fontWeight": "normal",
-  "chat.editor.wordWrap": "on",
-  // ========================================
-  // Experimental and Preview Features
-  // ========================================
-  // Model Context Protocol (MCP) support
-  "chat.mcp.enabled": true,
-  // ========================================
-  // Instructions and Prompt Files
-  // ========================================
-  "chat.sendElementsToChat.enabled": true,
-  // Experimental features
-  "chat.tools.autoApprove": true,
+
   "editor.inlineSuggest.edits.allowCodeShifting": "horizontal",
   "editor.inlineSuggest.edits.renderSideBySide": "auto",
   // Inline suggestions
@@ -1305,72 +1248,36 @@
   "editor.formatOnType": true,
   // ESLint auto fix on save (string array form)
   "editor.codeActionsOnSave": ["source.fixAll", "source.fixAll.eslint"],
-  // Prettier config path (if needed)
-  // "prettier.configPath": ".prettierrc",
-  // ESLint config path (if needed)
-  // "eslint.options": { "configFile": "eslint.config.mjs" },
-  // ========================================
-  // ========================================
-  // Include recent files as context
-  "github.copilot.chat.edits.temporalContext.enabled": true,
-  // ========================================
-  // Testing and Debugging Integration
-  // ========================================
-  // Testing features
-  "github.copilot.chat.generateTests.codeLens": true,
-  "github.copilot.chat.newWorkspaceCreation.enabled": true,
-  // 5. Pull request title and description generation instructions
-  "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
-    {
-      "text": "Start with a concise summary. List key changes as bullet points. Reference related issues and include breaking changes if any."
-    },
-    {
-      "text": "Include testing instructions and deployment considerations."
-    }
+
+  // Microsoft Edge DevTools Configuration
+  "vscode-edge-devtools.webviewColumnNumber": 2,
+  "vscode-edge-devtools.mirrorEdits": true,
+  "vscode-edge-devtools.defaultUrl": "http://localhost:3000",
+  "vscode-edge-devtools.browserArguments": [
+    "--disable-web-security",
+    "--disable-features=VizDisplayCompositor"
   ],
-  // 3. Code review instructions
-  "github.copilot.chat.reviewSelection.instructions": [
-    {
-      "text": "Check for modularity, proper TypeScript types, comprehensive error handling, and code comments."
-    },
-    {
-      "text": "Verify compliance with project coding standards and memory bank guidelines."
-    },
-    {
-      "text": "Ensure no direct mutations of shared state and proper dependency management."
-    }
-  ],
-  "github.copilot.chat.scopeSelection": true,
-  "github.copilot.chat.setupTests.enabled": true,
-  // Debugging features
-  "github.copilot.chat.startDebugging.enabled": true,
-  // Terminal integration
-  "github.copilot.chat.terminalChatLocation": "terminal",
-  // 2. Test generation instructions
-  // Copilot instructions moved to .github/copilot-instructions.md as required
-  // ========================================
-  // Chat and Interaction Settings
-  // ========================================
-  // Chat behavior
-  "github.copilot.chat.useProjectTemplates": true,
-  // Code actions and suggestions
-  "github.copilot.editor.enableCodeActions": true,
-  // ========================================
-  // GitHub Copilot Core Settings
-  // ========================================
-  // Enable Copilot features
-  "github.copilot.enable": {
-    "*": true,
-    "markdown": true
-  },
-  // ========================================
-  // Code Generation and Editing
-  // ========================================
-  // Next Edit Suggestions (Copilot NES)
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "github.copilot.renameSuggestions.triggerAutomatically": true,
-  "inlineChat.lineEmptyHint": true,
-  "inlineChat.lineNaturalLanguageHint": true,
+  "vscode-edge-devtools.enableDiagnostics": true,
+  "vscode-edge-devtools.useHttps": false,
+  "vscode-edge-devtools.userAgent": "",
+  "vscode-edge-devtools.headless": false,
+  "vscode-edge-devtools.timeout": 10000,
+  "vscode-edge-devtools.port": 9222,
+  "vscode-edge-devtools.hostname": "localhost",
+  "edge.devtools.enableInlineStyling": false,
+  "edge.devtools.warnings.inlineStyles": "disabled",
+  "edge.devtools.linting.enabled": false,
+  "edge.devtools.issues.enabled": false,
+  "edge.devtools.autoAttach": false,
+  "edge.devtools.network.enabled": true,
+  "edge.devtools.console.enabled": true,
+  "edge.devtools.elements.enabled": true,
+  "edge.devtools.application.enabled": true,
+  "edge.devtools.sources.enabled": true,
+  "edge.devtools.performance.enabled": true,
+  "edge.devtools.memory.enabled": true,
+  "edge.devtools.security.enabled": true,
+
   // Notebook integration
   "notebook.experimental.generate": true,
   // "todo-tree.highlights.foregroundColourScheme": [
@@ -2093,7 +2000,7 @@
   "todo-tree.tree.subTagClickUrl": "", // new items
   "todo-tree.tree.tagsOnly": true,
   "todo-tree.tree.tooltipFormat": "${filepath}, line ${line}",
-  "todo-tree.tree.trackFile": true
+  "todo-tree.tree.trackFile": true,
   // "todo-tree.filtering.excludedWorkspaces": [], // new items
   // "todo-tree.filtering.ignoreGitSubmodules": false,
   // "todo-tree.filtering.includedWorkspaces": [], // new items
@@ -2157,4 +2064,289 @@
   /*
   |-····-----------------------------------------------------------··-|
     */
+  "chat.agent.enabled": true,
+  "chat.agent.maxRequests": 15,
+  "chat.commandCenter.enabled": true,
+  "chat.detectParticipant.enabled": true,
+  "chat.editing.autoAcceptDelay": 20,
+  "chat.editor.fontFamily": "Consolas, 'Courier New', monospace",
+  "chat.editor.fontSize": 14,
+  "chat.editor.fontWeight": "normal",
+  "chat.editor.wordWrap": "on",
+  "chat.edits2.enabled": true,
+  "chat.editRequests": "inline",
+  "chat.extensionTools.enabled": true,
+  "chat.modeFilesLocations": {
+    ".github/chatmodes": true
+  },
+  "chat.mcp.enabled": true,
+  "chat.promptFiles": true,
+  "chat.promptFilesLocations": {
+    ".github/prompts": true
+  },
+  "chat.instructionsFilesLocations": {
+    ".github/instructions": true
+  },
+  "chat.implicitContext.enabled": {
+    "panel": "always"
+  },
+  "chat.sendElementsToChat.enabled": true,
+  "chat.tools.autoApprove": true,
+  "github.copilot.chat.agent.autoFix": true,
+  "github.copilot.chat.agent.currentEditorContext.enabled": true,
+  "github.copilot.chat.agent.runTasks": true,
+  "github.copilot.chat.agent.thinkingTool": true,
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.copilotDebugCommand.enabled": true,
+  "github.copilot.chat.editor.temporalContext.enabled": false,
+  "github.copilot.chat.edits.temporalContext.enabled": true,
+  "github.copilot.chat.generateTests.codeLens": true,
+  "github.copilot.chat.languageContext.fix.typescript.enabled": true,
+  "github.copilot.chat.languageContext.inline.typescript.enabled": true,
+  "github.copilot.chat.languageContext.typescript.enabled": true,
+  "github.copilot.chat.newWorkspaceCreation.enabled": true,
+  "github.copilot.chat.reviewSelection.enabled": true,
+  "github.copilot.chat.scopeSelection": true,
+  "github.copilot.chat.setupTests.enabled": true,
+  "github.copilot.chat.startDebugging.enabled": true,
+  "github.copilot.chat.summarizeAgentConversationHistory.enabled": true,
+  "github.copilot.chat.terminalChatLocation": "terminal",
+  "github.copilot.chat.useProjectTemplates": true,
+  "github.copilot.editor.enableCodeActions": true,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "github.copilot.nextEditSuggestions.fixes": true,
+  "github.copilot.renameSuggestions.triggerAutomatically": true,
+  "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
+  "inlineChat.enableV2": true,
+  "inlineChat.hideOnRequest": false,
+  "inlineChat.lineEmptyHint": true,
+  "inlineChat.lineNaturalLanguageHint": true,
+  "github.copilot.chat.commitMessageGeneration.instructions": [
+    {
+      "file": ".github/instructions/use-conventional-commits.instructions.md"
+    }
+  ],
+  "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
+    {
+      "text": "Start with a concise summary. List key changes as bullet points. Reference related issues and include breaking changes if any."
+    },
+    {
+      "text": "Include testing instructions and deployment considerations."
+    }
+  ],
+  "github.copilot.chat.reviewSelection.instructions": [
+    {
+      "text": "Check for modularity, proper TypeScript types, comprehensive error handling, and code comments."
+    },
+    {
+      "text": "Verify compliance with project coding standards and memory bank guidelines."
+    },
+    {
+      "text": "Ensure no direct mutations of shared state and proper dependency management."
+    }
+  ],
+
+  "github.copilot.enable": {
+    "*": true
+  },
+  // ========================================
+  "typescript.tsserver.maxTsServerMemory": 8192,
+  "terminal.integrated.persistentSessionReviveProcess": "never",
+  "terminal.integrated.localEchoLatencyThreshold": 30,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "diffEditor.ignoreTrimWhitespace": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terminal.integrated.env.linux": {
+    "CODEX_HOME": "${workspaceFolder}/.codex"
+  },
+
+  // ========================================
+  // Task and Launch Configuration
+  // ========================================
+
+  "debug.allowBreakpointsEverywhere": true,
+  "debug.showBreakpointsInOverviewRuler": true,
+  "debug.console.fontSize": 14,
+  "debug.console.fontFamily": "Consolas, 'Courier New', monospace",
+
+  // ========================================
+  // Quick Actions and Shortcuts
+  // ========================================
+  "workbench.action.quickOpen.triggerMode": "openEditors",
+  "workbench.quickOpen.preserveInput": true,
+  "workbench.commandPalette.preserveInput": true,
+
+  // ========================================
+  // Project-Specific Extensions
+  // ========================================
+  // ========================================
+  // View Header Icons Configuration
+  // ========================================
+
+  // Always show icons in view headers
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.tree.indent": 12,
+  "workbench.list.openMode": "doubleClick",
+
+  // Explorer view header icons
+  "explorer.compactFolders": false,
+  "explorer.decorations.badges": true,
+  "explorer.decorations.colors": true,
+  "explorer.sortOrder": "type",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.expand": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, .npmrc"
+  },
+
+  // Outline view header icons
+  "outline.icons": true,
+  "outline.problems.enabled": true,
+  "outline.problems.badges": true,
+  "outline.problems.colors": true,
+  "outline.showFiles": true,
+  "outline.showModules": true,
+  "outline.showPackages": true,
+  "outline.showClasses": true,
+  "outline.showMethods": true,
+  "outline.showProperties": true,
+  "outline.showFields": true,
+  "outline.showConstructors": true,
+  "outline.showEnums": true,
+  "outline.showInterfaces": true,
+  "outline.showFunctions": true,
+  "outline.showVariables": true,
+  "outline.showConstants": true,
+  "outline.showStrings": true,
+  "outline.showNumbers": true,
+  "outline.showBooleans": true,
+  "outline.showArrays": true,
+  "outline.showObjects": true,
+  "outline.showKeys": true,
+  "outline.showNull": true,
+  "outline.showEnumMembers": true,
+  "outline.showStructs": true,
+  "outline.showEvents": true,
+  "outline.showOperators": true,
+  "outline.showTypeParameters": true,
+
+  // Extensions view header icons
+  "extensions.ignoreRecommendations": false,
+
+  // Search view header icons
+  "search.showLineNumbers": true,
+  "search.smartCase": true,
+  "search.useGlobalIgnoreFiles": true,
+  "search.useIgnoreFiles": true,
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.git": true,
+    "**/.DS_Store": true,
+    "**/tmp": true,
+    "**/coverage": true,
+    "**/dist": true,
+    "**/build": true,
+    "**/.vscode": true,
+    "**/.next": true,
+    "**/out": true
+  },
+
+  // Git/SCM view header icons
+  "scm.alwaysShowRepositories": true,
+  "scm.autoReveal": true,
+  "scm.defaultViewMode": "tree",
+  "scm.repositories.visible": 10,
+
+  // Problems view header icons
+  "problems.showCurrentInStatus": true,
+  "problems.sortOrder": "severity",
+  "problems.decorations.enabled": true,
+
+  // Debug view header icons
+  "debug.showInStatusBar": "always",
+  "debug.showSubSessionsInToolBar": true,
+
+  // Terminal view header icons
+  "terminal.integrated.showExitAlert": false,
+  "terminal.integrated.tabs.enabled": true,
+  "terminal.integrated.tabs.location": "left",
+  "terminal.integrated.tabs.showActions": "always",
+  "terminal.integrated.tabs.showActiveTerminal": "always",
+
+  // Test view header icons (if you have test extensions)
+  "testing.automaticallyOpenPeekView": "never",
+  "testing.showAllMessages": true,
+
+  // Workbench activity bar and side bar icons
+  "workbench.activityBar.location": "default",
+  "workbench.sideBar.location": "left",
+  "workbench.panel.defaultLocation": "bottom",
+
+  // Icon theme configuration (based on your Material Icon Theme)
+  "material-icon-theme.folders.theme": "specific",
+  "material-icon-theme.folders.color": "#90a4ae",
+  "material-icon-theme.hidesExplorerArrows": false,
+  "material-icon-theme.opacity": 1,
+  "material-icon-theme.saturation": 1,
+
+  // Breadcrumb icons
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.icons": true,
+  "breadcrumbs.showFiles": true,
+  "breadcrumbs.showKeys": true,
+  "breadcrumbs.showProperties": true,
+  "breadcrumbs.showClasses": true,
+  "breadcrumbs.showMethods": true,
+  "breadcrumbs.showFunctions": true,
+  "breadcrumbs.showVariables": true,
+  "breadcrumbs.showConstants": true,
+  "breadcrumbs.showEnums": true,
+  "breadcrumbs.showEnumMembers": true,
+  "breadcrumbs.showInterfaces": true,
+  "breadcrumbs.showModules": true,
+  "breadcrumbs.showPackages": true,
+  "breadcrumbs.showStructs": true,
+  "breadcrumbs.showEvents": true,
+  "breadcrumbs.showOperators": true,
+  "breadcrumbs.showTypeParameters": true,
+  "breadcrumbs.showConstructors": true,
+  "breadcrumbs.showBooleans": true,
+  "breadcrumbs.showArrays": true,
+  "breadcrumbs.showObjects": true,
+  "breadcrumbs.showNull": true,
+  "breadcrumbs.showNumbers": true,
+  "breadcrumbs.showStrings": true,
+
+  // Editor tab icons
+  "workbench.editor.showTabs": "multiple",
+  "workbench.editor.tabSizing": "shrink",
+  "workbench.editor.wrapTabs": true,
+  "workbench.editor.decorations.badges": true,
+  "workbench.editor.decorations.colors": true,
+  "workbench.editor.labelFormat": "default",
+  "workbench.editor.showIcons": true,
+
+  // Status bar icons
+  "workbench.statusBar.visible": true,
+
+  // Additional visual enhancements
+  "workbench.tips.enabled": true,
+  "workbench.hover.delay": 500,
+  "workbench.reduceMotion": "off",
+  "workbench.tree.expandMode": "singleClick",
+  "workbench.list.defaultFindMode": "highlight",
+  "workbench.list.typeNavigationMode": "automatic",
+  "workbench.list.multiSelectModifier": "ctrlCmd",
+  "workbench.list.smoothScrolling": true
 }

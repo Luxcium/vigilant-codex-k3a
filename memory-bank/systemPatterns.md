@@ -1,172 +1,258 @@
 # systemPatterns.md
 
-<!-- markdownlint-disable MD013 MD022 MD032 MD041 MD040 MD036 -->
-
 ## Purpose
 
-This file documents the system architecture, key technical decisions, design patterns, and component relationships for any project. It serves as a living reference for how the system is structured and how its parts interact, independent of any specific project topic at initialization.
+This file documents the system architecture, key technical decisions, design patterns, and component relationships for the Vigilant Codex K3a polyvalent AI development workspace. It serves as a living reference for how the system is structured and how its parts interact, providing the architectural foundation for all development decisions.
 
 ## Structure
 
-- **Architecture Overview:** General structure and organization principles.
-- **Key Technical Decisions:** Rationale for major choices.
-- **Design Patterns:** Patterns and conventions to be followed.
-- **Component Relationships:** How parts of the system interact.
-- **Call to Action:** Instructions for agents to update and self-regulate this file.
+- **Architecture Overview** - Project organization and structural principles
+- **Key Technical Decisions** - Rationale for major architectural choices
+- **Design Patterns** - Established patterns and conventions
+- **Component Relationships** - How system parts interact and depend on each other
+- **Dependencies and Relationships** - File relationships and impact analysis
+- **Call to Action** - Instructions for maintaining this file
 
 ---
 
 ## Architecture Overview
 
-**Project Root Code Organization Standard**
+### Project Root Code Organization Standard
 
-- `src/` — Main TypeScript project source. When both a TypeScript library and a Next.js web app coexist, place the TS code in `src/` and the Next.js app in `web/`. If the codebase consists solely of a Next.js application, you may omit `web/` and host the app directly at the project root.
-- `web/` — Next.js application when coexisting with other code.
-- `web/prisma/` — Prisma schema and migrations for database.
-- `docker-compose.yml` manages PostgreSQL service for development.
-- `scripts/` — Shell scripts for setup and automation. Only shell scripts should live here.
-- `python/` — Python projects, modules, and utilities.
-- `notebooks/` — Jupyter notebooks and related resources.
-
-**Rationale:**  
-Organizing code by language and framework at the project root ensures clarity, modularity, and scalability. This structure supports multi-language, multi-framework projects and enforces separation of concerns. All directory and file creation must be performed via scripts in `scripts/`, never manually, and all documentation must remain markdown-lint compliant.
+The Vigilant Codex K3a follows a polyvalent architecture organized by language and framework at the project root to ensure clarity, modularity, and scalability across multiple technologies:
 
 ```
-/
-├── src/
-├── web/
-├── python/
-├── scripts/
-└── notebooks/
+vigilant-codex-k3a/
+├── src/                    # TypeScript core library and SDK components
+├── web/                    # Next.js applications (when coexisting with other code)
+├── python/                 # Python projects, modules, and conditional environments
+├── scripts/                # Shell scripts for automation (bash only)
+├── notebooks/              # Jupyter notebooks and ML development
+├── memory-bank/            # AI agent state management and documentation
+├── .github/
+│   ├── instructions/       # 26 coding standards (auto-applied)
+│   └── prompts/           # 27 workflow automations
+├── .clinerules/           # Cline AI personal instructions
+└── .vscode/               # VS Code optimization and tasks
 ```
 
-This Memory Bank is initialized to provide a clear, adaptable template for documenting system architecture and patterns. It is designed to be updated as soon as a project context or architecture is defined.
+### Architectural Principles
+
+- **Language Separation** - Clear boundaries between TypeScript, Python, and web development
+- **Framework Coexistence** - Multiple frameworks can coexist without conflicts
+- **Script-Driven Setup** - All operations via idempotent scripts in `scripts/` directory
+- **AI Agent Integration** - Architecture designed for three-agent collaboration
+- **Conditional Environments** - Runtime decision deferral over hard-coded choices
+
+### Multi-Language Support Strategy
+
+- **TypeScript** (`src/`) - Core library with native fetch API and comprehensive testing
+- **Next.js** (`web/`) - Server Actions, Client Components, and database integration
+- **Python** (`python/`) - Conditional environment framework with three deployment modes
+- **Jupyter** (`notebooks/`) - ML development with VS Code integration
+- **Docker** - Codex Universal environment with volume-based development
 
 ## Key Technical Decisions
 
-## Key Technical Decisions
+### Native Fetch API Modernization ✅
 
-### Development Environment Standardization
+**Decision**: Convert entire HTTP client implementation from node-fetch to Node.js 22 native fetch API
+**Rationale**: Improved performance, reduced dependencies, future compatibility, and better TypeScript integration
+**Implementation**: Complete codebase conversion with vi.stubGlobal mocking strategy for tests
+**Impact**: 259 tests passing with 98.34% coverage, zero regression development
 
-- Adopted Codex Universal Docker image (`ghcr.io/openai/codex-universal:latest`) for consistent development environments across all platforms and AI agents
-- Implemented volume-based development workflow instead of COPY operations for instant file changes and better development experience
-- Standardized on Node.js 22 and Python 3.13 for all development environments
-- Integrated OpenAI API key passing from host environment to containers for seamless API access
+### Three AI Agent Ecosystem Architecture ✅
 
-### Container Orchestration Strategy
+**Decision**: Implement sophisticated collaboration between Cline AI, Codex CLI, and VS Code Copilot
+**Rationale**: Complementary capabilities, shared memory bank, cross-agent workflows for complex tasks
+**Implementation**: 26 instruction files + 27 prompt files with stateful collaboration patterns
+**Impact**: Revolutionary AI-human collaboration with persistent context preservation
 
-- Use Docker Compose for multi-service orchestration with custom networks for service isolation
-- Implement named volumes for dependency caching (node_modules, Python virtual environments)
-- Apply security-first approach with non-root users and minimal base images
-- Include comprehensive health checks and monitoring for all critical services
+### Conditional Environment Framework ✅
 
-### Script-Based Environment Management
+**Decision**: Parameter-driven architecture with runtime environment selection (local, docker_isolated, docker_volume)
+**Rationale**: Avoid hard-coded implementation choices, maximum flexibility, easy mode switching
+**Implementation**: ENV_MODE parameter system with comprehensive script automation
+**Impact**: First successful implementation of truly conditional instruction framework
 
-- All Docker environment setup and management performed via scripts in `scripts/` directory
-- Implemented idempotent scripts that are safe to run multiple times
-- Comprehensive validation and error handling with colored logging output
-- Support for both full environment setup and quick development runs
+### Codex Universal Docker Environment ✅
 
-- Adopted a standardized project root organization by language and framework (see Architecture Overview).
-- All setup and file/folder creation must be performed via scripts in the `scripts/` directory, never manually.
-- Scripts must be idempotent, must not overwrite existing files, and must warn or skip if files/folders exist.
-- All documentation and scripts must be markdown-lint strict mode compliant.
-- All major technical decisions must be documented here.
-- Rationale for each decision should be clear and accessible.
-- Updates must be made as the system evolves.
+**Decision**: Standardize on `ghcr.io/openai/codex-universal:latest` for all development environments
+**Rationale**: Consistent development across platforms, OpenAI API integration, volume-based workflows
+**Implementation**: Docker Compose orchestration with health monitoring and security best practices
+**Impact**: Eliminates environment-specific issues, enables instant file changes without rebuilds
+
+### Memory Bank System Optimization ✅
+
+**Decision**: Implement official Cline Memory Bank structure with historical archival
+**Rationale**: AI agent efficiency, faster session startup, zero information loss, professional documentation
+**Implementation**: Systematic transformation with proper formatting and cross-references
+**Impact**: Optimized AI agent reading efficiency with complete historical preservation
+
+### Next.js v15+ Server Actions Implementation ✅
+
+**Decision**: Build production-ready web applications using Server Actions with proper cache revalidation
+**Rationale**: Modern React patterns, improved performance, simplified state management
+**Implementation**: Complete Server/Client Component architecture with PostgreSQL integration
+**Impact**: Fully operational application with enhanced user experience patterns
 
 ## Design Patterns
-
-## Design Patterns
-
-### Container Orchestration Patterns
-
-- **Volume-Based Development Pattern**: Use bind mounts for source code and named volumes for dependencies
-- **Environment Variable Injection Pattern**: Pass sensitive configuration from host environment using `${VARIABLE}` syntax
-- **Health Check Pattern**: Implement comprehensive health validation for all services with proper timeouts and retries
-- **Service Discovery Pattern**: Use custom networks with descriptive service names for internal communication
-
-### Script Automation Patterns
-
-- **Idempotent Operation Pattern**: Design all scripts to be safely re-runnable without side effects
-- **Validation-First Pattern**: Check prerequisites before performing operations with helpful error messages
-- **Colored Logging Pattern**: Use consistent color coding for different log levels (info, success, warning, error)
-- **Graceful Degradation Pattern**: Continue operation when possible, warn about missing optional components
 
 ### AI Agent Collaboration Patterns
 
-- **Instruction File Pattern**: Create specific instruction files for different domains (docker-environment.instructions.md)
-- **Prompt File Pattern**: Generate comprehensive workflow automation with context requirements
-- **Memory Bank Integration Pattern**: Update all relevant memory bank files with architectural decisions and dependencies
+- **Memory Bank Integration Pattern** - All agents read memory bank files at session start
+- **Cross-Agent Workflow Pattern** - Complex tasks coordinate between multiple agents
+- **Instruction File Pattern** - Domain-specific coding standards automatically applied
+- **Prompt File Pattern** - Executable workflow templates for automated development
+- **Self-Documentation Pattern** - Automatic context preservation and state updates
+
+### Container Orchestration Patterns
+
+- **Volume-Based Development Pattern** - Bind mounts for source code, named volumes for dependencies
+- **Environment Variable Injection Pattern** - Secure configuration passing using `${VARIABLE}` syntax
+- **Health Check Pattern** - Comprehensive service validation with proper timeouts and retries
+- **Service Discovery Pattern** - Custom networks with descriptive service names
+
+### Script Automation Patterns
+
+- **Idempotent Operation Pattern** - Scripts safely re-runnable without side effects
+- **Validation-First Pattern** - Prerequisites checked before operations with helpful error messages
+- **Colored Logging Pattern** - Consistent color coding for different log levels
+- **Graceful Degradation Pattern** - Continue operation when possible, warn about optional components
+
+### Next.js Component Architecture Patterns
+
+#### Client-Server Boundary Rules
+
+- **`'use client'` Directive** - Place at top of file, before imports, only at component entry points
+- **Serializable Props** - Props between Server/Client Components must be serializable
+- **Minimize Client Bundle** - Use Server Components by default, Client Components when necessary
+- **Server Actions** - Use `'use server'` for mutations with proper cache revalidation
+
+#### Component Decision Matrix
+
+| Context                 | Component Type         | Use `'use client'` | Use Server Component | Use Server Actions |
+| ----------------------- | ---------------------- | ------------------ | -------------------- | ------------------ |
+| Data fetching (initial) | Data loading           | ❌                 | ✅                   | ❌                 |
+| User interaction        | Button clicks, forms   | ✅                 | ❌                   | ❌                 |
+| State management        | useState, useEffect    | ✅                 | ❌                   | ❌                 |
+| Database mutations      | Create, update, delete | ❌                 | ❌                   | ✅                 |
+| Browser APIs            | localStorage, window   | ✅                 | ❌                   | ❌                 |
+| SEO content             | Static text, meta      | ❌                 | ✅                   | ❌                 |
+| Authentication          | Login forms, logout    | ✅ (UI)            | ✅ (validation)      | ✅ (actions)       |
+
+#### Implementation Patterns
+
+- **Composition Pattern** - Nest Client Components inside Server Components for clear separation
+- **Progressive Enhancement** - Forms work without JavaScript, enhanced with client-side validation
+- **Revalidation Pattern** - Server Actions use `revalidatePath()` and `revalidateTag()` for cache updates
 
 ### Testing Architecture Patterns
 
-#### **Module-Level Mocking Pattern**
+#### Native Fetch Testing Pattern
 
-- Use `vi.mock('module-name')` for external dependencies (node-fetch, AuthManager)
-- Place mocks at the top of test files before imports
-- Provide realistic mock implementations that match actual API contracts
-- Avoid real network requests or external service dependencies in tests
+- **Global Stubbing** - Use `vi.stubGlobal('fetch', mockFetch)` for HTTP client testing
+- **Realistic Mocking** - Provide Response object mocks matching native fetch API contracts
+- **Comprehensive Scenarios** - Test both successful responses and error conditions
+- **Async/Await Patterns** - Proper handling of all HTTP operations
 
-#### **Async Test Pattern**
+#### Coverage Achievement Pattern
 
-- Use proper async/await patterns for all async operations
-- Remove fake timers when testing real async behavior (setTimeout, Promise resolution)
-- Test timeout scenarios with appropriate test timeout configurations
-- Use direct method testing for time-sensitive operations (refill methods)
+- **High Coverage Target** - Maintain 98%+ branch coverage as minimum threshold
+- **Edge Case Focus** - Test error scenarios, boundary conditions, and validation logic
+- **Test Isolation** - Each test file completely independent with proper mocking
+- **Cross-Agent Compatibility** - Ensure configurations work across all AI agents
 
-#### **Edge Case Coverage Pattern**
+### Microsoft Edge DevTools Integration Pattern
 
-- Test error scenarios: 429 rate limits, non-ok responses, network failures
-- Test data validation: NaN handling, invalid headers, malformed responses
-- Test boundary conditions: empty responses, missing parameters, default values
-- Test constructor variations: with/without optional parameters
+- **Comprehensive Debugging Configuration** - Complete VS Code integration with individual and compound workflows
+- **CSS Variables Solution** - Resolve no-inline-styles warnings using `style={{ '--dynamic-color': value }}`
+- **Protocol Compliance Framework** - Strict adherence to instruction file organization standards
+- **Security Best Practices** - Development-only security configurations with proper isolation
 
-#### **Test Isolation Pattern**
+### Conditional Framework Pattern
 
-- Each test file should be completely independent
-- Mock all external dependencies and services
-- Use beforeEach/afterEach hooks for cleanup
-- Maintain CommonJS compatibility when required by existing codebase
-
-#### **Coverage Achievement Pattern**
-
-- Target 90%+ branch coverage as minimum threshold
-- Use Istanbul coverage reporting for detailed metrics
-- Focus on uncovered branches and edge cases
-- Validate both positive and negative test scenarios
-- **Cross-Agent Compatibility Pattern**: Ensure configurations work across VS Code Copilot, Cline AI, and Codex CLI
-
-- **Command Pattern**
-- **Adapter Pattern**
-- **Observer Pattern**
+- **Parameter-Driven Architecture** - Runtime decisions through ENV_MODE parameter selection
+- **Decision Deferral** - Avoid hard-coded choices in instruction files
+- **Mode-Specific Generation** - Create appropriate configurations and documentation per mode
+- **AI Agent Compatibility** - Works seamlessly across all three AI agents
 
 ## Component Relationships
 
-- Clearly describe how components interact and depend on each other.
-- Update this section as new components are added or relationships change.
+### Memory Bank File Hierarchy
+
+```
+projectbrief.md (foundation)
+├── productContext.md (purpose & goals)
+├── systemPatterns.md (architecture & decisions) ← THIS FILE
+├── techContext.md (technologies & constraints)
+└── activeContext.md (current state)
+    └── progress.md (achievements & status)
+        └── dependencies.md (dependency tracking)
+```
+
+### AI Agent Coordination Flow
+
+```
+User Request → AI Agent (Cline/Codex/Copilot)
+├── Reads: Memory Bank files (mandatory at session start)
+├── Applies: System patterns and architectural decisions
+├── Implements: Design patterns and technical standards
+├── Updates: Memory Bank with new architectural decisions
+└── Maintains: Cross-session architectural consistency
+```
+
+### Technology Integration Relationships
+
+```
+TypeScript SDK (src/)
+├── Integrates: Native fetch API with comprehensive testing
+├── Connects: Next.js applications via shared types and utilities
+└── Supports: Python integration through API contracts
+
+Next.js Applications (web/)
+├── Uses: Server Actions for database mutations
+├── Implements: Client/Server Component architecture
+├── Integrates: PostgreSQL via Prisma ORM
+└── Connects: TypeScript SDK for business logic
+
+Python Environment (python/)
+├── Provides: Three deployment modes (local, docker_isolated, docker_volume)
+├── Integrates: Jupyter notebooks for ML development
+├── Connects: TypeScript SDK via API interfaces
+└── Supports: Container orchestration workflows
+
+Docker Environment
+├── Standardizes: Development across all platforms
+├── Provides: Codex Universal base with Node.js 22 + Python 3.13
+├── Enables: Volume-based development with instant file changes
+└── Integrates: OpenAI API access for all container workflows
+```
 
 ## Dependencies and Relationships
 
-| File                                       | Relationship                 |
-| ------------------------------------------ | ---------------------------- |
-| [projectbrief.md](./projectbrief.md)       | foundation                   |
-| [productContext.md](./productContext.md)   | defines goals                |
-| [techContext.md](./techContext.md)         | implementation guidance      |
-| [docker-workflow.md](./docker-workflow.md) | container workflow reference |
-| [activeContext.md](./activeContext.md)     | consumes patterns            |
-| [progress.md](./progress.md)               | tracks decisions             |
-
-| [when-to-use-what-matrix.instructions.md](../.github/instructions/when-to-use-what-matrix.instructions.md) | one-page manifest/meta config mapping |
-
-> For meta-configuration and manifest standards, always start with the matrix above, then consult `.github/instructions/README.md` and `.github/prompts/README.md` for detailed implementation and workflow automation guidance.
+- **Depends On:** [projectbrief.md](./projectbrief.md), [productContext.md](./productContext.md)
+- **Required By:** [techContext.md](./techContext.md), [activeContext.md](./activeContext.md), [progress.md](./progress.md), [dependencies.md](./dependencies.md)
+- **Why This Order:** System patterns must be established after foundational requirements and user goals but before technical implementation details
+- **Impact Analysis:** Changes to system architecture affect all implementation decisions, AI agent behavior, testing strategies, and development workflows
 
 ## Call to Action
 
 > **All agents and contributors must review, update, and self-regulate this file as the system architecture and patterns evolve.**  
 > **Do not proceed with system-level changes until this file is aligned with the current architecture.**  
-> **Update this file immediately upon any change in system structure, patterns, or technical decisions.**
+> **Update this file immediately upon any change in system structure, patterns, or technical decisions.**  
+> **Ensure all architectural decisions are documented with clear rationale and impact analysis.**
 
-**See [.clinerules/pattern-examples.md](../.clinerules/pattern-examples.md), [.clinerules/reading-protocol.md](../.clinerules/reading-protocol.md), and [.clinerules/verification.md](../.clinerules/verification.md) for required protocols and implementation patterns.**
+## AI Agent Instructions
+
+This project supports three AI agents with specific architectural responsibilities:
+
+- **Cline AI** → Apply architectural patterns with memory bank integration and learning protocols
+- **Codex CLI** → Implement system patterns through script automation and container orchestration
+- **VS Code Copilot** → Enforce architectural standards through instruction files and code generation
+
+**All agents must validate their implementations against the system patterns defined in this file and ensure consistency with established architectural decisions.**
 
 ---
+
+**Last Updated:** 2025-07-18 | **Status:** Architectural Patterns Established | **Coverage:** Polyvalent AI Development Architecture

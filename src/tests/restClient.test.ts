@@ -1,14 +1,11 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import fetch from 'node-fetch';
 import { OAuthProvider, OAuthTokens, TokenStore } from '../auth/interfaces';
 import { AuthManager } from '../auth/manager';
 import { RestClient } from '../http/restClient';
 
-vi.mock('node-fetch', () => ({
-  default: vi.fn(),
-}));
-
-const mockedFetch = vi.mocked(fetch);
+// Mock the global fetch instead of node-fetch
+const mockFetch = vi.fn();
+vi.stubGlobal('fetch', mockFetch);
 
 const token: OAuthTokens = {
   access_token: 'a',
@@ -44,7 +41,7 @@ class Store implements TokenStore {
 
 describe('RestClient', () => {
   beforeEach(() => {
-    mockedFetch.mockClear();
+    mockFetch.mockClear();
   });
 
   afterEach(() => {
@@ -53,7 +50,7 @@ describe('RestClient', () => {
 
   it('get 200', async () => {
     const mockTime = { time: 1234567890 };
-    mockedFetch.mockResolvedValue({
+    mockFetch.mockResolvedValue({
       status: 200,
       ok: true,
       headers: {
@@ -66,7 +63,7 @@ describe('RestClient', () => {
     const rc = new RestClient('https://api', am);
     const data = await rc.get<{ time: number }>('/time');
 
-    expect(mockedFetch).toHaveBeenCalledWith(
+    expect(mockFetch).toHaveBeenCalledWith(
       'https://api/time',
       expect.any(Object)
     );
@@ -81,7 +78,7 @@ describe('RestClient', () => {
   });
 
   it('handles 429 rate limit', async () => {
-    mockedFetch.mockResolvedValue({
+    mockFetch.mockResolvedValue({
       status: 429,
       ok: false,
       headers: {
@@ -93,14 +90,14 @@ describe('RestClient', () => {
     const rc = new RestClient('https://api', am);
 
     await expect(rc.get('/test')).rejects.toThrow('Rate limit exceeded');
-    expect(mockedFetch).toHaveBeenCalledWith(
+    expect(mockFetch).toHaveBeenCalledWith(
       'https://api/test',
       expect.any(Object)
     );
   });
 
   it('handles 429 rate limit with NaN reset header', async () => {
-    mockedFetch.mockResolvedValue({
+    mockFetch.mockResolvedValue({
       status: 429,
       ok: false,
       headers: {
@@ -112,7 +109,7 @@ describe('RestClient', () => {
     const rc = new RestClient('https://api', am);
 
     await expect(rc.get('/test')).rejects.toThrow('Rate limit exceeded');
-    expect(mockedFetch).toHaveBeenCalledWith(
+    expect(mockFetch).toHaveBeenCalledWith(
       'https://api/test',
       expect.any(Object)
     );
@@ -129,14 +126,14 @@ describe('RestClient', () => {
       text: vi.fn().mockResolvedValue('Bad Request'),
     };
 
-    mockedFetch.mockResolvedValue(mockErrorResponse as any);
+    mockFetch.mockResolvedValue(mockErrorResponse as any);
 
     const am = new AuthManager(new Provider(), new Store());
     const rc = new RestClient('https://api', am);
 
     // This should call handleQuestradeError and throw
     await expect(rc.get('/test')).rejects.toThrow();
-    expect(mockedFetch).toHaveBeenCalledWith(
+    expect(mockFetch).toHaveBeenCalledWith(
       'https://api/test',
       expect.any(Object)
     );
@@ -148,7 +145,7 @@ describe('RestClient', () => {
 
     // test POST
     const payload = { foo: 'bar' };
-    mockedFetch.mockResolvedValue({
+    mockFetch.mockResolvedValue({
       status: 200,
       ok: true,
       headers: {
@@ -158,7 +155,7 @@ describe('RestClient', () => {
     } as any);
     const postRes = await rc.post<{ foo: string }>('/p', payload);
     expect(postRes).toEqual(payload);
-    expect(mockedFetch).toHaveBeenCalledWith(
+    expect(mockFetch).toHaveBeenCalledWith(
       'https://api/p',
       expect.objectContaining({
         method: 'POST',
@@ -168,7 +165,7 @@ describe('RestClient', () => {
 
     // test DELETE
     const deletePayload = { foo: 'del' };
-    mockedFetch.mockResolvedValue({
+    mockFetch.mockResolvedValue({
       status: 200,
       ok: true,
       headers: {
@@ -178,7 +175,7 @@ describe('RestClient', () => {
     } as any);
     const delRes = await rc.delete<{ foo: string }>('/d');
     expect(delRes).toEqual(deletePayload);
-    expect(mockedFetch).toHaveBeenCalledWith(
+    expect(mockFetch).toHaveBeenCalledWith(
       'https://api/d',
       expect.objectContaining({
         method: 'DELETE',

@@ -20,8 +20,9 @@ I am an expert software engineer with a unique characteristic: my memory resets 
 
 ### Memory Bank Structure
 
-The Memory Bank consists of core files and optional context files, all in Markdown format. Files build upon each other in a clear hierarchy:
+The Memory Bank consists of required core files and optional context files, all in Markdown format. Files build upon each other in a clear hierarchy:
 
+```mermaid
 flowchart TD
 PB[projectbrief.md] --> PC[productContext.md]
 PB --> SP[systemPatterns.md]
@@ -32,6 +33,70 @@ PB --> TC[techContext.md]
     TC --> AC
 
     AC --> P[progress.md]
+```
+
+### Memory Bank Formatting Standards (MANDATORY)
+
+All Memory Bank files MUST follow the official Cline Memory Bank structure with strict markdown-lint compliance:
+
+**Required File Structure:**
+
+```markdown
+# filename.md
+
+## Purpose
+
+[Clear explanation of file purpose]
+
+## Structure
+
+[File organization explanation]
+
+---
+
+## [Main Content Sections]
+
+### [Subsections as needed]
+
+## Historical Changes Archive (if applicable)
+
+### [YYYY-MM-DD] Change Title
+
+[Chronological historical entries]
+
+## Dependencies and Relationships
+
+- **Depends On:** [file references]
+- **Required By:** [file references]
+- **Impact Analysis:** [consequences of changes]
+
+## Call to Action
+
+> **All agents must review, update, and self-regulate...**
+
+---
+```
+
+**Formatting Requirements:**
+
+- **Single # Header Rule**: Each file exactly one top-level heading (#) matching filename
+- **Proper Hierarchy**: ## Purpose → ## Structure → content → ## Dependencies → ## Call to Action
+- **GitHub Format**: Follow GitHub markdown standards for consistency
+- **Historical Separation**: Current content separate from archived entries
+- **Cross-References**: Proper dependency tracking and impact analysis
+- **No Trailing Spaces**: Remove trailing whitespace from all lines
+- **Consistent Lists**: Use - for unordered lists, proper indentation for nested items
+- **Code Blocks**: Use proper fencing with language specification
+- **Link Formatting**: Use proper reference-style or inline links
+- **Call to Action**: Standardized agent instructions in every file
+
+**Critical Requirements:**
+
+- Current context must be separated from historical logs
+- All files must include Dependencies and Relationships section
+- Historical entries must be chronologically organized in archive sections
+- Cross-file references must be maintained accurately
+- Memory Bank protocol compliance is NOT optional - it's essential for AI agent functionality
 
 #### Core Files (Required)
 

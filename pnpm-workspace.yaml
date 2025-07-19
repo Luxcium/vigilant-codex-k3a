@@ -1,0 +1,7 @@
+packages:
+  - 'web'
+  - 'agent-framework'
+  - 'python'
+
+onlyBuiltDependencies:
+  - '@prisma/client'

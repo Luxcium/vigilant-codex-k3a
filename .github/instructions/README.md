@@ -1,8 +1,8 @@
 # GitHub Copilot Instructions
 
-This directory contains instruction files that automatically apply coding standards, guidelines, and rules to VS Code Copilot's code generation. These files work passively in the background to ensure consistency and quality.
+This directory contains instruction files that automatically apply coding standards, guidelines, and rules to VS Code Copilot's code generation. These files work passively in the background to ensure consistency and quality across the polyvalent development workspace.
 
-## Quick Reference: One-Page “When to Use What” Matrix
+## Quick Reference: One-Page "When to Use What" Matrix
 
 **[when-to-use-what-matrix.instructions.md](./when-to-use-what-matrix.instructions.md)** — A single-page matrix mapping all major manifest/meta configuration goals (PWA, iOS, Windows, Chrome Extension, etc.) to their primary files and authoritative sources. Use this as your starting point for any integration or standards question. See detailed standards in the specific instruction files below.
 
@@ -21,41 +21,73 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 > **Authoring Standard:**  
 > Before creating or updating any instruction file, consult [instruction-authoring-standards.instructions.md](./instruction-authoring-standards.instructions.md) for the canonical rules, structure, and validation checklist. All `.instructions.md` files must comply with this standard for consistency and markdown-lint strictness.
 
-## Available Instructions
+## Available Instructions (27 Files)
+
+### AI Agent Workflow & Creation
+
+**[ai-instruction-creation.instructions.md](./ai-instruction-creation.instructions.md)** - Complete framework for AI agents to create new .instructions.md files on-demand with proper structure, validation, and integration.
+
+**[ai-prompt-creation.instructions.md](./ai-prompt-creation.instructions.md)** - Comprehensive guidelines for AI agents to create .prompt.md files with proper mode selection, tool configuration, and workflow automation.
+
+**[instruction-authoring-standards.instructions.md](./instruction-authoring-standards.instructions.md)** - Canonical authoring standards for all instruction files including structure, validation, and quality requirements.
+
+**[self-documentation.instructions.md](./self-documentation.instructions.md)** - Self-documentation protocol requirements for maintaining stateful AI agent collaboration and memory bank synchronization.
 
 ### Environment & Infrastructure
 
+**[docker-environment.instructions.md](./docker-environment.instructions.md)** - Comprehensive Docker environment standards covering Codex Universal setup, container security, volume management, and OpenAI API integration.
+
+**[python-environment-conditional.instructions.md](./python-environment-conditional.instructions.md)** - Revolutionary conditional framework enabling runtime Python environment selection (local, docker_isolated, docker_volume) with parameter-driven configuration.
+
+**[python-environment.instructions.md](./python-environment.instructions.md)** - Traditional Python environment setup standards and best practices for local development workflows.
+
+**[vscode-notebook-integration.instructions.md](./vscode-notebook-integration.instructions.md)** - VS Code Notebook API integration standards for advanced Jupyter notebook development, execution control, and automation.
+**[web-dev-server.instructions.md](./web-dev-server.instructions.md)** - Démarrage du serveur Next.js en mode développement via VS Code.
+**[web-build.instructions.md](./web-build.instructions.md)** - Construction et lancement du serveur Next.js en production accessible sur le réseau local.
+
 ### Language Standards
+
+**[typescript-standards.instructions.md](./typescript-standards.instructions.md)** - Comprehensive TypeScript coding standards with strict type checking, modern patterns, and project-specific conventions.
+
+**[python-standards.instructions.md](./python-standards.instructions.md)** - Python coding standards following PEP 8, type hints, modern practices, and project integration requirements.
+
+**[python-notebook-standards.instructions.md](./python-notebook-standards.instructions.md)** - Jupyter notebook development standards for data science workflows, ML experimentation, and reproducible research.
+
+**[tsdoc-typedoc.instructions.md](./tsdoc-typedoc.instructions.md)** - TSDoc and TypeDoc documentation standards for comprehensive API documentation generation and maintenance.
 
 ### Project Organization
 
-### AI Agent Workflow
+**[file-organization.instructions.md](./file-organization.instructions.md)** - Project structure standards defining polyvalent workspace organization by language and framework at the project root.
 
-### Documentation & Standards
+**[use-conventional-commits.instructions.md](./use-conventional-commits.instructions.md)** - Conventional commit standards for consistent version control and automated changelog generation.
 
-### PWA Standards
+**[no_dummy-no_placeholders.instructions.md](./no_dummy-no_placeholders.instructions.md)** - Standards requiring real, functional configurations instead of placeholder or dummy content.
 
-**[windows-tiles.instructions.md](./windows-tiles.instructions.md)** - Windows Live Tiles (Start-menu & pinned-site) configuration with `browserconfig.xml`, meta tags, icon sizing, theming, caching pitfalls, and validation steps.
-**[x-cards.instructions.md](./x-cards.instructions.md)** - X Cards (formerly Twitter Cards) metadata standards, required tags, card types, validation, and boilerplate.
-**[social-preview-and-deep-links.instructions.md](./social-preview-and-deep-links.instructions.md)** - Open Graph, X Cards, Facebook App Links, and Android App Links metadata and validator workflows.
+### Web Standards & Meta Configuration
 
-### General Icon Link Tags
+**[pwa-manifest.instructions.md](./pwa-manifest.instructions.md)** - Progressive Web App manifest standards for installable applications with proper configuration and validation.
 
-**[general-icon-link-tags.instructions.md](./general-icon-link-tags.instructions.md)** - Instructions for implementing a comprehensive set of link tags for favicons and app icons across all platforms.
+**[ios-meta-and-links.instructions.md](./ios-meta-and-links.instructions.md)** - iOS Web Clip and Safari-specific meta tag standards for optimal mobile web app integration.
 
-### SEO Meta Tags
+**[windows-tiles.instructions.md](./windows-tiles.instructions.md)** - Windows Live Tiles configuration with browserconfig.xml, meta tags, icon sizing, and validation requirements.
 
-**[seo-meta-tags.instructions.md](./seo-meta-tags.instructions.md)** - Instructions for implementing fundamental SEO meta tags for discoverability, crawling, and social previews.
+**[theme-ui-meta.instructions.md](./theme-ui-meta.instructions.md)** - Browser UI theming meta tags including theme-color, color-scheme, dark mode variants, and platform-specific optimization.
 
-### UI Theming
+**[general-icon-link-tags.instructions.md](./general-icon-link-tags.instructions.md)** - Comprehensive favicon and app icon link tag standards for cross-platform compatibility.
 
-**[theme-ui-meta.instructions.md](./theme-ui-meta.instructions.md)** - Detailed instructions for browser-UI theming meta tags, including `theme-color`, `color-scheme`, and platform-specific variants. Covers syntax, dark-mode variants, multi-color support, platform quirks, and validation steps.
+### SEO & Social Integration
 
-### Validation & Debugging Checklist
+**[seo-meta-tags.instructions.md](./seo-meta-tags.instructions.md)** - Essential SEO meta tag standards for discoverability, crawling optimization, and search engine integration.
 
-**[validation-debugging-checklist.instructions.md](./validation-debugging-checklist.instructions.md)** - A VS Code-centric checklist for validating and debugging web app manifests, meta tags, and platform integrations.
+**[x-cards.instructions.md](./x-cards.instructions.md)** - X Cards (formerly Twitter Cards) metadata standards for rich social media previews and validation.
 
-### Code Quality
+**[social-preview-and-deep-links.instructions.md](./social-preview-and-deep-links.instructions.md)** - Open Graph, social media cards, and deep linking standards for comprehensive social integration.
+
+### Quality Assurance & Validation
+
+**[edge-devtools-debugging.instructions.md](./edge-devtools-debugging.instructions.md)** - Microsoft Edge DevTools integration and debugging configuration standards for VS Code development workflows with comprehensive CSS variables solution and launch configurations.
+
+**[validation-debugging-checklist.instructions.md](./validation-debugging-checklist.instructions.md)** - VS Code-centric validation and debugging checklist for web app manifests, meta tags, and platform integrations.
 
 ## How Instructions Work
 
@@ -83,6 +115,7 @@ All instruction files follow this standard structure:
 ```markdown
 ---
 applyTo: 'glob-pattern'
+description: 'Brief description of what this instruction covers'
 ---
 
 # Standards Title
@@ -151,7 +184,7 @@ When multiple instruction files apply to the same code:
 
 All instruction files must:
 
-- [ ] Include proper front matter with applyTo pattern
+- [ ] Include proper front matter with applyTo pattern and description
 - [ ] Use imperative language consistently
 - [ ] Contain actionable, specific rules
 - [ ] Follow markdown-lint strict mode compliance
@@ -165,6 +198,7 @@ All instruction files must:
 ```markdown
 ---
 applyTo: '**'
+description: 'Global project standards for all file types'
 ---
 
 # Global Project Standards
@@ -178,6 +212,7 @@ applyTo: '**'
 ```markdown
 ---
 applyTo: '**/*.ts'
+description: 'TypeScript coding standards and best practices'
 ---
 
 # TypeScript Standards
@@ -191,6 +226,7 @@ applyTo: '**/*.ts'
 ```markdown
 ---
 applyTo: '**/api/**'
+description: 'API design standards and conventions'
 ---
 
 # API Design Standards
@@ -204,6 +240,7 @@ applyTo: '**/api/**'
 ```markdown
 ---
 applyTo: 'ai-agents'
+description: 'AI agent workflow and creation guidelines'
 ---
 
 # AI Agent Instructions
@@ -248,3 +285,7 @@ Instructions are enabled in VS Code through:
 - `github.copilot.chat.codeGeneration.instructionsPath: ".github/instructions"`
 
 See [.vscode/settings.json](../../.vscode/settings.json) for current configuration.
+
+---
+
+This sophisticated instruction system enables consistent, high-quality code generation across the polyvalent development workspace while maintaining flexibility for different languages, frameworks, and development patterns.
