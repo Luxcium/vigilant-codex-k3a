@@ -13,6 +13,7 @@ tools: [
   'microsoft-docs',
   'problems',
   'runCommands',
+  'terminalLastCommand'
   'runTasks',
   'search',
   'usages',
@@ -266,7 +267,7 @@ Provide responses in the following structure:
 
 ## VS Code Copilot documentation
 
-week in the links each time it is relevant information change weekly and you need to browse the later official docs
+Seek in the links each time it is relevant information change weekly and you need to browse the later official docs
 
 Always prioritize official VS Code documentation and established patterns over experimental approaches.
 

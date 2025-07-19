@@ -3,6 +3,7 @@
 # Quick Codex Universal Docker Runner
 # This script provides a simple way to run codex-universal with volume mounting
 
+
 set -euo pipefail
 
 # Configuration
@@ -45,7 +46,18 @@ log_info "Starting codex-universal container with volumes..."
 log_info "Project: $PROJECT_NAME"
 log_info "Mount: $PROJECT_ROOT -> /workspace/$PROJECT_NAME"
 
-# Run the container with volume mounting
+
+# Dynamic port mapping: only map ports that are not in use in range 3000 + 10
+PORTS=(3010 3011 3012 3013 3014 3015)
+PORT_ARGS=()
+for PORT in "${PORTS[@]}"; do
+  if lsof -iTCP:"$PORT" -sTCP:LISTEN -t >/dev/null 2>&1; then
+    echo -e "\033[0;33m[WARN]\033[0m Port $PORT is already in use on host, skipping mapping."
+  else
+    PORT_ARGS+=("-p" "$PORT:$PORT")
+  fi
+done
+
 docker run --rm -it \
   --name "${PROJECT_NAME}-codex-dev" \
   -e CODEX_ENV_PYTHON_VERSION=3.13 \
@@ -54,10 +66,7 @@ docker run --rm -it \
   -e OPENAI_API_KEY="${OPENAI_API_KEY}" \
   -v "$PROJECT_ROOT:/workspace/$PROJECT_NAME" \
   -w "/workspace/$PROJECT_NAME" \
-  -p 3000:3000 \
-  -p 8000:8000 \
-  -p 8888:8888 \
-  -p 5173:5173 \
+  "${PORT_ARGS[@]}" \
   ghcr.io/openai/codex-universal:latest
 
 log_success "Container exited"
