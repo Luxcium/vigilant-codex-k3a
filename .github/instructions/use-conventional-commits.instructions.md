@@ -18,6 +18,244 @@ git commit -m"<b><a href="#types">&lt;type&gt;</a></b></font>(<b><a href="#scope
 
 ## Commit Message Formats
 
+The emojis shall be selected in a very specific manner in the list provided to differentiate the commit messages algorytmically they must strictly follow the purpose and be placed where it is supposed to YOU MUST INCLUDE ONE IN THE PROPER PLACE.
+ 
+The commit message must always be structured as follows:
+> Did you really add a gitmoji to your commit message? If not, you are doing it wrong! YOU MUST HAVE ONE EACH TIME FOLLOWING THE RULES!
+---
+```command
+<type>[(<optional scope>)]: <:gitmoji:> <description>
+
+[optional body]
+
+[optional footer]
+```
+---
+
+### List For This Project (use the most appropriate)
+
+None  
+No gitmoji.
+
+🎨 `:art:`
+Improve structure / format of the code.
+
+⚡ `:zap:`
+Improve performance.
+
+🔥 `:fire:`
+Remove code or files.
+
+🐛 `:bug:`
+Fix a bug.
+
+🚑 `:ambulance:`
+Critical hotfix.
+
+✨ `:sparkles:`
+Introduce new features.
+
+📝 `:memo:`
+Add or update documentation.
+
+🚀 `:rocket:`
+Deploy stuff.
+
+💄 `:lipstick:`
+Add or update the UI and style files.
+
+🎉 `:tada:`
+Begin a project.
+
+✅ `:white_check_mark:`
+Add, update, or pass tests.
+
+🔒 `:lock:`
+Fix security issues.
+
+🔐 `:closed_lock_with_key:`
+Add or update secrets.
+
+🔖 `:bookmark:`
+Release / Version tags.
+
+🚨 `:rotating_light:`
+Fix compiler / linter warnings.
+
+🚧 `:construction:`
+Work in progress.
+
+💚 `:green_heart:`
+Fix CI Build.
+
+⬇️ `:arrow_down:`
+Downgrade dependencies.
+
+⬆️ `:arrow_up:`
+Upgrade dependencies.
+
+📌 `:pushpin:`
+Pin dependencies to specific versions.
+
+👷 `:construction_worker:`
+Add or update CI build system.
+
+📈 `:chart_with_upwards_trend:`
+Add or update analytics or track code.
+
+♻️ `:recycle:`
+Refactor code.
+
+➕ `:heavy_plus_sign:`
+Add a dependency.
+
+➖ `:heavy_minus_sign:`
+Remove a dependency.
+
+🔧 `:wrench:`
+Add or update configuration files.
+
+🔨 `:hammer:`
+Add or update development scripts.
+
+🌐 `:globe_with_meridians:`
+Internationalization and localization.
+
+✏️ `:pencil2:`
+Fix typos.
+
+💩 `:poop:`
+Write bad code that needs to be improved.
+
+⏪ `:rewind:`
+Revert changes.
+
+🔀 `:twisted_rightwards_arrows:`
+Merge branches.
+
+📦 `:package:`
+Add or update compiled files or packages.
+
+👽 `:alien:`
+Update code due to external API changes.
+
+🚚 `:truck:`
+Move or rename resources (e.g. files, paths, routes).
+
+📄 `:page_facing_up:`
+Add or update license.
+
+💥 `:boom:`
+Introduce breaking changes.
+
+🍱 `:bento:`
+Add or update assets.
+
+♿ `:wheelchair:`
+Improve accessibility.
+
+💡 `:bulb:`
+Add or update comments in source code.
+
+🍻 `:beers:`
+Write code drunkenly.
+
+💬 `:speech_balloon:`
+Add or update text and literals.
+
+🗃️ `:card_file_box:`
+Perform database related changes.
+
+🔊 `:loud_sound:`
+Add or update logs.
+
+🔇 `:mute:`
+Remove logs.
+
+👥 `:busts_in_silhouette:`
+Add or update contributor(s).
+
+🚸 `:children_crossing:`
+Improve user experience / usability.
+
+🏗️ `:building_construction:`
+Make architectural changes.
+
+📱 `:iphone:`
+Work on responsive design.
+
+🤡 `:clown_face:`
+Mock things.
+
+🥚 `:egg:`
+Add or update an easter egg.
+
+🙈 `:see_no_evil:`
+Add or update a .gitignore file.
+
+📸 `:camera_flash:`
+Add or update snapshots.
+
+⚗️ `:alembic:`
+Perform experiments.
+
+🔍 `:mag:`
+Improve SEO.
+
+🏷️ `:label:`
+Add or update types.
+
+🌱 `:seedling:`
+Add or update seed files.
+
+🚩 `:triangular_flag_on_post:`
+Add, update, or remove feature flags.
+
+🥅 `:goal_net:`
+Catch errors.
+
+💫 `:dizzy:`
+Add or update animations and transitions.
+
+🗑️ `:wastebasket:`
+Deprecate code that needs to be cleaned up.
+
+🛂 `:passport_control:`
+Work on code related to authorization, roles and permissions.
+
+🩹 `:adhesive_bandage:`
+Simple fix for a non-critical issue.
+
+🧐 `:monocle_face:`
+Data exploration / inspection.
+
+⚰️ `:coffin:`
+Remove dead code.
+
+🧪 `:test_tube:`
+Add a failing test.
+
+👔 `:necktie:`
+Add or update business logic.
+
+🩺 `:stethoscope:`
+Add or update healthcheck.
+
+🧱 `:bricks:`
+Infrastructure related changes.
+
+🧑‍💻 `:technologist:`
+Improve developer experience.
+
+💸 `:money_with_wings:`
+Add sponsorships or money related infrastructure.
+
+🧵 `:thread:`
+Add or update code related to multithreading or concurrency.
+
+🦺 `:safety_vest:`
+Add or update code related to validation.
+
 ### General Commit
 <pre>
 <b><a href="#types">&lt;type&gt;</a></b></font>(<b><a href="#scopes">&lt;optional scope&gt;</a></b>): <b><a href="#use-a-gitmoji-as-to-best-describe">&lt;:gitmoji:&gt;</a></b> <b><a href="#description">&lt;description&gt;</a></b>
@@ -29,7 +267,7 @@ git commit -m"<b><a href="#types">&lt;type&gt;</a></b></font>(<b><a href="#scope
 
 ### Initial Commit 
 ```
-chore: init
+chore: :tada: init
 ```
 
 ### Merge Commit
@@ -98,45 +336,162 @@ The `footer` should contain issue references and informations about **Breaking C
 
 
 ### Examples
-- ```
-  feat: add email notifications on new direct messages
-  ```
-- ```
-  feat(shopping cart): add the amazing button
-  ```
-- ```
-  feat!: remove ticket list endpoint
 
-  refers to JIRA-1337
+> [!CRITICAL]
+> **MANDATORY GITMOJI REQUIREMENT**
+> 
+> **EVERY SINGLE EXAMPLE** in this document **MUST** include a gitmoji. **NO EXCEPTIONS.**
+> 
+> Any commit message example without a gitmoji is **BROKEN** and **INVALID**.
+> 
+> Format: `<type>[(<scope>)]: <:gitmoji:> <description>`
+> 
+> **If you see ANY example without gitmoji, it is an ERROR that must be fixed immediately.**
 
-  BREAKING CHANGE: ticket endpoints no longer supports list all entities.
-  ```
-- ```
-  fix(shopping-cart): prevent order an empty shopping cart
-  ```
-- ```
-  fix(api): fix wrong calculation of request body checksum
-  ```
-- ```
-  fix: add missing parameter to service call
+#### Feature Commits
 
-  The error occurred due to <reasons>.
-  ```
-- ```
-  perf: decrease memory footprint for determine unique visitors by using HyperLogLog
-  ```
-- ```
-  build: update dependencies
-  ```
-- ```
-  build(release): bump version to 1.0.0
-  ```
-- ```
-  refactor: implement fibonacci number calculation as recursion
-  ```
-- ```
-  style: remove empty line
-  ```
+**Basic feature addition:**
+```
+feat(auth): :sparkles: add OAuth2 authentication support
+```
+
+**Feature with scope and breaking change:**
+```
+feat(api)!: :boom: redesign user endpoint structure
+
+BREAKING CHANGE: User endpoints now return nested profile objects instead of flat structures.
+All client applications must update their response parsing logic.
+
+Closes #247
+```
+
+**Feature enhancement:**
+```
+feat(shopping-cart): :heavy_plus_sign: add quantity validation for cart items
+```
+
+#### Bug Fix Commits
+
+**Critical bug fix:**
+```
+fix(payment): :ambulance: resolve payment gateway timeout issues
+
+Payment processing was failing due to 30-second timeout limit.
+Increased timeout to 60 seconds and added retry logic.
+
+Fixes #891
+```
+
+**Standard bug fix:**
+```
+fix(ui): :bug: correct responsive layout on mobile devices
+```
+
+**Security fix:**
+```
+fix(auth): :lock: prevent SQL injection in login endpoint
+```
+
+#### Performance Commits
+
+**Performance optimization:**
+```
+perf(database): :zap: optimize user query with indexed lookups
+
+Reduced average query time from 200ms to 15ms by adding composite index
+on user_id and created_at columns.
+```
+
+**Memory optimization:**
+```
+perf(cache): :recycle: implement LRU cache for API responses
+```
+
+#### Refactoring Commits
+
+**Code restructuring:**
+```
+refactor(components): :art: extract reusable form validation logic
+
+Moved validation functions to shared utilities to reduce code duplication
+across 12 form components.
+```
+
+**Architecture improvement:**
+```
+refactor(api): :building_construction: migrate to microservices architecture
+```
+
+#### Documentation Commits
+
+**Documentation update:**
+```
+docs(readme): :memo: add installation instructions for Docker setup
+```
+
+**API documentation:**
+```
+docs(api): :memo: update endpoint documentation with new parameters
+```
+
+#### Build and Configuration Commits
+
+**Dependency update:**
+```
+build(deps): :arrow_up: upgrade Next.js to v15.1.2
+
+Includes performance improvements and security patches.
+```
+
+**CI/CD improvement:**
+```
+build(ci): :construction_worker: add automated testing for pull requests
+```
+
+**Configuration change:**
+```
+chore(config): :wrench: update TypeScript strict mode settings
+```
+
+#### Testing Commits
+
+**Test addition:**
+```
+test(auth): :white_check_mark: add unit tests for password validation
+
+Increases test coverage from 85% to 92% for authentication module.
+```
+
+**Test fix:**
+```
+test(integration): :green_heart: fix flaky database connection tests
+```
+
+#### Style and Formatting Commits
+
+**Code formatting:**
+```
+style(components): :art: apply consistent indentation and spacing
+```
+
+**Linting fixes:**
+```
+style(eslint): :rotating_light: resolve linter warnings in utility functions
+```
+
+#### Maintenance Commits
+
+**Dead code removal:**
+```
+chore(cleanup): :fire: remove deprecated user profile endpoints
+
+These endpoints were replaced in v2.0 and are no longer used.
+```
+
+**Dependency cleanup:**
+```
+chore(deps): :heavy_minus_sign: remove unused lodash dependency
+```
 
 ---
   
@@ -252,31 +607,31 @@ A scope may be provided to a commit's type, to provide additional contextual inf
 
 #### Commit message with description and breaking change in body
 ```
-feat: allow provided config object to extend other configs
+feat: :sparkles: allow provided config object to extend other configs
 
 BREAKING CHANGE: `extends` key in config file is now used for extending other config files
 ```
 
 #### Commit message with optional `!` to draw attention to breaking change
 ```
-chore!: drop Node 6 from testing matrix
+chore!: :boom: drop Node 6 from testing matrix
 
 BREAKING CHANGE: dropping Node 6 which hits end of life in April
 ```
 
 #### Commit message with no body
 ```
-docs: correct spelling of CHANGELOG
+docs: :memo: correct spelling of CHANGELOG
 ```
 
 #### Commit message with scope
 ```
-feat(lang): add polish language
+feat(lang): :sparkles: add polish language
 ```
 
 #### Commit message for a fix using an (optional) issue number.
 ```
-fix: correct minor typos in code
+fix: :bug: correct minor typos in code
 
 see the issue for details on the typos fixed
 
@@ -355,242 +710,3 @@ Prior to merging or releasing the mistake, we recommend using `git rebase -i` to
 ##### When you used a type *not* of the spec, e.g. `feet` instead of `feat`
 
 In a worst case scenario, it's not the end of the world if a commit lands that does not meet the conventional commit specification. It simply means that commit will be missed by tools that are based on the spec.
-
-## Use a gitmoji as to best describe 
- 
-The commit message must always be structured as follows:
-
----
-
-```command
-<type>[(<optional scope>)]: <:gitmoji:> <description>
-
-[optional body]
-
-[optional footer]
-```
----
-
-### List For This Project (use the most appropriate)
-
-None  
-No gitmoji.
-
-🎨 :art:  
-Improve structure / format of the code.
-
-⚡ :zap:  
-Improve performance.
-
-🔥 :fire:  
-Remove code or files.
-
-🐛 :bug:  
-Fix a bug.
-
-🚑 :ambulance:  
-Critical hotfix.
-
-✨ :sparkles:  
-Introduce new features.
-
-📝 :memo:  
-Add or update documentation.
-
-🚀 :rocket:  
-Deploy stuff.
-
-💄 :lipstick:  
-Add or update the UI and style files.
-
-🎉 :tada:  
-Begin a project.
-
-✅ :white_check_mark:  
-Add, update, or pass tests.
-
-🔒 :lock:  
-Fix security issues.
-
-🔐 :closed_lock_with_key:  
-Add or update secrets.
-
-🔖 :bookmark:  
-Release / Version tags.
-
-🚨 :rotating_light:  
-Fix compiler / linter warnings.
-
-🚧 :construction:  
-Work in progress.
-
-💚 :green_heart:  
-Fix CI Build.
-
-⬇️ :arrow_down:  
-Downgrade dependencies.
-
-⬆️ :arrow_up:  
-Upgrade dependencies.
-
-📌 :pushpin:  
-Pin dependencies to specific versions.
-
-👷 :construction_worker:  
-Add or update CI build system.
-
-📈 :chart_with_upwards_trend:  
-Add or update analytics or track code.
-
-♻️ :recycle:  
-Refactor code.
-
-➕ :heavy_plus_sign:  
-Add a dependency.
-
-➖ :heavy_minus_sign:  
-Remove a dependency.
-
-🔧 :wrench:  
-Add or update configuration files.
-
-🔨 :hammer:  
-Add or update development scripts.
-
-🌐 :globe_with_meridians:  
-Internationalization and localization.
-
-✏️ :pencil2:  
-Fix typos.
-
-💩 :poop:  
-Write bad code that needs to be improved.
-
-⏪ :rewind:  
-Revert changes.
-
-🔀 :twisted_rightwards_arrows:  
-Merge branches.
-
-📦 :package:  
-Add or update compiled files or packages.
-
-👽 :alien:  
-Update code due to external API changes.
-
-🚚 :truck:  
-Move or rename resources (e.g. files, paths, routes).
-
-📄 :page_facing_up:  
-Add or update license.
-
-💥 :boom:  
-Introduce breaking changes.
-
-🍱 :bento:  
-Add or update assets.
-
-♿ :wheelchair:  
-Improve accessibility.
-
-💡 :bulb:  
-Add or update comments in source code.
-
-🍻 :beers:  
-Write code drunkenly.
-
-💬 :speech_balloon:  
-Add or update text and literals.
-
-🗃️ :card_file_box:  
-Perform database related changes.
-
-🔊 :loud_sound:  
-Add or update logs.
-
-🔇 :mute:  
-Remove logs.
-
-👥 :busts_in_silhouette:  
-Add or update contributor(s).
-
-🚸 :children_crossing:  
-Improve user experience / usability.
-
-🏗️ :building_construction:  
-Make architectural changes.
-
-📱 :iphone:  
-Work on responsive design.
-
-🤡 :clown_face:  
-Mock things.
-
-🥚 :egg:  
-Add or update an easter egg.
-
-🙈 :see_no_evil:  
-Add or update a .gitignore file.
-
-📸 :camera_flash:  
-Add or update snapshots.
-
-⚗️ :alembic:  
-Perform experiments.
-
-🔍 :mag:  
-Improve SEO.
-
-🏷️ :label:  
-Add or update types.
-
-🌱 :seedling:  
-Add or update seed files.
-
-🚩 :triangular_flag_on_post:  
-Add, update, or remove feature flags.
-
-🥅 :goal_net:  
-Catch errors.
-
-💫 :dizzy:  
-Add or update animations and transitions.
-
-🗑️ :wastebasket:  
-Deprecate code that needs to be cleaned up.
-
-🛂 :passport_control:  
-Work on code related to authorization, roles and permissions.
-
-🩹 :adhesive_bandage:  
-Simple fix for a non-critical issue.
-
-🧐 :monocle_face:  
-Data exploration / inspection.
-
-⚰️ :coffin:  
-Remove dead code.
-
-🧪 :test_tube:  
-Add a failing test.
-
-👔 :necktie:  
-Add or update business logic.
-
-🩺 :stethoscope:  
-Add or update healthcheck.
-
-🧱 :bricks:  
-Infrastructure related changes.
-
-🧑‍💻 :technologist:  
-Improve developer experience.
-
-💸 :money_with_wings:  
-Add sponsorships or money related infrastructure.
-
-🧵 :thread:  
-Add or update code related to multithreading or concurrency.
-
-🦺 :safety_vest:  
-Add or update code related to validation.

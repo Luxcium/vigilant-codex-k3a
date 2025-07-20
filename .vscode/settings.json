@@ -1292,9 +1292,7 @@
   "todo-tree.filtering.scopes": [], // new items
   "todo-tree.filtering.useBuiltInExcludes": "file and search excludes",
   "todo-tree.general.debug": false,
-  "todo-tree.general.enableFileWatcher": true,
   "todo-tree.general.exportPath": "~/todo-tree-%Y%m%d-%H%M.txt",
-  "todo-tree.general.fileWatcherGlob": "**/*",
   "todo-tree.general.revealBehaviour": "end of todo",
   "todo-tree.general.rootFolder": "",
   "todo-tree.general.showActivityBarBadge": false, // new items
@@ -2042,7 +2040,10 @@
   // #endregion: TODO TREE                                                           !
   /*
   |-····-----------------------------------------------------------··-|
-    */
+  */
+
+  // #region: Copilot Chat Agent                                                           !
+
   "chat.agent.enabled": true,
   "chat.agent.maxRequests": 15,
   "chat.commandCenter.enabled": true,
@@ -2071,6 +2072,9 @@
   },
   "chat.sendElementsToChat.enabled": true,
   "chat.tools.autoApprove": true,
+
+  // #region: Github Copilot                                                          !
+
   "github.copilot.chat.agent.autoFix": true,
   "github.copilot.chat.agent.currentEditorContext.enabled": true,
   "github.copilot.chat.agent.runTasks": true,
@@ -2160,9 +2164,6 @@
   "workbench.quickOpen.preserveInput": true,
   "workbench.commandPalette.preserveInput": true,
 
-  // ========================================
-  // Project-Specific Extensions
-  // ========================================
   // ========================================
   // View Header Icons Configuration
   // ========================================
