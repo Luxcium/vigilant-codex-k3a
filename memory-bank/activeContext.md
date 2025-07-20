@@ -117,6 +117,22 @@ This file tracks the current work focus, recent changes, next steps, and active 
 - **27 Prompt Files Inventory** organized by workflow automation and development patterns
 - **Complete README Reconstruction** reflecting AI agent ecosystem and technical achievements
 
+
+## Implementation Note (2025-07-19T18:30:00Z)
+
+**Decision/Note:**
+We have decided to implement, in a future update, a reference-based port allocation pattern for the 5000-range (BASE_PORT=5000) using the same static index methodology as the 3000-range. The service at index 0 (e.g., monitoring dashboard or main web frontend) will use ports 5000–5009, with retries incrementing within this block. This will ensure consistent, predictable port mapping for monitoring and production dashboards, following the same robust, stateful allocation logic as in the 3000-range.
+
+**Rationale:**
+This approach maintains architectural consistency, simplifies service discovery, and supports robust, conflict-free port allocation for all major service groups (development, monitoring, production, etc.).
+
+**Next Intent:**
+Implement this pattern in the codex_run.sh and related orchestration scripts when expanding monitoring/production service support.
+
+**Meta:**
+I am recording this as part of the Self-Documentation Protocol. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+
+---
 ## Next Steps
 
 ### Immediate Priorities (Next 24 hours)
