@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import { useRouter } from 'next/navigation';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -22,10 +23,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const router = useRouter();
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <nav className="bg-gray-800 p-4 text-white">
+          <ul className="flex space-x-4">
+            <li>
+              <button
+                onClick={() => router.push('/')}
+                className="hover:underline">
+                Home
+              </button>
+            </li>
+            <li>
+              <button
+                onClick={() => router.push('/small-chat')}
+                className="hover:underline">
+                Small Chat
+              </button>
+            </li>
+          </ul>
+        </nav>
         {children}
       </body>
     </html>
