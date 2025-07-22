@@ -16,7 +16,27 @@ This file tracks what works, what remains to be built, current status, and known
 
 ---
 
+
 ## What Works
+
+### [2025-07-21] Web Development Environment Inventory & Documentation ✅
+
+**Achievement:**
+Completed a full inventory and explanation of all scripts, tasks, and configuration relevant to live web development in the `web/` directory. Mapped the chain of custody for launching and running the Next.js dev server (port 3000), explained all integration points (scripts, tasks, browser preview, error monitoring), and updated documentation in `web/README.md`.
+
+**Details:**
+- Documented all web/dev scripts in `scripts/` (activation, setup, error monitoring, Docker)
+- Explained VS Code tasks and launch configs for web development
+- Reviewed root and `web/` `package.json` scripts and aliases
+- Mapped the chain of custody for live dev (from script/task to browser preview)
+- Updated `web/README.md` with a detailed section on live dev workflow and chain of custody
+- Ensured all findings are cross-referenced and commented
+
+**Impact:**
+Provides a clear, actionable, and fully documented workflow for live web development, supporting onboarding, troubleshooting, and AI agent collaboration. Fulfills the user's request for a methodical, scrupulous, and cumulative explanation and documentation of the web development environment.
+
+**Meta:**
+This entry is part of the Self-Documentation Protocol. All actions and context changes are documented and this rule itself is part of the ongoing protocol.
 
 ### Next.js v15+ Server Actions Application ✅
 
