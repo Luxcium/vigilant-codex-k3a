@@ -32,6 +32,17 @@ Established full root context classification across top-level folders and automa
 **Impact:**
 Streamlines onboarding and keeps maintenance autonomous for all AI agents.
 
+### [2025-07-23] Root Context & Script Documentation Protocol ✅
+
+**Achievement:**
+Completed inventory of all top-level folders with explicit root context
+classification. Updated `README.md` and `systemPatterns.md` accordingly and
+added autonomous script documentation requirements.
+
+**Impact:**
+Ensures consistent folder structure awareness and keeps script documentation in
+sync without manual prompts.
+
 ### [2025-07-21] Web Development Environment Inventory & Documentation ✅
 
 **Achievement:**
@@ -50,6 +61,18 @@ Provides a clear, actionable, and fully documented workflow for live web develop
 
 **Meta:**
 This entry is part of the Self-Documentation Protocol. All actions and context changes are documented and this rule itself is part of the ongoing protocol.
+
+### [2025-07-23] Root Context Classification & Script Protocol ✅
+
+**Achievement:**
+Defined official root contexts and established a mandatory script documentation policy.
+Created `memory-bank/root-contexts.md` and synchronized updates to `README.md`, `.clinerules/main-rules.md`, and `scripts/README.md`.
+
+**Impact:**
+Provides clear folder purpose definitions and ensures scripts remain well-documented and consolidated across the project.
+
+**Meta:**
+Self-Documentation Protocol executed after adding root context classification and script maintenance rules.
 
 ### Next.js v15+ Server Actions Application ✅
 
@@ -268,3 +291,4 @@ This project supports three AI agents with specific entry points:
 ---
 
 **Last Updated:** 2025-07-23 | **Status:** Documentation Updated | **Coverage:** 98.34% | **Applications:** Fully Operational
+**Last Updated:** 2025-07-23 | **Status:** Root Context Protocol Established | **Coverage:** 98.34% | **Applications:** Fully Operational

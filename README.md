@@ -59,8 +59,34 @@ The following directories act as independent application roots:
 - `web/` – Next.js v15+ application
 - `python/` – Python agent system
 - `agent-framework/` – TypeScript 22 multi-agent framework
+- `notebooks/` – Jupyter notebooks and ML resources
 
-All other folders provide supporting resources and do not represent standalone roots.
+
+The following table clarifies which folders represent standalone **root contexts**.
+Directories marked with **Yes** contain their own project configuration and operate as
+independent roots. Hidden directories like `.git/` and `.vscode/` are intentionally excluded.
+
+| Folder | Purpose | Root Context |
+| ------ | ------- | ------------ |
+| `src/` | TypeScript SDK main codebase | Yes |
+| `web/` | Next.js v15+ application | Yes |
+| `python/` | Python agent system | Yes |
+| `agent-framework/` | TypeScript 22 multi-agent framework | Yes |
+| `scripts/` | Lifecycle and maintenance scripts | No |
+| `memory-bank/` | AI memory ledger and documentation | No |
+| `notebooks/` | Jupyter notebooks and experiments | No |
+| `prisma/` | Database schema and migrations | No |
+| `examples/` | Sample utilities and snippets | No |
+| `init/` | Initialization templates | No |
+| `templates/` | Scaffolding templates for new modules | No |
+| `node_modules/` | Installed dependencies (generated) | No |
+
+> **This table must be kept up to date by all AI agents whenever folders are added or removed.**
+
+Only `src/`, `web/`, `python/`, and `agent-framework/` are independent root
+contexts. AI agents must automatically document new root contexts here when
+detected and keep this list in sync with actual folders.
+
 
 ### Technology Stack
 
