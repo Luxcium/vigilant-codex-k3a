@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { createPost } from '@/lib/actions';
+import { createPost } from '@/lib/basic-actions';
 
 export default function PostForm() {
   const [isPending, setIsPending] = useState(false);

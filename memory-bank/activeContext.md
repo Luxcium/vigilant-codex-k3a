@@ -78,6 +78,18 @@ Systematically resolved documentation drift between .github/instructions/README.
 
 ## Recent Changes
 
+### [2025-11-20T00:00:00Z] Component Refactor and Action Clarification
+
+**Last Action**: Split `demo-components.tsx` into individual components under
+`web/src/components/demo/` and replaced the old file with re-exports. Renamed
+`web/src/lib/actions.ts` to `basic-actions.ts` and updated imports. Improved
+`PostList` initialization performance by avoiding object spread in `reduce`.
+
+**Rationale**: Reducing file size improves readability and maintainability.
+Renaming the simplified actions avoids confusion with `enhanced-actions.ts`.
+Initializing likes state directly prevents unnecessary allocations for large
+post lists.
+
 ### [2025-07-14T07:00:00Z] Microsoft Edge DevTools Configuration Completed
 
 **Last Action**: Successfully created comprehensive edge-devtools-debugging.instructions.md following strict protocol requirements, updated .vscode/settings.json with complete Edge DevTools configuration, and established full-spectrum debugging capabilities.
