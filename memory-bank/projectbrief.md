@@ -129,11 +129,18 @@ This file is the foundation of the Memory Bank and defines the core requirements
 ### Code Organization Standards
 
 - **Language-Based Structure** - Organize by language and framework at project root
-  - `src/` - TypeScript core library and SDK components
-  - `web/` - Next.js applications (when coexisting with other code)
-  - `python/` - Python projects, modules, and conditional environments
-  - `scripts/` - Shell scripts for automation (bash only)
+  - `agent-framework/` - TypeScript 22 multi-agent framework (root context)
+  - `examples/` - Sample utilities and snippets
+  - `init/` - Autonomous initialization templates
+  - `memory-bank/` - AI memory ledger and documentation
+  - `node_modules/` - Installed dependencies (generated)
   - `notebooks/` - Jupyter notebooks and ML development
+  - `prisma/` - Database schema and migrations
+  - `python/` - Python agent system (root context)
+  - `scripts/` - Lifecycle and maintenance scripts
+  - `src/` - TypeScript SDK main codebase (root context)
+  - `templates/` - Scaffolding templates for new modules
+  - `web/` - Next.js v15+ application (root context)
 
 ### Process Standards
 
