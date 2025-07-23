@@ -21,20 +21,31 @@ This file documents the system architecture, key technical decisions, design pat
 
 The Vigilant Codex K3a follows a polyvalent architecture organized by language and framework at the project root to ensure clarity, modularity, and scalability across multiple technologies:
 
-```
+```text
 vigilant-codex-k3a/
-├── src/                    # TypeScript core library and SDK components
-├── web/                    # Next.js applications (when coexisting with other code)
-├── python/                 # Python projects, modules, and conditional environments
-├── scripts/                # Shell scripts for automation (bash only)
-├── notebooks/              # Jupyter notebooks and ML development
-├── memory-bank/            # AI agent state management and documentation
-├── .github/
-│   ├── instructions/       # 26 coding standards (auto-applied)
-│   └── prompts/           # 27 workflow automations
-├── .clinerules/           # Cline AI personal instructions
-└── .vscode/               # VS Code optimization and tasks
+├── src/               # TypeScript SDK (core library)
+├── web/               # Next.js v15+ application
+├── python/            # Python agent system
+├── agent-framework/   # TypeScript 22 multi-agent framework
+├── scripts/           # Lifecycle and maintenance scripts
+├── notebooks/         # Jupyter notebooks and ML development
+├── memory-bank/       # AI agent state management and documentation
+├── examples/          # Example configurations and usage
+├── templates/         # Boilerplate and code templates
+├── prisma/            # Prisma schema and migrations
+├── init/              # Environment initialization assets
+├── .clinerules/       # Cline AI personal instructions
+└── .github/           # Shared instructions and prompts
 ```
+
+#### Root Contexts
+
+- `src/` – TypeScript SDK
+- `web/` – Next.js v15+ application
+- `python/` – Python agent system
+- `agent-framework/` – TypeScript 22 multi-agent framework
+
+All other directories provide supporting resources and are not standalone roots.
 
 ### Architectural Principles
 

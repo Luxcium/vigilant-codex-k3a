@@ -1,7 +1,9 @@
 # `scripts/` Directory
 
-This folder contains utility scripts for setting up, validating, and maintaining the repository.  
+This folder contains utility scripts for setting up, validating, and maintaining the repository.
 **All scripts must pass strict markdown-lint on any Markdown they generate or update.**
+
+**Self-Documentation Protocol**: Whenever a script is added or modified, update this README accordingly. Each `.sh` file must begin with comments describing its aim, purpose, and decision rationale. Detect and consolidate duplicate scripts whenever possible.
 
 ## Codex Universal Docker Environment
 

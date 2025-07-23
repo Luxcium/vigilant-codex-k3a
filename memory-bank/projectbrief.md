@@ -132,8 +132,16 @@ This file is the foundation of the Memory Bank and defines the core requirements
   - `src/` - TypeScript core library and SDK components
   - `web/` - Next.js applications (when coexisting with other code)
   - `python/` - Python projects, modules, and conditional environments
+  - `agent-framework/` - TypeScript 22 multi-agent framework
   - `scripts/` - Shell scripts for automation (bash only)
   - `notebooks/` - Jupyter notebooks and ML development
+  - `memory-bank/` - AI agent state management and documentation
+  - `examples/` - Usage examples
+  - `templates/` - Code templates and scaffolds
+  - `prisma/` - Prisma schema and migrations
+  - `init/` - Environment initialization assets
+
+The first four directories above (`src/`, `web/`, `python/`, and `agent-framework/`) each serve as independent root contexts with their own build and configuration processes. All other folders provide supporting resources.
 
 ### Process Standards
 
@@ -141,6 +149,7 @@ This file is the foundation of the Memory Bank and defines the core requirements
 - **No Manual File Creation** - All directory and file creation via scripts
 - **Conditional Decision Deferral** - Runtime parameter selection over hard-coded choices
 - **Memory Bank Maintenance** - Continuous documentation and context preservation
+- **Scripts README Synchronization** - Update `scripts/README.md` whenever a script is added or modified; ensure each script documents its purpose and decision process
 - **Cross-Agent Testing** - Validation across all three AI agent workflows
 
 ### Quality Assurance Standards

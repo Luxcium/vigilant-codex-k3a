@@ -14,6 +14,7 @@
 3. Document rationale for changes in the appropriate rules file.
    - Reason: _why this change improves the project_
 4. Verify markdown-lint compliance for all updated files.
+5. Update `scripts/README.md` whenever a script is added or modified, ensuring each script contains header comments describing its purpose and decision process.
 
 ## Guidance
 

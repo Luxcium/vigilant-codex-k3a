@@ -34,20 +34,33 @@ This workspace supports three AI agents with sophisticated collaboration pattern
 
 ### Polyvalent Directory Structure
 
-```
+```text
 vigilant-codex-k3a/
-├── src/                    # TypeScript/Core Library (Node.js 22, Native Fetch)
-├── web/                    # Next.js Applications (when coexisting)
-├── python/                 # Python Projects (3.13, Conditional Environments)
-├── notebooks/              # Jupyter Notebooks (VS Code Integration)
-├── scripts/                # Automation Scripts (Bash, Idempotent)
-├── memory-bank/            # AI Agent State Management
-├── .github/
-│   ├── instructions/       # 26 Coding Standards (Auto-Applied)
-│   └── prompts/           # 27 Workflow Automations
-├── .clinerules/           # Cline AI Personal Instructions
-└── .vscode/               # VS Code Optimization & Tasks
+├── src/               # TypeScript SDK (core library)
+├── web/               # Next.js v15+ application
+├── python/            # Python agent system
+├── agent-framework/   # TypeScript 22 multi-agent framework
+├── scripts/           # Lifecycle and maintenance scripts
+├── notebooks/         # Jupyter notebooks and ML resources
+├── memory-bank/       # AI agent state and documentation
+├── examples/          # Example configurations and usage
+├── templates/         # Boilerplate and code templates
+├── prisma/            # Prisma schema and migrations
+├── init/              # Environment initialization assets
+├── .clinerules/       # Cline AI personal instructions
+└── .github/           # Shared instructions and prompts
 ```
+
+### Root Context Classification
+
+The following directories act as independent application roots:
+
+- `src/` – TypeScript SDK
+- `web/` – Next.js v15+ application
+- `python/` – Python agent system
+- `agent-framework/` – TypeScript 22 multi-agent framework
+
+All other folders provide supporting resources and do not represent standalone roots.
 
 ### Technology Stack
 
