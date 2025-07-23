@@ -32,7 +32,7 @@ export function SearchPosts() {
     }
   };
 
-  useState(() => {
+  useEffect(() => {
     const timeoutId = setTimeout(() => {
       handleSearch(query);
     }, 300);
