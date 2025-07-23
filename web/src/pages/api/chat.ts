@@ -32,6 +32,10 @@ export default async function handler(
     }
 
     const data = await response.json();
+
+    if (!data.choices || !Array.isArray(data.choices) || data.choices.length === 0) {
+      throw new Error('Unexpected response structure from OpenAI API: choices is missing or empty');
+    }
     const reply = data.choices[0]?.message?.content;
 
     res.status(200).json({ reply });
