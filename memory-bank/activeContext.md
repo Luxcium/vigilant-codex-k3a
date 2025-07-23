@@ -198,6 +198,21 @@ Implement this pattern in the codex_run.sh and related orchestration scripts whe
 **Meta:**
 I am recording this as part of the Self-Documentation Protocol. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 
+## Implementation Note (2025-07-23T01:40:00Z)
+
+**Decision/Note:**
+Established a formal root context classification and script documentation protocol.
+Created `memory-bank/root-contexts.md`, updated `README.md`, `.clinerules/main-rules.md`, and `scripts/README.md` accordingly.
+
+**Rationale:**
+Clarifies folder purposes for all agents and enforces autonomous maintenance of script documentation.
+
+**Next Intent:**
+Ensure future scripts include purpose comments and that the root context list remains current.
+
+**Meta:**
+Self-Documentation Protocol executed after establishing folder classification and script maintenance rules.
+
 ---
 
 ## Next Steps

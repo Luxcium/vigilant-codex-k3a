@@ -49,6 +49,19 @@ vigilant-codex-k3a/
 └── .vscode/               # VS Code Optimization & Tasks
 ```
 
+### Root Contexts
+
+| Folder | Purpose |
+| ------ | ------- |
+| `src/` | TypeScript SDK – main codebase with native fetch implementation |
+| `web/` | Next.js v15+ application with Prisma integration |
+| `python/` | Python agent system with conditional environments |
+| `agent-framework/` | TypeScript 22 multi‑agent framework |
+| `scripts/` | Lifecycle and maintenance scripts (bash) |
+| `memory-bank/` | AI agent documentation and state management |
+| `notebooks/` | Jupyter notebooks and experimentation |
+
+
 ### Technology Stack
 
 - **🟦 TypeScript 5.8+** with strict type checking and native Response types

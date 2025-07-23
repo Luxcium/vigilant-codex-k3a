@@ -151,6 +151,14 @@ Create additional files/folders within memory-bank/ when they help organize:
 - Testing strategies
 - Deployment procedures
 
+### Root Context and Scripts Documentation Protocol
+
+- Maintain `memory-bank/root-contexts.md` with a list of all top-level root folders.
+- Keep the same list synchronized in `README.md`.
+- Exclude system directories like `.git/`, `.vscode/`, `.github/`, `.clinerules/`, `.codex/`, and `node_modules/`.
+- Ensure every `.sh` script starts with comments describing its aim and purpose.
+- Update `scripts/README.md` whenever scripts are added or modified and consolidate duplicates when found.
+
 ### Core Workflows
 
 #### Plan Mode

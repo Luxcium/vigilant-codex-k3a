@@ -38,6 +38,18 @@ Provides a clear, actionable, and fully documented workflow for live web develop
 **Meta:**
 This entry is part of the Self-Documentation Protocol. All actions and context changes are documented and this rule itself is part of the ongoing protocol.
 
+### [2025-07-23] Root Context Classification & Script Protocol ✅
+
+**Achievement:**
+Defined official root contexts and established a mandatory script documentation policy.
+Created `memory-bank/root-contexts.md` and synchronized updates to `README.md`, `.clinerules/main-rules.md`, and `scripts/README.md`.
+
+**Impact:**
+Provides clear folder purpose definitions and ensures scripts remain well-documented and consolidated across the project.
+
+**Meta:**
+Self-Documentation Protocol executed after adding root context classification and script maintenance rules.
+
 ### Next.js v15+ Server Actions Application ✅
 
 **Status:** ✅ **FULLY OPERATIONAL** - Production-ready Next.js v15+ application running at http://localhost:3000
