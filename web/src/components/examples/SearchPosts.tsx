@@ -37,7 +37,7 @@ export function SearchPosts() {
   };
 
   // Debounced search
-  useState(() => {
+  useEffect(() => {
     const timeoutId = setTimeout(() => {
       handleSearch(query);
     }, 300);
