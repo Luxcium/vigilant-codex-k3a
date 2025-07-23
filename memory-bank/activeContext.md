@@ -122,6 +122,19 @@ Systematically resolved documentation drift between .github/instructions/README.
 
 **Next Intent**: Continue systematic memory bank updates with recent technical achievements.
 
+### [2025-07-25T00:00:00Z] Component Refactoring and Actions Consolidation
+
+**Last Action**: Split bulky `demo-components.tsx` into modular files under `web/src/components/examples/`, optimized `post-list.tsx` state initialization, and consolidated `actions.ts` to re-export from `enhanced-actions.ts` with renamed `subscribeNewsletter` function.
+
+**Technical Achievements**:
+1. Created `BasicPostForm`, `OptimisticPostList`, `NewsletterForm`, `SearchPosts`, `FileUploadForm`, and `Dashboard` components for improved maintainability.
+2. Replaced object spread in `post-list.tsx` with direct accumulator mutation for O(n) initialization.
+3. Removed duplicate logic by exporting actions directly from `enhanced-actions.ts` and aligning naming.
+
+**Rationale**: Enhance code readability, performance, and clarity around server action usage.
+
+**Next Intent**: Update documentation and continue refining component architecture.
+
 ### [2025-07-06T19:13:17Z] Test Suite Optimization Completed
 
 **Last Action**: Comprehensive debugging session resolved all 3 originally failing restClient.test.ts tests through systematic implementation of vi.mock('node-fetch') module-level mocking.

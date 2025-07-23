@@ -166,7 +166,7 @@ export function createInlineAction(postId: string) {
 }
 
 // Example 9: Server Action with progressive enhancement
-export async function subscribeToNewsletter(formData: FormData) {
+export async function subscribeNewsletter(formData: FormData) {
   const email = formData.get('email') as string;
 
   if (!email || !email.includes('@')) {

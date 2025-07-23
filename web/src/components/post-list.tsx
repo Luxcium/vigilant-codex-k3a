@@ -15,8 +15,12 @@ interface PostListProps {
 }
 
 export default function PostList({ posts }: PostListProps) {
+  const initialLikesState = posts.reduce<Record<string, number>>((acc, post) => {
+    acc[post.id] = post.likes;
+    return acc;
+  }, {});
   const [likesState, setLikesState] = useState<Record<string, number>>(
-    posts.reduce((acc, post) => ({ ...acc, [post.id]: post.likes }), {})
+    initialLikesState
   );
 
   const handleLike = async (postId: string) => {
