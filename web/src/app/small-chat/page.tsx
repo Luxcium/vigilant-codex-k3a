@@ -29,12 +29,19 @@ export default function SmallChat() {
         body: JSON.stringify({ messages: [...messages, userMessage] }),
       });
 
+      if (!response.ok) {
+        console.error('Error: Failed to fetch the chat response. Status:', response.status);
+        return;
+      }
+
       const data = await response.json();
-      if (data.reply) {
+      if (data && typeof data.reply === 'string') {
         setMessages(prev => [
           ...prev,
           { role: 'assistant', content: data.reply },
         ]);
+      } else {
+        console.error('Error: Invalid response structure:', data);
       }
     } catch (error) {
       console.error('Error sending message:', error);
