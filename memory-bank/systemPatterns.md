@@ -130,6 +130,7 @@ documentation consistent across README files and memory bank entries.
 - **Validation-First Pattern** - Prerequisites checked before operations with helpful error messages
 - **Colored Logging Pattern** - Consistent color coding for different log levels
 - **Graceful Degradation Pattern** - Continue operation when possible, warn about optional components
+- **Documentation Synchronization Pattern** - Each shell script begins with a comment header describing its aim, purpose, and decision rationale. Whenever a script is added or modified, `scripts/README.md` must be updated with a matching description and duplicate functionality consolidated.
 
 ### Next.js Component Architecture Patterns
 

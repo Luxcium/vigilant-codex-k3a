@@ -2,6 +2,8 @@
 
 This folder contains utility scripts for setting up, validating, and maintaining the repository.
 **All scripts must pass strict markdown-lint on any Markdown they generate or update.**
+Every script must start with a comment header describing its aim, purpose, and decision rationale.
+When a script is created or modified, update this README with a brief description of the change and remove or merge duplicate functionality.
 
 ## Script Documentation Protocol
 

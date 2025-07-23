@@ -133,6 +133,7 @@ flowchart TD
 * **No Redundancy:** Every fact belongs in one place. Reference across files.
 * **Review Cycle:** Schedule audits for clarity, currency, and completeness.
 * **Automation:** Use scripts/hooks to block or warn if memory bank is stale.
+* **Scripts README Synchronization:** Document every new or modified shell script in `scripts/README.md`. Each script must include a header comment explaining its purpose and decision process. Consolidate duplicates when detected.
 * **Collaboration:** Every team member and AI agent is responsible for memory hygiene.
 
 ---
