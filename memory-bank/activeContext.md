@@ -275,3 +275,7 @@ This project supports three AI agents with specific entry points:
 ---
 
 **Self-Documentation Protocol**: This entry reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
+### [2025-07-17T03:53:10Z] Demo component refactor and actions consolidation
+- Split demo-components.tsx into individual files under src/components/examples
+- Optimized post-list state initialization
+- Consolidated actions.ts to re-export from enhanced-actions
