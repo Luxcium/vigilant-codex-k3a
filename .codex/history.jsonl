@@ -1,4 +1,0 @@
-{"session_id":"77963ee7-5140-4890-995f-7504c31cce01","ts":1751763725,"text":"push then run tests we are in teh early development phase it is okay to test later"}
-{"session_id":"77963ee7-5140-4890-995f-7504c31cce01","ts":1751764019,"text":"please comit next changes as listed 3 optional later was meant to be after pushing and it is now teh time to look at that so it shows where we need to resolve the situation make sure you test only one at a time to have the smallest possible outputs and minimize costas of operation of your ai agent please look at all tests first  then not all but just one at a time until teh end then you can do a full one if needed"}
-{"session_id":"77963ee7-5140-4890-995f-7504c31cce01","ts":1751764428,"text":"maybe it is too expensive what can we do next then to make it less intesive on teh llm token count ?"}
-{"session_id":"77963ee7-5140-4890-995f-7504c31cce01","ts":1751764458,"text":"ok now taht "}
