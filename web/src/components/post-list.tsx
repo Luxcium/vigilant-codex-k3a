@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { likePost } from '@/lib/actions';
+import { likePost } from '@/lib/basic-actions';
 
 interface Post {
   id: string;
@@ -15,9 +15,11 @@ interface PostListProps {
 }
 
 export default function PostList({ posts }: PostListProps) {
-  const [likesState, setLikesState] = useState<Record<string, number>>(
-    posts.reduce((acc, post) => ({ ...acc, [post.id]: post.likes }), {})
-  );
+  const initialState: Record<string, number> = {};
+  for (const post of posts) {
+    initialState[post.id] = post.likes;
+  }
+  const [likesState, setLikesState] = useState<Record<string, number>>(initialState);
 
   const handleLike = async (postId: string) => {
     try {
