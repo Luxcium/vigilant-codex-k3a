@@ -36,30 +36,47 @@ This workspace supports three AI agents with sophisticated collaboration pattern
 
 ```
 vigilant-codex-k3a/
-├── src/                    # TypeScript/Core Library (Node.js 22, Native Fetch)
-├── web/                    # Next.js Applications (when coexisting)
-├── python/                 # Python Projects (3.13, Conditional Environments)
-├── notebooks/              # Jupyter Notebooks (VS Code Integration)
-├── scripts/                # Automation Scripts (Bash, Idempotent)
-├── memory-bank/            # AI Agent State Management
-├── .github/
-│   ├── instructions/       # 26 Coding Standards (Auto-Applied)
-│   └── prompts/           # 27 Workflow Automations
-├── .clinerules/           # Cline AI Personal Instructions
-└── .vscode/               # VS Code Optimization & Tasks
+├── agent-framework/       # TypeScript 22 multi-agent framework
+├── examples/              # Sample utilities and code snippets
+├── init/                  # Autonomous initialization templates
+├── memory-bank/           # AI Agent State Management
+├── node_modules/          # Installed dependencies
+├── notebooks/             # Jupyter Notebooks (VS Code Integration)
+├── prisma/                # Database schema and migrations
+├── python/                # Python agent system
+├── scripts/               # Lifecycle and maintenance scripts
+├── src/                   # TypeScript/Core Library (Node.js 22, Native Fetch)
+├── templates/             # Project scaffolding templates
+└── web/                   # Next.js 15+ application
 ```
 
 ### Root Contexts
 
-| Folder | Purpose |
-| ------ | ------- |
-| `src/` | TypeScript SDK – main codebase with native fetch implementation |
-| `web/` | Next.js v15+ application with Prisma integration |
-| `python/` | Python agent system with conditional environments |
-| `agent-framework/` | TypeScript 22 multi‑agent framework |
-| `scripts/` | Lifecycle and maintenance scripts (bash) |
-| `memory-bank/` | AI agent documentation and state management |
-| `notebooks/` | Jupyter notebooks and experimentation |
+The following table clarifies which folders represent standalone **root contexts**.
+Directories marked with **Yes** contain their own project configuration and operate as
+independent roots. Hidden directories like `.git/` and `.vscode/` are intentionally excluded.
+
+| Folder | Purpose | Root Context |
+| ------ | ------- | ------------ |
+| `src/` | TypeScript SDK main codebase | Yes |
+| `web/` | Next.js v15+ application | Yes |
+| `python/` | Python agent system | Yes |
+| `agent-framework/` | TypeScript 22 multi-agent framework | Yes |
+| `scripts/` | Lifecycle and maintenance scripts | No |
+| `memory-bank/` | AI memory ledger and documentation | No |
+| `notebooks/` | Jupyter notebooks and experiments | No |
+| `prisma/` | Database schema and migrations | No |
+| `examples/` | Sample utilities and snippets | No |
+| `init/` | Initialization templates | No |
+| `templates/` | Scaffolding templates for new modules | No |
+| `node_modules/` | Installed dependencies (generated) | No |
+
+> **This table must be kept up to date by all AI agents whenever folders are added or removed.**
+
+Only `src/`, `web/`, `python/`, and `agent-framework/` are independent root
+contexts. AI agents must automatically document new root contexts here when
+detected and keep this list in sync with actual folders.
+
 
 
 ### Technology Stack

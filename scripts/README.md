@@ -1,9 +1,19 @@
 # `scripts/` Directory
 
 This folder contains utility scripts for setting up, validating, and maintaining the repository.
+
 Every `.sh` file must start with comments describing its aim and purpose.
 Whenever a script is added or modified, update this README to keep the script index current.
+
 **All scripts must pass strict markdown-lint on any Markdown they generate or update.**
+Every script must start with a comment header describing its aim, purpose, and decision rationale.
+When a script is created or modified, update this README with a brief description of the change and remove or merge duplicate functionality.
+
+## Script Documentation Protocol
+
+1. Every script must contain internal comments explaining its aim, purpose, and decision process.
+2. Whenever a script is added or modified, update this `scripts/README.md` with a concise description.
+3. AI agents must keep this file synchronized autonomously with the actual scripts directory.
 
 ## Codex Universal Docker Environment
 

@@ -207,6 +207,12 @@ Start[Update Process]
 
 Note: When triggered by **update memory bank**, I MUST review every memory bank file, even if some don't require updates. Focus particularly on activeContext.md and progress.md as they track current state.
 
+### Script Documentation Protocol
+
+1. Every `.sh` script must include comments describing its purpose, decision process, and intended outcome.
+2. Whenever a script is added or modified, update `scripts/README.md` with its usage and rationale.
+3. Maintain synchronization automatically—AI agents must enforce this protocol without user reminders.
+
 REMEMBER: After every memory reset, I begin completely fresh. The Memory Bank is my only link to previous work. It must be maintained with precision and clarity, as my effectiveness depends entirely on its accuracy.
 
 ## Session-Sticky Preferences
