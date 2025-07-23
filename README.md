@@ -50,6 +50,8 @@ vigilant-codex-k3a/
 └── web/                   # Next.js 15+ application
 ```
 
+### Root Contexts
+
 The following table clarifies which folders represent standalone **root contexts**.
 Directories marked with **Yes** contain their own project configuration and operate as
 independent roots. Hidden directories like `.git/` and `.vscode/` are intentionally excluded.
@@ -74,6 +76,7 @@ independent roots. Hidden directories like `.git/` and `.vscode/` are intentiona
 Only `src/`, `web/`, `python/`, and `agent-framework/` are independent root
 contexts. AI agents must automatically document new root contexts here when
 detected and keep this list in sync with actual folders.
+
 
 
 ### Technology Stack
