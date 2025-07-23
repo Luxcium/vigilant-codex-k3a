@@ -110,3 +110,40 @@ description: 'Comprehensive standards for file and directory organization, namin
 > - Autonomously update stateful Memory Bank files upon any change to this instruction file.
 > - Use leadership language to drive accountability and project consistency.
 > - Ensure this instruction file remains up-to-date before executing any tasks governed by file organization standards.
+
+
+---
+0. project scripts and lifecycles for the workspace and tasks 
+scripts/
+1. Source Code & Application Logic
+src/
+prisma/
+.keys/
+2. sub-project roots, UI & Client/server website Code
+web/
+python/
+3. Data, Prototyping & Documentation
+notebooks/
+examples/
+4. Build, Output & Dependencies
+dist/
+coverage/
+5. Configuration, Metadata & Version Control
+.vscode/
+.github/
+.github/instructions/
+.github/prompts/
+.github/chatmodes/
+6. IMPERATIVE memory-bank/
+memory-bank/
+7. Configuration, Alternative AI Assistants Metadata
+.clinerules/
+.codex/
+8. Miscellaneous & Version Control
+node_modules/
+.git/
+i have no clue what is this for:
+init/
+agent-framework/
+templates/
+---

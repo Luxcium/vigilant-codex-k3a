@@ -82,7 +82,25 @@
         "focus": false,
         "panel": "shared"
       },
-      "problemMatcher": []
+      "problemMatcher": {
+        "owner": "pytest",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "source": "pytest",
+        "pattern": [
+          {
+            "regexp": "^(.*):(\\d+):\\s+(FAILED|ERROR)\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "severity": 3,
+            "message": 4
+          },
+          {
+            "regexp": "^\\s+(.*)$",
+            "message": 1,
+            "loop": true
+          }
+        ]
+      }
     },
     {
       "label": "Python: Lint with Pylint",
@@ -99,7 +117,21 @@
         "focus": false,
         "panel": "shared"
       },
-      "problemMatcher": []
+      "problemMatcher": {
+        "owner": "pylint",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "source": "pylint",
+        "severity": "warning",
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(\\w+):\\s+(.*)\\s+\\((.*)\\)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5,
+          "code": 6
+        }
+      }
     },
     {
       "label": "Python: Type Check with MyPy",
@@ -116,7 +148,18 @@
         "focus": false,
         "panel": "shared"
       },
-      "problemMatcher": []
+      "problemMatcher": {
+        "owner": "mypy",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "source": "mypy",
+        "pattern": {
+          "regexp": "^(.*):(\\d+):\\s+(error|warning|note):\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "severity": 3,
+          "message": 4
+        }
+      }
     },
     {
       "label": "Python: Start Jupyter Lab",
@@ -185,7 +228,24 @@
         "focus": false,
         "panel": "shared"
       },
-      "problemMatcher": []
+      "problemMatcher": {
+        "owner": "jest",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "source": "jest",
+        "pattern": [
+          {
+            "regexp": "^\\s*●\\s+(.*)$",
+            "message": 1
+          },
+          {
+            "regexp": "^\\s+at\\s+.*\\((.*):(\\d+):(\\d+)\\)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "loop": true
+          }
+        ]
+      }
     },
     {
       "label": "TypeScript: Test Watch",
@@ -200,7 +260,29 @@
         "focus": false,
         "panel": "shared"
       },
-      "problemMatcher": []
+      "problemMatcher": {
+        "owner": "jest-watch",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "source": "jest",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^\\s*Watch Usage.*$",
+          "endsPattern": "^\\s*Test Suites:.*$"
+        },
+        "pattern": [
+          {
+            "regexp": "^\\s*●\\s+(.*)$",
+            "message": 1
+          },
+          {
+            "regexp": "^\\s+at\\s+.*\\((.*):(\\d+):(\\d+)\\)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "loop": true
+          }
+        ]
+      }
     },
     {
       "label": "Docker: Start Codex",
@@ -236,7 +318,31 @@
       "options": { "cwd": "${workspaceFolder}" },
       "group": { "kind": "build", "isDefault": true },
       "presentation": { "reveal": "always", "panel": "dedicated" },
-      "problemMatcher": []
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "nextjs",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "source": "Next.js",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^.*compiled.*$",
+          "endsPattern": "^.*Local:.*http://localhost.*$"
+        },
+        "pattern": [
+          {
+            "regexp": "^(.*)\\((\\d+),(\\d+)\\):\\s+(error|warning)\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+          },
+          {
+            "regexp": "^.*Error:\\s+(.*)$",
+            "message": 1
+          }
+        ]
+      }
     },
     {
       "label": "Web: Lint",
@@ -254,7 +360,18 @@
       "args": ["run", "web:format"],
       "group": "build",
       "presentation": { "reveal": "always", "panel": "dedicated" },
-      "problemMatcher": []
+      "problemMatcher": {
+        "owner": "prettier",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "source": "prettier",
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+):\\s+(.*)",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "message": 4
+        }
+      }
     },
     {
       "label": "Web: Test",
@@ -263,7 +380,26 @@
       "args": ["run", "web:test"],
       "group": "test",
       "presentation": { "reveal": "always", "panel": "dedicated" },
-      "problemMatcher": []
+      "problemMatcher": {
+        "owner": "vitest",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "source": "vitest",
+        "pattern": [
+          {
+            "regexp": "^(.*)\\((\\d+),(\\d+)\\):\\s+(FAIL|ERROR)\\s+(.*)$",
+            "file": 1,
+            "line": 2,
+            "column": 3,
+            "severity": 4,
+            "message": 5
+          },
+          {
+            "regexp": "^\\s*●\\s+(.*)$",
+            "message": 1,
+            "loop": true
+          }
+        ]
+      }
     },
     {
       "label": "Web: Preview",
@@ -272,7 +408,25 @@
       "args": ["run", "web:preview"],
       "group": "build",
       "presentation": { "reveal": "always", "panel": "dedicated" },
-      "problemMatcher": []
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "nextjs-preview",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "source": "Next.js Preview",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^.*starting.*$",
+          "endsPattern": "^.*ready.*http.*$"
+        },
+        "pattern": {
+          "regexp": "^(.*)\\((\\d+),(\\d+)\\):\\s+(error|warning)\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5
+        }
+      }
     },
     {
       "label": "Full Project Setup",
@@ -304,8 +458,15 @@
         "focus": false,
         "panel": "dedicated"
       },
-      "problemMatcher": [],
-      "isBackground": true
+      "isBackground": true,
+      "problemMatcher": {
+        "base": "$tsc-watch",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": "^.*compiled.*$",
+          "endsPattern": "^.*Local:.*http://localhost.*$"
+        }
+      }
     },
     {
       "label": "Web Quality Check",
@@ -318,6 +479,155 @@
         "focus": false,
         "panel": "dedicated"
       }
+    },
+    {
+      "label": "Browser Error Monitor",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/browser-error-monitor.sh",
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "silent",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": {
+        "owner": "browser-monitor",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "source": "Browser Monitor",
+        "pattern": {
+          "regexp": "^ERROR\\s+(.*)\\s+at\\s+(.*):(\\d+):(\\d+)$",
+          "message": 1,
+          "file": 2,
+          "line": 3,
+          "column": 4
+        }
+      }
+    },
+    {
+      "label": "Check Next.js Console Errors",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/browser-error-monitor.sh",
+      "args": ["--console-only"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": {
+        "owner": "console-errors",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "source": "Browser Console",
+        "pattern": {
+          "regexp": "^CONSOLE\\s+(ERROR|WARN|INFO)\\s+(.*)\\s+at\\s+(.*):(\\d+):(\\d+)$",
+          "severity": 1,
+          "message": 2,
+          "file": 3,
+          "line": 4,
+          "column": 5
+        }
+      }
+    },
+    {
+      "label": "Lighthouse CI Analysis",
+      "type": "shell",
+      "command": "npx",
+      "args": [
+        "lighthouse",
+        "http://localhost:3000",
+        "--output=json",
+        "--output-path=./lighthouse-report.json",
+        "--chrome-flags=\"--headless\""
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": {
+        "owner": "lighthouse",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "source": "Lighthouse",
+        "severity": "warning",
+        "pattern": {
+          "regexp": "^.*?(error|warning|info).*?:\\s+(.*)$",
+          "severity": 1,
+          "message": 2
+        }
+      }
+    },
+    {
+      "label": "Webhint Analysis",
+      "type": "shell",
+      "command": "npx",
+      "args": ["hint", "http://localhost:3000", "--format=json"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": {
+        "owner": "webhint",
+        "fileLocation": ["relative", "${workspaceFolder}"],
+        "source": "webhint",
+        "pattern": {
+          "regexp": "^(.*):(\\d+):(\\d+)\\s+(error|warning|hint)\\s+(.*)\\s+(.*)$",
+          "file": 1,
+          "line": 2,
+          "column": 3,
+          "severity": 4,
+          "message": 5,
+          "code": 6
+        }
+      }
+    },
+    {
+      "label": "Complete Browser Error Check",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "Browser Error Monitor",
+        "Check Next.js Console Errors",
+        "Webhint Analysis"
+      ],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Development Quality Suite",
+      "dependsOrder": "parallel",
+      "dependsOn": ["Web Quality Check", "Complete Browser Error Check"],
+      "group": "test",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      }
+    },
+    {
+      "label": "Make Scripts Executable",
+      "type": "shell",
+      "command": "chmod",
+      "args": ["+x", "${workspaceFolder}/scripts/*.sh"],
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
     }
   ]
 }

@@ -54,3 +54,7 @@ Templates use variables that are automatically populated:
 - `{{STANDARDS}}` - Applicable coding standards
 
 This enables the autonomous, self-managing system you described in your requirements.
+  
+---
+**Persistent Project Reminder:**
+Always differentiate README files by their containing folder when listing or referencing them. Never forget this rule, so navigation and documentation remain clear and unambiguous for all contributors and AI agents. This reminder is now written to disk to ensure it is never overlooked or becomes a source of annoyance again.

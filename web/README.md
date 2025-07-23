@@ -1,6 +1,67 @@
+# Web Development Environment
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+---
+
+## 🛠️ Web Development Environment: Live Development, Scripts, and VS Code Integration
+
+### Overview
+
+This project is part of a multi-agent, multi-language workspace. The `web/` directory contains the Next.js application, which is developed using a robust, script-driven workflow with deep VS Code integration and live browser preview.
+
+### 🚦 How to Start the Live Dev Server (Port 3000)
+
+**Recommended (from project root):**
+
+```bash
+pnpm run web:dev
+# or use VS Code Task: "Web Development Environment"
+# or run: ./scripts/activate_web_dev_environment.sh
+```
+
+**What happens:**
+- Starts Next.js in development mode (with hot reload and error overlays) on port 3000 (or next available 3001–3005).
+- If not running, scripts will auto-start it and print the correct port.
+- You can preview the app in your browser or in the VS Code Simple Browser (`Simple Browser: Show` → `http://localhost:3000`).
+
+### 🧩 Scripts and Automation
+
+- `scripts/activate_web_dev_environment.sh`: Checks for a running dev server, starts it if needed, prints status and browser preview instructions.
+- `scripts/setup_web_dev_environment.sh`: Ensures dev server is running, creates VS Code settings/workspace files, opens browser preview.
+- `scripts/setup_web_env.sh`: Bootstraps a Next.js app in `web/` if missing, updates `.gitignore`, runs repo verification.
+- `scripts/browser-error-monitor.sh`: Monitors the running app for browser/runtime errors and reports to the VS Code Problems panel.
+
+### 🧑‍💻 VS Code Tasks & Debugging
+
+- **Tasks**: See `.vscode/tasks.json` for tasks like `Web Development Environment`, `Web: Lint`, `Web: Format`, `Web: Test`, and quality check suites.
+- **Debugging**: `.vscode/launch.json` provides full-stack debugging, Edge DevTools, mobile emulation, and browser preview integration.
+
+### 🗂️ NPM/PNPM Scripts
+
+- **Root `package.json`**: Aliases like `web:dev`, `web:lint`, `web:format`, `web:test` all use `pnpm --filter ./web ...` for monorepo consistency.
+- **`web/package.json`**: Standard Next.js scripts (`dev`, `build`, `start`, `preview`, `lint`, `format`).
+
+### 🧭 Chain of Custody for Live Development
+
+1. **Start Dev Server**: Use VS Code Task, terminal command, or script. Next.js runs on port 3000 (or next available).
+2. **Preview**: Use browser or VS Code Simple Browser for live preview and error overlays.
+3. **Error Monitoring**: Automated with `browser-error-monitor.sh` and Problems panel integration.
+4. **Quality Checks**: Lint, format, and test via tasks or scripts.
+5. **Containerized Option**: Use Codex Universal scripts for Docker-based dev (`scripts/codex_start.sh`).
+
+### 📝 Comments and Documentation
+
+- All scripts are commented for clarity (see `scripts/` directory and [scripts/README.md](../scripts/README.md)).
+- This section documents the live dev workflow and chain of custody for web development.
+- For full project context, see [../README.md](../README.md) and [memory-bank/](../memory-bank/).
+
+---
+
 ## Getting Started
+
+
+## Quick Start (Next.js)
 
 First, run the development server:
 
@@ -34,3 +95,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Demo Components
+
+Example components showcasing Server Actions are organized under `src/components/examples/`.
+The `demo-components.tsx` file now re-exports these individual components for easier navigation.

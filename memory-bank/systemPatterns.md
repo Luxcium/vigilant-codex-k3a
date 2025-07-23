@@ -21,20 +21,60 @@ This file documents the system architecture, key technical decisions, design pat
 
 The Vigilant Codex K3a follows a polyvalent architecture organized by language and framework at the project root to ensure clarity, modularity, and scalability across multiple technologies:
 
-```
+### Polyvalent Directory Structure
+
+```text
 vigilant-codex-k3a/
-├── src/                    # TypeScript core library and SDK components
-├── web/                    # Next.js applications (when coexisting with other code)
-├── python/                 # Python projects, modules, and conditional environments
-├── scripts/                # Shell scripts for automation (bash only)
-├── notebooks/              # Jupyter notebooks and ML development
-├── memory-bank/            # AI agent state management and documentation
-├── .github/
-│   ├── instructions/       # 26 coding standards (auto-applied)
-│   └── prompts/           # 27 workflow automations
-├── .clinerules/           # Cline AI personal instructions
-└── .vscode/               # VS Code optimization and tasks
+├── src/               # TypeScript SDK (core library)
+├── web/               # Next.js v15+ application
+├── python/            # Python agent system
+├── agent-framework/   # TypeScript 22 multi-agent framework
+├── scripts/           # Lifecycle and maintenance scripts
+├── notebooks/         # Jupyter notebooks and ML resources
+├── memory-bank/       # AI agent state and documentation
+├── examples/          # Example configurations and usage
+├── templates/         # Boilerplate and code templates
+├── prisma/            # Prisma schema and migrations
+├── init/              # Environment initialization assets
+├── .clinerules/       # Cline AI personal instructions
+└── .github/           # Shared instructions and prompts
 ```
+
+### Root Context Classification
+
+The following directories act as independent application roots:
+
+- `src/` – TypeScript SDK
+- `web/` – Next.js v15+ application
+- `python/` – Python agent system
+- `agent-framework/` – TypeScript 22 multi-agent framework
+- `notebooks/` – Jupyter notebooks and ML resources
+
+
+The following table clarifies which folders represent standalone **root contexts**.
+Directories marked with **Yes** contain their own project configuration and operate as
+independent roots. Hidden directories like `.git/` and `.vscode/` are intentionally excluded.
+
+| Folder | Purpose | Root Context |
+| ------ | ------- | ------------ |
+| `src/` | TypeScript SDK main codebase | Yes |
+| `web/` | Next.js v15+ application | Yes |
+| `python/` | Python agent system | Yes |
+| `agent-framework/` | TypeScript 22 multi-agent framework | Yes |
+| `scripts/` | Lifecycle and maintenance scripts | No |
+| `memory-bank/` | AI memory ledger and documentation | No |
+| `notebooks/` | Jupyter notebooks and experiments | No |
+| `prisma/` | Database schema and migrations | No |
+| `examples/` | Sample utilities and snippets | No |
+| `init/` | Initialization templates | No |
+| `templates/` | Scaffolding templates for new modules | No |
+| `node_modules/` | Installed dependencies (generated) | No |
+
+> **This table must be kept up to date by all AI agents whenever folders are added or removed.**
+
+Only `src/`, `web/`, `python/`, and `agent-framework/` are independent root
+contexts. AI agents must automatically document new root contexts here when
+detected and keep this list in sync with actual folders.
 
 ### Architectural Principles
 
@@ -119,6 +159,7 @@ vigilant-codex-k3a/
 - **Validation-First Pattern** - Prerequisites checked before operations with helpful error messages
 - **Colored Logging Pattern** - Consistent color coding for different log levels
 - **Graceful Degradation Pattern** - Continue operation when possible, warn about optional components
+- **Documentation Synchronization Pattern** - Each shell script begins with a comment header describing its aim, purpose, and decision rationale. Whenever a script is added or modified, `scripts/README.md` must be updated with a matching description and duplicate functionality consolidated.
 
 ### Next.js Component Architecture Patterns
 

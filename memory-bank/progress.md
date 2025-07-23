@@ -18,6 +18,62 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-07-23] Root Context Documentation & Script Protocol ✅
+
+**Achievement:**
+Established full root context classification across top-level folders and automated script documentation requirements.
+
+**Details:**
+
+- Updated README.md and memory bank with comprehensive folder list
+- Added rule to keep `scripts/README.md` in sync with script updates
+- Ensured every script documents its purpose and decision rationale
+
+**Impact:**
+Streamlines onboarding and keeps maintenance autonomous for all AI agents.
+
+### [2025-07-23] Root Context & Script Documentation Protocol ✅
+
+**Achievement:**
+Completed inventory of all top-level folders with explicit root context
+classification. Updated `README.md` and `systemPatterns.md` accordingly and
+added autonomous script documentation requirements.
+
+**Impact:**
+Ensures consistent folder structure awareness and keeps script documentation in
+sync without manual prompts.
+
+### [2025-07-21] Web Development Environment Inventory & Documentation ✅
+
+**Achievement:**
+Completed a full inventory and explanation of all scripts, tasks, and configuration relevant to live web development in the `web/` directory. Mapped the chain of custody for launching and running the Next.js dev server (port 3000), explained all integration points (scripts, tasks, browser preview, error monitoring), and updated documentation in `web/README.md`.
+
+**Details:**
+- Documented all web/dev scripts in `scripts/` (activation, setup, error monitoring, Docker)
+- Explained VS Code tasks and launch configs for web development
+- Reviewed root and `web/` `package.json` scripts and aliases
+- Mapped the chain of custody for live dev (from script/task to browser preview)
+- Updated `web/README.md` with a detailed section on live dev workflow and chain of custody
+- Ensured all findings are cross-referenced and commented
+
+**Impact:**
+Provides a clear, actionable, and fully documented workflow for live web development, supporting onboarding, troubleshooting, and AI agent collaboration. Fulfills the user's request for a methodical, scrupulous, and cumulative explanation and documentation of the web development environment.
+
+**Meta:**
+This entry is part of the Self-Documentation Protocol. All actions and context changes are documented and this rule itself is part of the ongoing protocol.
+
+### [2025-07-23] Root Context Classification & Script Protocol ✅
+
+**Achievement:**
+Defined official root contexts and established a mandatory script documentation policy.
+Created `memory-bank/root-contexts.md` and synchronized updates to `README.md`, `.clinerules/main-rules.md`, and `scripts/README.md`.
+
+**Impact:**
+Provides clear folder purpose definitions and ensures scripts remain well-documented and consolidated across the project.
+
+**Meta:**
+Self-Documentation Protocol executed after adding root context classification and script maintenance rules.
+
 ### Next.js v15+ Server Actions Application ✅
 
 **Status:** ✅ **FULLY OPERATIONAL** - Production-ready Next.js v15+ application running at http://localhost:3000
@@ -234,4 +290,13 @@ This project supports three AI agents with specific entry points:
 
 ---
 
-**Last Updated:** 2025-07-18 | **Status:** Production-Ready with Optimized Memory Bank | **Coverage:** 98.34% | **Applications:** Fully Operational
+- Test the complete conditional framework across all three modes
+- Document lessons learned for extending to other language environments
+- Consider implementing conditional frameworks for Node.js, TypeScript, and web development setups
+- [2025-07-14T06:24:01Z] Task: Added Start Web Dev Server task and Copilot instruction file for launching Next.js dev server from VS Code.
+- [2025-07-14T06:51:41Z] Task: Created web-build.instructions.md, added production build and start tasks, and updated launch.json with Next.js debug configuration to streamline local deployment and debugging.
+- [2025-07-17T03:53:10Z] Split demo components and consolidated actions. Improved post list initialization.
+
+**Last Updated:** 2025-07-23 | **Status:** Documentation Updated | **Coverage:** 98.34% | **Applications:** Fully Operational
+**Last Updated:** 2025-07-23 | **Status:** Root Context Protocol Established | **Coverage:** 98.34% | **Applications:** Fully Operational
+

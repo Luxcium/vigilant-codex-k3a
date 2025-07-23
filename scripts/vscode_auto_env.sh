@@ -5,9 +5,13 @@
 # Colors for output
 GREEN='\033[0;32m'
 BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+RED='\033[0;31m'
 NC='\033[0m' # No Color
+echo -e "${GREEN}⌚ DATE NOW:${RED} $(date) ${NC}"
 
 echo -e "${BLUE}🐍 Setting up Python development environment...${NC}"
+
 
 # Navigate to the workspace root
 cd "${WORKSPACE_FOLDER:-$(pwd)}"
@@ -50,7 +54,7 @@ if [ -f "python/.venv/bin/activate" ]; then
   echo "  format-code, type-check"
 
 else
-  echo -e "${BLUE}⚠ Python virtual environment not found${NC}"
+  echo -e "${YELLOW}⚠ Python virtual environment not found${NC}"
   echo "Run: ./scripts/setup_python_env.sh --mode local"
 fi
 

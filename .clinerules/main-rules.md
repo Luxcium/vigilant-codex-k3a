@@ -151,6 +151,14 @@ Create additional files/folders within memory-bank/ when they help organize:
 - Testing strategies
 - Deployment procedures
 
+### Root Context and Scripts Documentation Protocol
+
+- Maintain `memory-bank/root-contexts.md` with a list of all top-level root folders.
+- Keep the same list synchronized in `README.md`.
+- Exclude system directories like `.git/`, `.vscode/`, `.github/`, `.clinerules/`, `.codex/`, and `node_modules/`.
+- Ensure every `.sh` script starts with comments describing its aim and purpose.
+- Update `scripts/README.md` whenever scripts are added or modified and consolidate duplicates when found.
+
 ### Core Workflows
 
 #### Plan Mode
@@ -198,6 +206,12 @@ Start[Update Process]
     Start --> Process
 
 Note: When triggered by **update memory bank**, I MUST review every memory bank file, even if some don't require updates. Focus particularly on activeContext.md and progress.md as they track current state.
+
+### Script Documentation Protocol
+
+1. Every `.sh` script must include comments describing its purpose, decision process, and intended outcome.
+2. Whenever a script is added or modified, update `scripts/README.md` with its usage and rationale.
+3. Maintain synchronization automatically—AI agents must enforce this protocol without user reminders.
 
 REMEMBER: After every memory reset, I begin completely fresh. The Memory Bank is my only link to previous work. It must be maintained with precision and clarity, as my effectiveness depends entirely on its accuracy.
 

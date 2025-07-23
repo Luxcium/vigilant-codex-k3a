@@ -18,6 +18,110 @@ This file tracks the current work focus, recent changes, next steps, and active 
 
 ## Current Work Focus
 
+### [2025-07-22T23:10:00Z] Root Context Inventory & Script Protocol Implementation
+
+**Current State:**
+Root context directories fully documented in `README.md` and `projectbrief.md`.
+Introduced script documentation protocol in `systemPatterns.md` and `.clinerules`.
+
+**Next Intent:**
+- Ensure all shell scripts contain header comments and are listed in `scripts/README.md`.
+- Consolidate any duplicate scripts.
+
+### [2025-07-22T22:44:00Z] Development Session Analysis Complete - Ready for Instructions
+
+**Current State:**
+Completed comprehensive project analysis and environment topology assessment. Project structure and memory bank system fully understood. Ready to proceed with development tasks per user instructions.
+
+### [2025-07-23T00:00:00Z] Root Context & Script Protocol Updates
+
+**Current State:**
+Root context folders documented across README and memory bank. Added autonomous script documentation protocol with updates to `.clinerules` and `scripts/README.md`.
+
+**Project Analysis Summary:**
+
+- **Vigilant Codex K3a**: Sophisticated polyvalent AI development workspace
+- **Three AI Agent System**: Cline AI, Codex CLI, VS Code Copilot with shared Memory Bank
+- **Technology Stack**: TypeScript/Python/Next.js with Docker orchestration
+- **Current Status**: Production-ready applications with 98.34% test coverage
+- **Infrastructure**: Comprehensive script automation and memory bank documentation
+
+**Last Action:**
+
+- Analyzed project brief and active context files
+- Understood current priorities: Memory Bank formatting, documentation compliance
+- Identified active decisions and next steps
+
+**Rationale:**
+User requested initial project analysis to understand environment topology before providing specific development instructions. Analysis phase complete.
+
+**Next Intent:**
+
+- Await specific development instructions from user
+- Execute tasks according to Memory Bank protocols and established patterns
+- Maintain real-time documentation of all actions and decisions
+
+**I am executing the Self-Documentation Protocol following project analysis completion.**
+
+### Session Restart and Context Synchronization ✅ **COMPLETED**
+
+**[2025-07-19T18:06:01Z]** Successfully implemented comprehensive browser error integration with VS Code Problems panel.
+
+**Current State**: Complete browser error monitoring system implemented with real-time VS Code integration
+**Last Action**: Created browser-error-monitor.sh script, enhanced Edge DevTools configuration, and added VS Code tasks for error detection
+**Rationale**: Essential for seamless browser error debugging and integration with VS Code Problems panel
+**Next Intent**: Demonstrate the complete error monitoring system and provide usage instructions
+
+**I am completing the Self-Documentation Protocol after implementing browser error integration.**
+
+### Conventional Commits Documentation Reorganization ✅ **COMPLETED**
+
+**[2025-07-20T18:57:02Z]** Successfully reorganized conventional commits documentation with concise instructions and detailed prompt files.
+
+**Current State**: Streamlined instruction file with comprehensive supporting prompt files for detailed information
+**Last Action**: Split monolithic documentation into focused, modular components for better usability and maintainability
+**Rationale**: The original file was too long and unwieldy. Users needed quick reference instructions with optional detailed guides
+**Next Intent**: Ensure all commit examples throughout the project follow the new standardized patterns
+
+**Major Reorganization Completed**:
+
+**✅ Main Instructions File** (`.github/instructions/use-conventional-commits.instructions.md`):
+
+- **Concise and Clear**: Essential information only, quick reference format
+- **100% Gitmoji Compliance**: Every example includes mandatory gitmoji
+- **Critical Warning**: Prominent callout that gitmoji is mandatory with no exceptions
+- **Essential Types & Emojis**: Quick reference table for most common scenarios
+- **Cross-References**: Links to detailed prompt files for comprehensive information
+
+**✅ Supporting Prompt Files Created**:
+
+- **`.github/prompts/gitmoji-complete-list.prompt.md`**: Complete gitmoji reference with selection guidelines
+- **`.github/prompts/commit-examples.prompt.md`**: Comprehensive examples by category with detailed context
+- **`.github/prompts/breaking-changes.prompt.md`**: Detailed breaking changes guidance and best practices
+- **`.github/prompts/git-hooks-automation.prompt.md`**: Git hooks, automation tools, and CI/CD integration
+
+**Key Improvements**:
+
+- **Modular Architecture**: Focused files for specific use cases
+- **Quick Access**: Main instructions provide immediate guidance
+- **Detailed Reference**: Prompt files offer comprehensive information when needed
+- **100% Gitmoji Coverage**: Every single example includes gitmoji without exception
+- **Clear Error Prevention**: Explicit warnings about mandatory requirements
+- **Tool Integration**: Complete automation and validation guidance
+
+**I am executing the Self-Documentation Protocol following major documentation reorganization.**
+
+### Session Restart and Context Synchronization ✅ **COMPLETED**
+
+**[2025-07-19T18:00:15Z]** Successfully synchronized with user to resume project work following CRITICAL MEMORY BANK PROTOCOL.
+
+**Current State**: VS Code Copilot Chat initialized with complete project context from memory bank files
+**Last Action**: Read and understood complete memory bank state including activeContext.md, progress.md, projectbrief.md, and techContext.md
+**Rationale**: Essential for maintaining stateful collaboration and understanding current project priorities
+**Next Intent**: Assess environment status and determine immediate development priorities based on user requirements
+
+**I am executing the Self-Documentation Protocol following session initialization.**
+
 ### Memory Bank Optimization and Formatting Correction ✅ **COMPLETED**
 
 **[2025-07-18T12:49:50Z]** Successfully completed comprehensive memory bank formatting correction to comply with official Cline Memory Bank standard.
@@ -61,6 +165,30 @@ This file tracks the current work focus, recent changes, next steps, and active 
 
 ## Recent Changes
 
+
+### [2025-07-23] Root Context Classification and Script Protocol
+
+**Achievement**: Documented all top-level folders with root context identification and established autonomous script documentation rules.
+
+- Updated README.md and memory bank with complete folder inventory
+- Added requirement to update `scripts/README.md` whenever scripts change
+- Clarified that each script must document its purpose and decision rationale
+ 
+### [2025-07-22] Root Context Inventory & Script Protocol Added
+
+**Achievement**: Documented all top-level directories and implemented a mandatory
+script documentation protocol. Updated `README.md`, `projectbrief.md`, `systemPatterns.md`, and `.clinerules` accordingly.
+ 
+### [2025-07-23] Root Context Documentation and Script Protocol ✅
+
+**Achievement**: Added comprehensive folder inventory with root context
+designations in `README.md` and `systemPatterns.md`. Established autonomous
+script documentation protocol reflected in `scripts/README.md` and
+`.clinerules/main-rules.md`.
+
+**Impact**: Ensures all agents maintain accurate project structure and keep
+script documentation synchronized without user prompts.
+
 ### [2025-07-18] Memory Bank Formatting Correction Initiative
 
 **Achievement**: Initiated comprehensive memory bank optimization following official Cline Memory Bank standard
@@ -94,6 +222,37 @@ This file tracks the current work focus, recent changes, next steps, and active 
 - **26 Instruction Files Analysis** with proper categorization and cross-references
 - **27 Prompt Files Inventory** organized by workflow automation and development patterns
 - **Complete README Reconstruction** reflecting AI agent ecosystem and technical achievements
+
+## Implementation Note (2025-07-19T18:30:00Z)
+
+**Decision/Note:**
+We have decided to implement, in a future update, a reference-based port allocation pattern for the 5000-range (BASE_PORT=5000) using the same static index methodology as the 3000-range. The service at index 0 (e.g., monitoring dashboard or main web frontend) will use ports 5000–5009, with retries incrementing within this block. This will ensure consistent, predictable port mapping for monitoring and production dashboards, following the same robust, stateful allocation logic as in the 3000-range.
+
+**Rationale:**
+This approach maintains architectural consistency, simplifies service discovery, and supports robust, conflict-free port allocation for all major service groups (development, monitoring, production, etc.).
+
+**Next Intent:**
+Implement this pattern in the codex_run.sh and related orchestration scripts when expanding monitoring/production service support.
+
+**Meta:**
+I am recording this as part of the Self-Documentation Protocol. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+
+## Implementation Note (2025-07-23T01:40:00Z)
+
+**Decision/Note:**
+Established a formal root context classification and script documentation protocol.
+Created `memory-bank/root-contexts.md`, updated `README.md`, `.clinerules/main-rules.md`, and `scripts/README.md` accordingly.
+
+**Rationale:**
+Clarifies folder purposes for all agents and enforces autonomous maintenance of script documentation.
+
+**Next Intent:**
+Ensure future scripts include purpose comments and that the root context list remains current.
+
+**Meta:**
+Self-Documentation Protocol executed after establishing folder classification and script maintenance rules.
+
+---
 
 ## Next Steps
 
@@ -186,4 +345,11 @@ This project supports three AI agents with specific entry points:
 
 ---
 
-**Last Updated:** 2025-07-18T12:44:20Z | **Status:** Memory Bank Formatting In Progress | **Priority:** Critical Infrastructure Optimization
+**Self-Documentation Protocol**: This entry reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
+### [2025-07-17T03:53:10Z] Demo component refactor and actions consolidation
+- Split demo-components.tsx into individual files under src/components/examples
+- Optimized post-list state initialization
+- Consolidated actions.ts to re-export from enhanced-actions
+ 
+**Last Updated:** 2025-07-23T00:00:00Z | **Status:** Root Context Protocol Established | **Priority:** Documentation Sync
+ 
