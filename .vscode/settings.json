@@ -1249,34 +1249,13 @@
   // ESLint auto fix on save (string array form)
   "editor.codeActionsOnSave": ["source.fixAll", "source.fixAll.eslint"],
 
-  // Microsoft Edge DevTools Configuration
-  "vscode-edge-devtools.webviewColumnNumber": 2,
-  "vscode-edge-devtools.mirrorEdits": true,
-  "vscode-edge-devtools.defaultUrl": "http://localhost:3000",
-  "vscode-edge-devtools.browserArguments": [
-    "--disable-web-security",
-    "--disable-features=VizDisplayCompositor"
-  ],
-  "vscode-edge-devtools.enableDiagnostics": true,
+  // Microsoft Edge DevTools Configuration - Enhanced Error Integration
+
   "vscode-edge-devtools.useHttps": false,
-  "vscode-edge-devtools.userAgent": "",
   "vscode-edge-devtools.headless": false,
   "vscode-edge-devtools.timeout": 10000,
   "vscode-edge-devtools.port": 9222,
   "vscode-edge-devtools.hostname": "localhost",
-  "edge.devtools.enableInlineStyling": false,
-  "edge.devtools.warnings.inlineStyles": "disabled",
-  "edge.devtools.linting.enabled": false,
-  "edge.devtools.issues.enabled": false,
-  "edge.devtools.autoAttach": false,
-  "edge.devtools.network.enabled": true,
-  "edge.devtools.console.enabled": true,
-  "edge.devtools.elements.enabled": true,
-  "edge.devtools.application.enabled": true,
-  "edge.devtools.sources.enabled": true,
-  "edge.devtools.performance.enabled": true,
-  "edge.devtools.memory.enabled": true,
-  "edge.devtools.security.enabled": true,
 
   // Notebook integration
   "notebook.experimental.generate": true,
@@ -1313,9 +1292,7 @@
   "todo-tree.filtering.scopes": [], // new items
   "todo-tree.filtering.useBuiltInExcludes": "file and search excludes",
   "todo-tree.general.debug": false,
-  "todo-tree.general.enableFileWatcher": true,
   "todo-tree.general.exportPath": "~/todo-tree-%Y%m%d-%H%M.txt",
-  "todo-tree.general.fileWatcherGlob": "**/*",
   "todo-tree.general.revealBehaviour": "end of todo",
   "todo-tree.general.rootFolder": "",
   "todo-tree.general.showActivityBarBadge": false, // new items
@@ -2063,7 +2040,10 @@
   // #endregion: TODO TREE                                                           !
   /*
   |-····-----------------------------------------------------------··-|
-    */
+  */
+
+  // #region: Copilot Chat Agent                                                           !
+
   "chat.agent.enabled": true,
   "chat.agent.maxRequests": 15,
   "chat.commandCenter.enabled": true,
@@ -2092,6 +2072,9 @@
   },
   "chat.sendElementsToChat.enabled": true,
   "chat.tools.autoApprove": true,
+
+  // #region: Github Copilot                                                          !
+
   "github.copilot.chat.agent.autoFix": true,
   "github.copilot.chat.agent.currentEditorContext.enabled": true,
   "github.copilot.chat.agent.runTasks": true,
@@ -2182,16 +2165,13 @@
   "workbench.commandPalette.preserveInput": true,
 
   // ========================================
-  // Project-Specific Extensions
-  // ========================================
-  // ========================================
   // View Header Icons Configuration
   // ========================================
 
   // Always show icons in view headers
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 12,
-  "workbench.list.openMode": "doubleClick",
+  "workbench.list.openMode": "singleClick",
 
   // Explorer view header icons
   "explorer.compactFolders": false,

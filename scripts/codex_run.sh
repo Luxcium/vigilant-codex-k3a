@@ -3,6 +3,7 @@
 # Quick Codex Universal Docker Runner
 # This script provides a simple way to run codex-universal with volume mounting
 
+
 set -euo pipefail
 
 # Configuration
@@ -45,7 +46,69 @@ log_info "Starting codex-universal container with volumes..."
 log_info "Project: $PROJECT_NAME"
 log_info "Mount: $PROJECT_ROOT -> /workspace/$PROJECT_NAME"
 
-# Run the container with volume mounting
+
+
+
+# Generic reference-based port allocation and retry logic
+# Each service has a static index, port = BASE_PORT + (index*10) + retry
+# Supports changing BASE_PORT (default 3000)
+
+BASE_PORT=3000
+MAX_RETRIES=10
+
+# Define your services here: name, index, container_port, directory_to_check
+SERVICES=(
+  "nextjs:0:3000:web"
+  "python:1:8000:python"
+  "jupyter:2:8888:notebooks"
+  # Add more as needed: "servicename:index:container_port:dir"
+)
+
+find_free_port_block() {
+  local base_port=$1
+  local max_retries=$2
+  for ((i=0; i<max_retries; i++)); do
+    local port=$((base_port + i))
+    if lsof -iTCP:"$port" -sTCP:LISTEN -n -P | grep -qE "(LISTEN)"; then
+      log_info "Port $port is in use (localhost/0.0.0.0), retrying..."
+      continue
+    fi
+    echo $port
+    return 0
+  done
+  return 1
+}
+
+PORT_ARGS=()
+declare -A CHOSEN_PORTS
+
+for svc in "${SERVICES[@]}"; do
+  IFS=":" read -r name idx cport dir <<< "$svc"
+  if [[ -d "$dir" ]]; then
+    base_port=$((BASE_PORT + idx * 10))
+    host_port=$(find_free_port_block $base_port $MAX_RETRIES)
+    if [[ -n "$host_port" ]]; then
+      PORT_ARGS+=("-p" "$host_port:$cport")
+      CHOSEN_PORTS[$name]=$host_port
+      log_info "$name will be mapped to host port $host_port -> container $cport"
+    else
+      echo -e "\033[0;31m[ERROR]\033[0m No free port found for $name in range $base_port-$((base_port+MAX_RETRIES-1))."
+      exit 1
+    fi
+  fi
+done
+
+# Detect and log any other services running in the reference port ranges
+log_info "Scanning for other services in reference port ranges..."
+for ((block=BASE_PORT; block<BASE_PORT+100; block+=10)); do
+  for ((i=0; i<10; i++)); do
+    port=$((block + i))
+    if lsof -iTCP:"$port" -sTCP:LISTEN -n -P | grep -qE "(LISTEN)"; then
+      log_info "Detected service running on port $port (host)"
+    fi
+  done
+done
+
 docker run --rm -it \
   --name "${PROJECT_NAME}-codex-dev" \
   -e CODEX_ENV_PYTHON_VERSION=3.13 \
@@ -54,10 +117,7 @@ docker run --rm -it \
   -e OPENAI_API_KEY="${OPENAI_API_KEY}" \
   -v "$PROJECT_ROOT:/workspace/$PROJECT_NAME" \
   -w "/workspace/$PROJECT_NAME" \
-  -p 3000:3000 \
-  -p 8000:8000 \
-  -p 8888:8888 \
-  -p 5173:5173 \
+  "${PORT_ARGS[@]}" \
   ghcr.io/openai/codex-universal:latest
 
 log_success "Container exited"
