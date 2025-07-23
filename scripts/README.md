@@ -1,7 +1,13 @@
 # `scripts/` Directory
 
-This folder contains utility scripts for setting up, validating, and maintaining the repository.  
+This folder contains utility scripts for setting up, validating, and maintaining the repository.
 **All scripts must pass strict markdown-lint on any Markdown they generate or update.**
+
+## Script Documentation Protocol
+
+1. Every script must contain internal comments explaining its aim, purpose, and decision process.
+2. Whenever a script is added or modified, update this `scripts/README.md` with a concise description.
+3. AI agents must keep this file synchronized autonomously with the actual scripts directory.
 
 ## Codex Universal Docker Environment
 
