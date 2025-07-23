@@ -23,18 +23,29 @@ The Vigilant Codex K3a follows a polyvalent architecture organized by language a
 
 ```
 vigilant-codex-k3a/
-├── src/                    # TypeScript core library and SDK components
-├── web/                    # Next.js applications (when coexisting with other code)
-├── python/                 # Python projects, modules, and conditional environments
-├── scripts/                # Shell scripts for automation (bash only)
-├── notebooks/              # Jupyter notebooks and ML development
+├── src/                    # TypeScript SDK (root context)
+├── web/                    # Next.js v15+ application (root context)
+├── python/                 # Python agent system (root context)
+├── agent-framework/        # TypeScript 22 multi-agent framework (root context)
+├── scripts/                # Lifecycle and maintenance scripts
 ├── memory-bank/            # AI agent state management and documentation
+├── examples/               # Usage examples and demos
+├── templates/              # Project scaffolding templates
+├── notebooks/              # Jupyter notebooks and ML development
+├── prisma/                 # Prisma schema and migrations
+├── init/                   # Bootstrap utilities
 ├── .github/
 │   ├── instructions/       # 26 coding standards (auto-applied)
-│   └── prompts/           # 27 workflow automations
-├── .clinerules/           # Cline AI personal instructions
-└── .vscode/               # VS Code optimization and tasks
+│   └── prompts/            # 27 workflow automations
+├── .clinerules/            # Cline AI personal instructions
+├── .codex/                 # Codex CLI configuration
+├── node_modules/           # Third-party dependencies
+└── *system folders excluded* (`.git/`, `.vscode/`)
 ```
+
+`src/`, `web/`, `python/`, and `agent-framework/` are designated root contexts.
+AI agents must extend this list when new roots appear and keep the architecture
+documentation consistent across README files and memory bank entries.
 
 ### Architectural Principles
 

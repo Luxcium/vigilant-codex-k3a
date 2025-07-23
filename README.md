@@ -69,7 +69,12 @@ independent roots. Hidden directories like `.git/` and `.vscode/` are intentiona
 | `templates/` | Scaffolding templates for new modules | No |
 | `node_modules/` | Installed dependencies (generated) | No |
 
-This table must be kept up to date by all AI agents whenever folders are added or removed.
+> **This table must be kept up to date by all AI agents whenever folders are added or removed.**
+
+Only `src/`, `web/`, `python/`, and `agent-framework/` are independent root
+contexts. AI agents must automatically document new root contexts here when
+detected and keep this list in sync with actual folders.
+
 
 ### Technology Stack
 
