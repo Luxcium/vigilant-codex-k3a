@@ -34,23 +34,33 @@ This workspace supports three AI agents with sophisticated collaboration pattern
 
 ### Polyvalent Directory Structure
 
-```
+```text
 vigilant-codex-k3a/
-├── agent-framework/       # TypeScript 22 multi-agent framework
-├── examples/              # Sample utilities and code snippets
-├── init/                  # Autonomous initialization templates
-├── memory-bank/           # AI Agent State Management
-├── node_modules/          # Installed dependencies
-├── notebooks/             # Jupyter Notebooks (VS Code Integration)
-├── prisma/                # Database schema and migrations
-├── python/                # Python agent system
-├── scripts/               # Lifecycle and maintenance scripts
-├── src/                   # TypeScript/Core Library (Node.js 22, Native Fetch)
-├── templates/             # Project scaffolding templates
-└── web/                   # Next.js 15+ application
+├── src/               # TypeScript SDK (core library)
+├── web/               # Next.js v15+ application
+├── python/            # Python agent system
+├── agent-framework/   # TypeScript 22 multi-agent framework
+├── scripts/           # Lifecycle and maintenance scripts
+├── notebooks/         # Jupyter notebooks and ML resources
+├── memory-bank/       # AI agent state and documentation
+├── examples/          # Example configurations and usage
+├── templates/         # Boilerplate and code templates
+├── prisma/            # Prisma schema and migrations
+├── init/              # Environment initialization assets
+├── .clinerules/       # Cline AI personal instructions
+└── .github/           # Shared instructions and prompts
 ```
 
-### Root Contexts
+### Root Context Classification
+
+The following directories act as independent application roots:
+
+- `src/` – TypeScript SDK
+- `web/` – Next.js v15+ application
+- `python/` – Python agent system
+- `agent-framework/` – TypeScript 22 multi-agent framework
+- `notebooks/` – Jupyter notebooks and ML resources
+
 
 The following table clarifies which folders represent standalone **root contexts**.
 Directories marked with **Yes** contain their own project configuration and operate as
@@ -76,7 +86,6 @@ independent roots. Hidden directories like `.git/` and `.vscode/` are intentiona
 Only `src/`, `web/`, `python/`, and `agent-framework/` are independent root
 contexts. AI agents must automatically document new root contexts here when
 detected and keep this list in sync with actual folders.
-
 
 
 ### Technology Stack

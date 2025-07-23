@@ -21,31 +21,60 @@ This file documents the system architecture, key technical decisions, design pat
 
 The Vigilant Codex K3a follows a polyvalent architecture organized by language and framework at the project root to ensure clarity, modularity, and scalability across multiple technologies:
 
-```
+### Polyvalent Directory Structure
+
+```text
 vigilant-codex-k3a/
-├── src/                    # TypeScript SDK (root context)
-├── web/                    # Next.js v15+ application (root context)
-├── python/                 # Python agent system (root context)
-├── agent-framework/        # TypeScript 22 multi-agent framework (root context)
-├── scripts/                # Lifecycle and maintenance scripts
-├── memory-bank/            # AI agent state management and documentation
-├── examples/               # Usage examples and demos
-├── templates/              # Project scaffolding templates
-├── notebooks/              # Jupyter notebooks and ML development
-├── prisma/                 # Prisma schema and migrations
-├── init/                   # Bootstrap utilities
-├── .github/
-│   ├── instructions/       # 26 coding standards (auto-applied)
-│   └── prompts/            # 27 workflow automations
-├── .clinerules/            # Cline AI personal instructions
-├── .codex/                 # Codex CLI configuration
-├── node_modules/           # Third-party dependencies
-└── *system folders excluded* (`.git/`, `.vscode/`)
+├── src/               # TypeScript SDK (core library)
+├── web/               # Next.js v15+ application
+├── python/            # Python agent system
+├── agent-framework/   # TypeScript 22 multi-agent framework
+├── scripts/           # Lifecycle and maintenance scripts
+├── notebooks/         # Jupyter notebooks and ML resources
+├── memory-bank/       # AI agent state and documentation
+├── examples/          # Example configurations and usage
+├── templates/         # Boilerplate and code templates
+├── prisma/            # Prisma schema and migrations
+├── init/              # Environment initialization assets
+├── .clinerules/       # Cline AI personal instructions
+└── .github/           # Shared instructions and prompts
 ```
 
-`src/`, `web/`, `python/`, and `agent-framework/` are designated root contexts.
-AI agents must extend this list when new roots appear and keep the architecture
-documentation consistent across README files and memory bank entries.
+### Root Context Classification
+
+The following directories act as independent application roots:
+
+- `src/` – TypeScript SDK
+- `web/` – Next.js v15+ application
+- `python/` – Python agent system
+- `agent-framework/` – TypeScript 22 multi-agent framework
+- `notebooks/` – Jupyter notebooks and ML resources
+
+
+The following table clarifies which folders represent standalone **root contexts**.
+Directories marked with **Yes** contain their own project configuration and operate as
+independent roots. Hidden directories like `.git/` and `.vscode/` are intentionally excluded.
+
+| Folder | Purpose | Root Context |
+| ------ | ------- | ------------ |
+| `src/` | TypeScript SDK main codebase | Yes |
+| `web/` | Next.js v15+ application | Yes |
+| `python/` | Python agent system | Yes |
+| `agent-framework/` | TypeScript 22 multi-agent framework | Yes |
+| `scripts/` | Lifecycle and maintenance scripts | No |
+| `memory-bank/` | AI memory ledger and documentation | No |
+| `notebooks/` | Jupyter notebooks and experiments | No |
+| `prisma/` | Database schema and migrations | No |
+| `examples/` | Sample utilities and snippets | No |
+| `init/` | Initialization templates | No |
+| `templates/` | Scaffolding templates for new modules | No |
+| `node_modules/` | Installed dependencies (generated) | No |
+
+> **This table must be kept up to date by all AI agents whenever folders are added or removed.**
+
+Only `src/`, `web/`, `python/`, and `agent-framework/` are independent root
+contexts. AI agents must automatically document new root contexts here when
+detected and keep this list in sync with actual folders.
 
 ### Architectural Principles
 

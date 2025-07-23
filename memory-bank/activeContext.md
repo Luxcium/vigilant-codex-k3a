@@ -165,6 +165,15 @@ User requested initial project analysis to understand environment topology befor
 
 ## Recent Changes
 
+
+### [2025-07-23] Root Context Classification and Script Protocol
+
+**Achievement**: Documented all top-level folders with root context identification and established autonomous script documentation rules.
+
+- Updated README.md and memory bank with complete folder inventory
+- Added requirement to update `scripts/README.md` whenever scripts change
+- Clarified that each script must document its purpose and decision rationale
+ 
 ### [2025-07-22] Root Context Inventory & Script Protocol Added
 
 **Achievement**: Documented all top-level directories and implemented a mandatory
@@ -179,7 +188,6 @@ script documentation protocol reflected in `scripts/README.md` and
 
 **Impact**: Ensures all agents maintain accurate project structure and keep
 script documentation synchronized without user prompts.
- 
 
 ### [2025-07-18] Memory Bank Formatting Correction Initiative
 

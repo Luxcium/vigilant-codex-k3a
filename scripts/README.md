@@ -15,6 +15,8 @@ When a script is created or modified, update this README with a brief descriptio
 2. Whenever a script is added or modified, update this `scripts/README.md` with a concise description.
 3. AI agents must keep this file synchronized autonomously with the actual scripts directory.
 
+**Self-Documentation Protocol**: Whenever a script is added or modified, update this README accordingly. Each `.sh` file must begin with comments describing its aim, purpose, and decision rationale. Detect and consolidate duplicate scripts whenever possible.
+
 ## Codex Universal Docker Environment
 
 Scripts for managing the Docker development environment with Node.js 22 and Python 3.13:

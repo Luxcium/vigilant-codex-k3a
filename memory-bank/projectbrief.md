@@ -126,21 +126,60 @@ This file is the foundation of the Memory Bank and defines the core requirements
 
 ## Development Standards
 
-### Code Organization Standards
+### Polyvalent Directory Structure
 
-- **Language-Based Structure** - Organize by language and framework at project root
-  - `agent-framework/` - TypeScript 22 multi-agent framework (root context)
-  - `examples/` - Sample utilities and snippets
-  - `init/` - Autonomous initialization templates
-  - `memory-bank/` - AI memory ledger and documentation
-  - `node_modules/` - Installed dependencies (generated)
-  - `notebooks/` - Jupyter notebooks and ML development
-  - `prisma/` - Database schema and migrations
-  - `python/` - Python agent system (root context)
-  - `scripts/` - Lifecycle and maintenance scripts
-  - `src/` - TypeScript SDK main codebase (root context)
-  - `templates/` - Scaffolding templates for new modules
-  - `web/` - Next.js v15+ application (root context)
+```text
+vigilant-codex-k3a/
+├── src/               # TypeScript SDK (core library)
+├── web/               # Next.js v15+ application
+├── python/            # Python agent system
+├── agent-framework/   # TypeScript 22 multi-agent framework
+├── scripts/           # Lifecycle and maintenance scripts
+├── notebooks/         # Jupyter notebooks and ML resources
+├── memory-bank/       # AI agent state and documentation
+├── examples/          # Example configurations and usage
+├── templates/         # Boilerplate and code templates
+├── prisma/            # Prisma schema and migrations
+├── init/              # Environment initialization assets
+├── .clinerules/       # Cline AI personal instructions
+└── .github/           # Shared instructions and prompts
+```
+
+### Root Context Classification
+
+The following directories act as independent application roots:
+
+- `src/` – TypeScript SDK
+- `web/` – Next.js v15+ application
+- `python/` – Python agent system
+- `agent-framework/` – TypeScript 22 multi-agent framework
+- `notebooks/` – Jupyter notebooks and ML resources
+
+
+The following table clarifies which folders represent standalone **root contexts**.
+Directories marked with **Yes** contain their own project configuration and operate as
+independent roots. Hidden directories like `.git/` and `.vscode/` are intentionally excluded.
+
+| Folder | Purpose | Root Context |
+| ------ | ------- | ------------ |
+| `src/` | TypeScript SDK main codebase | Yes |
+| `web/` | Next.js v15+ application | Yes |
+| `python/` | Python agent system | Yes |
+| `agent-framework/` | TypeScript 22 multi-agent framework | Yes |
+| `scripts/` | Lifecycle and maintenance scripts | No |
+| `memory-bank/` | AI memory ledger and documentation | No |
+| `notebooks/` | Jupyter notebooks and experiments | No |
+| `prisma/` | Database schema and migrations | No |
+| `examples/` | Sample utilities and snippets | No |
+| `init/` | Initialization templates | No |
+| `templates/` | Scaffolding templates for new modules | No |
+| `node_modules/` | Installed dependencies (generated) | No |
+
+> **This table must be kept up to date by all AI agents whenever folders are added or removed.**
+
+Only `src/`, `web/`, `python/`, and `agent-framework/` are independent root
+contexts. AI agents must automatically document new root contexts here when
+detected and keep this list in sync with actual folders.
 
 ### Process Standards
 
@@ -148,6 +187,7 @@ This file is the foundation of the Memory Bank and defines the core requirements
 - **No Manual File Creation** - All directory and file creation via scripts
 - **Conditional Decision Deferral** - Runtime parameter selection over hard-coded choices
 - **Memory Bank Maintenance** - Continuous documentation and context preservation
+- **Scripts README Synchronization** - Update `scripts/README.md` whenever a script is added or modified; ensure each script documents its purpose and decision process
 - **Cross-Agent Testing** - Validation across all three AI agent workflows
 
 ### Quality Assurance Standards
