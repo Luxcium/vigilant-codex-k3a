@@ -52,6 +52,25 @@ applyTo: 'glob-pattern-here'
 - Use bullet points for individual rules.
 - Include code examples in fenced blocks when beneficial.
 
+Use alerts to indicate critical sections or important notes.
+
+```markdown
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+```
+
 ## Content Creation Rules
 
 ### Rule Formulation Standards
