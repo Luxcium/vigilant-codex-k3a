@@ -6,6 +6,8 @@ This file tracks all pro### Script Management and Optimization Protocol
 
 **Purpose**: Continuous script consolidation and optimization to reduce maintenance overhead
 
+**Current State**: Script optimization review plan created for advanced consolidation (42 → 22-25 scripts target)
+
 **Dependencies and Relationships**:
 
 - **scripts/README.md** → **ALL script files** (Why: Must be synchronized whenever scripts change)
@@ -20,10 +22,18 @@ This file tracks all pro### Script Management and Optimization Protocol
 - **Script header standardization** → **All 42 scripts in scripts/ directory** (Why: Consistent documentation and validation)
   - Impact: Enhanced maintainability and automated validation capabilities
 
-**Future Consolidation Dependencies**:
-- `setup_web_env.sh` + `setup_web_dev_environment.sh` → **Potential unified web setup script**
-- `validate-instructions.sh` + `validate-prompt.sh` → **Potential unified validation script** 
-- `generate-instruction-file.sh` + `generate-prompt-file.sh` → **Potential unified generator script**
+**Advanced Consolidation Dependencies**:
+- `setup_web_env.sh` + `setup_web_dev_environment.sh` → **Planned unified web setup script**
+- `validate-instructions.sh` + `validate-prompt.sh` → **Planned unified validation script** 
+- `generate-instruction-file.sh` + `generate-prompt-file.sh` → **Planned unified generator script**
+- `setup_questrade_sdk_core.sh` + `setup_questrade_types.sh` → **Planned unified Questrade setup**
+- `setup_agent_framework.sh` + `setup_agent_system.sh` → **Planned unified agent setup**
+
+**Quality Assurance Dependencies**:
+- **Header Format Validation** → **Automated checker for 10-line standardized format**
+- **Functional Testing** → **Parameter combination testing for consolidated scripts**
+- **Integration Testing** → **.vscode/tasks.json validation with consolidated scripts**
+- **Continuous Monitoring** → **Monthly review protocol and usage analytics**
 
 ### Development Environment Dependenciesect dependencies, their relationships, and integration points for the Vigilant Codex K3a polyvalent AI development workspace. It serves as a comprehensive dependency map enabling proper management and coordination between components across multiple languages, frameworks, and AI agents.
 
