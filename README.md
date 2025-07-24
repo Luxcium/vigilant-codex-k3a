@@ -400,3 +400,45 @@ In **Agent Mode**, use Copilot Chat prompts to automate workflows:
 - `/analyze-issue`: Review runtime overlays and log console errors; suggest fixes
 
 Custom prompts and instructions are located in `.github/prompts/` and `.github/instructions/`.
+
+## Recent Updates
+
+### Improvements to `src/` Folder
+
+1. **Centralized Configuration**
+   - Added `src/config/index.ts` to manage environment variables.
+
+2. **Safe Key Storage**
+   - Implemented `KeyManager` in `src/security/KeyManager.ts` for secure token storage.
+
+3. **OAuth Token Refresh**
+   - Added Axios interceptors in `src/http/client.ts` to handle token refresh automatically.
+
+4. **REST Gateway Layer**
+   - Created `src/http/QuestradeApi.ts` to wrap all API calls.
+
+5. **Bootstrap Example**
+   - Added `src/main.ts` to demonstrate a working request round-trip.
+
+### How to Run the Example
+
+1. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+
+2. Create a `.env` file with the following content:
+   ```env
+   API_SERVER=https://api01.iq.questrade.com/v1
+   CLIENT_ID=YOUR_CLIENT_ID
+   REFRESH_TOKEN=YOUR_REFRESH_TOKEN
+   LOG_LEVEL=info
+   ```
+
+3. Run the example:
+   ```bash
+   pnpm tsx src/main.ts
+   ```
+
+4. Expected Output:
+   - A table of candle data printed to the console.

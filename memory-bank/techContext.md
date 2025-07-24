@@ -174,6 +174,26 @@ vigilant-codex-k3a/
 - **TypeScript Strict Mode** - Enhanced type checking and null safety
 - **Husky** - Pre-commit hooks for automated quality checks
 
+### Package Installation Policy
+
+**Policy:** Always use `@latest` when adding new packages to the project.
+
+**Rationale:**
+
+- Ensures the project uses the most up-to-date versions of dependencies.
+- Reduces the risk of outdated or insecure packages.
+
+**Implementation:**
+
+- Use the `@latest` tag when running `pnpm add` or similar commands.
+- Document this policy in all relevant memory bank files and README files.
+
+**Example:**
+
+```bash
+pnpm add dotenv@latest axios@latest
+```
+
 ## Technical Constraints
 
 ### Mandatory Requirements
