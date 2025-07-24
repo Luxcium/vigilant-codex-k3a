@@ -54,6 +54,10 @@ applyTo: 'glob-pattern-here'
 
 Use alerts to indicate critical sections or important notes.
 
+Alerts are a Markdown extension based on the blockquote syntax that you must use to emphasize critical information in our internal documentation, instructions, prompts, or chatmodes. 
+
+They help our ai agents quickly identify important content and are formatted as follows:
+
 ```markdown
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
@@ -76,7 +80,7 @@ Use alerts to indicate critical sections or important notes.
 ### Rule Formulation Standards
 
 - Write rules as imperative statements using action verbs.
-- Begin rules with "Use", "Implement", "Ensure", "Apply", "Follow".
+- Begin rules with "Use", "Implement", "Ensure", "Apply", "Follow", or other strong action verbs.
 - Be specific and actionable in every rule statement.
 - Avoid vague terms like "appropriate", "good", "proper".
 - Eliminate conditional language like "try to", "if possible".
