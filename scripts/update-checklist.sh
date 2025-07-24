@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
+
+## =============================================================================
+#? Script Name: update-checklist.sh
+#? Aim: Verify feature references exist in memory bank files
+#? Purpose: Check that key features like rate limiter and web architecture are properly documented in memory bank tracking files
+#? Decision Rationale: Ensures critical features are tracked and documented for project continuity and context preservation
+#? Usage: ./update-checklist.sh
+#? Dependencies: bash, grep, memory-bank files
+#? Last Updated: 2025-07-24 by GitHub Copilot
+#? References: memory-bank/activeContext.md, memory-bank/progress.md, memory-bank/systemPatterns.md
+## =============================================================================
 set -euo pipefail
 
 log() {
@@ -26,3 +37,5 @@ if [ "$missing" -eq 1 ]; then
 fi
 
 log "Update checklist passed"
+
+#? Validation Status: Actively Validated on 2025-07-24

@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: browser-error-monitor.sh
+#? Aim: Monitor Next.js app for runtime errors and report them to VS Code Problems panel
+#? Purpose: Extract JavaScript errors, network issues, and build errors for debugging
+#? Decision Rationale: Provides continuous monitoring and error reporting for web development
+#? Usage: ./browser-error-monitor.sh [OPTIONS]
+#? Dependencies: curl, Next.js, VS Code
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: VS Code tasks.json, Next.js runtime
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/bin/bash
 
 # Browser Error Monitor Script

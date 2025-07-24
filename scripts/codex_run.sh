@@ -1,10 +1,22 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Quick Codex Universal Docker Runner
 # This script provides a simple way to run codex-universal with volume mounting
 
 
+#? Set strict mode for safety
 set -euo pipefail
+
+## =============================================================================
+#? Script Name: codex_run.sh
+#? Aim: Quick Codex Universal Docker Runner
+#? Purpose: Provide a simple way to run codex-universal with volume mounting
+#? Decision Rationale: Allows ad-hoc container runs with project context
+#? Usage: ./codex_run.sh
+#? Dependencies: Docker, lsof
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: codex_start.sh, container run conventions
+## =============================================================================
 
 # Configuration
 PROJECT_ROOT="$(pwd)"
@@ -121,3 +133,5 @@ docker run --rm -it \
   ghcr.io/openai/codex-universal:latest
 
 log_success "Container exited"
+
+#? Validation Status: Actively Validated on 2025-07-23

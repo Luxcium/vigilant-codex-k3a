@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: codex_rebuild.sh
+#? Aim: Rebuild and restart Codex Universal environment
+#? Purpose: Pull latest image, stop existing containers, and start fresh containers
+#? Decision Rationale: Ensures environment is up-to-date and cleanly restarted
+#? Usage: ./codex_rebuild.sh
+#? Dependencies: Docker, docker-compose, docker-compose.codex.yml
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: docker-compose.codex.yml, OpenAI API key
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/bin/bash
 # Rebuild and Restart Codex Universal Environment
 

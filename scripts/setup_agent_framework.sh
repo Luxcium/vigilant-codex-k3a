@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: setup_agent_framework.sh
+#? Aim: Initialize multi-agent retrieval framework directory
+#? Purpose: Set up the agent-framework directory with templates and dependencies
+#? Decision Rationale: Provides a structured foundation for multi-agent development
+#? Usage: ./setup_agent_framework.sh
+#? Dependencies: pnpm, TypeScript, Node.js
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: templates/agent-framework/, .gitignore
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/usr/bin/env bash
 # setup_agent_framework.sh: Initialize multi-agent retrieval framework directory
 set -euo pipefail

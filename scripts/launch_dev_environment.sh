@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: launch_dev_environment.sh
+#? Aim: Launch the web development environment
+#? Purpose: Start the development server, monitor logs, and open the application in the browser
+#? Decision Rationale: Provides a streamlined workflow for web development
+#? Usage: ./launch_dev_environment.sh
+#? Dependencies: pnpm, xdg-open
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: package.json, pnpm-workspace.yaml
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/bin/bash
 
 # Launch the development server

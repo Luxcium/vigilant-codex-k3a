@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: analyze-test-structure.sh
+#? Aim: Analyze and organize test structure for 1:1 mapping with source code
+#? Purpose: Ensure comprehensive test coverage and create missing test directories
+#? Decision Rationale: Provides a structured approach to test creation and validation
+#? Usage: ./analyze-test-structure.sh
+#? Dependencies: Node.js, pnpm, eslint, TypeScript
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: src/, src/tests/, package.json
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/bin/bash
 
 # Test Structure Analysis and Organization Script

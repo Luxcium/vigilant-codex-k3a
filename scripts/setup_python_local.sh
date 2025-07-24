@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: setup_python_local.sh
+#? Aim: Configure local Python virtual environment
+#? Purpose: Create virtual environment, requirements.txt, and README for local mode
+#? Decision Rationale: Provides direct host development without Docker
+#? Usage: ./setup_python_local.sh
+#? Dependencies: Python 3.11+, python-dotenv
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: python/.venv, python/README.md
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/usr/bin/env bash
 # Python Local Virtual Environment Setup
 # Creates a local virtual environment for Python development

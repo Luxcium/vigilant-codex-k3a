@@ -1,24 +1,13 @@
-## =============================================================================
-#? Script Name: setup_python_docker_isolated.sh
-#? Aim: Configure Docker isolated Python environment
-#? Purpose: Create Dockerfile, requirements.txt, and .dockerignore for isolated mode
-#? Decision Rationale: Provides complete isolation for Python development
-#? Usage: ./setup_python_docker_isolated.sh
-#? Dependencies: Docker, Python
-#? Last Updated: 2025-07-23 by GitHub Copilot
-#? References: python/Dockerfile, python/README.md
-## =============================================================================
+#!/bin/bash
+# Python Docker Isolated Environment Setup
+# Creates a fully isolated Docker environment for Python development
 
-#? Validation Status: Actively Validated on 2025-07-23
+set -e
 
-#!/usr/bin/env bash
-set -euo pipefail
-
-# ARCHIVED: This script has been consolidated into setup_python_env.sh
-echo "This script has been archived and consolidated into setup_python_env.sh"
-echo "Use: ./setup_python_env.sh --mode docker_isolated"
-echo "Original functionality preserved in archives/setup_python_docker_isolated.sh"
-exit 1
+# Import environment variables from main script
+PYTHON_DIR="${PYTHON_DIR:-$(cd "$(dirname "${BASH_SOURCE[0]}")/../python" && pwd)}"
+PYTHON_VERSION="${PYTHON_VERSION:-3.11}"
+PROJECT_NAME="${PROJECT_NAME:-my-python-app}"
 
 # Colors for output
 RED='\033[0;31m'

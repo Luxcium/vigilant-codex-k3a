@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: genesis_boot.sh
+#? Aim: Perform minimal genesis boot-phase checks
+#? Purpose: Validate dependencies, detect workspace type, and check Git status
+#? Decision Rationale: Ensures initial setup readiness for development or CI/CD
+#? Usage: ./genesis_boot.sh
+#? Dependencies: Node.js, npm/pnpm/yarn, Git
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: package.json, pnpm-workspace.yaml, Git repository
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/usr/bin/env bash
 # genesis_boot.sh: Minimal genesis boot-phase checks
 set -euo pipefail

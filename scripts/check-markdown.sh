@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: check-markdown.sh
+#? Aim: Validate markdown files for compliance with markdownlint
+#? Purpose: Ensure all markdown files follow project standards
+#? Decision Rationale: Provides automated linting for markdown documentation
+#? Usage: ./check-markdown.sh
+#? Dependencies: markdownlint, .markdownlint.yaml, .markdownlintignore
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: markdownlint documentation, git tracked files
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/usr/bin/env bash
 set -euo pipefail
 

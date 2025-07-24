@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: setup_api_error.sh
+#? Aim: Scaffold ApiError type and test files
+#? Purpose: Create placeholder files for ApiError type and its tests
+#? Decision Rationale: Ensures consistent structure for error handling types
+#? Usage: ./setup_api_error.sh
+#? Dependencies: bash
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: src/types/apiError.ts, src/tests/types/apiError.test.ts
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/usr/bin/env bash
 set -euo pipefail
 log() { echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] $1"; }

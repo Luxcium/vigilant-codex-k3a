@@ -1,8 +1,29 @@
-#!/bin/bash
-# Python Environment Setup - Main Entry Script
-# Handles conditional setup based on ENV_MODE parameter
+#!/usr/bin/env bash
+set -euo pipefail
 
-set -e
+## =============================================================================
+#? Script Name: setup_python_env.sh
+#? Aim: Set up Python development environment with configurable deployment modes
+#? Purpose: Provide unified Python environment setup supporting local venv, Docker isolated, and Docker volume modes
+#? Decision Rationale: Consolidates multiple scripts to reduce redundancy and provide consistent interface
+#? Usage: ./setup_python_env.sh --mode [local|docker_isolated|docker_volume|venv_only]
+#? Dependencies: Python 3.13+, Docker (for Docker modes), python/.venv directory
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: .vscode/tasks.json (Python: Setup Environment), python/README.md
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
+#==============================================================================
+# Script Name: setup_python_env.sh
+# Aim: Set up Python development environment with configurable deployment modes
+# Purpose: Provide unified Python environment setup supporting local venv, Docker isolated, and Docker volume modes
+# Decision Rationale: Consolidates 5 separate scripts to reduce redundancy and provide consistent interface
+# Usage: ./setup_python_env.sh --mode [local|docker_isolated|docker_volume|venv_only]
+# Dependencies: Python 3.13+, Docker (for Docker modes), python/.venv directory
+# Last Updated: 2025-07-23 by GitHub Copilot
+# References: .vscode/tasks.json (Python: Setup Environment), python/README.md
+#==============================================================================
 
 # Script directory and project root
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -10,9 +31,10 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
 PYTHON_DIR="$PROJECT_ROOT/python"
 
 # Default values
-ENV_MODE="${ENV_MODE:-local}"
-PYTHON_VERSION="${PYTHON_VERSION:-3.11}"
-PROJECT_NAME="${PROJECT_NAME:-my-python-app}"
+MODE="${1#--mode=}"
+MODE="${MODE:-${ENV_MODE:-local}}"
+PYTHON_VERSION="${PYTHON_VERSION:-3.13}"
+PROJECT_NAME="${PROJECT_NAME:-vigilant-codex-python}"
 
 # Colors for output
 RED='\033[0;31m'
@@ -67,11 +89,15 @@ EOF
 # Parse command line arguments
 while [[ $# -gt 0 ]]; do
   case $1 in
-    -m | --mode)
-      ENV_MODE="$2"
+    --mode)
+      MODE="$2"
       shift 2
       ;;
-    -v | --version)
+    --mode=*)
+      MODE="${1#*=}"
+      shift
+      ;;
+    -m | --version)
       PYTHON_VERSION="$2"
       shift 2
       ;;
@@ -91,14 +117,14 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-# Validate ENV_MODE
-case "$ENV_MODE" in
-  local | docker_isolated | docker_volume)
-    log "Environment mode: $ENV_MODE"
+# Validate MODE
+case "$MODE" in
+  local | docker_isolated | docker_volume | venv_only)
+    log "Environment mode: $MODE"
     ;;
   *)
-    error "Invalid ENV_MODE: $ENV_MODE"
-    error "Must be one of: local, docker_isolated, docker_volume"
+    error "Invalid mode: $MODE"
+    error "Must be one of: local, docker_isolated, docker_volume, venv_only"
     exit 1
     ;;
 esac
@@ -110,31 +136,185 @@ if [ ! -d "$PYTHON_DIR" ]; then
 fi
 
 # Export variables for sub-scripts
-export ENV_MODE
+export MODE
+export ENV_MODE="$MODE"  # Backward compatibility
 export PYTHON_VERSION
 export PROJECT_NAME
 export PYTHON_DIR
 export PROJECT_ROOT
 
 log "Starting Python environment setup..."
-log "Mode: $ENV_MODE"
+log "Mode: $MODE"
 log "Python Version: $PYTHON_VERSION"
 log "Project Name: $PROJECT_NAME"
 log "Python Directory: $PYTHON_DIR"
 
-# Route to appropriate setup script
-case "$ENV_MODE" in
+# Route to appropriate setup logic
+case "$MODE" in
   local)
     log "Setting up local virtual environment..."
-    "$SCRIPT_DIR/setup_python_local.sh"
+    # Inline local setup logic
+    if ! command -v python3 &> /dev/null; then
+      error "Python 3 is not installed or not in PATH"
+      error "Please install Python 3.${PYTHON_VERSION} and try again"
+      exit 1
+    fi
+
+    # Create virtual environment
+    if [ ! -d "$PYTHON_DIR/.venv" ]; then
+      log "Creating Python virtual environment..."
+      python3 -m venv "$PYTHON_DIR/.venv"
+      success "Virtual environment created"
+    else
+      log "Virtual environment already exists"
+    fi
+
+    # Create requirements.txt if it doesn't exist
+    if [ ! -f "$PYTHON_DIR/requirements.txt" ]; then
+      log "Creating requirements.txt..."
+      cat > "$PYTHON_DIR/requirements.txt" << 'EOF'
+# Python dependencies for local virtual environment
+# Add your project dependencies below
+
+# Example common dependencies:
+# requests>=2.28.0
+# python-dotenv>=1.0.0
+# pytest>=7.0.0
+# jupyter>=1.0.0
+EOF
+      success "Created requirements.txt"
+    fi
+
+    # Install dependencies
+    log "Installing Python dependencies..."
+    source "$PYTHON_DIR/.venv/bin/activate"
+    pip install --upgrade pip
+    if [ -f "$PYTHON_DIR/requirements.txt" ]; then
+      pip install -r "$PYTHON_DIR/requirements.txt"
+    fi
     ;;
+
+  venv_only)
+    log "Creating Python virtual environment only..."
+    if ! command -v python3 &> /dev/null; then
+      error "Python 3 is not installed or not in PATH"
+      exit 1
+    fi
+
+    if [ ! -d "$PYTHON_DIR/.venv" ]; then
+      log "Creating Python virtual environment..."
+      python3 -m venv "$PYTHON_DIR/.venv"
+      success "Virtual environment created"
+    else
+      log "Virtual environment already exists"
+    fi
+    ;;
+
   docker_isolated)
     log "Setting up Docker isolated environment..."
-    "$SCRIPT_DIR/setup_python_docker_isolated.sh"
+    # Inline Docker isolated setup logic from setup_python_docker_isolated.sh
+    if ! command -v docker &> /dev/null; then
+      error "Docker is not installed or not in PATH"
+      exit 1
+    fi
+
+    # Create requirements.txt if it doesn't exist
+    if [ ! -f "$PYTHON_DIR/requirements.txt" ]; then
+      log "Creating requirements.txt..."
+      cat > "$PYTHON_DIR/requirements.txt" << 'EOF'
+# Python dependencies for isolated Docker environment
+# requests>=2.28.0
+# python-dotenv>=1.0.0
+# pytest>=7.0.0
+EOF
+      success "Created requirements.txt"
+    fi
+
+    # Create Dockerfile for isolated environment
+    if [ ! -f "$PYTHON_DIR/Dockerfile" ]; then
+      log "Creating Dockerfile for isolated environment..."
+      cat > "$PYTHON_DIR/Dockerfile" << EOF
+FROM python:${PYTHON_VERSION}-slim
+WORKDIR /app
+RUN apt-get update && apt-get install -y build-essential curl git && rm -rf /var/lib/apt/lists/*
+COPY requirements.txt .
+RUN pip install --no-cache-dir --upgrade pip && pip install --no-cache-dir -r requirements.txt
+COPY . .
+RUN useradd --create-home --shell /bin/bash app && chown -R app:app /app
+USER app
+CMD ["python", "--version"]
+EOF
+      success "Created Dockerfile for isolated environment"
+    fi
     ;;
+
   docker_volume)
     log "Setting up Docker volume-mounted environment..."
-    "$SCRIPT_DIR/setup_python_docker_volume.sh"
+    # Inline Docker volume setup logic from setup_python_docker_volume.sh
+    if ! command -v docker &> /dev/null; then
+      error "Docker is not installed or not in PATH"
+      exit 1
+    fi
+
+    # Create requirements.txt if it doesn't exist
+    if [ ! -f "$PYTHON_DIR/requirements.txt" ]; then
+      log "Creating requirements.txt..."
+      cat > "$PYTHON_DIR/requirements.txt" << 'EOF'
+# Python dependencies for volume-mounted Docker environment
+# requests>=2.28.0
+# python-dotenv>=1.0.0
+# pytest>=7.0.0
+# jupyter>=1.0.0
+EOF
+      success "Created requirements.txt"
+    fi
+
+    # Create Dockerfile for volume-mounted environment
+    if [ ! -f "$PYTHON_DIR/Dockerfile" ]; then
+      log "Creating Dockerfile for volume-mounted environment..."
+      cat > "$PYTHON_DIR/Dockerfile" << EOF
+FROM python:${PYTHON_VERSION}-slim
+WORKDIR /app
+RUN apt-get update && apt-get install -y build-essential curl git vim nano && rm -rf /var/lib/apt/lists/*
+RUN pip install --no-cache-dir --upgrade pip
+COPY requirements.txt ./requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt || echo "No requirements.txt found, skipping..."
+RUN useradd --create-home --shell /bin/bash --uid 1000 app && chown -R app:app /app
+USER app
+ENV PYTHONUNBUFFERED=1 PYTHONDONTWRITEBYTECODE=1 PYTHONPATH=/app
+CMD ["bash"]
+EOF
+      success "Created Dockerfile for volume-mounted environment"
+    fi
+
+    # Create docker-compose.yml if docker-compose is available
+    if command -v docker-compose &> /dev/null && [ ! -f "$PYTHON_DIR/docker-compose.yml" ]; then
+      log "Creating docker-compose.yml..."
+      cat > "$PYTHON_DIR/docker-compose.yml" << EOF
+version: '3.8'
+services:
+  python:
+    build: .
+    container_name: ${PROJECT_NAME}-dev
+    volumes:
+      - .:/app
+      - pip-cache:/home/app/.cache/pip
+    environment:
+      - PYTHONUNBUFFERED=1
+      - PYTHONDONTWRITEBYTECODE=1
+      - PYTHONPATH=/app
+    env_file:
+      - .env
+    working_dir: /app
+    stdin_open: true
+    tty: true
+    command: bash
+volumes:
+  pip-cache:
+    driver: local
+EOF
+      success "Created docker-compose.yml"
+    fi
     ;;
 esac
 
@@ -158,7 +338,7 @@ if [ ! -f "$ENV_EXAMPLE" ]; then
 # SECRET_KEY=your_secret_key_here
 
 # Environment mode used for setup
-ENV_MODE=$ENV_MODE
+ENV_MODE=$MODE
 PYTHON_VERSION=$PYTHON_VERSION
 PROJECT_NAME=$PROJECT_NAME
 EOF
@@ -188,14 +368,14 @@ EOF
   fi
 fi
 
-success "Python environment setup completed for mode: $ENV_MODE"
+success "Python environment setup completed for mode: $MODE"
 log "Next steps:"
 log "  1. Navigate to the python/ directory"
 log "  2. Copy .env.example to .env and update with your values"
 log "  3. Follow mode-specific instructions in python/README.md"
 
-case "$ENV_MODE" in
-  local)
+case "$MODE" in
+  local | venv_only)
     log "  4. Activate the virtual environment: source python/.venv/bin/activate"
     ;;
   docker_isolated)

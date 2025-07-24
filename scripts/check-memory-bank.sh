@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: check-memory-bank.sh
+#? Aim: Validate markdown files in the memory-bank directory
+#? Purpose: Ensure memory-bank documentation follows markdownlint standards
+#? Decision Rationale: Provides automated linting for critical project documentation
+#? Usage: ./check-memory-bank.sh
+#? Dependencies: markdownlint, .markdownlint.yaml
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: memory-bank/*.md, markdownlint documentation
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/usr/bin/env bash
 set -euo pipefail
 

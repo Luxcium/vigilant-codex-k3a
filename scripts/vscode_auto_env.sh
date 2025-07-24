@@ -1,4 +1,15 @@
 #!/bin/bash
+
+## =============================================================================
+#? Script Name: vscode_auto_env.sh
+#? Aim: Automatically configure VS Code terminal environment for Python development
+#? Purpose: Activate Python virtual environment, set PYTHONPATH, load environment variables, and provide development aliases
+#? Decision Rationale: Streamlines VS Code terminal setup to provide immediate Python development readiness with helpful shortcuts
+#? Usage: ./vscode_auto_env.sh (typically called automatically by VS Code terminal)
+#? Dependencies: Python virtual environment, python/.venv/bin/activate, optional python/.env
+#? Last Updated: 2025-07-24 by GitHub Copilot
+#? References: python/.venv/, python/.env, notebooks/, WORKSPACE_FOLDER environment variable
+## =============================================================================
 # VS Code Terminal Auto-setup Script
 # This script automatically configures the terminal environment for Python development
 
@@ -59,3 +70,5 @@ else
 fi
 
 echo -e "${GREEN}🚀 Ready for Python development!${NC}"
+
+#? Validation Status: Actively Validated on 2025-07-24

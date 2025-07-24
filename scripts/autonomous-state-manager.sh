@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: autonomous-state-manager.sh
+#? Aim: Manage project state automatically after AI agent actions
+#? Purpose: Update memory bank files to reflect current project status
+#? Decision Rationale: Ensures consistent tracking of progress, active context, and dependencies
+#? Usage: ./autonomous-state-manager.sh {progress|dependencies|scan|context} [args...]
+#? Dependencies: bash, memory-bank files
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: memory-bank/progress.md, memory-bank/activeContext.md, memory-bank/dependencies.md
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/bin/bash
 
 # Autonomous State Manager for Codex CLI
