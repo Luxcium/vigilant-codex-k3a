@@ -2,6 +2,29 @@
 
 This folder contains utility scripts for setting up, validating, and maintaining the repository.
 
+## Script Optimization and Maintenance Protocol ⚡ **ONGOING EFFORT**
+
+**CRITICAL MANDATE**: All scripts must be continuously optimized, consolidated, and maintained with the following principles:
+
+### Script Consolidation Strategy
+- **Target**: Continuously reduce script quantity while maintaining full functionality
+- **Method**: Strategic consolidation, parameter-driven interfaces, elimination of redundancy  
+- **Achievement**: Recently reduced from 41 scripts to 22 scripts (46% reduction)
+- **Goal**: Continue optimization through monthly reviews and usage pattern analysis
+
+### Documentation Standards (MANDATORY)
+- **Header Format**: 10-line standardized header with script name, aim, purpose, decision rationale, usage, dependencies, last updated, references
+- **Inline Documentation**: Critical sections documented throughout with purpose-driven comments
+- **Validation Status**: Every script ends with `#? Validation Status: Actively Validated on [DATE]`
+- **README Synchronization**: This file MUST be updated whenever scripts are added, modified, or removed
+
+### Maintenance Requirements
+- **Monthly Reviews**: Analyze usage patterns and identify consolidation opportunities
+- **Flow Optimization**: Remove redundant operations and streamline logic
+- **Dependency Reduction**: Minimize external and cross-script dependencies  
+- **Soul Preservation**: Maintain comprehensive documentation that preserves script intent and rationale
+- **Automated Checks**: Header format compliance and README synchronization validation
+
 Every `.sh` file must start with comments describing its aim and purpose.
 Whenever a script is added or modified, update this README to keep the script index current.
 
@@ -236,8 +259,18 @@ The setup is configured in:
 
    and exit non-zero if lint errors occur.
    
-6. **Duplicate Detection**
-   Periodically review scripts for overlapping functionality and consolidate them when possible.
+6. **Duplicate Detection and Consolidation**
+   Continuously review scripts for overlapping functionality and consolidate them systematically.
+   Monthly reviews required to identify consolidation opportunities and optimize script flow.
+
+## Future Consolidation Targets ⚡
+
+**Identified for Next Optimization Phase**:
+- **Web Environment Scripts**: Evaluate merging `setup_web_env.sh` and `setup_web_dev_environment.sh`
+- **Validation Scripts**: Consider consolidating `validate-instructions.sh` and `validate-prompt.sh`  
+- **Agent Setup Scripts**: Assess consolidation of `setup_agent_framework.sh` and `setup_agent_system.sh`
+- **Questrade Scripts**: Merge `setup_questrade_sdk_core.sh` and `setup_questrade_types.sh` if overlap exists
+- **Generate Scripts**: Consolidate `generate-instruction-file.sh` and `generate-prompt-file.sh` into unified generator
 
 ## Script Index by Function
 

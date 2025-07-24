@@ -88,6 +88,19 @@ description: 'Comprehensive standards for file and directory organization, namin
 - Implement bidirectional tracking for all file relationships
 - Document file organization changes in appropriate memory bank files
 
+## Script Management and Optimization Requirements
+
+- Continuously reduce script quantity through strategic consolidation while maintaining functionality
+- Apply comprehensive 10-line header documentation to all scripts with standardized format
+- Update `scripts/README.md` automatically whenever scripts are added, modified, or removed  
+- Include inline documentation throughout scripts explaining purpose of critical sections
+- Add validation status marker on final line: `#? Validation Status: Actively Validated on [DATE]`
+- Conduct monthly script reviews to identify consolidation opportunities and dependency reduction
+- Optimize script flow by removing redundant operations and streamlining logic
+- Maintain "soul and state" of each script through comprehensive documentation that preserves intent
+- Track script usage patterns to prioritize consolidation of rarely-used scripts
+- Implement automated maintenance checks for header format compliance and README synchronization
+
 ## Quality Assurance
 
 - Validate file organization follows project standards

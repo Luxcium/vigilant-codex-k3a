@@ -153,6 +153,59 @@ detected and keep this list in sync with actual folders.
 - **Health Check Pattern** - Comprehensive service validation with proper timeouts and retries
 - **Service Discovery Pattern** - Custom networks with descriptive service names
 
+### Script Architecture and Maintenance Principles
+
+#### Script Consolidation and Optimization Strategy ✅ **ONGOING EFFORT**
+
+**Decision**: Continuously reduce script quantity through consolidation while maintaining functionality and improving maintainability
+**Rationale**: Fewer scripts = less maintenance overhead, clearer dependencies, better documentation, easier troubleshooting
+**Implementation**: Systematic script analysis with consolidation opportunities identification and execution
+**Current Status**: Recently consolidated 41 scripts into 22 scripts (46% reduction) with standardized documentation
+
+#### Script Documentation and Maintenance Standards ✅ **MANDATORY**
+
+**Decision**: All scripts must have comprehensive header documentation and stateful README maintenance
+**Rationale**: Self-documenting code improves maintainability, reduces onboarding time, enables better automation
+**Implementation**: 
+- **Header Requirements**: 10-line standardized header with script name, aim, purpose, decision rationale, usage, dependencies, last updated, references
+- **Validation Status**: Every script ends with `#? Validation Status: Actively Validated on [DATE]`
+- **README Synchronization**: `scripts/README.md` must be updated whenever scripts are added, modified, or removed
+- **Inline Documentation**: Critical sections documented with purpose-driven comments throughout
+
+#### Ongoing Script Optimization Protocol ✅ **CONTINUOUS**
+
+**Decision**: Establish maintenance tasks to continuously optimize script flow and reduce dependencies
+**Rationale**: Scripts accumulate over time; regular optimization prevents bloat and improves efficiency
+**Implementation**:
+- **Monthly Reviews**: Analyze script usage patterns and identify consolidation opportunities
+- **Dependency Reduction**: Minimize external dependencies and cross-script dependencies
+- **Flow Optimization**: Streamline script logic and remove redundant operations
+- **Auto-Documentation**: Maintain soul and state of each script through comprehensive documentation
+
+#### Script Consolidation History and Future Plans
+
+**Previous Consolidation Achievements**:
+- ✅ **setup_python_env.sh** - Consolidated 3 Python environment scripts (local, docker_isolated, docker_volume)
+- ✅ **verify-all.sh** - Consolidated 5 validation scripts into unified interface
+- ✅ **setup_ts_sdk.sh** - Consolidated 6 TypeScript/SDK setup scripts with modular selection
+- ✅ **Docker lifecycle scripts** - Enhanced with comprehensive documentation headers
+- ✅ **Total Reduction**: From 41 scripts to 22 scripts (46% reduction)
+
+**Future Consolidation Targets**:
+- **Web Environment Scripts** - Consider consolidating `setup_web_env.sh` and `setup_web_dev_environment.sh`
+- **Validation Scripts** - Potential merge of `validate-instructions.sh` and `validate-prompt.sh`
+- **Agent Setup Scripts** - Evaluate consolidation of `setup_agent_framework.sh` and `setup_agent_system.sh`
+- **Questrade Scripts** - Merge `setup_questrade_sdk_core.sh` and `setup_questrade_types.sh` if functionality overlaps
+
+#### Script Maintenance Automation
+
+**Decision**: Implement automated maintenance checks and documentation updates
+**Implementation**:
+- **Header Validation**: Automated checks for proper header format and validation status
+- **README Synchronization**: Automatic detection of script changes and README update requirements  
+- **Dependency Analysis**: Regular analysis of script interdependencies and optimization opportunities
+- **Usage Tracking**: Monitor which scripts are frequently used vs. rarely accessed for consolidation priorities
+
 ### Script Automation Patterns
 
 - **Idempotent Operation Pattern** - Scripts safely re-runnable without side effects
