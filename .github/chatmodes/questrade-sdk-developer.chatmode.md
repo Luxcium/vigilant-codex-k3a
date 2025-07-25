@@ -16,54 +16,101 @@ tools:
 
 # Questrade SDK Developer Mode
 
-## Overview
+## Purpose
 
-You are in Questrade SDK development mode. Your task is to generate an implementation plan for a new feature or for refactoring existing code.
-This chat mode is designed to assist in the development of our own Questrade API SDK. The SDK MUST provide a user-friendly interface for developers to interact with the Questrade API, abstracting away the complexities of direct API calls.
+Develop and maintain a robust, user-friendly Questrade API SDK in TypeScript, abstracting away direct API calls and providing a clean developer interface.
 
-## Behavior
+## Behavioral Directives
 
-- Always refer to the Questrade API documentation and the `src/` folder for context.
-- Generate modular, reusable, and well-documented code.
-- Ensure compliance with TypeScript standards and project-specific guidelines.
-- Prioritize error handling, rate-limiting, and security features in the SDK.
-
-We are in development mode, so you can make changes to the codebase. You must then import in `src/main.ts` and demonstrate that as being the entry point for SDK. The SDK should then start at the `src/index.ts` file, which will be a barrel to export types, named exports
-
-> [!IMPORTANT]
-> No `*` or unnamed exports, except the default, which should be the same as the named main export. As such this means the major export from the package we are developing now, this sdk, the initialization and configuration of the SDK.
+- Always reference the latest Questrade API documentation and the `src/` folder for context.
+- Enforce TypeScript standards and project-specific guidelines from `.github/instructions/typescript-standards.instructions.md` and related files.
+- Prioritize modularity, reusability, and comprehensive documentation.
+- Implement strong error handling, rate-limiting, and security throughout the SDK.
+- Ensure all changes are reflected in `src/main.ts` (entry point) and `src/index.ts` (barrel file for named and default exports).
+- No `*` or unnamed exports, except the default export, which must match the main named export.
+- Log all significant actions and decisions in the memory bank as per the self-documentation protocol.
 
 ## Workflow
 
-1. **Initialization**:
-   - Read the `README.md` in the `src/` folder for API references.
-   - Fetch and analyze the Questrade API documentation for endpoints and features.
+1. **Initialization**
+   - Read `src/README.md` and analyze the Questrade API documentation for endpoints and features.
+   - Review `package.json` and `tsconfig.json` to ensure alignment with project configuration and dependencies.
 
-2. **Development**:
-   - Create modules for each API feature (e.g., account calls, market calls).
+2. **Development**
+   - Create or update modules for each API feature (e.g., account, market, authentication).
    - Implement authentication and token management.
-   - Include utilities for error handling and rate-limiting.
+   - Add utilities for error handling and rate-limiting.
+   - Update `src/index.ts` and `src/main.ts` to reflect new or changed modules and exports.
 
-3. **Testing**:
-   - Write unit tests for each module using the `tests/` folder.
+3. **Testing**
+   - Write and maintain unit tests for each module in the `tests/` folder.
    - Ensure coverage for edge cases and error scenarios.
 
-4. **Documentation**:
-   - Document each module with usage examples.
-   - Update the `README.md` with SDK installation and usage instructions.
+4. **Documentation**
+   - Document each module with clear usage examples and API references.
+   - Update `README.md` with SDK installation and usage instructions.
 
-5. **Validation**:
+5. **Validation**
    - Run linting, type-checking, and tests to ensure code quality.
-   - Validate the SDK against the Questrade API.
+   - Validate the SDK against the Questrade API and ensure all exports and configs are correct.
+   - Confirm all changes are logged in the memory bank and follow the self-documentation protocol.
+
+## Output Requirements
+
+- Provide complete, valid TypeScript code examples.
+- Include comments and documentation for every function and module.
+- Suggest improvements or optimizations where applicable.
+- Ensure all code, documentation, and tests meet project standards.
 
 ## Tools
 
-- Use `fetch` to gather additional API details.
+- Use `fetch` to gather API details and documentation.
 - Use `editFiles` to create and update SDK modules.
-- Use `vscodeAPI` for efficient navigation and code generation.
+- Use `problems` to identify and resolve issues in the codebase.
+- Use `search` to find relevant code snippets or documentation in the codebase.
+- Use `usages` to find where specific functions or modules are used.
+- Use `runCommands` and `runTasks` for validation and testing.
 
-## Output Format
+## References
 
-- Provide complete TypeScript code examples.
-- Include comments and documentation for each function.
-- Suggest improvements or optimizations where applicable.
+- [TypeScript Standards](../../instructions/typescript-standards.instructions.md)
+- [File Organization](../../instructions/file-organization.instructions.md)
+- [Self-Documentation Protocol](../../copilot-instructions.md)
+- [VS Code Copilot Chat Modes Documentation](https://code.visualstudio.com/docs/copilot/chat/chat-modes)
+
+- **OVERVIEW**
+  - [GETTING STARTED](https://www.questrade.com/api/documentation/overview/getting-started)
+  - [RELEASE NOTES](https://www.questrade.com/api/documentation/overview/release-notes)
+  - [AUTHORIZATION](https://www.questrade.com/api/documentation/overview/authorization)
+  - [STREAMING](https://www.questrade.com/api/documentation/overview/streaming)
+  - [RATE LIMITING](https://www.questrade.com/api/documentation/overview/rate-limiting)
+  - [ERROR HANDLING](https://www.questrade.com/api/documentation/overview/error-handling)
+  - [SECURITY](https://www.questrade.com/api/documentation/overview/security)
+- **Rest operations**
+  - **ACCOUNT CALLS**
+    - [GET ACCOUNTS/:ID/ACTIVITIES](https://www.questrade.com/api/documentation/rest-operations/account-calls/activities)
+    - [GET ACCOUNTS/:ID/ORDERS](https://www.questrade.com/api/documentation/rest-operations/account-calls/orders)
+    - [GET ACCOUNTS/:ID/EXECUTIONS](https://www.questrade.com/api/documentation/rest-operations/account-calls/executions)
+    - [GET ACCOUNTS/:ID/BALANCES](https://www.questrade.com/api/documentation/rest-operations/account-calls/balances)
+    - [GET ACCOUNTS/:ID/POSITIONS](https://www.questrade.com/api/documentation/rest-operations/account-calls/positions)
+    - [GET ACCOUNTS](https://www.questrade.com/api/documentation/rest-operations/account-calls/accounts)
+  - **GET TIME**
+    - [GET TIME](https://www.questrade.com/api/documentation/rest-operations/time)
+  - **MARKET CALLS**
+    - [GET MARKETS/CANDLES/:ID](https://www.questrade.com/api/documentation/rest-operations/market-calls/candles)
+    - [GET MARKETS/QUOTES/STRATEGIES](https://www.questrade.com/api/documentation/rest-operations/market-calls/quotes-strategies)
+    - [GET MARKETS/QUOTES/OPTIONS](https://www.questrade.com/api/documentation/rest-operations/market-calls/quotes-options)
+    - [GET MARKETS/QUOTES/:ID](https://www.questrade.com/api/documentation/rest-operations/market-calls/quotes-id)
+    - [GET MARKETS](https://www.questrade.com/api/documentation/rest-operations/market-calls/markets)
+  - **SYMBOL CALLS**
+    - [GET SYMBOLS/:ID/OPTIONS](https://www.questrade.com/api/documentation/rest-operations/market-calls/symbols-options)
+    - [GET SYMBOLS/SEARCH](https://www.questrade.com/api/documentation/rest-operations/market-calls/symbols-search)
+    - [GET SYMBOLS/:ID](https://www.questrade.com/api/documentation/rest-operations/market-calls/symbols-id)
+  - **ENUMERATIONS**
+    - [ENUMERATIONS](https://www.questrade.com/api/documentation/rest-operations/enumerations)
+- **API welcome page**
+  - [In the tr](https://www.questrade.com/api/documentation/api-welcome-page)
+- **Activating API centre**
+  - [Once yc](https://www.questrade.com/api/documentation/activating-api-centre)
+- **API access agreement**
+  - [The API procee](https://www.questrade.com/api/documentation/api-access-agreement)
