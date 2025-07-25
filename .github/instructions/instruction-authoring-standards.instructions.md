@@ -1,5 +1,5 @@
 ---
-applyTo: '**'
+applyTo: '**/*.instructions.md'
 description: 'Comprehensive standards for authoring instruction files, including structure, content, validation, and error prevention.'
 ---
 

@@ -51,27 +51,8 @@ Ensure that all generated code is immediately executable and free from non-funct
 
 ## Applicability
 
+> [!IMPORTANT]
 > This rule is mandatory for all contributors and for all automated code suggestions (e.g., Copilot, VSCode AI, CI codegen steps).  
+
+> [!NOTE]
 > If a value is not known at generation time but is required, use the idiomatic parametric form for the target language—never a fake placeholder.
-
----
-
-## Example
-
-**Bad example** (use of placeholder that breaks code):
-
-```bash
-cp <SOURCE_PATH> <DEST_PATH>  # <-- placeholder, NOT permitted!
-```
-
-**Good example** (real values or valid parametric syntax):
-
-```bash
-# Example concrete with real paths
-cp ~/Documents/report.txt /backup/reports/
-
-# Example parametric (legitimate dynamic values)
-cp "${SOURCE_PATH}" "${DEST_PATH}"
-```
-
-_Last updated: 2025-05-31_

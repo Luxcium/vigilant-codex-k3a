@@ -1,5 +1,5 @@
 ---
-applyTo: '**/*.md'
+applyTo: '**/*.prompt.md'
 description: 'Standards for creating AI agent prompt files; covers triggers, task analysis, mode selection, and validation.'
 ---
 

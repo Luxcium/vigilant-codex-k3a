@@ -1,5 +1,7 @@
 ---
-applyTo: '**'
+mode: 'agent'
+model: 'gpt-4.1'
+tools: ['codebase', 'filesystem', 'terminal', 'vscodeAPI']
 description: 'Comprehensive standards for file and directory organization, naming, documentation, and memory bank integration across the entire project.'
 ---
 
@@ -92,7 +94,7 @@ description: 'Comprehensive standards for file and directory organization, namin
 
 - Continuously reduce script quantity through strategic consolidation while maintaining functionality
 - Apply comprehensive 10-line header documentation to all scripts with standardized format
-- Update `scripts/README.md` automatically whenever scripts are added, modified, or removed  
+- Update `scripts/README.md` automatically whenever scripts are added, modified, or removed
 - Include inline documentation throughout scripts explaining purpose of critical sections
 - Add validation status marker on final line: `#? Validation Status: Actively Validated on [DATE]`
 - Conduct monthly script reviews to identify consolidation opportunities and dependency reduction
@@ -124,39 +126,40 @@ description: 'Comprehensive standards for file and directory organization, namin
 > - Use leadership language to drive accountability and project consistency.
 > - Ensure this instruction file remains up-to-date before executing any tasks governed by file organization standards.
 
-
 ---
-0. project scripts and lifecycles for the workspace and tasks 
-scripts/
+
+0. project scripts and lifecycles for the workspace and tasks
+   scripts/
 1. Source Code & Application Logic
-src/
-prisma/
-.keys/
+   src/
+   prisma/
+   .keys/
 2. sub-project roots, UI & Client/server website Code
-web/
-python/
+   web/
+   python/
 3. Data, Prototyping & Documentation
-notebooks/
-examples/
+   notebooks/
+   examples/
 4. Build, Output & Dependencies
-dist/
-coverage/
+   dist/
+   coverage/
 5. Configuration, Metadata & Version Control
-.vscode/
-.github/
-.github/instructions/
-.github/prompts/
-.github/chatmodes/
+   .vscode/
+   .github/
+   .github/instructions/
+   .github/prompts/
+   .github/chatmodes/
 6. IMPERATIVE memory-bank/
-memory-bank/
+   memory-bank/
 7. Configuration, Alternative AI Assistants Metadata
-.clinerules/
-.codex/
+   .clinerules/
+   .codex/
 8. Miscellaneous & Version Control
-node_modules/
-.git/
-i have no clue what is this for:
-init/
-agent-framework/
-templates/
+   node_modules/
+   .git/
+   i have no clue what is this for:
+   init/
+   agent-framework/
+   templates/
+
 ---

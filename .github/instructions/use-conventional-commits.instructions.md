@@ -22,6 +22,9 @@ description: 'Mandatory conventional commit protocol with gitmoji for all commit
 
 ## Commit Types
 
+
+Chose the best candidate for the given commit:
+
 - `feat` - New features (`:sparkles:`)
 - `fix` - Bug fixes (`:bug:`, `:ambulance:` for critical)
 - `docs` - Documentation (`:memo:`)

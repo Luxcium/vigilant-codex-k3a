@@ -1,6 +1,6 @@
 ---
-applyTo: '**/*'
-description: 'Detailed instructions for browser-UI theming meta tags'
+applyTo: 'web/**'
+description: 'Detailed instructions for browser-UI theming meta tags when developing in nextjs (the web/ folder).'
 ---
 
 # Theme UI Meta Tags

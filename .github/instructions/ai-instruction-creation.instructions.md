@@ -1,5 +1,5 @@
 ---
-applyTo: '**/*.md'
+applyTo: '**/*.instructions.md'
 description: 'Standards for creating AI agent instruction files; covers triggers, scope, naming, and validation.'
 ---
 

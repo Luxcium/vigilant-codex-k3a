@@ -1,5 +1,5 @@
 ---
-applyTo: '**'
+applyTo: '**/memory-bank/**'
 ---
 
 # Self-Documentation Protocol
