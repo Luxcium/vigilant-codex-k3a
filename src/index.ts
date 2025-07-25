@@ -1,7 +1,8 @@
 // Client exports
-export { QuestradeClient } from './client/QuestradeClient';
+import { QuestradeClient } from './client/QuestradeClient';
+export { QuestradeClient, QuestradeClient as default };
 export type { QuestradeClientOptions } from './client/QuestradeClient';
-
+export { KeyManager } from './security/KeyManager';
 // Authentication interfaces and manager
 export type {
   OAuthProvider,

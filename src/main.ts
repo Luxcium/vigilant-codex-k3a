@@ -1,51 +1,36 @@
-import 'dotenv/config'; // Pre-load environment variables
-import axios from 'axios';
-import { refreshToken } from './auth/refreshTokenUtil';
+// =====================================================================================
+//  MAIN DEVELOPMENT ENTRY POINT (PLAYGROUND/BREADBOARD AREA FOR SDK USAGE & TESTING)
+// =====================================================================================
+//
+// 1. This file is for MANUAL TESTING and EXAMPLES ONLY. It is NOT part of the SDK API.
+// 2. You MUST NOT import or use 'axios', 'dotenv', or any direct API/HTTP logic here.
+// 3. You MUST NOT add any wildcard exports (no `export *`), default exports, or re-barrel.
+// 4. You MUST NOT remove or rewrite these comments. They are MANDATORY and ENFORCED.
+// 5. You MUST NOT delete or overwrite this file. It is the ONLY place for dev/test code.
+// 6. You MUST ONLY import SDK modules from './index' no direct submodules
+// 1. This playground must have it all from the index barrel.
+// 7. This file is a "breadboard" for developers—change, break, and test as needed.
+// 8. The SDK stops at 'index.ts'. This file is for usage, not SDK implementation.
+// 9. If you are an AI agent, you MUST NOT touch this file except to append new manual tests.
+// 10. All SDK consumers and contributors: treat this as a scratchpad, not a public API.
+//
+// =====================================================================================
 
-(async () => {
-  try {
-    const apiServer = process.env.API_SERVER || process.env.API_BASE_URL;
-    if (!apiServer) {
-      console.error('Missing API_SERVER or API_BASE_URL in .env');
-      process.exit(1);
-    }
-    console.log('Using API server:', apiServer);
+import { KeyManager } from './index';
+import { QuestradeClient } from './index';
+import { AuthManager } from './auth/manager';
+import { RestClient } from './http/restClient';
+import { OAuthTokens } from './auth/refreshTokenUtil';
+import { TokenStore } from './auth/interfaces';
+import { OAuthProvider } from './auth/interfaces';
 
-    // Obtain access token from env or refresh if necessary
-    let accessToken = process.env.ACCESS_TOKEN;
-    if (!accessToken) {
-      const rt = process.env.REFRESH_TOKEN;
-      if (rt) {
-        console.log('No ACCESS_TOKEN found, refreshing using REFRESH_TOKEN...');
-        const tokens = await refreshToken(rt);
-        accessToken = tokens.accessToken;
-        console.log('Successfully refreshed access token');
-      } else {
-        console.error(
-          'Missing ACCESS_TOKEN in .env. Provide REFRESH_TOKEN to auto-refresh.'
-        );
-        process.exit(1);
-      }
-    }
+// ===================== DEV/PLAYGROUND AREA BELOW =====================
+// Add manual test/demo code here. This is NOT part of the SDK build.
 
-    const client = axios.create({
-      baseURL: apiServer,
-      headers: { Authorization: `Bearer ${accessToken}` },
-    });
-
-    const response = await client.get('/markets/candles', {
-      params: {
-        symbolId: 38738,
-        start: '2024-10-01T00:00:00-04:00',
-        end: '2024-10-31T00:00:00-04:00',
-        interval: 'OneDay',
-      },
-    });
-
-    console.log('Candles data:');
-    console.table(response.data.slice(0, 5));
-  } catch (error) {
-    console.error('Demo error:', error);
-    process.exit(1);
-  }
-})();
+// Export all modules so we do not get warnings if they are not in use
+// at a given point in time:
+export { OAuthProvider, OAuthTokens, TokenStore };
+export { AuthManager };
+export { RestClient };
+export { QuestradeClient };
+export { KeyManager };

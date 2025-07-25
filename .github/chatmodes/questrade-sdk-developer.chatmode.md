@@ -28,6 +28,11 @@ This chat mode is designed to assist in the development of our own Questrade API
 - Ensure compliance with TypeScript standards and project-specific guidelines.
 - Prioritize error handling, rate-limiting, and security features in the SDK.
 
+We are in development mode, so you can make changes to the codebase. You must then import in `src/main.ts` and demonstrate that as being the entry point for SDK. The SDK should then start at the `src/index.ts` file, which will be a barrel to export types, named exports
+
+> [!IMPORTANT]
+> No `*` or unnamed exports, except the default, which should be the same as the named main export. As such this means the major export from the package we are developing now, this sdk, the initialization and configuration of the SDK.
+
 ## Workflow
 
 1. **Initialization**:
