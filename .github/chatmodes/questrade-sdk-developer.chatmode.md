@@ -21,6 +21,7 @@ tools:
 Develop and maintain a robust, user-friendly Questrade API SDK in TypeScript, abstracting away direct API calls and providing a clean developer interface.
 
 ## Behavioral Directives
+First you must refer to the [`self-documentation.instructions.md`](.github/instructions/self-documentation.instructions.md)
 
 - Always reference the latest Questrade API documentation and the `src/` folder for context.
 - Enforce TypeScript standards and project-specific guidelines from `.github/instructions/typescript-standards.instructions.md` and related files.
