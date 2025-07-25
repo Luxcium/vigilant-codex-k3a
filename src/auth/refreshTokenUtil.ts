@@ -2,8 +2,8 @@ import { KeyManager } from '../security/KeyManager';
 import client from '../http/client';
 
 export interface OAuthTokens {
-  access: string;
-  refresh: string;
+  accessToken: string;
+  refreshToken: string;
 }
 
 /**
@@ -19,8 +19,8 @@ export async function refreshToken(refreshToken: string): Promise<OAuthTokens> {
     });
 
     const tokens: OAuthTokens = {
-      access: response.data.access_token,
-      refresh: response.data.refresh_token,
+      accessToken: response.data.access_token,
+      refreshToken: response.data.refresh_token,
     };
 
     // Save the new tokens using KeyManager

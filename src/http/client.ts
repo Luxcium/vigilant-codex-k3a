@@ -6,24 +6,51 @@ import { refreshToken } from '../auth/refreshTokenUtil';
 const keys = new KeyManager();
 const client = axios.create({ baseURL: APP.apiServer });
 
-client.interceptors.request.use(async req => {
-  const token = await keys.load();
-  if (token) {
-    req.headers.set('Authorization', `Bearer ${token.access}`);
+client.interceptors.request.use(async config => {
+  const stored = await keys.load();
+  // Determine active token: persisted or from environment
+  const authToken = stored?.accessToken ?? APP.accessToken;
+  if (authToken) {
+    config.headers = config.headers || {};
+    config.headers.Authorization = `Bearer ${authToken}`;
   }
-  return req;
+  return config;
 });
 
-client.interceptors.response.use(undefined, async err => {
-  if (err.response?.status === 401) {
-    const token = await keys.load();
-    if (token?.refresh) {
-      const freshToken = await refreshToken(token.refresh);
-      err.config.headers['Authorization'] = `Bearer ${freshToken.access}`;
-      return client(err.config); // Retry the failed request
+client.interceptors.response.use(
+  response => response,
+  async error => {
+    // Handle unauthorized: attempt token refresh
+    if (error.response?.status === 401) {
+      const stored = await keys.load();
+      const refreshTok = stored?.refreshToken ?? APP.refreshToken;
+      if (refreshTok) {
+        try {
+          const fresh = await refreshToken(refreshTok);
+          // Persist new tokens
+          await keys.save({
+            accessToken: fresh.accessToken,
+            refreshToken: fresh.refreshToken,
+          });
+          // Retry original request with updated token
+          error.config.headers = error.config.headers || {};
+          error.config.headers.Authorization = `Bearer ${fresh.accessToken}`;
+          return client(error.config);
+        } catch (refreshError) {
+          console.error('Failed to refresh token:', refreshError);
+        }
+      }
     }
+    // Log detailed error for debugging
+    console.error('HTTP Error:', {
+      status: error.response?.status,
+      statusText: error.response?.statusText,
+      url: error.config?.url,
+      method: error.config?.method,
+      data: error.response?.data,
+    });
+    return Promise.reject(error);
   }
-  return Promise.reject(err);
-});
+);
 
 export default client;

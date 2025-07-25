@@ -3,8 +3,8 @@ import { join } from 'node:path';
 import { APP } from '../config';
 
 export interface Token {
-  access: string;
-  refresh: string;
+  accessToken: string;
+  refreshToken: string;
 }
 
 export class KeyManager {
@@ -24,6 +24,20 @@ export class KeyManager {
       return JSON.parse(await readFile(this.path, 'utf8'));
     } catch {
       return undefined;
+    }
+  }
+
+  /**
+   * Clear saved tokens by removing the token file.
+   */
+  async clear(): Promise<void> {
+    try {
+      // remove token file if exists
+      await import('node:fs/promises').then(fs =>
+        fs.rm(this.path, { force: true })
+      );
+    } catch {
+      // ignore errors
     }
   }
 }

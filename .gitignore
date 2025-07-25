@@ -26,6 +26,7 @@ src/types/dev/anterior-conversation.txt
 src/types/dev/Archive.zip
 
 dist/
+lib/
 .codex/sessions/**
 .codex/log/**
 history.jsonl
