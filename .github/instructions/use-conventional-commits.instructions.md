@@ -7,7 +7,7 @@ description: 'Mandatory conventional commit protocol with gitmoji for all commit
 
 > [!CRITICAL]
 > **EVERY COMMIT MUST INCLUDE GITMOJI** - NO EXCEPTIONS
-> 
+>
 > Format: `<type>[(<scope>)]: <:gitmoji:> <description>`
 
 ## Required Format
@@ -21,7 +21,6 @@ description: 'Mandatory conventional commit protocol with gitmoji for all commit
 ```
 
 ## Commit Types
-
 
 Chose the best candidate for the given commit:
 
@@ -37,24 +36,24 @@ Chose the best candidate for the given commit:
 
 ## Essential Gitmoji
 
-| Emoji | Code | Usage |
-|-------|------|-------|
-| 🐛 | `:bug:` | Bug fixes |
-| 🚑 | `:ambulance:` | Critical hotfix |
-| 📝 | `:memo:` | Documentation |
-| 🎨 | `:art:` | Code structure/format |
-| ⚡ | `:zap:` | Performance |
-| 🔥 | `:fire:` | Remove code/files |
-| ♻️ | `:recycle:` | Refactor code |
-| ✅ | `:white_check_mark:` | Tests |
-| 🔧 | `:wrench:` | Configuration |
-| ⬆️ | `:arrow_up:` | Upgrade dependencies |
-| ⬇️ | `:arrow_down:` | Downgrade dependencies |
-| 💥 | `:boom:` | Breaking changes |
-| 🚨 | `:rotating_light:` | Fix warnings |
-| 💚 | `:green_heart:` | Fix CI |
-| 🔒 | `:lock:` | Security fixes |
-| ✨ | `:sparkles:` | New features |
+| Emoji | Code                 | Usage                  |
+| ----- | -------------------- | ---------------------- |
+| 🐛    | `:bug:`              | Bug fixes              |
+| 🚑    | `:ambulance:`        | Critical hotfix        |
+| 📝    | `:memo:`             | Documentation          |
+| 🎨    | `:art:`              | Code structure/format  |
+| ⚡    | `:zap:`              | Performance            |
+| 🔥    | `:fire:`             | Remove code/files      |
+| ♻️    | `:recycle:`          | Refactor code          |
+| ✅    | `:white_check_mark:` | Tests                  |
+| 🔧    | `:wrench:`           | Configuration          |
+| ⬆️    | `:arrow_up:`         | Upgrade dependencies   |
+| ⬇️    | `:arrow_down:`       | Downgrade dependencies |
+| 💥    | `:boom:`             | Breaking changes       |
+| 🚨    | `:rotating_light:`   | Fix warnings           |
+| 💚    | `:green_heart:`      | Fix CI                 |
+| 🔒    | `:lock:`             | Security fixes         |
+| ✨    | `:sparkles:`         | New features           |
 
 ## Examples
 

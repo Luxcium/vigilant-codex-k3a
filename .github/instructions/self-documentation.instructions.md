@@ -48,6 +48,7 @@ applyTo: '**'
   This log reaffirms that self-documentation and meta-description are ongoing requirements.
 ```
 
+
 ## Validation Checklist
 
 - [ ] Entries include valid current timestamp, state, action, rationale, next intent.
@@ -55,3 +56,7 @@ applyTo: '**'
 - [ ] Loop reinforcement statement is present.
 - [ ] Log entries appended to `memory-bank/activeContext.md` or designated log.
 - [ ] Protocol is re-affirmed at session start.
+
+## Project Output Directory Rule
+
+**IMPORTANT:** Only the top-level SDK root `src/` folder (for Questrade SDK) must emit build outputs to `./lib`. All other packages, modules, or subprojects (such as agent-framework, templates, etc.) should use their own `dist/` or default `outDir` as appropriate for their context. Do NOT change outDir to `lib` for any folder except the top-level SDK root. This rule is mandatory and must be enforced to avoid confusion and maintain project structure integrity.

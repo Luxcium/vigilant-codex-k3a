@@ -97,3 +97,7 @@ applyTo: '**/*.ts, **/*.tsx'
 - Implement CI checks for TypeScript type validation
 
 Remember to reference the memory bank files for project-specific guidelines and keep all documentation up-to-date.
+
+## Project Output Directory Rule
+
+**IMPORTANT:** Only the top-level SDK root `src/` folder (for Questrade SDK) must emit build outputs to `./lib`. All other packages, modules, or subprojects (such as agent-framework, templates, etc.) should use their own `dist/` or default `outDir` as appropriate for their context. Do NOT change outDir to `lib` for any folder except the top-level SDK root. This rule is mandatory and must be enforced to avoid confusion and maintain project structure integrity.

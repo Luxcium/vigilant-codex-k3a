@@ -18,6 +18,21 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-07-25] Output Directory Standardization for Build Artifacts
+
+**Achievement:**
+Standardized the output directory for all emitted build files to `./lib` at the project root. All build scripts, tasks, and configurations must use this as the `outDir`.
+
+**Technical Implementation:**
+- Documented the standard in the memory bank and Copilot instructions file.
+- Ensured all agents and contributors are aware of the unified convention.
+
+**Impact:**
+Eliminates confusion, simplifies automation, and ensures cross-tool compatibility for all build and run workflows.
+
+**Meta:**
+This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+
 ### [2025-07-25] SDK Playground Script and VS Code Workflow Optimization [32m[1m[0m
 
 **Achievement:**

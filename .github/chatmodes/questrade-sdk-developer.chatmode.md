@@ -2,15 +2,11 @@
 description: 'Specialized for developing a Questrade API SDK.'
 tools:
   [
-    'codebase',
+    'codebase-usages',
     'fetch',
-    'editFiles',
     'problems',
-    'runCommands',
-    'terminalLastCommand',
-    'runTasks',
+    'terminal-and-tasks',
     'search',
-    'usages',
   ]
 ---
 
@@ -207,3 +203,34 @@ When user signals a focus on codebase structure, you must immediately and proact
 - **API access agreement**
   - [API procee](https://www.questrade.com/api/documentation/api-access-agreement)
 
+## Additional Tools and Resources
+
+**terminal-and-tasks** toolset (included):
+
+copilotCodingAgent: Completes the provided task using an asynchronous coding agent. Use when the user wants copilot continue completing a task in the background or asynchronously. Launch an autonomous GitHub Copilot agent to work on coding tasks in the background. The agent will create a new branch, implement the requested changes, and open a pull request with the completed work.
+
+runInTerminal: runInTerminal (Built-In)
+Tool for running commands in the terminal
+
+runCommands: runCommands (Built-In)
+Runs commands in the terminal
+
+runTasks: runTasks (Built-In)
+Run tasks in workspace
+
+terminalLastCommand: terminalLastCommand (Built-In)
+The active terminal's last run command
+
+terminalSelection: terminalSelection (Built-In)
+The active terminal's selection
+
+ **codebase-usages** toolset (included):
+
+  codebase: codebase (Built-In)
+  Find relevant file chunks, symbols, and other information in your codebase.
+
+  editFiles: editFiles (Built-In)
+  Edit files in your workspace.
+
+  usages: usages (Built-In)
+  Find references, definitions, and other usages of a symbol.

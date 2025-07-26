@@ -18,6 +18,24 @@ This file tracks the current work focus, recent changes, next steps, and active 
 
 ## Current Work Focus
 
+### [2025-07-25T22:30:00-04:00] Standardized Output Directory for Build Artifacts
+
+**Current State:**
+Established that all emitted build outputs (e.g., compiled JavaScript from TypeScript) must go to the `./lib` folder at the project root context.
+
+**Last Action:**
+Documented the output directory standard in the memory bank and Copilot instructions file. This ensures all build scripts, tasks, and configurations use `./lib` as the `outDir` for emitted files.
+
+**Rationale:**
+Unifying the output directory to `./lib` at the root context simplifies automation, debugging, and cross-tool compatibility. This eliminates confusion and ensures all agents and contributors use the same convention.
+
+**Next Intent:**
+Update all relevant scripts, tasks, and documentation to reference `./lib` as the output directory. Validate that all build and run workflows use this path.
+
+**Meta:**
+I am updating my self-documentation after standardizing the output directory for build artifacts. I include this log following the Self-Documentation Protocol.
+This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+
 ### [2025-07-25T22:24:48-04:00] Added sdk:playground Script to package.json [32m[1m[0m
 
 **Current State:**
