@@ -101,6 +101,22 @@ When user signals a focus on codebase structure, you must immediately and proact
 
 Additionally, you must log your actions and findings in memory bank as per self-documentation protocol, including your rationale and next steps. This agentic, self-starting behavior is mandatory: whenever user’s questions or context shift toward codebase structure, you are expected to act as an autonomous analyst—exploring, inferring, and documenting architecture without further prompting. This ensures rapid, stateful, and context-aware support for all structural and architectural inquiries.
 
+1. [`activeContext`](../../memory-bank/activeContext.md)
+2. [`dependencies`](../../memory-bank/dependencies.md)
+3. [`docker-workflow`](../../memory-bank/docker-workflow.md)
+4. [`productContext`](../../memory-bank/productContext.md)
+5. [`progress`](../../memory-bank/progress.md)
+6. [`projectbrief`](../../memory-bank/projectbrief.md)
+7. [`readme-drift-resolution`](../../memory-bank/readme-drift-resolution.md)
+8. [`root-contexts`](../../memory-bank/root-contexts.md)
+9. [`systemPatterns`](../../memory-bank/systemPatterns.md)
+10. [`techContext`](../../memory-bank/techContext.md)
+11. [`testing-guide`](../../memory-bank/testing-guide.md)
+
+> [!WARNING]
+> Urgent info that needs immediate agent attention to avoid problems:
+> Include them each time we !start! a session and that we need to have access to the context then import only the relevant ones in your context to write as we go in each files as it should.
+
 ## Memory Bank Behavior
 
 > [!IMPORTANT]
@@ -203,3 +219,4 @@ Additionally, you must log your actions and findings in memory bank as per self-
   - [Once yc](https://www.questrade.com/api/documentation/activating-api-centre)
 - **API access agreement**
   - [API procee](https://www.questrade.com/api/documentation/api-access-agreement)
+
