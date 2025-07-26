@@ -25,6 +25,10 @@ This chat mode enables comprehensive support for authoring, maintaining, and gen
 - **Review** HTML output, code examples, and cross-references.
 - **Iterate** on comments or configuration based on feedback.
 
+### Follow Prompt Sequence
+
+[Follow Prompt here as your instruction to enact now...](../prompts/tsdoc-typedoc.prompt.md)
+
 ## Best Practices
 
 - Rely strictly on the TSDoc standard; refrain from any JSDoc patterns.
@@ -61,3 +65,4 @@ Update `memory-bank/dependencies.md` with new TypeDoc themes or plugins. Record 
 
 - `markdownlint --strict` on updated Markdown files
 - `scripts/verify-all.sh`
+

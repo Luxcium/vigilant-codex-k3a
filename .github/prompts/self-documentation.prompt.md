@@ -54,6 +54,20 @@ Your goal is to log and reinforce every action or context change by appending a 
 
 ## References
 
-- Self-Documentation Protocol: [self-documentation.instructions.md](../instructions/self-documentation.instructions.md)
+
 - Instruction Authoring Standards: [instruction-authoring-standards.instructions.md](../instructions/instruction-authoring-standards.instructions.md)
 - Reading Protocol: [.clinerules/reading-protocol.md](../../.clinerules/reading-protocol.md)
+- Self-Documentation Protocol: [self-documentation.instructions.md](../instructions/self-documentation.instructions.md)
+  1. [`activeContext`](../../memory-bank/activeContext.md) 
+  2. [`dependencies`](../../memory-bank/dependencies.md)
+  3. [`docker-workflow`](../../memory-bank/docker-workflow.md)
+  4. [`no_dummy-no_placeholders`](../../memory-bank/no_dummy-no_placeholders.md)
+  5. [`productContext`](../../memory-bank/productContext.md)
+  6. [`progress`](../../memory-bank/progress.md)
+  7. [`projectbrief`](../../memory-bank/projectbrief.md)
+  8. [`readme-drift-resolution`](../../memory-bank/readme-drift-resolution.md)
+  9. [`self-documentation`](../../memory-bank/self-documentation.md)
+  10. [`root-contexts`](../../memory-bank/root-contexts.md)
+  11. [`systemPatterns`](../../memory-bank/systemPatterns.md)
+  12. [`techContext`](../../memory-bank/techContext.md)
+  13. [`testing-guide`](../../memory-bank/testing-guide.md)

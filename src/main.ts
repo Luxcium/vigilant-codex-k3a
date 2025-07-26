@@ -41,7 +41,9 @@ import { OAuthProvider } from './auth/interfaces';
 
 // ===================== DEV/PLAYGROUND AREA BELOW =====================
 // Add manual test/demo code here. This is NOT part of the SDK build.
-
+// Example: Instantiate QuestradeClient and print its type (manual test)
+const client = new QuestradeClient({});
+console.log('QuestradeClient instance created:', client instanceof QuestradeClient);
 // Export all modules so we do not get warnings if they are not in use
 // at a given point in time:
 export { OAuthProvider, OAuthTokens, TokenStore };

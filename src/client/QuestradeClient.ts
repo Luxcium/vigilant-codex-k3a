@@ -1,7 +1,6 @@
 import { OAuthProvider, TokenStore, OAuthTokens } from '../auth/interfaces';
 import { AuthManager } from '../auth/manager';
 import { RestClient } from '../http/restClient';
-import { Candle } from '../types/markets';
 
 export interface QuestradeClientOptions {
   clientId: string;
@@ -48,12 +47,12 @@ export class QuestradeClient {
    * @param interval - Candle interval (e.g. 'OneDay').
    * @returns Array of candle records.
    */
-  public async getCandles(
+  public async getCandles<T = unknown>(
     symbolId: number,
     start: string,
     end: string,
     interval: string
-  ): Promise<any[]> {
+  ): Promise<T[]> {
     // build query string
     const qs = new URLSearchParams({
       symbolId: symbolId.toString(),
@@ -64,7 +63,7 @@ export class QuestradeClient {
     // perform GET request
     const result = await (
       await this.client()
-    ).get<{ candles: any[] }>(`/markets/candles?${qs.toString()}`);
+    ).get<{ candles: T[] }>(`/markets/candles?${qs.toString()}`);
     return result.candles;
   }
 

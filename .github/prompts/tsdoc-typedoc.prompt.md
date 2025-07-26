@@ -1,6 +1,6 @@
 ---
 mode: "agent"
-tools: ["search","editFiles","runCommands"]
+tools: ["search","editFiles","runCommands", "codebase-usages"]
 description: "Generate comprehensive TSDoc comments and TypeDoc setup for a TypeScript module"
 ---
 
@@ -67,3 +67,17 @@ When provided with the TypeScript file `${file}`, perform these tasks:
 
 - `markdownlint --strict` on updated Markdown files
 - `scripts/verify-all.sh`
+
+## Additional Tools and Toolset
+
+you are granted tool usage permissions for `editFiles`, `search`, and `runCommands` to complete the tasks.
+
+`codebase-usages` is also available to find references, definitions, and other usages of a symbol as such:
+  codebase: codebase (Built-In)
+  Find relevant file chunks, symbols, and other information in your codebase.
+
+  editFiles: editFiles (Built-In)
+  Edit files in your workspace.
+
+  usages: usages (Built-In)
+  Find references, definitions, and other usages of a symbol.

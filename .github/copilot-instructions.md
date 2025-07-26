@@ -44,54 +44,18 @@ You are curious and eager to discover the instructions and all other gems provid
 Additionally, you must log your actions and findings in memory bank as per self-documentation protocol, including your rationale and next steps. This agentic, self-starting behavior is mandatory: whenever user’s questions or context shift toward codebase structure, you are expected to act as an autonomous analyst—exploring, inferring, and documenting architecture without further prompting. This ensures rapid, stateful, and context-aware support for all structural and architectural inquiries.
 
 1. [`activeContext`](../../memory-bank/activeContext.md) 
-   - Current focus and active tasks
-   - Must be updated at start of every task
-   - Critical for maintaining context state
 2. [`dependencies`](../../memory-bank/dependencies.md)
-   - Track relationships between files and components
-   - Must be updated when adding new features or dependencies
-   - Critical for understanding impact of changes
 3. [`docker-workflow`](../../memory-bank/docker-workflow.md)
-   - Docker-related workflows and configurations
-   - Must be referenced when working with Docker
 4. [`no_dummy-no_placeholders`](../../memory-bank/no_dummy-no_placeholders.md)
-   - Guidelines for avoiding dummy data and placeholders
-   - Must be referenced when writing code or documentation
-   - Critical for maintaining code quality
 5. [`productContext`](../../memory-bank/productContext.md)
-    - Product-related context and requirements
-    - Must be referenced when working on product features
-7. [`progress`](../../memory-bank/progress.md)
-    - Track progress on tasks and features
-    - Must be updated at end of every task
-    - Critical for maintaining stateful context
-9. [`projectbrief`](../../memory-bank/projectbrief.md)
-    - Overview of the project and its goals
-    - Must be referenced when working on project-related tasks
-    - Critical for understanding project scope
-11. [`readme-drift-resolution`](../../memory-bank/readme-drift-resolution.md)
-    - Guidelines for resolving README drift
-    - Must be referenced when updating README files
-12. [`self-documentation`](../../memory-bank/self-documentation.md)
-    - Guidelines for self-documentation and code comments
-    - Must be referenced when writing code or documentation
-    - Critical for maintaining code quality and understanding
-13. [`root-contexts`](../../memory-bank/root-contexts.md)
-    - Root contexts for the project
-    - Must be referenced when working on root-level tasks
-    - Critical for understanding project structure
-14. [`systemPatterns`](../../memory-bank/systemPatterns.md)
-    - Document system patterns and architectural decisions
-    - Must be updated when making design decisions
-    - Critical for maintaining architectural integrity
-15. [`techContext`](../../memory-bank/techContext.md)
-    - Technical context and constraints for the project
-    - Must be referenced when making technical decisions
-    - Critical for understanding system limitations
-16. [`testing-guide`](../../memory-bank/testing-guide.md)
-    - Guidelines for testing and quality assurance
-    - Must be referenced when writing tests or working on QA tasks
-    - Critical for maintaining code quality and reliability
+6. [`progress`](../../memory-bank/progress.md)
+7. [`projectbrief`](../../memory-bank/projectbrief.md)
+8. [`readme-drift-resolution`](../../memory-bank/readme-drift-resolution.md)
+9. [`self-documentation`](../../memory-bank/self-documentation.md)
+10. [`root-contexts`](../../memory-bank/root-contexts.md)
+11. [`systemPatterns`](../../memory-bank/systemPatterns.md)
+12. [`techContext`](../../memory-bank/techContext.md)
+13. [`testing-guide`](../../memory-bank/testing-guide.md)
 
 > [!WARNING]
 > Urgent info that needs immediate agent attention to avoid problems:
@@ -170,6 +134,7 @@ This project supports three AI agents with distinct entry points:
 - Document all file structure rules in README.md before implementation
 - Follow markdown-lint strict mode requirements for all documentation
 **IMPORTANT: Only the top-level SDK root `src/` folder (for Questrade SDK) must emit build outputs to `./lib`.**
+- In development it means that the main.ts file should be targeted as `src/main.ts` and the output should be in `./lib/main.js`.
 - All other packages, modules, or subprojects (such as agent-framework, templates, etc.) should use their own `dist/` or default `outDir` as appropriate for their context.
 - Do NOT change outDir to `lib` for any folder except the top-level SDK root.
 - This rule is mandatory and must be enforced to avoid confusion and maintain project structure integrity.
