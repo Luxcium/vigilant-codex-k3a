@@ -1,3 +1,19 @@
+/**
+ * @packageDocumentation
+ * @remarks
+ * Questrade TypeScript SDK Barrel File
+ *
+ * This file re-exports all public modules, types, and main classes for the Questrade SDK.
+ *
+ * - Main entry point for SDK consumers.
+ * - Only named and default exports (no wildcards).
+ * - All exports are documented and type-safe.
+ *
+ * @see {@link https://www.questrade.com/api/documentation/getting-started | Questrade API Getting Started}
+ * @see {@link https://www.questrade.com/api/documentation/authorization | Questrade API Authorization}
+ * @see {@link https://www.questrade.com/api/documentation/rest-operations/account-calls/accounts | Questrade API Accounts}
+ * @see {@link https://www.questrade.com/api/documentation/rest-operations/market-calls/markets | Questrade API Markets}
+ */
 // Client exports
 import { QuestradeClient } from './client/QuestradeClient';
 export { QuestradeClient, QuestradeClient as default };

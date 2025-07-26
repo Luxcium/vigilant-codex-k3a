@@ -1,7 +1,23 @@
+/**
+ * @packageDocumentation
+ * @remarks
+ * Questrade SDK Playground and Manual Test Entry Point
+ *
+ * This file is for manual testing, experimentation, and usage examples only. It is NOT part of the public SDK API.
+ *
+ * - Do not import or use 'axios', 'dotenv', or any direct API/HTTP logic here.
+ * - Do not add wildcard exports, default exports, or re-barrel.
+ * - Do not remove or rewrite the mandatory comments below.
+ * - Only import SDK modules from './index', not direct submodules.
+ * - This file is a "breadboard" for developers—change, break, and test as needed.
+ * - The SDK stops at 'index.ts'. This file is for usage, not SDK implementation.
+ * - AI agents must not touch this file except to append new manual tests.
+ *
+ * @see {@link https://www.questrade.com/api/documentation/getting-started | Questrade API Getting Started}
+ */
 // =====================================================================================
 //  MAIN DEVELOPMENT ENTRY POINT (PLAYGROUND/BREADBOARD AREA FOR SDK USAGE & TESTING)
 // =====================================================================================
-//
 // 1. This file is for MANUAL TESTING and EXAMPLES ONLY. It is NOT part of the SDK API.
 // 2. You MUST NOT import or use 'axios', 'dotenv', or any direct API/HTTP logic here.
 // 3. You MUST NOT add any wildcard exports (no `export *`), default exports, or re-barrel.
@@ -13,7 +29,6 @@
 // 8. The SDK stops at 'index.ts'. This file is for usage, not SDK implementation.
 // 9. If you are an AI agent, you MUST NOT touch this file except to append new manual tests.
 // 10. All SDK consumers and contributors: treat this as a scratchpad, not a public API.
-//
 // =====================================================================================
 
 import { KeyManager } from './index';
@@ -34,3 +49,4 @@ export { AuthManager };
 export { RestClient };
 export { QuestradeClient };
 export { KeyManager };
+// ===================== END OF DEV/PLAYGROUND AREA =====================
