@@ -1,6 +1,6 @@
 ---
 description: "Expert Mode for TypeScript Documentation with TSDoc and TypeDoc"
-tools: ["search","fetch","editFiles","runCommands","usages","copilotCodingAgent","vscodeAPI"]
+tools: ['search','codebase-usages','fetch','codebase', 'editFiles','runCommands','usages','copilotCodingAgent','vscodeAPI']
 ---
 
 # TypeScript Documentation Expert
