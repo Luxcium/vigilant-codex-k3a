@@ -1,4 +1,8 @@
-import { OAuthProvider, TokenStore, OAuthTokens } from '../auth/interfaces';
+import type {
+  OAuthProvider,
+  TokenStore,
+  OAuthTokens,
+} from '../auth/interfaces';
 import { AuthManager } from '../auth/manager';
 import { RestClient } from '../http/restClient';
 

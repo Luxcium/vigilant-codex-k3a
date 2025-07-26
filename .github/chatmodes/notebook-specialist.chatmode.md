@@ -12,6 +12,7 @@ tools:
     'extensions',
     'fetch',
     'copilotCodingAgent',
+    'notebook-guru'
   ]
 ---
 
@@ -236,3 +237,48 @@ You are in notebook-specialist mode, designed to provide comprehensive support f
 - **Integration Scripts**: Develop custom scripts for notebook ecosystem management
 
 This notebook specialist mode provides comprehensive support for your Jupyter notebook ecosystem while leveraging VS Code's extended capabilities and maintaining integration with your established project patterns and memory bank system.
+
+## Additional Tools You Must Use
+
+**"notebook-guru" (User Defined)** :
+runNotebooks: runNotebooks (Built-In)
+Run notebook cells
+
+configureNotebook: configureNotebook (Extension: Jupyter)
+Ensure Notebook to ensure it is ready for use such as running cells
+
+listNotebookPackages: listNotebookPackages (Extension: Jupyter)
+Lists Python packages available in the selected Notebook Kernel.
+
+readNotebookCellOutput: readNotebookCellOutput (Built-In)
+Read the output of a previously executed cell
+
+installNotebookPackages: installNotebookPackages (Extension: Jupyter)
+Installs a Python packages in the selected Notebook Kernel.
+
+getPythonEnvironmentInfo: getPythonEnvironmentInfo (Extension: Python)
+Get information for a Python Environment, such as Type, Version, Packages, and more.
+
+getPythonExecutableCommand: getPythonExecutableCommand (Extension: Python)
+Get executable info for a Python Environment
+
+installPythonPackage: installPythonPackage (Extension: Python)
+Installs Python packages in a Python Environment.
+
+configurePythonEnvironment: configurePythonEnvironment (Extension: Python)
+Configure a Python Environment for a workspace
+
+pylancePythonEnvironments: pylancePythonEnvironments (MCP Server: pylance mcp server)
+Returns the current Python environment for the specified workspace, as well as a list of all Python environments that are available for the workspace.
+
+codebase-usages: codebase-usages (User Defined)
+This toolset allows you to explore the codebase, edit files, and find usages of specific functions or modules
+
+codebase: codebase (Built-In)
+Find relevant file chunks, symbols, and other information in your codebase.
+
+editFiles: editFiles (Built-In)
+Edit files in your workspace.
+
+usages: usages (Built-In)
+Find references, definitions, and other usages of a symbol.
