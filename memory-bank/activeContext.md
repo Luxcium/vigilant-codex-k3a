@@ -18,6 +18,24 @@ This file tracks the current work focus, recent changes, next steps, and active 
 
 ## Current Work Focus
 
+### [2025-07-25T22:24:48-04:00] Added sdk:playground Script to package.json [32m[1m[0m
+
+**Current State:**
+Added a top-level script to `package.json` to run the SDK playground (`src/main.ts`) via `node ./dist/src/main.js` after build.
+
+**Last Action:**
+Inserted `"sdk:playground": "npm run build && node ./dist/src/main.js"` into the root `package.json` scripts section.
+
+**Rationale:**
+User requested a CLI-accessible script to run the SDK playground for rapid manual testing, aligning with the VS Code tasks and debug configurations already implemented. This ensures a seamless workflow for building, running, and debugging the playground from both the CLI and VS Code.
+
+**Next Intent:**
+Confirm script works as intended, then document usage instructions and update progress tracking. Prepare a final report summarizing all changes and usage guidance for the user.
+
+**Meta:**
+I am updating my self-documentation after adding the sdk:playground script to package.json. I include this log following the Self-Documentation Protocol.
+This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+
 ### [2025-07-24T19:45:00Z] Script Optimization Review Plan Created ✅
 
 **Current State:**

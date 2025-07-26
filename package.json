@@ -15,6 +15,7 @@
     "docs": "typedoc --options typedoc.json",
     "lint": "eslint \"src/**/*.ts\"",
     "markdownlint": "markdownlint \"**/*.md\"",
+    "sdk:playground": "npm run build && node ./dist/src/main.js",
     "test": "vitest run",
     "test:auth": "vitest run src/tests/auth/",
     "test:auth:watch": "vitest src/tests/auth/",
