@@ -2,7 +2,58 @@
   // #region FORMAT BEHAVIOUR                                        !
   /*
   |-···----------------------------------------------------------···-|
-    */
+  */
+  "files.associations": {
+    "*.py": "python",
+    "requirements*.txt": "pip-requirements",
+    ".env*": "dotenv",
+    "*.ts": "typescript",
+    "*.js": "javascript",
+    "*.json": "jsonc",
+    "Dockerfile*": "dockerfile",
+    "docker-compose*.yml": "dockercompose",
+    "*.md": "markdown",
+    "**/.github/chatmodes/*.chatmode.md": "chatmode",
+    "**/.github/instructions/*.instructions.md": "instructions",
+    "**/.github/prompts/*.prompt.md": "prompt",
+    "**/memory-bank/chatmodes/*.chatmode.md": "chatmode",
+    "**/memory-bank/prompts/*.prompt.md": "prompt",
+    "**/memory-bank/instructions/*.instructions.md": "instructions"
+  },
+  "[chatmode]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  "[prompt]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  "[instructions]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
   // "chat.editing.autoAcceptDelay": 20,
   "code-runner.executorMap": {
     "javascript": "node --trace-deprecation",
@@ -72,23 +123,7 @@
   "python.testing.autoTestDiscoverOnSaveEnabled": true,
   "python.terminal.executeInFileDir": true,
   "python.terminal.focusAfterLaunch": true,
-  "files.associations": {
-    "*.py": "python",
-    "requirements*.txt": "pip-requirements",
-    ".env*": "dotenv",
-    "*.ts": "typescript",
-    "*.js": "javascript",
-    "*.json": "jsonc",
-    "Dockerfile*": "dockerfile",
-    "docker-compose*.yml": "dockercompose",
-    "*.md": "markdown",
-    "**/.github/chatmodes/*.chatmode.md": "chatmode",
-    "**/.github/instructions/*.instructions.md": "instructions",
-    "**/.github/prompts/*.prompt.md": "prompt",
-    "**/memory-bank/chatmodes/*.chatmode.md": "chatmode",
-    "**/memory-bank/prompts/*.prompt.md": "prompt",
-    "**/memory-bank/instructions/*.instructions.md": "instructions"
-  },
+
   // "remote.defaultExtensionsIfInstalledLocally": [
   //   "GitHub.copilot",
   //   "GitHub.copilot-chat",
@@ -2108,17 +2143,7 @@
   "inlineChat.hideOnRequest": false,
   "inlineChat.lineEmptyHint": true,
   "inlineChat.lineNaturalLanguageHint": true,
-  "[chatmode]": {
-    "editor.unicodeHighlight.ambiguousCharacters": false,
-    "editor.unicodeHighlight.invisibleCharacters": false,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "editor.wordWrap": "on",
-    "editor.quickSuggestions": {
-      "comments": "off",
-      "strings": "off",
-      "other": "off"
-    }
-  },
+
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
       "file": "memory-bank/instructions/conventional-commits-must-be-used.instructions.md"
