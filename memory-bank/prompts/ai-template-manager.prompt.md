@@ -120,8 +120,8 @@ ${input:validation:- Check markdown-lint compliance\n- Verify cross-references\n
 
 ### File Organization
 
-- Place instruction files in `.github/instructions/`
-- Place prompt files in `.github/prompts/`
+- Place instruction files in `memory-bank/instructions/`
+- Place prompt files in `memory-bank/prompts/`
 - Use subdirectories for domain-specific collections
 - Maintain flat hierarchy for global utilities
 

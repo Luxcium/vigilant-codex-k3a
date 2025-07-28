@@ -25,11 +25,11 @@ You are working in a VS Code workspace with the following project structure:
 
 Apply the following instruction files during code generation:
 
-- `.github/instructions/typescript-standards.instructions.md` for TypeScript code
-- `.github/instructions/python-standards.instructions.md` for Python code
-- `.github/instructions/python-notebook-standards.instructions.md` for Jupyter notebooks
-- `.github/instructions/file-organization.instructions.md` for project structure
-- `.github/instructions/no_dummy-no_placeholders.instruction.md` for real, executable configurations
+- `memory-bank/instructions/typescript-standards.instructions.md` for TypeScript code
+- `memory-bank/instructions/python-standards.instructions.md` for Python code
+- `memory-bank/instructions/python-notebook-standards.instructions.md` for Jupyter notebooks
+- `memory-bank/instructions/file-organization.instructions.md` for project structure
+- `memory-bank/instructions/no_dummy-no_placeholders.instruction.md` for real, executable configurations
 
 ## Parametric Inputs
 

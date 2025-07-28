@@ -6,7 +6,7 @@ This directory contains reusable prompt files that can be invoked by VS Code Cop
 
 For a one-page summary of all manifest and meta configuration goals (PWA, iOS, Windows, Chrome Extension, etc.), see:
 
-**[when-to-use-what-matrix.instructions.md](../instructions/when-to-use-what-matrix.instructions.md)** — This matrix provides authoritative mapping of integration goals to configuration files and sources. For detailed implementation standards, see the corresponding instruction files in `.github/instructions/README.md`.
+**[when-to-use-what-matrix.instructions.md](../instructions/when-to-use-what-matrix.instructions.md)** — This matrix provides authoritative mapping of integration goals to configuration files and sources. For detailed implementation standards, see the corresponding instruction files in `memory-bank/instructions/README.md`.
 
 This README focuses on workflow automation and validation prompts. For meta-configuration and manifest standards, always start with the matrix above, then consult the detailed instructions.
 

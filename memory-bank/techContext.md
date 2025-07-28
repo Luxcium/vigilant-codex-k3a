@@ -143,7 +143,7 @@ vigilant-codex-k3a/
 ├── scripts/                # Shell scripts for automation (bash only)
 ├── notebooks/              # Jupyter notebooks and ML development
 ├── memory-bank/            # AI agent state management
-└── .github/instructions/   # 26 coding standards (auto-applied)
+└── memory-bank/instructions/   # 26 coding standards (auto-applied)
 ```
 
 ### Environment Configuration

@@ -25,8 +25,8 @@ This workspace supports three AI agents with sophisticated collaboration pattern
 
 ### AI Framework Components
 
-- **🔧 26 Instruction Files** ([`.github/instructions/`](.github/instructions/)) - Automated coding standards and guidelines
-- **⚙️ 27 Prompt Files** ([`.github/prompts/`](.github/prompts/)) - Executable workflow templates
+- **🔧 26 Instruction Files** ([`memory-bank/instructions/`](memory-bank/instructions/)) - Automated coding standards and guidelines
+- **⚙️ 27 Prompt Files** ([`memory-bank/prompts/`](memory-bank/prompts/)) - Executable workflow templates
 - **📚 Memory Bank System** ([`memory-bank/`](memory-bank/)) - Stateful documentation for AI collaboration
 - **🎯 Self-Documentation Protocol** - Maintains context across development sessions
 
@@ -298,8 +298,8 @@ Stateful documentation for AI agent collaboration:
 
 1. **Read Memory Bank** - Start with [`memory-bank/projectbrief.md`](memory-bank/projectbrief.md)
 2. **Setup Environment** - Use `./scripts/setup_codex_universal.sh`
-3. **Explore Instructions** - Review [`.github/instructions/README.md`](.github/instructions/README.md)
-4. **Try Prompts** - Execute workflows via [`.github/prompts/README.md`](.github/prompts/README.md)
+3. **Explore Instructions** - Review [`memory-bank/instructions/README.md`](memory-bank/instructions/README.md)
+4. **Try Prompts** - Execute workflows via [`memory-bank/prompts/README.md`](memory-bank/prompts/README.md)
 
 ### For AI Agents
 
@@ -319,7 +319,7 @@ Stateful documentation for AI agent collaboration:
 
 For comprehensive platform integration (PWA, iOS, Windows, Chrome Extension), see:
 
-**[when-to-use-what-matrix.instructions.md](.github/instructions/when-to-use-what-matrix.instructions.md)** - One-page matrix mapping all integration goals to their primary configuration files and authoritative sources.
+**[when-to-use-what-matrix.instructions.md](memory-bank/instructions/when-to-use-what-matrix.instructions.md)** - One-page matrix mapping all integration goals to their primary configuration files and authoritative sources.
 
 ## 🤝 Contributing
 
@@ -332,8 +332,8 @@ For comprehensive platform integration (PWA, iOS, Windows, Chrome Extension), se
 
 ### Expanding AI Framework
 
-1. **Instruction Files** - Use [instruction-generator.prompt.md](.github/prompts/instruction-generator.prompt.md)
-2. **Prompt Files** - Use [template-manager.prompt.md](.github/prompts/template-manager.prompt.md)
+1. **Instruction Files** - Use [instruction-generator.prompt.md](memory-bank/prompts/instruction-generator.prompt.md)
+2. **Prompt Files** - Use [template-manager.prompt.md](memory-bank/prompts/template-manager.prompt.md)
 3. **Cross-References** - Update all relevant README files
 4. **Memory Bank Integration** - Maintain dependency tracking
 
@@ -399,7 +399,7 @@ In **Agent Mode**, use Copilot Chat prompts to automate workflows:
 - `/launch-browser-monitor`: Launch Simple Browser, enable instrumentation, and monitor errors
 - `/analyze-issue`: Review runtime overlays and log console errors; suggest fixes
 
-Custom prompts and instructions are located in `.github/prompts/` and `.github/instructions/`.
+Custom prompts and instructions are located in `memory-bank/prompts/` and `memory-bank/instructions/`.
 
 ## Recent Updates
 

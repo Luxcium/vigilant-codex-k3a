@@ -32,7 +32,7 @@ fi
 if ! grep -q ':.*:' "$1"; then
   echo "❌ Missing gitmoji!"
   echo "Every commit MUST include a gitmoji"
-  echo "See: .github/prompts/gitmoji-complete-list.prompt.md"
+  echo "See: memory-bank/prompts/gitmoji-complete-list.prompt.md"
   exit 1
 fi
 ```
@@ -200,7 +200,7 @@ npx husky add .husky/commit-msg 'npx --no -- commitlint --edit $1'
 
 ### Commit Message Validation
 
-`.github/workflows/validate-commits.yml`:
+`memory-bank/workflows/validate-commits.yml`:
 
 ```yaml
 name: Validate Commits
@@ -241,7 +241,7 @@ jobs:
 
 ### Auto-generate Changelog
 
-`.github/workflows/release.yml`:
+`memory-bank/workflows/release.yml`:
 
 ```yaml
 name: Release

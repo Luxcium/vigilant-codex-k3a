@@ -24,14 +24,14 @@ This directory contains all Jupyter notebooks for the project.
 ## OpenAI API Example
 
 - See [openai_api_prototyping.ipynb](./openai_api_prototyping.ipynb) for a template on securely using the OpenAI API with `.env` and `python-dotenv`.
-- This notebook references the chat session in [memory-bank/activeContext.md](../memory-bank/activeContext.md) and follows [python-notebook-standards.instructions.md](../.github/instructions/python-notebook-standards.instructions.md).
+- This notebook references the chat session in [memory-bank/activeContext.md](../memory-bank/activeContext.md) and follows [python-notebook-standards.instructions.md](../memory-bank/instructions/python-notebook-standards.instructions.md).
 
 ---
 
 
 ## Standards
 
-- Follow [python-notebook-standards.instructions.md](../.github/instructions/python-notebook-standards.instructions.md).
+- Follow [python-notebook-standards.instructions.md](../memory-bank/instructions/python-notebook-standards.instructions.md).
 - Do not create a separate environment in this directory.
 
 ## Memory Bank & Documentation
@@ -52,4 +52,4 @@ jupyter notebook
 ## See Also
 
 - [python/README.md](../python/README.md)
-- [python-environment.instructions.md](../.github/instructions/python-environment.instructions.md)
+- [python-environment.instructions.md](../memory-bank/instructions/python-environment.instructions.md)
