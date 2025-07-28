@@ -371,8 +371,8 @@ Provide the following deliverables:
 
 ### Instruction Files
 
-- [file-organization.instructions.md](../instructions/file-organization.instructions.md) - Project structure standards
-- [no_dummy-no_placeholders.instruction.md](../instructions/no_dummy-no_placeholders.instruction.md) - Real configuration requirements
+- [file-organization.instructions.md](./file-organization.prompt.md) - Project structure standards
+- [no_dummy-no_placeholders.instruction.md](../instructions/no_dummy-no_placeholders.instructions.md) - Real configuration requirements
 - [self-documentation.instructions.md](../instructions/self-documentation.instructions.md) - Documentation protocols
 
 ### Memory Bank Files

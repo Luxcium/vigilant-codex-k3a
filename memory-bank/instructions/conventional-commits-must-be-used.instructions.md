@@ -24,15 +24,15 @@ description: 'Mandatory conventional commit protocol with gitmoji for all commit
 
 Chose the best candidate for the given commit:
 
-- `feat` - New features (`:sparkles:`)
-- `fix` - Bug fixes (`:bug:`, `:ambulance:` for critical)
-- `docs` - Documentation (`:memo:`)
-- `style` - Code formatting (`:art:`, `:rotating_light:`)
-- `refactor` - Code restructuring (`:recycle:`, `:building_construction:`)
-- `perf` - Performance improvements (`:zap:`)
-- `test` - Testing (`:white_check_mark:`, `:green_heart:`)
 - `build` - Build system (`:construction_worker:`, `:arrow_up:`, `:arrow_down:`)
 - `chore` - Maintenance (`:wrench:`, `:fire:`, `:heavy_plus_sign:`, `:heavy_minus_sign:`)
+- `fix` - Bug fixes (`:bug:`, `:ambulance:` for critical)
+- `refactor` - Code restructuring (`:recycle:`, `:building_construction:`)
+- `docs` - Documentation (`:memo:`)
+- `feat` - New features (`:sparkles:`)
+- `style` - Code formatting (`:art:`, `:rotating_light:`)
+- `perf` - Performance improvements (`:zap:`)
+- `test` - Testing (`:white_check_mark:`, `:green_heart:`)
 
 ## Essential Gitmoji
 
@@ -42,7 +42,7 @@ Chose the best candidate for the given commit:
 | 🚑    | `:ambulance:`        | Critical hotfix        |
 | 📝    | `:memo:`             | Documentation          |
 | 🎨    | `:art:`              | Code structure/format  |
-| ⚡    | `:zap:`              | Performance            |
+| ⚡     | `:zap:`              | Performance            |
 | 🔥    | `:fire:`             | Remove code/files      |
 | ♻️    | `:recycle:`          | Refactor code          |
 | ✅    | `:white_check_mark:` | Tests                  |
@@ -72,15 +72,27 @@ docs(readme): :memo: add installation instructions
 # Performance
 perf(database): :zap: optimize user queries
 
-# Refactoring
-refactor(components): :art: extract validation logic
-
 # Build/Dependencies
 build(deps): :arrow_up: upgrade Next.js to v15.1.2
-chore(deps): :heavy_minus_sign: remove unused lodash
 
 # Testing
 test(auth): :white_check_mark: add unit tests
+```
+
+> [!IMPORTANT]
+> Refactoring commits are about changes into the code folders, for programming language refactorings and not others, it must focus on improving the code structure without changing its behavior.
+
+```bash
+# Refactoring
+refactor(components): :art: extract validation logic
+```
+
+> [!IMPORTANT]
+> Chores should not include any functional changes, only maintenance tasks, outside of the coding folders.
+
+```bash
+# Chores
+chore(ci): :wrench: update GitHub Actions workflow
 ```
 
 ## Breaking Changes
