@@ -84,7 +84,10 @@
     "*.md": "markdown",
     "**/.github/chatmodes/*.chatmode.md": "chatmode",
     "**/.github/instructions/*.instructions.md": "instructions",
-    "**/.github/prompts/*.prompt.md": "prompt"
+    "**/.github/prompts/*.prompt.md": "prompt",
+    "**/memory-bank/chatmodes/*.chatmode.md": "chatmode",
+    "**/memory-bank/prompts/*.prompt.md": "prompt",
+    "**/memory-bank/instructions/*.instructions.md": "instructions"
   },
   // "remote.defaultExtensionsIfInstalledLocally": [
   //   "GitHub.copilot",
@@ -2051,16 +2054,22 @@
   "chat.edits2.enabled": true,
   "chat.editRequests": "inline",
   "chat.extensionTools.enabled": true,
-  "chat.modeFilesLocations": {
-    ".github/chatmodes": true
+  "github.copilot.enable": {
+    "*": true
   },
   "chat.mcp.enabled": true,
+  "chat.modeFilesLocations": {
+    ".github/chatmodes": true,
+    "memory-bank/chatmodes": true
+  },
   "chat.promptFiles": true,
   "chat.promptFilesLocations": {
-    ".github/prompts": true
+    ".github/prompts": true,
+    "memory-bank/prompts": true
   },
   "chat.instructionsFilesLocations": {
-    ".github/instructions": true
+    ".github/instructions": true,
+    "memory-bank/instructions": true
   },
   "chat.implicitContext.enabled": {
     "panel": "always"
@@ -2135,9 +2144,6 @@
     }
   ],
 
-  "github.copilot.enable": {
-    "*": true
-  },
   // #endregion: Github Copilot                                      !
   /*
     |-··----------------------------------------------------------··-|
