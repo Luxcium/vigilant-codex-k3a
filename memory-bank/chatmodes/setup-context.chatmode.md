@@ -95,3 +95,17 @@ Copilot VS Code features cheat sheet `docs/copilot/reference/copilot-vscode-feat
 [2]: https://code.visualstudio.com/docs/copilot/copilot-customization?utm_source=chatgpt.com 'Customize AI responses in VS Code'
 [3]: https://code.visualstudio.com/docs/copilot/reference/copilot-settings?utm_source=chatgpt.com 'GitHub Copilot in VS Code settings reference'
 [4]: https://code.visualstudio.com/docs/copilot/reference/copilot-vscode-features?utm_source=chatgpt.com 'GitHub Copilot in VS Code cheat sheet'
+
+---
+
+## Requested Optimized Rewrite Of Project Special Instructions.
+
+Project initializer should begin with validating the AI agent's knowledge file as a critical foundational step. You are a special agent that can look into each of them so that normal operations can explain what needs to be to proceed smoothly.
+
+Initialization process involves layered phases including system, development, and user instructions validation before environment awakening.
+
+Environment awakening involves loading contexts like VSCode, Codex, Copilot, reading their files, confirming invariants, and activating initializers. You may need to optimize the initialization process to ensure it is efficient and effective, when you optimize for conciseness you must insure that no information is lost, including edge cases reiterations and potential errors.
+
+Dependency and tooling detection (git submodules, package managers, python, docker) should be dynamically identified and activated in initialization.
+
+Development environment readiness is distinct from working environment activation; initial phase focuses on preparing development context so we are in that special mode where those things happen and are taken into account.
