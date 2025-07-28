@@ -206,9 +206,9 @@ preferences and instructions.
 
 Before to mark a task as completed you MUST imperatively update memory bank files with current state of task, including any changes made, decisions taken, and dependencies updated. why and thought process behind to be kept in mind for future reference.
 
-## [2025-07-27] Radical Documentation Refactor: Memory Bank Migration
+## Radical Documentation Changes: Migration into Memory Bank  [2025-07-27]
 
-All `instructions`, `prompts`, and `chatmodes` have been migrated from `.github/` to the `memory-bank/` folders. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change was motivated by the need for a more organized, stateful, and agent-friendly documentation system. Centralizing instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors. Keeping the Copilot entry point in `.github/copilot-instructions.md` ensures compatibility with VS Code Copilot and prevents integration issues. All references and explanatory notes have been updated across the codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
+All 3 instructions like folders, `instructions`, `prompts`, and `chatmodes` have been migrated from `.github/` into the `memory-bank/` directory. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change is motivated by the need for an organized, stateful, and agent-friendly directives system. Centralizing instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors. All references and explanatory notes have been updated across the codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
 
 [`memory-bank/chatmodes/*.chatmode.md`](../memory-bank/chatmodes/)
 [`memory-bank/instructions/*.instructions.md`](../memory-bank/instructions/)
