@@ -17,6 +17,23 @@ This file tracks the current work focus, recent changes, next steps, and active 
 ---
 
 ## Current Work Focus
+[2025-07-27T00:00:00Z] Radical Documentation Refactor: Memory Bank Migration
+
+**Current State:**
+All instructions, prompts, and chatmodes have been migrated from `.github/` to the `memory-bank/` folders. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. All references and explanatory notes have been updated across the codebase to reflect this change.
+
+**Last Action:**
+Systematic update of every file in the codebase to ensure all documentation, agent instructions, and internal references point to the new memory-bank structure. Explanatory notes were added to prevent confusion and clarify the rationale for contributors and agents.
+
+**Rationale:**
+This radical change was motivated by the need for a more organized, stateful, and agent-friendly documentation system. Centralizing instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors. Keeping the Copilot entry point in `.github/copilot-instructions.md` ensures compatibility with VS Code Copilot and prevents integration issues.
+
+**Next Intent:**
+Monitor for any documentation drift or confusion, and continue to update explanatory notes as needed. Ensure all future changes follow the new structure and maintain clarity for all contributors and agents.
+
+**Meta:**
+I am updating my self-documentation after completing the radical documentation refactor and memory bank migration. I include this log following the Self-Documentation Protocol.
+This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 
 ### [2025-07-25T22:30:00-04:00] Standardized Output Directory for Build Artifacts
 

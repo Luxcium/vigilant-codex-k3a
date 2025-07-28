@@ -1,4 +1,7 @@
 # progress.md
+[2025-07-27] Radical Documentation Refactor: Memory Bank Migration
+
+All instructions, prompts, and chatmodes have been migrated from `.github/` to the `memory-bank/` folders. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change was motivated by the need for a more organized, stateful, and agent-friendly documentation system. Centralizing instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors. Keeping the Copilot entry point in `.github/copilot-instructions.md` ensures compatibility with VS Code Copilot and prevents integration issues. All references and explanatory notes have been updated across the codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
 
 ## Purpose
 
