@@ -99,7 +99,10 @@
   "material-icon-theme.folders.associations": {
     "chatgpt": "cobol",
     "eslint-plugin": "rules",
-    "prompts": "log"
+    "memory-bank": "rules",
+    "prompts": "log",
+    "chatmodes": "vm",
+    "instructions": "class"
   },
   "polyglot-notebook.logLevel": "Warn",
   "polyglot-notebook.suppressPromptToSaveDefaults": true,
