@@ -111,7 +111,6 @@ RUN ${input:packageManager} run build
 
 # Create production node_modules
 RUN ${input:packageManager} install --prod --frozen-lockfile
- compilation and dependency installation
 ARG RUNTIME_VERSION=${input:runtimeVersion}
 FROM ${RUNTIME_VERSION} AS builder
 

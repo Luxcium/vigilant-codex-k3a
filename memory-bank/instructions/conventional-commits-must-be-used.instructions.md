@@ -14,8 +14,6 @@ Analyze the origin of the changes, YOU MUST use `chores` to indicate maintenance
 >
 > Format: `<type>[(<scope>)]: <:gitmoji:> <description>`
 
-
-
 ```bash
 <type>[(<optional scope>)]: <:gitmoji:> <description>
 
@@ -50,7 +48,7 @@ Chose the best candidate for the given commit:
 | 🚑    | `:ambulance:`        | Critical hotfix        |
 | 📝    | `:memo:`             | Documentation          |
 | 🎨    | `:art:`              | Code structure/format  |
-| ⚡     | `:zap:`              | Performance            |
+| ⚡    | `:zap:`              | Performance            |
 | 🔥    | `:fire:`             | Remove code/files      |
 | ♻️    | `:recycle:`          | Refactor Anything      |
 | ✅    | `:white_check_mark:` | Tests                  |

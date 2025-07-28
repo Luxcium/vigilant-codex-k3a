@@ -36,11 +36,11 @@ The Codex CLI project maintains a structured "Memory Bank" documentation system 
 
 ### 2. Documentation Updates
 
-- Identify which  `memory-bank/`  files need updates
+- Identify which `memory-bank/` files need updates
 - Make changes while preserving existing structure
 - Follow writing protocol from [`.clinerules/writing-protocol.md`](../../.clinerules/writing-protocol.md)
 - Ensure changes are properly cross-referenced across files
- 
+
 ### 3. Dependency Management
 
 - Update [`dependencies.md`](../../memory-bank/dependencies.md) file if relationships change
@@ -61,4 +61,4 @@ The Codex CLI project maintains a structured "Memory Bank" documentation system 
 - Maintain consistent formatting and structure
 - Follow all project-specific documentation standards
 
-YOU MUST HELP maintain  `memory-bank/`  documentation that follows all project's standards and enables seamless collaboration between contributors.
+YOU MUST HELP maintain `memory-bank/` documentation that follows all project's standards and enables seamless collaboration between contributors.

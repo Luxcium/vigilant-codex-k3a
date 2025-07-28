@@ -1,20 +1,20 @@
 ---
-applyTo: "**/*.ts"
-description: "Comprehensive guidelines for TSDoc comments and TypeDoc configuration"
+applyTo: '**/*.ts'
+description: 'Comprehensive guidelines for TSDoc comments and TypeDoc configuration'
 ---
 
 # TSDoc and TypeDoc Standards
 
 ## TSDoc Comment Conventions
 
-- Use the multi-line `/** … */` syntax for all exported declarations. Single-line `//` comments are not supported by TSDoc and will be ignored.  [oai_citation:2‡TSDoc](https://tsdoc.org/pages/intro/approach/?utm_source=chatgpt.com)  
-- Include only TSDoc-defined tags: `@param`, `@returns`, `@remarks`, `@example`, `@deprecated`, `@internal`, `@beta`, `@alpha`, `@packageDocumentation`, and `{@link}`. Avoid any JSDoc-only tags or legacy annotations.  [oai_citation:3‡TSDoc](https://tsdoc.org/?utm_source=chatgpt.com)  
-- Embed CommonMark markdown for elements such as code fences, lists, and links. Ensure that code examples use fenced blocks with appropriate language identifiers (e.g., ```ts).  [oai_citation:4‡TSDoc](https://tsdoc.org/pages/intro/approach/?utm_source=chatgpt.com)  
-- Use inline tags like `{@link path|text}` for cross-references and `{@inheritDoc}` for documentation inheritance. Do not invent custom inline tag syntaxes.  [oai_citation:5‡TSDoc](https://tsdoc.org/?utm_source=chatgpt.com)
+- Use the multi-line `/** … */` syntax for all exported declarations. Single-line `//` comments are not supported by TSDoc and will be ignored. [oai_citation:2‡TSDoc](https://tsdoc.org/pages/intro/approach/?utm_source=chatgpt.com)
+- Include only TSDoc-defined tags: `@param`, `@returns`, `@remarks`, `@example`, `@deprecated`, `@internal`, `@beta`, `@alpha`, `@packageDocumentation`, and `{@link}`. Avoid any JSDoc-only tags or legacy annotations. [oai_citation:3‡TSDoc](https://tsdoc.org/?utm_source=chatgpt.com)
+- Embed CommonMark markdown for elements such as code fences, lists, and links. Ensure that code examples use fenced blocks with appropriate language identifiers (e.g., ```ts). [oai_citation:4‡TSDoc](https://tsdoc.org/pages/intro/approach/?utm_source=chatgpt.com)
+- Use inline tags like `{@link path|text}` for cross-references and `{@inheritDoc}` for documentation inheritance. Do not invent custom inline tag syntaxes. [oai_citation:5‡TSDoc](https://tsdoc.org/?utm_source=chatgpt.com)
 
 ## Example TSDoc Block
 
-```ts
+````ts
 /**
  * Calculates the sum of two numbers.
  *
@@ -31,7 +31,7 @@ description: "Comprehensive guidelines for TSDoc comments and TypeDoc configurat
 export function add(a: number, b: number): number {
   return a + b;
 }
-```
+````
 
 ## TypeDoc Configuration
 

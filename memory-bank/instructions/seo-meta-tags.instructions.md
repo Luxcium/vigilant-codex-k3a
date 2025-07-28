@@ -44,8 +44,7 @@ Fundamental meta tags like `description`, `robots`, and `canonical` are crucial 
   <!-- Page description for SERPs (Search Engine Result Pages) -->
   <meta
     name="description"
-    content="A concise and compelling description of the page content, under 160 characters."
-  />
+    content="A concise and compelling description of the page content, under 160 characters." />
 
   <!-- Instructions for search engine crawlers -->
   <meta name="robots" content="index, follow" />
@@ -53,8 +52,7 @@ Fundamental meta tags like `description`, `robots`, and `canonical` are crucial 
   <!-- The canonical URL for this page to prevent duplicate content -->
   <link
     rel="canonical"
-    href="https://www.example.com/your-canonical-page-url"
-  />
+    href="https://www.example.com/your-canonical-page-url" />
 
   <!-- Author of the content -->
   <meta name="author" content="Your Name or Company Name" />

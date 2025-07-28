@@ -54,7 +54,7 @@ applyTo: 'glob-pattern-here'
 
 Use alerts to indicate critical sections or important notes.
 
-Alerts are a Markdown extension based on the blockquote syntax that you must use to emphasize critical information in our internal documentation, instructions, prompts, or chatmodes. 
+Alerts are a Markdown extension based on the blockquote syntax that you must use to emphasize critical information in our internal documentation, instructions, prompts, or chatmodes.
 
 They help our ai agents quickly identify important content and are formatted as follows:
 

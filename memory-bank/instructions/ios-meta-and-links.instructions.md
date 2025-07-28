@@ -41,8 +41,7 @@ Smart App Banners promote App Store install or open within Safari:
 ```html
 <meta
   name="apple-itunes-app"
-  content="app-id=123456789, app-argument=https://example.com/deeplink"
-/>
+  content="app-id=123456789, app-argument=https://example.com/deeplink" />
 ```
 
 - Optionally add Android fallback banners via a JS polyfill. ([dunnsolutions.com][8])
@@ -104,8 +103,7 @@ Use Apple’s Hosted File Tester (`universal-links.dev`) for production checks. 
 <!-- Smart App Banner -->
 <meta
   name="apple-itunes-app"
-  content="app-id=123456789, app-argument=https://example.com/deeplink"
-/>
+  content="app-id=123456789, app-argument=https://example.com/deeplink" />
 <!-- App banner -->
 ```
 

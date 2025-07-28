@@ -1,6 +1,7 @@
 ---
 description: VS Code development helper for extensions, workspace configuration, and API usage and anything related to this project in vscode.
-tools:  [
+tools:
+  [
     'codebase',
     'editFiles',
     'fetch',

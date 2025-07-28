@@ -1,6 +1,6 @@
 ---
-applyTo: "web/**/*.{ts,tsx,js,jsx,json}"
-description: "Guide to launch the local Next.js development server"
+applyTo: 'web/**/*.{ts,tsx,js,jsx,json}'
+description: 'Guide to launch the local Next.js development server'
 ---
 
 # Copilot Instruction File: Start Web Dev Server
@@ -27,4 +27,3 @@ Lancer le serveur local de développement dans le répertoire `web/`.
 
 - `markdownlint --strict`
 - `scripts/verify-all.sh`
-

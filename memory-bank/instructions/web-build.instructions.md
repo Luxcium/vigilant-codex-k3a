@@ -1,6 +1,6 @@
 ---
-applyTo: "web/**/*.{ts,tsx,js,jsx,json}"
-description: "Guide to build and launch the Next.js production server"
+applyTo: 'web/**/*.{ts,tsx,js,jsx,json}'
+description: 'Guide to build and launch the Next.js production server'
 ---
 
 # Copilot Instruction File: Build and Start Web Production Server

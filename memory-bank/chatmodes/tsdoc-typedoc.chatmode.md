@@ -1,6 +1,15 @@
 ---
-description: "Expert Mode for TypeScript Documentation with TSDoc and TypeDoc"
-tools: ['codebase-usages', 'editFiles', 'fetch', 'runCommands', 'search', 'vscodeAPI', 'copilotCodingAgent']
+description: 'Expert Mode for TypeScript Documentation with TSDoc and TypeDoc'
+tools:
+  [
+    'codebase-usages',
+    'editFiles',
+    'fetch',
+    'runCommands',
+    'search',
+    'vscodeAPI',
+    'copilotCodingAgent',
+  ]
 ---
 
 # TypeScript Documentation Expert
@@ -65,4 +74,3 @@ Update `memory-bank/dependencies.md` with new TypeDoc themes or plugins. Record 
 
 - `markdownlint --strict` on updated Markdown files
 - `scripts/verify-all.sh`
-

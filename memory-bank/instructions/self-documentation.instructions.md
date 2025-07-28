@@ -7,12 +7,11 @@ applyTo: '**'
 > [!IMPORTANT]
 > Non negotiable rule THOSE RULES MUST BE FOLLOWED. On session start you MUST read the important self-memory guide and during any significant change write to the memory-bank/ to keep track of the intentions so that we can resume the task in a new session with the stateful information. Agents MUST also execute the Self-Documentation Protocol to ensure all actions and context changes are logged and documented.
 
-
 ## Memory Bank Logging
 
 Additionally, you must log your actions and findings in memory bank as per self-documentation protocol, including your rationale and next steps.
 
-1. [`activeContext`](../../memory-bank/activeContext.md) 
+1. [`activeContext`](../../memory-bank/activeContext.md)
    - Current focus and active tasks
    - Must be updated at start of every task
    - Critical for maintaining context state
@@ -23,47 +22,43 @@ Additionally, you must log your actions and findings in memory bank as per self-
 3. [`docker-workflow`](../../memory-bank/docker-workflow.md)
    - Docker-related workflows and configurations
    - Must be referenced when working with Docker
-5. [`productContext`](../../memory-bank/productContext.md)
-    - Product-related context and requirements
-    - Must be referenced when working on product features
-6. [`progress`](../../memory-bank/progress.md)
-    - Track progress on tasks and features
-    - Must be updated at end of every task
-    - Critical for maintaining stateful context
-7. [`projectbrief`](../../memory-bank/projectbrief.md)
-    - Overview of the project and its goals
-    - Must be referenced when working on project-related tasks
-    - Critical for understanding project scope
-8. [`readme-drift-resolution`](../../memory-bank/readme-drift-resolution.md)
-    - Guidelines for resolving README drift
-    - Must be referenced when updating README files
-10  [`root-contexts`](../../memory-bank/root-contexts.md)
-    - Root contexts for the project
-    - Must be referenced when working on root-level tasks
-    - Critical for understanding project structure
-11. [`systemPatterns`](../../memory-bank/systemPatterns.md)
-    - Document system patterns and architectural decisions
-    - Must be updated when making design decisions
-    - Critical for maintaining architectural integrity
-12. [`techContext`](../../memory-bank/techContext.md)
-    - Technical context and constraints for the project
-    - Must be referenced when making technical decisions
-    - Critical for understanding system limitations
-13. [`testing-guide`](../../memory-bank/testing-guide.md)
+4. [`productContext`](../../memory-bank/productContext.md)
+   - Product-related context and requirements
+   - Must be referenced when working on product features
+5. [`progress`](../../memory-bank/progress.md)
+   - Track progress on tasks and features
+   - Must be updated at end of every task
+   - Critical for maintaining stateful context
+6. [`projectbrief`](../../memory-bank/projectbrief.md)
+   - Overview of the project and its goals
+   - Must be referenced when working on project-related tasks
+   - Critical for understanding project scope
+7. [`readme-drift-resolution`](../../memory-bank/readme-drift-resolution.md) - Guidelines for resolving README drift - Must be referenced when updating README files
+   10 [`root-contexts`](../../memory-bank/root-contexts.md) - Root contexts for the project - Must be referenced when working on root-level tasks - Critical for understanding project structure
+8. [`systemPatterns`](../../memory-bank/systemPatterns.md)
+   - Document system patterns and architectural decisions
+   - Must be updated when making design decisions
+   - Critical for maintaining architectural integrity
+9. [`techContext`](../../memory-bank/techContext.md)
+   - Technical context and constraints for the project
+   - Must be referenced when making technical decisions
+   - Critical for understanding system limitations
+10. [`testing-guide`](../../memory-bank/testing-guide.md)
     - Guidelines for testing and quality assurance
     - Must be referenced when writing tests or working on QA tasks
     - Critical for maintaining code quality and reliability
-    
-  - [protocol to follow](../prompts/self-documentation.prompt.md)
-    - Self-Documentation Execution
-    - Context
-    - Requirements
-    - Process
-    - Success Criteria
-    - References
-      - Instruction Authoring Standards
-      - Reading Protocol
-      - Self-Documentation Protocol
+
+- [protocol to follow](../prompts/self-documentation.prompt.md)
+  - Self-Documentation Execution
+  - Context
+  - Requirements
+  - Process
+  - Success Criteria
+  - References
+    - Instruction Authoring Standards
+    - Reading Protocol
+    - Self-Documentation Protocol
+
 ## Trigger Recognition
 
 - Upon any significant action or context change, run the Self-Documentation Protocol.
@@ -82,7 +77,8 @@ Additionally, you must log your actions and findings in memory bank as per self-
   4. **Next Intent:** Planned next step and purpose.
 
 > [!WARNING]
-> You MUST get the actual date from the commandline at least once to establish the basis for the timestamping. If you are not sure about the date, you MUST use the command `date` in the terminal to get the current date and time. 
+> You MUST get the actual date from the commandline at least once to establish the basis for the timestamping. If you are not sure about the date, you MUST use the command `date` in the terminal to get the current date and time.
+
 ## Meta-Description
 
 - In each log entry, include a note that you are executing the Self-Documentation Protocol.
@@ -104,7 +100,6 @@ Additionally, you must log your actions and findings in memory bank as per self-
   Note: Executing Self-Documentation Protocol.
   This log reaffirms that self-documentation and meta-description are ongoing requirements.
 ```
-
 
 ## Validation Checklist
 

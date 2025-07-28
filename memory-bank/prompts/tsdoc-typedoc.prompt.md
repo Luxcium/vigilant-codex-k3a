@@ -1,7 +1,7 @@
 ---
-mode: "agent"
-tools: ["search","editFiles","runCommands", "codebase-usages"]
-description: "Generate comprehensive TSDoc comments and TypeDoc setup for a TypeScript module"
+mode: 'agent'
+tools: ['search', 'editFiles', 'runCommands', 'codebase-usages']
+description: 'Generate comprehensive TSDoc comments and TypeDoc setup for a TypeScript module'
 ---
 
 # TSDoc and TypeDoc Prompt
@@ -14,14 +14,14 @@ When provided with the TypeScript file `${file}`, perform these tasks:
   - `@remarks` for additional context.
   - `@example` with fenced code blocks demonstrating usage.
   - `@packageDocumentation` for module-level overview.
-  Avoid any JSDoc-only tags.  [oai_citation:9‡TSDoc](https://tsdoc.org/?utm_source=chatgpt.com)
+    Avoid any JSDoc-only tags. [oai_citation:9‡TSDoc](https://tsdoc.org/?utm_source=chatgpt.com)
 
 - Review or create `tsdoc.json` in the project root with strict parser settings:
 
   ```jsonc
   {
     "extends": "@microsoft/tsdoc",
-    "supportLaxMode": false
+    "supportLaxMode": false,
   }
   ```
 
@@ -34,7 +34,7 @@ When provided with the TypeScript file `${file}`, perform these tasks:
     "out": "docs",
     "tsconfig": "tsconfig.json",
     "includeVersion": true,
-    "excludeInternal": false
+    "excludeInternal": false,
   }
   ```
 
@@ -73,11 +73,11 @@ When provided with the TypeScript file `${file}`, perform these tasks:
 you are granted tool usage permissions for `editFiles`, `search`, and `runCommands` to complete the tasks.
 
 `codebase-usages` is also available to find references, definitions, and other usages of a symbol as such:
-  codebase: codebase (Built-In)
-  Find relevant file chunks, symbols, and other information in your codebase.
+codebase: codebase (Built-In)
+Find relevant file chunks, symbols, and other information in your codebase.
 
-  editFiles: editFiles (Built-In)
-  Edit files in your workspace.
+editFiles: editFiles (Built-In)
+Edit files in your workspace.
 
-  usages: usages (Built-In)
-  Find references, definitions, and other usages of a symbol.
+usages: usages (Built-In)
+Find references, definitions, and other usages of a symbol.
