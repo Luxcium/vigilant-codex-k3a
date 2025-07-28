@@ -1,7 +1,6 @@
 ---
 description: 'Comprehensive Jupyter notebook development, execution, and analysis specialist with advanced VS Code integration for data science workflows'
-tools:
-  [
+tools:  [
     'codebase-usages',
     'notebook-guru',
     'extensions',
