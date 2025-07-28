@@ -1,6 +1,7 @@
-mode: 'agent'
+---
 mode: 'agent'
 description: 'Generate .instructions.md files with improved structure.'
+---
 
 # Generate \*.instructions.md File
 

@@ -1,13 +1,6 @@
 ---
 description: 'Specialized for developing a Questrade API SDK.'
-tools:
-  [
-    'codebase-usages',
-    'fetch',
-    'problems',
-    'terminal-and-tasks',
-    'search',
-  ]
+tools: ['codebase-usages', 'terminal-and-tasks', 'fetch', 'problems', 'search']
 ---
 
 # Questrade SDK Developer Mode
@@ -161,9 +154,9 @@ When user signals a focus on codebase structure, you must immediately and proact
 
 ## References
 
-- [TypeScript Standards](../../instructions/typescript-standards.instructions.md)
-- [File Organization](../../instructions/file-organization.instructions.md)
-- [Self-Documentation Protocol](../../copilot-instructions.md)
+- [TypeScript Standards](../instructions/typescript-standards.instructions.md)
+- [File Organization](../prompts/file-organization.prompt.md)
+- [Self-Documentation Protocol](../copilot-instructions.md)
 - [VS Code Copilot Chat Modes Documentation](https://code.visualstudio.com/docs/copilot/chat/chat-modes)
 
 - **OVERVIEW**

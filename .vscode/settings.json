@@ -81,7 +81,10 @@
     "*.json": "jsonc",
     "Dockerfile*": "dockerfile",
     "docker-compose*.yml": "dockercompose",
-    "*.md": "markdown"
+    "*.md": "markdown",
+    "**/.github/chatmodes/*.chatmode.md": "chatmode",
+    "**/.github/instructions/*.instructions.md": "instructions",
+    "**/.github/prompts/*.prompt.md": "prompt"
   },
   // "remote.defaultExtensionsIfInstalledLocally": [
   //   "GitHub.copilot",
@@ -2063,7 +2066,6 @@
     "panel": "always"
   },
   "chat.sendElementsToChat.enabled": true,
-  "chat.tools.autoApprove": true,
   // #endregion: Copilot Chat Agent                                  !
   /*
     |-··----------------------------------------------------------··-|
@@ -2097,6 +2099,17 @@
   "inlineChat.hideOnRequest": false,
   "inlineChat.lineEmptyHint": true,
   "inlineChat.lineNaturalLanguageHint": true,
+  "[chatmode]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
       "file": ".github/instructions/use-conventional-commits.instructions.md"

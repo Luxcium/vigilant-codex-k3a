@@ -1,25 +1,7 @@
 ---
 description: VS Code development helper for extensions, workspace configuration, and API usage and anything related to this project in vscode.
-tools: [
-  'codebase', 
-  'copilotCodingAgent',
-  'editFiles',
-  'extensions',
-  'fetch',
-  'findTestFiles',
-  'github',
-  'githubRepo',
-  'microsoft_docs_search',
-  'microsoft-docs',
-  'problems',
-  'runCommands',
-  'terminalLastCommand'
-  'runTasks',
-  'search',
-  'usages',
-  'vscodeAPI',
-]
-model: GPT-4.1  # Default chat mode for this chatmode.
+model: GPT-4.1
+ tools: ['editFiles', 'extensions', 'fetch', 'findTestFiles', 'githubRepo', 'problems', 'runCommands', 'runTask2', 'search', 'terminalLastCommand', 'usages', 'vscodeAPI', 'github', 'microsoft-docs', 'copilotCodingAgent']
 ---
 
 # VS Code Development Helper

@@ -68,7 +68,7 @@ name: string;
 ## Cross-References
 
 - [Instruction Authoring Standards](../instructions/instruction-authoring-standards.instructions.md)
-- [File Organization Standards](../instructions/file-organization.instructions.md)
+- [File Organization Standards](../prompts/file-organization.prompt.md)
 - [Project Dependencies](../../memory-bank/dependencies.md)
 
 ## Validation Checklist

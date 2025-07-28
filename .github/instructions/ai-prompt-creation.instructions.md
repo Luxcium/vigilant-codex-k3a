@@ -121,7 +121,7 @@ Your goal is to generate ${input:componentType} following Codex CLI standards.
 ## References
 
 - Standards: [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
-- Project structure: [file-organization.instructions.md](../instructions/file-organization.instructions.md)
+- Project structure: [file-organization.instructions.md](../prompts/file-organization.prompt.md)
 ```
 
 #### Workflow Automation Prompts
