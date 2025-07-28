@@ -1,5 +1,5 @@
 {
-  // #endregion: FORMAT BEHAVIOUR                                       !
+  // #region FORMAT BEHAVIOUR                                        !
   /*
   |-···----------------------------------------------------------···-|
     */
@@ -13,7 +13,6 @@
   /*
   |-···----------------------------------------------------------···-|
     */
-  // #region: FORMAT BEHAVIOUR                                               !
   // "editor.formatOnPaste": false,
   // "editor.formatOnSave": true,
   // "editor.formatOnSaveMode": "file",
@@ -82,10 +81,7 @@
     "*.json": "jsonc",
     "Dockerfile*": "dockerfile",
     "docker-compose*.yml": "dockercompose",
-    "*.md": "markdown",
-    "*.instructions.md": "markdown",
-    "*.prompt.md": "markdown",
-    "*.chatmode.md": "markdown"
+    "*.md": "markdown"
   },
   // "remote.defaultExtensionsIfInstalledLocally": [
   //   "GitHub.copilot",
@@ -100,23 +96,8 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.productIconTheme": "material-product-icons",
   /*
-  |-····-----------------------------------------------------------――··-|
+    |-··----------------------------------------------------------··-|
   */
-  // #region: editor.rulers [scminput]
-  "[scminput]": {
-    "editor.rulers": [
-      {
-        "color": "#F368",
-        "column": 70
-      },
-      {
-        "color": "#F838",
-        "column": 50
-      }
-    ],
-    "editor.wordWrap": "on",
-    "editor.wordWrapColumn": 70
-  },
   // ========================================
   // Accessibility and Voice
   // ========================================
@@ -128,11 +109,11 @@
   },
   "accessibility.verbosity.inlineChat": true,
   "accessibility.verbosity.panelChat": true,
-  // #endregion: editor.rulers                                                          !
+  // #endregion: FORMAT BEHAVIOUR                                    !
   /*
-  |-····-----------------------------------------------------------··-|
-    */
-  // #region: BETTER COMMENTS                                                         !
+    |-··----------------------------------------------------------··-|
+  */
+  // #region BETTER COMMENTS                                         !
   /*
      "problemsErrorIcon.foreground": "#ff3366",
      "problemsInfoIcon.foreground": "#ffcc55ee",
@@ -1101,7 +1082,25 @@
     "strings": "on"
   },
   // #endregion: editor.rulers [scminput]                                    !
-  // #region: editor.rulers                                                  !
+  /*
+    |-··----------------------------------------------------------··-|
+  */
+  // #region editor.rulers                                           !
+  "[scminput]": {
+    "editor.rulers": [
+      {
+        "color": "#F368",
+        "column": 70
+      },
+      {
+        "color": "#F838",
+        "column": 50
+      }
+    ],
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 70
+  },
+
   "editor.rulers": [
     {
       "color": "#FC33",
@@ -1277,9 +1276,9 @@
   "todo-tree.filtering.excludedWorkspaces": [], // new items
   // #endregion: BETTER COMMENTS                                           !
   /*
-  |-····-----------------------------------------------------------··-|
-    */
-  // #region: TODO TREE                                                                !
+    |-··----------------------------------------------------------··-|
+  */
+  // #region TODO TREE                                               !
   "todo-tree.filtering.excludeGlobs": ["**/node_modules"],
   "todo-tree.filtering.ignoreGitSubmodules": false,
   "todo-tree.filtering.includedWorkspaces": [], // new items
@@ -1603,7 +1602,6 @@
       // "borderRadius": "0px",
       // "type": "whole-line",
     },
-    // #endregion ---------------------------------------------------
     "#endregion": {
       "background": "#F15",
       "foreground": "#F15",
@@ -1616,7 +1614,6 @@
       "iconColour": "#F15",
       "opacity": 30
     },
-    // #region ------------------------------------------------------
     "#region": {
       "background": "#DF3",
       "foreground": "#DF3",
@@ -2036,11 +2033,9 @@
   // "todo-tree.tree.tooltipFormat": "${filepath}, line ${line}",
   // #endregion: TODO TREE                                                           !
   /*
-  |-····-----------------------------------------------------------··-|
+    |-··----------------------------------------------------------··-|
   */
-
-  // #region: Copilot Chat Agent                                                           !
-
+  // #region Copilot Chat Agent                                      !
   "chat.agent.enabled": true,
   "chat.agent.maxRequests": 15,
   "chat.commandCenter.enabled": true,
@@ -2069,9 +2064,11 @@
   },
   "chat.sendElementsToChat.enabled": true,
   "chat.tools.autoApprove": true,
-
-  // #region: Github Copilot                                                          !
-
+  // #endregion: Copilot Chat Agent                                  !
+  /*
+    |-··----------------------------------------------------------··-|
+  */
+  // #region Github Copilot                                          !
   "github.copilot.chat.agent.autoFix": true,
   "github.copilot.chat.agent.currentEditorContext.enabled": true,
   "github.copilot.chat.agent.runTasks": true,
@@ -2128,7 +2125,11 @@
   "github.copilot.enable": {
     "*": true
   },
-  // ========================================
+  // #endregion: Github Copilot                                      !
+  /*
+    |-··----------------------------------------------------------··-|
+  */
+  // #region Last Section                                            !
   "typescript.tsserver.maxTsServerMemory": 8192,
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.localEchoLatencyThreshold": 30,
@@ -2325,4 +2326,5 @@
   "workbench.list.multiSelectModifier": "ctrlCmd",
   "workbench.list.smoothScrolling": true,
   "editor.inlineSuggest.edits.renderSideBySide": "never"
+  // #endregion: Last Section                                        !
 }
