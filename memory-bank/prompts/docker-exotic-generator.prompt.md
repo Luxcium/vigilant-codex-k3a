@@ -1,6 +1,6 @@
 ---
 mode: 'agent'
-tools: ['codebase', 'file_search', 'terminal']
+tools: ['codebase', 'editFiles', 'runInTerminal', 'search', 'usages']
 description: 'Generate advanced Docker configurations with exotic patterns and security-first approach'
 ---
 

@@ -251,5 +251,5 @@ applyTo: '**/domain/**'
 
 - [TypeScript Standards](../instructions/typescript-standards.instructions.md)
 - [Python Standards](../instructions/python-standards.instructions.md)
-- [File Organization](../instructions/file-organization.instructions.md)
+- [File Organization](../prompts/file-organization.prompt.md)
 - [Template Manager](./template-manager.prompt.md)

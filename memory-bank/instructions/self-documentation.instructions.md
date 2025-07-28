@@ -23,10 +23,6 @@ Additionally, you must log your actions and findings in memory bank as per self-
 3. [`docker-workflow`](../../memory-bank/docker-workflow.md)
    - Docker-related workflows and configurations
    - Must be referenced when working with Docker
-4. [`no_dummy-no_placeholders`](../../memory-bank/no_dummy-no_placeholders.md)
-   - Guidelines for avoiding dummy data and placeholders
-   - Must be referenced when writing code or documentation
-   - Critical for maintaining code quality
 5. [`productContext`](../../memory-bank/productContext.md)
     - Product-related context and requirements
     - Must be referenced when working on product features
@@ -41,10 +37,6 @@ Additionally, you must log your actions and findings in memory bank as per self-
 8. [`readme-drift-resolution`](../../memory-bank/readme-drift-resolution.md)
     - Guidelines for resolving README drift
     - Must be referenced when updating README files
-9.  [`self-documentation`](../../memory-bank/self-documentation.md)
-    - Guidelines for self-documentation and code comments
-    - Must be referenced when writing code or documentation
-    - Critical for maintaining code quality and understanding
 10  [`root-contexts`](../../memory-bank/root-contexts.md)
     - Root contexts for the project
     - Must be referenced when working on root-level tasks
@@ -61,6 +53,7 @@ Additionally, you must log your actions and findings in memory bank as per self-
     - Guidelines for testing and quality assurance
     - Must be referenced when writing tests or working on QA tasks
     - Critical for maintaining code quality and reliability
+    
   - [protocol to follow](../prompts/self-documentation.prompt.md)
     - Self-Documentation Execution
     - Context

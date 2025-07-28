@@ -99,6 +99,6 @@ Closes #123
 
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [Gitmoji Guide](https://gitmoji.dev/)
-- [Complete Gitmoji List](.github/prompts/gitmoji-complete-list.prompt.md)
-- [Commit Examples](.github/prompts/commit-examples.prompt.md)
-- [Breaking Changes Guide](.github/prompts/breaking-changes.prompt.md)
+- [Complete Gitmoji List](../prompts/gitmoji-complete-list.prompt.md)
+- [Commit Examples](../prompts/commit-examples.prompt.md)
+- [Breaking Changes Guide](../prompts/breaking-changes.prompt.md)

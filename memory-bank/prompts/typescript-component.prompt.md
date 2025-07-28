@@ -1,6 +1,7 @@
-mode: 'agent'
+---
 mode: 'agent'
 description: 'Generate a TypeScript React component.'
+---
 
 Your goal is to generate a ${input:componentType:Select component type (class|interface|function|module)} named ${input:componentName} following Codex CLI TypeScript standards.
 
@@ -30,7 +31,7 @@ Your goal is to generate a ${input:componentType:Select component type (class|in
 - **Project Standards**: Follow patterns established in existing ${workspaceFolder}/src files
 - **Type Safety**: Ensure all types are explicitly defined and exported when needed
 - **Memory Bank**: Reference ${workspaceFolder}/memory-bank/dependencies.md for dependency relationships
-- **File Organization**: Use patterns from [file-organization.instructions.md](../instructions/file-organization.instructions.md)
+- **File Organization**: Use patterns from [file-organization.instructions.md](../prompts/file-organization.prompt.md)
 
 ## Templates Reference
 

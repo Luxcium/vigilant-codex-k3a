@@ -1,11 +1,6 @@
 ---
 applyTo: '.vscode/settings.json,.vscode/launch.json'
 description: 'Microsoft Edge DevTools integration and debugging configuration standards for VS Code'
-version: '1.0'
-lastUpdated: '2025-07-14'
-dependencies: ['ms-edgedevtools.vscode-edge-devtools']
-relatedFiles:
-  ['.vscode/settings.json', '.vscode/launch.json', 'web/eslint.config.mjs']
 ---
 
 # Microsoft Edge DevTools Debugging Standards

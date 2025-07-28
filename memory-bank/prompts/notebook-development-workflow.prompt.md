@@ -1,7 +1,6 @@
 ---
 mode: 'agent'
-tools:
-  [
+tools:  [
     'codebase',
     'editFiles',
     'runCommands',

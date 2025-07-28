@@ -1,7 +1,0 @@
-{
-  "codebase-usages": {
-    "tools": ["codebase", "editFiles", "usages"],
-    "description": "description",
-    "icon": "tools"
-  }
-}

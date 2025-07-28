@@ -1,6 +1,6 @@
 ---
 mode: 'agent'
-tools: ['codebase', 'terminal', 'file_search']
+tools: ['codebase', 'runCommands', 'search', 'searchResults', 'usages']
 description: 'Guide the user through Python environment setup with conditional workflows'
 ---
 

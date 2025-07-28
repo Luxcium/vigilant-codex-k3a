@@ -2121,7 +2121,7 @@
   },
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
-      "file": "memory-bank/instructions/use-conventional-commits.instructions.md"
+      "file": "memory-bank/instructions/conventional-commits-must-be-used.instructions.md"
     }
   ],
   "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
