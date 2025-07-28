@@ -19,6 +19,7 @@ log() {
 pattern=".github/instructions/*.instructions.md"
 
 log "Linting instructions files"
+npx prettier --write $pattern
 markdownlint --config .markdownlint.yaml $pattern || {
   echo "[ERROR] instructions markdownlint failed"
   exit 1

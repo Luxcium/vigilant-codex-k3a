@@ -19,6 +19,7 @@ log() {
 pattern=".github/prompts/*.prompt.md"
 
 log "Linting prompt files"
+npx prettier --write $pattern
 markdownlint --config .markdownlint.yaml $pattern || {
   echo "[ERROR] prompt markdownlint failed"
   exit 1

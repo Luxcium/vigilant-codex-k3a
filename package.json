@@ -13,7 +13,8 @@
   "scripts": {
     "dev": "cd ./web/ && npm install && npm run dev",
     "docs": "typedoc --options typedoc.json",
-    "lint": "eslint \"src/**/*.ts\"",
+    "lint": "npm run lint:markdown && eslint 'src/**/*.ts'",
+    "lint:markdown": "npx prettier --write '**/*.chatmode.md' '**/*.prompt.md' '**/*.instructions.md' && markdownlint --config .markdownlint.yaml '**/*.md' '**/*.chatmode.md' '**/*.prompt.md' '**/*.instructions.md'",
     "markdownlint": "markdownlint \"**/*.md\"",
     "sdk:playground": "npm run build && node ./lib/src/main.js",
     "test": "vitest run",

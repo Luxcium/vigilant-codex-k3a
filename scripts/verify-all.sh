@@ -116,6 +116,8 @@ check_markdown() {
 
   cd "$PROJECT_ROOT"
 
+  # Run Prettier first on all markdown and custom agent files
+  npx prettier --write "**/*.md" "**/*.chatmode.md" "**/*.prompt.md" "**/*.instructions.md"
   # Run markdownlint on all markdown files
   if markdownlint --config .markdownlint.yaml **/*.md; then
     success "Markdown validation passed"
@@ -156,6 +158,8 @@ check_instructions() {
         continue
       fi
 
+      # Run Prettier first
+      npx prettier --write "$file"
       # Run markdownlint if available
       if command -v markdownlint &> /dev/null; then
         if ! markdownlint --config "$PROJECT_ROOT/.markdownlint.yaml" "$file"; then
@@ -205,6 +209,8 @@ check_prompts() {
         continue
       fi
 
+      # Run Prettier first
+      npx prettier --write "$file"
       # Run markdownlint if available
       if command -v markdownlint &> /dev/null; then
         if ! markdownlint --config "$PROJECT_ROOT/.markdownlint.yaml" "$file"; then
@@ -260,6 +266,8 @@ check_memory_bank() {
       failed=1
     fi
 
+    # Run Prettier first
+    npx prettier --write "$MEMORY_BANK_DIR/$file"
     # Run markdownlint if available
     if command -v markdownlint &> /dev/null; then
       if ! markdownlint --config "$PROJECT_ROOT/.markdownlint.yaml" "$MEMORY_BANK_DIR/$file"; then

@@ -87,6 +87,15 @@ When a script is created or modified, update this README with a brief descriptio
   - Comprehensive repository validation suite
 - `check-memory-bank.sh` - Memory bank specific validation
 
+#### Markdown Linting and Formatting
+
+- `check-markdown.sh` - Lint and format all markdown and custom agent files
+  - Usage: `./check-markdown.sh`
+  - Steps:
+    1. Run Prettier: `npx prettier --write "**/*.chatmode.md" "**/*.prompt.md" "**/*.instructions.md"`
+    2. Run markdownlint: `markdownlint --config .markdownlint.yaml "**/*.md" "**/*.chatmode.md" "**/*.prompt.md" "**/*.instructions.md"`
+  - Ensures all documentation and agent files are consistently formatted and linted
+
 ### Code Generation Scripts (2 scripts)
 
 - `generate-instruction-file.sh` - Generate AI instruction files

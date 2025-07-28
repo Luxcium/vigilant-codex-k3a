@@ -21,6 +21,8 @@ log() {
 log "Running markdownlint on all tracked markdown files"
 files=$(git ls-files '*.md')
 if command -v markdownlint > /dev/null; then
+  # Run Prettier first on all markdown and custom agent files
+  npx prettier --write "**/*.md" "**/*.chatmode.md" "**/*.prompt.md" "**/*.instructions.md"
   markdownlint --config .markdownlint.yaml --ignore-path .markdownlintignore $files || {
     echo "[ERROR] markdownlint failed"
     exit 1

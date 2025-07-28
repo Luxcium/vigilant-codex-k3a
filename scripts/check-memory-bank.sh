@@ -26,6 +26,7 @@ if [ ! -d "$dir" ]; then
 fi
 
 log "Running markdownlint on $dir/*.md"
+npx prettier --write "$dir"/*.md
 if command -v markdownlint > /dev/null; then
   markdownlint --config .markdownlint.yaml "$dir"/*.md || {
     echo "[ERROR] Markdownlint failed for $dir"
