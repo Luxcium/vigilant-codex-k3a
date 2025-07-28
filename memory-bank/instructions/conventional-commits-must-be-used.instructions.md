@@ -1,18 +1,20 @@
 ---
 applyTo: '**'
-description: 'Mandatory conventional commit protocol with gitmoji for all commit messages.'
+description: 'Mandatory for all commit messages: Conventional commit protocol with gitmoji MUST BE USED.'
 ---
 
 # Conventional Commit Messages
 
-> [!CRITICAL]
+Analyze the origin of the changes, YOU MUST use `chores` to indicate maintenance tasks that are outside the coding folders, or any other more purposeful categorization from the list, you MUST NEVER use `refactor` other than for code restructuring specifically (programming language restructuring, inside of src/ python/ and any other folders with, not for instructions, documentation or other non code related reorganizations), `fix` for bug fixes, and as such any others for their respective purposes. YOU MUST IMPERATIVELY ALWAYS include a gitmoji to enhance clarity and visual appeal of commit messages.
+
+> [!IMPORTANT]
 > **EVERY COMMIT MUST INCLUDE GITMOJI** - NO EXCEPTIONS
 >
 > Format: `<type>[(<scope>)]: <:gitmoji:> <description>`
 
 ## Required Format
 
-```
+```bash
 <type>[(<optional scope>)]: <:gitmoji:> <description>
 
 [optional body]
