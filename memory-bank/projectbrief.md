@@ -114,6 +114,8 @@ This file is the foundation of the Memory Bank and defines the core requirements
 
 - **VS Code Copilot** (Code Generation and Standards)
   - **Entry Point**: [`.github/copilot-instructions.md`](../.github/copilot-instructions.md)
+    > [!IMPORTANT]
+    > **Radical Change Notice:** Instructions, prompts, and chatmodes are now located in `memory-bank/instructions/`, `memory-bank/prompts/`, and `memory-bank/chatmodes/`. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code Copilot tooling.
   - **Responsibilities**: Real-time code assistance, instruction file application, quality assurance
   - **Unique Capabilities**: 26 instruction files, automated coding standards, IDE integration
 
@@ -219,6 +221,8 @@ This project supports three AI agents with specific entry points and must mainta
 - **Cline AI** → [`.clinerules/main-rules.md`](../.clinerules/main-rules.md) (Memory bank integration and learning protocols)
 - **Codex CLI** → [`AGENTS.md`](../AGENTS.md) (Automation and container orchestration)
 - **VS Code Copilot** → [`.github/copilot-instructions.md`](../.github/copilot-instructions.md) (Code generation and quality standards)
+> [!IMPORTANT]
+> **Radical Change Notice:** Instructions, prompts, and chatmodes are now located in `memory-bank/instructions/`, `memory-bank/prompts/`, and `memory-bank/chatmodes/`. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code Copilot tooling.
 
 **All agents must validate their understanding against this foundational document and ensure alignment with core project requirements.**
 

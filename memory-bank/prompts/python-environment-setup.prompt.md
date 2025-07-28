@@ -77,7 +77,9 @@ Before considering setup complete:
 - **Instruction File:** `memory-bank/instructions/python-environment-conditional.instructions.md`
 - **Memory Bank:** `memory-bank/docker-workflow.md` for Docker integration patterns
 - **Dependencies:** `memory-bank/dependencies.md` for rationale tracking
-- **AI Agents:** See `AGENTS.md`, `.clinerules/main-rules.md`, `memory-bank/copilot-instructions.md`
+- **AI Agents:** See `AGENTS.md`, `.clinerules/main-rules.md`, `.github/copilot-instructions.md`
+> [!IMPORTANT]
+> **Radical Change Notice:** Instructions, prompts, and chatmodes are now located in `memory-bank/instructions/`, `memory-bank/prompts/`, and `memory-bank/chatmodes/`. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code Copilot tooling.
 
 ## Next Steps
 

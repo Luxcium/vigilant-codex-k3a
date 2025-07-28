@@ -49,31 +49,27 @@ This file tracks all pro### Script Management and Optimization Protocol
 
 ---
 
-## Core Dependencies
 
-### TypeScript/Node.js Core Stack
+### AI Agent Dependencies
 
-- **Node.js 22** - Runtime with native fetch API support
-- **TypeScript 5.8+** - Strict type checking with native Response types
-- **Native Fetch API** - HTTP client using Node.js 22 native implementation
-- **Vitest 3.2.4** - Test runner with Istanbul coverage provider (98.34% coverage)
-- **Prisma ORM** - Database integration with PostgreSQL backend
+### Memory Bank System
 
-### Next.js v15+ Web Application Stack
+- **Stateful Documentation** - Persistent context across development sessions
+- **Cross-File Dependencies** - Comprehensive dependency tracking
+- **Self-Documentation Protocol** - Automatic context preservation
+- **Memory Reset Resilience** - Complete project understanding from documentation
+- **Markdown-Lint Compliance** - Strict formatting standards for all files
 
-- **Next.js 15+** - App Router with Server Components by default
-- **Server Actions** - Form handling and mutations with `'use server'`
-- **Client Components** - Interactive UI with `'use client'` for state management
-- **PostgreSQL** - Database service via Docker Compose
-- **Docker Integration** - Containerized development environment
+### Three AI Agent Ecosystem
 
-### Python Development Environment
+- **Cline AI** - Primary development agent (`.clinerules/main-rules.md`)
+- **Codex CLI** - Terminal automation and orchestration (`AGENTS.md`)
+- **VS Code Copilot** - Code generation (`.github/copilot-instructions.md`)
+- **Cross-Agent Workflows** - Sophisticated collaboration patterns
+- **Stateful Collaboration** - Memory bank integration across all agents
 
-- **Python 3.13** - Core language runtime
-- **Conditional Environment Framework** - Runtime mode selection:
-  - `local` - Host-based virtual environment with direct IDE integration
-  - `docker_isolated` - Fully containerized with complete isolation
-  - `docker_volume` - Containerized with live host file mounting
+> [!IMPORTANT]
+> **Radical Change Notice:** Instructions, prompts, and chatmodes are now located in `memory-bank/instructions/`, `memory-bank/prompts/`, and `memory-bank/chatmodes/`. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code Copilot tooling.
 - **Jupyter Notebooks** - VS Code integration with advanced API support
 - **pip/virtualenv** - Package management across all environment modes
 

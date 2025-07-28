@@ -8,7 +8,9 @@ This project supports three AI agents with distinct entry points and responsibil
 
 - **Codex CLI (YOU)** → `AGENTS.md` (THIS IS YOUR PRIMARY INSTRUCTION FILE)
 - **Cline AI** → `.clinerules/main-rules.md` (Cline AI's primary instruction file)
- - **VS Code Copilot** → `memory-bank/copilot-instructions.md` (VS Code Copilot's primary instruction file)
+ - **VS Code Copilot** → `.github/copilot-instructions.md` (VS Code Copilot's primary instruction file)
+> [!IMPORTANT]
+> **Radical Change Notice:** As of July 2025, all instructions, prompts, and chatmodes previously located in `.github/` are now moved to `memory-bank/instructions/`, `memory-bank/prompts/`, and `memory-bank/chatmodes/` respectively. This is an exotic, nonstandard configuration designed to maximize agentic context and stateful documentation. **However, the Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code Copilot documentation and tooling.** All contributors and agents must reference the new memory-bank locations for instructions, prompts, and chatmodes, but keep Copilot's main instruction file in `.github/` to avoid confusion and ensure proper agent operation.
 
 ### Agent Collaboration Rules
 

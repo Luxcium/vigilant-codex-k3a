@@ -156,7 +156,9 @@ When user signals a focus on codebase structure, you must immediately and proact
 
 - [TypeScript Standards](../instructions/typescript-standards.instructions.md)
 - [File Organization](../prompts/file-organization.prompt.md)
-- [Self-Documentation Protocol](../copilot-instructions.md)
+- [Self-Documentation Protocol](../../.github/copilot-instructions.md)
+> [!IMPORTANT]
+> **Radical Change Notice:** Instructions, prompts, and chatmodes are now located in `memory-bank/instructions/`, `memory-bank/prompts/`, and `memory-bank/chatmodes/`. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code Copilot tooling.
 - [VS Code Copilot Chat Modes Documentation](https://code.visualstudio.com/docs/copilot/chat/chat-modes)
 
 - **OVERVIEW**
