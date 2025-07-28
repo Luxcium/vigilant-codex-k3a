@@ -5,7 +5,7 @@ description: 'Mandatory for all commit messages: Conventional commit protocol wi
 
 # Conventional Commit Messages
 
-Analyze the origin of the changes, YOU MUST use `chores` to indicate maintenance tasks that are outside the coding folders, or any other more purposeful categorization from the list, you MUST NEVER use `refactor` other than for code restructuring specifically (programming language restructuring, inside of src/ python/ and any other folders with, not for instructions, documentation or other non code related reorganizations), `fix` for bug fixes, and as such any others for their respective purposes. YOU MUST IMPERATIVELY ALWAYS include a gitmoji to enhance clarity and visual appeal of commit messages.
+Analyze the origin of the changes, YOU MUST use `chores` to indicate maintenance tasks that are outside the coding folders, or any other more purposeful categorization from the list, you MUST NEVER use `refactor` other than for code restructuring specifically (programming language restructuring, inside of src/ python/ and any other folders with, not for instructions, documentation or other non code related reorganizations), `fix` for bug fixes, and as such any others for their respective purposes. YOU MUST IMPERATIVELY ALWAYS include a gitmoji to enhance clarity and visual appeal of commit messages. Do not use `documentation` (or `docs`) unless it is about documentation targetting the users. The gitmoji MUST be used to reflect the nature of the change (description) of change (the one described in the commit message) and not the scope (used to express category (type) an sub category (scope)), and the commit message MUST follow the conventional commit format.
 
 > [!IMPORTANT]
 > **EVERY COMMIT MUST INCLUDE GITMOJI** - NO EXCEPTIONS
