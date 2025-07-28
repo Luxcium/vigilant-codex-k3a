@@ -1,7 +1,6 @@
-# techContext.md
-[2025-07-27] Radical Documentation Refactor: Memory Bank Migration
+# The `techContext.md` Memory Bank File
 
-All instructions, prompts, and chatmodes have been migrated from `.github/` to the `memory-bank/` folders. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change was motivated by the need for a more organized, stateful, and agent-friendly documentation system. Centralizing instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors. Keeping the Copilot entry point in `.github/copilot-instructions.md` ensures compatibility with VS Code Copilot and prevents integration issues. All references and explanatory notes have been updated across the codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
+Your AI Agent will actively strive to keep this file up to date with the latest technical context, including technology stack, development environment setup, technical constraints, and dependencies. This file MUST be updated by any AI Agent eagerly each time it will make changes on each chat completion and each task or subtask as the authoritative guide for all technical implementation aspects of the Vigilant Codex K3a polyvalent AI development workspace.
 
 ## Purpose
 
@@ -277,6 +276,11 @@ This project supports three AI agents with specific technical responsibilities:
 - **VS Code Copilot** → Enforce technical standards through instruction files and real-time code assistance
 
 **All agents must validate their technical implementations against the standards defined in this file and ensure compliance with established technical constraints.**
+
+
+[2025-07-27] Radical Documentation Reorganization: Migration Within Memory Bank
+
+All instructions, prompts, and chatmodes have been migrated from `.github/` within `memory-bank/` directory. Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change is motivated by our need for an organized, stateful, and agent-friendly documentation system. Centralizing instructions, prompts, and chatmodes in memory bank enables better maintenance, easier context preservation, and improved collaboration between AI agents and human contributors. Keeping Copilot entry point in `.github/copilot-instructions.md` ensures compatibility with VS Code Copilot and prevents integration issues. All references and explanatory notes have been updated across codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
 
 ---
 

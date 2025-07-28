@@ -1,7 +1,8 @@
-# dependencies.md
-[2025-07-27] Radical Documentation Refactor: Memory Bank Migration
+# The `dependencies.md` Memory Bank File
 
-All instructions, prompts, and chatmodes have been migrated from `.github/` to the `memory-bank/` folders. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change was motivated by the need for a more organized, stateful, and agent-friendly documentation system. Centralizing instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors. Keeping the Copilot entry point in `.github/copilot-instructions.md` ensures compatibility with VS Code Copilot and prevents integration issues. All references and explanatory notes have been updated across the codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
+Your AI Agent MUST actively strive to keep this file up to date with the latest dependencies, their relationships, and integration points for the Vigilant Codex K3a polyvalent AI development workspace. This file MUST be updated by any AI Agent accessing it, You MUST eagerly each time changes on each chat completion and each task or subtask as the living authoritative guide.
+
+
 
 ## Purpose
 
@@ -688,3 +689,8 @@ All agents must consult the [theme-ui-meta.instructions.md](../.github/instructi
 **Last Updated**: 2025-02-06 (Conditional Python environment framework implementation)  
 **Status**: Active tracking of conditional framework and AI Agent Framework dependencies  
 **Next Review**: After testing conditional framework and extending to other language environments
+
+
+[2025-07-27] Radical Documentation Refactor: Memory Bank Migration
+
+All `instructions`, `prompts`, and `chatmodes` directives folders have been migrated from `.github/` into `memory-bank/` directory instead. The Copilot entry point remains `.github/copilot-instructions.md` ensures compatibility with VS Code Copilot and prevents integration issues.

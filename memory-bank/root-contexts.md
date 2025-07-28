@@ -1,4 +1,6 @@
-# root-contexts.md
+# The `root-contexts.md` Memory Bank File
+
+Your AI Agent will actively strive to keep this file up to date with the latest root contexts, including project roots, pseudo roots, and their purposes. This file MUST be updated by any AI Agent eagerly each time it will make changes on each chat completion and each task or subtask as the authoritative guide for all top-level folder structures in the Vigilant Codex K3a polyvalent AI development workspace. You the ai agent responsible for maintaining this file autonomously.
 
 ## Purpose
 

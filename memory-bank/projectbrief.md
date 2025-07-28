@@ -1,7 +1,7 @@
-# projectbrief.md
-[2025-07-27] Radical Documentation Refactor: Memory Bank Migration
+# The `projectbrief.md` Memory Bank File
 
-All instructions, prompts, and chatmodes have been migrated from `.github/` to the `memory-bank/` folders. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change was motivated by the need for a more organized, stateful, and agent-friendly documentation system. Centralizing instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors. Keeping the Copilot entry point in `.github/copilot-instructions.md` ensures compatibility with VS Code Copilot and prevents integration issues. All references and explanatory notes have been updated across the codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
+You are responsible for maintaining this file autonomously. Your AI Agent MUST actively strive to keep this file up to date with the latest project brief, including core requirements, scope definition, and AI agent collaboration framework. This file MUST be updated by any AI Agent accessing it, You MUST eagerly each time changes on each chat completion and each task or subtask as the living authoritative guide. 
+ 
 
 ## Purpose
 
@@ -230,5 +230,11 @@ This project supports three AI agents with specific entry points and must mainta
 **All agents must validate their understanding against this foundational document and ensure alignment with core project requirements.**
 
 ---
+
+[2025-07-27] Radical Documentation Refactor: Memory Bank Migration
+
+All instructions, prompts, and chatmodes have been migrated from `.github/` to the `memory-bank/` folders. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. 
+
+--- 
 
 **Last Updated:** 2025-07-18 | **Status:** Foundational Requirements Established | **Scope:** Polyvalent AI Development Workspace

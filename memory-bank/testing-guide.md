@@ -1,6 +1,6 @@
-# testing-guide.md
+# The `testing-guide.md` Memory Bank File
 
-<!-- markdownlint-disable MD013 MD022 MD032 MD041 -->
+Your AI Agent will actively strive to keep this file up to date with the latest testing strategies, including test suite achievements, validation steps, and development scripts. This file MUST be updated by any AI Agent eagerly each time it will make changes on each chat completion and each task or subtask as the authoritative guide for all testing-related aspects of the Vigilant Codex K3a polyvalent AI development workspace. If you, the agent, access the information in this file then it means it is your duty to keep it updated. You must update this file eagerly.
 
 ## Purpose
 

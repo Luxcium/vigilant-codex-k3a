@@ -1,7 +1,6 @@
-# progress.md
-[2025-07-27] Radical Documentation Refactor: Memory Bank Migration
+# The `progress.md` Memory Bank File
 
-All instructions, prompts, and chatmodes have been migrated from `.github/` to the `memory-bank/` folders. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change was motivated by the need for a more organized, stateful, and agent-friendly documentation system. Centralizing instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors. Keeping the Copilot entry point in `.github/copilot-instructions.md` ensures compatibility with VS Code Copilot and prevents integration issues. All references and explanatory notes have been updated across the codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
+This file MUST be maintained autonomously by your AI Agent (you). It tracks what works, what remains to be built, current status, and known issues for the Vigilant Codex K3a polyvalent AI development workspace. It provides a clear, up-to-date snapshot of project progress and achievements.
 
 ## Purpose
 
@@ -445,3 +444,6 @@ This project supports three AI agents with specific entry points:
 **Last Updated:** 2025-07-23 | **Status:** Documentation Updated | **Coverage:** 98.34% | **Applications:** Fully Operational
 **Last Updated:** 2025-07-23 | **Status:** Root Context Protocol Established | **Coverage:** 98.34% | **Applications:** Fully Operational
 
+[2025-07-27] Radical Documentation Refactor: Memory Bank Migration
+
+All instructions, prompts, and chatmodes have been migrated from `.github/` to the `memory-bank/` folders. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. 
