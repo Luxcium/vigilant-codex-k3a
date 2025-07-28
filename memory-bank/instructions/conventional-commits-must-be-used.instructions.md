@@ -24,6 +24,10 @@ description: 'Mandatory conventional commit protocol with gitmoji for all commit
 
 Chose the best candidate for the given commit:
 
+> [!WARNING]
+> Urgent info that needs your immediate attention to avoid problems:
+> Emoji depends more on the type of change than the scope, so choose the type first and then the emoji, independently, those examples below are only guidelines.
+
 - `build` - Build system (`:construction_worker:`, `:arrow_up:`, `:arrow_down:`)
 - `chore` - Maintenance (`:wrench:`, `:fire:`, `:heavy_plus_sign:`, `:heavy_minus_sign:`)
 - `fix` - Bug fixes (`:bug:`, `:ambulance:` for critical)
@@ -44,7 +48,7 @@ Chose the best candidate for the given commit:
 | 🎨    | `:art:`              | Code structure/format  |
 | ⚡     | `:zap:`              | Performance            |
 | 🔥    | `:fire:`             | Remove code/files      |
-| ♻️    | `:recycle:`          | Refactor code          |
+| ♻️    | `:recycle:`          | Refactor Anything      |
 | ✅    | `:white_check_mark:` | Tests                  |
 | 🔧    | `:wrench:`           | Configuration          |
 | ⬆️    | `:arrow_up:`         | Upgrade dependencies   |
@@ -99,7 +103,7 @@ chore(ci): :wrench: update GitHub Actions workflow
 
 Add `!` before `:` and include `BREAKING CHANGE:` in footer:
 
-```
+```bash
 feat(api)!: :boom: remove legacy endpoints
 
 BREAKING CHANGE: Legacy v1 endpoints removed. Use v2 API.
@@ -111,6 +115,6 @@ Closes #123
 
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [Gitmoji Guide](https://gitmoji.dev/)
-- [Complete Gitmoji List](../prompts/gitmoji-complete-list.prompt.md)
+- [Complete Gitmoji Selection](../prompts/gitmoji-complete-list.prompt.md)
 - [Commit Examples](../prompts/commit-examples.prompt.md)
 - [Breaking Changes Guide](../prompts/breaking-changes.prompt.md)
