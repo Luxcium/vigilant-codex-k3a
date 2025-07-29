@@ -1,3 +1,14 @@
+- [2025-07-29T20:07:20Z] Output Verification and HTTP Error Code Inclusion in Playground
+   **Current State:**
+   The canonical playground `src/example.ts` was hardened to include HTTP status codes in the output file `.keys/example-sdk-demo.json` on error. The playground was built and executed, and the output file was verified to contain the correct status code (400) on failure. This confirms robust error reporting and output verification as part of the recursive demonstration workflow.
+   **Last Action:**
+   Patched `example.ts` to propagate and record HTTP status codes on error, rebuilt and ran the playground, and verified `.keys/example-sdk-demo.json` for correct error code output.
+   **Rationale:**
+   To fulfill the requirement for robust, agentic, and reproducible playground development, ensuring all error outputs include HTTP status codes for better debugging and agent memory.
+   **Next Intent:**
+   Continue recursive, output-verified workflow for all future playground iterations and maintain robust error reporting.
+   **Meta:**
+   I am updating my self-documentation after verifying output and HTTP error code inclusion. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 # The `activeContext.md` Memory Bank File
 
 As an AI Agent, you MUST actively strive to keep this file up to date with the latest active context, including project goals, user experience requirements, and AI agent collaboration framework. This file MUST be updated by any AI Agent accessing it, You MUST eagerly each time changes on each chat completion and each task or subtask as the living authoritative guide.
@@ -19,6 +30,39 @@ This file tracks the current work focus, recent changes, next steps, and active 
 ---
 
 ## Current Work Focus
+[2025-07-29T17:35:00Z] Example Playground Output Verification and Recursive Procedure Logging
+
+**Current State:**
+The hardened `src/example.ts` was built and executed. Output was written to `.keys/example-sdk-demo.json` and verified for correctness. The workflow now includes a recursive, output-verified demonstration step for each iteration, to be logged in the memory bank and referenced in chatmode/instructions for agent memory.
+
+**Last Action:**
+Built and ran the playground, checked `.keys/example-sdk-demo.json` for valid output, and confirmed the process. Logging this demonstration and recursive verification procedure for future agent sessions.
+
+**Rationale:**
+To ensure every code iteration is validated by actual output, and that this workflow is remembered and referenced by all agents and chatmodes. This supports robust, agentic, and reproducible development.
+
+**Next Intent:**
+Update chatmode/instructions to reference this recursive, output-verified workflow. Continue modularizing and hardening the playground as needed.
+
+**Meta:**
+I am updating my self-documentation after verifying output and logging the recursive demonstration procedure. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+[2025-07-29T00:00:00Z] Questrade Example Playground Canonicalization and Modularization
+
+**Current State:**
+`src/example.ts` is now the canonical playground for agent and user feature prototyping. The file is working, modular, and outputs only to `.keys/example-sdk-demo.json` with human-readable metadata. A modularization plan is written and ready for further function extraction. All agent-facing documentation and memory bank files have been updated to reference this playground as the canonical example.
+
+**Last Action:**
+Restored and enhanced `example.ts`, consolidated output, wrote modularization plan, and updated all relevant memory bank and documentation files to reference the playground. Ensured all changes and rationale are logged for agent autonomy.
+
+**Rationale:**
+To provide a robust, modular, and agent-oriented playground for Questrade SDK development, supporting agent autonomy and future modularization. Ensures all agents recognize and use `src/example.ts` as the canonical example.
+
+**Next Intent:**
+Continue modularizing `example.ts` per the plan, extracting pure functions and consolidating all output. Maintain and update memory bank and documentation as features evolve.
+
+**Meta:**
+I am updating my self-documentation after canonicalizing and modularizing the Questrade example playground. I include this log following the Self-Documentation Protocol.
+This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 [2025-07-27T00:00:00Z] Radical Documentation Refactor: Memory Bank Migration
 
 **Current State:**

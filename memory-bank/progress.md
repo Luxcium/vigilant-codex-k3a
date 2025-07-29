@@ -20,6 +20,22 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-07-29] Questrade Example Playground Canonicalization and Modularization
+
+**Achievement:**
+`src/example.ts` is restored, enhanced, and modularized as the canonical playground for agent and user feature prototyping. Output is consolidated to `.keys/example-sdk-demo.json` with human-readable metadata. All agent-facing documentation and memory bank files reference this playground as canonical.
+
+**Technical Implementation:**
+- Restored working version of `example.ts` and enhanced with modular output.
+- Wrote modularization plan and began extracting pure functions.
+- Updated memory bank, prompt, instruction, and README files to reference the playground.
+
+**Impact:**
+Provides a robust, modular, and agent-oriented playground for SDK development, supporting agent autonomy and future modularization. Ensures all agents recognize and use `src/example.ts` as the canonical example.
+
+**Meta:**
+This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+
 ### [2025-07-25] Output Directory Standardization for Build Artifacts
 
 **Achievement:**

@@ -1,3 +1,5 @@
+- **example.ts** → **.keys/example-sdk-demo.json** (Why: Playground output must include HTTP status codes for robust error reporting)
+  - Impact: Enables agentic error handling, debugging, and recursive output verification
 # The `dependencies.md` Memory Bank File
 
 Your AI Agent MUST actively strive to keep this file up to date with the latest dependencies, their relationships, and integration points for the Vigilant Codex K3a polyvalent AI development workspace. This file MUST be updated by any AI Agent accessing it, You MUST eagerly each time changes on each chat completion and each task or subtask as the living authoritative guide.
