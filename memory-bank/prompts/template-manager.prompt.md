@@ -1,6 +1,7 @@
-mode: 'agent'
+---
 mode: 'agent'
 description: 'Generate and manage prompt/instruction templates.'
+---
 
 # Master Template Manager
 

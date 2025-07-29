@@ -1,6 +1,7 @@
-mode: 'agent'
+---
 mode: 'agent'
 description: 'Automate self-documentation protocol.'
+---
 
 # Self-Documentation Execution
 
