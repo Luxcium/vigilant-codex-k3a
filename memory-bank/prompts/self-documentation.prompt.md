@@ -9,16 +9,9 @@ Your goal is to log and reinforce every action or context change by appending a 
 
 ## Context
 
-- Log file: `${input:logFile:memory-bank/activeContext.md}`
-- Protocol reference: `.github/instructions/self-documentation.instructions.md`
-- Reading protocol: `.clinerules/reading-protocol.md`
 
 ## Requirements
 
-- Use the Self-Documentation Protocol for every significant change.
-- Append entries in chronological order.
-- Preserve existing logs; never overwrite.
-- Ensure markdown-lint strict compliance for each entry.
 
 ## Process
 
@@ -48,16 +41,9 @@ Your goal is to log and reinforce every action or context change by appending a 
 
 ## Success Criteria
 
-- [ ] New entry appended with correct timestamp and fields.
-- [ ] Meta-description and loop reinforcement included.
-- [ ] Log file remains markdown-lint strict mode compliant.
-- [ ] No existing entries are modified or lost.
 
 ## References
 
-- Instruction Authoring Standards: [instruction-authoring-standards.instructions.md](../instructions/instruction-authoring-standards.instructions.md)
-- Reading Protocol: [.clinerules/reading-protocol.md](../../.clinerules/reading-protocol.md)
-- Self-Documentation Protocol: [self-documentation.instructions.md](../instructions/self-documentation.instructions.md)
   1. [`activeContext`](../../memory-bank/activeContext.md)
   2. [`dependencies`](../../memory-bank/dependencies.md)
   3. [`docker-workflow`](../../memory-bank/docker-workflow.md)
@@ -69,3 +55,4 @@ Your goal is to log and reinforce every action or context change by appending a 
   9. [`systemPatterns`](../../memory-bank/systemPatterns.md)
   10. [`techContext`](../../memory-bank/techContext.md)
   11. [`testing-guide`](../../memory-bank/testing-guide.md)
+
