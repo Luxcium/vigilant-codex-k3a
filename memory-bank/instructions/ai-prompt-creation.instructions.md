@@ -85,10 +85,6 @@ ELSE:
 
 ### Step 2: Select Tools for Codex CLI Context
 
-```yaml
-Task involves → Required tools:
-TypeScript development → ['codebase', 'filesystem']
-Python development → ['codebase', 'filesystem', 'terminal']
 Notebook workflows → ['codebase', 'filesystem']
 NextJS projects → ['codebase', 'filesystem', 'terminal']
 Shell scripting → ['filesystem', 'terminal']
@@ -100,8 +96,6 @@ Dependency management → ['terminal', 'filesystem']
 
 #### Code Generation Prompts
 
-```markdown
-Your goal is to generate ${input:componentType} following Codex CLI standards.
 
 ## Requirements
 
@@ -111,10 +105,6 @@ Your goal is to generate ${input:componentType} following Codex CLI standards.
 - Reference [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
 
 ## Process
-
-1. Analyze ${workspaceFolder} structure
-2. Create ${input:componentName} in appropriate directory
-3. Implement core functionality with proper types
 4. Add error handling and validation
 5. Update dependencies.md if new dependencies added
 
@@ -159,13 +149,6 @@ Don't Use Variables For:
   Fixed standards: Always reference typescript-standards.instructions.md
   Project structure: Always use established directory patterns
   Quality requirements: Always enforce strict typing, testing
-```
-
-### Reference Inclusion Logic
-
-```yaml
-Always Reference:
-  - Relevant .instructions.md files for standards
   - memory-bank/dependencies.md for dependency tracking
   - init/ templates for project bootstrapping
 
@@ -175,27 +158,18 @@ Conditionally Reference:
   - Documentation only if task involves docs generation
 ```
 
-## VALIDATION CHECKLIST
-
-Before generating prompt file, ensure:
-
 - [ ] Task is truly repeatable (not one-time)
 - [ ] Mode selection aligns with task complexity
 - [ ] Tool permissions match requirements
 - [ ] Variables cover all changeable elements
-- [ ] References point to existing project files
 - [ ] Success criteria are measurable
 - [ ] Follows Codex CLI project standards
 
-## OUTPUT FORMAT REQUIREMENTS
 
 ### File Naming
 
 ```
 Format: {domain}-{purpose}.prompt.md
-Examples:
-- typescript-component.prompt.md
-- python-module.prompt.md
 - nextjs-setup.prompt.md
 - shell-automation.prompt.md
 ```
@@ -203,30 +177,18 @@ Examples:
 ### Required Sections
 
 ```markdown
----
-mode: 'agent'|'edit'|'ask'
 tools: ['relevant', 'tools']
 description: 'Brief task description'
 ---
-
 Your goal is to [specific outcome].
 
 ## Requirements
 
 - [Specific technical requirements]
 - [Quality standards]
-- [Project-specific constraints]
-
-## Process
-
-1. [Clear step-by-step instructions]
 
 ## References
 
-- [Links to relevant .instructions.md files]
-- [Links to templates in init/]
-
-## Success Criteria
 
 - [ ] [Measurable outcomes]
 ```
@@ -276,3 +238,13 @@ Your goal is to [specific outcome].
 4. **Keep focused** – One prompt = one clear, specific purpose
 5. **Update state** – Prompt creation should trigger autonomous-state-manager.sh
 6. **Follow standards** – All generated content must follow Codex CLI coding standards
+
+## Questrade Example Playground Context (2025-07-29)
+
+- The `src/example.ts` file is now the canonical playground for AI agent and user collaboration on authentication and account-fetching features.
+- All configuration and output are centralized as constants at the top of the file.
+- All logic is split into pure, composable functions.
+- Only `.keys/example-sdk-demo.json` is written for output; no split or duplicate files.
+- This file is labeled as an intermediate refactor phase, preparing for future dependency injection and SDK integration.
+- When creating or updating prompts for agent workflows, reference this playground as the standard for isolated feature prototyping.
+- Do not explain standard TypeScript, Node.js, or Questrade API details in prompts—focus on project-specific context and agent behaviors.

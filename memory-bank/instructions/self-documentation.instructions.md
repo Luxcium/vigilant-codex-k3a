@@ -70,6 +70,12 @@ Additionally, you must log your actions and findings in memory bank as per self-
 
 ## State Logging Recipe
 
+- For playground and demo workflows, always:
+   - Build and run the code.
+   - Verify output file(s) for correctness.
+   - Log the demonstration and output verification in the memory bank.
+   - Repeat for each iteration, ensuring robust, reproducible development.
+
 - Record a timestamped entry with:
   1. **Current State:** Key context values or file names.
   2. **Last Action:** Description of the change or operation.

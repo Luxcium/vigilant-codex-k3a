@@ -271,3 +271,13 @@ Define common guidelines or rules for tasks like generating code, performing cod
 Specify coding practices, preferred technologies, or project requirements, so generated code follows your standards.
 Set rules for code reviews, such as checking for security vulnerabilities or performance issues.
 Provide instructions for generating commit messages or pull request titles and descriptions.
+
+## Questrade Example Playground Context (2025-07-29)
+
+- The `src/example.ts` file is the canonical playground for AI agent and user collaboration on authentication and account-fetching features.
+- All configuration and output are centralized as constants at the top of the file.
+- All logic is split into pure, composable functions.
+- Only `.keys/example-sdk-demo.json` is written for output; no split or duplicate files.
+- This file is labeled as an intermediate refactor phase, preparing for future dependency injection and SDK integration.
+- When creating or updating instructions for agent workflows, reference this playground as the standard for isolated feature prototyping.
+- Do not explain standard TypeScript, Node.js, or Questrade API details in instructions—focus on project-specific context and agent behaviors.
