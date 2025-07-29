@@ -16,15 +16,22 @@ interface TokenSet {
   obtained_at: number;
 }
 
+
 const REFRESH_TOKEN = process.env.QUESTRADE_REFRESH_TOKEN;
 const TOKEN_FILE = path.resolve(__dirname, '../.questrade-tokens.json');
 const API_BASE = 'https://login.questrade.com/oauth2/token';
+const KEYS_DIR = path.resolve(__dirname, '../.keys');
+const DEMO_FILE = path.join(KEYS_DIR, 'example-sdk-demo.json');
 
 if (!REFRESH_TOKEN) {
   console.error(
     'Missing Questrade refresh token in .env (QUESTRADE_REFRESH_TOKEN)'
   );
   process.exit(1);
+}
+
+if (!fs.existsSync(KEYS_DIR)) {
+  fs.mkdirSync(KEYS_DIR);
 }
 
 function saveTokens(tokens: TokenSet) {
@@ -98,4 +105,15 @@ async function getAccountNumber(
     tokens.api_server
   );
   console.log('First account number:', accountNumber);
+
+  // Write all info to .keys/example-sdk-demo.json
+  const now = new Date();
+  const demoOutput = {
+    date: now.toISOString(),
+    dateHuman: now.toLocaleString(),
+    accountNumber,
+    ...tokens,
+  };
+  fs.writeFileSync(DEMO_FILE, JSON.stringify(demoOutput, null, 2));
+  console.log(`Demo info written to ${DEMO_FILE}`);
 })();
