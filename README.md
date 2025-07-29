@@ -1,5 +1,17 @@
 # Vigilant Codex K3a - Polyvalent AI Development Workspace
 
+## Canonical Playground: `src/example.ts`
+
+The file `src/example.ts` serves as the canonical playground for agent and user feature prototyping. It is the reference implementation for Questrade SDK authentication, outputting all results to `.keys/example-sdk-demo.json` with human-readable metadata. All agent-facing documentation and memory bank files reference this playground as the standard example for SDK usage, modularization, and agent workflows.
+
+**Key Features:**
+
+- Modular, pure functions for each step
+- All parameters as top-level constants
+- Single output file for all results
+- Human-readable date and account number included
+- Canonical reference for agent workflows and documentation
+
 A sophisticated, AI-agent-enabled development workspace designed for rapid, robust application development across multiple languages, frameworks, and platforms. This workspace provides a comprehensive foundation for building resilient applications with advanced AI collaboration patterns.
 
 ## 🚀 Workspace Overview
@@ -61,32 +73,30 @@ The following directories act as independent application roots:
 - `agent-framework/` – TypeScript 22 multi-agent framework
 - `notebooks/` – Jupyter notebooks and ML resources
 
-
 The following table clarifies which folders represent standalone **root contexts**.
 Directories marked with **Yes** contain their own project configuration and operate as
 independent roots. Hidden directories like `.git/` and `.vscode/` are intentionally excluded.
 
-| Folder | Purpose | Root Context |
-| ------ | ------- | ------------ |
-| `src/` | TypeScript SDK main codebase | Yes |
-| `web/` | Next.js v15+ application | Yes |
-| `python/` | Python agent system | Yes |
-| `agent-framework/` | TypeScript 22 multi-agent framework | Yes |
-| `scripts/` | Lifecycle and maintenance scripts | No |
-| `memory-bank/` | AI memory ledger and documentation | No |
-| `notebooks/` | Jupyter notebooks and experiments | No |
-| `prisma/` | Database schema and migrations | No |
-| `examples/` | Sample utilities and snippets | No |
-| `init/` | Initialization templates | No |
-| `templates/` | Scaffolding templates for new modules | No |
-| `node_modules/` | Installed dependencies (generated) | No |
+| Folder             | Purpose                               | Root Context |
+| ------------------ | ------------------------------------- | ------------ |
+| `src/`             | TypeScript SDK main codebase          | Yes          |
+| `web/`             | Next.js v15+ application              | Yes          |
+| `python/`          | Python agent system                   | Yes          |
+| `agent-framework/` | TypeScript 22 multi-agent framework   | Yes          |
+| `scripts/`         | Lifecycle and maintenance scripts     | No           |
+| `memory-bank/`     | AI memory ledger and documentation    | No           |
+| `notebooks/`       | Jupyter notebooks and experiments     | No           |
+| `prisma/`          | Database schema and migrations        | No           |
+| `examples/`        | Sample utilities and snippets         | No           |
+| `init/`            | Initialization templates              | No           |
+| `templates/`       | Scaffolding templates for new modules | No           |
+| `node_modules/`    | Installed dependencies (generated)    | No           |
 
 > **This table must be kept up to date by all AI agents whenever folders are added or removed.**
 
 Only `src/`, `web/`, `python/`, and `agent-framework/` are independent root
 contexts. AI agents must automatically document new root contexts here when
 detected and keep this list in sync with actual folders.
-
 
 ### Technology Stack
 
@@ -377,6 +387,7 @@ npm run test:coverage
 Leverage AI-assisted VS Code tasks and npm script aliases to co-develop the Next.js application in real time:
 
 ### Root-level npm script aliases
+
 - **pnpm run web:dev**: Start Next.js in development mode (HMR, error overlays)
 - **pnpm run web:lint**: Run ESLint for the web folder
 - **pnpm run web:format**: Auto-format web code with Prettier
@@ -385,7 +396,9 @@ Leverage AI-assisted VS Code tasks and npm script aliases to co-develop the Next
 - **pnpm run web:preview**: Build and start production server
 
 ### VS Code Tasks
+
 Use **Run Task** (Ctrl+Shift+B) or the Command Palette to run:
+
 - **Web: Dev Server** (web:dev)
 - **Web: Lint** (web:lint)
 - **Web: Format** (web:format)
@@ -395,7 +408,9 @@ Use **Run Task** (Ctrl+Shift+B) or the Command Palette to run:
 Errors and warnings from linting or build tasks appear in the Problems pane.
 
 ### AI Agent Integration
+
 In **Agent Mode**, use Copilot Chat prompts to automate workflows:
+
 - `/launch-browser-monitor`: Launch Simple Browser, enable instrumentation, and monitor errors
 - `/analyze-issue`: Review runtime overlays and log console errors; suggest fixes
 
@@ -423,11 +438,13 @@ Custom prompts and instructions are located in `memory-bank/prompts/` and `memor
 ### How to Run the Example
 
 1. Install dependencies:
+
    ```bash
    pnpm install
    ```
 
 2. Create a `.env` file with the following content:
+
    ```env
    API_SERVER=https://api01.iq.questrade.com/v1
    CLIENT_ID=YOUR_CLIENT_ID
@@ -436,9 +453,19 @@ Custom prompts and instructions are located in `memory-bank/prompts/` and `memor
    ```
 
 3. Run the example:
+
    ```bash
    pnpm tsx src/main.ts
    ```
 
 4. Expected Output:
    - A table of candle data printed to the console.
+
+## 🧪 Questrade Example Functional Playground
+
+- The `src/example.ts` file is the canonical playground for AI agent and user collaboration on authentication and account-fetching features.
+- All configuration and output are centralized as constants at the top of the file.
+- All logic is split into pure, composable functions.
+- Only `.keys/example-sdk-demo.json` is written for output; no split or duplicate files.
+- This file is labeled as an intermediate refactor phase, preparing for future dependency injection and SDK integration.
+- When creating or updating agent workflows, reference this playground as the standard for isolated feature prototyping.
