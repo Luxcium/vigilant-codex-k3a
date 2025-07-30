@@ -152,10 +152,10 @@ To bootstrap a local Codex Universal environment with Node.js 22 and Python 3.13
 For quick testing without full environment setup:
 
 ```bash
-# Set API key
+ # Set API key
 export OPENAI_API_KEY="your-api-key-here"
 
-# Quick run
+ # Quick run
 ./scripts/codex_run.sh
 ```
 
