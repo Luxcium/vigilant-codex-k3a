@@ -21,7 +21,7 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 > **Authoring Standard:**  
 > Before creating or updating any instruction file, consult [instruction-authoring-standards.instructions.md](./instruction-authoring-standards.instructions.md) for the canonical rules, structure, and validation checklist. All `.instructions.md` files must comply with this standard for consistency and markdown-lint strictness.
 
-## Available Instructions (27 Files)
+## Available Instructions (31 Files)
 
 ### AI Agent Workflow & Creation
 
@@ -32,6 +32,8 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 **[instruction-authoring-standards.instructions.md](./instruction-authoring-standards.instructions.md)** - Canonical authoring standards for all instruction files including structure, validation, and quality requirements.
 
 **[self-documentation.instructions.md](./self-documentation.instructions.md)** - Self-documentation protocol requirements for maintaining stateful AI agent collaboration and memory bank synchronization.
+
+**[system-autonomous-optimizations.instructions.md](./system-autonomous-optimizations.instructions.md)** - Autonomous optimization protocol for system-level agents.
 
 ### Environment & Infrastructure
 
@@ -45,6 +47,8 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 **[web-dev-server.instructions.md](./web-dev-server.instructions.md)** - Démarrage du serveur Next.js en mode développement via VS Code.
 **[web-build.instructions.md](./web-build.instructions.md)** - Construction et lancement du serveur Next.js en production accessible sur le réseau local.
 
+**[prisma-server-actions.instructions.md](./prisma-server-actions.instructions.md)** - Prisma ORM integration with Next.js Server Actions.
+
 ### Language Standards
 
 **[typescript-standards.instructions.md](./typescript-standards.instructions.md)** - Comprehensive TypeScript coding standards with strict type checking, modern patterns, and project-specific conventions.
@@ -54,14 +58,17 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 **[python-notebook-standards.instructions.md](./python-notebook-standards.instructions.md)** - Jupyter notebook development standards for data science workflows, ML experimentation, and reproducible research.
 
 **[tsdoc-typedoc.instructions.md](./tsdoc-typedoc.instructions.md)** - TSDoc and TypeDoc documentation standards for comprehensive API documentation generation and maintenance.
+**[typedoc-tsdoc-reference.instructions.md](./typedoc-tsdoc-reference.instructions.md)** - Comprehensive reference for TSDoc and TypeDoc usage.
 
 ### Project Organization
 
-**[file-organization.instructions.md](./file-organization.instructions.md)** - Project structure standards defining polyvalent workspace organization by language and framework at the project root.
+**[nextjs-component-patterns.instructions.md](./nextjs-component-patterns.instructions.md)** - Next.js v15+ server/client component decision framework and patterns.
 
-**[use-conventional-commits.instructions.md](./use-conventional-commits.instructions.md)** - Conventional commit standards for consistent version control and automated changelog generation.
+**[conventional-commits-must-be-used.instructions.md](./conventional-commits-must-be-used.instructions.md)** - Conventional commit protocol with gitmoji is mandatory.
 
 **[no_dummy-no_placeholders.instructions.md](./no_dummy-no_placeholders.instructions.md)** - Standards requiring real, functional configurations instead of placeholder or dummy content.
+
+**[readme-maintenance.instructions.md](./readme-maintenance.instructions.md)** - Standards for maintaining and cross-referencing README files across the project.
 
 ### Web Standards & Meta Configuration
 
@@ -86,8 +93,6 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 ### Quality Assurance & Validation
 
 **[edge-devtools-debugging.instructions.md](./edge-devtools-debugging.instructions.md)** - Microsoft Edge DevTools integration and debugging configuration standards for VS Code development workflows with comprehensive CSS variables solution and launch configurations.
-
-**[validation-debugging-checklist.instructions.md](./validation-debugging-checklist.instructions.md)** - VS Code-centric validation and debugging checklist for web app manifests, meta tags, and platform integrations.
 
 ## How Instructions Work
 
