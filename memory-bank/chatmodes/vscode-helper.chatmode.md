@@ -80,7 +80,7 @@ description: '<short description>' # Optional. Shown on hover in Chat view.
 - The `applyTo` property is required and determines which files or tasks the instructions apply to (glob pattern).
 - The `description` property is optional and provides a summary for UI display.
 - The body contains the actual instructions, written in Markdown.
- - Place workspace instruction files in `memory-bank/instructions/`.
+- Place workspace instruction files in `memory-bank/instructions/`.
 - User instruction files are stored in your VS Code profile folder.
 
 **Best Practices:**
@@ -137,7 +137,7 @@ description: '<short description>' # Optional. Shown in UI.
 
 - Use variables like `${workspaceFolder}`, `${file}`, `${input:variableName}` for dynamic prompts.
 - Reference other prompt or instruction files with relative Markdown links.
-- Store workspace prompt files in `.github/prompts/`.
+- Store workspace prompt files in `memory-bank/prompts/`.
 - Store user prompt files in your VS Code profile folder.
 
 ---
@@ -145,7 +145,7 @@ description: '<short description>' # Optional. Shown in UI.
 ## Centrally Manage Instructions and Prompt Files
 
 - Enable or disable instructions and prompt files with the `chat.promptFiles` setting.
- - By default, workspace instruction files are in `memory-bank/instructions/` and prompt files in `memory-bank/prompts/`.
+- By default, workspace instruction files are in `memory-bank/instructions/` and prompt files in `memory-bank/prompts/`.
 - You can add more folders using `chat.instructionsFilesLocations` and `chat.promptFilesLocations` settings.
 - For organization-wide management, use VS Code's enterprise settings management.
 

@@ -16,7 +16,8 @@
 # Create necessary directories
 mkdir -p memory-bank/prompts
 mkdir -p memory-bank/instructions
-mkdir -p memory-bank
+mkdir -p memory-bank/chatmodes
+mkdir -p .github
 mkdir -p .vscode
 mkdir -p .clinerules
 

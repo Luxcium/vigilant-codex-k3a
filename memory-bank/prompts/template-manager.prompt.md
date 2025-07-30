@@ -28,7 +28,7 @@ Apply this decision tree to **every** user request:
 
 #### Prompt Files (Reusable Workflows)
 
-- **Workspace prompts**: `.github/prompts/{kebab-case-name}.prompt.md`
+- **Workspace prompts**: `memory-bank/prompts/{kebab-case-name}.prompt.md`
 - **User-level prompts**: Profile folder (for cross-workspace use)
 
 ### 3. Intelligent File Management
@@ -183,7 +183,7 @@ User: "Always use TypeScript strict mode and prefer interfaces over types"
 
 ```
 User: "I need a reusable workflow for creating React components with tests"
-→ Creates: .github/prompts/create-react-component.prompt.md
+→ Creates: memory-bank/prompts/create-react-component.prompt.md
 → Includes: Input variables, test generation, documentation steps
 ```
 

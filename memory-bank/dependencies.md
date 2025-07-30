@@ -202,7 +202,7 @@ This project supports three AI agents with specific dependency management respon
 
 **All agents must maintain dependency tracking in this file and ensure cross-references remain accurate.**
 
-**For meta-configuration standards, consult [when-to-use-what-matrix.instructions.md](../instructions/when-to-use-what-matrix.instructions.md) for authoritative mapping of integration goals to configuration files.**
+**For meta-configuration standards, consult [when-to-use-what-matrix.instructions.md](../memory-bank/instructions/when-to-use-what-matrix.instructions.md) for authoritative mapping of integration goals to configuration files.**
 
 ---
 
@@ -290,9 +290,9 @@ This file tracks all project dependencies, their relationships, and integration 
 
 - **Memory Bank System**: Cross-referencing and documentation framework
 
- - **Prompt Files**: Executable workflow templates in `memory-bank/prompts/`
+- **Prompt Files**: Executable workflow templates in `memory-bank/prompts/`
 
- - **Instruction Files**: Coding standards and guidelines in `memory-bank/instructions/`
+- **Instruction Files**: Coding standards and guidelines in `memory-bank/instructions/`
 
 - **Script System**: Automation tools in `scripts/` directory
 
@@ -640,10 +640,10 @@ This project supports three AI agents with specific dependency management respon
 
 **Meta-Configuration & Manifest Standards:**
 
-All agents must consult the [when-to-use-what-matrix.instructions.md](../instructions/when-to-use-what-matrix.instructions.md) for a one-page mapping of integration goals to configuration files and authoritative sources. For detailed implementation, see `memory-bank/instructions/README.md` and `memory-bank/prompts/README.md`.
+All agents must consult the [when-to-use-what-matrix.instructions.md](../memory-bank/instructions/when-to-use-what-matrix.instructions.md) for a one-page mapping of integration goals to configuration files and authoritative sources. For detailed implementation, see `memory-bank/instructions/README.md` and `memory-bank/prompts/README.md`.
 
 **UI Theming Standards:**
-All agents must consult the [theme-ui-meta.instructions.md](../instructions/theme-ui-meta.instructions.md) for detailed theming meta tag standards and the [theme-ui-meta.prompt.md](../prompts/theme-ui-meta.prompt.md) for workflow automation. These files cover syntax, validation, and platform-specific quirks for `theme-color`, `color-scheme`, and related tags.
+All agents must consult the [theme-ui-meta.instructions.md](../memory-bank/instructions/theme-ui-meta.instructions.md) for detailed theming meta tag standards and the [theme-ui-meta.prompt.md](../memory-bank/prompts/theme-ui-meta.prompt.md) for workflow automation. These files cover syntax, validation, and platform-specific quirks for `theme-color`, `color-scheme`, and related tags.
 
 ---
 

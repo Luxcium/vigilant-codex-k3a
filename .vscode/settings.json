@@ -17,8 +17,8 @@
     "**/memory-bank/instructions/*.instructions.md": "instructions",
     "**/memory-bank/prompts/*.prompt.md": "prompt",
     "**/memory-bank/chatmodes/*.chatmode.md": "chatmode",
+    "**/memory-bank/instructions/*.instructions.md": "instructions",
     "**/memory-bank/prompts/*.prompt.md": "prompt",
-    "**/memory-bank/instructions/*.instructions.md": "instructions"
   },
   "[chatmode]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
