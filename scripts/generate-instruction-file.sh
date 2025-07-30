@@ -7,6 +7,8 @@
 #? Decision Rationale: Provides consistent templates for coding standards, architecture, security, etc.
 #? Usage: ./generate-instruction-file.sh -n <filename> -a <apply_to_glob> -d <description> [-t <type>]
 #? Dependencies: bash, memory-bank/instructions/, memory-bank/prompts/
+#codex/update-scripts-for-new-memory-bank-paths-2025-07-3002-21-26
+#? Last Updated: 2025-07-30 by codex-webapp
 #? Last Updated: 2025-07-23 by GitHub Copilot
 #? References: ai-instruction-creation.instructions.md, instruction-generator.prompt.md
 ## =============================================================================
@@ -26,15 +28,11 @@ PROMPTS_DIR="memory-bank/prompts"
 GENERATOR_PROMPT_FOR_AI_FILLING="$PROMPTS_DIR/instruction-generator.prompt.md"
 
 # Colors for output
-RED=\'\\033[0
-31m\'
-GREEN=\'\\033[0
-32m\'
-YELLOW=\'\\033[1
-33m\'
-BLUE=\'\\033[0
-34m\'
-NC=\'\\033[0m\' # No Color
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
 
 # Helper functions
 log_info() {
