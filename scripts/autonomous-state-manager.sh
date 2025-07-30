@@ -71,13 +71,13 @@ scan_project_changes() {
   local changes_detected=false
 
   # Check for new .prompt.md files
-  if find "$PROJECT_ROOT/.github/prompts" -name "*.prompt.md" -newer "$MEMORY_BANK/progress.md" 2> /dev/null | grep -q .; then
+  if find "$PROJECT_ROOT/memory-bank/prompts" -name "*.prompt.md" -newer "$MEMORY_BANK/progress.md" 2> /dev/null | grep -q .; then
     update_progress "CREATED" "New Prompt Files" "ACTIVE"
     changes_detected=true
   fi
 
   # Check for new .instructions.md files
-  if find "$PROJECT_ROOT/.github/instructions" -name "*.instructions.md" -newer "$MEMORY_BANK/progress.md" 2> /dev/null | grep -q .; then
+  if find "$PROJECT_ROOT/memory-bank/instructions" -name "*.instructions.md" -newer "$MEMORY_BANK/progress.md" 2> /dev/null | grep -q .; then
     update_progress "CREATED" "New Instruction Files" "ACTIVE"
     changes_detected=true
   fi

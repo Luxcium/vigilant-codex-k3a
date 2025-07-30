@@ -100,3 +100,9 @@ open "https://search.google.com/test/rich-results"
 - **Google Search Essentials**: [developers.google.com/search/docs/essentials](https://developers.google.com/search/docs/essentials)
 - **The Beginner's Guide to SEO (Moz)**: [moz.com/beginners-guide-to-seo](https://moz.com/beginners-guide-to-seo)
 - **Google Search Console Help**: [support.google.com/webmasters/](https://support.google.com/webmasters/)
+
+
+## Verification
+
+- `markdownlint --strict`
+- `scripts/verify-all.sh`

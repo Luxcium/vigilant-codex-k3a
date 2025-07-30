@@ -269,3 +269,9 @@ export default function PostForm() {
 - Record architectural decisions and rationale
 - Cross-reference related instruction files
 - Maintain links to official documentation
+
+
+## Verification
+
+- `markdownlint --strict`
+- `scripts/verify-all.sh`

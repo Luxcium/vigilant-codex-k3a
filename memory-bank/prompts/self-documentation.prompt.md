@@ -9,15 +9,13 @@ Your goal is to log and reinforce every action or context change by appending a 
 
 ## Context
 
-
 ## Requirements
-
 
 ## Process
 
 1. **Read Protocols**
-   - Load `.clinerules/reading-protocol.md` and  
-     `.github/instructions/self-documentation.instructions.md`.
+   - Load `.clinerules/reading-protocol.md` and
+     `memory-bank/instructions/self-documentation.instructions.md`.
 
 2. **Detect Trigger**
    - Identify the action or context change event (e.g., file creation, prompt execution).
@@ -41,18 +39,21 @@ Your goal is to log and reinforce every action or context change by appending a 
 
 ## Success Criteria
 
-
 ## References
 
-  1. [`activeContext`](../../memory-bank/activeContext.md)
-  2. [`dependencies`](../../memory-bank/dependencies.md)
-  3. [`docker-workflow`](../../memory-bank/docker-workflow.md)
-  4. [`productContext`](../../memory-bank/productContext.md)
-  5. [`progress`](../../memory-bank/progress.md)
-  6. [`projectbrief`](../../memory-bank/projectbrief.md)
-  7. [`readme-drift-resolution`](../../memory-bank/readme-drift-resolution.md)
-  8. [`root-contexts`](../../memory-bank/root-contexts.md)
-  9. [`systemPatterns`](../../memory-bank/systemPatterns.md)
-  10. [`techContext`](../../memory-bank/techContext.md)
-  11. [`testing-guide`](../../memory-bank/testing-guide.md)
+1. [`activeContext`](../../memory-bank/activeContext.md)
+2. [`dependencies`](../../memory-bank/dependencies.md)
+3. [`docker-workflow`](../../memory-bank/docker-workflow.md)
+4. [`productContext`](../../memory-bank/productContext.md)
+5. [`progress`](../../memory-bank/progress.md)
+6. [`projectbrief`](../../memory-bank/projectbrief.md)
+7. [`readme-drift-resolution`](../../memory-bank/readme-drift-resolution.md)
+8. [`root-contexts`](../../memory-bank/root-contexts.md)
+9. [`systemPatterns`](../../memory-bank/systemPatterns.md)
+10. [`techContext`](../../memory-bank/techContext.md)
+11. [`testing-guide`](../../memory-bank/testing-guide.md)
 
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

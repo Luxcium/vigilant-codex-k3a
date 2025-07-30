@@ -255,3 +255,8 @@ Create the instruction file at the specified location with:
 6. Cross-references to related files when appropriate
 
 The generated file should serve as automatic guidance for AI agents when generating code in the specified scope.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

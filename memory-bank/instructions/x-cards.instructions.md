@@ -72,3 +72,9 @@ npx twitter-card-validator https://example.com/page
 [2]: https://developer.mozilla.org/en-US/docs/Web/HTML/Linking_to_social_sites
 [3]: https://developer.x.com/en/docs/x-for-websites/cards/overview/markup
 [4]: https://ogp.me/
+
+
+## Verification
+
+- `markdownlint --strict`
+- `scripts/verify-all.sh`

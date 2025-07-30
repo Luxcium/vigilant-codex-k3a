@@ -187,7 +187,7 @@ export OPENAI_API_KEY="your-api-key-here"
 /tsdoc-typedoc target:src/
 
 # Validate web app configuration
-/validation-debugging-checklist
+# (Deprecated example removed)
 ```
 
 ### Container Development
@@ -229,7 +229,7 @@ Automated coding standards that apply during AI-assisted development:
 - **Environments**: docker-environment, python-environment-conditional, vscode-notebook-integration
 - **Languages**: typescript-standards, python-standards, python-notebook-standards
 - **Web Standards**: pwa-manifest, ios-meta-and-links, windows-tiles, theme-ui-meta
-- **Quality**: validation-debugging-checklist, self-documentation
+- **Quality**: self-documentation
 
 ### Prompt Files (35 Files)
 

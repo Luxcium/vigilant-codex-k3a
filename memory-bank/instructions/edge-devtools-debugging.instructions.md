@@ -545,3 +545,9 @@ Update `memory-bank/progress.md` with:
 ---
 
 **Note**: This instruction file follows the strict protocol requirements for `.github/instructions/` directory. All settings and configurations must be applied through proper VS Code settings and launch configuration files. No unauthorized files should be created in `.vscode/` directory beyond standard VS Code configuration files.
+
+
+## Verification
+
+- `markdownlint --strict`
+- `scripts/verify-all.sh`

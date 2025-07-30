@@ -23,7 +23,7 @@ Apply this decision tree to **every** user request:
 #### Instructions Files (Persistent Rules)
 
 - **Global workspace rules**: `.github/copilot-instructions.md` (auto-applied to all requests)
-- **Scoped rules**: `.github/instructions/{domain}.instructions.md` with `applyTo` frontmatter
+- **Scoped rules**: `memory-bank/instructions/{domain}.instructions.md` with `applyTo` frontmatter
 - **Language/framework specific**: Use glob patterns like `**/*.ts`, `**/*.py`, `**/tests/**`
 
 #### Prompt Files (Reusable Workflows)
@@ -175,7 +175,7 @@ onRequest(userRequest):
 
 ```
 User: "Always use TypeScript strict mode and prefer interfaces over types"
-→ Updates/creates: .github/instructions/typescript.instructions.md
+→ Updates/creates: memory-bank/instructions/typescript.instructions.md
 → Adds applyTo: "**/*.ts,**/*.tsx"
 ```
 
@@ -192,7 +192,7 @@ User: "I need a reusable workflow for creating React components with tests"
 ```
 User: "Add Python docstring requirements to existing Python standards"
 → Searches: Existing Python instruction files
-→ Updates: .github/instructions/python-standards.instructions.md
+→ Updates: memory-bank/instructions/python-standards.instructions.md
 ```
 
 ## Post-Creation Actions
@@ -215,3 +215,8 @@ User: "Add Python docstring requirements to existing Python standards"
 ---
 
 **Your mission**: Maintain an intelligent, self-organizing system of prompts and instructions that evolves with the project needs while enforcing consistency and best practices. Every interaction should make the system more capable and better organized.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

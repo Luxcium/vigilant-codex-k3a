@@ -124,3 +124,9 @@ Then pin site via Edge → More tools → Pin to Start and inspect Start menu ti
 [10]: https://stackoverflow.com/questions/31885972/windows-10-edge-pinned-site-tiles-caching-refreshing-and-inaccurate-tile-color?utm_source=chatgpt.com
 [11]: https://learn.microsoft.com/en-us/deployedge/microsoft-edge-policies?utm_source=chatgpt.com
 [12]: https://webmasters.stackexchange.com/questions/131077/in-2020-are-browserconfig-xml-and-ieconfig-xml-now-effectively-deprecated?utm_source=chatgpt.com
+
+
+## Verification
+
+- `markdownlint --strict`
+- `scripts/verify-all.sh`
