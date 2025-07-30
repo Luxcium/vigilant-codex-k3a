@@ -16,8 +16,8 @@ Your goal is to log and reinforce every action or context change by appending a 
 ## Process
 
 1. **Read Protocols**
-   - Load `.clinerules/reading-protocol.md` and  
-     `.github/instructions/self-documentation.instructions.md`.
+   - Load `.clinerules/reading-protocol.md` and
+     `memory-bank/instructions/self-documentation.instructions.md`.
 
 2. **Detect Trigger**
    - Identify the action or context change event (e.g., file creation, prompt execution).
