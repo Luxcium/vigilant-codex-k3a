@@ -172,3 +172,8 @@ description: 'Comprehensive standards for file and directory organization, namin
    templates/
 
 ---
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

@@ -38,3 +38,8 @@ To ensure the AI agent and VS Code editor are aware of runtime errors, overlays,
 - Confirm the browser launches and connects to the dev server.
 - Verify error overlays and console messages are visible and instrumented.
 - Ensure error details are documented and actionable in the editor.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

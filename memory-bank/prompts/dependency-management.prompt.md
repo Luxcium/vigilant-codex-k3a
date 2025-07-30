@@ -61,3 +61,8 @@ The Codex CLI project maintains strict rules for dependency tracking in the `mem
 - Follow strict markdown-lint formatting requirements
 
 Help me maintain proper dependency documentation that follows all the project's standards and enables seamless collaboration between contributors.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

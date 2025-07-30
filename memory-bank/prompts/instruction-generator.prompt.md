@@ -253,3 +253,8 @@ applyTo: '**/domain/**'
 - [Python Standards](../instructions/python-standards.instructions.md)
 - [File Organization](../prompts/file-organization.prompt.md)
 - [Template Manager](./template-manager.prompt.md)
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

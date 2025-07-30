@@ -321,3 +321,8 @@ docker-compose -f docker-compose.yml -f docker-compose.staging.yml up -d
 - Include security considerations and best practices
 
 This Docker configuration generator ensures consistent, secure, and optimized containerization across all environments in the AI agent framework project.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

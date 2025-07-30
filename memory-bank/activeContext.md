@@ -1,3 +1,14 @@
+- [2025-07-30T02:07:00Z] Prompt Verification Sections Added
+   **Current State:**
+   All prompt files now end with a '## Verification' section referencing markdownlint and scripts/verify-all.sh.
+   **Last Action:**
+   Appended verification sections to 35 prompt files using an automated script.
+   **Rationale:**
+   Ensures compliance with the Verification Block Standard for prompts.
+   **Next Intent:**
+   Maintain this checklist for all future prompt additions.
+   **Meta:**
+   Self-documentation after repository-wide prompt update.
    **Current State:**
    The canonical playground `src/example.ts` was hardened to include HTTP status codes in the output file `.keys/example-sdk-demo.json` on error. The playground was built and executed, and the output file was verified to contain the correct status code (400) on failure. This confirms robust error reporting and output verification as part of the recursive demonstration workflow.
    **Last Action:**

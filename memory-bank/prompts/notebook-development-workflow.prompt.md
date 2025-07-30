@@ -290,3 +290,8 @@ code --list-extensions | grep -E "(jupyter|python)"
 - Maintained memory bank synchronization
 
 This workflow automation ensures comprehensive notebook development with full VS Code integration while maintaining project standards and leveraging extended capabilities for optimal development experience.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

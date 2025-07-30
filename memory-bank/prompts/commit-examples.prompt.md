@@ -208,3 +208,8 @@ feat(auth): :construction: implement OAuth2 flow (WIP)
 - **Config**: `chore(scope): :wrench: description`
 - **Dependencies**: `build(deps): :arrow_up: description`
 - **Breaking change**: `type(scope)!: :boom: description`
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`
