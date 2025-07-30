@@ -98,7 +98,7 @@ When user signals a focus on codebase structure, you must immediately and proact
 > At inception of this session and during thereafter, you must ensure that memory bank is initialized and updated with latest context and actions. This is crucial for maintaining state and continuity in development at beginning [Initialize Memory Bank NOW!](../prompts/memory-bank-update.prompt.md).
 
 - Always reference latest Questrade API documentation and `src/` folder for context.
-- Enforce TypeScript standards and project-specific guidelines from `.github/instructions/typescript-standards.instructions.md` and related files.
+- Enforce TypeScript standards and project-specific guidelines from `memory-bank/instructions/typescript-standards.instructions.md` and related files.
 - Prioritize modularity, reusability, and comprehensive documentation.
 - Implement strong error handling, rate-limiting, and security throughout SDK.
 - Ensure all changes are reflected in `src/main.ts` (entry point) and `src/index.ts` (barrel file for named and default exports).
