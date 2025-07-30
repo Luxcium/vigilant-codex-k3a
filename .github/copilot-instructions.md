@@ -31,31 +31,72 @@ You are curious and eager to discover the instructions and all other gems provid
 3. **WRITE BEFORE END**: Update memory bank just before completing any task
 4. **STATE PRESERVATION**: Ensure my state will not be lost if interrupted
 
+### Core Files (Required)
+
+**We call them Biograms:**
+  - 'memory-bank/projectbrief.md'
+  - 'memory-bank/productContext.md'
+  - 'memory-bank/activeContext.md'
+  - 'memory-bank/systemPatterns.md'
+  - 'memory-bank/techContext.md'
+  - 'memory-bank/dependencies.md'
+  - 'memory-bank/progress.md'
+
 **Memory Bank Files to Always Check/Update**:
 
-- `memory-bank/activeContext.md` (current work focus - MOST CRITICAL)
-- `memory-bank/progress.md` (track what works, what's left)
-- `memory-bank/dependencies.md` (track relationships)
-- `memory-bank/systemPatterns.md` (technical decisions)
-- `memory-bank/techContext.md` (technologies, constraints)
+1. `memory-bank/projectbrief.md` (project overview and goals)
+  - Foundation document that shapes all other files
+  - Created at project start if it doesn't exist
+  - Defines core requirements and goals
+  - Source of truth for project scope
+  > [`projectbrief`](../memory-bank/projectbrief.md)
+
+2. `memory-bank/productContext.md` (product-related information)
+  - Why this project exists
+  - Problems it solves
+  - How it should work
+  - User experience goals
+  > [`productContext`](../memory-bank/productContext.md)
+
+3. `memory-bank/activeContext.md` (current work focus - MOST CRITICAL)
+  - Current work focus
+  - Recent changes
+  - Next steps
+  - Active decisions and considerations
+  - Important patterns and preferences
+  - Learnings and project insights
+  > [`activeContext`](../memory-bank/activeContext.md) 
+
+1. `memory-bank/systemPatterns.md` (technical decisions)
+  - System architecture
+  - Key technical decisions
+  - Design patterns in use
+  - Component relationships
+  - Critical implementation paths
+
+  > [`systemPatterns`](../memory-bank/systemPatterns.md)
+
+5. `memory-bank/techContext.md` (technologies, constraints)
+  - Technologies used
+  - Development setup
+  - Technical constraints
+  - Dependencies
+  - Tool usage patterns
+  > [`techContext`](../memory-bank/techContext.md)
+
+
+6. `memory-bank/progress.md` (track what works, what's left)
+  - What works
+  - What's left to build
+  - Current status
+  - Known issues
+  - Evolution of project decisions
+  > [`progress`](../memory-bank/progress.md)
+
 
 ### Memory Bank Logging
 
-Additionally, you must log your actions and findings in memory bank as per self-documentation protocol, including your rationale and next steps. This agentic, self-starting behavior is mandatory: whenever user’s questions or context shift toward codebase structure, you are expected to act as an autonomous analyst—exploring, inferring, and documenting architecture without further prompting. This ensures rapid, stateful, and context-aware support for all structural and architectural inquiries.
-
-1. [`activeContext`](../../memory-bank/activeContext.md) 
-2. [`dependencies`](../../memory-bank/dependencies.md)
-3. [`docker-workflow`](../../memory-bank/docker-workflow.md)
-4. [`no_dummy-no_placeholders`](../../memory-bank/no_dummy-no_placeholders.md)
-5. [`productContext`](../../memory-bank/productContext.md)
-6. [`progress`](../../memory-bank/progress.md)
-7. [`projectbrief`](../../memory-bank/projectbrief.md)
-8. [`readme-drift-resolution`](../../memory-bank/readme-drift-resolution.md)
-9. [`self-documentation`](../../memory-bank/self-documentation.md)
-10. [`root-contexts`](../../memory-bank/root-contexts.md)
-11. [`systemPatterns`](../../memory-bank/systemPatterns.md)
-12. [`techContext`](../../memory-bank/techContext.md)
-13. [`testing-guide`](../../memory-bank/testing-guide.md)
+Additionally, you must log your actions and findings in memory bank as per self-documentation protocol, including your rationale and next steps. You may need to refer to other files that are in colocation with the required ones. This agentic, self-starting behavior is mandatory: whenever user’s questions or context shift toward codebase structure, you are expected to act as an autonomous analyst—exploring, inferring, and documenting architecture without further prompting. This ensures rapid, stateful, and context-aware support for all structural and architectural inquiries.
 
 > [!WARNING]
 > Urgent info that needs immediate agent attention to avoid problems:
@@ -210,7 +251,7 @@ Before to mark a task as completed you MUST imperatively update memory bank file
 
 All 3 instructions like folders, `instructions`, `prompts`, and `chatmodes` have been migrated from `.github/` into the `memory-bank/` directory. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change is motivated by the need for an organized, stateful, and agent-friendly directives system. Centralizing instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors. All references and explanatory notes have been updated across the codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
 
-[`memory-bank/chatmodes/*.chatmode.md`](../memory-bank/chatmodes/)
-[`memory-bank/instructions/*.instructions.md`](../memory-bank/instructions/)
-[`memory-bank/prompts/*.prompts.md`](../memory-bank/prompts/)
-[`.github/copilot-instructions.md`](./copilot-instructions.md)
+- [`memory-bank/chatmodes/*.chatmode.md`](../memory-bank/chatmodes/)
+- [`memory-bank/instructions/*.instructions.md`](../memory-bank/instructions/)
+- [`memory-bank/prompts/*.prompts.md`](../memory-bank/prompts/)
+- [`.github/copilot-instructions.md` ](../.github/copilot-instructions.md) (THIS FILE)

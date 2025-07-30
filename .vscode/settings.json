@@ -2371,6 +2371,10 @@
   "workbench.list.typeNavigationMode": "automatic",
   "workbench.list.multiSelectModifier": "ctrlCmd",
   "workbench.list.smoothScrolling": true,
-  "editor.inlineSuggest.edits.renderSideBySide": "never"
+  "editor.inlineSuggest.edits.renderSideBySide": "never",
+  "npm.packageManager": "pnpm",
+  "npm.scriptRunner": "pnpm",
+  "prisma.scriptRunner": "pnpm",
+  "genaiscript.cli.packageManager": "pnpm"
   // #endregion: Last Section                                        !
 }
