@@ -121,3 +121,9 @@ Closes #123
 <!-- 
 - [Commit Examples](../prompts/commit-examples.prompt.md)
 - [Breaking Changes Guide](../prompts/breaking-changes.prompt.md) -->
+
+
+## Verification
+
+- `markdownlint --strict`
+- `scripts/verify-all.sh`
