@@ -150,3 +150,5 @@ export type {
   ApiError,
   ApiErrorSchema,
 } from './types';
+
+export { logger } from './logger';

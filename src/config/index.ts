@@ -1,19 +1,14 @@
 import { config } from 'dotenv';
 import path from 'node:path';
+import { logger } from '../logger';
 
-config(); // Load environment variables from .env file
-
-const apiServer = process.env.API_SERVER || process.env.API_BASE_URL || '';
-if (!apiServer) {
-  console.error('Missing API_SERVER or API_BASE_URL environment variable');
-  process.exit(1);
-}
-console.log('Using API Server:', apiServer);
+config(); // loads .env by default
 
 export const APP = {
-  apiServer,
-  clientId: process.env.CLIENT_ID || '',
-  refreshToken: process.env.REFRESH_TOKEN || '',
-  accessToken: process.env.ACCESS_TOKEN || '',
+  apiServer: process.env.API_SERVER!,
+  clientId: process.env.CLIENT_ID!,
+  refresh: process.env.REFRESH_TOKEN!,
   keyDir: path.resolve('.keys'),
 } as const;
+
+logger.info('Using API Server %s', APP.apiServer);

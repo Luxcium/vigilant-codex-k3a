@@ -214,9 +214,6 @@ npx vitest run src/tests/restClient.test.ts
 
 # Generate coverage reports
 npm run test:coverage
-
-# Validate all environments
-./scripts/verify-all.sh
 ```
 
 ## 📚 Documentation System
@@ -350,9 +347,6 @@ For comprehensive platform integration (PWA, iOS, Windows, Chrome Extension), se
 ## 📋 Validation & Testing
 
 ```bash
-# Environment validation
-./scripts/verify-all.sh
-
 # Test coverage analysis
 npm run test:coverage
 
@@ -364,6 +358,8 @@ npm run test:coverage
 
 # Dependency validation
 ./scripts/check-dependencies.sh
+# Optional consolidated validation script is available at
+# ./scripts/verify-all.sh for manual use.
 ```
 
 ## 🎯 Success Metrics
