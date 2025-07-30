@@ -33,12 +33,12 @@ This workspace supports three AI agents with sophisticated collaboration pattern
 
 - **🧠 Cline AI** → [`.clinerules/main-rules.md`](.clinerules/main-rules.md) - Advanced development agent with memory bank integration
 - **⚡ Codex CLI** → [`AGENTS.md`](AGENTS.md) - Terminal-based automation and container orchestration
-- **💡 VS Code Copilot** → [`.github/copilot-instructions.md`](.github/copilot-instructions.md) - Code generation with 26 instruction files
+- **💡 VS Code Copilot** → [`.github/copilot-instructions.md`](.github/copilot-instructions.md) - Code generation with 31 instruction files
 
 ### AI Framework Components
 
-- **🔧 26 Instruction Files** ([`memory-bank/instructions/`](memory-bank/instructions/)) - Automated coding standards and guidelines
-- **⚙️ 27 Prompt Files** ([`memory-bank/prompts/`](memory-bank/prompts/)) - Executable workflow templates
+- **🔧 31 Instruction Files** ([`memory-bank/instructions/`](memory-bank/instructions/)) - Automated coding standards and guidelines
+- **⚙️ 35 Prompt Files** ([`memory-bank/prompts/`](memory-bank/prompts/)) - Executable workflow templates
 - **📚 Memory Bank System** ([`memory-bank/`](memory-bank/)) - Stateful documentation for AI collaboration
 - **🎯 Self-Documentation Protocol** - Maintains context across development sessions
 
@@ -221,7 +221,7 @@ npm run test:coverage
 
 ## 📚 Documentation System
 
-### Instruction Files (26 Files)
+### Instruction Files (31 Files)
 
 Automated coding standards that apply during AI-assisted development:
 
@@ -231,7 +231,7 @@ Automated coding standards that apply during AI-assisted development:
 - **Web Standards**: pwa-manifest, ios-meta-and-links, windows-tiles, theme-ui-meta
 - **Quality**: validation-debugging-checklist, self-documentation
 
-### Prompt Files (27 Files)
+### Prompt Files (35 Files)
 
 Executable workflow templates for automated development:
 
