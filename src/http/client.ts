@@ -9,10 +9,21 @@ import { logger } from '../logger';
 import { log } from '../log';
 // >>>>>>> luxcium/main
 
+
 const keys = new KeyManager();
 const client = axios.create({ baseURL: APP.apiServer });
 
+
+axiosRetry(client, {
+  retries: 3,
+  retryDelay: axiosRetry.exponentialDelay,
+  retryCondition: err =>
+    err.response?.status === 429 || (err.response?.status ?? 0) >= 500,
+});
+
+
 // <<<<<<< codex/remove-verification-script-references-2025-07-3003-01-07
+
 client.interceptors.request.use(async config => {
   const stored = await keys.load();
   const authToken = stored?.accessToken;
@@ -48,6 +59,12 @@ client.interceptors.response.use(
       }
     }
     // Log detailed error for debugging
+// second level conflicts shoild be resolve independently of the others<<<<<<< codex/remove-verification-script-references-2025-07-3003-01-48
+    logger.error('HTTP Error %d %s %s',
+      error.response?.status,
+      error.config?.method,
+      error.config?.url
+// second level conflict please resolve =======
     logger.error(
       {
         status: error.response?.status,
@@ -57,6 +74,7 @@ client.interceptors.response.use(
         data: error.response?.data,
       },
       'HTTP Error'
+// second level conflict independent from the other resolve cleverly>>>>>>> luxcium/main
     );
     return Promise.reject(error);
 // ======= you must resolve any commented out conflicts before moving to your next tasks

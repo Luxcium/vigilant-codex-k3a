@@ -98,8 +98,7 @@ All prompts, instruction files, and scripts must end with a **Verification** sec
 This block reminds contributors to run:
 
 - `markdownlint --strict` on all updated Markdown files
-
-  and any relevant validation scripts.
+- Any relevant validation scripts that apply to the updated 
 
 Failure to include this block or run the checks is considered non-compliant.
 
