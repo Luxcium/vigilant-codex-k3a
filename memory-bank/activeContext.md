@@ -568,3 +568,11 @@ This project supports three AI agents with specific entry points:
 - Consolidated actions.ts to re-export from enhanced-actions
 
 **Last Updated:** 2025-07-23T00:00:00Z | **Status:** Root Context Protocol Established | **Priority:** Documentation Sync
+
+### [2025-07-30T00:00:00Z] Verification Script References Removed
+
+- Removed references to `verify-all.sh` from AGENTS.md and setup scripts.
+- Updated verification guidelines in .clinerules/verification.md.
+- Introduced pino-based logger and centralized config improvements.
+
+**Last Updated:** 2025-07-30 | **Status:** Verification Simplified | **Priority:** Logging Integration

@@ -73,6 +73,4 @@ done
 chmod +x "$0"
 
 log "Project structure setup complete."
-log "Running repository verification"
-"$(dirname "$0")"/verify-all.sh
-log "Verification after setup complete"
+# Verification steps can be executed separately

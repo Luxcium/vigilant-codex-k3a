@@ -2,6 +2,7 @@ import axios from 'axios';
 import { APP } from '../config';
 import { KeyManager } from '../security/KeyManager';
 import { refreshToken } from '../auth/refreshTokenUtil';
+import { logger } from '../logger';
 
 const keys = new KeyManager();
 const client = axios.create({ baseURL: APP.apiServer });
@@ -37,18 +38,18 @@ client.interceptors.response.use(
           error.config.headers.Authorization = `Bearer ${fresh.accessToken}`;
           return client(error.config);
         } catch (refreshError) {
-          console.error('Failed to refresh token:', refreshError);
+          logger.error({ err: refreshError }, 'Failed to refresh token');
         }
       }
     }
     // Log detailed error for debugging
-    console.error('HTTP Error:', {
+    logger.error({
       status: error.response?.status,
       statusText: error.response?.statusText,
       url: error.config?.url,
       method: error.config?.method,
       data: error.response?.data,
-    });
+    }, 'HTTP Error');
     return Promise.reject(error);
   }
 );

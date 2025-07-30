@@ -8,7 +8,7 @@
 #? Usage: ./setup_web_env.sh
 #? Dependencies: npx, create-next-app, Node.js, project .gitignore
 #? Last Updated: 2025-07-24 by GitHub Copilot
-#? References: web/package.json, .gitignore, verify-all.sh
+#? References: web/package.json, .gitignore
 ## =============================================================================
 # setup_web_env.sh: Initialize Next.js app in web/ directory
 set -euo pipefail
@@ -40,8 +40,6 @@ GIT
 fi
 
 log "Web environment setup complete"
-log "Running repository verification"
-"$PROJECT_ROOT/scripts/verify-all.sh"
-log "Verification after setup complete"
+# Verification steps can be executed separately
 
 #? Validation Status: Actively Validated on 2025-07-24

@@ -52,5 +52,3 @@ if [ -f "$GITIGNORE" ] && ! grep -q "agent-framework/node_modules" "$GITIGNORE";
 fi
 
 log "Agent framework setup complete"
-"$PROJECT_ROOT/scripts/verify-all.sh"
-log "Verification after setup complete"
