@@ -63,3 +63,8 @@ Your task is to help me create a complete Vision Transformer (ViT) implementatio
 - Document any deviations from the original architecture
 
 Help me implement this Vision Transformer that follows all the project's standards and best practices. Please start by creating the directory structure and main class interfaces.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

@@ -19,7 +19,7 @@ Prompt files (`.prompt.md`) are executable templates that:
 - Include variables for customization and reusability
 - Use tools to perform actions like file creation, code generation, or terminal commands
 
-## Available Prompts (34 Files)
+## Available Prompts (35 Files)
 
 > **Note:** This list must be kept in sync with the actual prompt files in this directory. Add new prompts and update descriptions as needed.
 
@@ -91,20 +91,6 @@ Prompt files (`.prompt.md`) are executable templates that:
 ---
 
 _This list is auto-curated. If you add a new prompt, update this section to keep the documentation accurate and complete._
-
-**[general-icon-link-tags.prompt.md](./general-icon-link-tags.prompt.md)** - Add comprehensive set of general icon link tags to HTML documents for cross-platform favicon and app icon support.
-
-**[seo-meta-tags.prompt.md](./seo-meta-tags.prompt.md)** - Add essential SEO meta tags to HTML documents for optimal search engine discoverability and social media integration.
-
-**[x-cards.prompt.md](./x-cards.prompt.md)** - Add or update X Cards (formerly Twitter Cards) meta tags in HTML head sections for rich social media previews on X platform.
-
-### Testing & Validation
-
-**[validation-debugging-checklist.prompt.md](./validation-debugging-checklist.prompt.md)** - Run comprehensive, VS Code-native validation and debugging workflow for web apps with manifest validation and platform testing.
-
-**[edge-devtools-debugging.prompt.md](./edge-devtools-debugging.prompt.md)** - Automated Microsoft Edge DevTools configuration and debugging setup workflow with comprehensive CSS variables solution and launch configuration management.
-
-**[test-prompt.prompt.md](./test-prompt.prompt.md)** - Test prompt to verify prompt files are working correctly and validate the prompt execution system.
 
 ## How to Use Prompts
 

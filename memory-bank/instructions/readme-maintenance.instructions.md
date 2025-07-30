@@ -32,3 +32,9 @@ description: 'Standards for maintaining, updating, and cross-referencing README 
 
 - Validate that every README.md is discoverable and referenced from the main project README.
 - Ensure all README.md files are included in documentation audits and CI checks.
+
+
+## Verification
+
+- `markdownlint --strict`
+- `scripts/verify-all.sh`

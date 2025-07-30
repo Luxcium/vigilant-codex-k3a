@@ -7,7 +7,9 @@
 #? Decision Rationale: Provides consistent templates for coding standards, architecture, security, etc.
 #? Usage: ./generate-instruction-file.sh -n <filename> -a <apply_to_glob> -d <description> [-t <type>]
 #? Dependencies: bash, memory-bank/instructions/, memory-bank/prompts/
-#? Last Updated: 2025-07-30 by GitHub Copilot
+#codex/update-scripts-for-new-memory-bank-paths-2025-07-3002-21-26
+#? Last Updated: 2025-07-30 by codex-webapp
+#? Last Updated: 2025-07-23 by GitHub Copilot
 #? References: ai-instruction-creation.instructions.md, instruction-generator.prompt.md
 ## =============================================================================
 

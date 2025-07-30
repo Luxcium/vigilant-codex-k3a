@@ -212,3 +212,8 @@ Each script should include:
 - Include scripts in project onboarding documentation
 
 This script generator ensures consistency, reliability, and maintainability across all automation scripts in the AI agent framework project.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

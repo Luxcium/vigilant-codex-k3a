@@ -45,3 +45,8 @@ description: 'Add or update X Cards meta tags in HTML head sections'
 - Verified via HTTP header inspection.
 
 > **Note:** Run X’s Card Validator at https://cards-dev.twitter.com/validator to verify rendering.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

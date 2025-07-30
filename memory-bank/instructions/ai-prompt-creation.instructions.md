@@ -248,3 +248,9 @@ Your goal is to [specific outcome].
 - This file is labeled as an intermediate refactor phase, preparing for future dependency injection and SDK integration.
 - When creating or updating prompts for agent workflows, reference this playground as the standard for isolated feature prototyping.
 - Do not explain standard TypeScript, Node.js, or Questrade API details in prompts—focus on project-specific context and agent behaviors.
+
+
+## Verification
+
+- `markdownlint --strict`
+- `scripts/verify-all.sh`

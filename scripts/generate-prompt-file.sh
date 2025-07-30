@@ -5,7 +5,9 @@
 #? Decision Rationale: Provides consistent templates for reusable prompts
 #? Usage: ./generate-prompt-file.sh -n <filename> -t <title> -d <description>
 #? Dependencies: bash, memory-bank/prompts/, memory-bank/dependencies.md
-#? Last Updated: 2025-07-30 by GitHub Copilot
+#codex/update-scripts-for-new-memory-bank-paths-2025-07-3002-21-26
+#? Last Updated: 2025-07-30 by codex-webapp
+#? Last Updated: 2025-07-23 by GitHub Copilot
 #? References: ai-prompt-creation.instructions.md, instruction-generator.prompt.md
 ## =============================================================================
 

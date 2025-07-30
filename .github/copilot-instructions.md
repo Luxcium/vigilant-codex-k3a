@@ -235,7 +235,7 @@ preferences and instructions.
 
 ### Documentation and User Preferences
 
-- All documentation for instructions and prompts MUST be included in respective `.github/instructions/README.md` and `.github/prompts/README.md` files. Do not use a `docs/` folder unless explicitly required by user.
+- All documentation for instructions and prompts MUST be included in respective `memory-bank/instructions/README.md` and `memory-bank/prompts/README.md` files. Do not use a `docs/` folder unless explicitly required by user.
 - When possible, append user preferences and operational requirements to `.github/copilot-instructions.md` and reference them in future actions.
 - When generating or updating instruction or prompt files, self-prompt to update documentation and preferences as part of workflow.
 - This policy is recommended for all future Copilot and agent operations in this repository.

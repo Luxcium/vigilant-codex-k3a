@@ -3,11 +3,12 @@
 ## Required Format
 
 - Indicate breaking changes in two places:
-	1. Add `!` before the colon in the subject line
-	2. Add a `BREAKING CHANGE:` footer with details
+  1.  Add `!` before the colon in the subject line
+  2.  Add a `BREAKING CHANGE:` footer with details
 - Use gitmoji to reflect the nature of the change
 
 ### Example
+
 ```
 feat(api)!: :boom: remove legacy user endpoints
 
@@ -21,6 +22,7 @@ BREAKING CHANGE: All v1 user endpoints have been removed. Use v2 endpoints inste
 - Major version bump required
 
 ## Good Commit Example
+
 ```
 feat(auth)!: :boom: update authentication method signature
 
@@ -41,3 +43,8 @@ After: authenticate({ username, password, rememberMe })
 - Be specific and helpful
 - Include migration steps
 - Avoid vague messages
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`
