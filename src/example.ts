@@ -20,6 +20,7 @@ interface ErrorWithStatus extends Error {
 import fs from 'node:fs';
 import path from 'node:path';
 import dotenv from 'dotenv';
+import { APP } from './config';
 
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
@@ -41,7 +42,7 @@ interface TokenSet {
 // ===============================
 // Paths, API endpoints, and file locations used throughout the playground.
 // --- Top-level constants ---
-const REFRESH_TOKEN = process.env.QUESTRADE_REFRESH_TOKEN;
+const REFRESH_TOKEN = APP.refresh;
 const TOKEN_FILE = path.resolve(__dirname, '../.questrade-tokens.json');
 const API_BASE = 'https://login.questrade.com/oauth2/token';
 const KEYS_DIR = path.resolve(__dirname, '../.keys');

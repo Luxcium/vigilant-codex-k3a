@@ -9,6 +9,7 @@ export const APP = {
   clientId: process.env.CLIENT_ID!,
   refresh: process.env.REFRESH_TOKEN!,
   keyDir: path.resolve('.keys'),
+  logLevel: process.env.LOG_LEVEL ?? 'info',
 } as const;
 
 logger.info('Using API Server %s', APP.apiServer);

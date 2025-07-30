@@ -12,13 +12,3 @@
 
 - Use this checklist before, during, and after each round of work.
 - Reference this protocol in activeContext.md, progress.md, and all Memory Bank compliance sections.
-
-### Verify-All Script
-
-Run `scripts/verify-all.sh` to execute:
-
-```bash
-scripts/check-markdown.sh
-scripts/check-dependencies.sh
-scripts/check-memory-bank.sh
-```

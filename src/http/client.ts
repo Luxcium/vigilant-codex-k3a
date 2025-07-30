@@ -3,10 +3,16 @@ import axiosRetry from 'axios-retry';
 import { APP } from '../config';
 import { KeyManager } from '../security/KeyManager';
 import { refreshToken } from '../auth/refreshTokenUtil';
+// <<<<<<< codex/remove-verification-script-references-2025-07-3003-01-07
 import { logger } from '../logger';
+// ======= resolve this old conflict before you can go further following memory-bank/instructions/ ...
+import { log } from '../log';
+// >>>>>>> luxcium/main
+
 
 const keys = new KeyManager();
 const client = axios.create({ baseURL: APP.apiServer });
+
 
 axiosRetry(client, {
   retries: 3,
@@ -14,6 +20,9 @@ axiosRetry(client, {
   retryCondition: err =>
     err.response?.status === 429 || (err.response?.status ?? 0) >= 500,
 });
+
+
+// <<<<<<< codex/remove-verification-script-references-2025-07-3003-01-07
 
 client.interceptors.request.use(async config => {
   const stored = await keys.load();
@@ -50,13 +59,47 @@ client.interceptors.response.use(
       }
     }
     // Log detailed error for debugging
+// second level conflicts shoild be resolve independently of the others<<<<<<< codex/remove-verification-script-references-2025-07-3003-01-48
     logger.error('HTTP Error %d %s %s',
       error.response?.status,
       error.config?.method,
       error.config?.url
+// second level conflict please resolve =======
+    logger.error(
+      {
+        status: error.response?.status,
+        statusText: error.response?.statusText,
+        url: error.config?.url,
+        method: error.config?.method,
+        data: error.response?.data,
+      },
+      'HTTP Error'
+// second level conflict independent from the other resolve cleverly>>>>>>> luxcium/main
     );
     return Promise.reject(error);
+// ======= you must resolve any commented out conflicts before moving to your next tasks
+client.interceptors.request.use(async req => {
+  const t = await keys.load();
+  if (t) req.headers.set('Authorization', `Bearer ${t.accessToken}`);
+  return req;
+});
+
+client.interceptors.response.use(undefined, async err => {
+  if (err.response?.status === 401) {
+    const fresh = await refreshToken();
+    await keys.save(fresh);
+    err.config.headers['Authorization'] = `Bearer ${fresh.accessToken}`;
+    return client(err.config);
+// >>>>>>> luxcium/main
   }
-);
+  log.error({ status: err.response?.status, url: err.config?.url }, 'HTTP Error');
+  return Promise.reject(err);
+});
+
+axiosRetry(client, {
+  retries: 2,
+  retryDelay: axiosRetry.exponentialDelay,
+  retryCondition: e => e.response?.status === 429 || e.response?.status >= 500,
+});
 
 export default client;
