@@ -120,16 +120,16 @@ This file documents the technologies, development setup, technical constraints, 
 ### Quick Start Environment
 
 ```bash
- # 1. Set OpenAI API key for container integration
+#1. Set OpenAI API key for container integration
 export OPENAI_API_KEY="your-api-key-here"
 
- # 2. Initialize complete development environment
+#2. Initialize complete development environment
 ./scripts/setup_codex_universal.sh
 
- # 3. Start Codex Universal environment
+#3. Start Codex Universal environment
 ./scripts/codex_start.sh
 
- # 4. Access development shell
+#4. Access development shell
 ./scripts/codex_shell.sh
 ```
 
