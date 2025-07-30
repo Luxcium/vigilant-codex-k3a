@@ -13,6 +13,8 @@
 import 'dotenv/config';
 import { ManualProvider } from './auth/providers/manual';
 import { KeyManager } from './security/KeyManager';
+import { APP } from './config';
+import { log } from './log';
 import {
   QuestradeClient,
   QuestradeClientOptions,
@@ -24,20 +26,9 @@ import {
  */
 async function main(): Promise<void> {
   try {
-    // Load required environment variables
-    const clientId = process.env.CLIENT_ID;
-    const refreshToken = process.env.REFRESH_TOKEN;
-    if (!clientId) {
-      console.error('Missing CLIENT_ID in .env');
-      process.exit(1);
-    }
-    if (!refreshToken) {
-      console.error('Missing REFRESH_TOKEN in .env');
-      process.exit(1);
-    }
-
-    // Optional API server override
-    const apiServer = process.env.API_SERVER;
+    const clientId = APP.clientId;
+    const refreshToken = APP.refresh;
+    const apiServer = APP.apiServer;
 
     // Instantiate OAuth provider and token store
     const provider = new ManualProvider(clientId);
@@ -84,10 +75,10 @@ async function main(): Promise<void> {
     const interval = process.env.INTERVAL ?? 'OneDay';
 
     const candles = await client.getCandles(symbolId, start, end, interval);
-    console.log('Candles data:');
+    log.info('Candles data:');
     console.table(candles.slice(0, 5));
   } catch (error) {
-    console.error('CLI error:', error);
+    log.error({ err: error }, 'CLI error');
     process.exit(1);
   }
 }
