@@ -1,4 +1,15 @@
 #!/usr/bin/env bash
+
+## =============================================================================
+#? Script Name: setup_web_env.sh
+#? Aim: Initialize Next.js application in web/ directory
+#? Purpose: Create new Next.js project with TypeScript, ESLint, and proper import aliases, then update project .gitignore
+#? Decision Rationale: Provides standardized Next.js setup with modern configuration and consistent project structure
+#? Usage: ./setup_web_env.sh
+#? Dependencies: npx, create-next-app, Node.js, project .gitignore
+#? Last Updated: 2025-07-24 by GitHub Copilot
+#? References: web/package.json, .gitignore, verify-all.sh
+## =============================================================================
 # setup_web_env.sh: Initialize Next.js app in web/ directory
 set -euo pipefail
 
@@ -32,3 +43,5 @@ log "Web environment setup complete"
 log "Running repository verification"
 "$PROJECT_ROOT/scripts/verify-all.sh"
 log "Verification after setup complete"
+
+#? Validation Status: Actively Validated on 2025-07-24

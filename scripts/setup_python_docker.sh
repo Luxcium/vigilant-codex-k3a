@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: setup_python_docker.sh
+#? Aim: Idempotent Docker Python environment setup script
+#? Purpose: Build Docker image for Python application if not already present
+#? Decision Rationale: Ensures consistent Docker environment for Python development
+#? Usage: ./setup_python_docker.sh
+#? Dependencies: Docker
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: python/Dockerfile
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/usr/bin/env bash
 # Idempotent Docker Python environment setup script
 set -euo pipefail

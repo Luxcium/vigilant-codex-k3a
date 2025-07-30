@@ -10,7 +10,7 @@
   "license": "MIT",
   "author": "Benjamin Vincent (Luxcium)",
   "type": "module",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "vitest"

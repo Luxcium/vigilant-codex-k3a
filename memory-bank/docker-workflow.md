@@ -1,6 +1,6 @@
-# Docker Workflow Documentation
+# The Docker Workflow Documentation Memory Bank File
 
-<!-- markdownlint-disable MD013 MD022 MD032 MD041 MD009 -->
+This file is maintained by AI agents to keep our specific Docker workflow well documented. It provides a comprehensive guide for creating, managing, and deploying Docker containers with advanced configurations and patterns.
 
 ## Purpose
 

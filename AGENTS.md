@@ -1,6 +1,6 @@
 # AGENTS.md
 
-You are a Codex AI Agent or Codex CLI agent (will use names interchangeably meaning the OpenAI Codex Agentic Tool. **Your primary instruction file is `AGENTS.md`** (this file).
+You are a Codex AI Agent or Codex CLI agent (will use names interchangeably meaning the OpenAI Codex Agentic Tool). **Your primary instruction file is `AGENTS.md`** (this file).
 
 ## Three AI Agent System or More
 
@@ -8,7 +8,9 @@ This project supports three AI agents with distinct entry points and responsibil
 
 - **Codex CLI (YOU)** → `AGENTS.md` (THIS IS YOUR PRIMARY INSTRUCTION FILE)
 - **Cline AI** → `.clinerules/main-rules.md` (Cline AI's primary instruction file)
-- **VS Code Copilot** → `.github/copilot-instructions.md` (VS Code Copilot's primary instruction file)
+ - **VS Code Copilot** → `.github/copilot-instructions.md` (VS Code Copilot's primary instruction file)
+> [!IMPORTANT]
+> **Radical Change Notice:** As of July 2025, all instructions, prompts, and chatmodes previously located in `.github/` are now moved to `memory-bank/instructions/`, `memory-bank/prompts/`, and `memory-bank/chatmodes/` respectively. This is an exotic, nonstandard configuration designed to maximize agentic context and stateful documentation. **However, the Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code Copilot documentation and tooling.** All contributors and agents must reference the new memory-bank locations for instructions, prompts, and chatmodes, but keep Copilot's main instruction file in `.github/` to avoid confusion and ensure proper agent operation.
 
 ### Agent Collaboration Rules
 
@@ -262,7 +264,7 @@ verification scripts passing.
   enabled—to apply project-specific coding guidelines to every
   chat-based code generation request. It also recognizes additional
   `.instructions.md` files placed in folders such as
-  `.github/instructions/`, where front-matter metadata like `applyTo`
+   `memory-bank/instructions/`, where front-matter metadata like `applyTo`
   patterns can target instructions to particular files or directories.
   These custom instruction files apply solely to Copilot Chat’s code
   generation features (not to inline code completions), remain
@@ -363,7 +365,7 @@ directory to organize automatically their operational preferences and
 instructions.
 
 **VS Code Copilot Chat**: VS Code Copilot Chat uses
-`.github/copilot-instructions.md` and `.github/instructions/` files to
+`memory-bank/copilot-instructions.md` and `memory-bank/instructions/` files to
 manage its preferences and instructions.
 
 **Codex CLI**: Codex CLI uses this `AGENTS.md` file to manage its

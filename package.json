@@ -9,12 +9,14 @@
   ],
   "license": "MIT",
   "author": "Benjamin Vincent (Luxcium)",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "dev": "cd ./web/ && npm install && npm run dev",
     "docs": "typedoc --options typedoc.json",
-    "lint": "eslint \"src/**/*.ts\"",
+    "lint": "npm run lint:markdown && eslint 'src/**/*.ts'",
+    "lint:markdown": "npx prettier --write '**/*.chatmode.md' '**/*.prompt.md' '**/*.instructions.md' && markdownlint --config .markdownlint.yaml '**/*.md' '**/*.chatmode.md' '**/*.prompt.md' '**/*.instructions.md'",
     "markdownlint": "markdownlint \"**/*.md\"",
+    "sdk:playground": "npm run build && node ./lib/src/main.js",
     "test": "vitest run",
     "test:auth": "vitest run src/tests/auth/",
     "test:auth:watch": "vitest src/tests/auth/",
@@ -42,6 +44,8 @@
   "dependencies": {
     "@openai/codex": "^0.1.2505172129",
     "@prisma/client": "^6.11.1",
+    "axios": "^1.11.0",
+    "dotenv": "^17.2.0",
     "zod": "^3.25.67"
   },
   "devDependencies": {

@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: run_codex_cli.sh
+#? Aim: Run Codex CLI container for project development
+#? Purpose: Start a container with Node.js and Python environments for the specified project
+#? Decision Rationale: Provides a consistent development environment using Docker
+#? Usage: ./run_codex_cli.sh [project_path]
+#? Dependencies: Docker
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: ghcr.io/openai/codex-universal:latest
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/usr/bin/env bash
 set -euo pipefail
 

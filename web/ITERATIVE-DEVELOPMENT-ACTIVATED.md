@@ -17,7 +17,7 @@
 
 ### 1. Custom Chat Mode: `iterative-nextjs-dev`
 
-**Location**: `.github/chatmodes/iterative-nextjs-dev.chatmode.md`
+**Location**: `memory-bank/chatmodes/iterative-nextjs-dev.chatmode.md`
 
 **Features**:
 

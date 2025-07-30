@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: init-empty-copilot-project.sh
+#? Aim: Initialize an empty VS Code Copilot project structure
+#? Purpose: Create necessary directories and files for Copilot integration
+#? Decision Rationale: Ensures a safe and consistent setup for new projects
+#? Usage: ./init-empty-copilot-project.sh
+#? Dependencies: bash
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: .github/copilot-instructions.md, .vscode/settings.json
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/bin/bash
 
 # Create necessary directories

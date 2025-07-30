@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: activate_web_dev_environment.sh
+#? Aim: Activate web development environment variables and tools
+#? Purpose: Set up paths, aliases, and environment variables for web frontend development
+#? Decision Rationale: Provides a consistent shell environment for web tooling (pnpm, Vite, ESLint)
+#? Usage: source activate_web_dev_environment.sh
+#? Dependencies: pnpm, Node.js, Vite, ESLint
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: package.json, pnpm-workspace.yaml, .vscode/tasks.json
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/bin/bash
 
 # activate_web_dev_environment.sh

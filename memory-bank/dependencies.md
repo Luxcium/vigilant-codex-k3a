@@ -1,8 +1,44 @@
-# dependencies.md
+- **example.ts** → **.keys/example-sdk-demo.json** (Why: Playground output must include HTTP status codes for robust error reporting)
+  - Impact: Enables agentic error handling, debugging, and recursive output verification
+# The `dependencies.md` Memory Bank File
+
+Your AI Agent MUST actively strive to keep this file up to date with the latest dependencies, their relationships, and integration points for the Vigilant Codex K3a polyvalent AI development workspace. This file MUST be updated by any AI Agent accessing it, You MUST eagerly each time changes on each chat completion and each task or subtask as the living authoritative guide.
+
+
 
 ## Purpose
 
-This file tracks all project dependencies, their relationships, and integration points for the Vigilant Codex K3a polyvalent AI development workspace. It serves as a comprehensive dependency map enabling proper management and coordination between components across multiple languages, frameworks, and AI agents.
+This file tracks all pro### Script Management and Optimization Protocol
+ **26 Instruction Files** - Automated coding standards in `memory-bank/instructions/`
+ **27 Prompt Files** - Executable workflow templates in `memory-bank/prompts/`
+**Dependencies and Relationships**:
+
+- **scripts/README.md** → **ALL script files** (Why: Must be synchronized whenever scripts change)
+  - Impact: Documentation accuracy and developer onboarding efficiency
+  
+- **systemPatterns.md script consolidation principles** → **file-organization.instructions.md** (Why: Architecture drives implementation standards)
+  - Impact: Consistent script management approach across all AI agents
+
+- **Regular script reviews** → **script usage analytics** (Why: Data-driven consolidation decisions)
+  - Impact: Optimization priorities based on actual usage patterns
+
+- **Script header standardization** → **All 42 scripts in scripts/ directory** (Why: Consistent documentation and validation)
+  - Impact: Enhanced maintainability and automated validation capabilities
+
+**Advanced Consolidation Dependencies**:
+- `setup_web_env.sh` + `setup_web_dev_environment.sh` → **Planned unified web setup script**
+- `validate-instructions.sh` + `validate-prompt.sh` → **Planned unified validation script** 
+- `generate-instruction-file.sh` + `generate-prompt-file.sh` → **Planned unified generator script**
+- `setup_questrade_sdk_core.sh` + `setup_questrade_types.sh` → **Planned unified Questrade setup**
+- `setup_agent_framework.sh` + `setup_agent_system.sh` → **Planned unified agent setup**
+
+**Quality Assurance Dependencies**:
+- **Header Format Validation** → **Automated checker for 10-line standardized format**
+- **Functional Testing** → **Parameter combination testing for consolidated scripts**
+- **Integration Testing** → **.vscode/tasks.json validation with consolidated scripts**
+- **Continuous Monitoring** → **Regular review protocol and usage analytics**
+
+### Development Environment Dependenciesect dependencies, their relationships, and integration points for the Vigilant Codex K3a polyvalent AI development workspace. It serves as a comprehensive dependency map enabling proper management and coordination between components across multiple languages, frameworks, and AI agents.
 
 ## Structure
 
@@ -16,64 +52,27 @@ This file tracks all project dependencies, their relationships, and integration 
 
 ---
 
-## Core Dependencies
 
-### TypeScript/Node.js Core Stack
+### AI Agent Dependencies
 
-- **Node.js 22** - Runtime with native fetch API support
-- **TypeScript 5.8+** - Strict type checking with native Response types
-- **Native Fetch API** - HTTP client using Node.js 22 native implementation
-- **Vitest 3.2.4** - Test runner with Istanbul coverage provider (98.34% coverage)
-- **Prisma ORM** - Database integration with PostgreSQL backend
+### Memory Bank System
+- **Markdown-Lint Compliance** - Strict formatting standards for all files
 
-### Next.js v15+ Web Application Stack
+### Three AI Agent Ecosystem
 
-- **Next.js 15+** - App Router with Server Components by default
-- **Server Actions** - Form handling and mutations with `'use server'`
-- **Client Components** - Interactive UI with `'use client'` for state management
-- **PostgreSQL** - Database service via Docker Compose
-- **Docker Integration** - Containerized development environment
+- **Cline AI** - Primary development agent (`.clinerules/main-rules.md`)
+- **VS Code Copilot** - Code generation (`.github/copilot-instructions.md`)
+**26 Instruction Files** - Automated coding standards in `memory-bank/instructions/`
+**27 Prompt Files** - Executable workflow templates in `memory-bank/prompts/`
 
-### Python Development Environment
-
-- **Python 3.13** - Core language runtime
-- **Conditional Environment Framework** - Runtime mode selection:
-  - `local` - Host-based virtual environment with direct IDE integration
-  - `docker_isolated` - Fully containerized with complete isolation
-  - `docker_volume` - Containerized with live host file mounting
+> [!IMPORTANT]
 - **Jupyter Notebooks** - VS Code integration with advanced API support
 - **pip/virtualenv** - Package management across all environment modes
-
-### Docker Orchestration Platform
-
-- **Codex Universal Environment** - `ghcr.io/openai/codex-universal:latest`
-- **Node.js 22 + Python 3.13** - Pre-configured development environment
-- **Volume-Based Development** - Instant file changes without container rebuilds
-- **OpenAI API Integration** - Seamless API access within containers
-- **Multi-Service Support** - PostgreSQL, Redis, development servers
-- **Health Monitoring** - Comprehensive service validation
-
-## Development Dependencies
-
 ### Testing Infrastructure
 
-- **Vitest 3.2.4** - Primary test runner with Istanbul coverage
-- **259 Tests Passing** - Zero regression development with 98.34% branch coverage
-- **Native Fetch Mocking** - `vi.stubGlobal('fetch', mockFetch)` for HTTP isolation
-- **AuthManager Mocking** - Complete authentication system mocking
-- **Edge Case Coverage** - NaN handling, timeout management, error scenarios
-- **CommonJS Compatibility** - Maintained throughout test infrastructure
 
-### Code Quality & Formatting
 
-- **ESLint** - JavaScript/TypeScript linting with strict rules
 - **Prettier** - Code formatting with consistent style
-- **Markdown-Lint** - Documentation formatting compliance
-- **Husky** - Pre-commit hooks for code quality enforcement
-- **TypeScript Strict Mode** - Enhanced type checking and null safety
-
-### Container Development Tools
-
 - **Docker Engine** - Container runtime and management
 - **Docker Compose** - Multi-service orchestration
 - **Dev Container Configuration** - VS Code integration with `.devcontainer/`
@@ -84,26 +83,21 @@ This file tracks all project dependencies, their relationships, and integration 
 
 ### Memory Bank System
 
-- **Stateful Documentation** - Persistent context across development sessions
 - **Cross-File Dependencies** - Comprehensive dependency tracking
 - **Self-Documentation Protocol** - Automatic context preservation
 - **Memory Reset Resilience** - Complete project understanding from documentation
-- **Markdown-Lint Compliance** - Strict formatting standards for all files
-
-### Three AI Agent Ecosystem
-
 - **Cline AI** - Primary development agent (`.clinerules/main-rules.md`)
 - **Codex CLI** - Terminal automation and orchestration (`AGENTS.md`)
-- **VS Code Copilot** - Code generation (`.github/copilot-instructions.md`)
-- **Cross-Agent Workflows** - Sophisticated collaboration patterns
 - **Stateful Collaboration** - Memory bank integration across all agents
 
 ### Instruction & Prompt Framework
-
+**Depends On:** tsconfig.json baseUrl and paths configuration, TypeScript standards from `memory-bank/instructions/`
 - **26 Instruction Files** - Automated coding standards in `.github/instructions/`
 - **27 Prompt Files** - Executable workflow templates in `.github/prompts/`
+All agents must consult the [when-to-use-what-matrix.instructions.md](../memory-bank/instructions/when-to-use-what-matrix.instructions.md) for a one-page mapping of integration goals to configuration files and authoritative sources. For detailed implementation, see `memory-bank/instructions/README.md` and `memory-bank/prompts/README.md`.
 - **Conditional Architecture** - Runtime decision frameworks
 - **Parameter-Driven Configuration** - ENV_MODE and similar runtime selection
+All agents must consult the [theme-ui-meta.instructions.md](../memory-bank/instructions/theme-ui-meta.instructions.md) for detailed theming meta tag standards and the [theme-ui-meta.prompt.md](../memory-bank/prompts/theme-ui-meta.prompt.md) for workflow automation. These files cover syntax, validation, and platform-specific quirks for `theme-color`, `color-scheme`, and related tags.
 - **Quality Assurance Standards** - Comprehensive validation and testing patterns
 
 ## Cross-References and Relationships
@@ -656,3 +650,8 @@ All agents must consult the [theme-ui-meta.instructions.md](../.github/instructi
 **Last Updated**: 2025-02-06 (Conditional Python environment framework implementation)  
 **Status**: Active tracking of conditional framework and AI Agent Framework dependencies  
 **Next Review**: After testing conditional framework and extending to other language environments
+
+
+[2025-07-27] Radical Documentation Refactor: Memory Bank Migration
+
+All `instructions`, `prompts`, and `chatmodes` directives folders have been migrated from `.github/` into `memory-bank/` directory instead. The Copilot entry point remains `.github/copilot-instructions.md` ensures compatibility with VS Code Copilot and prevents integration issues.

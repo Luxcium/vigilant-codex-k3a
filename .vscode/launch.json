@@ -222,7 +222,19 @@
         "group": "browser",
         "order": 5
       }
+    },
+    // --- Optimized Debug Config for SDK Playground ---
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug SDK Playground (main.ts)",
+      "program": "${workspaceFolder}/lib/src/main.js",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/lib/**/*.js"],
+      "skipFiles": ["<node_internals>/**"],
+      "console": "integratedTerminal"
     }
+    // --- End Optimized Debug Config ---
   ],
   "compounds": [
     {

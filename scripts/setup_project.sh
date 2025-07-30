@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: setup_project.sh
+#? Aim: Idempotent project setup script
+#? Purpose: Create required directories and files without overwriting existing content
+#? Decision Rationale: Ensures consistent project structure and placeholder files
+#? Usage: ./setup_project.sh
+#? Dependencies: bash, markdownlint
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: .github/, .vscode/, memory-bank/, scripts/
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/usr/bin/env bash
 # setup_project.sh: Idempotent project setup script
 # Creates required directories and files without overwriting existing content

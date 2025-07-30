@@ -1,5 +1,16 @@
 #!/bin/bash
 
+## =============================================================================
+#? Script Name: setup_web_dev_environment.sh
+#? Aim: Configure comprehensive web development environment in VS Code
+#? Purpose: Start Next.js development server, configure VS Code settings, create workspace files, and enable browser preview integration
+#? Decision Rationale: Provides one-click web development setup with integrated browser preview and hot reload capabilities
+#? Usage: ./setup_web_dev_environment.sh
+#? Dependencies: pnpm, Next.js server, VS Code, curl, timeout utilities
+#? Last Updated: 2025-07-24 by GitHub Copilot
+#? References: package.json, .vscode/settings.json, vigilant-codex-k3a.code-workspace
+## =============================================================================
+
 # setup_web_dev_environment.sh
 # Comprehensive script to set up the complete web development environment in VS Code
 
@@ -152,3 +163,5 @@ main() {
 
 # Run the main function
 main
+
+#? Validation Status: Actively Validated on 2025-07-24

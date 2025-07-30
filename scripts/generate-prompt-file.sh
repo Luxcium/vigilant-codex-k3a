@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: generate-prompt-file.sh
+#? Aim: Generate structured templates for .prompt.md files
+#? Purpose: Automate creation of prompt files for AI-assisted development workflows
+#? Decision Rationale: Provides consistent templates for reusable prompts
+#? Usage: ./generate-prompt-file.sh -n <filename> -t <title> -d <description>
+#? Dependencies: bash, .github/prompts/, memory-bank/dependencies.md
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: ai-prompt-creation.instructions.md, instruction-generator.prompt.md
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/bin/bash
 
 # AI Agent Framework - Prompt File Generator
@@ -242,7 +255,7 @@ $description
 
 You are working in a VS Code workspace with the following project structure:
 - \`src/\` — TypeScript source code
-- \`python/\` — Python modules and utilities  
+- \`python/\` — Python modules and utilities
 - \`notebooks/\` — Jupyter notebooks
 - \`scripts/\` — Shell scripts for automation
 - \`memory-bank/\` — Project context and dependencies
@@ -264,7 +277,7 @@ Define your inputs using the format: \`\${input:variableName:defaultValue}\`
 - **\${input:targetDirectory:src}** — Target directory for generated files
 - **\${input:language:typescript}** — Programming language (typescript, python, etc.)
 
-### Optional Parameters  
+### Optional Parameters
 - **\${input:includeTests:true}** — Whether to generate test files
 - **\${input:styleFramework:none}** — Styling framework if applicable
 - **\${input:additionalFeatures:none}** — Additional features to include
@@ -293,7 +306,7 @@ Define your inputs using the format: \`\${input:variableName:defaultValue}\`
 - Validate parametric inputs and requirements
 - Check for conflicts with existing code
 
-### 2. Generation Phase  
+### 2. Generation Phase
 - Create main implementation files in \`\${input:targetDirectory}\`
 - Generate supporting files (tests, documentation, configs)
 - Apply appropriate coding standards based on language
@@ -376,7 +389,7 @@ Provide the following deliverables:
 ### Prompt Files
 <!-- List related prompt files in .github/prompts/ -->
 
-### Instruction Files  
+### Instruction Files
 <!-- List applicable instruction files in .github/instructions/ -->
 
 ### Memory Bank Files
@@ -386,7 +399,7 @@ Provide the following deliverables:
 
 ### VS Code Copilot
 \`\`\`
-@workspace Use the $filename prompt to generate a \${input:componentName} 
+@workspace Use the $filename prompt to generate a \${input:componentName}
 component in \${input:targetDirectory} using \${input:language}
 \`\`\`
 

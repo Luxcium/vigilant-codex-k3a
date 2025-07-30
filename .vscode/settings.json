@@ -1,8 +1,59 @@
 {
-  // #endregion: FORMAT BEHAVIOUR                                       !
+  // #region FORMAT BEHAVIOUR                                        !
   /*
   |-···----------------------------------------------------------···-|
-    */
+  */
+  "files.associations": {
+    "*.py": "python",
+    "requirements*.txt": "pip-requirements",
+    ".env*": "dotenv",
+    "*.ts": "typescript",
+    "*.js": "javascript",
+    "*.json": "jsonc",
+    "Dockerfile*": "dockerfile",
+    "docker-compose*.yml": "dockercompose",
+    "*.md": "markdown",
+    "**/.github/chatmodes/*.chatmode.md": "chatmode",
+    "**/.github/instructions/*.instructions.md": "instructions",
+    "**/.github/prompts/*.prompt.md": "prompt",
+    "**/memory-bank/chatmodes/*.chatmode.md": "chatmode",
+    "**/memory-bank/prompts/*.prompt.md": "prompt",
+    "**/memory-bank/instructions/*.instructions.md": "instructions"
+  },
+  "[chatmode]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  "[prompt]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  "[instructions]": {
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordWrap": "on",
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
   // "chat.editing.autoAcceptDelay": 20,
   "code-runner.executorMap": {
     "javascript": "node --trace-deprecation",
@@ -13,7 +64,6 @@
   /*
   |-···----------------------------------------------------------···-|
     */
-  // #region: FORMAT BEHAVIOUR                                               !
   // "editor.formatOnPaste": false,
   // "editor.formatOnSave": true,
   // "editor.formatOnSaveMode": "file",
@@ -49,7 +99,10 @@
   "material-icon-theme.folders.associations": {
     "chatgpt": "cobol",
     "eslint-plugin": "rules",
-    "prompts": "log"
+    "memory-bank": "rules",
+    "prompts": "log",
+    "chatmodes": "vm",
+    "instructions": "class"
   },
   "polyglot-notebook.logLevel": "Warn",
   "polyglot-notebook.suppressPromptToSaveDefaults": true,
@@ -73,20 +126,7 @@
   "python.testing.autoTestDiscoverOnSaveEnabled": true,
   "python.terminal.executeInFileDir": true,
   "python.terminal.focusAfterLaunch": true,
-  "files.associations": {
-    "*.py": "python",
-    "requirements*.txt": "pip-requirements",
-    ".env*": "dotenv",
-    "*.ts": "typescript",
-    "*.js": "javascript",
-    "*.json": "jsonc",
-    "Dockerfile*": "dockerfile",
-    "docker-compose*.yml": "dockercompose",
-    "*.md": "markdown",
-    "*.instructions.md": "markdown",
-    "*.prompt.md": "markdown",
-    "*.chatmode.md": "markdown"
-  },
+
   // "remote.defaultExtensionsIfInstalledLocally": [
   //   "GitHub.copilot",
   //   "GitHub.copilot-chat",
@@ -100,23 +140,8 @@
   "workbench.iconTheme": "material-icon-theme",
   "workbench.productIconTheme": "material-product-icons",
   /*
-  |-····-----------------------------------------------------------――··-|
+    |-··----------------------------------------------------------··-|
   */
-  // #region: editor.rulers [scminput]
-  "[scminput]": {
-    "editor.rulers": [
-      {
-        "color": "#F368",
-        "column": 70
-      },
-      {
-        "color": "#F838",
-        "column": 50
-      }
-    ],
-    "editor.wordWrap": "on",
-    "editor.wordWrapColumn": 70
-  },
   // ========================================
   // Accessibility and Voice
   // ========================================
@@ -128,11 +153,11 @@
   },
   "accessibility.verbosity.inlineChat": true,
   "accessibility.verbosity.panelChat": true,
-  // #endregion: editor.rulers                                                          !
+  // #endregion: FORMAT BEHAVIOUR                                    !
   /*
-  |-····-----------------------------------------------------------··-|
-    */
-  // #region: BETTER COMMENTS                                                         !
+    |-··----------------------------------------------------------··-|
+  */
+  // #region BETTER COMMENTS                                         !
   /*
      "problemsErrorIcon.foreground": "#ff3366",
      "problemsInfoIcon.foreground": "#ffcc55ee",
@@ -1093,9 +1118,6 @@
       "tag": "XXX"
     }
   ],
-
-  "editor.inlineSuggest.edits.allowCodeShifting": "horizontal",
-  "editor.inlineSuggest.edits.renderSideBySide": "auto",
   // Inline suggestions
   "editor.inlineSuggest.syntaxHighlightingEnabled": true,
   "editor.quickSuggestions": {
@@ -1104,7 +1126,25 @@
     "strings": "on"
   },
   // #endregion: editor.rulers [scminput]                                    !
-  // #region: editor.rulers                                                  !
+  /*
+    |-··----------------------------------------------------------··-|
+  */
+  // #region editor.rulers                                           !
+  "[scminput]": {
+    "editor.rulers": [
+      {
+        "color": "#F368",
+        "column": 70
+      },
+      {
+        "color": "#F838",
+        "column": 50
+      }
+    ],
+    "editor.wordWrap": "on",
+    "editor.wordWrapColumn": 70
+  },
+
   "editor.rulers": [
     {
       "color": "#FC33",
@@ -1280,9 +1320,9 @@
   "todo-tree.filtering.excludedWorkspaces": [], // new items
   // #endregion: BETTER COMMENTS                                           !
   /*
-  |-····-----------------------------------------------------------··-|
-    */
-  // #region: TODO TREE                                                                !
+    |-··----------------------------------------------------------··-|
+  */
+  // #region TODO TREE                                               !
   "todo-tree.filtering.excludeGlobs": ["**/node_modules"],
   "todo-tree.filtering.ignoreGitSubmodules": false,
   "todo-tree.filtering.includedWorkspaces": [], // new items
@@ -1606,7 +1646,6 @@
       // "borderRadius": "0px",
       // "type": "whole-line",
     },
-    // #endregion ---------------------------------------------------
     "#endregion": {
       "background": "#F15",
       "foreground": "#F15",
@@ -1619,7 +1658,6 @@
       "iconColour": "#F15",
       "opacity": 30
     },
-    // #region ------------------------------------------------------
     "#region": {
       "background": "#DF3",
       "foreground": "#DF3",
@@ -2039,11 +2077,9 @@
   // "todo-tree.tree.tooltipFormat": "${filepath}, line ${line}",
   // #endregion: TODO TREE                                                           !
   /*
-  |-····-----------------------------------------------------------··-|
+    |-··----------------------------------------------------------··-|
   */
-
-  // #region: Copilot Chat Agent                                                           !
-
+  // #region Copilot Chat Agent                                      !
   "chat.agent.enabled": true,
   "chat.agent.maxRequests": 15,
   "chat.commandCenter.enabled": true,
@@ -2056,30 +2092,36 @@
   "chat.edits2.enabled": true,
   "chat.editRequests": "inline",
   "chat.extensionTools.enabled": true,
-  "chat.modeFilesLocations": {
-    ".github/chatmodes": true
+  "github.copilot.enable": {
+    "*": true
   },
   "chat.mcp.enabled": true,
+  "chat.modeFilesLocations": {
+    ".github/chatmodes": true,
+    "memory-bank/chatmodes": true
+  },
   "chat.promptFiles": true,
   "chat.promptFilesLocations": {
-    ".github/prompts": true
+    ".github/prompts": true,
+    "memory-bank/prompts": true
   },
   "chat.instructionsFilesLocations": {
-    ".github/instructions": true
+    ".github/instructions": true,
+    "memory-bank/instructions": true
   },
   "chat.implicitContext.enabled": {
     "panel": "always"
   },
   "chat.sendElementsToChat.enabled": true,
-  "chat.tools.autoApprove": true,
-
-  // #region: Github Copilot                                                          !
-
+  // #endregion: Copilot Chat Agent                                  !
+  /*
+    |-··----------------------------------------------------------··-|
+  */
+  // #region Github Copilot                                          !
   "github.copilot.chat.agent.autoFix": true,
   "github.copilot.chat.agent.currentEditorContext.enabled": true,
   "github.copilot.chat.agent.runTasks": true,
   "github.copilot.chat.agent.thinkingTool": true,
-  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
   "github.copilot.chat.codesearch.enabled": true,
   "github.copilot.chat.copilotDebugCommand.enabled": true,
   "github.copilot.chat.editor.temporalContext.enabled": false,
@@ -2097,17 +2139,16 @@
   "github.copilot.chat.terminalChatLocation": "terminal",
   "github.copilot.chat.useProjectTemplates": true,
   "github.copilot.editor.enableCodeActions": true,
-  "github.copilot.nextEditSuggestions.enabled": true,
-  "github.copilot.nextEditSuggestions.fixes": true,
   "github.copilot.renameSuggestions.triggerAutomatically": true,
   "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
   "inlineChat.enableV2": true,
   "inlineChat.hideOnRequest": false,
   "inlineChat.lineEmptyHint": true,
   "inlineChat.lineNaturalLanguageHint": true,
+
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
-      "file": ".github/instructions/use-conventional-commits.instructions.md"
+      "file": "memory-bank/instructions/conventional-commits-must-be-used.instructions.md"
     }
   ],
   "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
@@ -2130,10 +2171,11 @@
     }
   ],
 
-  "github.copilot.enable": {
-    "*": true
-  },
-  // ========================================
+  // #endregion: Github Copilot                                      !
+  /*
+    |-··----------------------------------------------------------··-|
+  */
+  // #region Last Section                                            !
   "typescript.tsserver.maxTsServerMemory": 8192,
   "terminal.integrated.persistentSessionReviveProcess": "never",
   "terminal.integrated.localEchoLatencyThreshold": 30,
@@ -2328,5 +2370,11 @@
   "workbench.list.defaultFindMode": "highlight",
   "workbench.list.typeNavigationMode": "automatic",
   "workbench.list.multiSelectModifier": "ctrlCmd",
-  "workbench.list.smoothScrolling": true
+  "workbench.list.smoothScrolling": true,
+  "editor.inlineSuggest.edits.renderSideBySide": "never",
+  "npm.packageManager": "pnpm",
+  "npm.scriptRunner": "pnpm",
+  "prisma.scriptRunner": "pnpm",
+  "genaiscript.cli.packageManager": "pnpm"
+  // #endregion: Last Section                                        !
 }

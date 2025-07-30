@@ -1,4 +1,28 @@
 #!/bin/bash
+
+## =============================================================================
+#? Script Name: setup_python_docker_volume.sh
+#? Aim: Configure Docker volume-mounted Python environment
+#? Purpose: Create Dockerfile, docker-compose.yml, and .dockerignore for live code editing
+#? Decision Rationale: Provides container isolation with live code sync for development
+#? Usage: ./setup_python_docker_volume.sh
+#? Dependencies: Docker, docker-compose
+#? Last Updated: 2025-07-24 by GitHub Copilot
+#? References: python/Dockerfile, python/docker-compose.yml
+## ===============================================================================================================================================
+#? Script Name: setup_python_docker_volume.sh
+#? Aim: Configure Docker volume-mounted Python environment
+#? Purpose: Create Dockerfile, docker-compose.yml, and .dockerignore for live code editing
+#? Decision Rationale: Provides container isolation with live code sync for development
+#? Usage: ./setup_python_docker_volume.sh
+#? Dependencies: Docker, docker-compose
+#? Last Updated: 2025-07-24 by GitHub Copilot
+#? References: python/Dockerfile, python/docker-compose.yml
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-24
+
+#!/bin/bash
 # Python Docker Volume-Mounted Environment Setup
 # Creates a Docker environment with volume mounting for live code editing
 
@@ -434,3 +458,5 @@ else
 fi
 
 log "  7. Your code changes will be immediately reflected in the container!"
+
+#? Validation Status: Actively Validated on 2025-07-24

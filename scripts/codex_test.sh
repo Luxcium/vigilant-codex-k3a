@@ -1,5 +1,14 @@
-#!/bin/bash
-# Test OpenAI API Key in Codex Universal Environment
+#!/usr/bin/env bash
+## =============================================================================
+#? Script Name: codex_test.sh
+#? Aim: Test OpenAI API Key in Codex Universal Environment
+#? Purpose: Verify that the Codex container has access to the required environment variables and tools
+#? Decision Rationale: Ensures container readiness for development and API usage
+#? Usage: ./codex_test.sh
+#? Dependencies: Docker
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: codex_start.sh, container environment variables
+## =============================================================================
 
 set -euo pipefail
 
@@ -36,3 +45,5 @@ echo "- pip: $(pip --version)"
 '
 
 echo "Test complete."
+
+#? Validation Status: Actively Validated on 2025-07-23

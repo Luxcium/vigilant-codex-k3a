@@ -1,4 +1,6 @@
-# systemPatterns.md
+# The `systemPatterns.md` Memory Bank File
+
+Your AI Agent will actively strive to keep this file up to date with the latest system patterns, including architectural patterns, design patterns, and component relationships. This file MUST be updated by any AI Agent eagerly each time it will make changes on each chat completion and each task or subtask as the authoritative guide for all system architecture aspects of the Vigilant Codex K3a polyvalent AI development workspace.
 
 ## Purpose
 
@@ -153,6 +155,59 @@ detected and keep this list in sync with actual folders.
 - **Health Check Pattern** - Comprehensive service validation with proper timeouts and retries
 - **Service Discovery Pattern** - Custom networks with descriptive service names
 
+### Script Architecture and Maintenance Principles
+
+#### Script Consolidation and Optimization Strategy ✅ **ONGOING EFFORT**
+
+**Decision**: Continuously reduce script quantity through consolidation while maintaining functionality and improving maintainability
+**Rationale**: Fewer scripts = less maintenance overhead, clearer dependencies, better documentation, easier troubleshooting
+**Implementation**: Systematic script analysis with consolidation opportunities identification and execution
+**Current Status**: Recently consolidated 41 scripts into 22 scripts (46% reduction) with standardized documentation
+
+#### Script Documentation and Maintenance Standards ✅ **MANDATORY**
+
+**Decision**: All scripts must have comprehensive header documentation and stateful README maintenance
+**Rationale**: Self-documenting code improves maintainability, reduces onboarding time, enables better automation
+**Implementation**: 
+- **Header Requirements**: 10-line standardized header with script name, aim, purpose, decision rationale, usage, dependencies, last updated, references
+- **Validation Status**: Every script ends with `#? Validation Status: Actively Validated on [DATE]`
+- **README Synchronization**: `scripts/README.md` must be updated whenever scripts are added, modified, or removed
+- **Inline Documentation**: Critical sections documented with purpose-driven comments throughout
+
+#### Ongoing Script Optimization Protocol ✅ **CONTINUOUS**
+
+**Decision**: Establish maintenance tasks to continuously optimize script flow and reduce dependencies
+**Rationale**: Scripts accumulate over time; regular optimization prevents bloat and improves efficiency
+**Implementation**:
+- **Monthly Reviews**: Analyze script usage patterns and identify consolidation opportunities
+- **Dependency Reduction**: Minimize external dependencies and cross-script dependencies
+- **Flow Optimization**: Streamline script logic and remove redundant operations
+- **Auto-Documentation**: Maintain soul and state of each script through comprehensive documentation
+
+#### Script Consolidation History and Future Plans
+
+**Previous Consolidation Achievements**:
+- ✅ **setup_python_env.sh** - Consolidated 3 Python environment scripts (local, docker_isolated, docker_volume)
+- ✅ **verify-all.sh** - Consolidated 5 validation scripts into unified interface
+- ✅ **setup_ts_sdk.sh** - Consolidated 6 TypeScript/SDK setup scripts with modular selection
+- ✅ **Docker lifecycle scripts** - Enhanced with comprehensive documentation headers
+- ✅ **Total Reduction**: From 41 scripts to 22 scripts (46% reduction)
+
+**Future Consolidation Targets**:
+- **Web Environment Scripts** - Consider consolidating `setup_web_env.sh` and `setup_web_dev_environment.sh`
+- **Validation Scripts** - Potential merge of `validate-instructions.sh` and `validate-prompt.sh`
+- **Agent Setup Scripts** - Evaluate consolidation of `setup_agent_framework.sh` and `setup_agent_system.sh`
+- **Questrade Scripts** - Merge `setup_questrade_sdk_core.sh` and `setup_questrade_types.sh` if functionality overlaps
+
+#### Script Maintenance Automation
+
+**Decision**: Implement automated maintenance checks and documentation updates
+**Implementation**:
+- **Header Validation**: Automated checks for proper header format and validation status
+- **README Synchronization**: Automatic detection of script changes and README update requirements  
+- **Dependency Analysis**: Regular analysis of script interdependencies and optimization opportunities
+- **Usage Tracking**: Monitor which scripts are frequently used vs. rarely accessed for consolidation priorities
+
 ### Script Automation Patterns
 
 - **Idempotent Operation Pattern** - Scripts safely re-runnable without side effects
@@ -295,5 +350,9 @@ This project supports three AI agents with specific architectural responsibiliti
 **All agents must validate their implementations against the system patterns defined in this file and ensure consistency with established architectural decisions.**
 
 ---
+
+[2025-07-27] Radical Documentation Refactor: Memory Bank Migration
+
+All instructions, prompts, and chatmodes have been migrated from `.github/` to the `memory-bank/` folders. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change was motivated by the need for a more organized, stateful, and agent-friendly documentation system. Centralizing instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors.
 
 **Last Updated:** 2025-07-18 | **Status:** Architectural Patterns Established | **Coverage:** Polyvalent AI Development Architecture

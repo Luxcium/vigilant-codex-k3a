@@ -1,6 +1,16 @@
+
 # Jupyter Notebooks Directory
 
 This directory contains all Jupyter notebooks for the project.
+
+
+## Notebook Index & References
+
+- **[openai/](./openai/)**: All OpenAI API prototyping and integration notebooks are now organized in this subfolder.
+  - **[openai_api_prototyping.ipynb](./openai/openai_api_prototyping.ipynb)**: Stepwise, well-documented OpenAI API prototyping using `.env` for API key management. Created as part of a guided session—see [memory-bank/activeContext.md](../memory-bank/activeContext.md) for chat context. Follows project standards for reproducibility and documentation.
+
+---
+
 
 ## Usage
 
@@ -11,10 +21,24 @@ This directory contains all Jupyter notebooks for the project.
   2. Run `jupyter notebook` or `jupyter lab`.
 - All dependencies for notebooks are managed in `python/requirements.txt`.
 
+## OpenAI API Example
+
+- See [openai_api_prototyping.ipynb](./openai_api_prototyping.ipynb) for a template on securely using the OpenAI API with `.env` and `python-dotenv`.
+- This notebook references the chat session in [memory-bank/activeContext.md](../memory-bank/activeContext.md) and follows [python-notebook-standards.instructions.md](../memory-bank/instructions/python-notebook-standards.instructions.md).
+
+---
+
+
 ## Standards
 
-- Follow [python-notebook-standards.instructions.md](../.github/instructions/python-notebook-standards.instructions.md).
+- Follow [python-notebook-standards.instructions.md](../memory-bank/instructions/python-notebook-standards.instructions.md).
 - Do not create a separate environment in this directory.
+
+## Memory Bank & Documentation
+
+- For chat-driven notebook development, see [memory-bank/activeContext.md](../memory-bank/activeContext.md).
+
+---
 
 ## Example
 
@@ -28,4 +52,4 @@ jupyter notebook
 ## See Also
 
 - [python/README.md](../python/README.md)
-- [python-environment.instructions.md](../.github/instructions/python-environment.instructions.md)
+- [python-environment.instructions.md](../memory-bank/instructions/python-environment.instructions.md)

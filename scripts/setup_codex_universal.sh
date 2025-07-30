@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: setup_codex_universal.sh
+#? Aim: Set up Codex Universal Docker environment
+#? Purpose: Configure Docker Compose, convenience scripts, and environment variables
+#? Decision Rationale: Provides a streamlined development environment using Docker
+#? Usage: ./setup_codex_universal.sh
+#? Dependencies: Docker, bash
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: docker-compose.codex.yml, .codex/config.json
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/bin/bash
 
 # Setup Codex Universal Docker Environment
@@ -379,7 +392,7 @@ This project uses the codex-universal Docker image for development with:
 
 ### Available Ports:
 - 3000: Next.js development server
-- 8000: Python development server  
+- 8000: Python development server
 - 8888: Jupyter Lab
 - 5173: Vite development server
 - 5432: PostgreSQL database

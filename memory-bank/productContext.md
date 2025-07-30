@@ -1,4 +1,8 @@
-# productContext.md
+# The `productContext.md` Memory Bank File
+
+Your AI Agent MUST actively strive to keep this file up to date with the latest product context, including project goals, user experience requirements, and AI agent collaboration framework.
+
+This file MUST be updated by any AI Agent accessing it, You MUST eagerly each time changes on each chat completion and each task or subtask as the living authoritative guide.
 
 ## Purpose
 

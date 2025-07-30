@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: setup_helpers.sh
+#? Aim: Scaffold helpers directory and placeholder files
+#? Purpose: Create helpers and test directories with initial placeholder files
+#? Decision Rationale: Ensures consistent structure for helper utilities
+#? Usage: ./setup_helpers.sh
+#? Dependencies: bash
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: src/helpers/candles.ts, src/tests/helpers/candles.test.ts
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/usr/bin/env bash
 # setup_helpers.sh: scaffold helpers directory and placeholder files
 set -euo pipefail

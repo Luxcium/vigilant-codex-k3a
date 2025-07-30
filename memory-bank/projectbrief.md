@@ -1,4 +1,7 @@
-# projectbrief.md
+# The `projectbrief.md` Memory Bank File
+
+You are responsible for maintaining this file autonomously. Your AI Agent MUST actively strive to keep this file up to date with the latest project brief, including core requirements, scope definition, and AI agent collaboration framework. This file MUST be updated by any AI Agent accessing it, You MUST eagerly each time changes on each chat completion and each task or subtask as the living authoritative guide. 
+ 
 
 ## Purpose
 
@@ -114,6 +117,8 @@ This file is the foundation of the Memory Bank and defines the core requirements
 
 - **VS Code Copilot** (Code Generation and Standards)
   - **Entry Point**: [`.github/copilot-instructions.md`](../.github/copilot-instructions.md)
+    > [!IMPORTANT]
+    > **Radical Change Notice:** Instructions, prompts, and chatmodes are now located in `memory-bank/instructions/`, `memory-bank/prompts/`, and `memory-bank/chatmodes/`. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code Copilot tooling.
   - **Responsibilities**: Real-time code assistance, instruction file application, quality assurance
   - **Unique Capabilities**: 26 instruction files, automated coding standards, IDE integration
 
@@ -219,9 +224,17 @@ This project supports three AI agents with specific entry points and must mainta
 - **Cline AI** → [`.clinerules/main-rules.md`](../.clinerules/main-rules.md) (Memory bank integration and learning protocols)
 - **Codex CLI** → [`AGENTS.md`](../AGENTS.md) (Automation and container orchestration)
 - **VS Code Copilot** → [`.github/copilot-instructions.md`](../.github/copilot-instructions.md) (Code generation and quality standards)
+> [!IMPORTANT]
+> **Radical Change Notice:** Instructions, prompts, and chatmodes are now located in `memory-bank/instructions/`, `memory-bank/prompts/`, and `memory-bank/chatmodes/`. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code Copilot tooling.
 
 **All agents must validate their understanding against this foundational document and ensure alignment with core project requirements.**
 
 ---
+
+[2025-07-27] Radical Documentation Refactor: Memory Bank Migration
+
+All instructions, prompts, and chatmodes have been migrated from `.github/` to the `memory-bank/` folders. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. 
+
+--- 
 
 **Last Updated:** 2025-07-18 | **Status:** Foundational Requirements Established | **Scope:** Polyvalent AI Development Workspace

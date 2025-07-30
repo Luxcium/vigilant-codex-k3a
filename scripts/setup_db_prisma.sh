@@ -1,3 +1,16 @@
+## =============================================================================
+#? Script Name: setup_db_prisma.sh
+#? Aim: Setup PostgreSQL service and Prisma schema
+#? Purpose: Configure database service and initialize Prisma for web directory
+#? Decision Rationale: Ensures database and ORM readiness for development
+#? Usage: ./setup_db_prisma.sh
+#? Dependencies: Docker, Prisma, Node.js
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: docker-compose.yml, web/prisma/schema.prisma
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 #!/usr/bin/env bash
 # setup_db_prisma.sh: Setup PostgreSQL service and Prisma schema
 set -euo pipefail

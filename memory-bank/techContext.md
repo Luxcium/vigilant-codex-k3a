@@ -1,4 +1,6 @@
-# techContext.md
+# The `techContext.md` Memory Bank File
+
+Your AI Agent will actively strive to keep this file up to date with the latest technical context, including technology stack, development environment setup, technical constraints, and dependencies. This file MUST be updated by any AI Agent eagerly each time it will make changes on each chat completion and each task or subtask as the authoritative guide for all technical implementation aspects of the Vigilant Codex K3a polyvalent AI development workspace.
 
 ## Purpose
 
@@ -143,7 +145,7 @@ vigilant-codex-k3a/
 ├── scripts/                # Shell scripts for automation (bash only)
 ├── notebooks/              # Jupyter notebooks and ML development
 ├── memory-bank/            # AI agent state management
-└── .github/instructions/   # 26 coding standards (auto-applied)
+└── memory-bank/instructions/   # 26 coding standards (auto-applied)
 ```
 
 ### Environment Configuration
@@ -173,6 +175,26 @@ vigilant-codex-k3a/
 - **Markdown-Lint** - Documentation formatting compliance
 - **TypeScript Strict Mode** - Enhanced type checking and null safety
 - **Husky** - Pre-commit hooks for automated quality checks
+
+### Package Installation Policy
+
+**Policy:** Always use `@latest` when adding new packages to the project.
+
+**Rationale:**
+
+- Ensures the project uses the most up-to-date versions of dependencies.
+- Reduces the risk of outdated or insecure packages.
+
+**Implementation:**
+
+- Use the `@latest` tag when running `pnpm add` or similar commands.
+- Document this policy in all relevant memory bank files and README files.
+
+**Example:**
+
+```bash
+pnpm add dotenv@latest axios@latest
+```
 
 ## Technical Constraints
 
@@ -254,6 +276,11 @@ This project supports three AI agents with specific technical responsibilities:
 - **VS Code Copilot** → Enforce technical standards through instruction files and real-time code assistance
 
 **All agents must validate their technical implementations against the standards defined in this file and ensure compliance with established technical constraints.**
+
+
+[2025-07-27] Radical Documentation Reorganization: Migration Within Memory Bank
+
+All instructions, prompts, and chatmodes have been migrated from `.github/` within `memory-bank/` directory. Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change is motivated by our need for an organized, stateful, and agent-friendly documentation system. Centralizing instructions, prompts, and chatmodes in memory bank enables better maintenance, easier context preservation, and improved collaboration between AI agents and human contributors. Keeping Copilot entry point in `.github/copilot-instructions.md` ensures compatibility with VS Code Copilot and prevents integration issues. All references and explanatory notes have been updated across codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
 
 ---
 

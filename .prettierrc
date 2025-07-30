@@ -18,7 +18,13 @@
   "semi": true,
   "overrides": [
     {
-      "files": "**/*.{json,jsonc}",
+      "files": "*.{prompt,instructions,chatmode}.md",
+      "options": {
+        "parser": "markdown"
+      }
+    },
+    {
+      "files": "*/*.{json,jsonc}",
       "options": {
         "singleQuote": false,
         "semi": false,

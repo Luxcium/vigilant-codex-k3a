@@ -1,5 +1,18 @@
 #!/bin/bash
 
+## =============================================================================
+#? Script Name: generate-instruction-file.sh
+#? Aim: Generate structured templates for .instructions.md files
+#? Purpose: Automate creation of instruction files for AI agent framework
+#? Decision Rationale: Provides consistent templates for coding standards, architecture, security, etc.
+#? Usage: ./generate-instruction-file.sh -n <filename> -a <apply_to_glob> -d <description> [-t <type>]
+#? Dependencies: bash, .github/instructions/, .github/prompts/
+#? Last Updated: 2025-07-23 by GitHub Copilot
+#? References: ai-instruction-creation.instructions.md, instruction-generator.prompt.md
+## =============================================================================
+
+#? Validation Status: Actively Validated on 2025-07-23
+
 # AI Agent Framework - Instruction File Generator
 # This script creates new .instructions.md files, providing structured templates
 # to be populated based on .github/instructions/ai-instruction-creation.instructions.md

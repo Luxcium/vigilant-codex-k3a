@@ -216,6 +216,20 @@
       },
       "problemMatcher": ["$tsc"]
     },
+    // --- TypeScript/Node.js SDK Playground Optimized Tasks ---
+    {
+      "label": "tsc: watch - tsconfig.json",
+      "type": "shell",
+      "command": "npx",
+      "args": ["tsc", "-w", "-p", "tsconfig.json"],
+      "isBackground": true,
+      "problemMatcher": "$tsc-watch",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      }
+    },
     {
       "label": "TypeScript: Test",
       "type": "shell",
@@ -628,6 +642,40 @@
         "panel": "shared"
       },
       "problemMatcher": []
+    },
+    {
+      "label": "tsc: build - tsconfig.json",
+      "type": "shell",
+      "command": "npx",
+      "args": ["tsc", "-p", "tsconfig.json"],
+      "group": {
+        "kind": "build",
+        "isDefault": false
+      },
+      "problemMatcher": "$tsc"
+    },
+    {
+      "label": "Run SDK Playground (main.ts)",
+      "type": "shell",
+      "command": "node",
+      "args": ["./lib/src/main.js"],
+      "group": "test",
+      "dependsOn": ["tsc: build - tsconfig.json"],
+      "presentation": {
+        "reveal": "always"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Open SDK Playground (main.ts)",
+      "type": "shell",
+      "command": "code",
+      "args": ["${workspaceFolder}/src/main.ts"],
+      "presentation": {
+        "reveal": "always"
+      },
+      "problemMatcher": []
     }
+    // --- End TypeScript/Node.js SDK Playground Optimized Tasks ---
   ]
 }

@@ -8,7 +8,7 @@
     /* Projects */
     "composite": true /* Enable constraints that allow a TypeScript project to be used with project references. */,
     "incremental": true /* Save .tsbuildinfo files to allow for incremental compilation of projects. */,
-    "tsBuildInfoFile": "./dist/.tsbuildinfo" /* Specify the path to .tsbuildinfo incremental compilation file. */,
+    "tsBuildInfoFile": "./lib/.tsbuildinfo" /* Specify the path to .tsbuildinfo incremental compilation file. */,
     // "disableReferencedProjectLoad": true,             /* Reduce the number of projects loaded automatically by TypeScript. */
     // "disableSolutionSearching": true,                 /* Opt a project out of multi-project reference checking when editing. */
     // "disableSourceOfProjectReferenceRedirect": true,  /* Disable preferring source files instead of declaration files when referencing composite projects. */
@@ -35,9 +35,9 @@
 
     /* Modules */
     "module": "commonjs" /* Specify what module code is generated. */,
-    // "rootDir": "./",                                  /* Specify the root folder within your source files. */
+    "rootDir": "./src" /* Specify the root folder within your source files. */,
     // "moduleResolution": "node10",                     /* Specify how TypeScript looks up a file from a given module specifier. */
-    "baseUrl": "./" /* Specify the base directory to resolve non-relative module names. */,
+    "baseUrl": "./src" /* Specify the base directory to resolve non-relative module names. */,
     "paths": {
       /* Specify a set of entries that re-map imports to additional lookup locations. */
       "@/*": ["src/*"]
@@ -65,7 +65,7 @@
     // "maxNodeModuleJsDepth": 1,                        /* Specify the maximum folder depth used for checking JavaScript files from 'node_modules'. Only applicable with 'allowJs'. */
 
     /* Emit */
-    "outDir": "./dist" /* Specify an output folder for all emitted files. */,
+    "outDir": "./lib" /* Specify an output folder for all emitted files. */,
     // "declaration": true,                              /* Generate .d.ts files from TypeScript and JavaScript files in your project. */
     // "declarationDir": "./",                           /* Specify the output directory for generated declaration files. */
     // "declarationMap": true,                           /* Create sourcemaps for d.ts files. */
