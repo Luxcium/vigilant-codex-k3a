@@ -105,8 +105,8 @@ This implementation plan addresses the user's request for a comprehensive review
 
 **Actions**:
 1. **Memory Bank Cross-References**: Validate all links in `dependencies.md`, `activeContext.md`, `progress.md`
-2. **Instruction File References**: Check all `.github/instructions/` files for accurate script references
-3. **Prompt File References**: Validate all `.github/prompts/` files for current workflow accuracy
+2. **Instruction File References**: Check all `memory-bank/instructions/` files for accurate script references
+3. **Prompt File References**: Validate all `memory-bank/prompts/` files for current workflow accuracy
 4. **Task Configuration**: Ensure `.vscode/tasks.json` reflects consolidated script structure
 
 **Validation Criteria**:
