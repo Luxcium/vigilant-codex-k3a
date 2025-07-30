@@ -216,7 +216,6 @@ npx vitest run src/tests/restClient.test.ts
 npm run test:coverage
 
 # Validate all environments
-./scripts/verify-all.sh
 ```
 
 ## 📚 Documentation System
@@ -351,7 +350,6 @@ For comprehensive platform integration (PWA, iOS, Windows, Chrome Extension), se
 
 ```bash
 # Environment validation
-./scripts/verify-all.sh
 
 # Test coverage analysis
 npm run test:coverage

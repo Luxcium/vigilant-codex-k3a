@@ -320,5 +320,4 @@ The setup is configured in:
 ## Verification
 
 - Run `markdownlint --config .markdownlint.yaml scripts/README.md`
-- Execute `scripts/verify-all.sh` before committing
 - Test consolidated scripts with all parameter combinations

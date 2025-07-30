@@ -1,5 +1,6 @@
 import { KeyManager } from '../security/KeyManager';
 import client from '../http/client';
+import { logger } from '../logger';
 
 export interface OAuthTokens {
   accessToken: string;
@@ -29,7 +30,7 @@ export async function refreshToken(refreshToken: string): Promise<OAuthTokens> {
 
     return tokens;
   } catch (error) {
-    console.error('Failed to refresh token:', error);
+    logger.error({ err: error }, 'Failed to refresh token');
     throw error;
   }
 }

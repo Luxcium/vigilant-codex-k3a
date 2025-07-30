@@ -2,14 +2,14 @@ import axios from 'axios';
 import { APP } from '../config';
 import { KeyManager } from '../security/KeyManager';
 import { refreshToken } from '../auth/refreshTokenUtil';
+import { logger } from '../logger';
 
 const keys = new KeyManager();
 const client = axios.create({ baseURL: APP.apiServer });
 
 client.interceptors.request.use(async config => {
   const stored = await keys.load();
-  // Determine active token: persisted or from environment
-  const authToken = stored?.accessToken ?? APP.accessToken;
+  const authToken = stored?.accessToken;
   if (authToken) {
     config.headers = config.headers || {};
     config.headers.Authorization = `Bearer ${authToken}`;
@@ -23,7 +23,7 @@ client.interceptors.response.use(
     // Handle unauthorized: attempt token refresh
     if (error.response?.status === 401) {
       const stored = await keys.load();
-      const refreshTok = stored?.refreshToken ?? APP.refreshToken;
+      const refreshTok = stored?.refreshToken ?? APP.refresh;
       if (refreshTok) {
         try {
           const fresh = await refreshToken(refreshTok);
@@ -37,18 +37,21 @@ client.interceptors.response.use(
           error.config.headers.Authorization = `Bearer ${fresh.accessToken}`;
           return client(error.config);
         } catch (refreshError) {
-          console.error('Failed to refresh token:', refreshError);
+          logger.error({ err: refreshError }, 'Failed to refresh token');
         }
       }
     }
     // Log detailed error for debugging
-    console.error('HTTP Error:', {
-      status: error.response?.status,
-      statusText: error.response?.statusText,
-      url: error.config?.url,
-      method: error.config?.method,
-      data: error.response?.data,
-    });
+    logger.error(
+      {
+        status: error.response?.status,
+        statusText: error.response?.statusText,
+        url: error.config?.url,
+        method: error.config?.method,
+        data: error.response?.data,
+      },
+      'HTTP Error'
+    );
     return Promise.reject(error);
   }
 );
