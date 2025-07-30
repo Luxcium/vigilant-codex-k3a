@@ -35,7 +35,7 @@ This matrix condenses all key manifest and meta configurations into a single ref
    - RealFaviconGenerator / Windows Tile Checker ([speckyboy.com][4])
    - Android Studio App Links Assistant ([developer.android.com][15])
 
-4. **Document** results in `.github/prompts/README.md` and `.github/instructions/README.md`.
+4. **Document** results in `memory-bank/prompts/README.md` and `memory-bank/instructions/README.md`.
 
 > ⚠️ Ensure this file remains at the project root or alongside other `.instructions.md` files—**do not** place in a `docs/` folder.
 

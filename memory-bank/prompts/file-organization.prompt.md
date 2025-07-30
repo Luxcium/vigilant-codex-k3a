@@ -28,8 +28,8 @@ description: 'Comprehensive standards for file and directory organization, namin
 
 ## Prompt and Instruction File Organization
 
-- Place all prompt files in `.github/prompts/` directory
-- Place all instruction files in `.github/instructions/` directory
+- Place all prompt files in `memory-bank/prompts/` directory
+- Place all instruction files in `memory-bank/instructions/` directory
 - Use kebab-case naming convention for all files
 - Follow pattern: `{domain}-{purpose}.{type}.md`
 - Type is one of `prompt` or `instruction`
@@ -155,9 +155,9 @@ description: 'Comprehensive standards for file and directory organization, namin
 5. Configuration, Metadata & Version Control
    .vscode/
    .github/
-   .github/instructions/
-   .github/prompts/
-   .github/chatmodes/
+   memory-bank/instructions/
+   memory-bank/prompts/
+   memory-bank/chatmodes/
 6. IMPERATIVE memory-bank/
    memory-bank/
 7. Configuration, Alternative AI Assistants Metadata
