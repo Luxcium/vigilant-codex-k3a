@@ -468,3 +468,9 @@ describe('createPost', () => {
 - [web/src/lib/prisma.ts](../../web/src/lib/prisma.ts) - Prisma client setup
 - [web/src/lib/actions.ts](../../web/src/lib/actions.ts) - Server actions
 - [docker-compose.yml](../../docker-compose.yml) - Database service
+
+
+## Verification
+
+- `markdownlint --strict`
+- `scripts/verify-all.sh`

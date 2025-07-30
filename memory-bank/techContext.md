@@ -28,7 +28,7 @@ This file documents the technologies, development setup, technical constraints, 
 
 ### HTTP Client Architecture ✅
 
-**Native Fetch API Implementation**
+#### Native Fetch API Implementation
 
 - **Primary Client** - Node.js 22 native fetch implementation
 - **Zero External Dependencies** - Eliminated node-fetch package for cleaner dependency tree
@@ -39,7 +39,7 @@ This file documents the technologies, development setup, technical constraints, 
 
 ### Next.js v15+ Web Framework ✅
 
-**Modern React Architecture**
+#### Modern React Architecture
 
 - **App Router** - `/app` directory structure with Server Components by default
 - **Server Actions** - `'use server'` directive for mutations with proper cache revalidation
@@ -75,7 +75,7 @@ This file documents the technologies, development setup, technical constraints, 
 
 ### Testing Infrastructure ✅
 
-**Comprehensive Test Framework**
+#### Comprehensive Test Framework
 
 - **Vitest 3.2.4** - Primary test runner with Istanbul coverage provider
 - **Native Fetch Mocking** - `vi.stubGlobal('fetch', mockFetch)` for HTTP client testing
@@ -85,7 +85,7 @@ This file documents the technologies, development setup, technical constraints, 
 - **CommonJS Compatibility** - Maintained throughout test infrastructure
 - **Edge Case Coverage** - Error scenarios, NaN handling, timeout management
 
-**Production Test Results**
+#### Production Test Results
 
 - **259 tests passing** - Maintained after native fetch conversion with zero regression
 - **98.34% branch coverage** - Exceeding 90% threshold requirement
@@ -95,7 +95,7 @@ This file documents the technologies, development setup, technical constraints, 
 
 ### Python Development Framework ✅
 
-**Conditional Environment System**
+#### Conditional Environment System
 
 - **Three Deployment Modes** - Runtime selection without hard-coded choices
   - `local` - Host-based virtual environment with direct IDE integration
@@ -107,11 +107,11 @@ This file documents the technologies, development setup, technical constraints, 
 
 ### AI Agent Integration Technologies
 
-**Three AI Agent Ecosystem**
+#### Three AI Agent Ecosystem
 
 - **Cline AI** - Memory bank integration with persistent context preservation
 - **Codex CLI** - Terminal automation and container orchestration
-- **VS Code Copilot** - Code generation with 26 instruction files + 27 prompt files
+- **VS Code Copilot** - Code generation with 31 instruction files + 35 prompt files
 - **Cross-Agent Coordination** - Shared memory bank with stateful collaboration
 - **Instruction Framework** - Automated coding standards and workflow execution
 
@@ -120,16 +120,16 @@ This file documents the technologies, development setup, technical constraints, 
 ### Quick Start Environment
 
 ```bash
-# 1. Set OpenAI API key for container integration
+#1. Set OpenAI API key for container integration
 export OPENAI_API_KEY="your-api-key-here"
 
-# 2. Initialize complete development environment
+#2. Initialize complete development environment
 ./scripts/setup_codex_universal.sh
 
-# 3. Start Codex Universal environment
+#3. Start Codex Universal environment
 ./scripts/codex_start.sh
 
-# 4. Access development shell
+#4. Access development shell
 ./scripts/codex_shell.sh
 ```
 
@@ -137,7 +137,7 @@ export OPENAI_API_KEY="your-api-key-here"
 
 **Language-Based Structure** (As defined in [systemPatterns.md](./systemPatterns.md))
 
-```
+```text
 vigilant-codex-k3a/
 ├── src/                    # TypeScript core library and SDK components
 ├── web/                    # Next.js applications (when coexisting)
@@ -150,7 +150,7 @@ vigilant-codex-k3a/
 
 ### Environment Configuration
 
-**Codex Universal Docker Environment**
+#### Codex Universal Docker Environment
 
 - **Base Image** - `ghcr.io/openai/codex-universal:latest`
 - **Pre-configured Stack** - Node.js 22 + Python 3.13
@@ -159,7 +159,7 @@ vigilant-codex-k3a/
 - **Multi-Service Support** - PostgreSQL, Redis, development servers
 - **Health Monitoring** - Comprehensive service validation
 
-**Local Development Requirements**
+#### Local Development Requirements
 
 - **Node.js 22** - Required for native fetch API and TypeScript compilation
 - **Python 3.13** - Required for conditional environment framework
@@ -168,7 +168,7 @@ vigilant-codex-k3a/
 
 ### Tool Configuration
 
-**Code Quality Tools**
+#### Code Quality Tools
 
 - **ESLint** - JavaScript/TypeScript linting with strict rules
 - **Prettier** - Code formatting with consistent style
@@ -276,7 +276,6 @@ This project supports three AI agents with specific technical responsibilities:
 - **VS Code Copilot** → Enforce technical standards through instruction files and real-time code assistance
 
 **All agents must validate their technical implementations against the standards defined in this file and ensure compliance with established technical constraints.**
-
 
 [2025-07-27] Radical Documentation Reorganization: Migration Within Memory Bank
 

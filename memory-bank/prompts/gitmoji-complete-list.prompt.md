@@ -86,3 +86,8 @@ Choose the most appropriate gitmoji based on:
 2. Most impactful change being made
 3. User-facing vs. internal changes
 4. Urgency level (critical vs. standard)
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

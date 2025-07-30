@@ -393,3 +393,8 @@ Before completing, verify:
 - [ ] No hardcoded secrets in configurations
 - [ ] Documentation is complete and accurate
 ```
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

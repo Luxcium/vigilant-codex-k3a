@@ -8,7 +8,8 @@ This project supports three AI agents with distinct entry points and responsibil
 
 - **Codex CLI (YOU)** → `AGENTS.md` (THIS IS YOUR PRIMARY INSTRUCTION FILE)
 - **Cline AI** → `.clinerules/main-rules.md` (Cline AI's primary instruction file)
- - **VS Code Copilot** → `.github/copilot-instructions.md` (VS Code Copilot's primary instruction file)
+- **VS Code Copilot** → `.github/copilot-instructions.md` (VS Code Copilot's primary instruction file)
+
 > [!IMPORTANT]
 > **Radical Change Notice:** As of July 2025, all instructions, prompts, and chatmodes previously located in `.github/` are now moved to `memory-bank/instructions/`, `memory-bank/prompts/`, and `memory-bank/chatmodes/` respectively. This is an exotic, nonstandard configuration designed to maximize agentic context and stateful documentation. **However, the Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code Copilot documentation and tooling.** All contributors and agents must reference the new memory-bank locations for instructions, prompts, and chatmodes, but keep Copilot's main instruction file in `.github/` to avoid confusion and ensure proper agent operation.
 
@@ -322,10 +323,13 @@ therefore you must be able to do that.
 
 ## Session-Sticky Preferences
 
-Whenever the user requests an operational preference (e.g. “reply
-quickly” mode), all agents MUST read and honor that preference across
+Whenever the user requests an operational preference (e.g. "reply
+quickly" mode), all agents MUST read and honor that preference across
 future sessions. To update or remove such a preference, edit this
-section using markdown-lint compliant syntax.
+section using markdown-lint compliant syntax. Each agent stores
+preferences in their own instruction files, and those preferences must
+persist across sessions until explicitly changed. Preferences are stored
+in this section for codex cli.
 
 Why this is best here
 
@@ -338,14 +342,6 @@ NEVER REMOVE ONLY ADD (or update) AUTOMATICALLY THIS FILE TO RECORD
 PREFERENCES FOR THE USER AND TO SET A STATEFUL AND SOULFUL EXPERIENCE
 (remember to the AGENTS.md if you are CODE CLI by openai, or read only
 if you are Cline AI or VS Code Copilot Chat).
-
-## Session-Sticky Preferences
-
-Whenever the user requests an operational preference (e.g. "reply
-quickly"), each agent will store preferences in their own instruction
-files, those preferences must be recorded as to persist across
-sessions until explicitly changed. Preferences are stored in this
-section for codex cli.
 
 Current Preferences:
 

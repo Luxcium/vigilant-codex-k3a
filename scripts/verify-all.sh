@@ -72,8 +72,8 @@ Examples:
 Validation Types:
     dependencies          Verify memory-bank/dependencies.md structure
     markdown             Run markdownlint on all Markdown files
-    instructions         Validate .github/instructions/*.instructions.md
-    prompts              Validate .github/prompts/*.prompt.md
+    instructions         Validate memory-bank/instructions/*.instructions.md
+    prompts              Validate memory-bank/prompts/*.prompt.md
     tests                Run test suite and check coverage
     memory-bank          Validate memory bank file structure
 
@@ -132,7 +132,7 @@ check_markdown() {
 check_instructions() {
   log "Validating instruction files..."
 
-  INSTRUCTIONS_DIR="$PROJECT_ROOT/.github/instructions"
+  INSTRUCTIONS_DIR="$PROJECT_ROOT/memory-bank/instructions"
   if [ ! -d "$INSTRUCTIONS_DIR" ]; then
     warn "Instructions directory not found: $INSTRUCTIONS_DIR"
     return 0
@@ -183,7 +183,7 @@ check_instructions() {
 check_prompts() {
   log "Validating prompt files..."
 
-  PROMPTS_DIR="$PROJECT_ROOT/.github/prompts"
+  PROMPTS_DIR="$PROJECT_ROOT/memory-bank/prompts"
   if [ ! -d "$PROMPTS_DIR" ]; then
     warn "Prompts directory not found: $PROMPTS_DIR"
     return 0

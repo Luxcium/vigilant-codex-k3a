@@ -72,3 +72,8 @@ This prompt defines the canonical folder structure and authoring guidelines for 
 - [GitHub Markdown Basics](https://docs.github.com/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax?utm_source=chatgpt.com)
 - [Copilot Custom Instructions Docs](https://code.visualstudio.com/docs/copilot/copilot-customization?utm_source=chatgpt.com)
 - [v1.100 Release Notes](https://code.visualstudio.com/updates/v1_100?utm_source=chatgpt.com)
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

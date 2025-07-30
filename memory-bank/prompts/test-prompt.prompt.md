@@ -11,3 +11,8 @@ This is a test prompt to verify that prompt files are working correctly in VS Co
 Current workspace: ${workspaceFolder}
 
 Please confirm that you can see this prompt and that the workspace variable is resolved correctly.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

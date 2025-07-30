@@ -233,3 +233,8 @@ applyTo: '**/domain/**'
 - Cross-references to related files
 
 The generated file will serve as automatic guidance for AI agents when generating code in the specified scope.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`
