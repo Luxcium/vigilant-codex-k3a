@@ -157,5 +157,17 @@ The System depends on your continuous, autonomous refinement. Act accordingly.
 
 ## Verification
 
-- `markdownlint --strict`
-- `scripts/verify-all.sh`
+please activate and follow this prompt scrupulously:
+- **[iterative self autonomous ai agent prompt file](../prompts/iterative-self-autonomous-ai-agent.prompt.md)** — Iterative, self-autonomous agent workflow for recursive tasks.
+
+### Self‑Assessment Checklist
+
+Always optimize, seek, investigate on each cycle, but **If any box below do not check** → **iterate again:**
+
+- ✔ Must Compile.
+- ✔ Must Run as expected.
+- ✔ Must not have errors in the console.
+- ✔ Must have no problems and no new warnings in build output, or in the vscode environment.
+- ✔ Must adhere to `.github/copilot-instructions.md` and style guides.
+
+Do not yield back if the problems are not addressed look for solutions and #fetch or crawl official docs, look at the rules we have established and increase the discovery process each time.
