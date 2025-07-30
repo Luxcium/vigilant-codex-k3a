@@ -1,6 +1,6 @@
 ---
 mode: 'agent'
-model: GPT-4o
+model: GPT-4.1
 tools: ['codebase-usages', 'githubRepo', 'problems', 'terminal-and-tasks']
 description: 'Iterative agent for ${TASK_NAME} – autonomously refine until build, tests, and lint pass.'
 ---
