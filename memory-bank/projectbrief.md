@@ -81,7 +81,7 @@ This file is the foundation of the Memory Bank and defines the core requirements
 - **Next.js v15+ Web Applications** - Server Actions, Client Components, and database integration
 - **Python Development Framework** - Conditional environment system with three deployment modes
 - **Docker Orchestration** - Codex Universal environment with comprehensive automation
-- **AI Agent Ecosystem** - 26 instruction files + 27 prompt files for workflow automation
+- **AI Agent Ecosystem** - 31 instruction files + 35 prompt files for workflow automation
 - **Memory Bank System** - Official Cline Memory Bank structure with historical archival
 - **Testing Infrastructure** - Comprehensive test suite with 98.34% branch coverage
 - **Documentation Framework** - Complete technical documentation and API references
@@ -120,7 +120,7 @@ This file is the foundation of the Memory Bank and defines the core requirements
     > [!IMPORTANT]
     > **Radical Change Notice:** Instructions, prompts, and chatmodes are now located in `memory-bank/instructions/`, `memory-bank/prompts/`, and `memory-bank/chatmodes/`. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code Copilot tooling.
   - **Responsibilities**: Real-time code assistance, instruction file application, quality assurance
-  - **Unique Capabilities**: 26 instruction files, automated coding standards, IDE integration
+  - **Unique Capabilities**: 31 instruction files, automated coding standards, IDE integration
 
 ### Collaboration Requirements
 

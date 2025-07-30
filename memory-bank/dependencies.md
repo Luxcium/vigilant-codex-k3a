@@ -8,10 +8,14 @@ Your AI Agent MUST actively strive to keep this file up to date with the latest 
 
 ## Purpose
 
-This file tracks all pro### Script Management and Optimization Protocol
- **26 Instruction Files** - Automated coding standards in `memory-bank/instructions/`
- **27 Prompt Files** - Executable workflow templates in `memory-bank/prompts/`
-**Dependencies and Relationships**:
+This file tracks all project dependencies, their relationships, and integration points. It also summarizes the Script Management and Optimization Protocol.
+
+### Script Management and Optimization Protocol
+
+- **31 instruction files** - Automated coding standards in `memory-bank/instructions/`
+- **35 prompt files** - Executable workflow templates in `memory-bank/prompts/`
+
+### Dependencies and Relationships
 
 - **scripts/README.md** → **ALL script files** (Why: Must be synchronized whenever scripts change)
   - Impact: Documentation accuracy and developer onboarding efficiency
@@ -62,8 +66,8 @@ This file tracks all pro### Script Management and Optimization Protocol
 
 - **Cline AI** - Primary development agent (`.clinerules/main-rules.md`)
 - **VS Code Copilot** - Code generation (`.github/copilot-instructions.md`)
-**26 Instruction Files** - Automated coding standards in `memory-bank/instructions/`
-**27 Prompt Files** - Executable workflow templates in `memory-bank/prompts/`
+**31 instruction files** - Automated coding standards in `memory-bank/instructions/`
+**35 prompt files** - Executable workflow templates in `memory-bank/prompts/`
 
 > [!IMPORTANT]
 - **Jupyter Notebooks** - VS Code integration with advanced API support
@@ -92,8 +96,8 @@ This file tracks all pro### Script Management and Optimization Protocol
 
 ### Instruction & Prompt Framework
 **Depends On:** tsconfig.json baseUrl and paths configuration, TypeScript standards from `memory-bank/instructions/`
-- **26 Instruction Files** - Automated coding standards in `memory-bank/instructions/`
-- **27 Prompt Files** - Executable workflow templates in `memory-bank/prompts/`
+- **31 instruction files** - Automated coding standards in `memory-bank/instructions/`
+- **35 prompt files** - Executable workflow templates in `memory-bank/prompts/`
 All agents must consult the [when-to-use-what-matrix.instructions.md](../memory-bank/instructions/when-to-use-what-matrix.instructions.md) for a one-page mapping of integration goals to configuration files and authoritative sources. For detailed implementation, see `memory-bank/instructions/README.md` and `memory-bank/prompts/README.md`.
 - **Conditional Architecture** - Runtime decision frameworks
 - **Parameter-Driven Configuration** - ENV_MODE and similar runtime selection
@@ -151,7 +155,7 @@ ENV_MODE Parameter Selection
 ### [2025-07-13] README Drift Resolution
 
 **Rationale:** Synchronized documentation between instruction files, prompt files, and main README to accurately represent workspace sophistication.
-**Technical Implementation:** Analysis of 26 instruction files and 27 prompt files, complete README reconstruction reflecting AI agent ecosystem.
+**Technical Implementation:** Analysis of 31 instruction files and 35 prompt files, complete README reconstruction reflecting AI agent ecosystem.
 **Impact:** Proper workspace representation for AI agents and developers.
 
 ### [2025-07-20] Native Fetch API Conversion
