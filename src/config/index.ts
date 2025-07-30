@@ -10,3 +10,4 @@ export const APP = {
   logLevel: process.env.LOG_LEVEL ?? 'info',
   keyDir: path.resolve('.keys'),
 } as const;
+

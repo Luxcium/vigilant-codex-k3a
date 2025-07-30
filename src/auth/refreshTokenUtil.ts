@@ -1,7 +1,11 @@
 import { KeyManager } from '../security/KeyManager';
 import client from '../http/client';
+// <<<<<<< codex/remove-verification-script-references-2025-07-3003-01-07
+import { logger } from '../logger';
+// ======= this must be resplved together with the 2nd conflict now before to can continue! you now!
 import { APP } from '../config';
 import { log } from '../log';
+// >>>>>>> luxcium/main
 
 export interface OAuthTokens {
   accessToken: string;
@@ -31,7 +35,11 @@ export async function refreshToken(refreshToken: string = APP.refresh): Promise<
 
     return tokens;
   } catch (error) {
+// <<<<<<< codex/remove-verification-script-references-2025-07-3003-01-07
+    logger.error({ err: error }, 'Failed to refresh token');
+// ======= please resolve before you continue further!
     log.error({ err: error }, 'Failed to refresh token');
+// >>>>>>> luxcium/main
     throw error;
   }
 }

@@ -3,11 +3,63 @@ import axiosRetry from 'axios-retry';
 import { APP } from '../config';
 import { KeyManager } from '../security/KeyManager';
 import { refreshToken } from '../auth/refreshTokenUtil';
+// <<<<<<< codex/remove-verification-script-references-2025-07-3003-01-07
+import { logger } from '../logger';
+// ======= resolve this old conflict before you can go further following memory-bank/instructions/ ...
 import { log } from '../log';
+// >>>>>>> luxcium/main
 
 const keys = new KeyManager();
 const client = axios.create({ baseURL: APP.apiServer });
 
+// <<<<<<< codex/remove-verification-script-references-2025-07-3003-01-07
+client.interceptors.request.use(async config => {
+  const stored = await keys.load();
+  const authToken = stored?.accessToken;
+  if (authToken) {
+    config.headers = config.headers || {};
+    config.headers.Authorization = `Bearer ${authToken}`;
+  }
+  return config;
+});
+
+client.interceptors.response.use(
+  response => response,
+  async error => {
+    // Handle unauthorized: attempt token refresh
+    if (error.response?.status === 401) {
+      const stored = await keys.load();
+      const refreshTok = stored?.refreshToken ?? APP.refresh;
+      if (refreshTok) {
+        try {
+          const fresh = await refreshToken(refreshTok);
+          // Persist new tokens
+          await keys.save({
+            accessToken: fresh.accessToken,
+            refreshToken: fresh.refreshToken,
+          });
+          // Retry original request with updated token
+          error.config.headers = error.config.headers || {};
+          error.config.headers.Authorization = `Bearer ${fresh.accessToken}`;
+          return client(error.config);
+        } catch (refreshError) {
+          logger.error({ err: refreshError }, 'Failed to refresh token');
+        }
+      }
+    }
+    // Log detailed error for debugging
+    logger.error(
+      {
+        status: error.response?.status,
+        statusText: error.response?.statusText,
+        url: error.config?.url,
+        method: error.config?.method,
+        data: error.response?.data,
+      },
+      'HTTP Error'
+    );
+    return Promise.reject(error);
+// ======= you must resolve any commented out conflicts before moving to your next tasks
 client.interceptors.request.use(async req => {
   const t = await keys.load();
   if (t) req.headers.set('Authorization', `Bearer ${t.accessToken}`);
@@ -20,6 +72,7 @@ client.interceptors.response.use(undefined, async err => {
     await keys.save(fresh);
     err.config.headers['Authorization'] = `Bearer ${fresh.accessToken}`;
     return client(err.config);
+// >>>>>>> luxcium/main
   }
   log.error({ status: err.response?.status, url: err.config?.url }, 'HTTP Error');
   return Promise.reject(err);

@@ -12,13 +12,3 @@
 
 - Use this checklist before, during, and after each round of work.
 - Reference this protocol in activeContext.md, progress.md, and all Memory Bank compliance sections.
-
-### Validation Scripts
-
-Run the relevant scripts individually when needed:
-
-```bash
-scripts/check-markdown.sh
-scripts/check-dependencies.sh
-scripts/check-memory-bank.sh
-```
