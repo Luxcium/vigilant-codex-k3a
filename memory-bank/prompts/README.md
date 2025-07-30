@@ -19,65 +19,78 @@ Prompt files (`.prompt.md`) are executable templates that:
 - Include variables for customization and reusability
 - Use tools to perform actions like file creation, code generation, or terminal commands
 
-## Available Prompts (27 Files)
+
+## Available Prompts (34 Files)
+
+> **Note:** This list must be kept in sync with the actual prompt files in this directory. Add new prompts and update descriptions as needed.
 
 ### Template Management & AI Framework
 
-**[template-manager.prompt.md](./template-manager.prompt.md)** - Master template manager for intelligent prompt and instruction file creation with comprehensive workflow guidance.
-
-**[ai-template-manager.prompt.md](./ai-template-manager.prompt.md)** - Enhanced template manager with advanced guidelines for AI agent collaboration and sophisticated template lifecycle management.
-
-**[instruction-generator.prompt.md](./instruction-generator.prompt.md)** - Generate .instructions.md files with proper structure, validation, and cross-references following project standards.
-
-**[instruction-creation.prompt.md](./instruction-creation.prompt.md)** - Create instruction files following established project patterns with automatic validation and quality assurance.
-
-**[instruction-creation-v2.prompt.md](./instruction-creation-v2.prompt.md)** - Enhanced instruction file creation with improved structure, advanced validation, and comprehensive integration.
+- **[template-manager.prompt.md](./template-manager.prompt.md)** — Master template manager for prompt/instruction file creation.
+- **[ai-template-manager.prompt.md](./ai-template-manager.prompt.md)** — Advanced template manager for AI agent collaboration.
+- **[instruction-generator.prompt.md](./instruction-generator.prompt.md)** — Generate .instructions.md files with structure and validation.
+- **[instruction-creation.prompt.md](./instruction-creation.prompt.md)** — Create instruction files with validation and QA.
+- **[instruction-creation-v2.prompt.md](./instruction-creation-v2.prompt.md)** — Enhanced instruction file creation with advanced validation.
 
 ### Environment & Infrastructure
 
-**[codex-universal-environment.prompt.md](./codex-universal-environment.prompt.md)** - Generate and manage Codex Universal Docker environments with comprehensive configuration, OpenAI API integration, and volume-based development workflows.
-
-**[python-environment-setup.prompt.md](./python-environment-setup.prompt.md)** - Revolutionary conditional Python environment setup with runtime mode selection (local, docker_isolated, docker_volume) and parameter-driven configuration.
-
-**[docker-generator.prompt.md](./docker-generator.prompt.md)** - Generate parameterized Docker configurations with security best practices and development optimization.
-
-**[docker-consolidated-template.prompt.md](./docker-consolidated-template.prompt.md)** - Consolidated Docker workflow template following validated four-phase approach with security and performance optimization.
-
-**[docker-exotic-generator.prompt.md](./docker-exotic-generator.prompt.md)** - Advanced Docker configuration generation for complex multi-service architectures and exotic deployment patterns.
-
-**[docker-modular-workflow.prompt.md](./docker-modular-workflow.prompt.md)** - Modular Docker build/run workflow generator with volume-first development and CLI parameterization.
+- **[codex-universal-environment.prompt.md](./codex-universal-environment.prompt.md)** — Codex Universal Docker environment generation and management.
+- **[python-environment-setup.prompt.md](./python-environment-setup.prompt.md)** — Conditional Python environment setup with runtime mode selection.
+- **[docker-generator.prompt.md](./docker-generator.prompt.md)** — Parameterized Docker configuration generator.
+- **[docker-consolidated-template.prompt.md](./docker-consolidated-template.prompt.md)** — Consolidated Docker workflow template (four-phase approach).
+- **[docker-exotic-generator.prompt.md](./docker-exotic-generator.prompt.md)** — Advanced Docker config for complex/exotic deployments.
+- **[docker-modular-workflow.prompt.md](./docker-modular-workflow.prompt.md)** — Modular Docker build/run workflow generator.
 
 ### Development Components & Code Generation
 
-**[typescript-component.prompt.md](./typescript-component.prompt.md)** - Generate TypeScript components following strict project standards with comprehensive type safety and modern patterns.
-
-**[vit-implementation.prompt.md](./vit-implementation.prompt.md)** - Generate Vision Transformer (ViT) implementation with detailed documentation, training pipelines, and performance optimization.
-
-**[web-project-structure.prompt.md](./web-project-structure.prompt.md)** - Generate complete web project structure with Next.js, TypeScript, and comprehensive development workflow setup.
+- **[typescript-component.prompt.md](./typescript-component.prompt.md)** — Generate TypeScript components with strict standards.
+- **[web-project-structure.prompt.md](./web-project-structure.prompt.md)** — Generate complete web project structure (Next.js, TypeScript).
+- **[vit-implementation.prompt.md](./vit-implementation.prompt.md)** — Vision Transformer (ViT) implementation for ML workflows.
 
 ### Notebook Development & Data Science
 
-**[notebook-development-workflow.prompt.md](./notebook-development-workflow.prompt.md)** - Comprehensive notebook development workflow automation with VS Code integration, ML experimentation, and reproducible research patterns.
-
-**[vit-implementation.prompt.md](./vit-implementation.prompt.md)** - Advanced Vision Transformer implementation for machine learning workflows with comprehensive documentation and optimization.
+- **[notebook-development-workflow.prompt.md](./notebook-development-workflow.prompt.md)** — Notebook development workflow automation with VS Code integration.
 
 ### Documentation & Memory Bank Management
 
-**[memory-bank-update.prompt.md](./memory-bank-update.prompt.md)** - Update memory bank documentation with proper cross-references, dependency tracking, and AI agent state synchronization.
-
-**[dependency-management.prompt.md](./dependency-management.prompt.md)** - Track and update project dependencies with comprehensive documentation and impact analysis.
-
-**[self-documentation.prompt.md](./self-documentation.prompt.md)** - Execute and append self-documentation entries following the Self-Documentation Protocol for stateful AI collaboration.
-
-**[tsdoc-typedoc.prompt.md](./tsdoc-typedoc.prompt.md)** - Generate comprehensive TSDoc and TypeDoc documentation with API reference generation and maintenance workflows.
+- **[memory-bank-update.prompt.md](./memory-bank-update.prompt.md)** — Update memory bank documentation and cross-references.
+- **[dependency-management.prompt.md](./dependency-management.prompt.md)** — Track and update project dependencies.
+- **[self-documentation.prompt.md](./self-documentation.prompt.md)** — Execute and append self-documentation entries.
+- **[tsdoc-typedoc.prompt.md](./tsdoc-typedoc.prompt.md)** — Generate TSDoc/TypeDoc documentation and API references.
+- **[readme-update-review.prompt.md](./readme-update-review.prompt.md)** — Review and update README files for accuracy and completeness.
 
 ### Project Automation & Scripting
 
-**[script-generator.prompt.md](./script-generator.prompt.md)** - Create resilient, reusable automation scripts with proper error handling, idempotency, and project integration.
+- **[script-generator.prompt.md](./script-generator.prompt.md)** — Create resilient, reusable automation scripts.
+- **[iterative-selfautonomus-ai-agent.prompt.md](./iterative-selfautonomus-ai-agent.prompt.md)** — Iterative, self-autonomous agent workflow for recursive tasks.
+- **[launch-browser-monitor.prompt.md](./launch-browser-monitor.prompt.md)** — Launch and monitor browser error workflows.
 
 ### Web Standards & Meta Tags
 
-**[theme-ui-meta.prompt.md](./theme-ui-meta.prompt.md)** - Add browser-UI theming meta tags for light/dark mode and platform-specific variants with comprehensive validation using Lighthouse and webhint.
+- **[theme-ui-meta.prompt.md](./theme-ui-meta.prompt.md)** — Add browser-UI theming meta tags for light/dark mode.
+- **[general-icon-link-tags.prompt.md](./general-icon-link-tags.prompt.md)** — Add comprehensive icon link tags for cross-platform support.
+- **[seo-meta-tags.prompt.md](./seo-meta-tags.prompt.md)** — Add essential SEO meta tags for discoverability.
+- **[x-cards.prompt.md](./x-cards.prompt.md)** — Add/update X Cards (Twitter Cards) meta tags for social previews.
+
+### Testing & Validation
+
+- **[validation-debugging-checklist.prompt.md](./validation-debugging-checklist.prompt.md)** — Comprehensive validation and debugging workflow for web apps.
+- **[edge-devtools-debugging.prompt.md](./edge-devtools-debugging.prompt.md)** — Automated Edge DevTools configuration and debugging setup.
+- **[test-prompt.prompt.md](./test-prompt.prompt.md)** — Test prompt to verify prompt file execution system.
+
+### Git & Commit Standards
+
+- **[gitmoji-complete-list.prompt.md](./gitmoji-complete-list.prompt.md)** — Complete gitmoji reference for conventional commits.
+- **[commit-examples.prompt.md](./commit-examples.prompt.md)** — Comprehensive commit message examples by category.
+- **[breaking-changes.prompt.md](./breaking-changes.prompt.md)** — Detailed breaking changes guidance and best practices.
+- **[git-hooks-automation.prompt.md](./git-hooks-automation.prompt.md)** — Git hooks, automation tools, and CI/CD integration.
+
+### Miscellaneous
+
+- **[file-organization.prompt.md](./file-organization.prompt.md)** — Project file organization and structure guidance.
+
+---
+*This list is auto-curated. If you add a new prompt, update this section to keep the documentation accurate and complete.*
 
 **[general-icon-link-tags.prompt.md](./general-icon-link-tags.prompt.md)** - Add comprehensive set of general icon link tags to HTML documents for cross-platform favicon and app icon support.
 
