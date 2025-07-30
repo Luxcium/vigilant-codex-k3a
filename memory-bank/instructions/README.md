@@ -6,7 +6,7 @@ This directory contains instruction files that automatically apply coding standa
 
 **[when-to-use-what-matrix.instructions.md](./when-to-use-what-matrix.instructions.md)** — A single-page matrix mapping all major manifest/meta configuration goals (PWA, iOS, Windows, Chrome Extension, etc.) to their primary files and authoritative sources. Use this as your starting point for any integration or standards question. See detailed standards in the specific instruction files below.
 
-> For meta-configuration, manifest, and platform integration, always consult this matrix first, then refer to the detailed instruction files for implementation specifics. All Copilot, Cline AI, and Codex CLI agents should cross-reference this file and the related README files in `.github/prompts/` and `memory-bank/` for full context.
+> For meta-configuration, manifest, and platform integration, always consult this matrix first, then refer to the detailed instruction files for implementation specifics. All Copilot, Cline AI, and Codex CLI agents should cross-reference this file and the related README files in `memory-bank/prompts/` and `memory-bank/` for full context.
 
 ## What are Instruction Files?
 

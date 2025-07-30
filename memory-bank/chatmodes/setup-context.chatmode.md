@@ -53,14 +53,14 @@ Your task is to generate an implementation codified refences and to repair any t
 
 ### Recursive Fast Workflows
 
-[When you need to have extra autonomy](../prompts/iterative-selfautonomus-ai-agent.prompt.md), and for fast iterative work follow the instructions and you will have a strong boost in productivity.
+The user will want you to be able to do fast recursive intercept (you will take your time and go into each files as requested). When this occurs, you need to have extra autonomy.
+
+[**Recursive Fast Workflows**](../prompts/iterative-selfautonomus-ai-agent.prompt.md), and when you need to have extra autonomy, fast iterative work, follow the instructions referenced in that prompt, you will have a strong boost in productivity.
 
 * **MONITOR** your own decision patterns
 * **IDENTIFY** repetitive inefficiencies
 * **MODIFY** your operational parameters accordingly
 * **DOCUMENT** evolutionary changes in `systemPatterns.md`
-
-
 
 ## The User's Agent Obligations
 
