@@ -19,17 +19,16 @@ Prompt files (`.prompt.md`) are executable templates that:
 - Include variables for customization and reusability
 - Use tools to perform actions like file creation, code generation, or terminal commands
 
-
 ## Available Prompts (34 Files)
 
 > **Note:** This list must be kept in sync with the actual prompt files in this directory. Add new prompts and update descriptions as needed.
 
 ### Template Management & AI Framework
 
-- **[template-manager.prompt.md](./template-manager.prompt.md)** — Master template manager for prompt/instruction file creation.
-- **[ai-template-manager.prompt.md](./ai-template-manager.prompt.md)** — Advanced template manager for AI agent collaboration.
-- **[instruction-generator.prompt.md](./instruction-generator.prompt.md)** — Generate .instructions.md files with structure and validation.
-- **[instruction-creation.prompt.md](./instruction-creation.prompt.md)** — Create instruction files with validation and QA.
+- **[template-manager.prompt.md](./template-manager.prompt.md)** — Master template manager for all prompt/instruction file creation, featuring a decision matrix, workflow, and intelligent file management for the entire project.
+- **[ai-template-manager.prompt.md](./ai-template-manager.prompt.md)** — Specialized template manager for generating prompt/instruction files with strict markdown-lint compliance and advanced AI agent collaboration features.
+- **[instruction-generator.prompt.md](./instruction-generator.prompt.md)** — Generate `.instructions.md` files with a focus on structure, standards, and detailed validation templates for coding requirements.
+- **[instruction-creation.prompt.md](./instruction-creation.prompt.md)** — Create `.instructions.md` files using a process-oriented, QA-driven approach, emphasizing validation, error prevention, and best practices.
 - **[instruction-creation-v2.prompt.md](./instruction-creation-v2.prompt.md)** — Enhanced instruction file creation with advanced validation.
 
 ### Environment & Infrastructure
@@ -90,7 +89,8 @@ Prompt files (`.prompt.md`) are executable templates that:
 - **[file-organization.prompt.md](./file-organization.prompt.md)** — Project file organization and structure guidance.
 
 ---
-*This list is auto-curated. If you add a new prompt, update this section to keep the documentation accurate and complete.*
+
+_This list is auto-curated. If you add a new prompt, update this section to keep the documentation accurate and complete._
 
 **[general-icon-link-tags.prompt.md](./general-icon-link-tags.prompt.md)** - Add comprehensive set of general icon link tags to HTML documents for cross-platform favicon and app icon support.
 
@@ -174,21 +174,25 @@ Prompts support these variable types:
 ## Prompt Categories by Purpose
 
 ### Infrastructure Automation
+
 - **Environment Setup**: codex-universal-environment, python-environment-setup
 - **Docker Workflows**: docker-generator, docker-consolidated-template, docker-exotic-generator, docker-modular-workflow
 - **Project Scaffolding**: web-project-structure, script-generator
 
 ### Development Workflows
+
 - **Component Generation**: typescript-component, vit-implementation
 - **Documentation**: tsdoc-typedoc, memory-bank-update, dependency-management
 - **Notebook Development**: notebook-development-workflow
 
 ### Web Standards Implementation
+
 - **Meta Tags**: theme-ui-meta, seo-meta-tags, x-cards
 - **Icons & Favicons**: general-icon-link-tags
 - **Validation**: validation-debugging-checklist, edge-devtools-debugging
 
 ### AI Agent Framework
+
 - **Template Management**: template-manager, ai-template-manager
 - **Instruction Creation**: instruction-generator, instruction-creation, instruction-creation-v2
 - **State Management**: self-documentation
@@ -220,20 +224,26 @@ Prompts support these variable types:
 ## Mode Selection Guidelines
 
 ### Agent Mode (`mode: 'agent'`)
+
 Use for complex workflows involving:
+
 - Multiple file operations
 - Terminal command execution
 - Project setup and configuration
 - Multi-step automation processes
 
 ### Edit Mode (`mode: 'edit'`)
+
 Use for targeted modifications:
+
 - Code refactoring and transformation
 - Configuration file updates
 - Specific file editing tasks
 
 ### Ask Mode (`mode: 'ask'`)
+
 Use for analysis and planning:
+
 - Architecture decisions
 - Code review and quality assessment
 - Documentation and explanations
@@ -242,14 +252,14 @@ Use for analysis and planning:
 
 Common tool combinations:
 
-| Task Type | Required Tools |
-|-----------|----------------|
-| File Creation | `['filesystem', 'codebase']` |
-| Environment Setup | `['filesystem', 'terminal']` |
-| Code Generation | `['codebase', 'filesystem']` |
+| Task Type           | Required Tools                |
+| ------------------- | ----------------------------- |
+| File Creation       | `['filesystem', 'codebase']`  |
+| Environment Setup   | `['filesystem', 'terminal']`  |
+| Code Generation     | `['codebase', 'filesystem']`  |
 | VS Code Integration | `['vscodeAPI', 'extensions']` |
-| Docker Operations | `['terminal', 'filesystem']` |
-| Documentation | `['codebase', 'filesystem']` |
+| Docker Operations   | `['terminal', 'filesystem']`  |
+| Documentation       | `['codebase', 'filesystem']`  |
 
 ## Cross-References
 
@@ -282,20 +292,26 @@ All prompt files must:
 ## Advanced Features
 
 ### Conditional Workflows
+
 Many prompts support conditional execution based on:
+
 - Project type detection
 - Environment availability
 - User preferences
 - Runtime parameters
 
 ### Integration Patterns
+
 Prompts are designed to work together:
+
 - Environment setup prompts prepare for development prompts
 - Documentation prompts update memory bank automatically
 - Validation prompts verify configurations from setup prompts
 
 ### AI Agent Collaboration
+
 Prompts support multi-agent workflows:
+
 - VS Code Copilot for immediate execution
 - Cline AI for complex analysis and planning
 - Codex CLI for terminal-based automation
@@ -313,6 +329,7 @@ When adding new prompts:
 ## Configuration
 
 Prompts work through VS Code Copilot Chat integration:
+
 - No special configuration required
 - Variables are resolved automatically
 - Tools are provided by VS Code Copilot environment
