@@ -8,10 +8,14 @@ export interface Token {
 }
 
 export class KeyManager {
-  private path = join(APP.keyDir, 'oauth.json');
+  private path: string;
+
+  constructor(private dir: string = APP.keyDir) {
+    this.path = join(this.dir, 'oauth.json');
+  }
 
   async ensureDir() {
-    await mkdir(APP.keyDir, { recursive: true });
+    await mkdir(this.dir, { recursive: true });
   }
 
   async save(token: Token) {
