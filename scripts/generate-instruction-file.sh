@@ -6,8 +6,8 @@
 #? Purpose: Automate creation of instruction files for AI agent framework
 #? Decision Rationale: Provides consistent templates for coding standards, architecture, security, etc.
 #? Usage: ./generate-instruction-file.sh -n <filename> -a <apply_to_glob> -d <description> [-t <type>]
-#? Dependencies: bash, .github/instructions/, .github/prompts/
-#? Last Updated: 2025-07-23 by GitHub Copilot
+#? Dependencies: bash, memory-bank/instructions/, memory-bank/prompts/
+#? Last Updated: 2025-07-30 by GitHub Copilot
 #? References: ai-instruction-creation.instructions.md, instruction-generator.prompt.md
 ## =============================================================================
 
@@ -15,26 +15,22 @@
 
 # AI Agent Framework - Instruction File Generator
 # This script creates new .instructions.md files, providing structured templates
-# to be populated based on .github/instructions/ai-instruction-creation.instructions.md
+# to be populated based on memory-bank/instructions/ai-instruction-creation.instructions.md
 
 set -euo pipefail
 
 # Configuration
-INSTRUCTIONS_DIR=".github/instructions"
-PROMPTS_DIR=".github/prompts"
+INSTRUCTIONS_DIR="memory-bank/instructions"
+PROMPTS_DIR="memory-bank/prompts"
 # Reference to the prompt that would be used by an AI to fill the generated template
 GENERATOR_PROMPT_FOR_AI_FILLING="$PROMPTS_DIR/instruction-generator.prompt.md"
 
 # Colors for output
-RED=\'\\033[0
-31m\'
-GREEN=\'\\033[0
-32m\'
-YELLOW=\'\\033[1
-33m\'
-BLUE=\'\\033[0
-34m\'
-NC=\'\\033[0m\' # No Color
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
 
 # Helper functions
 log_info() {
@@ -273,7 +269,7 @@ EOF
 - <!-- Guideline B: Provide examples for complex rules. -->
 
 <!-- Add more sections as needed based on the specific standards being defined. -->
-<!-- Refer to .github/instructions/ai-instruction-creation.instructions.md for comprehensive guidance on how an AI should populate this file. -->
+<!-- Refer to memory-bank/instructions/ai-instruction-creation.instructions.md for comprehensive guidance on how an AI should populate this file. -->
 EOF
       ;;
   esac
@@ -305,7 +301,7 @@ EOF
 
   log_success "Generated instruction file template: $filepath"
   log_info "Please populate this file with specific rules."
-  log_info "An AI can assist with this, guided by .github/instructions/ai-instruction-creation.instructions.md and potentially using $GENERATOR_PROMPT_FOR_AI_FILLING."
+  log_info "An AI can assist with this, guided by memory-bank/instructions/ai-instruction-creation.instructions.md and potentially using $GENERATOR_PROMPT_FOR_AI_FILLING."
 }
 
 # Update dependencies.md with new instruction file
@@ -356,7 +352,7 @@ EXAMPLES:
 
 The generated file will be placed in $INSTRUCTIONS_DIR/. It provides a skeleton
 to be filled with specific rules, ideally with AI assistance guided by
-.github/instructions/ai-instruction-creation.instructions.md.
+memory-bank/instructions/ai-instruction-creation.instructions.md.
 EOF
 }
 

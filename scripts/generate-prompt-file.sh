@@ -4,8 +4,8 @@
 #? Purpose: Automate creation of prompt files for AI-assisted development workflows
 #? Decision Rationale: Provides consistent templates for reusable prompts
 #? Usage: ./generate-prompt-file.sh -n <filename> -t <title> -d <description>
-#? Dependencies: bash, .github/prompts/, memory-bank/dependencies.md
-#? Last Updated: 2025-07-23 by GitHub Copilot
+#? Dependencies: bash, memory-bank/prompts/, memory-bank/dependencies.md
+#? Last Updated: 2025-07-30 by GitHub Copilot
 #? References: ai-prompt-creation.instructions.md, instruction-generator.prompt.md
 ## =============================================================================
 
@@ -19,8 +19,8 @@
 set -euo pipefail
 
 # Configuration
-PROMPTS_DIR=".github/prompts"
-INSTRUCTIONS_DIR=".github/instructions"
+PROMPTS_DIR="memory-bank/prompts"
+INSTRUCTIONS_DIR="memory-bank/instructions"
 
 # Colors for output
 RED='\033[0;31m'
@@ -263,10 +263,10 @@ You are working in a VS Code workspace with the following project structure:
 ## Instructions Integration
 
 Apply the following instruction files during code generation:
-- \`.github/instructions/typescript-standards.instructions.md\` for TypeScript code
-- \`.github/instructions/python-standards.instructions.md\` for Python code
-- \`.github/instructions/python-notebook-standards.instructions.md\` for Jupyter notebooks
-- \`.github/instructions/file-organization.instructions.md\` for project structure
+- \`memory-bank/instructions/typescript-standards.instructions.md\` for TypeScript code
+- \`memory-bank/instructions/python-standards.instructions.md\` for Python code
+- \`memory-bank/instructions/python-notebook-standards.instructions.md\` for Jupyter notebooks
+- \`memory-bank/instructions/file-organization.instructions.md\` for project structure
 
 ## Parametric Inputs
 
@@ -387,10 +387,10 @@ Provide the following deliverables:
 ## Related Files
 
 ### Prompt Files
-<!-- List related prompt files in .github/prompts/ -->
+<!-- List related prompt files in memory-bank/prompts/ -->
 
 ### Instruction Files
-<!-- List applicable instruction files in .github/instructions/ -->
+<!-- List applicable instruction files in memory-bank/instructions/ -->
 
 ### Memory Bank Files
 <!-- List relevant files in memory-bank/ -->
@@ -423,7 +423,7 @@ update_dependencies() {
 
   if [[ -f "$dependencies_file" ]]; then
     log_info "Don't forget to update $dependencies_file with the new prompt file dependencies"
-    log_info "Add entry for: .github/prompts/$filename"
+    log_info "Add entry for: memory-bank/prompts/$filename"
   else
     log_warning "Dependencies file not found: $dependencies_file"
   fi
