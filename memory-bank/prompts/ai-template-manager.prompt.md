@@ -181,3 +181,8 @@ ${input:validation:- Check markdown-lint compliance\n- Verify cross-references\n
 - Check cross-reference integrity
 
 This template manager serves as the foundation for creating consistent, high-quality prompt and instruction files throughout the AI agent framework project.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

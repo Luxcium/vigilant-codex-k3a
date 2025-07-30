@@ -303,3 +303,8 @@ fi
 - Examples are functional and tested
 
 This prompt ensures comprehensive Docker environment setup following all established project standards and integration requirements.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

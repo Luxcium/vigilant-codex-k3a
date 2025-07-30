@@ -81,3 +81,8 @@ Edit files in your workspace.
 
 usages: usages (Built-In)
 Find references, definitions, and other usages of a symbol.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

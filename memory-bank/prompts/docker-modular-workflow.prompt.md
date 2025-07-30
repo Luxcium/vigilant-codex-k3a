@@ -441,3 +441,8 @@ Generate modular Docker configuration with:
 codex generate --prompt=docker-modular-workflow.prompt.md \
   --params="projectName=my-modular-app,runtimeVersion=node:18-alpine,packageManager=pnpm,volumeStrategy=source-mount"
 ```
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

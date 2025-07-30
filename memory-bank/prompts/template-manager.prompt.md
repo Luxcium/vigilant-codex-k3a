@@ -215,3 +215,8 @@ User: "Add Python docstring requirements to existing Python standards"
 ---
 
 **Your mission**: Maintain an intelligent, self-organizing system of prompts and instructions that evolves with the project needs while enforcing consistency and best practices. Every interaction should make the system more capable and better organized.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

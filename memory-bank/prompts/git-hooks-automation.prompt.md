@@ -368,3 +368,8 @@ echo "Checking message: $commit_msg"
 4. **Keep regex patterns up to date** with team conventions
 5. **Document hook behavior** for team members
 6. **Regular hook maintenance** and testing
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`
