@@ -17,10 +17,9 @@ interface ErrorWithStatus extends Error {
 // 2. Module Imports and Setup
 // ===============================
 // Import Node.js modules and load environment variables from .env file.
-import fs from 'node:fs';
 import path from 'node:path';
 import dotenv from 'dotenv';
-import { APP } from './config';
+import fs from 'node:fs';
 
 dotenv.config({ path: path.resolve(__dirname, '../.env') });
 
@@ -42,11 +41,18 @@ interface TokenSet {
 // ===============================
 // Paths, API endpoints, and file locations used throughout the playground.
 // --- Top-level constants ---
-const REFRESH_TOKEN = APP.refresh;
+const REFRESH_TOKEN = process.env.QUESTRADE_REFRESH_TOKEN;
 const TOKEN_FILE = path.resolve(__dirname, '../.questrade-tokens.json');
 const API_BASE = 'https://login.questrade.com/oauth2/token';
 const KEYS_DIR = path.resolve(__dirname, '../.keys');
 const DEMO_FILE = path.join(KEYS_DIR, 'example-sdk-demo.json');
+
+console.log(
+  '[DEBUG] Loaded REFRESH_TOKEN:',
+  typeof REFRESH_TOKEN === 'string' && REFRESH_TOKEN.length > 0
+    ? REFRESH_TOKEN.slice(0, 6) + '...'
+    : '(none)'
+);
 
 // ===============================
 // 5. Utility Functions
