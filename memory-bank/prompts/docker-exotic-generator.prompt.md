@@ -418,3 +418,8 @@ codex generate --prompt=docker-exotic-generator.prompt.md \
 codex generate --prompt=docker-exotic-generator.prompt.md \
   --params="projectName=user-service,environment=production,runtimeVersion=node:18-alpine,serviceType=microservice,includeDatabase=redis,exoticPatterns=service-discovery,networkPattern=overlay"
 ```
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

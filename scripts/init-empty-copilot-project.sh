@@ -14,8 +14,10 @@
 #!/bin/bash
 
 # Create necessary directories
-mkdir -p .github/prompts
-mkdir -p memory-bank
+mkdir -p memory-bank/prompts
+mkdir -p memory-bank/instructions
+mkdir -p memory-bank/chatmodes
+mkdir -p .github
 mkdir -p .vscode
 mkdir -p .clinerules
 
@@ -24,7 +26,7 @@ mkdir -p .clinerules
 # Create necessary files without overwriting existing ones.
 [ -f .github/copilot-instructions.md ] || touch .github/copilot-instructions.md
 [ -f AGENTS.md ] || touch AGENTS.md
-[ -f .github/prompts/default.prompt.md ] || touch .github/prompts/default.prompt.md
+[ -f memory-bank/prompts/default.prompt.md ] || touch memory-bank/prompts/default.prompt.md
 [ -f .vscode/settings.json ] || touch .vscode/settings.json
 
 echo "✅ VSCode Copilot structure created safely."

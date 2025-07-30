@@ -69,13 +69,13 @@ This guide explains how to validate the test suite, rate limiter, start the Next
 ### Current Test Suite (Post-Optimization)
 
 ```bash
-# Run all tests with coverage
+ # Run all tests with coverage
 npx vitest run --coverage
 
-# Expected Results:
-# Test Files: 38 passed (38)
-# Tests: 259 passed (259)
-# Coverage: 98.34% branch coverage
+ # Expected Results:
+ # Test Files: 38 passed (38)
+ # Tests: 259 passed (259)
+ # Coverage: 98.34% branch coverage
 ```
 
 ### Legacy Instructions

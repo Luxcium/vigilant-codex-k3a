@@ -157,7 +157,7 @@ description: 'Comprehensive standards for file and directory organization, namin
    .github/
    memory-bank/instructions/
    memory-bank/prompts/
-   .github/chatmodes/
+   memory-bank/chatmodes/
 6. IMPERATIVE memory-bank/
    memory-bank/
 7. Configuration, Alternative AI Assistants Metadata
@@ -172,3 +172,8 @@ description: 'Comprehensive standards for file and directory organization, namin
    templates/
 
 ---
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

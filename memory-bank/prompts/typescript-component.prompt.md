@@ -59,3 +59,8 @@ Before completion, verify:
 - Consistent naming conventions throughout
 - Proper separation of concerns
 - Integration with existing project patterns
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`
