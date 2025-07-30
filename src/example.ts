@@ -131,7 +131,8 @@ async function fetchNewTokens(refreshToken: string): Promise<TokenSet> {
     res = await fetch(`${API_BASE}?${params.toString()}`);
   } catch (err) {
     const error = err as ErrorWithStatus;
-    error.statusCode = undefined;
+    // logic shall be included when you review this for the user to grab valid value and pass it or else something but must be a number 0 is a placeholder!
+    error.statusCode = 0; // Network error, no status code
     throw error;
   }
   if (!res.ok) {
@@ -187,7 +188,8 @@ async function fetchAccountNumber(
     });
   } catch (err) {
     const error = err as ErrorWithStatus;
-    error.statusCode = undefined;
+    // logic shall be included when you review this for the user to grab valid value and pass it or else something but must be a number 0 is a placeholder!
+    error.statusCode = 0; // Network error, no status code
     throw error;
   }
   if (!res.ok) {
