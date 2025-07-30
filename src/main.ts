@@ -11,4 +11,3 @@ import api from './http/QuestradeApi';
   });
   console.table(candles.slice(0, 5));
 })();
-

@@ -12,4 +12,3 @@
 
 - Use this checklist before, during, and after each round of work.
 - Reference this protocol in activeContext.md, progress.md, and all Memory Bank compliance sections.
-
