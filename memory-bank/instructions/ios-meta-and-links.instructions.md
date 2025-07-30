@@ -130,3 +130,9 @@ Use Apple’s Hosted File Tester (`universal-links.dev`) for production checks. 
 [11]: https://developer.apple.com/documentation/xcode/configuring-an-associated-domain?utm_source=chatgpt.com
 [12]: https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps/Guides/Making_PWAs_installable?utm_source=chatgpt.com
 [13]: https://stackoverflow.com/questions/5110776/apple-touch-icon-for-websites?utm_source=chatgpt.com
+
+
+## Verification
+
+- `markdownlint --strict`
+- `scripts/verify-all.sh`

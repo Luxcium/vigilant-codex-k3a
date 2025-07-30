@@ -144,3 +144,9 @@ This instruction file integrates with:
 - **VS Code Copilot** - Applies to `python/**` files via `applyTo` directive
 
 See project Memory Bank files for complete integration protocols.
+
+
+## Verification
+
+- `markdownlint --strict`
+- `scripts/verify-all.sh`

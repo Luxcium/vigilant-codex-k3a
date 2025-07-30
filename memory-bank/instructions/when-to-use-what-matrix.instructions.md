@@ -56,3 +56,9 @@ This matrix condenses all key manifest and meta configurations into a single ref
 [15]: https://developer.android.com/studio/write/app-link-indexing?utm_source=chatgpt.com 'Add Android App Links | Android Studio'
 [16]: ./nextjs-component-patterns.instructions.md 'Next.js Component Pattern Selection'
 [17]: ./prisma-server-actions.instructions.md 'Prisma with Next.js Server Actions'
+
+
+## Verification
+
+- `markdownlint --strict`
+- `scripts/verify-all.sh`
