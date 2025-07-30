@@ -248,8 +248,8 @@ export async function createPost(formData: FormData) {
 
 **Framework Components:**
 
-- ✅ **26 Instruction Files** - Automated coding standards in `.github/instructions/`
-- ✅ **27 Prompt Files** - Executable workflow templates in `.github/prompts/`
+- ✅ **26 Instruction Files** - Automated coding standards in `memory-bank/instructions/`
+- ✅ **27 Prompt Files** - Executable workflow templates in `memory-bank/prompts/`
 - ✅ **Memory Bank Protocol** - Official Cline Memory Bank structure compliance
 - ✅ **Self-Documentation Protocol** - Automatic context updates and preservation
 

@@ -249,7 +249,7 @@ User requested initial project analysis to understand environment topology befor
 
 **Major Reorganization Completed**:
 
-**✅ Main Instructions File** (`.github/instructions/use-conventional-commits.instructions.md`):
+**✅ Main Instructions File** (`memory-bank/instructions/use-conventional-commits.instructions.md`):
 
 - **Concise and Clear**: Essential information only, quick reference format
 - **100% Gitmoji Compliance**: Every example includes mandatory gitmoji
@@ -259,10 +259,10 @@ User requested initial project analysis to understand environment topology befor
 
 **✅ Supporting Prompt Files Created**:
 
-- **`.github/prompts/gitmoji-complete-list.prompt.md`**: Complete gitmoji reference with selection guidelines
-- **`.github/prompts/commit-examples.prompt.md`**: Comprehensive examples by category with detailed context
-- **`.github/prompts/breaking-changes.prompt.md`**: Detailed breaking changes guidance and best practices
-- **`.github/prompts/git-hooks-automation.prompt.md`**: Git hooks, automation tools, and CI/CD integration
+- **`memory-bank/prompts/gitmoji-complete-list.prompt.md`**: Complete gitmoji reference with selection guidelines
+- **`memory-bank/prompts/commit-examples.prompt.md`**: Comprehensive examples by category with detailed context
+- **`memory-bank/prompts/breaking-changes.prompt.md`**: Detailed breaking changes guidance and best practices
+- **`memory-bank/prompts/git-hooks-automation.prompt.md`**: Git hooks, automation tools, and CI/CD integration
 
 **Key Improvements**:
 

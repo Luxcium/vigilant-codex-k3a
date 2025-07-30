@@ -9,11 +9,8 @@ Your AI Agent MUST actively strive to keep this file up to date with the latest 
 ## Purpose
 
 This file tracks all pro### Script Management and Optimization Protocol
-
-**Purpose**: Continuous script consolidation and optimization to reduce maintenance overhead
-
-**Current State**: Script optimization review plan created for advanced consolidation (42 → 22-25 scripts target)
-
+ **26 Instruction Files** - Automated coding standards in `memory-bank/instructions/`
+ **27 Prompt Files** - Executable workflow templates in `memory-bank/prompts/`
 **Dependencies and Relationships**:
 
 - **scripts/README.md** → **ALL script files** (Why: Must be synchronized whenever scripts change)
@@ -59,56 +56,23 @@ This file tracks all pro### Script Management and Optimization Protocol
 ### AI Agent Dependencies
 
 ### Memory Bank System
-
-- **Stateful Documentation** - Persistent context across development sessions
-- **Cross-File Dependencies** - Comprehensive dependency tracking
-- **Self-Documentation Protocol** - Automatic context preservation
-- **Memory Reset Resilience** - Complete project understanding from documentation
 - **Markdown-Lint Compliance** - Strict formatting standards for all files
 
 ### Three AI Agent Ecosystem
 
 - **Cline AI** - Primary development agent (`.clinerules/main-rules.md`)
-- **Codex CLI** - Terminal automation and orchestration (`AGENTS.md`)
 - **VS Code Copilot** - Code generation (`.github/copilot-instructions.md`)
-- **Cross-Agent Workflows** - Sophisticated collaboration patterns
-- **Stateful Collaboration** - Memory bank integration across all agents
+**26 Instruction Files** - Automated coding standards in `memory-bank/instructions/`
+**27 Prompt Files** - Executable workflow templates in `memory-bank/prompts/`
 
 > [!IMPORTANT]
-> **Radical Change Notice:** Instructions, prompts, and chatmodes are now located in `memory-bank/instructions/`, `memory-bank/prompts/`, and `memory-bank/chatmodes/`. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code Copilot tooling.
 - **Jupyter Notebooks** - VS Code integration with advanced API support
 - **pip/virtualenv** - Package management across all environment modes
-
-### Docker Orchestration Platform
-
-- **Codex Universal Environment** - `ghcr.io/openai/codex-universal:latest`
-- **Node.js 22 + Python 3.13** - Pre-configured development environment
-- **Volume-Based Development** - Instant file changes without container rebuilds
-- **OpenAI API Integration** - Seamless API access within containers
-- **Multi-Service Support** - PostgreSQL, Redis, development servers
-- **Health Monitoring** - Comprehensive service validation
-
-## Development Dependencies
-
 ### Testing Infrastructure
 
-- **Vitest 3.2.4** - Primary test runner with Istanbul coverage
-- **259 Tests Passing** - Zero regression development with 98.34% branch coverage
-- **Native Fetch Mocking** - `vi.stubGlobal('fetch', mockFetch)` for HTTP isolation
-- **AuthManager Mocking** - Complete authentication system mocking
-- **Edge Case Coverage** - NaN handling, timeout management, error scenarios
-- **CommonJS Compatibility** - Maintained throughout test infrastructure
 
-### Code Quality & Formatting
 
-- **ESLint** - JavaScript/TypeScript linting with strict rules
 - **Prettier** - Code formatting with consistent style
-- **Markdown-Lint** - Documentation formatting compliance
-- **Husky** - Pre-commit hooks for code quality enforcement
-- **TypeScript Strict Mode** - Enhanced type checking and null safety
-
-### Container Development Tools
-
 - **Docker Engine** - Container runtime and management
 - **Docker Compose** - Multi-service orchestration
 - **Dev Container Configuration** - VS Code integration with `.devcontainer/`
@@ -119,26 +83,21 @@ This file tracks all pro### Script Management and Optimization Protocol
 
 ### Memory Bank System
 
-- **Stateful Documentation** - Persistent context across development sessions
 - **Cross-File Dependencies** - Comprehensive dependency tracking
 - **Self-Documentation Protocol** - Automatic context preservation
 - **Memory Reset Resilience** - Complete project understanding from documentation
-- **Markdown-Lint Compliance** - Strict formatting standards for all files
-
-### Three AI Agent Ecosystem
-
 - **Cline AI** - Primary development agent (`.clinerules/main-rules.md`)
 - **Codex CLI** - Terminal automation and orchestration (`AGENTS.md`)
-- **VS Code Copilot** - Code generation (`.github/copilot-instructions.md`)
-- **Cross-Agent Workflows** - Sophisticated collaboration patterns
 - **Stateful Collaboration** - Memory bank integration across all agents
 
 ### Instruction & Prompt Framework
-
+**Depends On:** tsconfig.json baseUrl and paths configuration, TypeScript standards from `memory-bank/instructions/`
 - **26 Instruction Files** - Automated coding standards in `.github/instructions/`
 - **27 Prompt Files** - Executable workflow templates in `.github/prompts/`
+All agents must consult the [when-to-use-what-matrix.instructions.md](../memory-bank/instructions/when-to-use-what-matrix.instructions.md) for a one-page mapping of integration goals to configuration files and authoritative sources. For detailed implementation, see `memory-bank/instructions/README.md` and `memory-bank/prompts/README.md`.
 - **Conditional Architecture** - Runtime decision frameworks
 - **Parameter-Driven Configuration** - ENV_MODE and similar runtime selection
+All agents must consult the [theme-ui-meta.instructions.md](../memory-bank/instructions/theme-ui-meta.instructions.md) for detailed theming meta tag standards and the [theme-ui-meta.prompt.md](../memory-bank/prompts/theme-ui-meta.prompt.md) for workflow automation. These files cover syntax, validation, and platform-specific quirks for `theme-color`, `color-scheme`, and related tags.
 - **Quality Assurance Standards** - Comprehensive validation and testing patterns
 
 ## Cross-References and Relationships
