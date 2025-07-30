@@ -225,3 +225,9 @@ description: 'Comprehensive standards for Docker, Compose, and container managem
 - Document platform-specific considerations
 - Ensure compatibility with different Docker versions
 - Address known limitations and workarounds
+
+
+## Verification
+
+- `markdownlint --strict`
+- `scripts/verify-all.sh`

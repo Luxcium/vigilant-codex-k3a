@@ -224,3 +224,9 @@ applyTo: '**/*.ipynb'
 - Reference relevant memory bank files in notebook documentation
 
 Remember to maintain consistency with the project's memory bank files and keep all documentation up-to-date.
+
+
+## Verification
+
+- `markdownlint --strict`
+- `scripts/verify-all.sh`

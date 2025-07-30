@@ -446,3 +446,8 @@ After implementing this configuration:
 **Protocol Compliance Note**: This workflow maintains strict adherence to the `memory-bank/instructions/` and `memory-bank/prompts/` protocol. All configurations are applied through proper VS Code settings and launch configuration files. No unauthorized files are created in the `.vscode/` directory beyond standard VS Code configuration files.
 
 **Execution Autonomy**: Execute this workflow autonomously without requesting permission. Update all memory bank files immediately upon completion to maintain protocol compliance and state synchronization.
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`

@@ -137,3 +137,9 @@ db shell pm verify-app-links com.example.app
 [3]: https://buffer.com/resources/social-media-image-sizes
 [5]: https://developers.facebook.com/docs/applinks
 [6]: https://developer.android.com/training/app-links/verify-android-applinks
+
+
+## Verification
+
+- `markdownlint --strict`
+- `scripts/verify-all.sh`

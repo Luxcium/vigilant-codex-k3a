@@ -90,3 +90,8 @@ After setup completion:
 2. Test the environment with a simple Python script
 3. Document any mode-specific discoveries or issues
 4. Consider creating additional prompt files for common Python workflows
+
+## Verification
+
+- `markdownlint --strict` on updated Markdown files
+- `scripts/verify-all.sh`
