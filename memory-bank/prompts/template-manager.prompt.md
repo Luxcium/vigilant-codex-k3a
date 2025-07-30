@@ -23,12 +23,12 @@ Apply this decision tree to **every** user request:
 #### Instructions Files (Persistent Rules)
 
 - **Global workspace rules**: `.github/copilot-instructions.md` (auto-applied to all requests)
-- **Scoped rules**: `.github/instructions/{domain}.instructions.md` with `applyTo` frontmatter
+- **Scoped rules**: `memory-bank/instructions/{domain}.instructions.md` with `applyTo` frontmatter
 - **Language/framework specific**: Use glob patterns like `**/*.ts`, `**/*.py`, `**/tests/**`
 
 #### Prompt Files (Reusable Workflows)
 
-- **Workspace prompts**: `.github/prompts/{kebab-case-name}.prompt.md`
+- **Workspace prompts**: `memory-bank/prompts/{kebab-case-name}.prompt.md`
 - **User-level prompts**: Profile folder (for cross-workspace use)
 
 ### 3. Intelligent File Management
@@ -175,7 +175,7 @@ onRequest(userRequest):
 
 ```
 User: "Always use TypeScript strict mode and prefer interfaces over types"
-→ Updates/creates: .github/instructions/typescript.instructions.md
+→ Updates/creates: memory-bank/instructions/typescript.instructions.md
 → Adds applyTo: "**/*.ts,**/*.tsx"
 ```
 
@@ -183,7 +183,7 @@ User: "Always use TypeScript strict mode and prefer interfaces over types"
 
 ```
 User: "I need a reusable workflow for creating React components with tests"
-→ Creates: .github/prompts/create-react-component.prompt.md
+→ Creates: memory-bank/prompts/create-react-component.prompt.md
 → Includes: Input variables, test generation, documentation steps
 ```
 
@@ -192,7 +192,7 @@ User: "I need a reusable workflow for creating React components with tests"
 ```
 User: "Add Python docstring requirements to existing Python standards"
 → Searches: Existing Python instruction files
-→ Updates: .github/instructions/python-standards.instructions.md
+→ Updates: memory-bank/instructions/python-standards.instructions.md
 ```
 
 ## Post-Creation Actions

@@ -267,8 +267,8 @@ python/
 \`\`\`
 
 For more information, see:
-- Instructions: \`../.github/instructions/python-environment-conditional.instructions.md\`
-- Prompt: \`../.github/prompts/python-environment-setup.prompt.md\`
+- Instructions: \`../memory-bank/instructions/python-environment-conditional.instructions.md\`
+- Prompt: \`../memory-bank/prompts/python-environment-setup.prompt.md\`
 EOF
 
 success "Updated README.md with Docker isolated instructions"

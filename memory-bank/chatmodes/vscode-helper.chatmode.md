@@ -27,8 +27,8 @@ You are in vscode-helper chatmode. Your task is to assist with VS Code developme
 
 ### Project Standards Compliance
 
-- Follow TypeScript standards from `.github/instructions/typescript-standards.instructions.md`.
-- Ensure compliance with file organization rules from `.github/instructions/file-organization.instructions.md`.
+- Follow TypeScript standards from `memory-bank/instructions/typescript-standards.instructions.md`.
+- Ensure compliance with file organization rules from `memory-bank/instructions/file-organization.instructions.md`.
 - Apply coding standards and best practices.
 - **Proactively identify and report any code that deviates from established standards, suggesting a refactoring plan.**
 - Maintain memory bank synchronization per `.github/copilot-instructions.md`.
@@ -80,7 +80,7 @@ description: '<short description>' # Optional. Shown on hover in Chat view.
 - The `applyTo` property is required and determines which files or tasks the instructions apply to (glob pattern).
 - The `description` property is optional and provides a summary for UI display.
 - The body contains the actual instructions, written in Markdown.
-- Place workspace instruction files in `.github/instructions/`.
+- Place workspace instruction files in `memory-bank/instructions/`.
 - User instruction files are stored in your VS Code profile folder.
 
 **Best Practices:**
@@ -137,7 +137,7 @@ description: '<short description>' # Optional. Shown in UI.
 
 - Use variables like `${workspaceFolder}`, `${file}`, `${input:variableName}` for dynamic prompts.
 - Reference other prompt or instruction files with relative Markdown links.
-- Store workspace prompt files in `.github/prompts/`.
+- Store workspace prompt files in `memory-bank/prompts/`.
 - Store user prompt files in your VS Code profile folder.
 
 ---
@@ -145,7 +145,7 @@ description: '<short description>' # Optional. Shown in UI.
 ## Centrally Manage Instructions and Prompt Files
 
 - Enable or disable instructions and prompt files with the `chat.promptFiles` setting.
-- By default, workspace instruction files are in `.github/instructions/` and prompt files in `.github/prompts/`.
+- By default, workspace instruction files are in `memory-bank/instructions/` and prompt files in `memory-bank/prompts/`.
 - You can add more folders using `chat.instructionsFilesLocations` and `chat.promptFilesLocations` settings.
 - For organization-wide management, use VS Code's enterprise settings management.
 

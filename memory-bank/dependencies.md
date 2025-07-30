@@ -92,8 +92,8 @@ This file tracks all pro### Script Management and Optimization Protocol
 
 ### Instruction & Prompt Framework
 **Depends On:** tsconfig.json baseUrl and paths configuration, TypeScript standards from `memory-bank/instructions/`
-- **26 Instruction Files** - Automated coding standards in `.github/instructions/`
-- **27 Prompt Files** - Executable workflow templates in `.github/prompts/`
+- **26 Instruction Files** - Automated coding standards in `memory-bank/instructions/`
+- **27 Prompt Files** - Executable workflow templates in `memory-bank/prompts/`
 All agents must consult the [when-to-use-what-matrix.instructions.md](../memory-bank/instructions/when-to-use-what-matrix.instructions.md) for a one-page mapping of integration goals to configuration files and authoritative sources. For detailed implementation, see `memory-bank/instructions/README.md` and `memory-bank/prompts/README.md`.
 - **Conditional Architecture** - Runtime decision frameworks
 - **Parameter-Driven Configuration** - ENV_MODE and similar runtime selection
@@ -202,7 +202,7 @@ This project supports three AI agents with specific dependency management respon
 
 **All agents must maintain dependency tracking in this file and ensure cross-references remain accurate.**
 
-**For meta-configuration standards, consult [when-to-use-what-matrix.instructions.md](../.github/instructions/when-to-use-what-matrix.instructions.md) for authoritative mapping of integration goals to configuration files.**
+**For meta-configuration standards, consult [when-to-use-what-matrix.instructions.md](../memory-bank/instructions/when-to-use-what-matrix.instructions.md) for authoritative mapping of integration goals to configuration files.**
 
 ---
 
@@ -290,9 +290,9 @@ This file tracks all project dependencies, their relationships, and integration 
 
 - **Memory Bank System**: Cross-referencing and documentation framework
 
-- **Prompt Files**: Executable workflow templates in `.github/prompts/`
+- **Prompt Files**: Executable workflow templates in `memory-bank/prompts/`
 
-- **Instruction Files**: Coding standards and guidelines in `.github/instructions/`
+- **Instruction Files**: Coding standards and guidelines in `memory-bank/instructions/`
 
 - **Script System**: Automation tools in `scripts/` directory
 
@@ -402,9 +402,9 @@ This file tracks all project dependencies, their relationships, and integration 
 
 ## AI Agent Dependencies
 
-### Prompt Files (`.github/prompts/`)
+### Prompt Files (`memory-bank/prompts/`)
 
-### Prompt Files (`.github/prompts/`)
+### Prompt Files (`memory-bank/prompts/`)
 
 - **codex-universal-environment.prompt.md**: Comprehensive Docker environment management
   - **Depends On**: `memory-bank/docker-workflow.md`, Docker environment instruction files
@@ -444,9 +444,9 @@ This file tracks all project dependencies, their relationships, and integration 
   - **Required By**: Jupyter notebook development, data science workflows, ML experimentation
   - **Integration**: VS Code extended capabilities, notebook-specialist chat mode, memory bank synchronization
 
-### Instruction Files (`.github/instructions/`)
+### Instruction Files (`memory-bank/instructions/`)
 
-### Instruction Files (`.github/instructions/`)
+### Instruction Files (`memory-bank/instructions/`)
 
 - **docker-environment.instructions.md**: Comprehensive Docker environment standards
   - **Depends On**: `memory-bank/docker-workflow.md`, container security best practices
@@ -491,11 +491,11 @@ This file tracks all project dependencies, their relationships, and integration 
 ### Conditional Python Environment Integration
 
 ```
-.github/instructions/python-environment-conditional.instructions.md
+memory-bank/instructions/python-environment-conditional.instructions.md
 ├── Defines: Three-mode conditional setup (local, docker_isolated, docker_volume)
 ├── Parameters: ENV_MODE, PYTHON_VERSION, PROJECT_NAME
 ├── Integrates: AI agent collaboration patterns
-└── Enables: .github/prompts/python-environment-setup.prompt.md
+└── Enables: memory-bank/prompts/python-environment-setup.prompt.md
     ├── Presents: Mode selection to users
     ├── Routes: scripts/setup_python_env.sh
     ├── Generates: Mode-specific configurations and documentation
@@ -519,8 +519,8 @@ scripts/setup_python_env.sh (main entry)
 
 ```
 User Request → GitHub Copilot/Cline AI/Codex CLI
-├── Reads: .github/prompts/python-environment-setup.prompt.md
-├── Applies: .github/instructions/python-environment-conditional.instructions.md
+├── Reads: memory-bank/prompts/python-environment-setup.prompt.md
+├── Applies: memory-bank/instructions/python-environment-conditional.instructions.md
 ├── References: memory-bank/docker-workflow.md (for Docker modes)
 ├── Executes: scripts/setup_python_env.sh with chosen ENV_MODE
 ├── Generates: Mode-specific configurations and documentation
@@ -611,7 +611,7 @@ Project Root
 #### Jest with TypeScript Path Aliases (2025-06-22)
 
 **Rationale:** Enables clean import paths using @/ alias for src/ directory in tests, improving maintainability and following modern TypeScript practices.
-**Depends On:** tsconfig.json baseUrl and paths configuration, TypeScript standards from .github/instructions/
+**Depends On:** tsconfig.json baseUrl and paths configuration, TypeScript standards from memory-bank/instructions/
 **Required By:** All test files in src/tests/ directory structure
 **Impact Analysis:** Enables mirrored directory structure in tests with clean imports, supporting comprehensive test coverage goals.
 
@@ -640,10 +640,10 @@ This project supports three AI agents with specific dependency management respon
 
 **Meta-Configuration & Manifest Standards:**
 
-All agents must consult the [when-to-use-what-matrix.instructions.md](../.github/instructions/when-to-use-what-matrix.instructions.md) for a one-page mapping of integration goals to configuration files and authoritative sources. For detailed implementation, see `.github/instructions/README.md` and `.github/prompts/README.md`.
+All agents must consult the [when-to-use-what-matrix.instructions.md](../memory-bank/instructions/when-to-use-what-matrix.instructions.md) for a one-page mapping of integration goals to configuration files and authoritative sources. For detailed implementation, see `memory-bank/instructions/README.md` and `memory-bank/prompts/README.md`.
 
 **UI Theming Standards:**
-All agents must consult the [theme-ui-meta.instructions.md](../.github/instructions/theme-ui-meta.instructions.md) for detailed theming meta tag standards and the [theme-ui-meta.prompt.md](../.github/prompts/theme-ui-meta.prompt.md) for workflow automation. These files cover syntax, validation, and platform-specific quirks for `theme-color`, `color-scheme`, and related tags.
+All agents must consult the [theme-ui-meta.instructions.md](../memory-bank/instructions/theme-ui-meta.instructions.md) for detailed theming meta tag standards and the [theme-ui-meta.prompt.md](../memory-bank/prompts/theme-ui-meta.prompt.md) for workflow automation. These files cover syntax, validation, and platform-specific quirks for `theme-color`, `color-scheme`, and related tags.
 
 ---
 

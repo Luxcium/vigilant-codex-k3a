@@ -282,7 +282,7 @@ When adding new instructions:
 Instructions are enabled in VS Code through:
 
 - `github.copilot.chat.codeGeneration.useInstructionFiles: true`
-- `github.copilot.chat.codeGeneration.instructionsPath: ".github/instructions"`
+- `github.copilot.chat.codeGeneration.instructionsPath: "memory-bank/instructions"`
 
 See [.vscode/settings.json](../../.vscode/settings.json) for current configuration.
 
