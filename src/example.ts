@@ -207,20 +207,27 @@ async function fetchNewTokens(refreshToken: string): Promise<TokenSet> {
     grant_type: 'refresh_token',
     refresh_token: refreshToken,
   });
+  const requestUrl = `${API_BASE}?${params.toString()}`;
+  console.log(
+    '[DEBUG] Token request URL:',
+    requestUrl.replace(refreshToken, '***REDACTED***')
+  );
   let res: Response;
   try {
-    res = await fetch(`${API_BASE}?${params.toString()}`);
+    res = await fetch(requestUrl);
   } catch (err) {
     const error = err as ErrorWithStatus;
-    // logic shall be included when you review this for the user to grab valid value and pass it or else something but must be a number 0 is a placeholder!
     error.statusCode = 0; // Network error, no status code
+    console.error('[DEBUG] Network error during token fetch:', error.message);
     throw error;
   }
+  const rawBody = await res.clone().text();
+  console.log('[DEBUG] Token response status:', res.status);
+  console.log('[DEBUG] Token response body:', rawBody);
   if (!res.ok) {
-    const msg = await res.text();
-    let errorBody: string | Record<string, unknown> = msg;
+    let errorBody: string | Record<string, unknown> = rawBody;
     try {
-      const json = JSON.parse(msg);
+      const json = JSON.parse(rawBody);
       errorBody = json;
     } catch {
       // Not JSON, keep as text
@@ -242,7 +249,13 @@ async function fetchNewTokens(refreshToken: string): Promise<TokenSet> {
     error.errorBlob = errorBlob;
     throw error;
   }
-  const tokens = await res.json();
+  let tokens: TokenSet;
+  try {
+    tokens = await res.json();
+  } catch (err) {
+    console.error('[DEBUG] Failed to parse token response as JSON:', err);
+    throw err;
+  }
   if (!tokens.access_token || !tokens.api_server) {
     const error = new Error(
       'Malformed token response from Questrade'

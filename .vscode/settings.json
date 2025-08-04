@@ -14,11 +14,9 @@
     "docker-compose*.yml": "dockercompose",
     "*.md": "markdown",
     "**/.github/chatmodes/*.chatmode.md": "chatmode",
-    "**/memory-bank/instructions/*.instructions.md": "instructions",
-    "**/memory-bank/prompts/*.prompt.md": "prompt",
     "**/memory-bank/chatmodes/*.chatmode.md": "chatmode",
     "**/memory-bank/instructions/*.instructions.md": "instructions",
-    "**/memory-bank/prompts/*.prompt.md": "prompt",
+    "**/memory-bank/prompts/*.prompt.md": "prompt"
   },
   "[chatmode]": {
     "editor.unicodeHighlight.ambiguousCharacters": false,
@@ -138,7 +136,7 @@
   "eslint.codeActionsOnSave.mode": "all",
   "workbench.colorTheme": "Pop N' Lock Theme by Luxcium ✨ Alexis's Black ⛷",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.productIconTheme": "material-product-icons",
+  "workbench.productIconTheme": "Default",
   /*
     |-··----------------------------------------------------------··-|
   */
@@ -2092,24 +2090,49 @@
   "chat.edits2.enabled": true,
   "chat.editRequests": "inline",
   "chat.extensionTools.enabled": true,
+  "chat.math.enabled": true,
+  "chat.notifyWindowOnConfirmation": true,
+  "chat.tools.useTreePicker": true,
+  // Whether to enable next edit suggestions (NES).
+  // NES can propose a next edit based on your recent changes. [Learn more](https://code.visualstudio.com/docs/copilot/ai-powered-suggestions#_next-edit-suggestions) about next edit suggestions.
+  "github.copilot.nextEditSuggestions.enabled": true,
+  // Whether to offer fixes for diagnostics via next edit suggestions (NES).
+  "github.copilot.nextEditSuggestions.fixes": true,
+  // Enable or disable auto triggering of Copilot completions for specified languages. You can still trigger suggestions manually using Alt + \
   "github.copilot.enable": {
     "*": true
   },
-  "chat.mcp.enabled": true,
+  // Enable reusable prompt (*.prompt.md) and instruction files (*.instructions.md) in Chat sessions.
+  "chat.promptFiles": true,
+  // When enabled, custom instructions and mode instructions will be appended to the system message instead of a user message.
+  "github.copilot.chat.customInstructionsInSystemMessage": true,
+  // Controls whether code instructions from .github/copilot-instructions.md are added to Copilot requests.
+  "github.copilot.chat.codeGeneration.useInstructionFiles": true,
+  // Note: Keep your instructions short and precise. Poor instructions can degrade Copilot's quality and performance. [Learn more](https://code.visualstudio.com/docs/copilot/copilot-customization) about customizing Copilot.
+
+  // Mode File Locations
+  // Specify location(s) of custom chat mode files (*.chatmode.md). [Learn More](https://code.visualstudio.com/docs/copilot/chat/chat-modes).
+  // Relative paths are resolved from the root folder(s) of your workspace.
   "chat.modeFilesLocations": {
-    ".github/chatmodes": true,
     "memory-bank/chatmodes": true
   },
-  "chat.promptFiles": true,
+  // Prompt File Locations
+  // Specify location(s) of reusable prompt files (*.prompt.md) that can be run in Chat sessions. [Learn More](https://code.visualstudio.com/docs/copilot/copilot-customization#_prompt-files-experimental).
+  // Relative paths are resolved from the root folder(s) of your workspace.
   "chat.promptFilesLocations": {
     "memory-bank/prompts": true
   },
+  // Instructions File Locations
+  // Specify location(s) of instructions files (*.instructions.md) that can be attached in Chat sessions. [Learn More](https://code.visualstudio.com/docs/copilot/copilot-customization#_custom-instructions).
+  // Relative paths are resolved from the root folder(s) of your workspace.
   "chat.instructionsFilesLocations": {
     "memory-bank/instructions": true
   },
+
   "chat.implicitContext.enabled": {
     "panel": "always"
   },
+  "chat.mcp.enabled": true,
   "chat.sendElementsToChat.enabled": true,
   // #endregion: Copilot Chat Agent                                  !
   /*
