@@ -1,13 +1,24 @@
-**Current State:**
-The canonical playground `src/example.ts` was hardened to include HTTP status codes in the output file `.keys/example-sdk-demo.json` on error. The playground was built and executed, and the output file was verified to contain the correct status code (400) on failure. This confirms robust error reporting and output verification as part of the recursive demonstration workflow.
-**Last Action:**
-Patched `example.ts` to propagate and record HTTP status codes on error, rebuilt and ran the playground, and verified `.keys/example-sdk-demo.json` for correct error code output.
-**Rationale:**
-To fulfill the requirement for robust, agentic, and reproducible playground development, ensuring all error outputs include HTTP status codes for better debugging and agent memory.
-**Next Intent:**
-Continue recursive, output-verified workflow for all future playground iterations and maintain robust error reporting.
-**Meta:**
-I am updating my self-documentation after verifying output and HTTP error code inclusion. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+- [2025-08-03T22:55:00Z] Created and referenced 'Get Current Date/Time' task for timestamping
+  **Current State:**
+  A dedicated task for obtaining the current date/time in ISO 8601 format has been defined in `scripts/README.md`. All instructions now reference this task instead of the raw `date --iso-8601=seconds` command. The self-documentation and instruction-authoring standards have been updated accordingly.
+  **Last Action:**
+  Added the task definition to `scripts/README.md`, updated `self-documentation.instructions.md` to reference the task, and added a new section to `instruction-authoring-standards.instructions.md` for timestamping best practices.
+  **Rationale:**
+  To ensure discoverability, maintainability, and protocol compliance for all timestamping and logging actions, and to avoid direct use of raw shell commands in documentation.
+  **Next Intent:**
+  Monitor for any future direct uses of `date` and enforce exclusive use of the task. Continue to update documentation and protocols as needed.
+  **Meta:**
+  I am updating my self-documentation after creating and referencing the 'Get Current Date/Time' task. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+  **Current State:**
+  The canonical playground `src/example.ts` was hardened to include HTTP status codes in the output file `.keys/example-sdk-demo.json` on error. The playground was built and executed, and the output file was verified to contain the correct status code (400) on failure. This confirms robust error reporting and output verification as part of the recursive demonstration workflow.
+  **Last Action:**
+  Patched `example.ts` to propagate and record HTTP status codes on error, rebuilt and ran the playground, and verified `.keys/example-sdk-demo.json` for correct error code output.
+  **Rationale:**
+  To fulfill the requirement for robust, agentic, and reproducible playground development, ensuring all error outputs include HTTP status codes for better debugging and agent memory.
+  **Next Intent:**
+  Continue recursive, output-verified workflow for all future playground iterations and maintain robust error reporting.
+  **Meta:**
+  I am updating my self-documentation after verifying output and HTTP error code inclusion. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 
 - [2025-07-29T20:30:00Z] Meta-Context Review and Validation of Operational Rules
   **Current State:**
@@ -22,38 +33,38 @@ I am updating my self-documentation after verifying output and HTTP error code i
   I am updating my self-documentation after completing a meta-context review and validation. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 
 - [2025-07-30T02:07:00Z] Prompt Verification Sections Added
-   **Current State:**
-   All prompt files now end with a '## Verification' section referencing markdownlint and scripts/verify-all.sh.
-   **Last Action:**
-   Appended verification sections to 35 prompt files using an automated script.
-   **Rationale:**
-   Ensures compliance with the Verification Block Standard for prompts.
-   **Next Intent:**
-   Maintain this checklist for all future prompt additions.
-   **Meta:**
-   Self-documentation after repository-wide prompt update.
-   **Current State:**
-   The canonical playground `src/example.ts` was hardened to include HTTP status codes in the output file `.keys/example-sdk-demo.json` on error. The playground was built and executed, and the output file was verified to contain the correct status code (400) on failure. This confirms robust error reporting and output verification as part of the recursive demonstration workflow.
-   **Last Action:**
-   Patched `example.ts` to propagate and record HTTP status codes on error, rebuilt and ran the playground, and verified `.keys/example-sdk-demo.json` for correct error code output.
-   **Rationale:**
-   To fulfill the requirement for robust, agentic, and reproducible playground development, ensuring all error outputs include HTTP status codes for better debugging and agent memory.
-   **Next Intent:**
-   Continue recursive, output-verified workflow for all future playground iterations and maintain robust error reporting.
-   **Meta:**
-   I am updating my self-documentation after verifying output and HTTP error code inclusion. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+  **Current State:**
+  All prompt files now end with a '## Verification' section referencing markdownlint and scripts/verify-all.sh.
+  **Last Action:**
+  Appended verification sections to 35 prompt files using an automated script.
+  **Rationale:**
+  Ensures compliance with the Verification Block Standard for prompts.
+  **Next Intent:**
+  Maintain this checklist for all future prompt additions.
+  **Meta:**
+  Self-documentation after repository-wide prompt update.
+  **Current State:**
+  The canonical playground `src/example.ts` was hardened to include HTTP status codes in the output file `.keys/example-sdk-demo.json` on error. The playground was built and executed, and the output file was verified to contain the correct status code (400) on failure. This confirms robust error reporting and output verification as part of the recursive demonstration workflow.
+  **Last Action:**
+  Patched `example.ts` to propagate and record HTTP status codes on error, rebuilt and ran the playground, and verified `.keys/example-sdk-demo.json` for correct error code output.
+  **Rationale:**
+  To fulfill the requirement for robust, agentic, and reproducible playground development, ensuring all error outputs include HTTP status codes for better debugging and agent memory.
+  **Next Intent:**
+  Continue recursive, output-verified workflow for all future playground iterations and maintain robust error reporting.
+  **Meta:**
+  I am updating my self-documentation after verifying output and HTTP error code inclusion. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 
- - [2025-07-29T20:30:00Z] Meta-Context Review and Validation of Operational Rules
-    **Current State:**
-    All meta-level operational rules, initialization protocols, and agent collaboration standards are codified and up to date. The CRITICAL MEMORY BANK PROTOCOL, agent obligations, recursive workflow patterns, and documentation standards are enforced across `.github/copilot-instructions.md` and memory-bank files. The three-agent system is fully described, and all meta-level standards (script-driven setup, idempotency, documentation, cross-agent compatibility, markdown-lint compliance) are actionable. Initialization, dependency/tooling detection, and environment readiness are referenced and described in the memory bank.
-    **Last Action:**
-    Reviewed and validated all meta-level operational rules, initialization, and agent protocols. Confirmed that all agents and contributors have clear, actionable guidance for high-level operations. No missing documentation or unclear rules found at the meta level.
-    **Rationale:**
-    To ensure the project’s meta-configuration, agent protocols, and operational rules are robust, actionable, and up to date, supporting effective multi-agent collaboration and stateful development.
-    **Next Intent:**
-    Continue to monitor and optimize meta-level documentation and operational rules as the project evolves. Update memory bank and documentation immediately upon any change in meta-configuration or agent protocols.
-    **Meta:**
-    I am updating my self-documentation after completing a meta-context review and validation. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+- [2025-07-29T20:30:00Z] Meta-Context Review and Validation of Operational Rules
+  **Current State:**
+  All meta-level operational rules, initialization protocols, and agent collaboration standards are codified and up to date. The CRITICAL MEMORY BANK PROTOCOL, agent obligations, recursive workflow patterns, and documentation standards are enforced across `.github/copilot-instructions.md` and memory-bank files. The three-agent system is fully described, and all meta-level standards (script-driven setup, idempotency, documentation, cross-agent compatibility, markdown-lint compliance) are actionable. Initialization, dependency/tooling detection, and environment readiness are referenced and described in the memory bank.
+  **Last Action:**
+  Reviewed and validated all meta-level operational rules, initialization, and agent protocols. Confirmed that all agents and contributors have clear, actionable guidance for high-level operations. No missing documentation or unclear rules found at the meta level.
+  **Rationale:**
+  To ensure the project’s meta-configuration, agent protocols, and operational rules are robust, actionable, and up to date, supporting effective multi-agent collaboration and stateful development.
+  **Next Intent:**
+  Continue to monitor and optimize meta-level documentation and operational rules as the project evolves. Update memory bank and documentation immediately upon any change in meta-configuration or agent protocols.
+  **Meta:**
+  I am updating my self-documentation after completing a meta-context review and validation. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 
 # The `activeContext.md` Memory Bank File
 

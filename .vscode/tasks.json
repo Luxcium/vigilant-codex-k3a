@@ -2,6 +2,19 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Get Current Date/Time",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/get_current_datetime.sh",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
       "label": "Python: Setup Environment",
       "type": "shell",
       "command": "${workspaceFolder}/scripts/setup_python_env.sh",
