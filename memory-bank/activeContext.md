@@ -575,3 +575,17 @@ This project supports three AI agents with specific entry points:
   **Rationale:** Streamline tooling and implement modern SDK patterns.
   **Next Intent:** Monitor logging output and expand REST gateway layer.
   **Meta:** I am updating my self-documentation after completing repository optimization. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+
+- [2025-08-03T00:00:00Z] **Compliance Check: No `pages` Folder Found**
+  **Current State:** Verified that no `pages` folder exists in the workspace. All references to `pages` have been checked and confirmed to be absent.
+  **Last Action:** Conducted a workspace-wide search for `pages` folder and related files. No matches were found.
+  **Rationale:** Ensuring compliance with the directive to use only the `app` folder for Next.js routing.
+  **Next Intent:** Monitor future changes to ensure no `pages` folder is introduced.
+  **Meta:** This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+
+- [2025-08-03T00:10:00Z] **Removed legacy pages/api/chat.ts in favor of app/api/chat/route.ts**
+  **Current State:** The file `web/src/pages/api/chat.ts` was deleted to enforce exclusive use of the `app` folder for all API routes. Only `web/src/app/api/chat/route.ts` remains active for chat API handling.
+  **Last Action:** Deleted the legacy `pages/api/chat.ts` file after confirming its logic is already present in the `app` folder. This ensures compliance with the Next.js v13+ routing standard and project requirements.
+  **Rationale:** The project must never use the `pages` folder for routing or API endpoints. All logic must reside in the `app` folder to avoid conflicts and maintain a modern, maintainable codebase.
+  **Next Intent:** Monitor for any future reintroduction of `pages`-based routes and enforce exclusive use of the `app` folder.
+  **Meta:** This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
