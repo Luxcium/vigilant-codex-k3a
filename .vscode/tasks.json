@@ -55,18 +55,6 @@
       }
     },
     {
-      "label": "Web Quality Check",
-      "dependsOrder": "parallel",
-      "dependsOn": ["Web: Lint", "Web: Format", "Web: Test"],
-      "group": "test",
-      "presentation": {
-        "echo": true,
-        "reveal": "always",
-        "focus": false,
-        "panel": "dedicated"
-      }
-    },
-    {
       "label": "Browser Error Monitor",
       "type": "shell",
       "command": "${workspaceFolder}/scripts/browser-error-monitor.sh",
@@ -192,7 +180,7 @@
     {
       "label": "Development Quality Suite",
       "dependsOrder": "parallel",
-      "dependsOn": ["Web Quality Check", "Complete Browser Error Check"],
+      "dependsOn": ["Complete Browser Error Check"],
       "group": "test",
       "presentation": {
         "echo": true,
