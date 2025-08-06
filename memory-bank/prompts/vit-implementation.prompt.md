@@ -11,8 +11,7 @@ Your task is to help me create a complete Vision Transformer (ViT) implementatio
 ## Requirements
 
 1. Create a modular, well-documented implementation of a Vision Transformer model
-2. Follow all TypeScript coding standards from [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
-3. Implement the architecture as described in the paper "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale"
+2. Implement the architecture as described in the paper "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale"
 
 ## Implementation Details
 
@@ -58,11 +57,7 @@ Your task is to help me create a complete Vision Transformer (ViT) implementatio
 
 ## References
 
-- Include proper attribution to the original paper
-- Reference any third-party code or inspirations
-- Document any deviations from the original architecture
-
-Help me implement this Vision Transformer that follows all the project's standards and best practices. Please start by creating the directory structure and main class interfaces.
+- [typescript-standards](../instructions/typescript-standards.instructions.md)
 
 ## Verification
 

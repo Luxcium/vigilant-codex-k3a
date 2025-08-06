@@ -20,12 +20,24 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-07-30] Prompt Reference Standardization
+
+**Achievement:**
+All prompt files in `memory-bank/prompts/` include concise References sections pointing to relevant instruction files, eliminating duplicated instructions.
+
+**Impact:**
+Ensures prompts stay lightweight and defer detailed guidance to instruction files for easier maintenance.
+
+**Meta:**
+This entry documents the completion of the prompt audit and reference consolidation.
+
 ### [2025-07-29] Questrade Example Playground Canonicalization and Modularization
 
 **Achievement:**
 `src/example.ts` is restored, enhanced, and modularized as the canonical playground for agent and user feature prototyping. Output is consolidated to `.keys/example-sdk-demo.json` with human-readable metadata. All agent-facing documentation and memory bank files reference this playground as canonical.
 
 **Technical Implementation:**
+
 - Restored working version of `example.ts` and enhanced with modular output.
 - Wrote modularization plan and began extracting pure functions.
 - Updated memory bank, prompt, instruction, and README files to reference the playground.
@@ -42,6 +54,7 @@ This entry reaffirms that all actions and context changes MUST be documented and
 Standardized the output directory for all emitted build files to `./lib` at the project root. All build scripts, tasks, and configurations must use this as the `outDir`.
 
 **Technical Implementation:**
+
 - Documented the standard in the memory bank and Copilot instructions file.
 - Ensured all agents and contributors are aware of the unified convention.
 
@@ -57,6 +70,7 @@ This entry reaffirms that all actions and context changes MUST be documented and
 Added a top-level `sdk:playground` script to `package.json` for running the SDK playground (`src/main.ts`) after build. Optimized VS Code tasks and debug configurations for seamless build, run, and debug workflow.
 
 **Technical Implementation:**
+
 - Inserted `"sdk:playground": "npm run build && node ./dist/src/main.js"` into root `package.json` scripts.
 - Ensured script matches the output path and is consistent with VS Code tasks and launch configs.
 - All changes documented in memory bank per Self-Documentation Protocol.
@@ -72,14 +86,16 @@ This entry reaffirms that all actions and context changes MUST be documented and
 **Achievement**: Created comprehensive implementation plan for advanced script consolidation, documentation standardization, memory bank optimization, and quality assurance systems.
 
 **Technical Implementation**:
+
 - **10-Hour, 4-Day Plan**: Systematic approach across 5 phases with clear deliverables
-- **Advanced Consolidation**: Target reduction from 42 to 22-25 scripts (45-50% reduction) 
+- **Advanced Consolidation**: Target reduction from 42 to 22-25 scripts (45-50% reduction)
 - **Documentation Standardization**: Complete README synchronization with standardized formats
 - **Memory Bank Optimization**: Continued optimization following official Cline Memory Bank structure
 - **Quality Assurance Framework**: Comprehensive validation and monitoring systems
 - **Foundation Preparation**: Development-ready optimization for next feature development phase
 
 **Consolidation Targets Identified**:
+
 - Web Environment Scripts: `setup_web_env.sh` + `setup_web_dev_environment.sh` → Unified web setup
 - Validation Scripts: `validate-instructions.sh` + `validate-prompt.sh` → Unified validation
 - Generator Scripts: `generate-instruction-file.sh` + `generate-prompt-file.sh` → Unified generator
@@ -93,6 +109,7 @@ This entry reaffirms that all actions and context changes MUST be documented and
 **Achievement**: Successfully annotated all 42 scripts in the `scripts/` directory with comprehensive standardized headers and validation status markers.
 
 **Technical Implementation**:
+
 - **Format Applied**: `#!/usr/bin/env bash` → empty line → 10-line header block → empty line → content → validation pragma
 - **Header Elements**: Script name, aim, purpose, decision rationale, usage, dependencies, last updated, references
 - **Critical Fix**: Corrected shebang placement from line 12 to line 1 across all scripts
@@ -109,6 +126,7 @@ Successfully consolidated 41 shell scripts into 22 well-documented, purpose-driv
 **Technical Implementation:**
 
 **Consolidated Scripts:**
+
 - `setup_python_env.sh` - Master Python environment setup (5-in-1 consolidation)
 - `verify-all.sh` - Master validation suite (5-in-1 consolidation)
 - `setup_ts_sdk.sh` - Master TypeScript/SDK setup (6-in-1 consolidation)
@@ -116,6 +134,7 @@ Successfully consolidated 41 shell scripts into 22 well-documented, purpose-driv
 - All scripts follow standardized documentation protocol
 
 **Key Improvements:**
+
 - ✅ **46% Script Reduction**: From 41 to 22 scripts
 - ✅ **Unified Interfaces**: Parameter-driven consolidation with `--mode`, `--module`, `--check` flags
 - ✅ **Comprehensive Documentation**: Every script has detailed header with Aim, Purpose, Decision Rationale, Usage, Dependencies
@@ -157,6 +176,7 @@ sync without manual prompts.
 Completed a full inventory and explanation of all scripts, tasks, and configuration relevant to live web development in the `web/` directory. Mapped the chain of custody for launching and running the Next.js dev server (port 3000), explained all integration points (scripts, tasks, browser preview, error monitoring), and updated documentation in `web/README.md`.
 
 **Details:**
+
 - Documented all web/dev scripts in `scripts/` (activation, setup, error monitoring, Docker)
 - Explained VS Code tasks and launch configs for web development
 - Reviewed root and `web/` `package.json` scripts and aliases
@@ -301,6 +321,7 @@ export async function createPost(formData: FormData) {
 The planned improvements for the `src/` folder have been implemented, including centralized configuration, safe key storage, OAuth token refresh, and a REST gateway layer.
 
 **Last Action:**
+
 - Created `src/config/index.ts` for centralized configuration.
 - Implemented `KeyManager` in `src/security/KeyManager.ts` for safe key storage.
 - Added Axios interceptors in `src/http/client.ts` for OAuth token refresh.
@@ -311,6 +332,7 @@ The planned improvements for the `src/` folder have been implemented, including 
 These changes modernize the codebase, improve maintainability, and align with best practices such as the Twelve-Factor App methodology and TypeScript standards.
 
 **Next Intent:**
+
 - Validate the changes with comprehensive tests.
 - Update the `README.md` file to document usage and examples.
 
@@ -443,8 +465,8 @@ This project supports three AI agents with specific entry points:
 - **Cline AI** → [`.clinerules/main-rules.md`](../.clinerules/main-rules.md) (Cline AI's primary instruction file)
 - **Codex CLI** → [`AGENTS.md`](../AGENTS.md) (Codex CLI's primary instruction file)
 - **VS Code Copilot** → [`.github/copilot-instructions.md`](../.github/copilot-instructions.md) (VS Code Copilot's primary instruction file)
-> [!IMPORTANT]
-> **Radical Change Notice:** Instructions, prompts, and chatmodes are now located in `memory-bank/instructions/`, `memory-bank/prompts/`, and `memory-bank/chatmodes/`. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code Copilot tooling.
+  > [!IMPORTANT]
+  > **Radical Change Notice:** Instructions, prompts, and chatmodes are now located in `memory-bank/instructions/`, `memory-bank/prompts/`, and `memory-bank/chatmodes/`. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code Copilot tooling.
 
 **All agents must maintain progress tracking in this file and ensure achievements are accurately documented.**
 
@@ -462,4 +484,4 @@ This project supports three AI agents with specific entry points:
 
 [2025-07-27] Radical Documentation Refactor: Memory Bank Migration
 
-All instructions, prompts, and chatmodes have been migrated from `.github/` to the `memory-bank/` folders. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. 
+All instructions, prompts, and chatmodes have been migrated from `.github/` to the `memory-bank/` folders. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling.

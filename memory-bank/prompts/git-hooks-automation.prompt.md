@@ -369,6 +369,10 @@ echo "Checking message: $commit_msg"
 5. **Document hook behavior** for team members
 6. **Regular hook maintenance** and testing
 
+## References
+
+- [conventional-commits-must-be-used](../instructions/conventional-commits-must-be-used.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files
