@@ -90,6 +90,7 @@ NextJS projects → ['codebase', 'filesystem', 'terminal']
 Shell scripting → ['filesystem', 'terminal']
 Project analysis → ['codebase']
 Dependency management → ['terminal', 'filesystem']
+
 ```
 
 ### Step 3: Structure Content Based on Task Type
@@ -99,10 +100,10 @@ Dependency management → ['terminal', 'filesystem']
 
 ## Requirements
 
-- Use TypeScript with strict type checking
-- Follow Airbnb style guide
-- Include JSDoc comments for public APIs
-- Reference [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
+- You use TypeScript with strict type checking
+- You use the project's TypeScript style standard
+- You include JSDoc comments for public APIs
+- You reference [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
 
 ## Process
 4. Add error handling and validation
@@ -165,7 +166,6 @@ Conditionally Reference:
 - [ ] Success criteria are measurable
 - [ ] Follows Codex CLI project standards
 
-
 ### File Naming
 
 ```
@@ -179,7 +179,9 @@ Format: {domain}-{purpose}.prompt.md
 ```markdown
 tools: ['relevant', 'tools']
 description: 'Brief task description'
+
 ---
+
 Your goal is to [specific outcome].
 
 ## Requirements
@@ -189,7 +191,6 @@ Your goal is to [specific outcome].
 
 ## References
 
-
 - [ ] [Measurable outcomes]
 ```
 
@@ -197,11 +198,11 @@ Your goal is to [specific outcome].
 
 ### Supported Technology Stack
 
-- **TypeScript**: Strict typing, Airbnb style guide
-- **Python**: PEP 8, type hints, virtual environments
-- **NextJS**: Web applications when UI needed
-- **Shell Scripting**: Bash automation in scripts/
-- **Jupyter Notebooks**: ML/data science workflows
+- You use TypeScript with strict typing and the project's style standard
+- You use Python with the project's style standard, type hints, and virtual environments
+- You use NextJS for web applications when a UI is needed
+- You use Bash in the scripts/ directory for automation
+- You use Jupyter Notebooks for ML and data science workflows
 
 ### Project-Specific Patterns
 
@@ -248,7 +249,6 @@ Your goal is to [specific outcome].
 - This file is labeled as an intermediate refactor phase, preparing for future dependency injection and SDK integration.
 - When creating or updating prompts for agent workflows, reference this playground as the standard for isolated feature prototyping.
 - Do not explain standard TypeScript, Node.js, or Questrade API details in prompts—focus on project-specific context and agent behaviors.
-
 
 ## Verification
 

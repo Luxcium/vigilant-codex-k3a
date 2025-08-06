@@ -7,13 +7,13 @@ Your goal is to generate a ${input:componentType:Select component type (class|in
 
 ## Requirements
 
-- Use TypeScript with strict type checking enabled
-- Follow Airbnb TypeScript style guide
-- Include comprehensive JSDoc comments for all public APIs
-- Implement proper error handling and validation
-- Use semantic, descriptive naming conventions
-- Add unit tests for all public methods/functions
-- Reference [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
+- You use TypeScript with strict type checking enabled
+- You use the project's TypeScript style standard
+- You include comprehensive JSDoc comments for all public APIs
+- You implement proper error handling and validation
+- You use semantic, descriptive naming conventions
+- You add unit tests for all public methods/functions
+- You reference [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
 
 ## Process
 
@@ -42,13 +42,13 @@ Use templates from ${workspaceFolder}/init/ directory:
 
 ## Success Criteria
 
-- [ ] Component compiles without TypeScript errors
-- [ ] All public APIs have JSDoc documentation
-- [ ] Error handling covers edge cases and invalid inputs
-- [ ] Code follows Airbnb style guide conventions
-- [ ] Unit tests achieve minimum 80% coverage
-- [ ] Dependencies.md updated if new packages added
-- [ ] Project state updated via autonomous-state-manager.sh
+- [ ] You ensure the component compiles without TypeScript errors
+- [ ] You document all public APIs with JSDoc
+- [ ] You cover edge cases and invalid inputs with error handling
+- [ ] You follow the project's TypeScript style standard
+- [ ] You achieve minimum 80% unit test coverage
+- [ ] You update dependencies.md if new packages are added
+- [ ] You update project state via autonomous-state-manager.sh
 
 ## Quality Assurance
 
