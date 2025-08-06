@@ -6,85 +6,48 @@ applyTo: 'python/**'
 
 ## General Principles
 
-- Support both local (host) and Docker-based Python environments for all development workflows.
-- Do not assume a single environment type; document and enable both approaches.
-- Ensure all environment setup is reproducible, documented, and scriptable.
-- Place all environment setup scripts in the `scripts/` directory.
-- Document all environment options and setup flows in `python/README.md`.
+- You support local and Docker-based Python environments.
+- You document and enable both approaches.
+- You ensure all environment setup is reproducible.
+- You place environment setup scripts in the `scripts/` directory.
+- You document all options and setup flows in `python/README.md`.
 
-## Local (Host) Environment Setup
+## Local Environment Setup
 
-- Use `python -m venv .venv` in the `python/` directory to create a local virtual environment.
-- Store all virtual environments in a `.venv` directory inside `python/`.
-- Add `.venv/` to `.gitignore`.
-- Use `requirements.txt` for dependency management; update with `pip freeze > requirements.txt`.
-- Document activation and usage in `python/README.md`.
-- Provide a setup script: `scripts/setup_python_local.sh` (idempotent, does not overwrite existing env).
+- You create the virtual environment with `python -m venv .venv`.
+- You store the virtual environment in `python/.venv`.
+- You ignore `.venv/` in git.
+- You manage dependencies with `requirements.txt`.
+- You document activation and usage in `python/README.md`.
+- You provide `scripts/setup_python_local.sh` to set up the environment.
 
 ## Docker Environment Setup
 
-- Provide a `Dockerfile` in the `python/` directory for containerized Python environments.
-- Use official Python base images with explicit version tags.
-- Support both isolated (internal-only) and volume-mounted (host-attached) workflows.
-- Document volume mount options in `python/README.md`.
-- Provide a setup script: `scripts/setup_python_docker.sh` (idempotent, does not overwrite existing files).
-- Use `docker-compose.yml` for complex multi-container or volume scenarios.
+- You provide a `Dockerfile` in `python/`.
+- You use official Python base images with version tags.
+- You support isolated and volume-mounted workflows.
+- You document volume mount options in `python/README.md`.
+- You provide `scripts/setup_python_docker.sh` to build the container.
+- You use `docker-compose.yml` for multi-container scenarios.
 
 ## Environment Variable Management
 
-- Use `.env` files for environment variables; do not commit sensitive values.
-- Document all required variables in `python/README.md`.
-- Support loading `.env` in both local and Docker environments.
+- You store environment variables in `.env` files.
+- You document required variables in `python/README.md`.
+- You load `.env` in local and Docker environments.
 
 ## Dependency and Version Management
 
-- Pin all dependencies in `requirements.txt`.
-- Use `pip-tools` or `poetry` for advanced dependency management if needed; document rationale in `dependencies.md`.
-- Specify Python version in `pyproject.toml` or `Dockerfile`.
-- Document version requirements in `python/README.md`.
+- You pin dependencies in `requirements.txt`.
+- You document tools in `dependencies.md`.
+- You specify Python version in `pyproject.toml` or `Dockerfile`.
+- You document version requirements in `python/README.md`.
 
 ## Cross-Environment Consistency
 
-- Ensure all workflows (local and Docker) use the same dependency and version files.
-- Test both environment types in CI/CD pipelines.
-- Document any differences or caveats in `python/README.md`.
-
-## Example: Local venv Setup
-
-```bash
-cd python
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
-
-## Example: Docker Volume Mount
-
-```bash
-docker run --rm -it -v $(pwd)/python:/app -w /app python:3.11 bash
-```
-
-## Example: Docker Compose
-
-```yaml
-version: '3.8'
-services:
-  python:
-    build: ./python
-    volumes:
-      - ./python:/app
-    env_file:
-      - ./python/.env
-    working_dir: /app
-    command: bash
-```
-
-## Documentation and Self-Documentation
-
-- Update `python/README.md` with all environment setup options and instructions.
-- Log all changes and environment decisions in `memory-bank/activeContext.md` and `memory-bank/progress.md` per the Self-Documentation Protocol.
-- Update `memory-bank/dependencies.md` with rationale for any new tools or dependencies.
-
+- You use the same dependency files across environments.
+- You test both environments in CI pipelines.
+- You document differences in `python/README.md`.
 
 ## Verification
 
