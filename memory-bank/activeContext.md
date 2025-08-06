@@ -1,4 +1,15 @@
 **Current State:**
+TypeScript coding standards were modularized into topic-specific instruction files and README references updated.
+**Last Action:**
+Split `typescript-standards.instructions.md` into dedicated files and updated documentation.
+**Rationale:**
+Improve clarity and maintainability of TypeScript guidelines.
+**Next Intent:**
+Ensure agents use the new instruction files and keep documentation in sync.
+**Meta:**
+Self-documentation after modularizing TypeScript instructions.
+
+**Current State:**
 The canonical playground `src/example.ts` was hardened to include HTTP status codes in the output file `.keys/example-sdk-demo.json` on error. The playground was built and executed, and the output file was verified to contain the correct status code (400) on failure. This confirms robust error reporting and output verification as part of the recursive demonstration workflow.
 **Last Action:**
 Patched `example.ts` to propagate and record HTTP status codes on error, rebuilt and ran the playground, and verified `.keys/example-sdk-demo.json` for correct error code output.

@@ -20,6 +20,17 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-07-30] TypeScript Instruction Modularization
+
+**Achievement:**
+Split `typescript-standards.instructions.md` into dedicated files for style, typing, imports, code organization, error handling, testing, documentation, memory bank integration, tooling, and output directory rules.
+
+**Impact:**
+Clarifies TypeScript guidelines and enables targeted instruction application.
+
+**Meta:**
+Self-documentation after instruction modularization.
+
 ### [2025-07-29] Questrade Example Playground Canonicalization and Modularization
 
 **Achievement:**
