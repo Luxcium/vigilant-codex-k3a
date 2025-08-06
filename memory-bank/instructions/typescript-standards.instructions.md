@@ -6,104 +6,98 @@ applyTo: '**/*.ts, **/*.tsx'
 
 ## Style Guidelines
 
-- Follow Airbnb TypeScript style guide for all TypeScript code
-- Use strict type checking with `"strict": true` in tsconfig.json
-- Use 2 spaces for indentation consistently across all files
-- Use semicolons at the end of all statements
-- Use single quotes for string literals
-- Use template literals for string interpolation
-- Use PascalCase for class names, interfaces, and type aliases
-- Use camelCase for variables, functions, and methods
-- Use UPPER_SNAKE_CASE for module-level constants
-- Prefix private class members with underscore (\_)
-- Use meaningful, semantic variable and function names
+- You use strict type checking with `"strict": true` in tsconfig.json
+- You use 2 spaces for indentation consistently across all files
+- You use semicolons at the end of all statements
+- You use single quotes for string literals
+- You use template literals for string interpolation
+- You use PascalCase for class names, interfaces, and type aliases
+- You use camelCase for variables, functions, and methods
+- You use UPPER_SNAKE_CASE for module-level constants
+- You prefix private class members with underscore (\_)
+- You use meaningful, semantic variable and function names
 
 ## Type System Usage
 
-- Prefer interfaces over type aliases for object shapes
-- Use type aliases for unions, intersections, and utility types
-- Avoid using `any` type; use `unknown` when type is uncertain
-- Use explicit return types for all public functions
-- Leverage TypeScript's utility types (Partial, Required, Pick, Omit, Record)
-- Use discriminated unions for type-safe handling of variant types
-- Define strict null checks with `strictNullChecks: true`
-- Use readonly for immutable arrays and object properties
-- Implement generic types for reusable components
+- You prefer interfaces over type aliases for object shapes
+- You use type aliases for unions, intersections, and utility types
+- You avoid using `any` type; use `unknown` when type is uncertain
+- You use explicit return types for all public functions
+- You leverage TypeScript's utility types (Partial, Required, Pick, Omit, Record)
+- You use discriminated unions for type-safe handling of variant types
+- You define strict null checks with `strictNullChecks: true`
+- You use readonly for immutable arrays and object properties
+- You implement generic types for reusable components
 
 ## Code Organization
 
-- Keep files under 300 lines; split into multiple files if longer
-- Create small, single-purpose functions (≤25 lines)
-- Use modular architecture with clear separation of concerns
-- Export only what's necessary from modules
-- Group related functionality into feature-based directories
-- Place utility functions in separate utility modules
-- Use dependency injection for testability
-- Implement proper error boundaries for React components
+- You keep files under 300 lines; split into multiple files if longer
+- You create small, single-purpose functions (≤25 lines)
+- You use modular architecture with clear separation of concerns
+- You export only what's necessary from modules
+- You group related functionality into feature-based directories
+- You place utility functions in separate utility modules
+- You use dependency injection for testability
+- You implement proper error boundaries for React components
 
 ## Import Management
 
-- Organize imports in this order: standard library, third-party, local
-- Use absolute imports with path mapping when available
-- Group imports by type (values, types, defaults)
-- Use named exports over default exports for better refactoring
-- Avoid circular dependencies; document if unavoidable
+- You organize imports in this order: standard library, third-party, local
+- You use absolute imports with path mapping when available
+- You group imports by type (values, types, defaults)
+- You use named exports over default exports for better refactoring
+- You avoid circular dependencies; document if unavoidable
 
 ## Error Handling
 
-- Use custom error types that extend Error
-- Implement proper error handling with try-catch blocks
-- Use async/await for asynchronous operations instead of raw promises
-- Handle promise rejections explicitly
-- Use Result<T, E> pattern for operations that may fail
-- Document all possible error states in function signatures
+- You use custom error types that extend Error
+- You implement proper error handling with try-catch blocks
+- You use async/await for asynchronous operations instead of raw promises
+- You handle promise rejections explicitly
+- You use Result<T, E> pattern for operations that may fail
+- You document all possible error states in function signatures
 
 ## Testing Standards
 
-- Write unit tests for all business logic
-- Use Jest with TypeScript for testing framework
-- Achieve minimum 80% code coverage
-- Test both positive and negative scenarios
-- Mock external dependencies in unit tests
-- Use descriptive test names that explain expected behavior
+- You write unit tests for all business logic
+- You use Jest with TypeScript for testing framework
+- You achieve minimum 80% code coverage
+- You test both positive and negative scenarios
+- You mock external dependencies in unit tests
+- You use descriptive test names that explain expected behavior
 
 ## Documentation Requirements
 
-- Add JSDoc comments for all public APIs
-- Document complex algorithms and business logic
-- Include parameter and return type descriptions in JSDoc
-- Document side effects and potential exceptions
-- Maintain up-to-date documentation for public interfaces
-- Include usage examples for non-trivial APIs
-- Document breaking changes in version updates
+- You add JSDoc comments for all public APIs
+- You document complex algorithms and business logic
+- You include parameter and return type descriptions in JSDoc
+- You document side effects and potential exceptions
+- You maintain up-to-date documentation for public interfaces
+- You include usage examples for non-trivial APIs
+- You document breaking changes in version updates
 
 ## Memory Bank Integration
 
-- Reference appropriate memory bank files when making changes
-- Update dependencies.md when adding new TypeScript dependencies
-- Follow the reading protocol from .clinerules/reading-protocol.md
-- Document design decisions and their rationales
-- Cross-reference related documents using markdown links
-- Update dependency relationships when adding new features
-- Follow patterns documented in systemPatterns.md
-- Ensure all setup is performed via scripts in scripts/ directory
-- Document all architectural decisions in appropriate memory bank files
+- You reference appropriate memory bank files when making changes
+- You update dependencies.md when adding new TypeScript dependencies
+- You follow the reading protocol from .clinerules/reading-protocol.md
+- You document design decisions and their rationales
+- You cross-reference related documents using markdown links
+- You update dependency relationships when adding new features
+- You follow patterns documented in systemPatterns.md
+- You ensure all setup is performed via scripts in scripts/ directory
+- You document all architectural decisions in appropriate memory bank files
 
 ## Tooling
 
-- Use ESLint for code quality enforcement
-- Configure Prettier for consistent formatting
-- Set up Husky for pre-commit hooks
-- Implement CI checks for TypeScript type validation
+- You use ESLint for code quality enforcement
+- You configure Prettier for consistent formatting
+- You set up Husky for pre-commit hooks
+- You implement CI checks for TypeScript type validation
 
 Remember to reference the memory bank files for project-specific guidelines and keep all documentation up-to-date.
 
-## Project Output Directory Rule
-
-**IMPORTANT:** Only the top-level SDK root `src/` folder (for Questrade SDK) must emit build outputs to `./lib`. All other packages, modules, or subprojects (such as agent-framework, templates, etc.) should use their own `dist/` or default `outDir` as appropriate for their context. Do NOT change outDir to `lib` for any folder except the top-level SDK root. This rule is mandatory and must be enforced to avoid confusion and maintain project structure integrity.
-
-
 ## Verification
 
-- `markdownlint --strict`
-- `scripts/verify-all.sh`
+- You run `markdownlint --strict`
+- You run `scripts/verify-all.sh`
