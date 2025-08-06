@@ -31,6 +31,17 @@ Ensures prompts stay lightweight and defer detailed guidance to instruction file
 **Meta:**
 This entry documents the completion of the prompt audit and reference consolidation.
 
+### [2025-07-30] TypeScript Instruction Modularization
+
+**Achievement:**
+Split `typescript-standards.instructions.md` into dedicated files for style, typing, imports, code organization, error handling, testing, documentation, memory bank integration, tooling, and output directory rules.
+
+**Impact:**
+Clarifies TypeScript guidelines and enables targeted instruction application.
+
+**Meta:**
+Self-documentation after instruction modularization.
+
 ### [2025-07-29] Questrade Example Playground Canonicalization and Modularization
 
 **Achievement:**

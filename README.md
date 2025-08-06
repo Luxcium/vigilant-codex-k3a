@@ -37,7 +37,7 @@ This workspace supports three AI agents with sophisticated collaboration pattern
 
 ### AI Framework Components
 
-- **🔧 31 Instruction Files** ([`memory-bank/instructions/`](memory-bank/instructions/)) - Automated coding standards and guidelines
+- **🔧 40 Instruction Files** ([`memory-bank/instructions/`](memory-bank/instructions/)) - Automated coding standards and guidelines
 - **⚙️ 35 Prompt Files** ([`memory-bank/prompts/`](memory-bank/prompts/)) - Executable workflow templates
 - **📚 Memory Bank System** ([`memory-bank/`](memory-bank/)) - Stateful documentation for AI collaboration
 - **🎯 Self-Documentation Protocol** - Maintains context across development sessions
@@ -221,13 +221,25 @@ npm run test:coverage
 
 ## 📚 Documentation System
 
-### Instruction Files (31 Files)
+### Instruction Files (40 Files)
 
 Automated coding standards that apply during AI-assisted development:
 
 - **AI Framework**: ai-instruction-creation, ai-prompt-creation, instruction-authoring-standards
 - **Environments**: docker-environment, python-environment-conditional, vscode-notebook-integration
-- **Languages**: typescript-standards, python-standards, python-notebook-standards
+- **Languages**:
+  - [typescript-style.instructions.md](memory-bank/instructions/typescript-style.instructions.md) - formatting and naming conventions
+  - [typescript-typing.instructions.md](memory-bank/instructions/typescript-typing.instructions.md) - type system usage
+  - [typescript-code-organization.instructions.md](memory-bank/instructions/typescript-code-organization.instructions.md) - module structure
+  - [typescript-imports.instructions.md](memory-bank/instructions/typescript-imports.instructions.md) - import management
+  - [typescript-error-handling.instructions.md](memory-bank/instructions/typescript-error-handling.instructions.md) - error handling rules
+  - [typescript-testing.instructions.md](memory-bank/instructions/typescript-testing.instructions.md) - testing requirements
+  - [typescript-documentation.instructions.md](memory-bank/instructions/typescript-documentation.instructions.md) - documentation standards
+  - [typescript-memory-bank.instructions.md](memory-bank/instructions/typescript-memory-bank.instructions.md) - memory bank integration
+  - [typescript-tooling.instructions.md](memory-bank/instructions/typescript-tooling.instructions.md) - tooling configuration
+  - [typescript-output-directory.instructions.md](memory-bank/instructions/typescript-output-directory.instructions.md) - output directory rule
+  - [python-standards.instructions.md](memory-bank/instructions/python-standards.instructions.md)
+  - [python-notebook-standards.instructions.md](memory-bank/instructions/python-notebook-standards.instructions.md)
 - **Web Standards**: pwa-manifest, ios-meta-and-links, windows-tiles, theme-ui-meta
 - **Quality**: self-documentation
 
