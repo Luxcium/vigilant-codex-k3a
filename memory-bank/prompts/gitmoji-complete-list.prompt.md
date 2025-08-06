@@ -87,6 +87,10 @@ Choose the most appropriate gitmoji based on:
 3. User-facing vs. internal changes
 4. Urgency level (critical vs. standard)
 
+## References
+
+- [conventional-commits-must-be-used](../instructions/conventional-commits-must-be-used.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

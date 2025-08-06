@@ -173,6 +173,10 @@ description: 'Comprehensive standards for file and directory organization, namin
 
 ---
 
+## References
+
+- [instruction-authoring-standards](../instructions/instruction-authoring-standards.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

@@ -63,6 +63,11 @@ When provided with the TypeScript file `${file}`, perform these tasks:
 - Documentation rendering proceeds through parsing, reflection, rendering,
   plugin post-processing and final publication.
 
+## References
+
+- [tsdoc-typedoc](../instructions/tsdoc-typedoc.instructions.md)
+- [typedoc-tsdoc-reference](../instructions/typedoc-tsdoc-reference.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

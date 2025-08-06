@@ -209,6 +209,10 @@ feat(auth): :construction: implement OAuth2 flow (WIP)
 - **Dependencies**: `build(deps): :arrow_up: description`
 - **Breaking change**: `type(scope)!: :boom: description`
 
+## References
+
+- [conventional-commits-must-be-used](../instructions/conventional-commits-must-be-used.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files
