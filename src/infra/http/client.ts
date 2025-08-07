@@ -3,7 +3,7 @@ import axiosRetry from 'axios-retry';
 import { APP } from '../config';
 import { KeyManager } from '../security/KeyManager';
 import { refreshToken } from '../auth/refreshTokenUtil';
-import { logger } from '../logger';
+import { logger } from '@/logger';
 
 
 const keys = new KeyManager();
@@ -54,15 +54,21 @@ client.interceptors.response.use(
       }
     }
     // Log detailed error for debugging
-    logger.error({
-      status: error.response?.status,
-      statusText: error.response?.statusText,
-      url: error.config?.url,
-      method: error.config?.method,
-      data: error.response?.data,
-    }, 'HTTP Error');
+    logger.error(
+      {
+        status: error.response?.status,
+        statusText: error.response?.statusText,
+        url: error.config?.url,
+        method: error.config?.method,
+        data: error.response?.data,
+      },
+      'HTTP Error'
+    );
 
     return Promise.reject(error);
+  }
+);
+
 client.interceptors.request.use(async req => {
   const t = await keys.load();
   if (t) req.headers.set('Authorization', `Bearer ${t.accessToken}`);
@@ -76,14 +82,18 @@ client.interceptors.response.use(undefined, async err => {
     err.config.headers['Authorization'] = `Bearer ${fresh.accessToken}`;
     return client(err.config);
   }
-  log.error({ status: err.response?.status, url: err.config?.url }, 'HTTP Error');
+  logger.error(
+    { status: err.response?.status, url: err.config?.url },
+    'HTTP Error'
+  );
   return Promise.reject(err);
 });
 
 axiosRetry(client, {
   retries: 2,
   retryDelay: axiosRetry.exponentialDelay,
-  retryCondition: e => e.response?.status === 429 || e.response?.status >= 500,
+  retryCondition: e =>
+    e.response?.status === 429 || (e.response?.status ?? 0) >= 500,
 });
 
 export default client;
