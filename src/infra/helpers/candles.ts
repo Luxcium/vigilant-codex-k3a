@@ -3,7 +3,7 @@ import {
   CandleInterval,
   CandlesResponse,
   CandlesResponseSchema,
-} from '../types';
+} from '../../core/types';
 
 export interface CandlesParams {
   symbolId: number;

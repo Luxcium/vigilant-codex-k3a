@@ -1,6 +1,6 @@
 import { AuthManager } from '../auth/manager';
-import { handleQuestradeError } from '../errors';
-import { TokenBucketLimiter } from '../rateLimit/tokenBucket';
+import { handleQuestradeError } from '../../core/errors';
+import { TokenBucketLimiter } from '../../core/rateLimit/tokenBucket';
 
 export class RestClient {
   private limiter = new TokenBucketLimiter();

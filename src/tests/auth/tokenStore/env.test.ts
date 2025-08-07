@@ -1,6 +1,6 @@
 import { describe, expect, it, beforeEach, afterEach } from 'vitest';
-import { EnvStore } from '../../../auth/tokenStore/env';
-import type { OAuthTokens } from '../../../auth/interfaces';
+import { EnvStore } from '../../../infra/auth/tokenStore/env';
+import type { OAuthTokens } from '../../../infra/auth/interfaces';
 
 describe('EnvStore', () => {
   const varName = 'TEST_TOKENS';

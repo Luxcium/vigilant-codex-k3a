@@ -1,6 +1,6 @@
 import { describe, expect, it, beforeEach } from 'vitest';
-import { WebStorageStore } from '../../../auth/tokenStore/webStorage';
-import type { OAuthTokens } from '../../../auth/interfaces';
+import { WebStorageStore } from '../../../infra/auth/tokenStore/webStorage';
+import type { OAuthTokens } from '../../../infra/auth/interfaces';
 
 describe('WebStorageStore', () => {
   const key = 'TEST_QT';

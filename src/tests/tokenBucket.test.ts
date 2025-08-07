@@ -2,7 +2,7 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 import {
   createRateLimiter,
   TokenBucketLimiter,
-} from '../rateLimit/tokenBucket';
+} from '../core/rateLimit/tokenBucket';
 
 describe('tokenBucket', () => {
   describe('createRateLimiter function', () => {
