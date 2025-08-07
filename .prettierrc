@@ -20,7 +20,9 @@
     {
       "files": "*.{prompt,instructions,chatmode}.md",
       "options": {
-        "parser": "markdown"
+        "parser": "markdown",
+        "proseWrap": "never",
+        "printWidth": 999
       }
     },
     {
