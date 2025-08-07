@@ -171,7 +171,7 @@ applyTo: 'web/**'
 - **Be Prescriptive**: Use imperative mood (e.g., "Use snake_case", "Must include type hints").
 - **Be Specific**: Avoid vague terms. Instead of "Write good comments," say "All public functions must have JSDoc comments explaining parameters, return value, and purpose."
 - **Provide Rationale (Optional but helpful)**: Briefly explain _why_ a rule exists if it's not obvious.
-- **Project Standards Only**: You rely on project-specific standards without naming external style guides.
+- **Project Standards First, but Reference Authoritative External Standards When Relevant**: Prioritize project-specific standards, but you may cite well-established external style guides (e.g., PEP 8, W3C) when they are relevant to the project's practices and help clarify the rationale behind rules.
 
 ### Specificity & Clarity
 
