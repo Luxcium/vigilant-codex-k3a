@@ -19,7 +19,7 @@ applyTo: '**/*.py'
 
 - You add type hints for all function parameters and return types.
 - You import types from the typing module when needed.
-- You use union types for multiple possible types.
+- You use Union types (the `|` syntax for Python 3.10+ or `Union` from the typing module for earlier versions) for multiple possible types.
 - You use Optional for values that can be None.
 - You use List, Dict, Tuple, and Set for generic collections.
 - You use Protocol for structural typing.
