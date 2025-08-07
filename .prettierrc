@@ -18,11 +18,12 @@
   "semi": true,
   "overrides": [
     {
-      "files": "*.{prompt,instructions,chatmode}.md",
+      "files": "**/*.{prompt,instructions,chatmode}.md",
       "options": {
         "parser": "markdown",
         "proseWrap": "never",
-        "printWidth": 999
+        "printWidth": 999,
+        "embeddedLanguageFormatting": "off"
       }
     },
     {

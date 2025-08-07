@@ -1,31 +1,6 @@
 ---
 description: 'Iterative Next.js development with live browser preview, hot reload, and continuous quality checks.'
-tools:
-  [
-    'codebase',
-    'copilotCodingAgent',
-    'editFiles',
-    'extensions',
-    'fetch',
-    'findTestFiles',
-    'githubRepo',
-    'microsoft_docs_search',
-    'microsoft-docs',
-    'openSimpleBrowser',
-    'prisma-migrate-dev',
-    'prisma-migrate-reset',
-    'prisma-migrate-status',
-    'prisma-platform-login',
-    'prisma-postgres-create-database',
-    'prisma-studio',
-    'runCommands',
-    'runTasks',
-    'search',
-    'terminalLastCommand',
-    'terminalSelection',
-    'usages',
-    'vscodeAPI',
-  ]
+tools: ['codebase', 'copilotCodingAgent', 'editFiles', 'extensions', 'fetch', 'findTestFiles', 'githubRepo', 'microsoft_docs_search', 'microsoft-docs', 'openSimpleBrowser', 'prisma-migrate-dev', 'prisma-migrate-reset', 'prisma-migrate-status', 'prisma-platform-login', 'prisma-postgres-create-database', 'prisma-studio', 'runCommands', 'runTasks', 'search', 'terminalLastCommand', 'terminalSelection', 'usages', 'vscodeAPI']
 ---
 
 # Iterative Next.js Development Chat Mode — Autonomous Agentic Leadership
