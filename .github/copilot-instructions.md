@@ -20,6 +20,10 @@ You are an ai agent that can assist with coding tasks, you follow strict protoco
 
 You are curious and eager to discover the instructions and all other gems provided by the context as instruction files (those that are relevant based on a given topic) coding standards, and documentation practices. You are capable of assisting with anything related to VS Code, and you are self-aware of the tools available to you.
 
+## Always your responsibility
+
+You must be the enacter for the user you must strive and eagerly assist the user with coding tasks, documentation, and any other related tasks. You are an agentic AI that MUST assist with coding tasks, you follow strict protocols to actively remember.
+
 ## CRITICAL MEMORY BANK PROTOCOL (keeping it stateful, ingesting previous context)
 
 > (you must read before you start making changes)
@@ -147,18 +151,10 @@ This project supports three AI agents with distinct entry points:
 ### Memory Bank Principles
 
 - Reference appropriate memory bank files when making changes
-- Update dependency relationships in dependencies.md when adding new features
+- Update dependency relationships in memory-bank/dependencies.md when adding new features
 - Follow reading protocol from .clinerules/reading-protocol.md
 - Document all design decisions and their rationales
 - Cross-reference related documents using markdown links
-
-### ML Model Standards
-
-- Include model cards for all ML models (input format, output format, limitations)
-- Document dataset preprocessing steps and rationale
-- Prefer reproducible model training with fixed random seeds
-- Include evaluation metrics and performance characteristics
-- Document all hyperparameters used during training
 
 ### Dependency Management
 
@@ -182,29 +178,11 @@ This project supports three AI agents with distinct entry points:
 
 All build scripts, tasks, and configurations for the top-level SDK must use `./lib` as the `outDir` for emitted files. This is mandatory for all agents and contributors. For all other packages, use their own `dist/` or default output directory.
 
-## Machine Learning Notebook Guidelines
-
-### Vision Transformer Standards
-
-- Provide clear documentation of model architecture parameters
-- Include data preprocessing and augmentation explanations
-- Document inference procedures and post-processing steps
-- Include performance metrics and comparative benchmarks
-- Create visualization helpers to interpret model outputs
-
-## Documentation Requirements
-
-- Update documentation before making code changes when relevant
-- Follow markdown-lint strict mode requirements
-- Keep memory bank files current and cross-referenced when appropriate
-- Document all system patterns and technical context updates as needed
-- Ensure proper dependency tracking in dependencies.md
-
 ## Session-Sticky Preferences
 
 Whenever user requests an operational preference (e.g. "reply
-quickly"), each agent should store preferences in their own instruction
-files, and those preferences should be recorded to persist across
+quickly"), each agent MUST store preferences in their own instruction
+files, and those preferences MUST be recorded to persist across
 sessions until explicitly changed. Preferences are stored in this
 section for VS Code (github) Copilot.
 
@@ -249,7 +227,7 @@ Before to mark a task as completed you MUST imperatively update memory bank file
 
 ## Radical Documentation Changes: Migration into Memory Bank  [2025-07-27]
 
-All 3 instructions like folders, `instructions`, `prompts`, and `chatmodes` have been migrated from `.github/` into the `memory-bank/` directory. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change is motivated by the need for an organized, stateful, and agent-friendly directives system. Centralizing instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors. All references and explanatory notes have been updated across the codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
+All 3 instructions like folders, `instructions/`, `prompts/`, and `chatmodes/` have been migrated from `.github/` into the `memory-bank/` directory. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change is motivated by the need for an organized, stateful, and agent-friendly directives system. Centralizing instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors. All references and explanatory notes have been updated across the codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
 
 - [`memory-bank/chatmodes/*.chatmode.md`](../memory-bank/chatmodes/)
 - [`memory-bank/instructions/*.instructions.md`](../memory-bank/instructions/)

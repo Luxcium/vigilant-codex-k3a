@@ -1,16 +1,27 @@
 import axios from 'axios';
+import axiosRetry from 'axios-retry';
 import { APP } from '../config';
 import { KeyManager } from '../security/KeyManager';
 import { refreshToken } from '../auth/refreshTokenUtil';
 import { logger } from '../logger';
 
+
 const keys = new KeyManager();
 const client = axios.create({ baseURL: APP.apiServer });
 
+
+axiosRetry(client, {
+  retries: 3,
+  retryDelay: axiosRetry.exponentialDelay,
+  retryCondition: err =>
+    err.response?.status === 429 || (err.response?.status ?? 0) >= 500,
+});
+
+
+
 client.interceptors.request.use(async config => {
   const stored = await keys.load();
-  // Determine active token: persisted or from environment
-  const authToken = stored?.accessToken ?? APP.accessToken;
+  const authToken = stored?.accessToken;
   if (authToken) {
     config.headers = config.headers || {};
     config.headers.Authorization = `Bearer ${authToken}`;
@@ -24,7 +35,7 @@ client.interceptors.response.use(
     // Handle unauthorized: attempt token refresh
     if (error.response?.status === 401) {
       const stored = await keys.load();
-      const refreshTok = stored?.refreshToken ?? APP.refreshToken;
+      const refreshTok = stored?.refreshToken ?? APP.refresh;
       if (refreshTok) {
         try {
           const fresh = await refreshToken(refreshTok);
@@ -50,8 +61,29 @@ client.interceptors.response.use(
       method: error.config?.method,
       data: error.response?.data,
     }, 'HTTP Error');
+
     return Promise.reject(error);
+client.interceptors.request.use(async req => {
+  const t = await keys.load();
+  if (t) req.headers.set('Authorization', `Bearer ${t.accessToken}`);
+  return req;
+});
+
+client.interceptors.response.use(undefined, async err => {
+  if (err.response?.status === 401) {
+    const fresh = await refreshToken();
+    await keys.save(fresh);
+    err.config.headers['Authorization'] = `Bearer ${fresh.accessToken}`;
+    return client(err.config);
   }
-);
+  log.error({ status: err.response?.status, url: err.config?.url }, 'HTTP Error');
+  return Promise.reject(err);
+});
+
+axiosRetry(client, {
+  retries: 2,
+  retryDelay: axiosRetry.exponentialDelay,
+  retryCondition: e => e.response?.status === 429 || e.response?.status >= 500,
+});
 
 export default client;

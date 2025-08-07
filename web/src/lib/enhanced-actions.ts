@@ -4,8 +4,40 @@ import { prisma } from '@/lib/prisma';
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
+// Types and interfaces
+export interface Post {
+  id: string;
+  title: string;
+  content: string;
+  likes: number;
+  createdAt: Date;
+  archived?: boolean;
+}
+
+export interface PostSummary {
+  id: string;
+  title: string;
+  excerpt: string;
+  likes: number;
+  createdAt: string;
+}
+
+export interface UploadResult {
+  filename: string;
+  size: number;
+}
+
+export interface NewsletterResult {
+  success: boolean;
+  email: string;
+}
+
+export interface BatchUpdateResult {
+  updatedCount: number;
+}
+
 // Example 1: Basic Server Action with form handling
-export async function createPost(formData: FormData) {
+export async function createPost(formData: FormData): Promise<Post> {
   const title = formData.get('title') as string;
   const content = formData.get('content') as string;
 
@@ -26,7 +58,7 @@ export async function createPost(formData: FormData) {
 }
 
 // Example 2: Server Action with return value for optimistic updates
-export async function likePost(id: string) {
+export async function likePost(id: string): Promise<number> {
   const post = await prisma.post.update({
     where: { id },
     data: { likes: { increment: 1 } },
@@ -39,7 +71,7 @@ export async function likePost(id: string) {
 }
 
 // Example 3: Server Action with authentication check
-export async function deletePost(id: string) {
+export async function deletePost(id: string): Promise<void> {
   // In a real app, you'd check authentication
   const userId = await getCurrentUserId();
 
@@ -55,7 +87,7 @@ export async function deletePost(id: string) {
 }
 
 // Example 4: Server Action with redirect
-export async function createAndRedirect(formData: FormData) {
+export async function createAndRedirect(formData: FormData): Promise<never> {
   const title = formData.get('title') as string;
   const content = formData.get('content') as string;
 
@@ -68,10 +100,15 @@ export async function createAndRedirect(formData: FormData) {
 }
 
 // Example 5: Server Action with custom validation and error handling
+export interface UpdatePostResult {
+  success: boolean;
+  error?: string;
+}
+
 export async function updatePost(
   id: string,
   formData: FormData
-): Promise<{ success: boolean; error?: string }> {
+): Promise<UpdatePostResult> {
   try {
     const title = formData.get('title') as string;
     const content = formData.get('content') as string;
@@ -95,7 +132,7 @@ export async function updatePost(
 }
 
 // Example 6: Server Action with complex data transformation
-export async function searchPosts(query: string) {
+export async function searchPosts(query: string): Promise<PostSummary[]> {
   const posts = await prisma.post.findMany({
     where: {
       OR: [
@@ -107,13 +144,15 @@ export async function searchPosts(query: string) {
   });
 
   // Transform data for client
-  return posts.map(post => ({
-    id: post.id,
-    title: post.title,
-    excerpt: post.content.substring(0, 100) + '...',
-    likes: post.likes,
-    createdAt: post.createdAt.toISOString(),
-  }));
+  return posts.map(
+    (post): PostSummary => ({
+      id: post.id,
+      title: post.title,
+      excerpt: post.content.substring(0, 100) + '...',
+      likes: post.likes,
+      createdAt: post.createdAt.toISOString(),
+    })
+  );
 }
 
 // Mock function for authentication example
@@ -123,7 +162,7 @@ async function getCurrentUserId(): Promise<string | null> {
 }
 
 // Example 7: Server Action with file upload handling
-export async function uploadImage(formData: FormData) {
+export async function uploadImage(formData: FormData): Promise<UploadResult> {
   const file = formData.get('image') as File;
 
   if (!file) {
@@ -141,8 +180,10 @@ export async function uploadImage(formData: FormData) {
 }
 
 // Example 8: Inline Server Action pattern (for use in Server Components)
-export function createInlineAction(postId: string) {
-  async function toggleLike() {
+export type InlineAction = () => Promise<void>;
+
+export function createInlineAction(postId: string): InlineAction {
+  async function toggleLike(): Promise<void> {
     'use server';
 
     const post = await prisma.post.findUnique({
@@ -166,7 +207,9 @@ export function createInlineAction(postId: string) {
 }
 
 // Example 9: Server Action with progressive enhancement
-export async function subscribeToNewsletter(formData: FormData) {
+export async function subscribeToNewsletter(
+  formData: FormData
+): Promise<NewsletterResult> {
   const email = formData.get('email') as string;
 
   if (!email || !email.includes('@')) {
@@ -183,10 +226,12 @@ export async function subscribeToNewsletter(formData: FormData) {
 }
 
 // Example 10: Server Action with batch operations
+export type BatchAction = 'delete' | 'archive';
+
 export async function batchUpdatePosts(
   ids: string[],
-  action: 'delete' | 'archive'
-) {
+  action: BatchAction
+): Promise<BatchUpdateResult> {
   const updates = ids.map(id => {
     if (action === 'delete') {
       return prisma.post.delete({ where: { id } });

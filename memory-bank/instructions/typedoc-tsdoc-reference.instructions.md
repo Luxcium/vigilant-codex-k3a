@@ -145,7 +145,4 @@ TypeDoc renders this as a doc page with description, params, returns, remarks, e
 TSDoc and TypeDoc together support comprehensive TypeScript documentation. Use intersection tags for maximum portability, extend with TypeDoc tags for advanced site control, and always lint and validate docs for cross-tool robustness.
 
 
-## Verification
-
-- `markdownlint --strict`
-- `scripts/verify-all.sh`
+ 

@@ -92,22 +92,20 @@ interpreted as strict instructions by the AI agent:
 - Declare “SUCCESS” or “FAILURE” only after objective, repeatable
   post-run validation confirms task completion.
 
+<!-- excluded for the time being will restore later:
 ## Verification Block Standard
 
 All prompts, instruction files, and scripts must end with a **Verification** section.
 This block reminds contributors to run:
-
 - `markdownlint --strict` on all updated Markdown files
 - Ensure all automated validation checks are executed
-
+- Any relevant validation scripts that apply to the updated 
 Failure to include this block or run the checks is considered non-compliant.
-
----
-
 > This file is the single source of truth for agent and repository
 > context. Do not reference or maintain `codex.md` going forward,
 > deprecate it and remove it keeping the instruction in AGENTS.md
 > before any deletion.
+-->
 
 ## Memory Bank Ledger Protocol
 
