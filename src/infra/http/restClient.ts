@@ -26,7 +26,7 @@ export class RestClient {
         Authorization: `Bearer ${await this.auth.getAccessToken()}`,
         ...(body ? { 'Content-Type': 'application/json' } : {}),
       },
-      body: body ? JSON.stringify(body) : undefined,
+      body: body ? JSON.stringify(body) : null,
     });
     this.limiter.hydrate('account', {
       'x-ratelimit-remaining': res.headers.get('x-ratelimit-remaining') ?? '',

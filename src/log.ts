@@ -1,4 +1,4 @@
 import pino from 'pino';
-import { APP } from './config';
+import { APP } from './infra/config';
 
 export const log = pino({ level: APP.logLevel });

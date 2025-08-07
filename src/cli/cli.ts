@@ -88,7 +88,7 @@ async function main(): Promise<void> {
     const end = process.env.END_TIME ?? '2024-10-31T00:00:00-04:00';
     const interval = process.env.INTERVAL ?? 'OneDay';
 
-    const candles = await client.getCandles(symbolId, start, end, interval);
+    const candles = await client.getCandles({ symbolId, start, end, interval });
     logger.info('Candles data');
     console.table(candles.slice(0, 5));
   } catch (error) {
