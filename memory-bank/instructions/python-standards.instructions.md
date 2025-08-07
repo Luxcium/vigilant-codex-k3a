@@ -1,113 +1,114 @@
-# Project Output Directory Rule
-
-## **IMPORTANT:** Only the top-level SDK root `src/` folder (for Questrade SDK) must emit build outputs to `./lib`. All other packages, modules, or subprojects (such as agent-framework, templates, etc.) should use their own `dist/` or default `outDir` as appropriate for their context. Do NOT change outDir to `lib` for any folder except the top-level SDK root. This rule is mandatory and must be enforced to avoid confusion and maintain project structure integrity.
-
-## applyTo: '\*_/_.py'
+---
+applyTo: '**/*.py'
+---
 
 # Python Coding Standards
 
 ## Style Guidelines
 
-- Follow PEP 8 style guidelines for all Python code
-- Use 4 spaces for indentation (never tabs)
-- Limit lines to 88 characters for better readability
-- Use snake_case for variables, functions, and module names
-- Use PascalCase for class names
-- Use UPPER_SNAKE_CASE for module-level constants
-- Use leading underscore for private methods and attributes
-- Use double leading underscores for name mangling when necessary
+- You follow [PEP 8](https://peps.python.org/pep-0008/) style guidelines as the primary reference.
+- You use four spaces for indentation.
+- You limit lines to 88 characters.
+- You name variables, functions, and modules with snake_case.
+- You name classes with PascalCase.
+- You use UPPER_SNAKE_CASE for module-level constants.
+- You prefix private methods and attributes with a leading underscore.
+- You use double leading underscores for name mangling when needed.
 
 ## Type Annotations
 
-- Use type hints for all function parameters and return types
-- Import types from typing module when needed
-- Use Union types for multiple possible types
-- Use Optional for parameters that can be None
-- Use List, Dict, Tuple, Set for generic collections
-- Use Protocol for structural typing
-- Use TypeVar for generic functions and classes
-- Document complex types with type aliases
+- You add type hints for all function parameters and return types.
+- You import types from the typing module when needed.
+- You use Union types (the `|` syntax for Python 3.10+ or `Union` from the typing module for earlier versions) for multiple possible types.
+- You use Optional for values that can be None.
+- You use List, Dict, Tuple, and Set for generic collections.
+- You use Protocol for structural typing.
+- You use TypeVar for generic functions and classes.
+- You document complex types with type aliases.
 
 ## Import Organization
 
-- Follow PEP 8 import order: standard library, third-party, local
-- Group imports by category with blank lines between groups
-- Use absolute imports whenever possible
-- Avoid wildcard imports (from module import \*)
-- Use relative imports only within packages
-- Place imports at the top of the file after module docstring
-- Use parentheses for multi-line imports
+- You order imports as standard library, third-party, then local.
+- You group imports by category with blank lines between groups.
+- You use absolute imports when possible.
+- You avoid wildcard imports.
+- You use relative imports only within packages.
+- You place imports at the top of the file after the module docstring.
+- You use parentheses for multi-line imports.
 
 ## Code Organization
 
-- Keep functions under 20 lines when possible
-- Create small, single-purpose functions with clear responsibilities
-- Use classes to group related functionality
-- Implement proper separation of concerns
-- Use modules to organize related functions and classes
-- Follow the principle of least privilege for access control
-- Use composition over inheritance when appropriate
+- You keep functions under 20 lines when possible.
+- You create small, single-purpose functions.
+- You use classes to group related functionality.
+- You separate concerns clearly.
+- You organize related functions and classes into modules.
+- You apply the principle of least privilege.
+- You prefer composition over inheritance when appropriate.
 
 ## Error Handling
 
-- Use specific exception types rather than generic Exception
-- Create custom exceptions that inherit from appropriate base classes
-- Use try-except-else-finally blocks appropriately
-- Handle exceptions at the appropriate level of abstraction
-- Use context managers (with statements) for resource management
-- Document expected exceptions in function docstrings
-- Log exceptions with appropriate detail levels
+- You use specific exception types.
+- You create custom exceptions that inherit from base classes when needed.
+- You use try-except-else-finally blocks appropriately.
+- You handle exceptions at an appropriate level.
+- You use context managers for resource management.
+- You document expected exceptions in docstrings.
+- You log exceptions with appropriate detail.
 
 ## Documentation Standards
 
-- Write docstrings for all modules, classes, and functions
-- Use Google-style or NumPy-style docstring format consistently
-- Document all parameters, return values, and raised exceptions
-- Include usage examples for complex functions
-- Maintain up-to-date documentation for public APIs
-- Use descriptive variable names that reduce need for comments
-- Comment complex algorithms and business logic
+- You write docstrings for modules, classes, and functions.
+- You keep docstring format consistent.
+- You document parameters, return values, and raised exceptions.
+- You include usage examples for complex functions.
+- You maintain up-to-date documentation for public APIs.
+- You use descriptive variable names to reduce the need for comments.
+- You comment complex algorithms and business logic.
 
 ## Testing Requirements
 
-- Write unit tests using pytest framework
-- Achieve minimum 80% code coverage
-- Test both positive and negative scenarios
-- Use fixtures for test data setup
-- Mock external dependencies in unit tests
-- Use descriptive test function names that explain expected behavior
-- Group related tests in test classes
+- You write unit tests with the pytest framework.
+- You aim for at least 80% code coverage.
+- You test positive and negative scenarios.
+- You use fixtures for test data setup.
+- You mock external dependencies in unit tests.
+- You name test functions descriptively.
+- You group related tests in classes.
 
 ## Virtual Environment Management
 
-- Use virtual environments for all Python projects
-- Document required Python version in README
-- Maintain requirements.txt for production dependencies
-- Use requirements-dev.txt for development dependencies
-- Pin exact versions for production dependencies
-- Use virtual environment activation in all development workflows
+- You use virtual environments for all Python projects.
+- You document the required Python version in the README.
+- You maintain requirements.txt for production dependencies.
+- You maintain requirements-dev.txt for development dependencies.
+- You pin exact versions for production dependencies.
+- You activate the virtual environment in development workflows.
 
 ## Security Practices
 
-- Validate and sanitize all user inputs
-- Use parameterized queries for database operations
-- Never store secrets in code or version control
-- Use environment variables for configuration
-- Implement proper authentication and authorization
-- Keep dependencies updated to latest secure versions
-- Follow secure coding practices for web applications
+- You validate and sanitize user inputs.
+- You use parameterized queries for database operations.
+- You never store secrets in code or version control.
+- You use environment variables for configuration.
+- You implement authentication and authorization.
+- You keep dependencies updated.
+- You follow secure coding practices for web applications.
 
 ## Memory Bank Integration
 
-- Reference appropriate memory bank files when making changes
-- Update dependencies.md when adding new Python packages
-- Follow the reading protocol from .clinerules/reading-protocol.md
-- Document design decisions and their rationales
-- Cross-reference related documents using markdown links
-- Update dependency relationships when adding new features
-- Document all dataset preprocessing steps and rationale for ML projects
+- You reference relevant memory bank files when making changes.
+- You update dependencies.md when adding Python packages.
+- You follow the reading protocol from `.clinerules/reading-protocol.md`.
+- You document design decisions and their rationales.
+- You cross-reference related documents with links.
+- You update dependency relationships when adding features.
+- You document dataset preprocessing steps for ML projects.
+- You follow patterns documented in `systemPatterns.md`.
+- You ensure all setup is performed via scripts in scripts/ directory.
+- You document all architectural decisions in appropriate memory bank files.
 
 ## Verification
 
-- `markdownlint --strict`
-- `scripts/verify-all.sh`
+- You run `markdownlint --strict`.
+- You run `scripts/verify-all.sh`.
