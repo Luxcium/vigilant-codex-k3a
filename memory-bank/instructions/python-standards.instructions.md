@@ -68,7 +68,7 @@ applyTo: '**/*.py'
 
 ## Testing Requirements
 
-- You write unit tests with the project test framework.
+- You write unit tests with the pytest framework.
 - You aim for at least 80% code coverage.
 - You test positive and negative scenarios.
 - You use fixtures for test data setup.
