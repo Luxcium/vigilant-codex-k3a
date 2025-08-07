@@ -1,0 +1,11 @@
+{
+  "overrides": [
+    {
+      "files": ["*.prompt.md", "*.chatmode.md"],
+      "options": {
+        "proseWrap": "never",
+        "printWidth": 999
+      }
+    }
+  ]
+}
