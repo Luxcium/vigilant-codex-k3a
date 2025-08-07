@@ -6,6 +6,7 @@ applyTo: '**/*.ts, **/*.tsx'
 
 ## Style Guidelines
 
+- You follow the [Airbnb TypeScript style guide](https://github.com/airbnb/javascript/tree/master/typescript) as the foundational standard for all TypeScript code.
 - You use strict type checking with `"strict": true` in tsconfig.json
 - You use 2 spaces for indentation consistently across all files
 - You use semicolons at the end of all statements
