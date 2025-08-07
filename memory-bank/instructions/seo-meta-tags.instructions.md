@@ -16,7 +16,7 @@ Fundamental meta tags like `description`, `robots`, and `canonical` are crucial 
 | `description`            | `<meta name="description" content="...">`                                   | Shown as SERP snippet; aim for ≤ 160 chars.              |
 | `robots`                 | `<meta name="robots" content="index,follow">`                               | Controls crawling and indexing behavior.                 |
 | `canonical`              | `<link rel="canonical" href="...">`                                         | Prevents duplicate content issues.                       |
-| `keywords`               | `<meta name="keywords" content="...">`                                      | Most search engines ignore this tag; low priority.        |
+| `keywords`               | `<meta name="keywords" content="...">`                                      | Largely ignored by Google; not used for ranking. Low priority. |
 | `author`                 | `<meta name="author" content="...">`                                        | Identifies the content author; used by some platforms.   |
 | `viewport`               | `<meta name="viewport" content="width=device-width,initial-scale=1">`       | Essential for mobile-friendliness and responsive design. |
 | `article:published_time` | `<meta property="article:published_time" content="2025-07-02T10:00-04:00">` | For news/blog rich results; uses Open Graph property.    |
