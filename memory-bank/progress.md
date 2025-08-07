@@ -20,6 +20,17 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-08-07] Documentation Workflow Clarification
+
+**Achievement:**
+README now details folder layout, token persistence, environment switching, CLI usage, mock recording, and testing commands. A new CONTRIBUTING.md reinforces these practices and the requirement to update memory bank files.
+
+**Impact:**
+Streamlines onboarding and ensures contributors maintain synchronized project context.
+
+**Meta:**
+Self-documentation after enhancing repository guidelines.
+
 ### [2025-07-30] Prompt Reference Standardization
 
 **Achievement:**

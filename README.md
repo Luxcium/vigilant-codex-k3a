@@ -142,6 +142,52 @@ export OPENAI_API_KEY="your-api-key-here"
 ./scripts/setup_db_prisma.sh
 ```
 
+## 🧰 Development Basics
+
+### Folder Layout
+
+Code is organized by root context. The earlier directory table shows where TypeScript (`src/`), Next.js (`web/`), Python (`python/`), and other assets live. Use this structure to locate components and maintain clear boundaries between language ecosystems.
+
+### Token Persistence
+
+Authentication artifacts and playground outputs are stored in `.keys/`. The `KeyManager` ensures tokens and demo results persist across runs so agents can resume work without re-authentication.
+
+### Environment Switching
+
+Python tooling supports three modes—`local`, `docker_isolated`, and `docker_volume`. Select a mode at runtime:
+
+```bash
+ENV_MODE=<mode> ./scripts/setup_python_env.sh
+```
+
+### CLI Usage
+
+Run project tasks through `pnpm` scripts or the utilities in `scripts/`. Examples:
+
+```bash
+pnpm test:coverage
+pnpm run web:dev
+./scripts/verify-all.sh
+```
+
+### Mock Recording
+
+Use the canonical playground `src/example.ts` to capture fresh API responses. Running the example writes structured output to `.keys/example-sdk-demo.json`, providing deterministic data for future tests and demonstrations.
+
+### Testing Commands
+
+Key validation commands include:
+
+```bash
+./scripts/verify-all.sh       # run full repository checks
+npm run test:coverage         # execute unit tests with coverage
+markdownlint --strict README.md CONTRIBUTING.md memory-bank/activeContext.md memory-bank/progress.md
+```
+
+## 🧠 Memory Bank Protocol
+
+After significant code or documentation changes, update `memory-bank/activeContext.md` and `memory-bank/progress.md` so all AI agents maintain a synchronized view of the project.
+
 ## 🎯 Key Features & Achievements
 
 ### Advanced HTTP Client Architecture

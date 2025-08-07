@@ -1,10 +1,16 @@
+- [2025-08-07T14:45:40Z] Documentation Guidelines Expanded
+  **Current State:** README documents folder layout, token persistence, environment switching, CLI usage, mock recording, and testing commands. CONTRIBUTING.md created with the same guidance and reminders to update memory bank files.
+  **Last Action:** Added development basics to README, created CONTRIBUTING.md, and noted memory bank protocol.
+  **Rationale:** Provide clear onboarding instructions and reinforce synchronized documentation.
+  **Next Intent:** Keep README, CONTRIBUTING.md, and memory bank entries current as new workflows emerge.
+  **Meta:** Self-documentation after enhancing repository guidelines.
+
 - [2025-07-30T21:00:00Z] Prompt References Consolidated
   **Current State:** All prompt files in `memory-bank/prompts/` now include a References section linking to instruction files.
   **Last Action:** Audited and updated prompt files to remove duplicated instructions and add links.
   **Rationale:** Centralizes instruction guidance and reduces duplication.
   **Next Intent:** Maintain prompt-instruction linkage for new or revised prompts.
   **Meta:** Self-documentation after completing prompt reference audit.
-
 **Current State:**
 TypeScript coding standards were modularized into topic-specific instruction files and README references updated.
 **Last Action:**
