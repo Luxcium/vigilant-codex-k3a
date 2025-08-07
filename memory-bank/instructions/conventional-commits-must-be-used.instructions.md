@@ -54,6 +54,11 @@ chore(ci): :wrench: update workflow
 
 ## Breaking Changes
 
+- A breaking change is any modification that:
+  - Alters public APIs, interfaces, or contracts in a way that requires consumers to update their code.
+  - Removes, renames, or changes the behavior of existing commands, functions, or endpoints.
+  - Changes configuration formats or expected input/output.
+  - Requires users to take action to adapt to the new version.
 - You add `!` before `:` when a commit introduces a breaking change.
 - You include a `BREAKING CHANGE:` footer that describes the impact.
 
