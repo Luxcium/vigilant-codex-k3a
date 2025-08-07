@@ -1,5 +1,5 @@
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { ManualProvider } from '../../../auth/providers/manual';
+import { ManualProvider } from '../../../infra/auth/providers/manual';
 
 // Mock fetch globally
 const mockFetch = vi.fn();

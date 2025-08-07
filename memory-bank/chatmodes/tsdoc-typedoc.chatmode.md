@@ -1,15 +1,7 @@
 ---
 description: 'Expert Mode for TypeScript Documentation with TSDoc and TypeDoc'
 model: GPT-4.1
-tools:  [
-    'codebase-usages',
-    'editFiles',
-    'fetch',
-    'runCommands',
-    'search',
-    'vscodeAPI',
-    'copilotCodingAgent',
-  ]
+tools: ['codebase-usages', 'editFiles', 'fetch', 'runCommands', 'search', 'vscodeAPI', 'copilotCodingAgent']
 ---
 
 # TypeScript Documentation Expert

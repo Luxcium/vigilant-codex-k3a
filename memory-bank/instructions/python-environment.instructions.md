@@ -48,6 +48,45 @@ applyTo: 'python/**'
 - You use the same dependency files across environments.
 - You test both environments in CI pipelines.
 - You document differences in `python/README.md`.
+- Ensure all workflows (local and Docker) use the same dependency and version files.
+- Test both environment types in CI/CD pipelines.
+- Document any differences or caveats in `python/README.md`.
+
+## Example: Local venv Setup
+
+```bash
+cd python
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+## Example: Docker Volume Mount
+
+```bash
+docker run --rm -it -v $(pwd)/python:/app -w /app python:3.11 bash
+```
+
+## Example: Docker Compose
+
+```yaml
+version: '3.8'
+services:
+  python:
+    build: ./python
+    volumes:
+      - ./python:/app
+    env_file:
+      - ./python/.env
+    working_dir: /app
+    command: bash
+```
+
+## Documentation and Self-Documentation
+
+- Update `python/README.md` with all environment setup options and instructions.
+- Log all changes and environment decisions in `memory-bank/activeContext.md` and `memory-bank/progress.md` per the Self-Documentation Protocol.
+- Update `memory-bank/dependencies.md` with rationale for any new tools or dependencies.
 
 ## Verification
 

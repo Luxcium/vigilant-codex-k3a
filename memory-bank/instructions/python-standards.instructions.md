@@ -107,7 +107,6 @@
 - Update dependency relationships when adding new features
 - Document all dataset preprocessing steps and rationale for ML projects
 
-
 ## Verification
 
 - `markdownlint --strict`

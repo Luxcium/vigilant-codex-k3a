@@ -44,6 +44,10 @@ After: authenticate({ username, password, rememberMe })
 - Include migration steps
 - Avoid vague messages
 
+## References
+
+- [conventional-commits-must-be-used](../instructions/conventional-commits-must-be-used.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

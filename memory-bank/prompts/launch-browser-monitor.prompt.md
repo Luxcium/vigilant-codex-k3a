@@ -39,6 +39,10 @@ To ensure the AI agent and VS Code editor are aware of runtime errors, overlays,
 - Verify error overlays and console messages are visible and instrumented.
 - Ensure error details are documented and actionable in the editor.
 
+## References
+
+- [edge-devtools-debugging](../instructions/edge-devtools-debugging.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

@@ -11,12 +11,12 @@
  */
 
 import 'dotenv/config';
-import { ManualProvider } from './auth/providers/manual';
-import { KeyManager } from './security/KeyManager';
+import { ManualProvider } from '../infra/auth/providers/manual';
+import { KeyManager } from '../infra/security/KeyManager';
 import {
   QuestradeClient,
   QuestradeClientOptions,
-} from './client/QuestradeClient';
+} from '../infra/client/QuestradeClient';
 
 /**
  * Main CLI entry point. Loads configuration, instantiates the QuestradeClient, and fetches historical candles.

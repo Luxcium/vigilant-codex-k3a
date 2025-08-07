@@ -226,7 +226,6 @@ description: 'Comprehensive standards for Docker, Compose, and container managem
 - Ensure compatibility with different Docker versions
 - Address known limitations and workarounds
 
-
 ## Verification
 
 - `markdownlint --strict`

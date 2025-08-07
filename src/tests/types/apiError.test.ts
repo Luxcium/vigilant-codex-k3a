@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { ApiErrorSchema } from '../../../src/types/apiError';
-import { OrderSchema } from '../../../src/types/orders';
+import { ApiErrorSchema } from '../../core/types/apiError';
+import { OrderSchema } from '../../core/types/orders';
 
 describe('ApiErrorSchema', () => {
   it('parses valid payload', () => {

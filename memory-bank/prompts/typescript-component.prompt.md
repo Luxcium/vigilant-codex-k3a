@@ -13,7 +13,6 @@ Your goal is to generate a ${input:componentType:Select component type (class|in
 - Implement proper error handling and validation
 - Use semantic, descriptive naming conventions
 - Add unit tests for all public methods/functions
-- Reference [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
 
 ## Process
 
@@ -59,6 +58,10 @@ Before completion, verify:
 - Consistent naming conventions throughout
 - Proper separation of concerns
 - Integration with existing project patterns
+
+## References
+
+- [typescript-standards](../instructions/typescript-standards.instructions.md)
 
 ## Verification
 

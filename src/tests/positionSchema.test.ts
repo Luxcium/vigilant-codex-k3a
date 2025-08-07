@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { PositionSchema } from '../types/accounts';
+import { PositionSchema } from '../core/types/accounts';
 
 describe('PositionSchema', () => {
   it('accepts a valid Position', () => {

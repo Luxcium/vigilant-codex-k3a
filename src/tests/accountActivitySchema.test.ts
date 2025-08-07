@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { AccountActivitySchema } from '../types/accounts';
+import { AccountActivitySchema } from '../core/types/accounts';
 
 describe('AccountActivitySchema', () => {
   it('accepts a valid AccountActivity', () => {

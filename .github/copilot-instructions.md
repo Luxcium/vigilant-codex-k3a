@@ -240,6 +240,16 @@ preferences and instructions.
 - When generating or updating instruction or prompt files, self-prompt to update documentation and preferences as part of workflow.
 - This policy is recommended for all future Copilot and agent operations in this repository.
 
+## 🤖 Known Limitations
+
+- In any `.prompt.md` or `.chatmode.md` file, the `tools:` front-matter key **must** have its value on the same line (e.g. `tools: [ ... ]`).  
+  Splitting the array onto the next line currently breaks VS Code's parser and Copilot's tool-detection logic.
+  
+- If you run into unexpected reformatting:
+  1. Add a Prettier override for these extensions.
+  2. Use `<!-- prettier-ignore -->` before the front-matter.
+  3. Or force your editor to treat them as plain Markdown.
+
 
 ## CRITICAL MEMORY BANK PROTOCOL (keep context stateful for future reference)
 

@@ -213,6 +213,10 @@ Each script should include:
 
 This script generator ensures consistency, reliability, and maintainability across all automation scripts in the AI agent framework project.
 
+## References
+
+- [instruction-authoring-standards](../instructions/instruction-authoring-standards.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

@@ -249,10 +249,7 @@ applyTo: '**/domain/**'
 
 ## References
 
-- [TypeScript Standards](../instructions/typescript-standards.instructions.md)
-- [Python Standards](../instructions/python-standards.instructions.md)
-- [File Organization](../prompts/file-organization.prompt.md)
-- [Template Manager](./template-manager.prompt.md)
+- [ai-prompt-creation](../instructions/ai-prompt-creation.instructions.md)
 
 ## Verification
 

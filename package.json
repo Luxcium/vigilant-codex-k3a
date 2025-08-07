@@ -11,12 +11,13 @@
   "author": "Benjamin Vincent (Luxcium)",
   "main": "lib/index.js",
   "scripts": {
-    "dev": "cd ./web/ && npm install && npm run dev",
+    "coverage": "pnpm test:coverage",
+    "dev": "cd ./web/ && pnpm install --no-frozen-lockfile && pnpm run dev",
     "docs": "typedoc --options typedoc.json",
-    "lint": "npm run lint:markdown && eslint 'src/**/*.ts'",
-    "lint:markdown": "npx prettier --write '**/*.chatmode.md' '**/*.prompt.md' '**/*.instructions.md' && markdownlint --config .markdownlint.yaml '**/*.md' '**/*.chatmode.md' '**/*.prompt.md' '**/*.instructions.md'",
+    "lint": "pnpm run lint:markdown && eslint 'src/**/*.ts'",
+    "lint:markdown": "pnpm exec prettier --write '**/*.chatmode.md' '**/*.prompt.md' '**/*.instructions.md' && markdownlint --config .markdownlint.yaml '**/*.md' '**/*.chatmode.md' '**/*.prompt.md' '**/*.instructions.md'",
     "markdownlint": "markdownlint \"**/*.md\"",
-    "sdk:playground": "npm run build && node ./lib/src/main.js",
+    "sdk:playground": "pnpm run build && node ./lib/src/main.js",
     "test": "vitest run",
     "test:auth": "vitest run src/tests/auth/",
     "test:auth:watch": "vitest src/tests/auth/",
@@ -27,10 +28,12 @@
     "test:errors:watch": "vitest src/tests/errors/",
     "test:http": "vitest run src/tests/http/",
     "test:http:watch": "vitest src/tests/http/",
+    "test:integration": "pnpm test",
     "test:rateLimit": "vitest run src/tests/rateLimit/",
     "test:rateLimit:watch": "vitest src/tests/rateLimit/",
     "test:types": "vitest run src/tests/types/",
     "test:types:watch": "vitest src/tests/types/",
+    "test:unit": "pnpm test",
     "test:watch": "vitest",
     "web:build": "pnpm --filter ./web build",
     "web:dev": "pnpm --filter ./web dev",
@@ -70,6 +73,10 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.35.1",
     "vitest": "^3.2.4"
+  },
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=9.0.0"
   },
   "typedoc": {
     "tsconfig": "tsconfig.json",
