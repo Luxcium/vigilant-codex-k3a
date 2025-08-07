@@ -1,5 +1,7 @@
 import { KeyManager } from '../security/KeyManager';
 import client from '../http/client';
+import { logger } from '@/logger';
+import { APP } from '../config';
 
 export interface OAuthTokens {
   accessToken: string;
@@ -11,7 +13,9 @@ export interface OAuthTokens {
  * @param refreshToken - The refresh token to use for obtaining a new access token.
  * @returns A promise resolving to the new OAuth tokens.
  */
-export async function refreshToken(refreshToken: string): Promise<OAuthTokens> {
+export async function refreshToken(
+  refreshToken: string = APP.refresh
+): Promise<OAuthTokens> {
   try {
     const response = await client.post('/oauth2/token', {
       grant_type: 'refresh_token',
@@ -29,7 +33,7 @@ export async function refreshToken(refreshToken: string): Promise<OAuthTokens> {
 
     return tokens;
   } catch (error) {
-    console.error('Failed to refresh token:', error);
+    logger.error({ err: error }, 'Failed to refresh token');
     throw error;
   }
 }

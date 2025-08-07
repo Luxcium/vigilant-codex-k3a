@@ -1,23 +1,22 @@
-/**
- * @packageDocumentation
- * Canonical Questrade SDK Playground Example
- * Modular, robust, and agent-friendly demo for authentication and account info.
- *
- * This playground demonstrates Questrade OAuth authentication, token management,
- * and account info retrieval. It is intended for manual testing and prototyping only.
- * All direct API logic should be abstracted into the SDK core for production use.
- */
+// ===============================
+// 1. Module Imports and Setup
+// ===============================
+// Import Node.js modules and load environment variables from .env file.
+import fs from 'node:fs';
+import path from 'node:path';
+import dotenv from 'dotenv';
 
-/**
- * Custom error type for propagating HTTP status codes through thrown errors.
- * @remarks Used to attach HTTP status codes to errors for robust error handling.
- */
+dotenv.config({ path: path.resolve(__dirname, '../.env') });
+
+// Custom error type for status code propagation
 interface ErrorWithStatus extends Error {
   statusCode?: number;
 }
+// Canonical Questrade SDK Playground Example
+// Modular, robust, and agent-friendly demo for authentication and account info
 
 // ===============================
-// 1. Error Type for HTTP Status
+// 2. Error Type for HTTP Status
 // ===============================
 // Custom error type for propagating HTTP status codes through thrown errors.
 interface ErrorWithStatus extends Error {
@@ -25,35 +24,15 @@ interface ErrorWithStatus extends Error {
 }
 
 // ===============================
-// 2. Module Imports and Setup
-// ===============================
-// Import Node.js modules and load environment variables from .env file.
-import path from 'node:path';
-import dotenv from 'dotenv';
-import fs from 'node:fs';
-
-// Load environment variables from .env before any use of process.env
-dotenv.config({ path: path.resolve(__dirname, '../.env') });
-
-// ===============================
 // 3. TokenSet Interface
 // ===============================
 // Structure for Questrade OAuth token set.
 
-/**
- * Structure for Questrade OAuth token set.
- * @remarks Matches the Questrade API token response format.
- */
 interface TokenSet {
-  /** Access token for API requests */
   access_token: string;
-  /** API server base URL */
   api_server: string;
-  /** Token expiry in seconds */
   expires_in: number;
-  /** Refresh token for renewing access */
   refresh_token: string;
-  /** Timestamp when tokens were obtained (ms since epoch) */
   obtained_at: number;
 }
 
@@ -62,51 +41,17 @@ interface TokenSet {
 // ===============================
 // Paths, API endpoints, and file locations used throughout the playground.
 // --- Top-level constants ---
-
-/**
- * Questrade refresh token loaded from environment.
- * @remarks Must be set in .env as QUESTRADE_REFRESH_TOKEN.
- */
 const REFRESH_TOKEN = process.env.QUESTRADE_REFRESH_TOKEN;
-
-/**
- * Path to cached token file for playground use.
- */
 const TOKEN_FILE = path.resolve(__dirname, '../.questrade-tokens.json');
-
-/**
- * Questrade OAuth endpoint for token refresh.
- */
 const API_BASE = 'https://login.questrade.com/oauth2/token';
-
-/**
- * Directory for storing playground output files.
- */
 const KEYS_DIR = path.resolve(__dirname, '../.keys');
-
-/**
- * Output file for playground demo results.
- */
-
 const DEMO_FILE = path.join(KEYS_DIR, 'example-sdk-demo.json');
-
-console.log(
-  '[DEBUG] Loaded REFRESH_TOKEN:',
-  typeof REFRESH_TOKEN === 'string' && REFRESH_TOKEN.length > 0
-    ? REFRESH_TOKEN.slice(0, 6) + '...'
-    : '(none)'
-);
 
 // ===============================
 // 5. Utility Functions
 // ===============================
 // Helper functions for directory management, environment validation, token persistence, and validation.
 // --- Utility functions ---
-
-/**
- * Ensures the .keys directory exists for output files.
- * @remarks Creates the directory recursively if missing.
- */
 function ensureKeysDir(): void {
   try {
     if (!fs.existsSync(KEYS_DIR)) {
@@ -121,10 +66,6 @@ function ensureKeysDir(): void {
   }
 }
 
-/**
- * Validates that the Questrade refresh token is present and looks valid.
- * @throws Exits the process if the token is missing or invalid.
- */
 function assertEnv(): void {
   if (
     !REFRESH_TOKEN ||
@@ -138,10 +79,6 @@ function assertEnv(): void {
   }
 }
 
-/**
- * Loads cached Questrade tokens from disk if available.
- * @returns The token set if present, otherwise null.
- */
 function loadTokens(): TokenSet | null {
   try {
     if (fs.existsSync(TOKEN_FILE)) {
@@ -157,11 +94,6 @@ function loadTokens(): TokenSet | null {
   return null;
 }
 
-/**
- * Checks if a token set is present and not expired.
- * @param tokens - The token set to validate.
- * @returns True if tokens are valid and not expired, false otherwise.
- */
 function tokensAreValid(tokens: TokenSet | null): boolean {
   if (!tokens) return false;
   const { access_token, api_server, expires_in, refresh_token, obtained_at } =
@@ -182,53 +114,30 @@ function tokensAreValid(tokens: TokenSet | null): boolean {
 //
 // --- Begin problematic section ---
 
-/**
- * Structure for detailed API error information.
- * @remarks Used to capture HTTP status, headers, and body for debugging.
- */
 interface ErrorBlob {
   status: number;
   headers: Record<string, string>;
   body: string | Record<string, unknown>;
 }
 
-/**
- * Exchanges a Questrade refresh token for a new token set via the OAuth endpoint.
- * @param refreshToken - The refresh token to exchange.
- * @returns The new token set if successful.
- * @throws ErrorWithStatus if the request fails or the response is invalid.
- * @remarks This function performs a direct HTTP request to Questrade's API.
- * @example
- * ```ts
- * const tokens = await fetchNewTokens(process.env.QUESTRADE_REFRESH_TOKEN!);
- * ```
- */
 async function fetchNewTokens(refreshToken: string): Promise<TokenSet> {
   const params = new URLSearchParams({
     grant_type: 'refresh_token',
     refresh_token: refreshToken,
   });
-  const requestUrl = `${API_BASE}?${params.toString()}`;
-  console.log(
-    '[DEBUG] Token request URL:',
-    requestUrl.replace(refreshToken, '***REDACTED***')
-  );
   let res: Response;
   try {
-    res = await fetch(requestUrl);
+    res = await fetch(`${API_BASE}?${params.toString()}`);
   } catch (err) {
     const error = err as ErrorWithStatus;
-    error.statusCode = 0; // Network error, no status code
-    console.error('[DEBUG] Network error during token fetch:', error.message);
+    error.statusCode = 0;
     throw error;
   }
-  const rawBody = await res.clone().text();
-  console.log('[DEBUG] Token response status:', res.status);
-  console.log('[DEBUG] Token response body:', rawBody);
   if (!res.ok) {
-    let errorBody: string | Record<string, unknown> = rawBody;
+    const msg = await res.text();
+    let errorBody: string | Record<string, unknown> = msg;
     try {
-      const json = JSON.parse(rawBody);
+      const json = JSON.parse(msg);
       errorBody = json;
     } catch {
       // Not JSON, keep as text
@@ -250,13 +159,7 @@ async function fetchNewTokens(refreshToken: string): Promise<TokenSet> {
     error.errorBlob = errorBlob;
     throw error;
   }
-  let tokens: TokenSet;
-  try {
-    tokens = await res.json();
-  } catch (err) {
-    console.error('[DEBUG] Failed to parse token response as JSON:', err);
-    throw err;
-  }
+  const tokens = await res.json();
   if (!tokens.access_token || !tokens.api_server) {
     const error = new Error(
       'Malformed token response from Questrade'
@@ -273,17 +176,6 @@ async function fetchNewTokens(refreshToken: string): Promise<TokenSet> {
   };
 }
 
-/**
- * Fetches the user's first Questrade account number using the access token.
- * @param tokens - The valid token set for authentication.
- * @returns The first account number if successful.
- * @throws ErrorWithStatus if the request fails or the response is invalid.
- * @remarks This function performs a direct HTTP request to Questrade's API.
- * @example
- * ```ts
- * const accountNumber = await fetchAccountNumber(tokens);
- * ```
- */
 async function fetchAccountNumber(
   tokens: TokenSet
 ): Promise<string | undefined> {
@@ -294,8 +186,7 @@ async function fetchAccountNumber(
     });
   } catch (err) {
     const error = err as ErrorWithStatus;
-    // logic shall be included when you review this for the user to grab valid value and pass it or else something but must be a number 0 is a placeholder!
-    error.statusCode = 0; // Network error, no status code
+    error.statusCode = 0;
     throw error;
   }
   if (!res.ok) {
@@ -334,14 +225,6 @@ async function fetchAccountNumber(
   return data.accounts[0].number;
 }
 
-/**
- * Writes the playground demo output to a JSON file for inspection.
- * @param tokens - The token set used in the run.
- * @param accountNumber - The fetched account number, if any.
- * @param statusCode - Optional HTTP status code for error cases.
- * @param errorBlob - Optional detailed error information.
- * @remarks Output is written to DEMO_FILE for debugging and agentic workflows.
- */
 function writeDemoOutput(
   tokens: TokenSet,
   accountNumber: string | undefined,
@@ -383,11 +266,6 @@ function writeDemoOutput(
 // WARNING:  i get from the user.
 // All API logic should be abstracted into the SDK core and only called via SDK interface here.
 // --- Main playground workflow ---
-/**
- * Main playground workflow: validates environment, loads or refreshes tokens,
- * fetches account number, and writes results to disk.
- * @remarks This is the entry point for manual SDK prototyping and debugging.
- */
 async function main(): Promise<void> {
   try {
     assertEnv();
@@ -461,5 +339,4 @@ async function main(): Promise<void> {
 // ===============================
 // Start the playground execution.
 
-// Start the playground execution.
 main();

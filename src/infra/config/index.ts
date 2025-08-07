@@ -1,19 +1,21 @@
+import { logger } from '@/logger';
 import { config } from 'dotenv';
 import path from 'node:path';
 
-config(); // Load environment variables from .env file
+config(); // loads .env by default
 
-const apiServer = process.env.API_SERVER || process.env.API_BASE_URL || '';
-if (!apiServer) {
-  console.error('Missing API_SERVER or API_BASE_URL environment variable');
-  process.exit(1);
-}
-console.log('Using API Server:', apiServer);
-
+// Map to .env variable names (QUESTRADE_REFRESH_TOKEN, QUESTRADE_API_BASE, QUESTRADE_CLIENT_ID)
 export const APP = {
-  apiServer,
-  clientId: process.env.CLIENT_ID || '',
-  refreshToken: process.env.REFRESH_TOKEN || '',
-  accessToken: process.env.ACCESS_TOKEN || '',
+  apiServer: process.env['API_SERVER'] ?? '',
+  clientId: process.env['CLIENT_ID'] ?? '',
+  refresh: process.env['REFRESH_TOKEN'] ?? '',
   keyDir: path.resolve('.keys'),
+  logLevel: process.env['LOG_LEVEL'] ?? 'info',
 } as const;
+
+logger.info('[APP config] Using API Server: %s', APP.apiServer);
+logger.info('[APP config] Using Client ID: %s', APP.clientId);
+logger.info(
+  '[APP config] Using Refresh Token: %s',
+  APP.refresh ? APP.refresh.slice(0, 6) + '...' : '(none)'
+);

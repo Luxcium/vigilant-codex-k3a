@@ -8,7 +8,7 @@ description: 'Iterative agent for ${TASK_NAME} – autonomously refine until bui
 # Self-Optimizing Autonomous Task Iteration
 
 Implement **${TASK_NAME}** according to project standards and the acceptance test suite.
-
+ 
 ## Control Loop
 
 - Load workspace context and goals.
@@ -29,9 +29,9 @@ Implement **${TASK_NAME}** according to project standards and the acceptance tes
 ### Self‑Assessment Checklist
 
 - ✔ Compiles
-- ✔ Lints cleanly
-- ✔ All tests pass ≥95 % coverage
-- ✔ No new warnings in build output
+- ✔ Runs as expected
+- ✔ Do not have errors in the console.
+- ✔ No problems and no new warnings in build output
 - ✔ Adheres to `.github/copilot-instructions.md` and style guides
 - If any box unchecked → iterate again.
 

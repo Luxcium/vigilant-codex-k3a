@@ -1,3 +1,6 @@
+// =====================================================================================
+//  MAIN DEVELOPMENT ENTRY POINT (PLAYGROUND/BREADBOARD AREA FOR SDK USAGE & TESTING)
+// =====================================================================================
 /**
  * @packageDocumentation
  * @remarks
@@ -31,13 +34,12 @@
 // 10. All SDK consumers and contributors: treat this as a scratchpad, not a public API.
 // =====================================================================================
 
-import { KeyManager } from '../index';
-import { QuestradeClient } from '../index';
 import { AuthManager } from '../infra/auth/manager';
 import { RestClient } from '../infra/http/restClient';
 import { OAuthTokens } from '../infra/auth/refreshTokenUtil';
 import { TokenStore } from '../infra/auth/interfaces';
 import { OAuthProvider } from '../infra/auth/interfaces';
+import { QuestradeClient } from '@/infra/client/QuestradeClient';
 
 // ===================== DEV/PLAYGROUND AREA BELOW =====================
 // Add manual test/demo code here. This is NOT part of the SDK build.
@@ -50,5 +52,16 @@ export { OAuthProvider, OAuthTokens, TokenStore };
 export { AuthManager };
 export { RestClient };
 export { QuestradeClient };
-export { KeyManager };
 // ===================== END OF DEV/PLAYGROUND AREA =====================
+
+// Example bootstrap using centralized config and REST gateway
+
+(async () => {
+  const candles = await client.getCandles({
+    symbolId: 38738,
+    start: '2024-10-01T00:00:00-04:00',
+    end: '2024-10-31T00:00:00-04:00',
+    interval: 'OneDay',
+  });
+  console.table(candles.slice(0, 5));
+})();

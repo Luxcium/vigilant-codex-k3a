@@ -1,3 +1,10 @@
+## Timestamping and Logging
+
+When a timestamp is required for logging, documentation, or self-documentation, use the **Get Current Date/Time** task as defined in `scripts/README.md`.
+
+**Do not** use the raw `date --iso-8601=seconds` command directly in instructions or documentation. Always reference the task for discoverability and maintainability.
+
+**Reference:** See `memory-bank/instructions/self-documentation.instructions.md` for protocol details and `scripts/README.md` for the task definition.
 ---
 applyTo: '**/*.instructions.md'
 description: 'Comprehensive standards for authoring instruction files, including structure, content, validation, and error prevention.'

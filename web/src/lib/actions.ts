@@ -1,4 +1,5 @@
 'use server';
+// Directly re-export the async server actions to comply with Next.js requirements
 export { createPost, likePost } from './enhanced-actions';
 
 // =======

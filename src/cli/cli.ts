@@ -11,12 +11,15 @@
  */
 
 import 'dotenv/config';
-import { ManualProvider } from '../infra/auth/providers/manual';
-import { KeyManager } from '../infra/security/KeyManager';
+
+import { ManualProvider } from '@/infra/auth/providers/manual';
+import { KeyManager } from '@/infra/security/KeyManager';
 import {
   QuestradeClient,
   QuestradeClientOptions,
-} from '../infra/client/QuestradeClient';
+} from '@/infra/client/QuestradeClient';
+import { APP } from '@/infra/config';
+import { logger } from '@/logger';
 
 /**
  * Main CLI entry point. Loads configuration, instantiates the QuestradeClient, and fetches historical candles.
@@ -24,20 +27,22 @@ import {
  */
 async function main(): Promise<void> {
   try {
+    // <<<<<<< codex/remove-verification-script-references-2025-07-3003-01-07
     // Load required environment variables
-    const clientId = process.env.CLIENT_ID;
-    const refreshToken = process.env.REFRESH_TOKEN;
+    const clientId = APP.clientId;
+    const refreshToken = APP.refresh;
     if (!clientId) {
-      console.error('Missing CLIENT_ID in .env');
+      logger.error('Missing CLIENT_ID in .env');
       process.exit(1);
     }
     if (!refreshToken) {
-      console.error('Missing REFRESH_TOKEN in .env');
+      logger.error('Missing REFRESH_TOKEN in .env');
       process.exit(1);
     }
 
     // Optional API server override
-    const apiServer = process.env.API_SERVER;
+
+    const apiServer = APP.apiServer;
 
     // Instantiate OAuth provider and token store
     const provider = new ManualProvider(clientId);
@@ -57,7 +62,7 @@ async function main(): Promise<void> {
           expiresAt: Date.now() + 3600 * 1000,
         };
       },
-      async save(t: import('./auth/interfaces').OAuthTokens) {
+      async save(t: import('@/infra/auth/interfaces').OAuthTokens) {
         await keyManager.save({
           accessToken: t.access_token,
           refreshToken: t.refresh_token,
@@ -83,11 +88,11 @@ async function main(): Promise<void> {
     const end = process.env.END_TIME ?? '2024-10-31T00:00:00-04:00';
     const interval = process.env.INTERVAL ?? 'OneDay';
 
-    const candles = await client.getCandles(symbolId, start, end, interval);
-    console.log('Candles data:');
+    const candles = await client.getCandles({ symbolId, start, end, interval });
+    logger.info('Candles data');
     console.table(candles.slice(0, 5));
   } catch (error) {
-    console.error('CLI error:', error);
+    logger.error({ err: error }, 'CLI error');
     process.exit(1);
   }
 }

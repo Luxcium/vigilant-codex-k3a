@@ -1,6 +1,0 @@
-{
-  "type": "loop",
-  "max": 3,
-  "stopWord": "DONE",
-  "child": { "type": "WriterAgent" }
-}

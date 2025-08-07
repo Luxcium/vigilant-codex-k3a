@@ -1,3 +1,27 @@
+# Get Current Date/Time Task
+
+## Task: Get Current Date/Time
+
+**Purpose:**
+Provides the current date and time in ISO 8601 format for timestamping and logging, as required by the Self-Documentation Protocol and other workflows.
+
+**Command:**
+
+```bash
+date --iso-8601=seconds
+```
+
+**Usage:**
+
+- Use this task whenever a current timestamp is needed for logging or documentation.
+- Reference this task in all instructions and documentation instead of using the raw command directly.
+
+**Referenced By:**
+
+- `memory-bank/instructions/self-documentation.instructions.md`
+
+**Last Updated:** 2025-08-03
+
 # `scripts/` Directory
 
 This folder contains utility scripts for setting up, validating, and maintaining the repository.
@@ -7,21 +31,24 @@ This folder contains utility scripts for setting up, validating, and maintaining
 **CRITICAL MANDATE**: All scripts must be continuously optimized, consolidated, and maintained with the following principles:
 
 ### Script Consolidation Strategy
+
 - **Target**: Continuously reduce script quantity while maintaining full functionality
-- **Method**: Strategic consolidation, parameter-driven interfaces, elimination of redundancy  
+- **Method**: Strategic consolidation, parameter-driven interfaces, elimination of redundancy
 - **Achievement**: Recently reduced from 41 scripts to 22 scripts (46% reduction)
 - **Goal**: Continue optimization through monthly reviews and usage pattern analysis
 
 ### Documentation Standards (MANDATORY)
+
 - **Header Format**: 10-line standardized header with script name, aim, purpose, decision rationale, usage, dependencies, last updated, references
 - **Inline Documentation**: Critical sections documented throughout with purpose-driven comments
 - **Validation Status**: Every script ends with `#? Validation Status: Actively Validated on [DATE]`
 - **README Synchronization**: This file MUST be updated whenever scripts are added, modified, or removed
 
 ### Maintenance Requirements
+
 - **Monthly Reviews**: Analyze usage patterns and identify consolidation opportunities
 - **Flow Optimization**: Remove redundant operations and streamline logic
-- **Dependency Reduction**: Minimize external and cross-script dependencies  
+- **Dependency Reduction**: Minimize external and cross-script dependencies
 - **Soul Preservation**: Maintain comprehensive documentation that preserves script intent and rationale
 - **Automated Checks**: Header format compliance and README synchronization validation
 
@@ -47,6 +74,7 @@ When a script is created or modified, update this README with a brief descriptio
 ### Environment Setup Scripts (6 scripts)
 
 #### Python Environment
+
 - `setup_python_env.sh` - **Master Python environment setup with mode selection**
   - Usage: `./setup_python_env.sh --mode [local|docker_isolated|docker_volume|venv_only]`
   - Consolidates functionality from 5 previous scripts
@@ -55,10 +83,12 @@ When a script is created or modified, update this README with a brief descriptio
 - `setup_python_local.sh` - Advanced local Python optimizations
 
 #### Web Development
+
 - `setup_web_dev_environment.sh` - Complete web development setup
 - `activate_web_dev_environment.sh` - Quick web environment activation
 
 #### Project Initialization
+
 - `setup_project.sh` - Master project initialization with type selection
 
 ### Docker Lifecycle Scripts (7 scripts)
@@ -111,10 +141,12 @@ When a script is created or modified, update this README with a brief descriptio
 ## Archived Scripts
 
 **Moved to `scripts/archives/` directory:**
+
 - `setup_python_docker_isolated.sh` → `setup_python_env.sh --mode docker_isolated`
 - `setup_python_docker_volume.sh` → `setup_python_env.sh --mode docker_volume`
 
 Additional archived scripts:
+
 - `setup_questrade_sdk_core.sh` → `setup_ts_sdk.sh --module questrade-core`
 - `setup_questrade_types.sh` → `setup_ts_sdk.sh --module questrade-types`
 - `setup_agent_framework.sh` → `setup_ts_sdk.sh --module agent-framework`
@@ -229,8 +261,8 @@ The setup is configured in:
    #!/usr/bin/env bash
    set -euo pipefail
    ```
-   
 2. **Documentation Header**
+
    ```bash
    #==============================================================================
    # Script Name: script-name.sh
@@ -258,7 +290,6 @@ The setup is configured in:
 
 4. **Timestamped Logging**
    Every major step must echo a log line in [YYYY-MM-DDThh:mm:ssZ] format.
-   
 5. **Markdown-lint Verification**
    If a script modifies any \*.md, it must run:
 
@@ -267,7 +298,7 @@ The setup is configured in:
    ```
 
    and exit non-zero if lint errors occur.
-   
+
 6. **Duplicate Detection and Consolidation**
    Continuously review scripts for overlapping functionality and consolidate them systematically.
    Monthly reviews required to identify consolidation opportunities and optimize script flow.
@@ -275,8 +306,9 @@ The setup is configured in:
 ## Future Consolidation Targets ⚡
 
 **Identified for Next Optimization Phase**:
+
 - **Web Environment Scripts**: Evaluate merging `setup_web_env.sh` and `setup_web_dev_environment.sh`
-- **Validation Scripts**: Consider consolidating `validate-instructions.sh` and `validate-prompt.sh`  
+- **Validation Scripts**: Consider consolidating `validate-instructions.sh` and `validate-prompt.sh`
 - **Agent Setup Scripts**: Assess consolidation of `setup_agent_framework.sh` and `setup_agent_system.sh`
 - **Questrade Scripts**: Merge `setup_questrade_sdk_core.sh` and `setup_questrade_types.sh` if overlap exists
 - **Generate Scripts**: Consolidate `generate-instruction-file.sh` and `generate-prompt-file.sh` into unified generator
@@ -284,6 +316,7 @@ The setup is configured in:
 ## Script Index by Function
 
 ### Environment Setup
+
 - `setup_python_env.sh` — **Consolidated Python environment setup (5-in-1)**
 - `setup_python_docker.sh` — Advanced Docker Python features
 - `setup_python_local.sh` — Advanced local Python optimizations
@@ -292,6 +325,7 @@ The setup is configured in:
 - `setup_project.sh` — Master project initialization
 
 ### Docker Lifecycle
+
 - `setup_codex_universal.sh` — Complete Codex Universal setup
 - `codex_start.sh` — Start Docker environment
 - `codex_stop.sh` — Stop Docker environment
@@ -301,18 +335,22 @@ The setup is configured in:
 - `run_codex_cli.sh` — Single container execution
 
 ### TypeScript/SDK
+
 - `setup_ts_sdk.sh` — **Consolidated TypeScript/SDK setup (6-in-1)**
 - `setup_db_prisma.sh` — Database configuration
 
 ### Validation & Quality
+
 - `verify-all.sh` — **Consolidated validation suite (5-in-1)**
 - `check-memory-bank.sh` — Memory bank validation
 
 ### Code Generation
+
 - `generate-instruction-file.sh` — AI instruction file generation
 - `generate-prompt-file.sh` — AI prompt file generation
 
 ### Development Tools
+
 - `browser-error-monitor.sh` — Browser error monitoring
 - `make-scripts-executable.sh` — Script permission management
 - `autonomous-state-manager.sh` — **Development state automation (2-in-1)**
@@ -320,5 +358,4 @@ The setup is configured in:
 ## Verification
 
 - Run `markdownlint --config .markdownlint.yaml scripts/README.md`
-- Execute `scripts/verify-all.sh` before committing
 - Test consolidated scripts with all parameter combinations

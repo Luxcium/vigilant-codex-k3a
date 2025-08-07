@@ -36,7 +36,7 @@ describe('FileStore', () => {
   });
 
   it('saves tokens to file after ensuring directory', async () => {
-    const mkdirSpy = vi.spyOn(fs, 'mkdir').mockResolvedValueOnce();
+    const mkdirSpy = vi.spyOn(fs, 'mkdir').mockResolvedValueOnce(undefined);
     const writeSpy = vi.spyOn(fs, 'writeFile').mockResolvedValueOnce();
     await store.save(sample);
     expect(mkdirSpy).toHaveBeenCalledWith(dirname(filePath), {
