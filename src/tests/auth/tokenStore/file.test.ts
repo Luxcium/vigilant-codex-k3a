@@ -1,8 +1,8 @@
 import { describe, expect, it, beforeEach, vi } from 'vitest';
 import { promises as fs } from 'fs';
 import { dirname } from 'path';
-import { FileStore } from '../../../auth/tokenStore/file';
-import type { OAuthTokens } from '../../../auth/interfaces';
+import { FileStore } from '../../../infra/auth/tokenStore/file';
+import type { OAuthTokens } from '../../../infra/auth/interfaces';
 
 describe('FileStore', () => {
   const filePath = '/tmp/test_qt_tokens.json';

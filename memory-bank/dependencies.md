@@ -1,10 +1,9 @@
 - **example.ts** → **.keys/example-sdk-demo.json** (Why: Playground output must include HTTP status codes for robust error reporting)
   - Impact: Enables agentic error handling, debugging, and recursive output verification
+
 # The `dependencies.md` Memory Bank File
 
 Your AI Agent MUST actively strive to keep this file up to date with the latest dependencies, their relationships, and integration points for the Vigilant Codex K3a polyvalent AI development workspace. This file MUST be updated by any AI Agent accessing it, You MUST eagerly each time changes on each chat completion and each task or subtask as the living authoritative guide.
-
-
 
 ## Purpose
 
@@ -19,7 +18,6 @@ This file tracks all project dependencies, their relationships, and integration 
 
 - **scripts/README.md** → **ALL script files** (Why: Must be synchronized whenever scripts change)
   - Impact: Documentation accuracy and developer onboarding efficiency
-  
 - **systemPatterns.md script consolidation principles** → **file-organization.instructions.md** (Why: Architecture drives implementation standards)
   - Impact: Consistent script management approach across all AI agents
 
@@ -30,13 +28,15 @@ This file tracks all project dependencies, their relationships, and integration 
   - Impact: Enhanced maintainability and automated validation capabilities
 
 **Advanced Consolidation Dependencies**:
+
 - `setup_web_env.sh` + `setup_web_dev_environment.sh` → **Planned unified web setup script**
-- `validate-instructions.sh` + `validate-prompt.sh` → **Planned unified validation script** 
+- `validate-instructions.sh` + `validate-prompt.sh` → **Planned unified validation script**
 - `generate-instruction-file.sh` + `generate-prompt-file.sh` → **Planned unified generator script**
 - `setup_questrade_sdk_core.sh` + `setup_questrade_types.sh` → **Planned unified Questrade setup**
 - `setup_agent_framework.sh` + `setup_agent_system.sh` → **Planned unified agent setup**
 
 **Quality Assurance Dependencies**:
+
 - **Header Format Validation** → **Automated checker for 10-line standardized format**
 - **Functional Testing** → **Parameter combination testing for consolidated scripts**
 - **Integration Testing** → **.vscode/tasks.json validation with consolidated scripts**
@@ -56,25 +56,25 @@ This file tracks all project dependencies, their relationships, and integration 
 
 ---
 
-
 ### AI Agent Dependencies
 
 ### Memory Bank System
+
 - **Markdown-Lint Compliance** - Strict formatting standards for all files
 
 ### Three AI Agent Ecosystem
 
 - **Cline AI** - Primary development agent (`.clinerules/main-rules.md`)
 - **VS Code Copilot** - Code generation (`.github/copilot-instructions.md`)
-**31 instruction files** - Automated coding standards in `memory-bank/instructions/`
-**35 prompt files** - Executable workflow templates in `memory-bank/prompts/`
+  **31 instruction files** - Automated coding standards in `memory-bank/instructions/`
+  **35 prompt files** - Executable workflow templates in `memory-bank/prompts/`
 
 > [!IMPORTANT]
+
 - **Jupyter Notebooks** - VS Code integration with advanced API support
 - **pip/virtualenv** - Package management across all environment modes
+
 ### Testing Infrastructure
-
-
 
 - **Prettier** - Code formatting with consistent style
 - **Docker Engine** - Container runtime and management
@@ -95,13 +95,15 @@ This file tracks all project dependencies, their relationships, and integration 
 - **Stateful Collaboration** - Memory bank integration across all agents
 
 ### Instruction & Prompt Framework
+
 **Depends On:** tsconfig.json baseUrl and paths configuration, TypeScript standards from `memory-bank/instructions/`
+
 - **31 instruction files** - Automated coding standards in `memory-bank/instructions/`
 - **35 prompt files** - Executable workflow templates in `memory-bank/prompts/`
-All agents must consult the [when-to-use-what-matrix.instructions.md](../memory-bank/instructions/when-to-use-what-matrix.instructions.md) for a one-page mapping of integration goals to configuration files and authoritative sources. For detailed implementation, see `memory-bank/instructions/README.md` and `memory-bank/prompts/README.md`.
+  All agents must consult the [when-to-use-what-matrix.instructions.md](../memory-bank/instructions/when-to-use-what-matrix.instructions.md) for a one-page mapping of integration goals to configuration files and authoritative sources. For detailed implementation, see `memory-bank/instructions/README.md` and `memory-bank/prompts/README.md`.
 - **Conditional Architecture** - Runtime decision frameworks
 - **Parameter-Driven Configuration** - ENV_MODE and similar runtime selection
-All agents must consult the [theme-ui-meta.instructions.md](../memory-bank/instructions/theme-ui-meta.instructions.md) for detailed theming meta tag standards and the [theme-ui-meta.prompt.md](../memory-bank/prompts/theme-ui-meta.prompt.md) for workflow automation. These files cover syntax, validation, and platform-specific quirks for `theme-color`, `color-scheme`, and related tags.
+  All agents must consult the [theme-ui-meta.instructions.md](../memory-bank/instructions/theme-ui-meta.instructions.md) for detailed theming meta tag standards and the [theme-ui-meta.prompt.md](../memory-bank/prompts/theme-ui-meta.prompt.md) for workflow automation. These files cover syntax, validation, and platform-specific quirks for `theme-color`, `color-scheme`, and related tags.
 - **Quality Assurance Standards** - Comprehensive validation and testing patterns
 
 ## Cross-References and Relationships
@@ -654,7 +656,6 @@ All agents must consult the [theme-ui-meta.instructions.md](../memory-bank/instr
 **Last Updated**: 2025-02-06 (Conditional Python environment framework implementation)  
 **Status**: Active tracking of conditional framework and AI Agent Framework dependencies  
 **Next Review**: After testing conditional framework and extending to other language environments
-
 
 [2025-07-27] Radical Documentation Refactor: Memory Bank Migration
 

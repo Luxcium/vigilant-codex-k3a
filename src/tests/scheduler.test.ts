@@ -1,8 +1,8 @@
 import { describe, expect, it, vi } from 'vitest';
-import * as manual from '../auth/manual';
-import { scheduleAutoRefresh } from '../auth/scheduler';
+import * as manual from '../infra/auth/manual';
+import { scheduleAutoRefresh } from '../infra/auth/scheduler';
 
-vi.mock('../auth/manual', () => ({
+vi.mock('../infra/auth/manual', () => ({
   bootstrap: vi.fn(async () => ({
     accessToken: 'a',
     apiServer: 's',

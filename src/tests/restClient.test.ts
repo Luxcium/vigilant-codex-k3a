@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
-import { OAuthProvider, OAuthTokens, TokenStore } from '../auth/interfaces';
-import { AuthManager } from '../auth/manager';
-import { RestClient } from '../http/restClient';
+import { OAuthProvider, OAuthTokens, TokenStore } from '../infra/auth/interfaces';
+import { AuthManager } from '../infra/auth/manager';
+import { RestClient } from '../infra/http/restClient';
 
 // Mock the global fetch instead of node-fetch
 const mockFetch = vi.fn();

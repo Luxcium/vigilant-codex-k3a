@@ -1,6 +1,6 @@
-import type { OAuthTokens } from '@/auth/interfaces';
-import * as manual from '@/auth/manual';
-import { scheduleAutoRefresh } from '@/auth/scheduler';
+import type { OAuthTokens } from '@/infra/auth/interfaces';
+import * as manual from '@/infra/auth/manual';
+import { scheduleAutoRefresh } from '@/infra/auth/scheduler';
 import {
   afterEach,
   beforeEach,
@@ -12,7 +12,7 @@ import {
 } from 'vitest';
 
 // Mock the manual module
-vi.mock('@/auth/manual');
+vi.mock('@/infra/auth/manual');
 
 describe('auth/scheduler', () => {
   const clientId = 'test-client-id';

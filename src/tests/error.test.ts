@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { handleQuestradeError, QuestradeError } from '../errors/index.js';
+import { handleQuestradeError, QuestradeError } from '../core/errors';
 
 describe('error handling', () => {
   it('order error', async () => {

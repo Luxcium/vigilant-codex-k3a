@@ -1,5 +1,5 @@
-import type { OAuthTokens } from '@/auth/storage';
-import { clear, load, save } from '@/auth/storage';
+import type { OAuthTokens } from '@/infra/auth/storage';
+import { clear, load, save } from '@/infra/auth/storage';
 import { promises as fs } from 'fs';
 import { dirname } from 'path';
 import {

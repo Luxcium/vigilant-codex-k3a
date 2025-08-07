@@ -31,6 +31,28 @@ Provides automated test and coverage checks that fail the pipeline on errors.
 **Meta:**
 Self-documentation after adding CI workflow.
 
+### [2025-08-01] Questrade SDK Structure Reorganization
+
+**Achievement:**
+Questrade codebase split into `core`, `infra`, `cli`, `mocks`, and `tests` under `src/`, with index exporting unified SDK object.
+
+**Impact:**
+Clarifies separation between pure logic and IO modules and simplifies testing and usage.
+
+**Meta:**
+Self-documentation after structural migration.
+
+### [2025-07-30] Contributor Documentation
+
+**Achievement:**
+Added Development Essentials section to README and created CONTRIBUTING.md covering folder layout, token persistence, environment switching, CLI usage, mock recording, and testing commands.
+
+**Impact:**
+Provides clear onboarding instructions and reinforces required verification and testing workflows.
+
+**Meta:**
+Self-documentation after updating contributor guidance.
+
 ### [2025-07-30] Prompt Reference Standardization
 
 **Achievement:**
