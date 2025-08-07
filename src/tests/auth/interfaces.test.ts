@@ -4,7 +4,7 @@ import {
   OAuthTokenResponse,
   OAuthTokens,
   TokenStore,
-} from '../../auth/interfaces';
+} from '../../infra/auth/interfaces';
 
 describe('OAuthTokens', () => {
   it('should have the correct structure', () => {

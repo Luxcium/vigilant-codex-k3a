@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { toQuestradeError } from '../errors/toError';
-import { QuestradeError } from '../errors/types';
+import { toQuestradeError } from '../core/errors/toError';
+import { QuestradeError } from '../core/errors/types';
 
 const makeRes = (status: number, body: object) => {
   return new Response(JSON.stringify(body), {

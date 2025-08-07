@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import * as types from '../../../src/types/index.js';
+import * as types from '../../core/types/index.ts';
 
 describe('Types index exports', () => {
   it('should export modules without error', () => {

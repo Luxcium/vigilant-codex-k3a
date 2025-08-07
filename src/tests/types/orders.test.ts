@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod';
-import { OrderLegSchema, OrderSchema } from '../../../src/types/orders';
+import { OrderLegSchema, OrderSchema } from '../../core/types/orders';
 
 describe('Order related schemas', () => {
   it('valid OrderLegSchema parses', () => {

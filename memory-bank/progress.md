@@ -20,6 +20,17 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-08-01] Questrade SDK Structure Reorganization
+
+**Achievement:**
+Questrade codebase split into `core`, `infra`, `cli`, `mocks`, and `tests` under `src/`, with index exporting unified SDK object.
+
+**Impact:**
+Clarifies separation between pure logic and IO modules and simplifies testing and usage.
+
+**Meta:**
+Self-documentation after structural migration.
+
 ### [2025-07-30] Prompt Reference Standardization
 
 **Achievement:**

@@ -19,7 +19,7 @@ import {
   CandleIntervalSchema,
   OrderClassSchema,
   StrategyTypeSchema,
-} from '../../../src/types/enums';
+} from '../../core/types/enums';
 
 describe('Enums schemas', () => {
   const check = (schema: any, valid: any[], invalid: any[]) => {

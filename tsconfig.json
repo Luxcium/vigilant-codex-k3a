@@ -138,7 +138,7 @@
     "web/**/*",
     "dist/**/*",
     "test/**/*",
-    "**/tests/**/*",
+    "**/test/**/*",
     "coverage/**/*",
     "build/**/*",
     "scripts/**/*"

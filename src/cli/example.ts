@@ -21,7 +21,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import dotenv from 'dotenv';
 
-dotenv.config({ path: path.resolve(__dirname, '../.env') });
+dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
 // ===============================
 // 3. TokenSet Interface
@@ -42,9 +42,9 @@ interface TokenSet {
 // Paths, API endpoints, and file locations used throughout the playground.
 // --- Top-level constants ---
 const REFRESH_TOKEN = process.env.QUESTRADE_REFRESH_TOKEN;
-const TOKEN_FILE = path.resolve(__dirname, '../.questrade-tokens.json');
+const TOKEN_FILE = path.resolve(__dirname, '../../.questrade-tokens.json');
 const API_BASE = 'https://login.questrade.com/oauth2/token';
-const KEYS_DIR = path.resolve(__dirname, '../.keys');
+const KEYS_DIR = path.resolve(__dirname, '../../.keys');
 const DEMO_FILE = path.join(KEYS_DIR, 'example-sdk-demo.json');
 
 // ===============================
