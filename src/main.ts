@@ -25,24 +25,9 @@ export { QuestradeClient };
 export { KeyManager };
 // ===================== END OF DEV/PLAYGROUND AREA =====================
 
-// Example round-trip using configuration and REST gateway
-import 'dotenv/config';
+// Example bootstrap using centralized config and REST gateway
 import api from './http/QuestradeApi';
-import { APP } from './config';
 
-(async () => {
-  try {
-    const candles = await api.getCandles({
-      symbolId: 38738,
-      start: '2024-10-01T00:00:00-04:00',
-      end: '2024-10-31T00:00:00-04:00',
-      interval: 'OneDay',
-    });
-    console.table(candles.slice(0, 5));
-  } catch (err) {
-    console.error('Demo request failed', err);
-  }
-// ======= commented out conflict to chose from or to cleverly reorganize resolve any otje rlile such in the project now!
 (async () => {
   const candles = await api.getCandles({
     symbolId: 38738,
@@ -51,5 +36,4 @@ import { APP } from './config';
     interval: 'OneDay',
   });
   console.table(candles.slice(0, 5));
-// must resolve conflicts before you can continue >>>>>>> luxcium/main
 })();
