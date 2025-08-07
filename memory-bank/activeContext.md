@@ -1,3 +1,9 @@
+- [2025-08-07T00:15:00Z] CI Workflow pnpm PATH Issue Resolved
+  **Current State:** Fixed critical CI workflow issue where pnpm was not found in PATH. Removed cache: 'pnpm' from setup-node step and ensured pnpm is installed before any pnpm commands.
+  **Last Action:** Updated .github/workflows/ci.yml to remove premature pnpm cache setup from setup-node and ensure pnpm is available in PATH before use. Added shell: bash and --silent flag to store path command.
+  **Rationale:** The cache: 'pnpm' option in setup-node was being evaluated before pnpm was actually installed, causing PATH issues. Installing pnpm first, then setting up caching resolves the dependency order.
+  **Next Intent:** Monitor CI runs to ensure pnpm is now available and workflow passes successfully.
+  **Meta:** I am updating my self-documentation after fixing the CI workflow pnpm PATH issue. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 - [2025-08-07T00:10:00Z] CI Workflow pnpm Install and Caching Hardened
   **Current State:** The CI workflow now explicitly installs pnpm with npm, uses pnpm/action-setup for version pinning, and enables pnpm store caching for faster builds. A context warning about STORE_PATH was noted for future review.
   **Last Action:** Updated .github/workflows/ci.yml to add an explicit pnpm install step, keep pnpm/action-setup, and add pnpm store caching. Noted a lint warning about STORE_PATH context access for future investigation.
