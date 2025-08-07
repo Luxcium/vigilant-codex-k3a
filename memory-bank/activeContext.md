@@ -1,3 +1,9 @@
+- [2025-08-07T00:10:00Z] CI Workflow pnpm Install and Caching Hardened
+  **Current State:** The CI workflow now explicitly installs pnpm with npm, uses pnpm/action-setup for version pinning, and enables pnpm store caching for faster builds. A context warning about STORE_PATH was noted for future review.
+  **Last Action:** Updated .github/workflows/ci.yml to add an explicit pnpm install step, keep pnpm/action-setup, and add pnpm store caching. Noted a lint warning about STORE_PATH context access for future investigation.
+  **Rationale:** Ensures pnpm is always available, pins the version, and speeds up builds with caching. Addresses root cause of missing pnpm and aligns with best practices for reliability and speed.
+  **Next Intent:** Monitor CI for STORE_PATH context issues and validate caching effectiveness. Update documentation and workflow as needed.
+  **Meta:** I am updating my self-documentation after hardening the CI workflow with explicit pnpm install and caching. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
  - [2025-08-07T00:00:00Z] CI Workflow pnpm Setup Hardened
    **Current State:** The CI workflow now uses pnpm/action-setup with run_install: false, verifies pnpm is in PATH, and installs dependencies in a dedicated step.
    **Last Action:** Updated .github/workflows/ci.yml to split pnpm setup and install, add a pnpm --version check, and follow best practices to prevent workflow failures due to pnpm not being found.
