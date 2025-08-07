@@ -322,6 +322,10 @@ docker-compose -f docker-compose.yml -f docker-compose.staging.yml up -d
 
 This Docker configuration generator ensures consistent, secure, and optimized containerization across all environments in the AI agent framework project.
 
+## References
+
+- [docker-environment](../instructions/docker-environment.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

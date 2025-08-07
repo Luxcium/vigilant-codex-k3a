@@ -1,16 +1,16 @@
 import { describe, expect, it, vi } from 'vitest';
-import { QuestradeClient } from '../../client/QuestradeClient';
-import { OAuthProvider, TokenStore } from '../../auth/interfaces';
+import { QuestradeClient } from '../../infra/client/QuestradeClient';
+import { OAuthProvider, TokenStore } from '../../infra/auth/interfaces';
 
 // Mock the RestClient
-vi.mock('../../http/restClient', () => ({
+vi.mock('../../infra/http/restClient', () => ({
   RestClient: vi.fn().mockImplementation(() => ({
     get: vi.fn().mockResolvedValue({ time: 1234567890000 }),
   })),
 }));
 
 // Mock the AuthManager
-vi.mock('../../auth/manager', () => ({
+vi.mock('../../infra/auth/manager', () => ({
   AuthManager: vi.fn().mockImplementation(() => ({
     getApiServer: vi.fn().mockResolvedValue('https://api.questrade.com'),
   })),

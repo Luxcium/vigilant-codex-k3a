@@ -57,7 +57,6 @@ This matrix condenses all key manifest and meta configurations into a single ref
 [16]: ./nextjs-component-patterns.instructions.md 'Next.js Component Pattern Selection'
 [17]: ./prisma-server-actions.instructions.md 'Prisma with Next.js Server Actions'
 
-
 ## Verification
 
 - `markdownlint --strict`

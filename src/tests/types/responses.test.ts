@@ -5,15 +5,15 @@ import {
   BalanceSchema,
   ExecutionSchema,
   PositionSchema,
-} from '../../../src/types/accounts';
+} from '../../core/types/accounts';
 import {
   CandleSchema,
   MarketSchema,
   OptionQuoteSchema,
   QuoteSchema,
   StrategyQuoteSchema,
-} from '../../../src/types/markets';
-import { OrderSchema } from '../../../src/types/orders';
+} from '../../core/types/markets';
+import { OrderSchema } from '../../core/types/orders';
 import {
   AccountBalancesResponseSchema,
   AccountsResponseSchema,
@@ -31,11 +31,11 @@ import {
   SymbolSearchResponseSchema,
   SymbolsResponseSchema,
   TimeResponseSchema,
-} from '../../../src/types/responses';
+} from '../../core/types/responses';
 import {
   SymbolDetailSchema,
   SymbolSearchResultSchema,
-} from '../../../src/types/symbols';
+} from '../../core/types/symbols';
 
 describe('Response schemas', () => {
   it('AccountsResponseSchema parses', () => {

@@ -1,9 +1,9 @@
 import { describe, expect, it, vi } from 'vitest';
-import { bootstrap } from '../auth/manual';
-import * as storage from '../auth/storage';
+import { bootstrap } from '../infra/auth/manual';
+import * as storage from '../infra/auth/storage';
 
-vi.mock('../auth/storage', async () => {
-  const mod = await vi.importActual<typeof storage>('../auth/storage');
+vi.mock('../infra/auth/storage', async () => {
+  const mod = await vi.importActual<typeof storage>('../infra/auth/storage');
   return {
     ...mod,
     save: vi.fn(mod.save),

@@ -7,8 +7,6 @@ description: 'Iterative agent for ${TASK_NAME} – autonomously refine until bui
 
 # Self-Optimizing Autonomous Task Iteration
 
-[Autonomous Optimization Protocol required from the system ai agent](../instructions/system-autonomous-optimizations.instructions.md)
-
 Implement **${TASK_NAME}** according to project standards and the acceptance test suite.
 
 ## Control Loop
@@ -104,6 +102,10 @@ The active terminal's last run command
 
 terminalSelection: terminalSelection (Built-In)
 The active terminal's selection
+
+## References
+
+- [system-autonomous-optimizations](../instructions/system-autonomous-optimizations.instructions.md)
 
 ## Verification
 

@@ -32,8 +32,6 @@ I will help you generate well-structured prompt and instruction files for your A
 
 ### Instruction File Template
 
-> **Note:** All instruction files must comply with [instruction-authoring-standards.instructions.md](../instructions/instruction-authoring-standards.instructions.md).
-
 ````markdown
 applyTo: "${input:applyTo:Glob pattern for scope (e.g., \*_/_.ts)}"
 mode: 'agent'
@@ -67,7 +65,6 @@ name: string;
 
 ## Cross-References
 
-- [Instruction Authoring Standards](../instructions/instruction-authoring-standards.instructions.md)
 - [File Organization Standards](../prompts/file-organization.prompt.md)
 - [Project Dependencies](../../memory-bank/dependencies.md)
 
@@ -181,6 +178,12 @@ ${input:validation:- Check markdown-lint compliance\n- Verify cross-references\n
 - Check cross-reference integrity
 
 This template manager serves as the foundation for creating consistent, high-quality prompt and instruction files throughout the AI agent framework project.
+
+## References
+
+- [ai-instruction-creation](../instructions/ai-instruction-creation.instructions.md)
+- [ai-prompt-creation](../instructions/ai-prompt-creation.instructions.md)
+- [instruction-authoring-standards](../instructions/instruction-authoring-standards.instructions.md)
 
 ## Verification
 

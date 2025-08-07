@@ -8,8 +8,6 @@ description: 'Guide the user through Python environment setup with conditional w
 
 ## Context
 
-This prompt helps users set up Python development environments following the conditional guidelines defined in `memory-bank/instructions/python-environment-conditional.instructions.md`.
-
 ## User Decision Required
 
 Before proceeding, please choose your Python environment setup mode:
@@ -74,7 +72,6 @@ Before considering setup complete:
 
 ## Cross-References
 
-- **Instruction File:** `memory-bank/instructions/python-environment-conditional.instructions.md`
 - **Memory Bank:** `memory-bank/docker-workflow.md` for Docker integration patterns
 - **Dependencies:** `memory-bank/dependencies.md` for rationale tracking
 - **AI Agents:** See `AGENTS.md`, `.clinerules/main-rules.md`, `.github/copilot-instructions.md`
@@ -90,6 +87,11 @@ After setup completion:
 2. Test the environment with a simple Python script
 3. Document any mode-specific discoveries or issues
 4. Consider creating additional prompt files for common Python workflows
+
+## References
+
+- [python-environment](../instructions/python-environment.instructions.md)
+- [python-environment-conditional](../instructions/python-environment-conditional.instructions.md)
 
 ## Verification
 

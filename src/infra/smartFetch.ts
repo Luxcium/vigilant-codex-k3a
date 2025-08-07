@@ -1,8 +1,8 @@
-import { createRateLimiter } from '../rateLimit/tokenBucket';
-import { categorize } from '../rateLimit/rules';
-import { bootstrap } from '../auth/manual';
-import { toQuestradeError } from './toError';
-import type { GeneralErrorPayload } from './types';
+import { createRateLimiter } from '../core/rateLimit/tokenBucket';
+import { categorize } from '../core/rateLimit/rules';
+import { bootstrap } from './auth/manual';
+import { toQuestradeError } from '../core/errors/toError';
+import type { GeneralErrorPayload } from '../core/errors/types';
 
 const rl = createRateLimiter();
 

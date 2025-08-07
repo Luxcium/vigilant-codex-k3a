@@ -162,7 +162,7 @@ node --version   # v22.x.x
 python --version # Python 3.13.x
 
 # Install dependencies inside container
-npm install
+pnpm install
 pip install -r python/requirements.txt
 
 # Stop environment when done

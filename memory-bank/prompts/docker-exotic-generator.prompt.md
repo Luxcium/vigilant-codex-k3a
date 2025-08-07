@@ -25,12 +25,6 @@ You are working in a VS Code workspace with the following project structure:
 
 Apply the following instruction files during code generation:
 
-- `memory-bank/instructions/typescript-standards.instructions.md` for TypeScript code
-- `memory-bank/instructions/python-standards.instructions.md` for Python code
-- `memory-bank/instructions/python-notebook-standards.instructions.md` for Jupyter notebooks
-- `memory-bank/instructions/file-organization.instructions.md` for project structure
-- `memory-bank/instructions/no_dummy-no_placeholders.instruction.md` for real, executable configurations
-
 ## Parametric Inputs
 
 Define your inputs using the format: `${input:variableName:defaultValue}`
@@ -372,8 +366,6 @@ Provide the following deliverables:
 ### Instruction Files
 
 - [file-organization.instructions.md](./file-organization.prompt.md) - Project structure standards
-- [no_dummy-no_placeholders.instruction.md](../instructions/no_dummy-no_placeholders.instructions.md) - Real configuration requirements
-- [self-documentation.instructions.md](../instructions/self-documentation.instructions.md) - Documentation protocols
 
 ### Memory Bank Files
 
@@ -418,6 +410,11 @@ codex generate --prompt=docker-exotic-generator.prompt.md \
 codex generate --prompt=docker-exotic-generator.prompt.md \
   --params="projectName=user-service,environment=production,runtimeVersion=node:18-alpine,serviceType=microservice,includeDatabase=redis,exoticPatterns=service-discovery,networkPattern=overlay"
 ```
+
+## References
+
+- [docker-environment](../instructions/docker-environment.instructions.md)
+- [no_dummy-no_placeholders](../instructions/no_dummy-no_placeholders.instructions.md)
 
 ## Verification
 

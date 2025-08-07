@@ -1,0 +1,4 @@
+# AI Agent files with special YAML front-matter formatting requirements
+**/*.prompt.md
+**/*.chatmode.md
+**/*.instructions.md

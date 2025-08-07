@@ -12,6 +12,10 @@ Current workspace: ${workspaceFolder}
 
 Please confirm that you can see this prompt and that the workspace variable is resolved correctly.
 
+## References
+
+- [ai-prompt-creation](../instructions/ai-prompt-creation.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

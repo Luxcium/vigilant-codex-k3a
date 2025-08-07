@@ -304,6 +304,10 @@ fi
 
 This prompt ensures comprehensive Docker environment setup following all established project standards and integration requirements.
 
+## References
+
+- [docker-environment](../instructions/docker-environment.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

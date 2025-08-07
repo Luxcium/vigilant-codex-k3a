@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ImplicitProvider } from '../../../auth/providers/implicit';
+import { ImplicitProvider } from '../../../infra/auth/providers/implicit';
 
 describe('ImplicitProvider', () => {
   const clientId = 'cid';

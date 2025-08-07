@@ -5,7 +5,7 @@ import {
   BalanceSchema,
   ExecutionSchema,
   PositionSchema,
-} from '../../../src/types/accounts';
+} from '../../core/types/accounts';
 
 describe('Account related schemas', () => {
   it('valid AccountSchema parses correctly', () => {

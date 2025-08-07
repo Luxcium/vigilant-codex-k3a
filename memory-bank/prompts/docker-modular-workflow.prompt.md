@@ -26,11 +26,6 @@ You are working in a development environment with:
 
 Apply the following instruction files during code generation:
 
-- `memory-bank/instructions/typescript-standards.instructions.md` for TypeScript code
-- `memory-bank/instructions/python-standards.instructions.md` for Python code
-- `memory-bank/instructions/file-organization.instructions.md` for project structure
-- `memory-bank/instructions/no_dummy-no_placeholders.instruction.md` for real, executable configurations
-
 ## Parametric Inputs
 
 Define your inputs using the format: `${input:variableName:defaultValue}`
@@ -441,6 +436,11 @@ Generate modular Docker configuration with:
 codex generate --prompt=docker-modular-workflow.prompt.md \
   --params="projectName=my-modular-app,runtimeVersion=node:18-alpine,packageManager=pnpm,volumeStrategy=source-mount"
 ```
+
+## References
+
+- [docker-environment](../instructions/docker-environment.instructions.md)
+- [no_dummy-no_placeholders](../instructions/no_dummy-no_placeholders.instructions.md)
 
 ## Verification
 

@@ -54,6 +54,10 @@ By following this protocol, the README update and review process remains consist
 - A project where every folder’s README is current, cross-referenced, and unambiguous.
 - A main README that links to all subfolder READMEs for easy navigation.
 
+## References
+
+- [readme-maintenance](../instructions/readme-maintenance.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

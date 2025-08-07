@@ -31,4 +31,3 @@ This document captures attempts to run the project's test suites using three dif
 4. For Node's built-in runner, add tests under a `test/` directory or with the `.test.js`/`.test.ts` suffix and execute `node --test`.
 
 All test attempts were executed from a clean repository state, and the failures were due solely to missing dependencies in the offline environment.
-

@@ -108,7 +108,6 @@ Integrate @microsoft/tsdoc for parsing and validation. Tools like ESLint can enf
 
 Let this prompt stand as your binding task directive [Execute this task now as your top task....](../prompts/tsdoc-typedoc.prompt.md)
 
-
 ## Verification
 
 - `markdownlint --strict`
