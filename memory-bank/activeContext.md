@@ -1,3 +1,9 @@
+ - [2025-08-07T00:00:00Z] CI Workflow pnpm Setup Hardened
+   **Current State:** The CI workflow now uses pnpm/action-setup with run_install: false, verifies pnpm is in PATH, and installs dependencies in a dedicated step.
+   **Last Action:** Updated .github/workflows/ci.yml to split pnpm setup and install, add a pnpm --version check, and follow best practices to prevent workflow failures due to pnpm not being found.
+   **Rationale:** Ensures reliable pnpm availability in CI, avoids race conditions, and aligns with official pnpm/action-setup and GitHub Actions recommendations for monorepos.
+   **Next Intent:** Monitor CI runs for stability and update documentation if further changes are needed.
+   **Meta:** I am updating my self-documentation after hardening the CI workflow pnpm setup. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 - [2025-08-01T00:00:00Z] Questrade SDK structure modularized
   **Current State:** Core logic, IO modules, CLI scripts, mocks, and tests reorganized under `src/`.
   **Last Action:** Created `src/core`, `src/infra`, `src/cli`, `src/mocks`, and `src/tests`; migrated modules and updated imports.

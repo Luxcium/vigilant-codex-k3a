@@ -17,48 +17,51 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-        
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: 'pnpm'
-          
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
           version: 9
-          run_install: true
-          
+          run_install: false
+
+      - name: Ensure pnpm is in PATH
+        run: pnpm --version
+
       - name: Install dependencies
         run: |
           pnpm install --frozen-lockfile
           echo "Dependencies installed successfully"
-        
+
       - name: TypeScript compilation check
         run: |
           echo "Checking TypeScript compilation..."
           npx tsc --noEmit
           echo "TypeScript compilation check passed"
-        
+
       - name: Lint code and documentation
         run: |
           echo "Running linting checks..."
           pnpm lint
           echo "Linting checks passed"
-        
+
       - name: Run unit tests
         run: |
           echo "Running unit tests..."
           pnpm test:unit
           echo "Unit tests passed"
-        
+
       - name: Run integration tests
         run: |
           echo "Running integration tests..."
           QT_ENV=mock pnpm test:integration
           echo "Integration tests passed"
-        
+
       - name: Check code coverage thresholds
         run: |
           echo "Checking code coverage thresholds..."
