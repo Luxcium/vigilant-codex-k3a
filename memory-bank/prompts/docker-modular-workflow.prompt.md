@@ -113,7 +113,6 @@ FROM ${RUNTIME_VERSION} AS builder
 RUN npm install -g ${input:packageManager}
 
 # Set working directory
-ockfile
 ```
 
 #### 1.2. Runtime Dockerfile (`Dockerfile.run`)
