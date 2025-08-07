@@ -392,7 +392,49 @@ npm run test:coverage
 
 > **Built for AI-Human Collaboration** - This workspace represents a sophisticated foundation for polyvalent application development with advanced AI agent integration, comprehensive testing, and stateful documentation systems.
 
-**Last Updated**: 2025-01-13 | **Status**: Production-Ready | **Coverage**: 98.34%
+**Last Updated**: 2025-07-30 | **Status**: Production-Ready | **Coverage**: 98.34%
+
+## Development Essentials
+
+### Folder Layout
+
+Refer to the architecture overview above for the complete directory map. Key paths include `src/` for the TypeScript SDK, `web/` for the Next.js app, `python/` for agent utilities, and `memory-bank/` for persistent AI context.
+
+### Token Persistence
+
+Tokens are saved in the `.keys` directory via the `KeyManager`, which stores OAuth credentials in `.keys/oauth.json` and supports clearing or refreshing them safely.
+
+### Environment Switching
+
+Configure Python modes at runtime:
+
+```bash
+./scripts/setup_python_env.sh --mode local
+./scripts/setup_python_env.sh --mode docker_isolated
+./scripts/setup_python_env.sh --mode docker_volume
+```
+
+Set `ENV_MODE` to persist a default selection.
+
+### CLI Usage
+
+Launch a Codex Universal container with:
+
+```bash
+./scripts/run_codex_cli.sh
+```
+
+Run project scripts inside the container using `npm run <script>` or `pnpm <script>`.
+
+### Mock Recording
+
+Tests rely on `vi.stubGlobal('fetch', mockFetch)` to capture API interactions. Update mock responses in the corresponding test files when recording new scenarios.
+
+### Testing Commands
+
+- `./scripts/verify-all.sh` – markdown, instruction, prompt, and memory-bank checks
+- `npm test` – run the vitest suite
+- `npm run test:coverage` – generate coverage reports
 
 ## Web Development Workflow with AI Agents
 
@@ -481,3 +523,8 @@ Custom prompts and instructions are located in `memory-bank/prompts/` and `memor
 - Only `.keys/example-sdk-demo.json` is written for output; no split or duplicate files.
 - This file is labeled as an intermediate refactor phase, preparing for future dependency injection and SDK integration.
 - When creating or updating agent workflows, reference this playground as the standard for isolated feature prototyping.
+
+## Verification
+
+- `markdownlint --strict README.md CONTRIBUTING.md`
+- `./scripts/verify-all.sh`
