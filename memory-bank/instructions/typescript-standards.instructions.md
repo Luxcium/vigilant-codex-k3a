@@ -88,6 +88,7 @@ applyTo: '**/*.ts, **/*.tsx'
 - You follow patterns documented in systemPatterns.md
 - You ensure all setup is performed via scripts in scripts/ directory
 - You document all architectural decisions in appropriate memory bank files
+- You document dataset preprocessing steps for ML projects
 
 ## Tooling
 
