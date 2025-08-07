@@ -71,10 +71,10 @@ Additionally, you must log your actions and findings in memory bank as per self-
 ## State Logging Recipe
 
 - For playground and demo workflows, always:
-   - Build and run the code.
-   - Verify output file(s) for correctness.
-   - Log the demonstration and output verification in the memory bank.
-   - Repeat for each iteration, ensuring robust, reproducible development.
+  - Build and run the code.
+  - Verify output file(s) for correctness.
+  - Log the demonstration and output verification in the memory bank.
+  - Repeat for each iteration, ensuring robust, reproducible development.
 
 - Record a timestamped entry with:
   1. **Current State:** Key context values or file names.
@@ -118,7 +118,6 @@ Additionally, you must log your actions and findings in memory bank as per self-
 ## Project Output Directory Rule
 
 **IMPORTANT:** Only the top-level SDK root `src/` folder (for Questrade SDK) must emit build outputs to `./lib`. All other packages, modules, or subprojects (such as agent-framework, templates, etc.) should use their own `dist/` or default `outDir` as appropriate for their context. Do NOT change outDir to `lib` for any folder except the top-level SDK root. This rule is mandatory and must be enforced to avoid confusion and maintain project structure integrity.
-
 
 ## Verification
 

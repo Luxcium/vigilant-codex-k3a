@@ -145,7 +145,6 @@ This instruction file integrates with:
 
 See project Memory Bank files for complete integration protocols.
 
-
 ## Verification
 
 - `markdownlint --strict`
