@@ -16,7 +16,9 @@ node_modules/
 .coverage/
 coverage/
 !docs/
+
 # Package manager lock files
+# set the env to not use any lockfiles for the time being we may use one later for now we must not
 pnpm-lock.yaml
 package-lock.json
 npm-shrinkwrap.json
@@ -27,6 +29,9 @@ src/types/dev/Archive.zip
 
 dist/
 lib/
+!src/lib
+!**/web/src/lib
+
 .codex/sessions/**
 .codex/log/**
 history.jsonl
