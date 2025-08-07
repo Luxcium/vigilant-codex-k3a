@@ -104,7 +104,7 @@ applyTo: '**/*.py'
 - You cross-reference related documents with links.
 - You update dependency relationships when adding features.
 - You document dataset preprocessing steps for ML projects.
-- You follow patterns documented in systemPatterns.md.
+- You follow patterns documented in `systemPatterns.md`.
 - You ensure all setup is performed via scripts in scripts/ directory.
 - You document all architectural decisions in appropriate memory bank files.
 
