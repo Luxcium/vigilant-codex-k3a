@@ -5,23 +5,40 @@ on:
   pull_request:
 
 jobs:
-  test:
+  # Main CI job that runs all checks
+  ci:
+    name: Continuous Integration
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
+        
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: 'pnpm'
-      - uses: pnpm/action-setup@v4
+          
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
         with:
           version: 9
           run_install: false
+          
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
+        
+      - name: TypeScript compilation check
+        run: npx tsc --noEmit
+        
+      - name: Lint code and documentation
+        run: pnpm lint
+        
       - name: Run unit tests
         run: pnpm test:unit
+        
       - name: Run integration tests
         run: QT_ENV=mock pnpm test:integration
-      - name: Run coverage
+        
+      - name: Check code coverage thresholds
         run: pnpm coverage
