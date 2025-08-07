@@ -4,6 +4,11 @@ on:
   push:
   pull_request:
 
+# Cancel previous runs for the same branch/PR to save compute resources
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   # Main CI job that runs all checks
   ci:
@@ -26,19 +31,36 @@ jobs:
           run_install: false
           
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: |
+          pnpm install --frozen-lockfile
+          echo "Dependencies installed successfully"
         
       - name: TypeScript compilation check
-        run: npx tsc --noEmit
+        run: |
+          echo "Checking TypeScript compilation..."
+          npx tsc --noEmit
+          echo "TypeScript compilation check passed"
         
       - name: Lint code and documentation
-        run: pnpm lint
+        run: |
+          echo "Running linting checks..."
+          pnpm lint
+          echo "Linting checks passed"
         
       - name: Run unit tests
-        run: pnpm test:unit
+        run: |
+          echo "Running unit tests..."
+          pnpm test:unit
+          echo "Unit tests passed"
         
       - name: Run integration tests
-        run: QT_ENV=mock pnpm test:integration
+        run: |
+          echo "Running integration tests..."
+          QT_ENV=mock pnpm test:integration
+          echo "Integration tests passed"
         
       - name: Check code coverage thresholds
-        run: pnpm coverage
+        run: |
+          echo "Checking code coverage thresholds..."
+          pnpm coverage
+          echo "Coverage thresholds met"
