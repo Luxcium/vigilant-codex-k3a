@@ -225,7 +225,6 @@ applyTo: '**/*.ipynb'
 
 Remember to maintain consistency with the project's memory bank files and keep all documentation up-to-date.
 
-
 ## Verification
 
 - `markdownlint --strict`

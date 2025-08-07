@@ -1,3 +1,33 @@
+---
+- [2025-08-07T01:00:00Z] Workspace Hardened for pnpm-Only, No-Lockfile Policy
+  **Current State:** All references to npm and yarn have been removed from documentation and scripts. The workspace is now pnpm-only, with no lockfiles generated or required. This is enforced in CI, `.gitignore`, and all relevant documentation. All onboarding and usage instructions now direct users to use pnpm exclusively.
+  **Last Action:** Updated `package.json`, root and web `README.md`, scripts/README.md, and agent-framework/README.md to reflect pnpm-only, no-lockfile policy. Verified no remaining npm/yarn references in onboarding docs.
+  **Rationale:** Ensures consistency, prevents lockfile-related CI failures, and aligns with user policy for reproducible, robust development. Documentation and onboarding are now future-proofed for possible later lockfile adoption.
+  **Meta:** This entry documents the completion of workspace hardening for pnpm-only, no-lockfile operation. All future changes to package management policy must be documented here.
+ - [2025-08-07T01:00:00Z] CI Workflow and Workspace Lockfile Policy Updated
+  **Current State:** The CI workflow now uses `pnpm install --no-frozen-lockfile` to ensure no lockfile is required or generated. `.gitignore` explicitly blocks all lockfiles, and a comment clarifies that lockfiles are intentionally not used in this workspace. This matches the user's directive and workspace policy.
+  **Last Action:** Updated `.github/workflows/ci.yml` to use `--no-frozen-lockfile` for dependency installation. Enhanced `.gitignore` with a clear comment about the no-lockfile policy. Confirmed that no lockfiles are present or required. Documented rationale and next steps in the memory bank.
+  **Rationale:** The user explicitly requested a workspace and CI environment that does not use any lockfiles for the time being, to avoid errors and ensure flexibility. This is now enforced in both the workflow and repository configuration.
+  **Next Intent:** Monitor CI runs to confirm no lockfile-related errors occur. If/when lockfiles are to be used in the future, update `.gitignore` and CI accordingly.
+  **Meta:** I am updating my self-documentation after enforcing the no-lockfile policy and updating the CI workflow. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+- [2025-08-07T00:15:00Z] CI Workflow pnpm PATH Issue Resolved
+  **Current State:** Fixed critical CI workflow issue where pnpm was not found in PATH. Removed cache: 'pnpm' from setup-node step and ensured pnpm is installed before any pnpm commands.
+  **Last Action:** Updated .github/workflows/ci.yml to remove premature pnpm cache setup from setup-node and ensure pnpm is available in PATH before use. Added shell: bash and --silent flag to store path command.
+  **Rationale:** The cache: 'pnpm' option in setup-node was being evaluated before pnpm was actually installed, causing PATH issues. Installing pnpm first, then setting up caching resolves the dependency order.
+  **Next Intent:** Monitor CI runs to ensure pnpm is now available and workflow passes successfully.
+  **Meta:** I am updating my self-documentation after fixing the CI workflow pnpm PATH issue. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+- [2025-08-07T00:10:00Z] CI Workflow pnpm Install and Caching Hardened
+  **Current State:** The CI workflow now explicitly installs pnpm with npm, uses pnpm/action-setup for version pinning, and enables pnpm store caching for faster builds. A context warning about STORE_PATH was noted for future review.
+  **Last Action:** Updated .github/workflows/ci.yml to add an explicit pnpm install step, keep pnpm/action-setup, and add pnpm store caching. Noted a lint warning about STORE_PATH context access for future investigation.
+  **Rationale:** Ensures pnpm is always available, pins the version, and speeds up builds with caching. Addresses root cause of missing pnpm and aligns with best practices for reliability and speed.
+  **Next Intent:** Monitor CI for STORE_PATH context issues and validate caching effectiveness. Update documentation and workflow as needed.
+  **Meta:** I am updating my self-documentation after hardening the CI workflow with explicit pnpm install and caching. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+ - [2025-08-07T00:00:00Z] CI Workflow pnpm Setup Hardened
+   **Current State:** The CI workflow now uses pnpm/action-setup with run_install: false, verifies pnpm is in PATH, and installs dependencies in a dedicated step.
+   **Last Action:** Updated .github/workflows/ci.yml to split pnpm setup and install, add a pnpm --version check, and follow best practices to prevent workflow failures due to pnpm not being found.
+   **Rationale:** Ensures reliable pnpm availability in CI, avoids race conditions, and aligns with official pnpm/action-setup and GitHub Actions recommendations for monorepos.
+   **Next Intent:** Monitor CI runs for stability and update documentation if further changes are needed.
+   **Meta:** I am updating my self-documentation after hardening the CI workflow pnpm setup. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 - [2025-08-01T00:00:00Z] Questrade SDK structure modularized
   **Current State:** Core logic, IO modules, CLI scripts, mocks, and tests reorganized under `src/`.
   **Last Action:** Created `src/core`, `src/infra`, `src/cli`, `src/mocks`, and `src/tests`; migrated modules and updated imports.

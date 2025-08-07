@@ -118,10 +118,9 @@ Closes #123
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [Gitmoji Guide](https://gitmoji.dev/)
 - [Complete Gitmoji Selection](../prompts/gitmoji-complete-list.prompt.md)
-<!-- 
+<!--
 - [Commit Examples](../prompts/commit-examples.prompt.md)
 - [Breaking Changes Guide](../prompts/breaking-changes.prompt.md) -->
-
 
 ## Verification
 

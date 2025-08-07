@@ -230,7 +230,6 @@ description: 'VS Code notebook integration standards and extended capabilities'
 
 This integration ensures that notebook development leverages VS Code's full capabilities while maintaining consistency with project standards and memory bank protocols.
 
-
 ## Verification
 
 - `markdownlint --strict`

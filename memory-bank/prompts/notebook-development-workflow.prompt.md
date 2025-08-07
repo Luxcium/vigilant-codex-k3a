@@ -1,16 +1,6 @@
 ---
 mode: 'agent'
-tools:
-  [
-    'codebase',
-    'editFiles',
-    'runCommands',
-    'search',
-    'usages',
-    'vscodeAPI',
-    'extensions',
-    'copilotCodingAgent',
-  ]
+tools: ['codebase', 'editFiles', 'runCommands', 'search', 'usages', 'vscodeAPI', 'extensions', 'copilotCodingAgent']
 description: 'Comprehensive notebook development workflow automation with VS Code integration'
 ---
 

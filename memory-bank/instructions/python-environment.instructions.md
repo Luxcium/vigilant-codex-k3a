@@ -85,7 +85,6 @@ services:
 - Log all changes and environment decisions in `memory-bank/activeContext.md` and `memory-bank/progress.md` per the Self-Documentation Protocol.
 - Update `memory-bank/dependencies.md` with rationale for any new tools or dependencies.
 
-
 ## Verification
 
 - `markdownlint --strict`

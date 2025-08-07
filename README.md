@@ -426,7 +426,7 @@ Launch a Codex Universal container with:
 ./scripts/run_codex_cli.sh
 ```
 
-Run project scripts inside the container using `npm run <script>` or `pnpm <script>`.
+Run project scripts inside the container using `pnpm <script>` only. This workspace is pnpm-only by policy.
 
 ### Mock Recording
 
@@ -435,14 +435,22 @@ Tests rely on `vi.stubGlobal('fetch', mockFetch)` to capture API interactions. U
 ### Testing Commands
 
 - `./scripts/verify-all.sh` – markdown, instruction, prompt, and memory-bank checks
-- `npm test` – run the vitest suite
-- `npm run test:coverage` – generate coverage reports
+- `pnpm test` – run the vitest suite
+- `pnpm run test:coverage` – generate coverage reports
 
 ## Web Development Workflow with AI Agents
 
-Leverage AI-assisted VS Code tasks and npm script aliases to co-develop the Next.js application in real time:
+Leverage AI-assisted VS Code tasks and pnpm script aliases to co-develop the Next.js application in real time:
 
-### Root-level npm script aliases
+### Root-level pnpm script aliases
+## pnpm-Only, No-Lockfile Policy
+
+This workspace is intentionally configured to use **pnpm only** as the package manager. All references to npm or yarn have been removed. Lockfiles (pnpm-lock.yaml, package-lock.json, yarn.lock) are intentionally ignored and not used in CI or local development. See `.gitignore` and CI workflow for enforcement details.
+
+**Key points:**
+- Use `pnpm` for all dependency management and scripts.
+- Do not use npm or yarn in this workspace.
+- No lockfiles are generated or required; this is enforced in CI and `.gitignore`.
 
 - **pnpm run web:dev**: Start Next.js in development mode (HMR, error overlays)
 - **pnpm run web:lint**: Run ESLint for the web folder

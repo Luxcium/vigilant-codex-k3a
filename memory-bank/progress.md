@@ -20,6 +20,17 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-07-30] Continuous Integration Workflow
+
+**Achievement:**
+Added GitHub Actions workflow `.github/workflows/ci.yml` to run unit tests, integration tests with `QT_ENV=mock`, and coverage reporting.
+
+**Impact:**
+Provides automated test and coverage checks that fail the pipeline on errors.
+
+**Meta:**
+Self-documentation after adding CI workflow.
+
 ### [2025-08-01] Questrade SDK Structure Reorganization
 
 **Achievement:**

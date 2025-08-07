@@ -70,7 +70,6 @@ When the user asks about the codebase structure or architecture, you must, witho
 > [!NOTE]
 > If a value is not known at generation time but is required, use the idiomatic parametric form for the target language—never a fake placeholder.
 
-
 ## Verification
 
 - `markdownlint --strict`
