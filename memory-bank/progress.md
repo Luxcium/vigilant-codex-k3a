@@ -20,6 +20,17 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-07-30] Continuous Integration Workflow
+
+**Achievement:**
+Added GitHub Actions workflow `.github/workflows/ci.yml` to run unit tests, integration tests with `QT_ENV=mock`, and coverage reporting.
+
+**Impact:**
+Provides automated test and coverage checks that fail the pipeline on errors.
+
+**Meta:**
+Self-documentation after adding CI workflow.
+
 ### [2025-07-30] Prompt Reference Standardization
 
 **Achievement:**
@@ -490,8 +501,8 @@ This project supports three AI agents with specific entry points:
 - [2025-07-14T06:51:41Z] Task: Created web-build.instructions.md, added production build and start tasks, and updated launch.json with Next.js debug configuration to streamline local deployment and debugging.
 - [2025-07-17T03:53:10Z] Split demo components and consolidated actions. Improved post list initialization.
 
-**Last Updated:** 2025-07-23 | **Status:** Documentation Updated | **Coverage:** 98.34% | **Applications:** Fully Operational
-**Last Updated:** 2025-07-23 | **Status:** Root Context Protocol Established | **Coverage:** 98.34% | **Applications:** Fully Operational
+**Last Updated:** 2025-07-30 | **Status:** Documentation Updated | **Coverage:** 98.34% | **Applications:** Fully Operational
+**Last Updated:** 2025-07-30 | **Status:** Root Context Protocol Established | **Coverage:** 98.34% | **Applications:** Fully Operational
 
 [2025-07-27] Radical Documentation Refactor: Memory Bank Migration
 
