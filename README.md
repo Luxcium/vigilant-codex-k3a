@@ -343,6 +343,49 @@ For comprehensive platform integration (PWA, iOS, Windows, Chrome Extension), se
 
 **[when-to-use-what-matrix.instructions.md](memory-bank/instructions/when-to-use-what-matrix.instructions.md)** - One-page matrix mapping all integration goals to their primary configuration files and authoritative sources.
 
+## Developer Guide
+
+### Folder Layout
+
+The project tree and root-context table above outline where each language and framework lives. Use it as a map when navigating the repository.
+
+### Token Persistence
+
+Access and refresh tokens persist under `.keys/` and are managed through `KeyManager` to avoid accidental leaks. Delete this folder to reset credentials.
+
+### Environment Switching
+
+Select Python environment modes at runtime with `scripts/setup_python_env.sh <mode>` where `<mode>` is `local`, `docker_isolated`, or `docker_volume`.
+
+### CLI Usage
+
+Run the demonstration CLI directly with tsx:
+
+```bash
+pnpm tsx src/cli.ts
+```
+
+It loads API credentials from `.env`, persists tokens via `KeyManager`, and prints sample candle data.
+
+### Mock Recording
+
+Tests isolate network calls with `vi.stubGlobal('fetch', mockFetch)`. Update recorded responses by editing the mocked `Response` objects in test files and rerunning the tests.
+
+### Testing Commands
+
+Use these commands to validate contributions:
+
+```bash
+npm test                      # Run the vitest suite
+npm run test:coverage         # Generate coverage report
+./scripts/verify-all.sh       # Repository-wide validation
+npx markdownlint --strict README.md CONTRIBUTING.md memory-bank/activeContext.md memory-bank/progress.md
+```
+
+### Memory Bank Protocol
+
+After major changes, update `memory-bank/activeContext.md` and `memory-bank/progress.md` to preserve project state for all agents.
+
 ## 🤝 Contributing
 
 ### Adding New Components

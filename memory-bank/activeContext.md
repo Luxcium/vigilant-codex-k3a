@@ -1,3 +1,14 @@
+# The `activeContext.md` Memory Bank File
+
+<!-- markdownlint-disable MD024 MD034 -->
+
+- [2025-08-07T14:45:43Z] Contributor Documentation Expanded
+  **Current State:** README Developer Guide and new CONTRIBUTING.md cover folder layout, token persistence, environment modes, CLI usage, mock recording, and testing commands.
+  **Last Action:** Added Developer Guide to README and created CONTRIBUTING.md with memory bank protocol instructions.
+  **Rationale:** Provide clear onboarding guidance and ensure contributors update progress and activeContext after major changes.
+  **Next Intent:** Keep documentation in sync as features evolve and maintain memory bank accuracy.
+  **Meta:** Self-documentation after updating contributor materials.
+
 - [2025-07-30T21:00:00Z] Prompt References Consolidated
   **Current State:** All prompt files in `memory-bank/prompts/` now include a References section linking to instruction files.
   **Last Action:** Audited and updated prompt files to remove duplicated instructions and add links.
@@ -72,8 +83,6 @@ I am updating my self-documentation after verifying output and HTTP error code i
   Continue to monitor and optimize meta-level documentation and operational rules as the project evolves. Update memory bank and documentation immediately upon any change in meta-configuration or agent protocols.
   **Meta:**
   I am updating my self-documentation after completing a meta-context review and validation. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-
-# The `activeContext.md` Memory Bank File
 
 As an AI Agent, you MUST actively strive to keep this file up to date with the latest active context, including project goals, user experience requirements, and AI agent collaboration framework. This file MUST be updated by any AI Agent accessing it, You MUST eagerly each time changes on each chat completion and each task or subtask as the living authoritative guide.
 
