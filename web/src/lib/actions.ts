@@ -1,14 +1,6 @@
 'use server';
-import { createPost, likePost } from './enhanced-actions';
-
-// Export each async function individually to comply with Next.js server action requirements
-export async function createPost(formData: FormData) {
-  return await (await import('./enhanced-actions')).createPost(formData);
-}
-
-export async function likePost(id: string) {
-  return await (await import('./enhanced-actions')).likePost(id);
-}
+// Directly re-export the async server actions to comply with Next.js requirements
+export { createPost, likePost } from './enhanced-actions';
 
 // =======
 // import { prisma } from '@/lib/prisma';
