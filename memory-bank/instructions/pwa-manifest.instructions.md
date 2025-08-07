@@ -118,7 +118,6 @@ npx web-app-manifest-validator manifest.json
 [14]: https://redirection.io/tools/web-app-manifest/validator?utm_source=chatgpt.com
 [15]: https://www.npmjs.com/package/%40types/web-app-manifest?utm_source=chatgpt.com
 
-
 ## Verification
 
 - `markdownlint --strict`

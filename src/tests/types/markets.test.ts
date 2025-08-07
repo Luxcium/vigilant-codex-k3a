@@ -5,7 +5,7 @@ import {
   OptionQuoteSchema,
   QuoteSchema,
   StrategyQuoteSchema,
-} from '../../../src/types/markets.js';
+} from '../../core/types/markets';
 describe('Market related schemas', () => {
   it('valid MarketSchema parses', () => {
     const obj = {

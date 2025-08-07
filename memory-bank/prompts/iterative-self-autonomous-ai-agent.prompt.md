@@ -103,6 +103,10 @@ The active terminal's last run command
 terminalSelection: terminalSelection (Built-In)
 The active terminal's selection
 
+## References
+
+- [system-autonomous-optimizations](../instructions/system-autonomous-optimizations.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

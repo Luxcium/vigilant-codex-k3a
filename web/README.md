@@ -37,9 +37,9 @@ pnpm run web:dev
 - **Tasks**: See `.vscode/tasks.json` for tasks like `Web Development Environment`, `Web: Lint`, `Web: Format`, `Web: Test`, and quality check suites.
 - **Debugging**: `.vscode/launch.json` provides full-stack debugging, Edge DevTools, mobile emulation, and browser preview integration.
 
-### 🗂️ NPM/PNPM Scripts
+### 🗂️ PNPM Scripts (pnpm-only workspace)
 
-- **Root `package.json`**: Aliases like `web:dev`, `web:lint`, `web:format`, `web:test` all use `pnpm --filter ./web ...` for monorepo consistency.
+- **Root `package.json`**: Aliases like `web:dev`, `web:lint`, `web:format`, `web:test` all use `pnpm --filter ./web ...` for monorepo consistency. This workspace is pnpm-only; do not use npm or yarn.
 - **`web/package.json`**: Standard Next.js scripts (`dev`, `build`, `start`, `preview`, `lint`, `format`).
 
 ### 🧭 Chain of Custody for Live Development
@@ -66,14 +66,16 @@ pnpm run web:dev
 First, run the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
 pnpm dev
-# or
-bun dev
 ```
+## pnpm-Only, No-Lockfile Policy
+
+This project is configured to use **pnpm only** as the package manager. Lockfiles (pnpm-lock.yaml, package-lock.json, yarn.lock) are intentionally ignored and not used in CI or local development. See the root `.gitignore` and CI workflow for enforcement details.
+
+**Key points:**
+- Use `pnpm` for all dependency management and scripts.
+- Do not use npm, yarn, or bun in this workspace.
+- No lockfiles are generated or required; this is enforced in CI and `.gitignore`.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 

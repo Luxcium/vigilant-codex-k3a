@@ -2,6 +2,7 @@
 description: VS Code development helper for extensions, workspace configuration, and API usage and anything related to this project in vscode.
 model: GPT-4.1
  tools: ['usages', 'extensions', 'fetch', 'findTestFiles', 'githubRepo', 'vscodeAPI', 'problems', 'terminal-and-tasks', 'editFiles', 'search', 'runCommands', 'runTasks', 'microsoft-docs']
+
 ---
 
 # VS Code Development Helper

@@ -256,6 +256,10 @@ Create the instruction file at the specified location with:
 
 The generated file should serve as automatic guidance for AI agents when generating code in the specified scope.
 
+## References
+
+- [ai-instruction-creation](../instructions/ai-instruction-creation.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

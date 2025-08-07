@@ -51,12 +51,17 @@ export class QuestradeClient {
    * @param interval - Candle interval (e.g. 'OneDay').
    * @returns Array of candle records.
    */
-  public async getCandles<T = unknown>(
-    symbolId: number,
-    start: string,
-    end: string,
-    interval: string
-  ): Promise<T[]> {
+  public async getCandles<T = unknown>({
+    symbolId,
+    start,
+    end,
+    interval,
+  }: {
+    symbolId: number;
+    start: string;
+    end: string;
+    interval: string;
+  }): Promise<T[]> {
     // build query string
     const qs = new URLSearchParams({
       symbolId: symbolId.toString(),

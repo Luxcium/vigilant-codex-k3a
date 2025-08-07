@@ -11,18 +11,15 @@
  */
 
 import 'dotenv/config';
-import { ManualProvider } from './auth/providers/manual';
-import { KeyManager } from './security/KeyManager';
-import { APP } from './config';
-// <<<<<<< codex/remove-verification-script-references-2025-07-3003-01-07
-import { logger } from './logger';
-// ======= resolve all conflicts in files that have been commented put lile this please look and resolve any auch now by yourself
-import { log } from './log';
-// >>>>>>> luxcium/main
+
+import { ManualProvider } from '@/infra/auth/providers/manual';
+import { KeyManager } from '@/infra/security/KeyManager';
 import {
   QuestradeClient,
   QuestradeClientOptions,
-} from './client/QuestradeClient';
+} from '@/infra/client/QuestradeClient';
+import { APP } from '@/infra/config';
+import { logger } from '@/logger';
 
 /**
  * Main CLI entry point. Loads configuration, instantiates the QuestradeClient, and fetches historical candles.
@@ -30,7 +27,7 @@ import {
  */
 async function main(): Promise<void> {
   try {
-// <<<<<<< codex/remove-verification-script-references-2025-07-3003-01-07
+    // <<<<<<< codex/remove-verification-script-references-2025-07-3003-01-07
     // Load required environment variables
     const clientId = APP.clientId;
     const refreshToken = APP.refresh;
@@ -44,10 +41,7 @@ async function main(): Promise<void> {
     }
 
     // Optional API server override
-// ======= to be resolved by codex or copilot on next pass before continue this must be reoptimized 
-    const clientId = APP.clientId;
-    const refreshToken = APP.refresh;
-// >>>>>>> luxcium/main old conflict please resolve this one and any otjer such
+
     const apiServer = APP.apiServer;
 
     // Instantiate OAuth provider and token store
@@ -68,7 +62,7 @@ async function main(): Promise<void> {
           expiresAt: Date.now() + 3600 * 1000,
         };
       },
-      async save(t: import('./auth/interfaces').OAuthTokens) {
+      async save(t: import('@/infra/auth/interfaces').OAuthTokens) {
         await keyManager.save({
           accessToken: t.access_token,
           refreshToken: t.refresh_token,
@@ -95,17 +89,10 @@ async function main(): Promise<void> {
     const interval = process.env.INTERVAL ?? 'OneDay';
 
     const candles = await client.getCandles(symbolId, start, end, interval);
-// <<<<<<< codex/remove-verification-script-references-2025-07-3003-01-07
     logger.info('Candles data');
     console.table(candles.slice(0, 5));
   } catch (error) {
     logger.error({ err: error }, 'CLI error');
-// ======= ai agent must resolve before moving onwards
-    log.info('Candles data:');
-    console.table(candles.slice(0, 5));
-  } catch (error) {
-    log.error({ err: error }, 'CLI error');
-// >>>>>>> luxcium/main
     process.exit(1);
   }
 }

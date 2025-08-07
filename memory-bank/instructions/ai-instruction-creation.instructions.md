@@ -126,7 +126,7 @@ Use alerts to indicate critical sections or important notes.
 applyTo: '**/*.py'
 ---
 
-# Python Coding Standards (PEP 8 Focus)
+# Python Coding Standards (Project Style Standard)
 
 ## Naming Conventions
 
@@ -141,7 +141,7 @@ applyTo: '**/*.py'
 
 ## Docstrings
 
-- All public modules, classes, functions, and methods MUST have docstrings (Google style preferred).
+- You document all public modules, classes, functions, and methods with the project's docstring style.
 ```
 
 **Example: Architectural Patterns (e.g., for NextJS)**
@@ -171,7 +171,7 @@ applyTo: 'web/**'
 - **Be Prescriptive**: Use imperative mood (e.g., "Use snake_case", "Must include type hints").
 - **Be Specific**: Avoid vague terms. Instead of "Write good comments," say "All public functions must have JSDoc comments explaining parameters, return value, and purpose."
 - **Provide Rationale (Optional but helpful)**: Briefly explain _why_ a rule exists if it's not obvious.
-- **Cite Sources**: If adhering to external standards (e.g., PEP 8, Airbnb Style Guide), mention it.
+- **Project Standards First, but Reference Authoritative External Standards When Relevant**: Prioritize project-specific standards, but you may cite well-established external style guides (e.g., PEP 8, W3C) when they are relevant to the project's practices and help clarify the rationale behind rules.
 
 ### Specificity & Clarity
 
@@ -281,7 +281,6 @@ Provide instructions for generating commit messages or pull request titles and d
 - This file is labeled as an intermediate refactor phase, preparing for future dependency injection and SDK integration.
 - When creating or updating instructions for agent workflows, reference this playground as the standard for isolated feature prototyping.
 - Do not explain standard TypeScript, Node.js, or Questrade API details in instructions—focus on project-specific context and agent behaviors.
-
 
 ## Verification
 

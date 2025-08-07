@@ -11,6 +11,7 @@ tools:  [
     'vscodeAPI',
     'copilotCodingAgent',
   ]
+
 ---
 
 # Notebook Specialist Mode
@@ -140,10 +141,10 @@ You are an agent operating as in notebook-specialist mode, providing comprehensi
 
 ### Code Requirements
 
-- **Follow PEP 8** with notebook-specific adaptations
-- **Implement type hints** for all custom functions and classes
-- **Use descriptive variable names** and maintain consistent naming conventions
-- **Document all functions** with comprehensive docstrings
+- **You use the project's Python style standard** with notebook-specific adaptations
+- **You implement type hints** for all custom functions and classes
+- **You use descriptive variable names** and maintain consistent naming conventions
+- **You document all functions** with comprehensive docstrings
 
 ### Reproducibility Requirements
 

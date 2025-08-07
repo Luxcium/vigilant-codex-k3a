@@ -87,6 +87,7 @@ const KEYS_DIR = path.resolve(__dirname, '../.keys');
 /**
  * Output file for playground demo results.
  */
+
 const DEMO_FILE = path.join(KEYS_DIR, 'example-sdk-demo.json');
 
 console.log(

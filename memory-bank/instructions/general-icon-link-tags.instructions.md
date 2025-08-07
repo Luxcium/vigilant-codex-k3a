@@ -94,7 +94,6 @@ open "https://realfavicongenerator.net/favicon_checker"
 - **CSS-Tricks SVG Favicon Guide**: [css-tricks.com/svg-favicons-and-all-the-fun-tricks/](https://css-tricks.com/svg-favicons-and-all-the-fun-tricks/)
 - **Google PWA Icon Notes**: [web.dev/add-manifest/](https://web.dev/add-manifest/#icons)
 
-
 ## Verification
 
 - `markdownlint --strict`

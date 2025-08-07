@@ -6,7 +6,7 @@ import {
   SymbolDetailSchema,
   SymbolSearchResultSchema,
   OptionChainSchema,
-} from '../../../src/types/symbols';
+} from '../../core/types/symbols';
 
 describe('Symbols related schemas', () => {
   it('valid OptionDeliverableSchema parses', () => {

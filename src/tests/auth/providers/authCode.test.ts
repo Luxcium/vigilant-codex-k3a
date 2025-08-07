@@ -1,5 +1,5 @@
 import { describe, expect, it, vi, afterEach } from 'vitest';
-import { AuthCodeProvider } from '../../../auth/providers/authCode';
+import { AuthCodeProvider } from '../../../infra/auth/providers/authCode';
 
 const BASE = 'https://login.questrade.com';
 const clientId = 'cid';

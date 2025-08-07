@@ -394,6 +394,10 @@ Before completing, verify:
 - [ ] Documentation is complete and accurate
 ```
 
+## References
+
+- [docker-environment](../instructions/docker-environment.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

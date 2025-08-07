@@ -20,6 +20,89 @@
   **Meta:**
   I am updating my self-documentation after verifying output and HTTP error code inclusion. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 
+---
+
+- [2025-08-07T01:00:00Z] Workspace Hardened for pnpm-Only, No-Lockfile Policy
+  **Current State:** All references to npm and yarn have been removed from documentation and scripts. The workspace is now pnpm-only, with no lockfiles generated or required. This is enforced in CI, `.gitignore`, and all relevant documentation. All onboarding and usage instructions now direct users to use pnpm exclusively.
+  **Last Action:** Updated `package.json`, root and web `README.md`, scripts/README.md, and agent-framework/README.md to reflect pnpm-only, no-lockfile policy. Verified no remaining npm/yarn references in onboarding docs.
+  **Rationale:** Ensures consistency, prevents lockfile-related CI failures, and aligns with user policy for reproducible, robust development. Documentation and onboarding are now future-proofed for possible later lockfile adoption.
+  **Meta:** This entry documents the completion of workspace hardening for pnpm-only, no-lockfile operation. All future changes to package management policy must be documented here.
+- [2025-08-07T01:00:00Z] CI Workflow and Workspace Lockfile Policy Updated
+  **Current State:** The CI workflow now uses `pnpm install --no-frozen-lockfile` to ensure no lockfile is required or generated. `.gitignore` explicitly blocks all lockfiles, and a comment clarifies that lockfiles are intentionally not used in this workspace. This matches the user's directive and workspace policy.
+  **Last Action:** Updated `.github/workflows/ci.yml` to use `--no-frozen-lockfile` for dependency installation. Enhanced `.gitignore` with a clear comment about the no-lockfile policy. Confirmed that no lockfiles are present or required. Documented rationale and next steps in the memory bank.
+  **Rationale:** The user explicitly requested a workspace and CI environment that does not use any lockfiles for the time being, to avoid errors and ensure flexibility. This is now enforced in both the workflow and repository configuration.
+  **Next Intent:** Monitor CI runs to confirm no lockfile-related errors occur. If/when lockfiles are to be used in the future, update `.gitignore` and CI accordingly.
+  **Meta:** I am updating my self-documentation after enforcing the no-lockfile policy and updating the CI workflow. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+- [2025-08-07T00:15:00Z] CI Workflow pnpm PATH Issue Resolved
+  **Current State:** Fixed critical CI workflow issue where pnpm was not found in PATH. Removed cache: 'pnpm' from setup-node step and ensured pnpm is installed before any pnpm commands.
+  **Last Action:** Updated .github/workflows/ci.yml to remove premature pnpm cache setup from setup-node and ensure pnpm is available in PATH before use. Added shell: bash and --silent flag to store path command.
+  **Rationale:** The cache: 'pnpm' option in setup-node was being evaluated before pnpm was actually installed, causing PATH issues. Installing pnpm first, then setting up caching resolves the dependency order.
+  **Next Intent:** Monitor CI runs to ensure pnpm is now available and workflow passes successfully.
+  **Meta:** I am updating my self-documentation after fixing the CI workflow pnpm PATH issue. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+- [2025-08-07T00:10:00Z] CI Workflow pnpm Install and Caching Hardened
+  **Current State:** The CI workflow now explicitly installs pnpm with npm, uses pnpm/action-setup for version pinning, and enables pnpm store caching for faster builds. A context warning about STORE_PATH was noted for future review.
+  **Last Action:** Updated .github/workflows/ci.yml to add an explicit pnpm install step, keep pnpm/action-setup, and add pnpm store caching. Noted a lint warning about STORE_PATH context access for future investigation.
+  **Rationale:** Ensures pnpm is always available, pins the version, and speeds up builds with caching. Addresses root cause of missing pnpm and aligns with best practices for reliability and speed.
+  **Next Intent:** Monitor CI for STORE_PATH context issues and validate caching effectiveness. Update documentation and workflow as needed.
+  **Meta:** I am updating my self-documentation after hardening the CI workflow with explicit pnpm install and caching. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+- [2025-08-07T00:00:00Z] CI Workflow pnpm Setup Hardened
+  **Current State:** The CI workflow now uses pnpm/action-setup with run_install: false, verifies pnpm is in PATH, and installs dependencies in a dedicated step.
+  **Last Action:** Updated .github/workflows/ci.yml to split pnpm setup and install, add a pnpm --version check, and follow best practices to prevent workflow failures due to pnpm not being found.
+  **Rationale:** Ensures reliable pnpm availability in CI, avoids race conditions, and aligns with official pnpm/action-setup and GitHub Actions recommendations for monorepos.
+  **Next Intent:** Monitor CI runs for stability and update documentation if further changes are needed.
+  **Meta:** I am updating my self-documentation after hardening the CI workflow pnpm setup. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+- [2025-08-01T00:00:00Z] Questrade SDK structure modularized
+  **Current State:** Core logic, IO modules, CLI scripts, mocks, and tests reorganized under `src/`.
+  **Last Action:** Created `src/core`, `src/infra`, `src/cli`, `src/mocks`, and `src/tests`; migrated modules and updated imports.
+  **Rationale:** Provide clear separation of concerns and prepare for SDK expansion.
+  **Next Intent:** Ensure future modules follow this structure.
+  **Meta:** Self-documentation after restructuring Questrade code.
+- [2025-07-30T22:30:00Z] Documentation Essentials Added
+  **Current State:** README includes Development Essentials and new CONTRIBUTING guide covers folder layout, token persistence, environment switching, CLI usage, mock recording, and testing commands.
+  **Last Action:** Updated README and created CONTRIBUTING.md to clarify contributor workflows.
+  **Rationale:** Provide clear onboarding and ensure memory-bank rules guide token handling and environment setup.
+  **Next Intent:** Keep documentation synchronized with project structure and validation scripts.
+  **Meta:** Self-documentation after expanding contributor documentation.
+- [2025-07-30T21:00:00Z] Prompt References Consolidated
+  **Current State:** All prompt files in `memory-bank/prompts/` now include a References section linking to instruction files.
+  **Last Action:** Audited and updated prompt files to remove duplicated instructions and add links.
+  **Rationale:** Centralizes instruction guidance and reduces duplication.
+  **Next Intent:** Maintain prompt-instruction linkage for new or revised prompts.
+  **Meta:** Self-documentation after completing prompt reference audit.
+
+**Current State:**
+TypeScript coding standards were modularized into topic-specific instruction files and README references updated.
+**Last Action:**
+Split `typescript-standards.instructions.md` into dedicated files and updated documentation.
+**Rationale:**
+Improve clarity and maintainability of TypeScript guidelines.
+**Next Intent:**
+Ensure agents use the new instruction files and keep documentation in sync.
+**Meta:**
+Self-documentation after modularizing TypeScript instructions.
+
+**Current State:**
+Instruction files for commit messages and Python environment use short, direct sentences with "You" and include verification blocks.
+**Last Action:**
+Rewrote `conventional-commits-must-be-used.instructions.md` and `python-environment.instructions.md` to follow instruction formatting rules.
+**Rationale:**
+Ensure instruction clarity and alignment with project standards.
+**Next Intent:**
+Standardize remaining instruction files.
+**Meta:**
+Self-documentation after instruction update.
+
+**Current State:**
+The canonical playground `src/example.ts` was hardened to include HTTP status codes in the output file `.keys/example-sdk-demo.json` on error. The playground was built and executed, and the output file was verified to contain the correct status code (400) on failure. This confirms robust error reporting and output verification as part of the recursive demonstration workflow.
+**Last Action:**
+Patched `example.ts` to propagate and record HTTP status codes on error, rebuilt and ran the playground, and verified `.keys/example-sdk-demo.json` for correct error code output.
+**Rationale:**
+To fulfill the requirement for robust, agentic, and reproducible playground development, ensuring all error outputs include HTTP status codes for better debugging and agent memory.
+**Next Intent:**
+Continue recursive, output-verified workflow for all future playground iterations and maintain robust error reporting.
+**Meta:**
+I am updating my self-documentation after verifying output and HTTP error code inclusion. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+
 - [2025-07-29T20:30:00Z] Meta-Context Review and Validation of Operational Rules
   **Current State:**
   All meta-level operational rules, initialization protocols, and agent collaboration standards are codified and up to date. The CRITICAL MEMORY BANK PROTOCOL, agent obligations, recursive workflow patterns, and documentation standards are enforced across `.github/copilot-instructions.md` and memory-bank files. The three-agent system is fully described, and all meta-level standards (script-driven setup, idempotency, documentation, cross-agent compatibility, markdown-lint compliance) are actionable. Initialization, dependency/tooling detection, and environment readiness are referenced and described in the memory bank.
@@ -66,7 +149,6 @@
   **Meta:**
   I am updating my self-documentation after completing a meta-context review and validation. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 
-
 - [2025-08-05T13:21:21-04:00] Session Initialization and Memory Bank Synchronization
   **Current State:**
   All core memory bank files have been read and synchronized. The agent is fully initialized with the latest project context, requirements, architectural patterns, technical standards, and dependencies. The environment is ready for agentic, iterative development.
@@ -78,6 +160,7 @@
   Proceed with user-directed coding tasks, maintaining real-time documentation and memory bank updates before, after, and between every action.
   **Meta:**
   I am updating my self-documentation after initializing the session and synchronizing the memory bank. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+
 # The `activeContext.md` Memory Bank File
 
 As an AI Agent, you MUST actively strive to keep this file up to date with the latest active context, including project goals, user experience requirements, and AI agent collaboration framework. This file MUST be updated by any AI Agent accessing it, You MUST eagerly each time changes on each chat completion and each task or subtask as the living authoritative guide.
@@ -599,6 +682,7 @@ This project supports three AI agents with specific entry points:
 - Introduced pino-based logger and centralized config improvements.
 
 **Last Updated:** 2025-07-30 | **Status:** Verification Simplified | **Priority:** Logging Integration
+
 - [2025-07-30T02:56:15Z] Removed verify-all script from active workflows and updated configuration.
   **Current State:** Verification script references eliminated from AGENTS.md, setup scripts, and README. Added pino logging, centralized config, and bootstrap main.ts.
   **Last Action:** Refactored src directory per engineering note and installed pino.
@@ -619,3 +703,5 @@ This project supports three AI agents with specific entry points:
   **Rationale:** The project must never use the `pages` folder for routing or API endpoints. All logic must reside in the `app` folder to avoid conflicts and maintain a modern, maintainable codebase.
   **Next Intent:** Monitor for any future reintroduction of `pages`-based routes and enforce exclusive use of the `app` folder.
   **Meta:** This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+
+**Last Updated:** 2025-07-30T00:00:00Z | **Status:** Root Context Protocol Established | **Priority:** Documentation Sync
