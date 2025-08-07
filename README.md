@@ -1,5 +1,7 @@
 # Vigilant Codex K3a - Polyvalent AI Development Workspace
 
+[![CI](https://github.com/Luxcium/vigilant-codex-k3a/actions/workflows/ci.yml/badge.svg)](https://github.com/Luxcium/vigilant-codex-k3a/actions/workflows/ci.yml)
+
 ## Canonical Playground: `src/example.ts`
 
 The file `src/example.ts` serves as the canonical playground for agent and user feature prototyping. It is the reference implementation for Questrade SDK authentication, outputting all results to `.keys/example-sdk-demo.json` with human-readable metadata. All agent-facing documentation and memory bank files reference this playground as the standard example for SDK usage, modularization, and agent workflows.
