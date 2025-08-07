@@ -17,14 +17,14 @@ applyTo: '**/*.py'
 
 ## Type Annotations
 
-- You add type hints for all function parameters and return types.
-- You import types from the typing module when needed.
-- You use Union types (the `|` syntax for Python 3.10+ or `Union` from the typing module for earlier versions) for multiple possible types.
-- You use Optional for values that can be None.
-- You use List, Dict, Tuple, and Set for generic collections.
-- You use Protocol for structural typing.
-- You use TypeVar for generic functions and classes.
-- You document complex types with type aliases.
+- Use type hints for all function parameters and return types
+- Import types from typing module when needed
+- Use Union types for multiple possible types
+- Use Optional for parameters that can be None
+- Use List, Dict, Tuple, Set for generic collections
+- Use Protocol for structural typing
+- Use TypeVar for generic functions and classes
+- Document complex types with type aliases
 
 ## Import Organization
 
@@ -97,16 +97,14 @@ applyTo: '**/*.py'
 
 ## Memory Bank Integration
 
-- You reference relevant memory bank files when making changes.
-- You update dependencies.md when adding Python packages.
-- You follow the reading protocol from `.clinerules/reading-protocol.md`.
-- You document design decisions and their rationales.
-- You cross-reference related documents with links.
-- You update dependency relationships when adding features.
-- You document dataset preprocessing steps for ML projects.
-- You follow patterns documented in `systemPatterns.md`.
-- You ensure all setup is performed via scripts in scripts/ directory.
-- You document all architectural decisions in appropriate memory bank files.
+- Reference appropriate memory bank files when making changes
+- Update dependencies.md when adding new Python packages
+- Follow the reading protocol from .clinerules/reading-protocol.md
+- Document design decisions and their rationales
+- Cross-reference related documents using markdown links
+- Update dependency relationships when adding new features
+- Document all dataset preprocessing steps and rationale for ML projects
+
 
 ## Verification
 
