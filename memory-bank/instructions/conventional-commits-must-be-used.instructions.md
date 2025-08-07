@@ -26,7 +26,7 @@ description: 'Mandatory for all commit messages: Conventional commit protocol wi
 ## Essential Gitmoji
 
 | Emoji | Code | Usage |
-| ----- | ---- | ----- |
+| ----- | ----------------- | ----- |
 | 🐛 | `:bug:` | Bug fixes |
 | 🚑 | `:ambulance:` | Critical hotfix |
 | 📝 | `:memo:` | Documentation |
