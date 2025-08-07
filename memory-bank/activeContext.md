@@ -4,7 +4,12 @@
   **Rationale:** Provide clear separation of concerns and prepare for SDK expansion.
   **Next Intent:** Ensure future modules follow this structure.
   **Meta:** Self-documentation after restructuring Questrade code.
-
+- [2025-07-30T22:30:00Z] Documentation Essentials Added
+  **Current State:** README includes Development Essentials and new CONTRIBUTING guide covers folder layout, token persistence, environment switching, CLI usage, mock recording, and testing commands.
+  **Last Action:** Updated README and created CONTRIBUTING.md to clarify contributor workflows.
+  **Rationale:** Provide clear onboarding and ensure memory-bank rules guide token handling and environment setup.
+  **Next Intent:** Keep documentation synchronized with project structure and validation scripts.
+  **Meta:** Self-documentation after expanding contributor documentation.
 - [2025-07-30T21:00:00Z] Prompt References Consolidated
   **Current State:** All prompt files in `memory-bank/prompts/` now include a References section linking to instruction files.
   **Last Action:** Audited and updated prompt files to remove duplicated instructions and add links.
@@ -592,4 +597,4 @@ This project supports three AI agents with specific entry points:
 - Optimized post-list state initialization
 - Consolidated actions.ts to re-export from enhanced-actions
 
-**Last Updated:** 2025-07-23T00:00:00Z | **Status:** Root Context Protocol Established | **Priority:** Documentation Sync
+**Last Updated:** 2025-07-30T00:00:00Z | **Status:** Root Context Protocol Established | **Priority:** Documentation Sync

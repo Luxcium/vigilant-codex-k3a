@@ -31,6 +31,17 @@ Clarifies separation between pure logic and IO modules and simplifies testing an
 **Meta:**
 Self-documentation after structural migration.
 
+### [2025-07-30] Contributor Documentation
+
+**Achievement:**
+Added Development Essentials section to README and created CONTRIBUTING.md covering folder layout, token persistence, environment switching, CLI usage, mock recording, and testing commands.
+
+**Impact:**
+Provides clear onboarding instructions and reinforces required verification and testing workflows.
+
+**Meta:**
+Self-documentation after updating contributor guidance.
+
 ### [2025-07-30] Prompt Reference Standardization
 
 **Achievement:**
@@ -501,8 +512,8 @@ This project supports three AI agents with specific entry points:
 - [2025-07-14T06:51:41Z] Task: Created web-build.instructions.md, added production build and start tasks, and updated launch.json with Next.js debug configuration to streamline local deployment and debugging.
 - [2025-07-17T03:53:10Z] Split demo components and consolidated actions. Improved post list initialization.
 
-**Last Updated:** 2025-07-23 | **Status:** Documentation Updated | **Coverage:** 98.34% | **Applications:** Fully Operational
-**Last Updated:** 2025-07-23 | **Status:** Root Context Protocol Established | **Coverage:** 98.34% | **Applications:** Fully Operational
+**Last Updated:** 2025-07-30 | **Status:** Documentation Updated | **Coverage:** 98.34% | **Applications:** Fully Operational
+**Last Updated:** 2025-07-30 | **Status:** Root Context Protocol Established | **Coverage:** 98.34% | **Applications:** Fully Operational
 
 [2025-07-27] Radical Documentation Refactor: Memory Bank Migration
 
