@@ -20,6 +20,22 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-07-30] Instruction Formatting Standardization (Partial)
+
+**Achievement:**
+Rewrote commit and Python environment instruction files using short sentences and "You" directives.
+
+**Technical Implementation:**
+- Converted bullet points to direct "You" statements.
+- Removed references to external standards.
+- Added verification sections.
+
+**Impact:**
+Improves instruction clarity and sets precedent for remaining files.
+
+**Meta:**
+Self-documentation after partial instruction overhaul.
+
 ### [2025-07-30] Continuous Integration Workflow
 
 **Achievement:**
