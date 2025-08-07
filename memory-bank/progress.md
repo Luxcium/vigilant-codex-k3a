@@ -1,5 +1,7 @@
 # The `progress.md` Memory Bank File
 
+<!-- markdownlint-disable MD034 MD024 -->
+
 This file MUST be maintained autonomously by your AI Agent (you). It tracks what works, what remains to be built, current status, and known issues for the Vigilant Codex K3a polyvalent AI development workspace. It provides a clear, up-to-date snapshot of project progress and achievements.
 
 ## Purpose
@@ -19,6 +21,20 @@ This file tracks what works, what remains to be built, current status, and known
 ---
 
 ## What Works
+
+### [2025-08-07] Usage Documentation Expansion
+
+**Achievement:**
+README now includes usage basics and a comprehensive CONTRIBUTING guide
+explains folder layout, token persistence, environment switching, CLI
+usage, mock recording, and testing commands.
+
+**Impact:**
+Contributors have clear onboarding instructions and memory bank update
+requirements.
+
+**Meta:**
+Self-documentation after enhancing repository guides.
 
 ### [2025-07-30] Prompt Reference Standardization
 

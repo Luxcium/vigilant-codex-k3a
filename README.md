@@ -142,6 +142,65 @@ export OPENAI_API_KEY="your-api-key-here"
 ./scripts/setup_db_prisma.sh
 ```
 
+## Usage Basics
+
+### Folder Layout
+
+Core directories are documented in
+[`memory-bank/root-contexts.md`](memory-bank/root-contexts.md). Root
+contexts such as `src/`, `web/`, `python/`, and `agent-framework/` each
+contain their own project configuration.
+
+### Token Persistence
+
+OAuth tokens persist between runs via the `KeyManager` class, which
+writes credentials to `.keys/oauth.json`. The canonical playground and
+CLI both read and update this file.
+
+### Environment Switching
+
+Choose a Python environment mode at setup time:
+
+```bash
+ENV_MODE=local            scripts/setup_python_env.sh
+ENV_MODE=docker_isolated  scripts/setup_python_env.sh
+ENV_MODE=docker_volume    scripts/setup_python_env.sh
+```
+
+### CLI Usage
+
+Build and run the demo CLI to fetch candle data:
+
+```bash
+npm run build
+node ./lib/src/cli.js
+# or run directly
+pnpm tsx src/cli.ts
+```
+
+### Mock Recording
+
+Record sample HTTP interactions by running the playground and inspecting
+the generated output:
+
+```bash
+pnpm tsx src/example.ts
+cat .keys/example-sdk-demo.json
+```
+
+### Testing Commands
+
+```bash
+scripts/verify-all.sh
+npm run test:coverage
+markdownlint --strict README.md CONTRIBUTING.md
+```
+
+### Memory Bank Updates
+
+After significant changes, document the work in
+`memory-bank/activeContext.md` and `memory-bank/progress.md`.
+
 ## 🎯 Key Features & Achievements
 
 ### Advanced HTTP Client Architecture

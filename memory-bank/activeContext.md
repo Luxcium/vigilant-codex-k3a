@@ -1,3 +1,17 @@
+<!-- markdownlint-disable MD041 MD024 MD034 -->
+
+- [2025-08-07T14:45:17Z] Documentation Usage Guidelines Added
+  **Current State:** README now includes usage basics and a new
+  CONTRIBUTING guide details folder layout, token persistence,
+  environment switching, CLI usage, mock recording, and testing
+  commands.
+  **Last Action:** Added README sections, created CONTRIBUTING.md, and
+  referenced memory bank update requirements.
+  **Rationale:** Provide clear contributor onboarding and ensure memory
+  bank protocols are documented.
+  **Next Intent:** Monitor documentation for drift and continue updating
+  memory bank after significant changes.
+  **Meta:** Self-documentation after enhancing repository guides.
 - [2025-07-30T21:00:00Z] Prompt References Consolidated
   **Current State:** All prompt files in `memory-bank/prompts/` now include a References section linking to instruction files.
   **Last Action:** Audited and updated prompt files to remove duplicated instructions and add links.
