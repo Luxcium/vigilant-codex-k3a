@@ -67,7 +67,6 @@ Show a minimal ES module updating `theme-color` on dark-mode toggle; include DOM
 
 Bullet links to MDN color-scheme doc ([developer.mozilla.org](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/meta/name/color-scheme)), WHATWG MetaExtensions list ([wiki.whatwg.org](https://wiki.whatwg.org/wiki/MetaExtensions)), CSS-Tricks meta-theme article ([css-tricks.com](https://css-tricks.com/meta-theme-color-and-trickery)), web.dev color-scheme article ([web.dev](https://web.dev/articles/color-scheme)), and Microsoft pinned-site spec ([learn.microsoft.com](https://learn.microsoft.com/en-us/microsoft-edge/devtools-guide-chromium/overview)).
 
-
 ## Verification
 
 - `markdownlint --strict`

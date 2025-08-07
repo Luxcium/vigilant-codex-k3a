@@ -270,7 +270,6 @@ export default function PostForm() {
 - Cross-reference related instruction files
 - Maintain links to official documentation
 
-
 ## Verification
 
 - `markdownlint --strict`

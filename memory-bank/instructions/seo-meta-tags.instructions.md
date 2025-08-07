@@ -101,7 +101,6 @@ open "https://search.google.com/test/rich-results"
 - **The Beginner's Guide to SEO (Moz)**: [moz.com/beginners-guide-to-seo](https://moz.com/beginners-guide-to-seo)
 - **Google Search Console Help**: [support.google.com/webmasters/](https://support.google.com/webmasters/)
 
-
 ## Verification
 
 - `markdownlint --strict`

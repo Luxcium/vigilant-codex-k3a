@@ -1,7 +1,8 @@
 ---
 description: 'Expert Mode for TypeScript Documentation with TSDoc and TypeDoc'
 model: GPT-4.1
-tools:  [
+tools:
+  [
     'codebase-usages',
     'editFiles',
     'fetch',

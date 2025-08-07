@@ -1,6 +1,7 @@
 ---
 description: 'Iterative Next.js development with live browser preview, hot reload, and continuous quality checks.'
-tools:   [
+tools:
+  [
     'codebase',
     'copilotCodingAgent',
     'editFiles',

@@ -90,6 +90,7 @@ NextJS projects → ['codebase', 'filesystem', 'terminal']
 Shell scripting → ['filesystem', 'terminal']
 Project analysis → ['codebase']
 Dependency management → ['terminal', 'filesystem']
+
 ```
 
 ### Step 3: Structure Content Based on Task Type
@@ -165,7 +166,6 @@ Conditionally Reference:
 - [ ] Success criteria are measurable
 - [ ] Follows Codex CLI project standards
 
-
 ### File Naming
 
 ```
@@ -179,7 +179,9 @@ Format: {domain}-{purpose}.prompt.md
 ```markdown
 tools: ['relevant', 'tools']
 description: 'Brief task description'
+
 ---
+
 Your goal is to [specific outcome].
 
 ## Requirements
@@ -188,7 +190,6 @@ Your goal is to [specific outcome].
 - [Quality standards]
 
 ## References
-
 
 - [ ] [Measurable outcomes]
 ```
@@ -248,7 +249,6 @@ Your goal is to [specific outcome].
 - This file is labeled as an intermediate refactor phase, preparing for future dependency injection and SDK integration.
 - When creating or updating prompts for agent workflows, reference this playground as the standard for isolated feature prototyping.
 - Do not explain standard TypeScript, Node.js, or Questrade API details in prompts—focus on project-specific context and agent behaviors.
-
 
 ## Verification
 

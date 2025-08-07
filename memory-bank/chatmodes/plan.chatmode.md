@@ -1,7 +1,20 @@
 ---
 description: Generate an implementation plan for new features or refactoring existing code.
 model: GPT-4.1
-tools: ['codebase','fetch','findTestFiles', 'githubRepo', 'search', 'usages', 'copilotCodingAgent', 'editFiles', 'extensions', 'vscodeAPI', 'terminalLastCommand']
+tools:
+  [
+    'codebase',
+    'fetch',
+    'findTestFiles',
+    'githubRepo',
+    'search',
+    'usages',
+    'copilotCodingAgent',
+    'editFiles',
+    'extensions',
+    'vscodeAPI',
+    'terminalLastCommand',
+  ]
 ---
 
 # Planning mode instructions

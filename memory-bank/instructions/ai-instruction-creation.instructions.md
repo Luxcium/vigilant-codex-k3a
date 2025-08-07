@@ -282,7 +282,6 @@ Provide instructions for generating commit messages or pull request titles and d
 - When creating or updating instructions for agent workflows, reference this playground as the standard for isolated feature prototyping.
 - Do not explain standard TypeScript, Node.js, or Questrade API details in instructions—focus on project-specific context and agent behaviors.
 
-
 ## Verification
 
 - `markdownlint --strict`
