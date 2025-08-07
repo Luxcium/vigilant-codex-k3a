@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { categorize } from '../rateLimit/rules';
+import { categorize } from '../core/rateLimit/rules';
 
 describe('categorize', () => {
   it('returns market for market urls', () => {

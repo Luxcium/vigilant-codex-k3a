@@ -1,8 +1,6 @@
-# Project Output Directory Rule
-
-## **IMPORTANT:** Only the top-level SDK root `src/` folder (for Questrade SDK) must emit build outputs to `./lib`. All other packages, modules, or subprojects (such as agent-framework, templates, etc.) should use their own `dist/` or default `outDir` as appropriate for their context. Do NOT change outDir to `lib` for any folder except the top-level SDK root. This rule is mandatory and must be enforced to avoid confusion and maintain project structure integrity.
-
-## applyTo: '\*_/_.py'
+---
+applyTo: '**/*.py'
+---
 
 # Python Coding Standards
 
@@ -16,6 +14,14 @@
 - You use UPPER_SNAKE_CASE for module-level constants
 - You use a leading underscore for private methods and attributes
 - You use double leading underscores for name mangling when necessary
+- You follow [PEP 8](https://peps.python.org/pep-0008/) style guidelines as the primary reference.
+- You use four spaces for indentation.
+- You limit lines to 88 characters.
+- You name variables, functions, and modules with snake_case.
+- You name classes with PascalCase.
+- You use UPPER_SNAKE_CASE for module-level constants.
+- You prefix private methods and attributes with a leading underscore.
+- You use double leading underscores for name mangling when needed.
 
 ## Type Annotations
 
@@ -37,26 +43,33 @@
 - You use relative imports only within packages
 - You place imports at the top of the file after the module docstring
 - You use parentheses for multi-line imports
+- You order imports as standard library, third-party, then local.
+- You group imports by category with blank lines between groups.
+- You use absolute imports when possible.
+- You avoid wildcard imports.
+- You use relative imports only within packages.
+- You place imports at the top of the file after the module docstring.
+- You use parentheses for multi-line imports.
 
 ## Code Organization
 
-- Keep functions under 20 lines when possible
-- Create small, single-purpose functions with clear responsibilities
-- Use classes to group related functionality
-- Implement proper separation of concerns
-- Use modules to organize related functions and classes
-- Follow the principle of least privilege for access control
-- Use composition over inheritance when appropriate
+- You keep functions under 20 lines when possible.
+- You create small, single-purpose functions.
+- You use classes to group related functionality.
+- You separate concerns clearly.
+- You organize related functions and classes into modules.
+- You apply the principle of least privilege.
+- You prefer composition over inheritance when appropriate.
 
 ## Error Handling
 
-- Use specific exception types rather than generic Exception
-- Create custom exceptions that inherit from appropriate base classes
-- Use try-except-else-finally blocks appropriately
-- Handle exceptions at the appropriate level of abstraction
-- Use context managers (with statements) for resource management
-- Document expected exceptions in function docstrings
-- Log exceptions with appropriate detail levels
+- You use specific exception types.
+- You create custom exceptions that inherit from base classes when needed.
+- You use try-except-else-finally blocks appropriately.
+- You handle exceptions at an appropriate level.
+- You use context managers for resource management.
+- You document expected exceptions in docstrings.
+- You log exceptions with appropriate detail.
 
 ## Documentation Standards
 
@@ -97,6 +110,44 @@
 - You keep dependencies updated to latest secure versions
 - You follow secure coding practices for web applications
 
+- You write docstrings for modules, classes, and functions.
+- You keep docstring format consistent.
+- You document parameters, return values, and raised exceptions.
+- You include usage examples for complex functions.
+- You maintain up-to-date documentation for public APIs.
+- You use descriptive variable names to reduce the need for comments.
+- You comment complex algorithms and business logic.
+
+## Testing Requirements
+
+- You write unit tests with the pytest framework.
+- You aim for at least 80% code coverage.
+- You test positive and negative scenarios.
+- You use fixtures for test data setup.
+- You mock external dependencies in unit tests.
+- You name test functions descriptively.
+- You group related tests in classes.
+
+## Virtual Environment Management
+
+- You use virtual environments for all Python projects.
+- You document the required Python version in the README.
+- You maintain requirements.txt for production dependencies.
+- You maintain requirements-dev.txt for development dependencies.
+- You pin exact versions for production dependencies.
+- You activate the virtual environment in development workflows.
+
+## Security Practices
+
+- You validate and sanitize user inputs.
+- You use parameterized queries for database operations.
+- You never store secrets in code or version control.
+- You use environment variables for configuration.
+- You implement authentication and authorization.
+- You keep dependencies updated.
+- You follow secure coding practices for web applications.
+
+
 ## Memory Bank Integration
 
 - You reference appropriate memory bank files when making changes
@@ -110,5 +161,5 @@
 
 ## Verification
 
-- `markdownlint --strict`
-- `scripts/verify-all.sh`
+- You run `markdownlint --strict`.
+- You run `scripts/verify-all.sh`.

@@ -73,8 +73,4 @@ Fundamental meta tags like `description`, `robots`, and `canonical` are crucial 
 - **Description Length:** You keep the `description` concise and relevant so search engines do not generate their own snippet.
 - **Robots Directives:** You use `noindex, follow` to prevent a page from appearing in search results while still allowing search engines to crawl its links.
 - **Conflicting Rules:** You avoid conflicting `robots` directives; `robots.txt`, meta tags, and HTTP `X-Robots-Tag` headers must align.
-
-## Verification
-
-- `markdownlint --strict`
-- `scripts/verify-all.sh`
+ 

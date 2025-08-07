@@ -234,6 +234,10 @@ applyTo: '**/domain/**'
 
 The generated file will serve as automatic guidance for AI agents when generating code in the specified scope.
 
+## References
+
+- [ai-instruction-creation](../instructions/ai-instruction-creation.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it } from 'vitest';
-import { clear, load, OAuthTokens, save } from '../auth/storage';
+import { clear, load, OAuthTokens, save } from '../infra/auth/storage';
 
 const file = '.keys/test.json';
 const tokens: OAuthTokens = {

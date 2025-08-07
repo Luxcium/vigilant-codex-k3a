@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { BalanceSchema } from '../types/accounts';
+import { BalanceSchema } from '../core/types/accounts';
 
 describe('BalanceSchema', () => {
   it('accepts a valid Balance', () => {

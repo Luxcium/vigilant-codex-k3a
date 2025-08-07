@@ -63,6 +63,10 @@ The Codex CLI project maintains a structured "Memory Bank" documentation system 
 
 YOU MUST HELP maintain `memory-bank/` documentation that follows all project's standards and enables seamless collaboration between contributors.
 
+## References
+
+- [self-documentation](../instructions/self-documentation.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

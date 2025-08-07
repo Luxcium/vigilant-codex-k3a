@@ -1,5 +1,5 @@
-import { bootstrap } from '@/auth/manual';
-import * as storage from '@/auth/storage';
+import { bootstrap } from '@/infra/auth/manual';
+import * as storage from '@/infra/auth/storage';
 import {
   afterEach,
   beforeEach,
@@ -11,7 +11,7 @@ import {
 } from 'vitest';
 
 // Mock the storage module
-vi.mock('@/auth/storage');
+vi.mock('@/infra/auth/storage');
 
 // Mock fetch
 const mockFetch = vi.fn();

@@ -21,7 +21,7 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 > **Authoring Standard:**  
 > Before creating or updating any instruction file, consult [instruction-authoring-standards.instructions.md](./instruction-authoring-standards.instructions.md) for the canonical rules, structure, and validation checklist. All `.instructions.md` files must comply with this standard for consistency and markdown-lint strictness.
 
-## Available Instructions (31 Files)
+## Available Instructions (40 Files)
 
 ### AI Agent Workflow & Creation
 
@@ -51,7 +51,18 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 
 ### Language Standards
 
-**[typescript-standards.instructions.md](./typescript-standards.instructions.md)** - Comprehensive TypeScript coding standards with strict type checking, modern patterns, and project-specific conventions.
+**TypeScript**
+
+- [typescript-style.instructions.md](./typescript-style.instructions.md) - Formatting and naming conventions.
+- [typescript-typing.instructions.md](./typescript-typing.instructions.md) - Type system usage and strict typing.
+- [typescript-code-organization.instructions.md](./typescript-code-organization.instructions.md) - Module and function structure.
+- [typescript-imports.instructions.md](./typescript-imports.instructions.md) - Import ordering and export practices.
+- [typescript-error-handling.instructions.md](./typescript-error-handling.instructions.md) - Error handling guidelines.
+- [typescript-testing.instructions.md](./typescript-testing.instructions.md) - Testing requirements.
+- [typescript-documentation.instructions.md](./typescript-documentation.instructions.md) - Documentation standards.
+- [typescript-memory-bank.instructions.md](./typescript-memory-bank.instructions.md) - Memory bank integration rules.
+- [typescript-tooling.instructions.md](./typescript-tooling.instructions.md) - Tooling configuration.
+- [typescript-output-directory.instructions.md](./typescript-output-directory.instructions.md) - Output directory rule.
 
 **[python-standards.instructions.md](./python-standards.instructions.md)** - Python coding standards using the project's style standard, type hints, modern practices, and project integration requirements.
 

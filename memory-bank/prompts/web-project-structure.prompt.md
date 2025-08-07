@@ -56,6 +56,12 @@ This prompt defines the canonical folder structure and authoring guidelines for 
 - Store CI/CD workflows in `.github/workflows/` (with caching/idempotence)
 - Share VS Code settings via `.vscode/settings.json`
 
+## References
+
+- [when-to-use-what-matrix](../instructions/when-to-use-what-matrix.instructions.md)
+- [web-build](../instructions/web-build.instructions.md)
+- [web-dev-server](../instructions/web-dev-server.instructions.md)
+
 ## Verification Checklist
 
 - [ ] Root folders match the defined structure

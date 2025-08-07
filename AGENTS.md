@@ -52,6 +52,33 @@ scripts, and templates going forward.
   (as it is precious), must leverage existing instructions to remain
   soulful and stateful, and maintain consistency at all times.
 
+## Front-Matter Tools Key Formatting
+
+When using `.prompt.md` or `.chatmode.md` files, **the `tools:` key in the YAML front-matter must have its value on the same line**:
+
+```yaml
+---
+tools: [ { name: "mytool", ... } ]
+---
+```
+
+Do **not** split it across lines:
+
+```yaml
+---
+tools:
+  [ { name: "mytool", ... } ]
+---
+```
+
+If your formatter (Prettier, etc.) or editor is auto-wrapping the array onto the next line, please:
+
+- Configure Prettier overrides for these file types (`proseWrap: "never"`, high `printWidth`), or
+- Disable formatting on the front-matter block via `<!-- prettier-ignore -->`, or
+- Associate these extensions with plain `markdown` in your editor so the YAML grammar isn't mangled.
+
+This ensures both your local editor and any AI-agents relying on front-matter parsers will correctly pick up tool definitions.
+
 ## Codex and Codex CLI Automation Rules
 
 The following rules govern Codex CLI behavior and are to be

@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from 'vitest';
-import { fetchCandles } from '../../../src/helpers/candles';
-import { CandleInterval } from '../../../src/types';
-import type { RestClient } from '../../../src/http/restClient';
+import { fetchCandles } from '../../infra/helpers/candles';
+import { CandleInterval } from '../../core/types';
+import type { RestClient } from '../../infra/http/restClient';
 
 const params = {
   symbolId: 1,

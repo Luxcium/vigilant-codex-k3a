@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest';
-import { chainStores } from '../../../auth/tokenStore/chain';
-import type { OAuthTokens, TokenStore } from '../../../auth/interfaces';
+import { chainStores } from '../../../infra/auth/tokenStore/chain';
+import type { OAuthTokens, TokenStore } from '../../../infra/auth/interfaces';
 
 describe('ChainStore', () => {
   const sample: OAuthTokens = {

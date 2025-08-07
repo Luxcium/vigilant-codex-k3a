@@ -1,5 +1,5 @@
-import { OAuthProvider, OAuthTokens, TokenStore } from '@/auth/interfaces';
-import { AuthManager } from '@/auth/manager';
+import { OAuthProvider, OAuthTokens, TokenStore } from '@/infra/auth/interfaces';
+import { AuthManager } from '@/infra/auth/manager';
 import {
   afterEach,
   beforeEach,

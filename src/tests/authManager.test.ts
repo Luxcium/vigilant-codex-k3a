@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { OAuthProvider, OAuthTokens, TokenStore } from '../auth/interfaces';
-import { AuthManager } from '../auth/manager';
+import { OAuthProvider, OAuthTokens, TokenStore } from '../infra/auth/interfaces';
+import { AuthManager } from '../infra/auth/manager';
 
 class DummyProvider implements OAuthProvider {
   constructor(private tokens: OAuthTokens) {}

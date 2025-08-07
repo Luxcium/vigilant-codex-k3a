@@ -469,7 +469,6 @@ describe('createPost', () => {
 - [web/src/lib/actions.ts](../../web/src/lib/actions.ts) - Server actions
 - [docker-compose.yml](../../docker-compose.yml) - Database service
 
-
 ## Verification
 
 - `markdownlint --strict`

@@ -73,7 +73,6 @@ npx twitter-card-validator https://example.com/page
 [3]: https://developer.x.com/en/docs/x-for-websites/cards/overview/markup
 [4]: https://ogp.me/
 
-
 ## Verification
 
 - `markdownlint --strict`

@@ -1,16 +1,6 @@
 ---
 mode: 'agent'
-tools:
-  [
-    'codebase',
-    'editFiles',
-    'runCommands',
-    'search',
-    'usages',
-    'vscodeAPI',
-    'extensions',
-    'copilotCodingAgent',
-  ]
+tools: ['codebase', 'editFiles', 'runCommands', 'search', 'usages', 'vscodeAPI', 'extensions', 'copilotCodingAgent']
 description: 'Comprehensive notebook development workflow automation with VS Code integration'
 ---
 
@@ -290,6 +280,11 @@ code --list-extensions | grep -E "(jupyter|python)"
 - Maintained memory bank synchronization
 
 This workflow automation ensures comprehensive notebook development with full VS Code integration while maintaining project standards and leveraging extended capabilities for optimal development experience.
+
+## References
+
+- [python-notebook-standards](../instructions/python-notebook-standards.instructions.md)
+- [vscode-notebook-integration](../instructions/vscode-notebook-integration.instructions.md)
 
 ## Verification
 

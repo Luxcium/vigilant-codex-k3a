@@ -14,6 +14,12 @@ Your goal is to generate a ${input:componentType:Select component type (class|in
 - You use semantic, descriptive naming conventions
 - You add unit tests for all public methods/functions
 - You reference [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
+- Use TypeScript with strict type checking enabled
+- Follow Airbnb TypeScript style guide
+- Include comprehensive JSDoc comments for all public APIs
+- Implement proper error handling and validation
+- Use semantic, descriptive naming conventions
+- Add unit tests for all public methods/functions
 
 ## Process
 
@@ -59,6 +65,10 @@ Before completion, verify:
 - Consistent naming conventions throughout
 - Proper separation of concerns
 - Integration with existing project patterns
+
+## References
+
+- [typescript-standards](../instructions/typescript-standards.instructions.md)
 
 ## Verification
 

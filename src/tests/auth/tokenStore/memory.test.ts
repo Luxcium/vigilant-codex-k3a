@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
-import { MemoryStore } from '../../../auth/tokenStore/memory';
-import type { OAuthTokens } from '../../../auth/interfaces';
+import { MemoryStore } from '../../../infra/auth/tokenStore/memory';
+import type { OAuthTokens } from '../../../infra/auth/interfaces';
 
 describe('MemoryStore', () => {
   const store = new MemoryStore();

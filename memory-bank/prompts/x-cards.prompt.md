@@ -46,6 +46,10 @@ description: 'Add or update X Cards meta tags in HTML head sections'
 
 > **Note:** Run X’s Card Validator at https://cards-dev.twitter.com/validator to verify rendering.
 
+## References
+
+- [x-cards](../instructions/x-cards.instructions.md)
+
 ## Verification
 
 - `markdownlint --strict` on updated Markdown files

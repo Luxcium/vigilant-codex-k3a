@@ -6,7 +6,7 @@ applyTo: '**/*.ts, **/*.tsx'
 
 ## Style Guidelines
 
-- You use the project's TypeScript style standard for all code
+- You follow the [Airbnb TypeScript style guide](https://github.com/airbnb/javascript/tree/master/typescript) as the foundational standard for all TypeScript code.
 - You use strict type checking with `"strict": true` in tsconfig.json
 - You use 2 spaces for indentation consistently across all files
 - You use semicolons at the end of all statements
@@ -61,7 +61,7 @@ applyTo: '**/*.ts, **/*.tsx'
 ## Testing Standards
 
 - You write unit tests for all business logic
-- You use Jest with TypeScript for the testing framework
+- You use Jest with TypeScript for testing framework
 - You achieve minimum 80% code coverage
 - You test both positive and negative scenarios
 - You mock external dependencies in unit tests
@@ -88,6 +88,7 @@ applyTo: '**/*.ts, **/*.tsx'
 - You follow patterns documented in systemPatterns.md
 - You ensure all setup is performed via scripts in scripts/ directory
 - You document all architectural decisions in appropriate memory bank files
+- You document dataset preprocessing steps for ML projects
 
 ## Tooling
 
@@ -98,12 +99,7 @@ applyTo: '**/*.ts, **/*.tsx'
 
 Remember to reference the memory bank files for project-specific guidelines and keep all documentation up-to-date.
 
-## Project Output Directory Rule
-
-**IMPORTANT:** Only the top-level SDK root `src/` folder (for Questrade SDK) must emit build outputs to `./lib`. All other packages, modules, or subprojects (such as agent-framework, templates, etc.) should use their own `dist/` or default `outDir` as appropriate for their context. Do NOT change outDir to `lib` for any folder except the top-level SDK root. This rule is mandatory and must be enforced to avoid confusion and maintain project structure integrity.
-
-
 ## Verification
 
-- `markdownlint --strict`
-- `scripts/verify-all.sh`
+- You run `markdownlint --strict`
+- You run `scripts/verify-all.sh`

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { ExecutionSchema } from '../types/accounts';
+import { ExecutionSchema } from '../core/types/accounts';
 
 const now = new Date().toISOString();
 

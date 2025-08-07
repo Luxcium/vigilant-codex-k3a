@@ -1,5 +1,7 @@
 # Vigilant Codex K3a - Polyvalent AI Development Workspace
 
+[![CI](https://github.com/Luxcium/vigilant-codex-k3a/actions/workflows/ci.yml/badge.svg)](https://github.com/Luxcium/vigilant-codex-k3a/actions/workflows/ci.yml)
+
 ## Canonical Playground: `src/example.ts`
 
 The file `src/example.ts` serves as the canonical playground for agent and user feature prototyping. It is the reference implementation for Questrade SDK authentication, outputting all results to `.keys/example-sdk-demo.json` with human-readable metadata. All agent-facing documentation and memory bank files reference this playground as the standard example for SDK usage, modularization, and agent workflows.
@@ -37,7 +39,7 @@ This workspace supports three AI agents with sophisticated collaboration pattern
 
 ### AI Framework Components
 
-- **🔧 31 Instruction Files** ([`memory-bank/instructions/`](memory-bank/instructions/)) - Automated coding standards and guidelines
+- **🔧 40 Instruction Files** ([`memory-bank/instructions/`](memory-bank/instructions/)) - Automated coding standards and guidelines
 - **⚙️ 35 Prompt Files** ([`memory-bank/prompts/`](memory-bank/prompts/)) - Executable workflow templates
 - **📚 Memory Bank System** ([`memory-bank/`](memory-bank/)) - Stateful documentation for AI collaboration
 - **🎯 Self-Documentation Protocol** - Maintains context across development sessions
@@ -221,13 +223,25 @@ npm run test:coverage
 
 ## 📚 Documentation System
 
-### Instruction Files (31 Files)
+### Instruction Files (40 Files)
 
 Automated coding standards that apply during AI-assisted development:
 
 - **AI Framework**: ai-instruction-creation, ai-prompt-creation, instruction-authoring-standards
 - **Environments**: docker-environment, python-environment-conditional, vscode-notebook-integration
-- **Languages**: typescript-standards, python-standards, python-notebook-standards
+- **Languages**:
+  - [typescript-style.instructions.md](memory-bank/instructions/typescript-style.instructions.md) - formatting and naming conventions
+  - [typescript-typing.instructions.md](memory-bank/instructions/typescript-typing.instructions.md) - type system usage
+  - [typescript-code-organization.instructions.md](memory-bank/instructions/typescript-code-organization.instructions.md) - module structure
+  - [typescript-imports.instructions.md](memory-bank/instructions/typescript-imports.instructions.md) - import management
+  - [typescript-error-handling.instructions.md](memory-bank/instructions/typescript-error-handling.instructions.md) - error handling rules
+  - [typescript-testing.instructions.md](memory-bank/instructions/typescript-testing.instructions.md) - testing requirements
+  - [typescript-documentation.instructions.md](memory-bank/instructions/typescript-documentation.instructions.md) - documentation standards
+  - [typescript-memory-bank.instructions.md](memory-bank/instructions/typescript-memory-bank.instructions.md) - memory bank integration
+  - [typescript-tooling.instructions.md](memory-bank/instructions/typescript-tooling.instructions.md) - tooling configuration
+  - [typescript-output-directory.instructions.md](memory-bank/instructions/typescript-output-directory.instructions.md) - output directory rule
+  - [python-standards.instructions.md](memory-bank/instructions/python-standards.instructions.md)
+  - [python-notebook-standards.instructions.md](memory-bank/instructions/python-notebook-standards.instructions.md)
 - **Web Standards**: pwa-manifest, ios-meta-and-links, windows-tiles, theme-ui-meta
 - **Quality**: self-documentation
 
@@ -380,13 +394,63 @@ npm run test:coverage
 
 > **Built for AI-Human Collaboration** - This workspace represents a sophisticated foundation for polyvalent application development with advanced AI agent integration, comprehensive testing, and stateful documentation systems.
 
-**Last Updated**: 2025-01-13 | **Status**: Production-Ready | **Coverage**: 98.34%
+**Last Updated**: 2025-07-30 | **Status**: Production-Ready | **Coverage**: 98.34%
+
+## Development Essentials
+
+### Folder Layout
+
+Refer to the architecture overview above for the complete directory map. Key paths include `src/` for the TypeScript SDK, `web/` for the Next.js app, `python/` for agent utilities, and `memory-bank/` for persistent AI context.
+
+### Token Persistence
+
+Tokens are saved in the `.keys` directory via the `KeyManager`, which stores OAuth credentials in `.keys/oauth.json` and supports clearing or refreshing them safely.
+
+### Environment Switching
+
+Configure Python modes at runtime:
+
+```bash
+./scripts/setup_python_env.sh --mode local
+./scripts/setup_python_env.sh --mode docker_isolated
+./scripts/setup_python_env.sh --mode docker_volume
+```
+
+Set `ENV_MODE` to persist a default selection.
+
+### CLI Usage
+
+Launch a Codex Universal container with:
+
+```bash
+./scripts/run_codex_cli.sh
+```
+
+Run project scripts inside the container using `pnpm <script>` only. This workspace is pnpm-only by policy.
+
+### Mock Recording
+
+Tests rely on `vi.stubGlobal('fetch', mockFetch)` to capture API interactions. Update mock responses in the corresponding test files when recording new scenarios.
+
+### Testing Commands
+
+- `./scripts/verify-all.sh` – markdown, instruction, prompt, and memory-bank checks
+- `pnpm test` – run the vitest suite
+- `pnpm run test:coverage` – generate coverage reports
 
 ## Web Development Workflow with AI Agents
 
-Leverage AI-assisted VS Code tasks and npm script aliases to co-develop the Next.js application in real time:
+Leverage AI-assisted VS Code tasks and pnpm script aliases to co-develop the Next.js application in real time:
 
-### Root-level npm script aliases
+### Root-level pnpm script aliases
+## pnpm-Only, No-Lockfile Policy
+
+This workspace is intentionally configured to use **pnpm only** as the package manager. All references to npm or yarn have been removed. Lockfiles (pnpm-lock.yaml, package-lock.json, yarn.lock) are intentionally ignored and not used in CI or local development. See `.gitignore` and CI workflow for enforcement details.
+
+**Key points:**
+- Use `pnpm` for all dependency management and scripts.
+- Do not use npm or yarn in this workspace.
+- No lockfiles are generated or required; this is enforced in CI and `.gitignore`.
 
 - **pnpm run web:dev**: Start Next.js in development mode (HMR, error overlays)
 - **pnpm run web:lint**: Run ESLint for the web folder
@@ -469,3 +533,8 @@ Custom prompts and instructions are located in `memory-bank/prompts/` and `memor
 - Only `.keys/example-sdk-demo.json` is written for output; no split or duplicate files.
 - This file is labeled as an intermediate refactor phase, preparing for future dependency injection and SDK integration.
 - When creating or updating agent workflows, reference this playground as the standard for isolated feature prototyping.
+
+## Verification
+
+- `markdownlint --strict README.md CONTRIBUTING.md`
+- `./scripts/verify-all.sh`
