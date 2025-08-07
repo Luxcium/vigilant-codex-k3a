@@ -1,3 +1,9 @@
+---
+- [2025-08-07T01:00:00Z] Workspace Hardened for pnpm-Only, No-Lockfile Policy
+  **Current State:** All references to npm and yarn have been removed from documentation and scripts. The workspace is now pnpm-only, with no lockfiles generated or required. This is enforced in CI, `.gitignore`, and all relevant documentation. All onboarding and usage instructions now direct users to use pnpm exclusively.
+  **Last Action:** Updated `package.json`, root and web `README.md`, scripts/README.md, and agent-framework/README.md to reflect pnpm-only, no-lockfile policy. Verified no remaining npm/yarn references in onboarding docs.
+  **Rationale:** Ensures consistency, prevents lockfile-related CI failures, and aligns with user policy for reproducible, robust development. Documentation and onboarding are now future-proofed for possible later lockfile adoption.
+  **Meta:** This entry documents the completion of workspace hardening for pnpm-only, no-lockfile operation. All future changes to package management policy must be documented here.
  - [2025-08-07T01:00:00Z] CI Workflow and Workspace Lockfile Policy Updated
   **Current State:** The CI workflow now uses `pnpm install --no-frozen-lockfile` to ensure no lockfile is required or generated. `.gitignore` explicitly blocks all lockfiles, and a comment clarifies that lockfiles are intentionally not used in this workspace. This matches the user's directive and workspace policy.
   **Last Action:** Updated `.github/workflows/ci.yml` to use `--no-frozen-lockfile` for dependency installation. Enhanced `.gitignore` with a clear comment about the no-lockfile policy. Confirmed that no lockfiles are present or required. Documented rationale and next steps in the memory bank.
