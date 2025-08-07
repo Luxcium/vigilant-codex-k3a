@@ -11,7 +11,6 @@ tools:  [
     'vscodeAPI',
     'copilotCodingAgent',
   ]
-model: GPT-4.1
 ---
 
 # Notebook Specialist Mode
