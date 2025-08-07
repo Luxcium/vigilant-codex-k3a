@@ -17,12 +17,15 @@ node_modules/
 coverage/
 !docs/
 
-# Package manager lock files
-# set the env to not use any lockfiles for the time being we may use one later for now we must not
+###############################################################
+# Package manager lock files (INTENTIONALLY IGNORED)
+# LOCKFILES ARE NOT USED IN THIS WORKSPACE (see memory bank)
+# If you want to enable lockfiles, remove these lines and update CI.
 pnpm-lock.yaml
 package-lock.json
 npm-shrinkwrap.json
 yarn.lock
+###############################################################
 agent-framework/node_modules/
 src/types/dev/anterior-conversation.txt
 src/types/dev/Archive.zip

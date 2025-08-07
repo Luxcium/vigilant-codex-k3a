@@ -1,3 +1,9 @@
+ - [2025-08-07T01:00:00Z] CI Workflow and Workspace Lockfile Policy Updated
+  **Current State:** The CI workflow now uses `pnpm install --no-frozen-lockfile` to ensure no lockfile is required or generated. `.gitignore` explicitly blocks all lockfiles, and a comment clarifies that lockfiles are intentionally not used in this workspace. This matches the user's directive and workspace policy.
+  **Last Action:** Updated `.github/workflows/ci.yml` to use `--no-frozen-lockfile` for dependency installation. Enhanced `.gitignore` with a clear comment about the no-lockfile policy. Confirmed that no lockfiles are present or required. Documented rationale and next steps in the memory bank.
+  **Rationale:** The user explicitly requested a workspace and CI environment that does not use any lockfiles for the time being, to avoid errors and ensure flexibility. This is now enforced in both the workflow and repository configuration.
+  **Next Intent:** Monitor CI runs to confirm no lockfile-related errors occur. If/when lockfiles are to be used in the future, update `.gitignore` and CI accordingly.
+  **Meta:** I am updating my self-documentation after enforcing the no-lockfile policy and updating the CI workflow. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 - [2025-08-07T00:15:00Z] CI Workflow pnpm PATH Issue Resolved
   **Current State:** Fixed critical CI workflow issue where pnpm was not found in PATH. Removed cache: 'pnpm' from setup-node step and ensured pnpm is installed before any pnpm commands.
   **Last Action:** Updated .github/workflows/ci.yml to remove premature pnpm cache setup from setup-node and ensure pnpm is available in PATH before use. Added shell: bash and --silent flag to store path command.
