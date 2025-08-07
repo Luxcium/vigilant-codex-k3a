@@ -6,6 +6,7 @@ applyTo: '**/*.py'
 
 ## Style Guidelines
 
+- You follow [PEP 8](https://peps.python.org/pep-0008/) style guidelines as the primary reference.
 - You use four spaces for indentation.
 - You limit lines to 88 characters.
 - You name variables, functions, and modules with snake_case.
