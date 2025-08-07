@@ -81,7 +81,6 @@ Closes #123
 - [Breaking Changes Guide](../prompts/breaking-changes.prompt.md) 
 -->
 
-
 ## Verification
 
 - `markdownlint --strict`

@@ -100,10 +100,10 @@ Dependency management → ['terminal', 'filesystem']
 
 ## Requirements
 
-- Use TypeScript with strict type checking
-- Follow Airbnb style guide
-- Include JSDoc comments for public APIs
-- Reference [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
+- You use TypeScript with strict type checking
+- You use the project's TypeScript style standard
+- You include JSDoc comments for public APIs
+- You reference [typescript-standards.instructions.md](../instructions/typescript-standards.instructions.md)
 
 ## Process
 4. Add error handling and validation
@@ -198,11 +198,11 @@ Your goal is to [specific outcome].
 
 ### Supported Technology Stack
 
-- **TypeScript**: Strict typing, Airbnb style guide
-- **Python**: PEP 8, type hints, virtual environments
-- **NextJS**: Web applications when UI needed
-- **Shell Scripting**: Bash automation in scripts/
-- **Jupyter Notebooks**: ML/data science workflows
+- You use TypeScript with strict typing and the project's style standard
+- You use Python with the project's style standard, type hints, and virtual environments
+- You use NextJS for web applications when a UI is needed
+- You use Bash in the scripts/ directory for automation
+- You use Jupyter Notebooks for ML and data science workflows
 
 ### Project-Specific Patterns
 

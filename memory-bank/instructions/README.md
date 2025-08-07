@@ -64,7 +64,7 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 - [typescript-tooling.instructions.md](./typescript-tooling.instructions.md) - Tooling configuration.
 - [typescript-output-directory.instructions.md](./typescript-output-directory.instructions.md) - Output directory rule.
 
-**[python-standards.instructions.md](./python-standards.instructions.md)** - Python coding standards following PEP 8, type hints, modern practices, and project integration requirements.
+**[python-standards.instructions.md](./python-standards.instructions.md)** - Python coding standards using the project's style standard, type hints, modern practices, and project integration requirements.
 
 **[python-notebook-standards.instructions.md](./python-notebook-standards.instructions.md)** - Jupyter notebook development standards for data science workflows, ML experimentation, and reproducible research.
 
