@@ -72,6 +72,13 @@
 
 **Current State:**
 TypeScript coding standards were modularized into topic-specific instruction files and README references updated.
+ - [2025-08-08T00:00:00Z] Local CI & Commit Guard Implemented / Remote CI Removed
+  **Current State:** Remote GitHub Actions CI workflow deleted to eliminate external run costs. Local validation stack now includes `local-ci.sh` (full pipeline), `commit-guard.sh` (hook gate), and `install-hooks.sh` (hook deployment). Package scripts augmented (`ci:local`, `hooks:install`, `commit:force`). Scripts README updated; hook override variables documented.
+  **Last Action:** Removed `.github/workflows/ci.yml`, created new scripts, updated documentation and package.json, appended self-documentation entry.
+  **Rationale:** Reduce CI expenditure to $0 by shifting validation locally while retaining quality enforcement before commit/push with auditable overrides.
+  **Next Intent:** Monitor developer workflow friction; optionally add JSON summary artifact & performance timings; consider selective parallelization in `local-ci.sh` if needed.
+  **Meta:** Executing Self-Documentation Protocol for CI cost elimination and guard introduction.
+  This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 **Last Action:**
 Split `typescript-standards.instructions.md` into dedicated files and updated documentation.
 **Rationale:**
