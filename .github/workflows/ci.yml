@@ -1,7 +1,0 @@
-## Deactivated CI Workflow
-
-# This file was intentionally neutralized to eliminate external CI costs.
-# It remains temporarily (empty/neutral) to document deactivation before full removal.
-# Next step: remove this file entirely once all contributors have installed local hooks.
-
-# No jobs defined.
