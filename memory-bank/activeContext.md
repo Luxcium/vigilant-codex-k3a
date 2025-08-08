@@ -79,6 +79,12 @@ TypeScript coding standards were modularized into topic-specific instruction fil
   **Next Intent:** Monitor developer workflow friction; optionally add JSON summary artifact & performance timings; consider selective parallelization in `local-ci.sh` if needed.
   **Meta:** Executing Self-Documentation Protocol for CI cost elimination and guard introduction.
   This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+  - [2025-08-08T17:54:46-04:00] Attempted deletion of `.github/workflows/ci.yml` did not persist (file still present after delete patch). Will re-attempt deletion ensuring proper patch application and verify absence via directory listing and search before marking remote CI fully removed.
+    **Current State:** Workflow file contents still readable; local guard system operational.
+    **Last Action:** Issued delete patch; file_search still returns path; listed directory confirms presence.
+    **Rationale:** Must eliminate any chance of remote CI runs to guarantee zero external cost.
+    **Next Intent:** Re-issue deletion with correct tool context or alternative method, then re-verify and proceed to update documentation if needed.
+    **Meta:** I am updating my self-documentation after a failed deletion attempt. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 **Last Action:**
 Split `typescript-standards.instructions.md` into dedicated files and updated documentation.
 **Rationale:**
