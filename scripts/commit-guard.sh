@@ -40,7 +40,7 @@ if ! git rev-parse --git-dir >/dev/null 2>&1; then
 fi
 
 # Minimal staging diff check for oversized commits (advisory)
-CHANGED_COUNT=$(git diff --cached --name-only | wc -l | tr -d ' ' || echo 0)
+CHANGED_COUNT=$(git diff --cached --name-only | wc -l | awk '{print $1}' || echo 0)
 if [ "$CHANGED_COUNT" -gt 250 ]; then
   echo "[commit-guard] WARNING: Large staged change set ($CHANGED_COUNT files)" >&2
 fi
