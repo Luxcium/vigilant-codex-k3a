@@ -1,7 +1,7 @@
-mode: 'agent'
-mode: 'agent'
+---
 description: 'Generate shell scripts for project automation.'
-
+tools: []
+---
 # Script Generator
 
 I will help you create resilient, reusable scripts for automating project tasks. These scripts will be idempotent, well-documented, and follow project coding standards.

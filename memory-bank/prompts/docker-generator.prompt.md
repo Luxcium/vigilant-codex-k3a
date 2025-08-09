@@ -1,8 +1,7 @@
 ---
-mode: 'agent'
 description: 'Generate Dockerfiles and Compose files.'
+tools: []
 ---
-
 # Docker Configuration Generator
 
 I will help you create parametrized Docker configurations (Dockerfiles and Compose files) optimized for different environments while following security and performance best practices.

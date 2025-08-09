@@ -1,5 +1,6 @@
 ---
 applyTo: 'python/**'
+description: 'Standards for local and Docker-based Python environments'
 ---
 
 # Python Environment Setup Standards

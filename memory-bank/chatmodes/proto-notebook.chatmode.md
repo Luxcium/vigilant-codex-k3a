@@ -1,16 +1,6 @@
 ---
 description: 'Comprehensive Jupyter notebook development, execution, and analysis specialist with advanced VS Code integration for data science workflows'
-tools:  [
-    'codebase-usages',
-    'notebook-guru',
-    'extensions',
-    'fetch',
-    'findTestFiles',
-    'runCommands',
-    'search',
-    'vscodeAPI',
-    'copilotCodingAgent',
-  ]
+tools: []
 ---
 
 # Edit Jupyter notebooks with AI in VS Code

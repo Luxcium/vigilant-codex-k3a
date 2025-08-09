@@ -1,5 +1,6 @@
 ---
 applyTo: '**/*.ts, **/*.tsx'
+description: 'Comprehensive TypeScript coding standards for style, types, and tests'
 ---
 
 # TypeScript Coding Standards

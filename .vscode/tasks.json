@@ -1,4 +1,13 @@
 {
   "version": "2.0.0",
-  "tasks": []
+  "tasks": [
+    {
+      "label": "project-status",
+      "type": "shell",
+      "command": "echo initialisation en attente..."
+    },
+    { "label": "lint", "type": "shell", "command": "echo lint en attente..." },
+    { "label": "test", "type": "shell", "command": "echo tests en attente..." },
+    { "label": "build", "type": "shell", "command": "echo build en attente..." }
+  ]
 }

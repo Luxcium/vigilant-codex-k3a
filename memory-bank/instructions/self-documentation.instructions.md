@@ -1,5 +1,6 @@
 ---
 applyTo: '**'
+description: 'Protocol for logging actions and updating memory bank'
 ---
 
 # Self-Documentation Protocol

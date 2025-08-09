@@ -1,5 +1,6 @@
 ---
 applyTo: '**'
+description: 'Restricts lib output to top-level SDK root only'
 ---
 
 # Project Output Directory Rule

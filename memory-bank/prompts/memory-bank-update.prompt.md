@@ -1,9 +1,7 @@
 ---
-mode: 'agent'
-tools: ['codebase', 'terminalLastCommand']
 description: 'Update memory bank documentation with proper cross-references'
+tools: ['codebase', 'terminalLastCommand']
 ---
-
 # Memory Bank Documentation Update
 
 Your task is to help me update `memory-bank/` documentation following our established standards and protocols.

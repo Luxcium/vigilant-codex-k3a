@@ -1,7 +1,7 @@
-mode: 'agent'
-mode: 'agent'
+---
 description: 'Generate a consolidated Docker Compose template.'
-
+tools: []
+---
 # Docker & Dev Container Workflow Template
 
 Your goal is to generate a complete Docker containerization setup following the consolidated four-phase approach with exotic patterns, security-first principles, and comprehensive documentation.

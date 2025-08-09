@@ -1,8 +1,7 @@
 ---
-mode: 'agent'
 description: 'Generate optimized prompt and instruction files following project standards'
+tools: []
 ---
-
 # AI Agent Template Manager
 
 I will help you generate well-structured prompt and instruction files for your AI agent framework. I'll determine the appropriate file type, content structure, and placement based on your requirements while maintaining strict markdown-lint compliance.
@@ -34,7 +33,6 @@ I will help you generate well-structured prompt and instruction files for your A
 
 ````markdown
 applyTo: "${input:applyTo:Glob pattern for scope (e.g., \*_/_.ts)}"
-mode: 'agent'
 description: 'Generate optimized prompt and instruction files following project standards'
 
 ## Purpose
@@ -85,7 +83,6 @@ name: string;
 
 ```markdown
 ---
-mode: '${input:mode:agent}'
 tools: [${input:tools:'codebase', 'terminalLastCommand'}]
 description: '${input:description:Perform a specific automated task}'
 ---

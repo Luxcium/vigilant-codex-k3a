@@ -1,8 +1,7 @@
 ---
-mode: 'agent'
 description: 'Generate *.instructions.md files with proper structure and content'
+tools: []
 ---
-
 # Generate \*.instructions.md File
 
 Your goal is to create a properly structured `.instructions.md` file based on the user's requirements for coding standards, guidelines, or project rules.

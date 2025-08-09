@@ -1,9 +1,7 @@
 ---
-mode: 'agent'
-tools: ['codebase', 'editFiles', 'runCommands', 'search', 'usages', 'vscodeAPI', 'extensions', 'copilotCodingAgent']
 description: 'Comprehensive notebook development workflow automation with VS Code integration'
+tools: ['codebase', 'editFiles', 'runCommands', 'search', 'usages', 'vscodeAPI', 'extensions', 'copilotCodingAgent']
 ---
-
 # Notebook Development Workflow Automation
 
 I will help you create, optimize, and manage Jupyter notebooks with full VS Code integration, following your established project standards and leveraging extended VS Code capabilities.

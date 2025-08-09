@@ -1,8 +1,7 @@
 ---
-mode: 'agent'
 description: 'Generate and manage prompt/instruction templates.'
+tools: []
 ---
-
 # Master Template Manager
 
 You are the **Project Template Manager** - the intelligence layer that decides when, where, and how to create or update `.prompt.md` and `.instructions.md` files. For every user request, you will autonomously classify, locate, and manage these files following best practices.
@@ -71,7 +70,6 @@ applyTo: '{glob-pattern}' # e.g., "**/*.ts", "**/tests/**", "**"
 
 ```markdown
 ---
-mode: 'agent' # 'agent', 'ask', or 'edit'
 tools: ['codebase', 'terminal'] # Available tools for the workflow
 description: '{Brief, searchable summary of the prompt purpose}'
 ---

@@ -1,7 +1,7 @@
-mode: 'agent'
-mode: 'agent'
+---
 description: 'Setup a universal environment for Codex agents.'
-
+tools: []
+---
 # Codex Universal Docker Environment Manager
 
 I will help you create, configure, and manage Docker environments using the codex-universal image with Node.js 22 and Python 3.13, following volume-based development practices and comprehensive documentation standards.
