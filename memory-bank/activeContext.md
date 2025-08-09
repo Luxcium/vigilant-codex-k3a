@@ -1,3 +1,14 @@
+- [2025-08-09T06:03:14+00:00] Chatmode front matter simplified
+  **Current State:**
+  All chatmode files now have only `description` and an empty `tools` array in their front matter, removing explicit `model` declarations.
+  **Last Action:**
+  Removed model lines and cleared tools arrays in `plan`, `vscode-helper`, `setup-context`, `proto-notebook`, `questrade-sdk-developer`, and `tsdoc-typedoc` chatmodes.
+  **Rationale:**
+  Standardizes chatmode configuration and prevents hardcoded model references.
+  **Next Intent:**
+  Monitor chatmode files for consistency with evolving project standards.
+  **Meta:**
+  Self-documentation after simplifying chatmode front matter.
 - [2025-08-03T22:55:00Z] Created and referenced 'Get Current Date/Time' task for timestamping
   **Current State:**
   A dedicated task for obtaining the current date/time in ISO 8601 format has been defined in `scripts/README.md`. All instructions now reference this task instead of the raw `date --iso-8601=seconds` command. The self-documentation and instruction-authoring standards have been updated accordingly.
