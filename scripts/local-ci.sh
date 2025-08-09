@@ -171,6 +171,10 @@ else
 fi
 
 STAGE "Repository validation (verify-all)"
+if [[ ! -x ./scripts/verify-all.sh ]]; then
+  err "verify-all.sh not found or not executable"
+  exit 1
+fi
 if ./scripts/verify-all.sh; then
   ok "verify-all passed"
 else
