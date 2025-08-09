@@ -108,7 +108,6 @@ description: 'Python coding standards for style, typing, and organization'
 - You never store secrets in code or version control
 - You use environment variables for configuration
 - You implement proper authentication and authorization
-- You keep dependencies updated to latest secure versions
 - You follow secure coding practices for web applications
 
 ## Memory Bank Integration
