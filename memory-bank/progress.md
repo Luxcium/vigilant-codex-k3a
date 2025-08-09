@@ -20,6 +20,17 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-08-09] Chatmode Front Matter Standardization
+
+**Achievement:**
+Removed explicit model references and cleared tool lists in all chatmode files (`plan`, `vscode-helper`, `setup-context`, `proto-notebook`, `questrade-sdk-developer`, `tsdoc-typedoc`).
+
+**Impact:**
+Simplifies chatmode configuration and prevents hardcoded model selection.
+
+**Meta:**
+Self-documentation after standardizing chatmode front matter.
+
 ### [2025-07-30] Instruction Formatting Standardization (Partial)
 
 **Achievement:**
