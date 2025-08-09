@@ -41,7 +41,7 @@ fi
 
 # Minimal staging diff check for oversized commits (advisory)
 CHANGED_COUNT=$(git diff --cached --name-only | wc -l | awk '{print $1}' || echo 0)
-if [ "$CHANGED_COUNT" -gt 250 ]; then
+if [ "$CHANGED_COUNT" -gt "$LARGE_CHANGE_THRESHOLD" ]; then
   echo "[commit-guard] WARNING: Large staged change set ($CHANGED_COUNT files)" >&2
 fi
 
