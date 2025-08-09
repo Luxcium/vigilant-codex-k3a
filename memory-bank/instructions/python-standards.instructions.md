@@ -1,5 +1,6 @@
 ---
 applyTo: '**/*.py'
+description: 'Python coding standards for style, typing, and organization'
 ---
 
 # Python Coding Standards
@@ -110,44 +111,6 @@ applyTo: '**/*.py'
 - You keep dependencies updated to latest secure versions
 - You follow secure coding practices for web applications
 
-- You write docstrings for modules, classes, and functions.
-- You keep docstring format consistent.
-- You document parameters, return values, and raised exceptions.
-- You include usage examples for complex functions.
-- You maintain up-to-date documentation for public APIs.
-- You use descriptive variable names to reduce the need for comments.
-- You comment complex algorithms and business logic.
-
-## Testing Requirements
-
-- You write unit tests with the pytest framework.
-- You aim for at least 80% code coverage.
-- You test positive and negative scenarios.
-- You use fixtures for test data setup.
-- You mock external dependencies in unit tests.
-- You name test functions descriptively.
-- You group related tests in classes.
-
-## Virtual Environment Management
-
-- You use virtual environments for all Python projects.
-- You document the required Python version in the README.
-- You maintain requirements.txt for production dependencies.
-- You maintain requirements-dev.txt for development dependencies.
-- You pin exact versions for production dependencies.
-- You activate the virtual environment in development workflows.
-
-## Security Practices
-
-- You validate and sanitize user inputs.
-- You use parameterized queries for database operations.
-- You never store secrets in code or version control.
-- You use environment variables for configuration.
-- You implement authentication and authorization.
-- You keep dependencies updated.
-- You follow secure coding practices for web applications.
-
-
 ## Memory Bank Integration
 
 - You reference appropriate memory bank files when making changes
@@ -157,7 +120,6 @@ applyTo: '**/*.py'
 - You cross-reference related documents using markdown links
 - You update dependency relationships when adding new features
 - You document all dataset preprocessing steps and rationale for ML projects
-
 
 ## Verification
 
