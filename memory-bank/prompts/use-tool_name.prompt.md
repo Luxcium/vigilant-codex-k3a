@@ -2,7 +2,6 @@
 description: Use the tool name in your response when applicable.
 tools: ['codebase', 'usages', 'think', 'problems', 'terminalSelection', 'terminalLastCommand', 'fetch', 'editFiles', 'search', 'runCommands']
 ---
-
 # Use this specific tool now
 
 Use this tool to think deeply about the user's request and organize your thoughts. This tool helps improve response quality by allowing the model to consider the request carefully, brainstorm solutions, and plan complex tasks. It's particularly useful for:

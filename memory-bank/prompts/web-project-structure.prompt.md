@@ -1,7 +1,7 @@
 ---
 description: 'Canonical Next.js + Prisma folder structure and authoring standards for web/src/'
+tools: []
 ---
-
 # 🗂️ Next.js + Prisma Project Structure Prompt
 
 ## Overview

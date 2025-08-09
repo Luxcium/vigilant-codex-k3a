@@ -1,3 +1,10 @@
+- [2025-08-09T06:04:52+00:00] Prompt metadata standardized
+  **Current State:** All prompt files now use front matter with description and tools fields, and all `mode:` lines were removed.
+  **Last Action:** Added missing front matter and removed deprecated `mode` lines across memory-bank/prompts.
+  **Rationale:** Ensure consistent metadata and align prompts with current project standards.
+  **Next Intent:** Monitor future prompt additions for compliance.
+  **Meta:** I am updating my self-documentation after standardizing prompt metadata. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+
 - [2025-08-03T22:55:00Z] Created and referenced 'Get Current Date/Time' task for timestamping
   **Current State:**
   A dedicated task for obtaining the current date/time in ISO 8601 format has been defined in `scripts/README.md`. All instructions now reference this task instead of the raw `date --iso-8601=seconds` command. The self-documentation and instruction-authoring standards have been updated accordingly.

@@ -1,9 +1,7 @@
 ---
-mode: 'agent'
-tools: ['codebase', 'runCommands', 'search', 'searchResults', 'usages']
 description: 'Guide the user through Python environment setup with conditional workflows'
+tools: ['codebase', 'runCommands', 'search', 'searchResults', 'usages']
 ---
-
 # Python Environment Setup Prompt
 
 ## Context
