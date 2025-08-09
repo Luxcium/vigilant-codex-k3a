@@ -1,9 +1,7 @@
 ---
-mode: 'agent'
-tools: ['codebase', 'openSimpleBrowser', 'terminalLastCommand']
 description: 'Launch browser and enable instrumentation for live error monitoring during development'
+tools: ['codebase', 'openSimpleBrowser', 'terminalLastCommand']
 ---
-
 # Launch Browser and Instrumentation for Development Error Monitoring
 
 ## Context

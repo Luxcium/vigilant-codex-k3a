@@ -1,3 +1,7 @@
+---
+description: 'Reference list of all gitmoji codes.'
+tools: []
+---
 # Complete Gitmoji List
 
 This prompt file contains the complete list of gitmoji for conventional commits.

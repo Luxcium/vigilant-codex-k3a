@@ -1,10 +1,8 @@
 ---
-mode: 'agent'
-model: 'gpt-4.1'
-tools: ['codebase', 'filesystem', 'terminal', 'vscodeAPI']
 description: 'Automated Microsoft Edge DevTools debugging setup and configuration workflow'
+tools: ['codebase', 'filesystem', 'terminal', 'vscodeAPI']
+model: 'gpt-4.1'
 ---
-
 # Microsoft Edge DevTools Debugging Workflow
 
 **Category**: Development Workflows

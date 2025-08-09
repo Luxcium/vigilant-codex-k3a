@@ -1,3 +1,9 @@
+- [2025-08-09T06:04:52+00:00] Prompt metadata standardized
+  **Current State:** All prompt files now use front matter with description and tools fields, and all `mode:` lines were removed.
+  **Last Action:** Added missing front matter and removed deprecated `mode` lines across memory-bank/prompts.
+  **Rationale:** Ensure consistent metadata and align prompts with current project standards.
+  **Next Intent:** Monitor future prompt additions for compliance.
+  **Meta:** I am updating my self-documentation after standardizing prompt metadata. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 
 - [2025-08-09T06:03:14+00:00] Chatmode front matter simplified
   **Current State:**

@@ -1,7 +1,7 @@
-mode: 'agent'
-mode: 'agent'
+---
 description: 'Generate a modular Docker Compose workflow.'
-
+tools: []
+---
 # Docker Modular Workflow Generator
 
 ## Description
