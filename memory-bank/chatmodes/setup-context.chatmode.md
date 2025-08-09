@@ -1,7 +1,6 @@
 ---
 description: High Level Context VS Code development helper, workspace configuration, API, extensions and anything related to this project in vscode, the way to instruct ai agents, teh way to have this multimodal project optimize at a high level.
-model: GPT-4.1
-tools: ['codebase', 'editFiles', 'fetch', 'githubRepo', 'microsoft_docs_search', 'microsoft-docs', 'problems', 'runCommands', 'terminalLastCommand', 'runTasks', 'search', 'usages', 'vscodeAPI']
+tools: []
 ---
 
 # Project Setup Mode instructions

@@ -1,3 +1,15 @@
+
+- [2025-08-09T06:03:14+00:00] Chatmode front matter simplified
+  **Current State:**
+  All chatmode files now have only `description` and an empty `tools` array in their front matter, removing explicit `model` declarations.
+  **Last Action:**
+  Removed model lines and cleared tools arrays in `plan`, `vscode-helper`, `setup-context`, `proto-notebook`, `questrade-sdk-developer`, and `tsdoc-typedoc` chatmodes.
+  **Rationale:**
+  Standardizes chatmode configuration and prevents hardcoded model references.
+  **Next Intent:**
+  Monitor chatmode files for consistency with evolving project standards.
+  **Meta:**
+  Self-documentation after simplifying chatmode front matter.
 - [2025-08-09T06:00:07Z] VS Code placeholder tasks defined
   **Current State:**
   `.vscode/tasks.json` now defines shell tasks for project-status, lint, test, and build.
