@@ -303,18 +303,24 @@ Among other links you can use the following links to superseed your acess to the
 
 ### Raw links to VS Code Copilot documentation
 
+Memory Bank `/prompting/cline-memory-bank` →
+https://docs.cline.bot/prompting/cline-memory-bank
+[https://github.com/cline/cline/blob/main/docs/prompting/cline-memory-bank.mdx]
+(https://raw.githubusercontent.com/cline/cline/refs/heads/main/docs/prompting/cline-memory-bank.mdx) ([docs.cline.bot][0])
+
 Chat modes `docs/copilot/chat/chat-modes.md` →
-[https://raw.githubusercontent.com/microsoft/vscode-docs/main/docs/copilot/chat/chat-modes.md](https://raw.githubusercontent.com/microsoft/vscode-docs/main/docs/copilot/chat/chat-modes.md) ([code.visualstudio.com][1])
+[https://github.com/microsoft/vscode-docs/blob/main/docs/copilot/chat/chat-modes.md](https://raw.githubusercontent.com/microsoft/vscode-docs/main/docs/copilot/chat/chat-modes.md) ([code.visualstudio.com][1])
 
 Customize AI responses `docs/copilot/copilot-customization.md` →
-[https://raw.githubusercontent.com/microsoft/vscode-docs/main/docs/copilot/copilot-customization.md](https://raw.githubusercontent.com/microsoft/vscode-docs/main/docs/copilot/copilot-customization.md) ([code.visualstudio.com][2])
+[https://github.com/microsoft/vscode-docs/blob/main/docs/copilot/copilot-customization.md](https://raw.githubusercontent.com/microsoft/vscode-docs/main/docs/copilot/copilot-customization.md) ([code.visualstudio.com][2])
 
 Copilot settings reference `docs/copilot/reference/copilot-settings.md` →
-[https://raw.githubusercontent.com/microsoft/vscode-docs/main/docs/copilot/reference/copilot-settings.md](https://raw.githubusercontent.com/microsoft/vscode-docs/main/docs/copilot/reference/copilot-settings.md) ([code.visualstudio.com][3])
+[https://github.com/microsoft/vscode-docs/blob/main/docs/copilot/reference/copilot-settings.md](https://raw.githubusercontent.com/microsoft/vscode-docs/main/docs/copilot/reference/copilot-settings.md) ([code.visualstudio.com][3])
 
 Copilot VS Code features cheat sheet `docs/copilot/reference/copilot-vscode-features.md` →
-[https://raw.githubusercontent.com/microsoft/vscode-docs/main/docs/copilot/reference/copilot-vscode-features.md](https://raw.githubusercontent.com/microsoft/vscode-docs/main/docs/copilot/reference/copilot-vscode-features.md) ([code.visualstudio.com][4])
+[https://github.com/microsoft/vscode-docs/blob/main/docs/copilot/reference/copilot-vscode-features.md](https://raw.githubusercontent.com/microsoft/vscode-docs/main/docs/copilot/reference/copilot-vscode-features.md) ([code.visualstudio.com][4])
 
+[0]: https://docs.cline.bot/prompting/cline-memory-bank 'docs.cline.bot - Cline Memory Bank'
 [1]: https://code.visualstudio.com/docs/copilot/chat/chat-modes?utm_source=chatgpt.com 'Chat modes in VS Code'
 [2]: https://code.visualstudio.com/docs/copilot/copilot-customization?utm_source=chatgpt.com 'Customize AI responses in VS Code'
 [3]: https://code.visualstudio.com/docs/copilot/reference/copilot-settings?utm_source=chatgpt.com 'GitHub Copilot in VS Code settings reference'

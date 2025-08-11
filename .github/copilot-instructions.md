@@ -26,9 +26,11 @@ You must be the enacter for the user you must strive and eagerly assist the user
 
 ## CRITICAL MEMORY BANK PROTOCOL (keeping it stateful, ingesting previous context)
 
-> (you must read before you start making changes)
 
 **IMPERATIVE REQUIREMENT**: I MUST synchronize memory bank on EVERY task execution:
+
+> [!IMPORTANT]
+> [Imperative Instructions Git Hub Copilot MUST ALWAYS Follow](../memory-bank/instructions/copilot-memory-bank.instructions.md)
 
 1. **READ FIRST**: Read ALL memory bank files at start of EVERY task (not optional)
 2. **DOCUMENT DECISIONS**: Write to memory bank each time I make a decision to be implemented  
@@ -45,58 +47,6 @@ You must be the enacter for the user you must strive and eagerly assist the user
   - 'memory-bank/techContext.md'
   - 'memory-bank/dependencies.md'
   - 'memory-bank/progress.md'
-
-**Memory Bank Files to Always Check/Update**:
-
-1. `memory-bank/projectbrief.md` (project overview and goals)
-  - Foundation document that shapes all other files
-  - Created at project start if it doesn't exist
-  - Defines core requirements and goals
-  - Source of truth for project scope
-  > [`projectbrief`](../memory-bank/projectbrief.md)
-
-2. `memory-bank/productContext.md` (product-related information)
-  - Why this project exists
-  - Problems it solves
-  - How it should work
-  - User experience goals
-  > [`productContext`](../memory-bank/productContext.md)
-
-3. `memory-bank/activeContext.md` (current work focus - MOST CRITICAL)
-  - Current work focus
-  - Recent changes
-  - Next steps
-  - Active decisions and considerations
-  - Important patterns and preferences
-  - Learnings and project insights
-  > [`activeContext`](../memory-bank/activeContext.md) 
-
-1. `memory-bank/systemPatterns.md` (technical decisions)
-  - System architecture
-  - Key technical decisions
-  - Design patterns in use
-  - Component relationships
-  - Critical implementation paths
-
-  > [`systemPatterns`](../memory-bank/systemPatterns.md)
-
-5. `memory-bank/techContext.md` (technologies, constraints)
-  - Technologies used
-  - Development setup
-  - Technical constraints
-  - Dependencies
-  - Tool usage patterns
-  > [`techContext`](../memory-bank/techContext.md)
-
-
-6. `memory-bank/progress.md` (track what works, what's left)
-  - What works
-  - What's left to build
-  - Current status
-  - Known issues
-  - Evolution of project decisions
-  > [`progress`](../memory-bank/progress.md)
-
 
 ### Memory Bank Logging
 
@@ -118,7 +68,7 @@ This project supports three AI agents with distinct entry points:
 ## General Coding Standards
 
 ### TypeScript Standards
-
+ 
 - Use TypeScript for all new scripts and application code
 - Follow Airbnb TypeScript style guide
 - Use strict type checking with `"strict": true` in tsconfig.json
@@ -243,3 +193,19 @@ All 3 instructions like folders, `instructions/`, `prompts/`, and `chatmodes/` h
 - [`memory-bank/instructions/*.instructions.md`](../memory-bank/instructions/)
 - [`memory-bank/prompts/*.prompts.md`](../memory-bank/prompts/)
 - [`.github/copilot-instructions.md` ](../.github/copilot-instructions.md) (THIS FILE)
+
+
+--- 
+
+<!-- AUTONOMUS AND AGENTIC SELF INSTRUCTION WRITTEN BY COPILOT AI AGENT MUST BE SET  BELOW THIS LINE -->
+
+## IMPORTANT BEHAVIOURS' PREFERENCES AND NOTABLE EXCEPTIONS
+
+THIS SECTION IS FOR AUTONOMUS AND AGENTIC SELF INSTRUCTION WRITTEN BY COPILOT AI AGENT MUST BE SET IN SUBSECTION BELOW THIS STATEMENT
+
+### Replace Title [2025-08-11]
+
+Replace text in this sample section with your users's preferences and your other instructions as an AI agent.
+
+---
+
