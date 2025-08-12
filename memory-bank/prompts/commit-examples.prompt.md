@@ -1,3 +1,7 @@
+---
+description: 'Examples of conventional commit messages with gitmoji.'
+tools: []
+---
 # Commit Examples
 
 This prompt file contains comprehensive examples of conventional commit messages with gitmoji.

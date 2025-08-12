@@ -1,9 +1,7 @@
 ---
-mode: 'agent'
-tools: ['codebase']
 description: 'Add or update X Cards meta tags in HTML head sections'
+tools: ['codebase']
 ---
-
 # Add X Cards Meta Tags
 
 ## Context

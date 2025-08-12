@@ -1,3 +1,7 @@
+---
+description: 'Guide for documenting breaking changes in commits.'
+tools: []
+---
 # Breaking Changes Guide (Concise)
 
 ## Required Format

@@ -1,3 +1,7 @@
+---
+description: 'Instructions for git hooks and commit automation.'
+tools: []
+---
 # Git Hooks and Automation
 
 This prompt file contains information about git hooks and automation for conventional commits.

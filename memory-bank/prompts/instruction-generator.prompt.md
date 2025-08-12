@@ -1,9 +1,7 @@
 ---
-mode: 'agent'
-tools: ['codebase']
 description: 'Generate *.instructions.md files with proper structure and content based on coding standards requirements'
+tools: ['codebase']
 ---
-
 # Generate Instructions File
 
 Your goal is to create a properly structured `.instructions.md` file based on the user's requirements for coding standards, guidelines, or project rules.

@@ -1,286 +1,125 @@
-# The `techContext.md` Memory Bank File
-
-Your AI Agent will actively strive to keep this file up to date with the latest technical context, including technology stack, development environment setup, technical constraints, and dependencies. This file MUST be updated by any AI Agent eagerly each time it will make changes on each chat completion and each task or subtask as the authoritative guide for all technical implementation aspects of the Vigilant Codex K3a polyvalent AI development workspace.
+# techContext.md
 
 ## Purpose
-
-This file documents the technologies, development setup, technical constraints, and dependencies for the Vigilant Codex K3a polyvalent AI development workspace. It provides a clear reference for all technical implementation aspects and serves as the authoritative guide for technology stack decisions.
+Concise, current technical implementation context: stack versions, environment modes, constraints, standards. Full historical rationale preserved in archives/techContext-archive.md.
 
 ## Structure
-
-- **Technology Stack** - Core technologies and their rationale
-- **Development Environment Setup** - Environment configuration and tooling
-- **Technical Constraints** - Known limitations and requirements
-- **Implementation Standards** - Code quality and technical requirements
-- **Dependencies and Relationships** - File relationships and impact analysis
-- **Call to Action** - Instructions for maintaining this file
+- Technology Stack Snapshot
+- Environment & Tooling
+- Technical Constraints & Standards
+- Implementation Guidance (Condensed Patterns)
+- Dependencies and Relationships
+- Call to Action
+- Metadata
 
 ---
 
-## Technology Stack
+## Technology Stack Snapshot
+| Layer | Choice | Version / Mode | Rationale (Condensed) |
+| ----- | ------ | -------------- | --------------------- |
+| Runtime (JS) | Node.js | 22 | Native fetch, performance, future‑proof |
+| Language | TypeScript | 5.8+ strict | Strong typing, native Response types |
+| Runtime (Py) | Python | 3.13 | Improved perf & typing parity |
+| Web | Next.js | 15+ (App Router) | Server-first, Server Actions, SEO |
+| DB Access | Prisma | Latest | Type-safe schema, PostgreSQL |
+| Containers | Codex Universal | ghcr.io/openai/codex-universal:latest | Unified dev surface |
+| Tests | Vitest | 3.2.x | Fast TS-native runner, coverage |
+| Notebooks | Jupyter (VS Code) | Integrated | ML / exploratory workflows |
+| Orchestration | Scripts (bash) | Idempotent | Deterministic reproducibility |
+| AI Agents | Cline / Codex CLI / Copilot | 3-role model | Reasoning / automation / inline assist |
 
-### Core Runtime Environment
+Key Technical Guarantees:
+- Native fetch (no node-fetch dependency)
+- 98%+ branch coverage target (current 98.34%)
+- Archival discipline: verbose rationale → archives/*.md
 
-- **Node.js 22** - Latest LTS with native fetch API support and enhanced performance
-- **TypeScript 5.8+** - Strict type checking with native Response types and advanced type features
-- **Python 3.13** - Latest Python with improved performance and enhanced typing support
-- **Docker** - Containerization with Codex Universal environment (`ghcr.io/openai/codex-universal:latest`)
+---
 
-### HTTP Client Architecture ✅
+## Environment & Tooling
+Environment Modes (deferred decision via ENV_MODE):
+- local (host venv / direct tooling)
+- docker_isolated (full isolation)
+- docker_volume (container + live mounts)
 
-#### Native Fetch API Implementation
+Primary Scripts (examples):
+- setup_codex_universal.sh → initialize unified dev container
+- codex_start.sh / codex_stop.sh → lifecycle control
+- verify-all.sh → aggregate validation (lint, tests, markdown)
 
-- **Primary Client** - Node.js 22 native fetch implementation
-- **Zero External Dependencies** - Eliminated node-fetch package for cleaner dependency tree
-- **TypeScript Integration** - Native Response types throughout codebase
-- **Performance Optimized** - Native implementation provides superior performance characteristics
-- **Future Compatible** - Long-term maintenance advantages with native Node.js APIs
-- **Test Coverage** - 98.34% branch coverage with comprehensive vi.stubGlobal mocking
-
-### Next.js v15+ Web Framework ✅
-
-#### Modern React Architecture
-
-- **App Router** - `/app` directory structure with Server Components by default
-- **Server Actions** - `'use server'` directive for mutations with proper cache revalidation
-- **Client Components** - `'use client'` directive for interactivity and browser APIs
-- **Database Integration** - PostgreSQL backend with Prisma ORM
-- **Container Integration** - Dockerized PostgreSQL development environment
-
-### Component Architecture Standards
-
-#### Server Component Usage (Default)
-
-- Data fetching from databases or external APIs
-- Static content generation and SEO-friendly elements
-- Server-side computations and data transformations
-- Environment variable access and secure operations
-- Initial page rendering and layout composition
-
-#### Client Component Usage (`'use client'`)
-
-- Interactive UI requiring state management (`useState`, `useEffect`, `useReducer`)
-- Event handlers (`onClick`, `onChange`, `onSubmit`, `onFocus`)
-- Browser-only APIs (`window`, `localStorage`, `navigator`, `document`)
-- Third-party client-side libraries and components
-- Custom hooks and React context providers
-
-#### Server Actions Usage (`'use server'`)
-
-- Database mutations (CREATE, UPDATE, DELETE operations)
-- Form submissions with validation and error handling
-- Authentication and authorization workflows
-- Cache revalidation (`revalidatePath`, `revalidateTag`)
-- Redirects and navigation after successful operations
-
-### Testing Infrastructure ✅
-
-#### Comprehensive Test Framework
-
-- **Vitest 3.2.4** - Primary test runner with Istanbul coverage provider
-- **Native Fetch Mocking** - `vi.stubGlobal('fetch', mockFetch)` for HTTP client testing
-- **Authentication Mocking** - Complete AuthManager system mocking for test isolation
-- **Coverage Reporting** - Detailed branch/statement/function/line reporting with 98%+ thresholds
-- **Schema Validation** - Comprehensive Zod validation testing patterns
-- **CommonJS Compatibility** - Maintained throughout test infrastructure
-- **Edge Case Coverage** - Error scenarios, NaN handling, timeout management
-
-#### Production Test Results
-
-- **259 tests passing** - Maintained after native fetch conversion with zero regression
-- **98.34% branch coverage** - Exceeding 90% threshold requirement
-- **Perfect Coverage** - 100% achieved for webStorage.ts, tokenBucket.ts
-- **High Coverage** - 96.15% for restClient.ts, 87.5% for QuestradeClient.ts
-- **Performance Improvement** - Native fetch implementation optimization
-
-### Python Development Framework ✅
-
-#### Conditional Environment System
-
-- **Three Deployment Modes** - Runtime selection without hard-coded choices
-  - `local` - Host-based virtual environment with direct IDE integration
-  - `docker_isolated` - Fully containerized with complete isolation
-  - `docker_volume` - Containerized with live host file mounting
-- **Environment Management** - pip, virtualenv, and Docker orchestration
-- **Jupyter Integration** - VS Code notebook API with advanced automation
-- **ML Development** - Comprehensive notebook development workflows
-
-### AI Agent Integration Technologies
-
-#### Three AI Agent Ecosystem
-
-- **Cline AI** - Memory bank integration with persistent context preservation
-- **Codex CLI** - Terminal automation and container orchestration
-- **VS Code Copilot** - Code generation with 31 instruction files + 35 prompt files
-- **Cross-Agent Coordination** - Shared memory bank with stateful collaboration
-- **Instruction Framework** - Automated coding standards and workflow execution
-
-## Development Environment Setup
-
-### Quick Start Environment
-
+Quick Start:
 ```bash
-#1. Set OpenAI API key for container integration
-export OPENAI_API_KEY="your-api-key-here"
-
-#2. Initialize complete development environment
+export OPENAI_API_KEY="your-api-key"
 ./scripts/setup_codex_universal.sh
-
-#3. Start Codex Universal environment
 ./scripts/codex_start.sh
-
-#4. Access development shell
 ./scripts/codex_shell.sh
 ```
 
-### Project Organization Standards
+Project Root Contexts (authoritative list in root-contexts.md):
+src/ (SDK & shared types) · web/ (Next.js app) · python/ (agent + notebooks) · scripts/ (automation) · memory-bank/ (state) · notebooks/
 
-**Language-Based Structure** (As defined in [systemPatterns.md](./systemPatterns.md))
+Package Policy:
+- Always install with @latest during active development phase
 
-```text
-vigilant-codex-k3a/
-├── src/                    # TypeScript core library and SDK components
-├── web/                    # Next.js applications (when coexisting)
-├── python/                 # Python projects and conditional environments
-├── scripts/                # Shell scripts for automation (bash only)
-├── notebooks/              # Jupyter notebooks and ML development
-├── memory-bank/            # AI agent state management
-└── memory-bank/instructions/   # 26 coding standards (auto-applied)
-```
-
-### Environment Configuration
-
-#### Codex Universal Docker Environment
-
-- **Base Image** - `ghcr.io/openai/codex-universal:latest`
-- **Pre-configured Stack** - Node.js 22 + Python 3.13
-- **Volume-Based Development** - Instant file changes without container rebuilds
-- **OpenAI API Integration** - Seamless API access within containers
-- **Multi-Service Support** - PostgreSQL, Redis, development servers
-- **Health Monitoring** - Comprehensive service validation
-
-#### Local Development Requirements
-
-- **Node.js 22** - Required for native fetch API and TypeScript compilation
-- **Python 3.13** - Required for conditional environment framework
-- **Docker Engine** - Required for container orchestration
-- **Git** - Required for version control and collaboration
-
-### Tool Configuration
-
-#### Code Quality Tools
-
-- **ESLint** - JavaScript/TypeScript linting with strict rules
-- **Prettier** - Code formatting with consistent style
-- **Markdown-Lint** - Documentation formatting compliance
-- **TypeScript Strict Mode** - Enhanced type checking and null safety
-- **Husky** - Pre-commit hooks for automated quality checks
-
-### Package Installation Policy
-
-**Policy:** Always use `@latest` when adding new packages to the project.
-
-**Rationale:**
-
-- Ensures the project uses the most up-to-date versions of dependencies.
-- Reduces the risk of outdated or insecure packages.
-
-**Implementation:**
-
-- Use the `@latest` tag when running `pnpm add` or similar commands.
-- Document this policy in all relevant memory bank files and README files.
-
-**Example:**
-
-```bash
-pnpm add dotenv@latest axios@latest
-```
-
-## Technical Constraints
-
-### Mandatory Requirements
-
-- **Script-Driven Setup** - All project operations must be performed via idempotent scripts in `scripts/` directory
-- **Memory Bank Protocol** - All AI agents MUST read ALL memory bank files at session start
-- **Markdown-Lint Compliance** - All documentation must follow strict GitHub markdown standards
-- **Single # Header Rule** - Each file exactly one top-level heading matching filename
-- **Cross-Agent Compatibility** - All configurations must work across Cline AI, Codex CLI, and VS Code Copilot
-
-### Development Constraints
-
-- **No Manual File Creation** - All directory and file creation via scripts only
-- **Idempotent Scripts** - All setup operations must be safely repeatable
-- **Conditional Decision Deferral** - Runtime parameter selection over hard-coded choices
-- **Zero Information Loss** - Complete historical preservation through archival systems
-- **Test Coverage Minimum** - Maintain 98%+ branch coverage for all components
-
-### Technology Constraints
-
-- **Node.js 22 Requirement** - Native fetch API dependency
-- **TypeScript Strict Mode** - Enhanced type safety and null checking
-- **Container Security** - Non-root users, minimal base images, vulnerability scanning
-- **Database Schema Management** - Prisma ORM with PostgreSQL backend
-- **Package Manager Policy** - No lock files until further notice (development phase)
-
-### Integration Constraints
-
-- **Three AI Agent Limitation** - System designed for specific agent collaboration patterns
-- **Memory Bank Structure** - Must follow official Cline Memory Bank format
-- **Cross-Platform Compatibility** - Must work across Windows, macOS, and Linux
-- **Container Runtime Dependency** - Docker required for full development experience
-
-## Implementation Standards
-
-### Code Quality Requirements
-
-- **Type Safety** - Comprehensive TypeScript implementation with strict type checking
-- **Test Coverage** - Minimum 98% branch coverage with comprehensive edge case testing
-- **Documentation Completeness** - Every component properly documented with cross-references
-- **Security Best Practices** - Container security, authentication, data protection
-- **Performance Standards** - Optimized implementations with benchmarking
-
-### Development Process Standards
-
-- **Memory Bank Maintenance** - Continuous documentation and context preservation
-- **Cross-Agent Testing** - Validation across all three AI agent workflows
-- **Progressive Enhancement** - Applications work without JavaScript, enhanced with client features
-- **Graceful Degradation** - Fallbacks for disabled features or missing dependencies
-
-### Architecture Standards
-
-- **Component Separation** - Clear boundaries between Server and Client Components
-- **Data Serialization** - Proper handling of data flow between server and client
-- **Cache Management** - Appropriate use of `revalidatePath()` and `revalidateTag()`
-- **Error Handling** - Comprehensive error scenarios and user feedback
-
-## Dependencies and Relationships
-
-- **Depends On:** [systemPatterns.md](./systemPatterns.md), [projectbrief.md](./projectbrief.md), [productContext.md](./productContext.md)
-- **Required By:** [activeContext.md](./activeContext.md), [progress.md](./progress.md), [dependencies.md](./dependencies.md)
-- **Why This Order:** Technical context establishes implementation details after architectural patterns are defined
-- **Impact Analysis:** Changes to technology stack affect all development workflows, testing strategies, AI agent behavior, and deployment procedures
-
-## Call to Action
-
-> **All agents and contributors must review, update, and self-regulate this file as the technical context evolves.**  
-> **Do not proceed with technical implementation until this file is aligned with the current technology stack and constraints.**  
-> **Update this file immediately upon any change in technologies, setup, constraints, or dependencies.**  
-> **Ensure all technical decisions can be traced back to the standards and constraints defined in this file.**
-
-## AI Agent Instructions
-
-This project supports three AI agents with specific technical responsibilities:
-
-- **Cline AI** → Apply technical standards with memory bank integration and context preservation
-- **Codex CLI** → Implement technical setup through script automation and container orchestration
-- **VS Code Copilot** → Enforce technical standards through instruction files and real-time code assistance
-
-**All agents must validate their technical implementations against the standards defined in this file and ensure compliance with established technical constraints.**
-
-[2025-07-27] Radical Documentation Reorganization: Migration Within Memory Bank
-
-All instructions, prompts, and chatmodes have been migrated from `.github/` within `memory-bank/` directory. Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change is motivated by our need for an organized, stateful, and agent-friendly documentation system. Centralizing instructions, prompts, and chatmodes in memory bank enables better maintenance, easier context preservation, and improved collaboration between AI agents and human contributors. Keeping Copilot entry point in `.github/copilot-instructions.md` ensures compatibility with VS Code Copilot and prevents integration issues. All references and explanatory notes have been updated across codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
+Tooling Quality Gates:
+- ESLint + Prettier + markdownlint pre-commit
+- TypeScript strict mode enforced
+- vi.stubGlobal('fetch', ...) for deterministic HTTP tests
 
 ---
 
-**Last Updated:** 2025-07-18 | **Status:** Technical Standards Established | **Stack:** Node.js 22 + TypeScript 5.8+ + Python 3.13 + Next.js 15+
+## Technical Constraints & Standards
+Mandatory Constraints:
+- Single H1 per file, markdown-lint compliant
+- All setup & mutations via idempotent scripts (no manual drift)
+- Memory Bank read cycle before any agent action
+- Coverage threshold ≥ 98% branches (enforced in CI/pre-commit)
+
+Development Standards:
+- No silent dependency additions (document in dependencies.md if relevant)
+- Conditional decisions deferred to runtime parameters (avoid hard-coded environment forks)
+- Zero information loss: superseded detail → archives/*
+
+Security & Ops:
+- Non-root containers, minimal images
+- Prisma migrations versioned; schema changes require review
+- Environment variables accessed only in server contexts
+
+Version Discipline:
+- Node 22 and TS 5.8+ required (native fetch & type features)
+- Python 3.13 baseline for alignment with typestate improvements
+
+---
+
+## Implementation Guidance (Condensed Patterns)
+Server vs Client (Next.js):
+- Default: Server Component
+- Escalate to Client only for interactivity, stateful UI, browser APIs
+Server Actions:
+- Use for all mutations; always pair with explicit revalidatePath / revalidateTag
+Testing Pattern:
+- Global fetch mock, isolate Auth flows, include error & timeout paths
+Scripts Pattern:
+- Header block (purpose, preconditions), idempotent checks, exit on error (set -e)
+Archival Pattern:
+- Active file: current truth; verbose/historical narrative → archives/techContext-archive.md (dated)
+Agent Roles:
+- Cline: reasoning + Memory Bank synchronization
+- Codex CLI: script execution & container lifecycle
+- Copilot: inline standards enforcement via instruction files
+
+---
+
+## Dependencies and Relationships
+- **Depends On:** systemPatterns.md (architecture), projectbrief.md, productContext.md
+- **Informs:** activeContext.md, progress.md, dependencies.md
+- **Archive Reference:** archives/techContext-archive.md
+- **Impact Analysis:** Changes here ripple to build/test scripts, environment modes, and Next.js + SDK integration assumptions.
+
+---
+
+## Call to Action
+> Keep this file lean and immediately current. On any tech stack, environment, or constraint change: (1) update snapshot here, (2) append full rationale to archive, (3) sync related scripts & root-contexts.md if impacted, (4) propagate to activeContext.md for execution focus. Never delete historically significant information—archive it.
+
+---
+
+**Last Updated:** 2025-11-08 | **Status:** Condensed Technical Snapshot Stable | **Coverage Target:** ≥98% branches | **Archive:** archives/techContext-archive.md preserves full detail

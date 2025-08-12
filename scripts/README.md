@@ -67,9 +67,9 @@ When a script is created or modified, update this README with a brief descriptio
 
 **Self-Documentation Protocol**: Whenever a script is added or modified, update this README accordingly. Each `.sh` file must begin with comments describing its aim, purpose, and decision rationale. Detect and consolidate duplicate scripts whenever possible.
 
-## Consolidated Script Structure (22 Scripts)
+## Consolidated Script Structure (23 Scripts)
 
-**Reduced from 41 to 22 scripts (46% reduction) on 2025-07-23**
+**Reduced from 41 to 22 scripts (46% reduction) on 2025-07-23; now 23 with internal local-ci orchestration (no external cost) added on 2025-08-08**
 
 ### Environment Setup Scripts (6 scripts)
 
@@ -109,13 +109,19 @@ When a script is created or modified, update this README with a brief descriptio
   - Supports modular SDK component setup
 - `setup_db_prisma.sh` - Database setup and configuration
 
-### Validation & Quality Scripts (2 scripts)
+### Validation & Quality Scripts (5 scripts)
 
 - `verify-all.sh` - **Master validation script with selective checking**
   - Usage: `./verify-all.sh [--check dependencies|markdown|instructions|prompts|tests] [--analyze tests]`
   - Consolidates functionality from 5 previous validation scripts
   - Comprehensive repository validation suite
 - `check-memory-bank.sh` - Memory bank specific validation
+ - `local-ci.sh` - **Full local CI pipeline (install, typecheck, lint, test, coverage, docs)** replacing removed GitHub Actions workflow to cut costs
+   - Usage: `./scripts/local-ci.sh [--fast] [--skip stage]`
+   - Mirrors former `.github/workflows/ci.yml` stages entirely locally
+   - Eliminates remote CI usage cost; adjustable stages for rapid iteration
+ - `commit-guard.sh` - **Hook-executed validation gate** (fast local-ci subset, override with `FORCE_COMMIT=1`)
+ - `install-hooks.sh` - Installs git hooks (pre-commit, pre-push, commit-msg) calling `commit-guard.sh`
 
 #### Markdown Linting and Formatting
 
@@ -343,6 +349,9 @@ The setup is configured in:
 
 - `verify-all.sh` — **Consolidated validation suite (5-in-1)**
 - `check-memory-bank.sh` — Memory bank validation
+- `local-ci.sh` — Local replacement for remote CI pipeline (cost-free)
+ - `commit-guard.sh` — Enforced validation during git hooks
+ - `install-hooks.sh` — Git hook installer
 
 ### Code Generation
 
@@ -359,3 +368,11 @@ The setup is configured in:
 
 - Run `markdownlint --config .markdownlint.yaml scripts/README.md`
 - Test consolidated scripts with all parameter combinations
+- Run `./scripts/local-ci.sh --fast` for a quick full-stack validation prior to commits
+ - Install hooks: `./scripts/install-hooks.sh` (one-time)
+ - Override a failing guard intentionally: `FORCE_COMMIT=1 git commit -m "feat(scope): :sparkles: message"`
+ - Temporarily disable all hooks (audited): `export DISABLE_LOCAL_GUARDS=1`
+
+## Remote CI Deactivation Notice (2025-08-08)
+
+The previous GitHub Actions workflow at `.github/workflows/ci.yml` has been removed to immediately halt remote CI spending. All equivalent checks are now performed locally via `scripts/local-ci.sh` and enforced pre-commit/push with `commit-guard.sh`. Reinstatement, if needed later, should reference these scripts as the canonical stage definitions.

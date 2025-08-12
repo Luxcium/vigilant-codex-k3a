@@ -1,9 +1,7 @@
 ---
-mode: 'agent'
-tools: ['codebase', 'editFiles', 'runInTerminal', 'search', 'usages']
 description: 'Generate advanced Docker configurations with exotic patterns and security-first approach'
+tools: ['codebase', 'editFiles', 'runInTerminal', 'search', 'usages']
 ---
-
 # Docker Exotic Configuration Generator
 
 ## Description

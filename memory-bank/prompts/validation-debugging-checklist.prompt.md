@@ -1,8 +1,7 @@
 ---
-mode: 'agent'
 description: 'Validation and debugging checklist for web app meta and manifest, a VS Code–centric checklist for validating and debugging web app meta tags, manifests, icons, deep links, and SEO elements using built-in tools and CLI/CI workflows.'
+tools: []
 ---
-
 # VS Code-Native Validation & Debugging Checklist
 
 ## 1. Overview 🔗 `#overview`

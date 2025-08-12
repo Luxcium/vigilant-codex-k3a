@@ -1,9 +1,7 @@
 ---
-mode: 'agent'
-tools: ['codebase', 'editFiles', 'fetch', 'problems', 'runInTerminal', 'runTasks', 'search', 'usages']
 description: 'Comprehensive standards for file and directory organization, naming, documentation, and memory bank integration across the entire project.'
+tools: ['codebase', 'editFiles', 'fetch', 'problems', 'runInTerminal', 'runTasks', 'search', 'usages']
 ---
-
 # File Organization Standards
 
 ## Project Root Structure

@@ -1,3 +1,39 @@
+- [2025-08-09T06:04:52+00:00] Prompt metadata standardized
+  **Current State:** All prompt files now use front matter with description and tools fields, and all `mode:` lines were removed.
+  **Last Action:** Added missing front matter and removed deprecated `mode` lines across memory-bank/prompts.
+  **Rationale:** Ensure consistent metadata and align prompts with current project standards.
+  **Next Intent:** Monitor future prompt additions for compliance.
+  **Meta:** I am updating my self-documentation after standardizing prompt metadata. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+
+- [2025-08-11T19:44:17Z] Session initialization and full Memory Bank sync
+  **Current State:** All core Memory Bank files read this session (projectbrief.md, productContext.md, systemPatterns.md, techContext.md, activeContext.md, progress.md, dependencies.md). No code changes performed; context fully hydrated.
+  **Last Action:** Retrieved current timestamp via approved script `scripts/get_current_datetime.sh` and completed reading remaining files (progress.md, dependencies.md) to finish sync.
+  **Rationale:** Mandatory CRITICAL MEMORY BANK PROTOCOL requirement to load entire Memory Bank at session start for stateful continuity and to prevent context drift before any implementation tasks.
+  **Next Intent:** Await user task instructions; once received, create/refresh todo list, then proceed with planned actions (e.g., potential script consolidation follow-ups or instruction standardization) while maintaining self-documentation.
+  **Meta:** Executing Self-Documentation Protocol at session start. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+
+- [2025-08-09T06:03:14+00:00] Chatmode front matter simplified
+  **Current State:**
+  All chatmode files now have only `description` and an empty `tools` array in their front matter, removing explicit `model` declarations.
+  **Last Action:**
+  Removed model lines and cleared tools arrays in `plan`, `vscode-helper`, `setup-context`, `proto-notebook`, `questrade-sdk-developer`, and `tsdoc-typedoc` chatmodes.
+  **Rationale:**
+  Standardizes chatmode configuration and prevents hardcoded model references.
+  **Next Intent:**
+  Monitor chatmode files for consistency with evolving project standards.
+  **Meta:**
+  Self-documentation after simplifying chatmode front matter.
+- [2025-08-09T06:00:07Z] VS Code placeholder tasks defined
+  **Current State:**
+  `.vscode/tasks.json` now defines shell tasks for project-status, lint, test, and build.
+  **Last Action:**
+  Replaced the empty tasks array with placeholder echo commands for initialisation.
+  **Rationale:**
+  Provide baseline VS Code tasks to guide future automation workflows.
+  **Next Intent:**
+  Update these tasks with real commands once tooling is ready.
+  **Meta:**
+  Self-documentation after adding editor tasks to support future workflow automation.
 - [2025-08-03T22:55:00Z] Created and referenced 'Get Current Date/Time' task for timestamping
   **Current State:**
   A dedicated task for obtaining the current date/time in ISO 8601 format has been defined in `scripts/README.md`. All instructions now reference this task instead of the raw `date --iso-8601=seconds` command. The self-documentation and instruction-authoring standards have been updated accordingly.
@@ -72,14 +108,40 @@
 
 **Current State:**
 TypeScript coding standards were modularized into topic-specific instruction files and README references updated.
-**Last Action:**
-Split `typescript-standards.instructions.md` into dedicated files and updated documentation.
-**Rationale:**
-Improve clarity and maintainability of TypeScript guidelines.
-**Next Intent:**
-Ensure agents use the new instruction files and keep documentation in sync.
-**Meta:**
-Self-documentation after modularizing TypeScript instructions.
+
+- [2025-08-08T00:00:00Z] Local CI & Commit Guard Implemented / Remote CI Removed
+  **Current State:** Remote GitHub Actions CI workflow deleted to eliminate external run costs. Local validation stack now includes `local-ci.sh` (full pipeline), `commit-guard.sh` (hook gate), and `install-hooks.sh` (hook deployment). Package scripts augmented (`ci:local`, `hooks:install`, `commit:force`). Scripts README updated; hook override variables documented.
+  **Last Action:** Removed `.github/workflows/ci.yml`, created new scripts, updated documentation and package.json, appended self-documentation entry.
+  **Rationale:** Reduce CI expenditure to $0 by shifting validation locally while retaining quality enforcement before commit/push with auditable overrides.
+  **Next Intent:** Monitor developer workflow friction; optionally add JSON summary artifact & performance timings; consider selective parallelization in `local-ci.sh` if needed.
+  **Meta:** Executing Self-Documentation Protocol for CI cost elimination and guard introduction.
+  This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+- [2025-08-08T17:54:46-04:00] Attempted deletion of `.github/workflows/ci.yml` did not persist (file still present after delete patch). Will re-attempt deletion ensuring proper patch application and verify absence via directory listing and search before marking remote CI fully removed.
+  **Current State:** Workflow file contents still readable; local guard system operational.
+  **Last Action:** Issued delete patch; file_search still returns path; listed directory confirms presence.
+  **Rationale:** Must eliminate any chance of remote CI runs to guarantee zero external cost.
+  **Next Intent:** Re-issue deletion with correct tool context or alternative method, then re-verify and proceed to update documentation if needed.
+  **Meta:** I am updating my self-documentation after a failed deletion attempt. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+- [2025-08-08T18:12:51-04:00] Second deletion attempt of `.github/workflows/ci.yml` still shows file present (neutralized content). Tool search and directory listing persistently list file.
+  **Current State:** File contains only deactivation notice; no actionable jobs; remote CI effectively inert but artifact remains.
+  **Last Action:** Re-issued delete patch, re-ran search and directory listing, confirmed persistence; logged timestamp.
+  **Rationale:** Maintain transparency; artifact neutralization prevents runs while investigating deletion persistence (possible tool indexing constraint).
+  **Next Intent:** If full removal remains blocked, proceed with rename strategy or leave inert file; confirm with user preference before further attempts.
+  **Meta:** Executing Self-Documentation Protocol after repeated deletion attempt persistence. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+- [2025-08-08T18:18:21-04:00] Successfully removed `.github/workflows/ci.yml` via terminal `rm -f` and verified absence (search returns none, directory empty).
+  **Current State:** Remote CI workflow fully removed; only local validation (hooks + local-ci.sh) remains.
+  **Last Action:** Executed terminal removal, listed directory, confirmed empty; ran file search with no results.
+  **Rationale:** Finalize elimination of external CI cost surface and align with zero-remote-CI directive.
+  **Next Intent:** Monitor for accidental reintroduction; optionally add a safeguard script or git hook to block new workflow additions unless approved.
+  **Meta:** Executing Self-Documentation Protocol after successful deletion. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+  **Last Action:**
+  Split `typescript-standards.instructions.md` into dedicated files and updated documentation.
+  **Rationale:**
+  Improve clarity and maintainability of TypeScript guidelines.
+  **Next Intent:**
+  Ensure agents use the new instruction files and keep documentation in sync.
+  **Meta:**
+  Self-documentation after modularizing TypeScript instructions.
 
 **Current State:**
 Instruction files for commit messages and Python environment use short, direct sentences with "You" and include verification blocks.
