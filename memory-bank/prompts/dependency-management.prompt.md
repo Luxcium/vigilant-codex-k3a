@@ -2,6 +2,7 @@
 description: 'Track and update project dependencies with proper documentation'
 tools: ['codebase', 'terminalLastCommand', 'githubRepo']
 ---
+
 # Dependency Management and Documentation
 
 Your task is to help me manage and document dependencies in the Codex CLI project following our established standards and protocols.
