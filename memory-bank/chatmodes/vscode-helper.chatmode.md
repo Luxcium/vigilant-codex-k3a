@@ -1,6 +1,6 @@
 ---
 description: VS Code development helper for extensions, workspace configuration, and API usage and anything related to this project in vscode.
-tools: []
+tools: ['codebase', 'usages', 'changes', 'fetch', 'extensions', 'todos', 'editFiles', 'search', 'runCommands', 'runTasks', 'microsoft-docs']
 ---
 
 # VS Code Development Helper
@@ -332,26 +332,5 @@ Search official Microsoft/Azure documentation to find the most relevant and trus
 
 Leverage those tools when it is relevant and then using them in conjunction is what you do the best:
 
-**ToolSet for VS Code Helper Agentic Mode**
-
-````toolset
-  "vscode-api-toolset": {
-    "tools": [
-      "codebase",
-      "copilotCodingAgent",
-      "editFiles",
-      "extensions",
-      "fetch",
-      "findTestFiles",
-      "github",
-      "githubRepo",
-      "microsoft_docs_search",
-      "microsoft-docs",
-      "runCommands",
-      "search",
-      "usages",
-      "vscodeAPI",
-    ]
-  }
-    ```
-````
+**ToolSet for VS Code Helper Agentic Mode:**
+_tools: ['codebase', 'usages', 'changes', 'fetch', 'extensions', 'todos', 'editFiles', 'search', 'runCommands', 'runTasks', 'microsoft-docs']_
