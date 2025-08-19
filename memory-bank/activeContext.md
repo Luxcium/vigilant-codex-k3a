@@ -12,6 +12,13 @@
   **Next Intent:** Await user task instructions; once received, create/refresh todo list, then proceed with planned actions (e.g., potential script consolidation follow-ups or instruction standardization) while maintaining self-documentation.
   **Meta:** Executing Self-Documentation Protocol at session start. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 
+- [2025-08-18T00:00:00Z] ESLint Flat Config Prompt Added
+  **Current State:** New prompt `setup-eslint-flat-config.prompt.md` created under `memory-bank/prompts/` providing end-to-end procedure for installing dependencies, generating `eslint.config.mjs`, downgrading stylistic rules to warnings, integrating Prettier, and verification commands.
+  **Last Action:** Authored prompt per `define-prompt-file` protocol with required sections (Intent, Inputs, Preconditions, Steps, Output Format, Constraints, Failure Modes and Recovery, Examples) plus install command, template config, lint commands, and verification checklist.
+  **Rationale:** Establish standardized repeatable workflow for modern ESLint v9+ flat config setup ensuring consistency across agents and future repositories while honoring workspace policy of using `@latest` versions and non-blocking stylistic warnings.
+  **Next Intent:** Update `progress.md` What Works section with achievement entry; monitor for future enhancements (e.g., optional JSON reporter snippet) before expanding.
+  **Meta:** Self-Documentation Protocol entry capturing addition of new prompt and architectural rationale (consistency, reproducibility, Prettier conflict avoidance, warning-level stylistic governance).
+
 - [2025-08-09T06:03:14+00:00] Chatmode front matter simplified
   **Current State:**
   All chatmode files now have only `description` and an empty `tools` array in their front matter, removing explicit `model` declarations.

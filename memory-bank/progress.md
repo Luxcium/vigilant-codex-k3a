@@ -20,6 +20,16 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-08-18] ESLint Flat Config Setup Prompt
+
+**Achievement:** Added `setup-eslint-flat-config.prompt.md` defining complete workflow to install ESLint + TypeScript-ESLint + stylistic + Prettier using flat config with stylistic rules downgraded to warnings for non-blocking auto-fix development.
+
+**Technical Implementation:** Prompt includes install command block (all packages `@latest`), canonical `eslint.config.mjs` template combining `tseslint.config(...)`, stylistic plugin rule transformation to warnings, and final Prettier recommended + flat config ordering. Provides lint and fix command examples and verification checklist.
+
+**Impact:** Ensures reproducible, standardized lint environment across agents and future projects while preventing style errors from halting CI, aligning with workspace policy and simplifying onboarding.
+
+**Meta:** Self-documentation after adding standardized ESLint flat config setup prompt.
+
 ### [2025-08-09] Chatmode Front Matter Standardization
 
 **Achievement:**
