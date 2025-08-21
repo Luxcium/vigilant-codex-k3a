@@ -20,6 +20,16 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-08-21] Modern ESLint Flat Config (2025) Prompt
+
+Achievement: Added `modern-eslint-flat-config.prompt.md`, a 2025-ready, production-grade ESLint v9+ flat configuration guide for TypeScript projects.
+
+Technical Implementation: The prompt prescribes installing core tooling plus ubiquitous plugins (`import`, `promise`, `n`, `unicorn`, `unused-imports`), sets `@stylistic` rules to `warn`, integrates Prettier via `eslint-config-prettier/flat` last, and includes an optional typed-linting block using `typescript-eslint` `recommendedTypeChecked` with `projectService: true`. It provides a canonical `eslint.config.mjs`, Prettier config example, VS Code settings, and package scripts.
+
+Impact: Establishes a consistent, CI-friendly linting and formatting baseline that scales across repos, improving code hygiene, developer ergonomics, and maintainability while avoiding Prettier conflicts.
+
+Meta: Self-documentation after synthesizing official guidance into a cohesive prompt with validation steps and references.
+
 ### [2025-08-18] ESLint Flat Config Setup Prompt
 
 **Achievement:** Added `setup-eslint-flat-config.prompt.md` defining complete workflow to install ESLint + TypeScript-ESLint + stylistic + Prettier using flat config with stylistic rules downgraded to warnings for non-blocking auto-fix development.

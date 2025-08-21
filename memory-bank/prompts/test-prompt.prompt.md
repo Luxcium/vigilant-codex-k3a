@@ -13,8 +13,3 @@ Please confirm that you can see this prompt and that the workspace variable is r
 ## References
 
 - [ai-prompt-creation](../instructions/ai-prompt-creation.instructions.md)
-
-## Verification
-
-- `markdownlint --strict` on updated Markdown files
-- `scripts/verify-all.sh`
