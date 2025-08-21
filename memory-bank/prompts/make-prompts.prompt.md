@@ -15,6 +15,16 @@ Directives for Vscode Copilot's `*.prompt.md` This governs how `.prompt.md` file
 ## Maintenance Of The Prompt Files And Documentation Sync
 After adding one or more prompts, you must cross-link it in [README.md](./README.md) and bump the prompt count, list each in `memory-bank/prompts/*.prompt.md` so to have the new count, then validate each has a description in the readme, in any other case read those missing and add the proper documentation for each including those tha have been added prior, or any descriptions that is misleading or tha points to a removed or missing prompt.md file, please maintain that again each time you will look into that you must ensure all prompts are properly documented this is mandatory, always.
 
+> [!IMPORTANT]
+> count the files and list them all to insure a methodical approach, list them all to insure you have the proper names, valid them all, then validate that no items in the readme are orphaned
+> ```bash
+> ls memory-bank/prompts/*.prompt.md -1 | wc -l
+> 
+> # and 
+> 
+> ls memory-bank/prompts/*.prompt.md -1
+> ```
+
 ## Scope
 	•	Applies to every chat inside this Project.
 	•	Defines how ChatGPT should produce .prompt.md files for VS Code repos.
