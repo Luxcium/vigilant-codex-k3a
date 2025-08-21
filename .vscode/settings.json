@@ -2234,14 +2234,10 @@
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 12,
   "workbench.list.openMode": "singleClick",
-
-  // Explorer view header icons
-  "explorer.compactFolders": false,
   "explorer.decorations.badges": true,
   "explorer.decorations.colors": true,
   "explorer.sortOrder": "type",
   "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.expand": true,
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
@@ -2395,6 +2391,15 @@
   "npm.packageManager": "pnpm",
   "npm.scriptRunner": "pnpm",
   "prisma.scriptRunner": "pnpm",
-  "genaiscript.cli.packageManager": "pnpm"
+  "genaiscript.cli.packageManager": "pnpm",
+  "explorer.incrementalNaming": "smart",
+  "eslint.quiet": true,
+  "prettier.vueIndentScriptAndStyle": true,
+  "window.zoomLevel": 0,
+  "search.sortOrder": "modified",
+  "search.searchView.keywordSuggestions": true,
+  "workbench.editor.alwaysShowEditorActions": true,
+  "workbench.editor.closeOnFileDelete": false,
+  "workbench.editor.highlightModifiedTabs": true
   // #endregion: Last Section                                        !
 }

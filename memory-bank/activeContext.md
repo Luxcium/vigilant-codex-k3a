@@ -19,6 +19,13 @@
   **Next Intent:** Update `progress.md` What Works section with achievement entry; monitor for future enhancements (e.g., optional JSON reporter snippet) before expanding.
   **Meta:** Self-Documentation Protocol entry capturing addition of new prompt and architectural rationale (consistency, reproducibility, Prettier conflict avoidance, warning-level stylistic governance).
 
+  - [2025-08-21T00:00:00Z] Modern ESLint Flat Config Prompt Added
+    **Current State:** Added `modern-eslint-flat-config.prompt.md` under `memory-bank/prompts/`, documenting a 2025-ready ESLint v9+ flat config for TypeScript with ubiquitous plugins (import, promise, n, unicorn, unused-imports), stylistic rules downgraded to warnings, Prettier integration via `eslint-config-prettier/flat` last, optional typed linting block, VS Code settings, and package scripts.
+    **Last Action:** Authored the prompt with Goal/Plan/Execution Log; normalized front matter to the repository schema by replacing unsupported keys with a single `description`.
+    **Rationale:** Provide a production-grade baseline that aligns with current ecosystem practices while remaining CI-friendly and editor-friendly; ensures consistent hygiene and formatting across projects.
+    **Next Intent:** Cross-reference this prompt from `memory-bank/prompts/README.md` and validate in a sample repo; monitor plugin updates for ESLint v9 flat compatibility.
+    **Meta:** Self-documentation after synthesizing best practices from official docs and integrating them into a cohesive prompt with validation steps and references.
+
 - [2025-08-09T06:03:14+00:00] Chatmode front matter simplified
   **Current State:**
   All chatmode files now have only `description` and an empty `tools` array in their front matter, removing explicit `model` declarations.
