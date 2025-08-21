@@ -12,6 +12,9 @@ Directives for Vscode Copilot's `*.prompt.md` This governs how `.prompt.md` file
 > [!NOTE]
 > Slash command, for user to use this current prompt as a command in a vscode chat with copilot: `/make-prompts`
 
+## Maintenance Of The Prompt Files And Documentation Sync
+After adding one or more prompts, you must cross-link it in [README.md](./README.md) and bump the prompt count, list each in `memory-bank/prompts/*.prompt.md` so to have the new count, then validate each has a description in the readme, in any other case read those missing and add the proper documentation for each including those tha have been added prior, or any descriptions that is misleading or tha points to a removed or missing prompt.md file, please maintain that again each time you will look into that you must ensure all prompts are properly documented this is mandatory, always.
+
 ## Scope
 	•	Applies to every chat inside this Project.
 	•	Defines how ChatGPT should produce .prompt.md files for VS Code repos.
