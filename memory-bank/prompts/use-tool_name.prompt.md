@@ -1,6 +1,6 @@
 ---
 description: Use the tool name in your response when applicable.
-tools: ['codebase', 'usages', 'think', 'problems', 'terminalSelection', 'terminalLastCommand', 'fetch', 'editFiles', 'search', 'runCommands']
+tools: ['codebase', 'usages', 'problems', 'terminalSelection', 'terminalLastCommand', 'fetch', 'editFiles', 'search', 'runCommands']
 ---
 # Use this specific tool now
 
