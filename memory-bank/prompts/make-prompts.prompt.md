@@ -1,6 +1,6 @@
-<!-- ---
+---
 description: "Guidance for creating .prompt.md files in the VS Code project."
-tools: ['codebase', 'usages', 'fetch', 'problems', 'editFiles', 'search', 'runCommands', 'todos']
+tools: ['codebase', 'usages', 'fetch', 'problems', 'editFiles', 'runCommands', 'todos', 'runInTerminal', 'getTerminalOutput']
 ---
 
 <!-- memory-bank/prompts/make-prompts.prompt.md -->
@@ -16,7 +16,7 @@ Directives for Vscode Copilot's `*.prompt.md` This governs how `.prompt.md` file
 After adding one or more prompts, you must cross-link it in [README.md](./README.md) and bump the prompt count, list each in `memory-bank/prompts/*.prompt.md` so to have the new count, then validate each has a description in the readme, in any other case read those missing and add the proper documentation for each including those tha have been added prior, or any descriptions that is misleading or tha points to a removed or missing prompt.md file, please maintain that again each time you will look into that you must ensure all prompts are properly documented this is mandatory, always.
 
 > [!IMPORTANT]
-> count the files and list them all to insure a methodical approach, list them all to insure you have the proper names, valid them all, then validate that no items in the readme are orphaned
+> Count the files using #runInTerminal, list them all to insure a methodical approach, list them all to insure you have the proper names, valid them all, then validate that no items in the readme are orphaned
 > ```bash
 > ls memory-bank/prompts/*.prompt.md -1 | wc -l
 > 
@@ -146,3 +146,36 @@ Do not overstate, re-explain, or teach back—just execute with the updated expe
 Both sides now share the same baseline, so act accordingly without reiterating it.
 
 indexed in the project are files among which is available from official documentation look into copilot-customization file prompt section included in document! -->
+
+## ToolSet: runCommands
+Runs commands in the terminal
+
+### runInTerminal
+This tool allows you to execute shell commands in a persistent terminal session, preserving environment variables, working directory, and other context across multiple commands.
+
+#### Command Execution
+Does NOT support multi-line commands
+
+#### Directory Management
+Must use absolute paths to avoid navigation issues.
+
+#### Program Execution
+Supports Python, Node.js, and other executables.
+Install dependencies via pip, npm, etc.
+
+#### Background Processes
+For long-running tasks (e.g., servers), set isBackground=true.
+Returns a terminal ID for checking status and runtime later.
+
+#### Output Management
+Output is automatically truncated if longer than 60KB to prevent context overflow
+Use filters like 'head', 'tail', 'grep' to limit output size
+For pager commands, disable paging: use 'git --no-pager' or add '| cat'
+
+#### Best Practices
+Be specific with commands to avoid excessive output
+Use targeted queries instead of broad scans
+Consider using 'wc -l' to count before listing many items
+
+### getTerminalOutput
+Get the output of a terminal command previously started with run_in_terminal
