@@ -2181,13 +2181,13 @@
   ],
   "github.copilot.chat.reviewSelection.instructions": [
     {
-      "text": "Check for modularity, proper TypeScript types, comprehensive error handling, and code comments."
+      "file": "memory-bank/instructions/start-revision.instructions.md"
     },
     {
       "text": "Verify compliance with project coding standards and memory bank guidelines."
     },
     {
-      "text": "Ensure no direct mutations of shared state and proper dependency management."
+      "text": "Check for modularity, proper TypeScript types, comprehensive error handling, and code comments."
     }
   ],
 
