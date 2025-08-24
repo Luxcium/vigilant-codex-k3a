@@ -1,10 +1,8 @@
 ---
-mode: 'agent'
-model: GPT-4.1
-tools: ['codebase-usages', 'githubRepo', 'problems', 'terminal-and-tasks']
 description: 'Iterative agent for ${TASK_NAME} – autonomously refine until build, tests, and lint pass.'
+tools: ['codebase-usages', 'githubRepo', 'problems', 'terminal-and-tasks']
+model: GPT-4.1
 ---
-
 # Self-Optimizing Autonomous Task Iteration
 
 Implement **${TASK_NAME}** according to project standards and the acceptance test suite.

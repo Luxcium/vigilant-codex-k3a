@@ -1,8 +1,7 @@
 ---
-mode: 'agent'
 description: 'Guide for updating and reviewing README files across all project folders.'
+tools: []
 ---
-
 # README Update and Review Prompt
 
 ## Step-by-Step Workflow

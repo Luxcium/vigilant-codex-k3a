@@ -1,16 +1,16 @@
 ---
-mode: 'agent'
-tools: ['codebase', 'terminalLastCommand']
 description: 'Update memory bank documentation with proper cross-references'
+tools: ['codebase', 'problems', 'fetch', 'githubRepo', 'todos', 'runTests', 'editFiles', 'search', 'runCommands', 'runTasks', 'microsoft-docs']
 ---
-
 # Memory Bank Documentation Update
 
-Your task is to help me update `memory-bank/` documentation following our established standards and protocols.
+Your agent task is to help update `memory-bank/` documentation following our established standards and protocols. 
+
+You MUST first complete the things that you are doing and you must write first, for anything that you completed since the begining of this conversation to ensure nothing is lost, maintaining the memory bank is that important.
 
 ## Context
 
-The Codex CLI project maintains a structured "Memory Bank" documentation system with strict rules for updates, cross-references, and dependency tracking. All updates must follow reading protocol, writing protocol, and verification guidelines.
+The project maintains a structured "Memory Bank" documentation system with strict rules for updates, cross-references, and dependency tracking. All updates must follow reading protocol, writing protocol, and verification guidelines.
 
 ## Requirements
 
@@ -63,11 +63,6 @@ The Codex CLI project maintains a structured "Memory Bank" documentation system 
 
 YOU MUST HELP maintain `memory-bank/` documentation that follows all project's standards and enables seamless collaboration between contributors.
 
-## References
+## Reminder
 
 - [self-documentation](../instructions/self-documentation.instructions.md)
-
-## Verification
-
-- `markdownlint --strict` on updated Markdown files
-- `scripts/verify-all.sh`

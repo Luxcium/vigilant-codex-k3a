@@ -3,7 +3,7 @@ applyTo: '**/*.prompt.md'
 description: 'Standards for creating AI agent prompt files; covers triggers, task analysis, mode selection, and validation.'
 ---
 
-# AI Agent Instructions: Creating \*.prompt.md Files On-Demand
+# AI Agent Instructions: Creating `*.prompt.md` Files On-Demand
 
 ## TRIGGER RECOGNITION
 

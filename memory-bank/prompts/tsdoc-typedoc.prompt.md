@@ -1,9 +1,7 @@
 ---
-mode: 'agent'
-tools: ['search', 'editFiles', 'runCommands', 'codebase-usages']
 description: 'Generate comprehensive TSDoc comments and TypeDoc setup for a TypeScript module'
+tools: ['search', 'editFiles', 'runCommands', 'codebase-usages']
 ---
-
 # TSDoc and TypeDoc Prompt
 
 When provided with the TypeScript file `${file}`, perform these tasks:

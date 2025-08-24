@@ -1,3 +1,8 @@
+---
+applyTo: '**/*.ts'
+description: 'Reference for TSDoc and TypeDoc tags and usage'
+---
+
 # TSDoc & TypeDoc Comprehensive Reference
 
 ## Overview
