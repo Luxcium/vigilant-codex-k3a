@@ -1,3 +1,10 @@
+- [2025-08-23T00:00:00Z] Tasks-First Policy Adopted for VS Code
+  **Current State:** `.github/copilot-instructions.md` now codifies a Tasks-First Execution Policy. `.vscode/tasks.json` includes a stable `hello:world` task; ad-hoc duplicates removed.
+  **Last Action:** Added Tasks-First section instructing agents to use `run_task`/`get_task_output` first and `create_and_run_task` when needed. Normalized tasks file to avoid confusion and ensure discoverability.
+  **Rationale:** Tasks are pre-approved; using them reduces friction and avoids unnecessary confirmations. Centralizing common commands as tasks makes automation predictable and auditable.
+  **Next Intent:** Extend tasks to cover lint, test, build, and dev with real commands; prefer tasks in future workflows and document additions in `scripts/README.md`.
+  **Meta:** Self-Documentation Protocol entry to record policy change and editor task normalization.
+
 - [2025-08-09T06:04:52+00:00] Prompt metadata standardized
   **Current State:** All prompt files now use front matter with description and tools fields, and all `mode:` lines were removed.
   **Last Action:** Added missing front matter and removed deprecated `mode` lines across memory-bank/prompts.

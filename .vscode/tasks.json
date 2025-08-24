@@ -6,8 +6,25 @@
       "type": "shell",
       "command": "echo initialisation en attente..."
     },
-    { "label": "lint", "type": "shell", "command": "echo lint en attente..." },
-    { "label": "test", "type": "shell", "command": "echo tests en attente..." },
-    { "label": "build", "type": "shell", "command": "echo build en attente..." }
+    {
+      "label": "lint",
+      "type": "shell",
+      "command": "echo lint en attente..."
+    },
+    {
+      "label": "test",
+      "type": "shell",
+      "command": "echo tests en attente..."
+    },
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "echo build en attente..."
+    },
+    {
+      "label": "hello:world",
+      "type": "shell",
+      "command": "pnpm run hello:world"
+    }
   ]
 }

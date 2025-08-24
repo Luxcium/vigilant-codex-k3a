@@ -1,6 +1,6 @@
 ---
 description: 'Generate optimized prompt and instruction files following project standards'
-tools: []
+tools: ['codebase', 'editFiles', 'fetch', 'todos', 'runCommands', 'runTasks']
 ---
 # AI Agent Template Manager
 

@@ -1,10 +1,12 @@
 ---
 description: 'Update memory bank documentation with proper cross-references'
-tools: ['codebase', 'terminalLastCommand', 'todos', 'editFiles']
+tools: ['codebase', 'problems', 'fetch', 'githubRepo', 'todos', 'runTests', 'editFiles', 'search', 'runCommands', 'runTasks', 'microsoft-docs']
 ---
 # Memory Bank Documentation Update
 
-Your agent task is to help update `memory-bank/` documentation following our established standards and protocols.
+Your agent task is to help update `memory-bank/` documentation following our established standards and protocols. 
+
+You MUST first complete the things that you are doing and you must write first, for anything that you completed since the begining of this conversation to ensure nothing is lost, maintaining the memory bank is that important.
 
 ## Context
 
