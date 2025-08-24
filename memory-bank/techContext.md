@@ -100,6 +100,11 @@ Testing Pattern:
 - Global fetch mock, isolate Auth flows, include error & timeout paths
 Scripts Pattern:
 - Header block (purpose, preconditions), idempotent checks, exit on error (set -e)
+Task Runner Pattern (VS Code):
+- Prefer running commands via VS Code Tasks; treat tasks as pre-approved
+- Use `run_task`/`get_task_output` first; fall back to terminal only when tasks cannot express the action
+- Capture evidence via task output or terminal last-command details when summarized
+- Keep tasks discoverable by maintaining `.vscode/tasks.json` and documenting changes in `scripts/README.md`
 Archival Pattern:
 - Active file: current truth; verbose/historical narrative → archives/techContext-archive.md (dated)
 Agent Roles:

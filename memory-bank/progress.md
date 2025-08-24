@@ -20,6 +20,16 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-08-23] Tasks-First Execution Policy + Task Normalization
+
+Achievement: Adopted a repository-wide Tasks-First Execution Policy and normalized VS Code tasks to a single persistent `hello:world` task.
+
+Technical Implementation: Added policy section to `.github/copilot-instructions.md` instructing agents to use `run_task`/`get_task_output` first and treat tasks as pre-approved. Cleaned up `.vscode/tasks.json` to keep one stable task and removed ad-hoc duplicates. Logged rationale and next intents in `memory-bank/activeContext.md`.
+
+Impact: Standardizes automation through VS Code tasks, reduces friction and approval prompts, improves reproducibility and auditability of actions, and clarifies where to add/update tasks (`scripts/README.md`).
+
+Meta: Self-documentation after institutionalizing Tasks-First policy and tasks.json normalization.
+
 ### [2025-08-21] Modern ESLint Flat Config (2025) Prompt
 
 Achievement: Added `modern-eslint-flat-config.prompt.md`, a 2025-ready, production-grade ESLint v9+ flat configuration guide for TypeScript projects.
