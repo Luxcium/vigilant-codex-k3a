@@ -15,7 +15,7 @@ The following markdown content rules are enforced in the validators:
 6. **Tables**: Use markdown tables for tabular data. Ensure proper formatting and alignment.
 7. **Line Length**: Limit line length to 400 characters for readability.
 8. **Whitespace**: Use appropriate whitespace to separate sections and improve readability.
-9. **Front Matter**: Include YAML front matter at the beginning of the file with required metadata fields.
+9. **Front Matter**: Include YAML front matter at the beginning of the file with required metadata fields, only the way instructions specify elsewhere, if your only instruction is this current document then do not ((add or modify) or remove) any front matter fields this way there is no contradiction.
 
 ## Formatting and Structure
 
@@ -51,16 +51,10 @@ Ensure compliance with the following validation requirements:
 - Follow the same content rules as other markdown files.
 - Use imperative language to describe actions.
 - Include prerequisites and dependencies for each instruction.
-- Follow the additional [`*.instructions.md`](./instructions-markdown.instructions.md) content rules as specified in the linked document.
+- Follow the additional [`*.instructions.md`](./instruction-authoring-standards.instructions.md) content rules as specified in the linked document.
 
 ### For `*.chatmode.md` files
-- Follow the same content rules as other markdown files.
-- Clearly define the chat mode's purpose and functionality.
-- Include examples of expected input and output.
 
-### For `*.chatmode.md` files
-- Follow the same content rules as other markdown files.
-- Clearly define the chat mode's purpose and functionality.
-- Include examples of expected input and output.
+-  Follow the additional [`*.chatmode.md`](./chatmode-markdown.instructions.md) content rules as specified in the linked document when your markdown files ends in '*.chatmode.md'
 
-memory-bank/instructions/chatmode-markdown.instructions.md
+
