@@ -3,6 +3,9 @@ Shared is a **project directive document**. It defines how `.prompt.md` files mu
 * **Purpose**
   Build a library of precise, reproducible prompt files (`.prompt.md`) for VS Code Copilot. Each file encodes a specific workflow or task as a “prompt card.”
 
+  The user's intention are clear and strict and don't allow for any flaws as you can seek or fetch in (prompting-like-with-chatgpt)[../instructions/prompting-like-with-chatgpt.instructions.md]
+  the user as seen by chatgpt gives you a clear path towards your authoring implication and how to be more compliant when adhering to the policy or when prompting like with chatgpt!
+
 * **Scope and separation**
 
   * Rules apply only within this ChatGPT Project.
