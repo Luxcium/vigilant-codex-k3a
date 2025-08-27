@@ -2132,7 +2132,6 @@
   "chat.implicitContext.enabled": {
     "panel": "always"
   },
-  "chat.mcp.enabled": true,
   "chat.sendElementsToChat.enabled": true,
   // #endregion: Copilot Chat Agent                                  !
   /*
@@ -2400,6 +2399,7 @@
   "search.searchView.keywordSuggestions": true,
   "workbench.editor.alwaysShowEditorActions": true,
   "workbench.editor.closeOnFileDelete": false,
-  "workbench.editor.highlightModifiedTabs": true
+  "workbench.editor.highlightModifiedTabs": true,
+  "chat.mcp.access": "all"
   // #endregion: Last Section                                        !
 }

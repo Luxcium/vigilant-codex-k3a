@@ -1,4 +1,7 @@
-### Intention Behind the Directive (User’s Goals)
+---
+description: Directive for ChatGPT to create `.prompt.md` files for VS Code Copilot with strict formatting, metadata, and structure.
+---
+# Intention Behind the Directive (User’s Goals)
 
 The person who authored that directive wants to **standardize the creation of `.prompt.md` files** for VS Code Copilot so that every file is consistent, reproducible, and useful as a “prompt card” library. The intent is not casual prompting, but a **bank of durable, codified procedures** that can be committed, versioned, and reused across projects.
 

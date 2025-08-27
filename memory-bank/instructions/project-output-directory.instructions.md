@@ -1,5 +1,4 @@
 ---
-applyTo: 'src/**'
 description: 'Restricts lib output to top-level SDK root only'
 ---
 

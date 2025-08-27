@@ -42,6 +42,31 @@ Ensure compliance with the following validation requirements:
 
 ## Other Considerations
 
+### Structure Content by Instruction Type
+
+- Use clear headings (Markdown `#`, `##`, `###`, '...').
+- Use bullet points for individual rules.
+- Provide examples where ambiguity might arise.
+
+Use alerts to indicate critical sections or important notes.
+
+```markdown
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+```
+
 ### For `*.prompts.md` Files
 - Follow the same content rules as other markdown files.
 - Use plain english nlp procedural language to To give authoritative directions or guidance.
