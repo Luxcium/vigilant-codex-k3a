@@ -1,4 +1,4 @@
-What you shared is a **project directive document**. It defines how `.prompt.md` files must be created, structured, and maintained inside your VS Code–based repos. Here is what it establishes, in plain terms:
+Shared is a **project directive document**. It defines how `.prompt.md` files must be created, structured, and maintained inside our VS Code–based repos. Here is what it establishes, in plain terms you must follow instructions:
 
 * **Purpose**
   Build a library of precise, reproducible prompt files (`.prompt.md`) for VS Code Copilot. Each file encodes a specific workflow or task as a “prompt card.”
