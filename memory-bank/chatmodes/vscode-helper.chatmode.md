@@ -1,6 +1,6 @@
 ---
 description: VS Code development helper for extensions, workspace configuration, and API usage and anything related to this project in vscode.
-tools: ['codebase', 'usages', 'changes', 'fetch', 'extensions', 'todos', 'editFiles', 'search', 'runCommands', 'runTasks', 'microsoft-docs']
+tools: ['codebase-usages', 'extensions', 'fetch', 'search',  'runCommands', 'runTasks', 'todos', 'microsoft-docs']
 ---
 
 # VS Code Development Helper

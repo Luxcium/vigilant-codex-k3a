@@ -9,7 +9,8 @@
 
   ## Define Prompt File
 
-  > Slash command: /define-prompt-file
+  > [!IMPORTANT]
+  > Slash command: /define-prompt-file used to call this prompt card please enact this prompt card when you see this file being referenced by the user or another prompt.
 
   ## Intent
 
