@@ -2399,7 +2399,6 @@
   "search.searchView.keywordSuggestions": true,
   "workbench.editor.alwaysShowEditorActions": true,
   "workbench.editor.closeOnFileDelete": false,
-  "workbench.editor.highlightModifiedTabs": true,
-  "chat.mcp.access": "all"
+  "workbench.editor.highlightModifiedTabs": true
   // #endregion: Last Section                                        !
 }
