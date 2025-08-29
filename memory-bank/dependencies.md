@@ -11,10 +11,17 @@ This file tracks all project dependencies, their relationships, and integration 
 
 ### Script Management and Optimization Protocol
 
-- **31 instruction files** - Automated coding standards in `memory-bank/instructions/`
+- **34 instruction files** - Automated coding standards in `memory-bank/instructions/` (including Layer 3 factory instructions)
 - **35 prompt files** - Executable workflow templates in `memory-bank/prompts/`
 
 ### Dependencies and Relationships
+
+- **Layer 3 Factory Instructions** → **All instruction, chatmode, and prompt file creation** (Why: Provides canonical authoring rules and validation guardrails)
+  - `layer-3a-custom-instructions-factory.instructions.md` → Controls creation of `*.instructions.md` files
+  - `layer-3b-chatmodes-factory.instructions.md` → Controls creation of `*.chatmode.md` files  
+  - `layer-3c-prompt-files-factory.instructions.md` → Controls creation of `*.prompt.md` files
+  - Impact: Ensures consistency, prevents duplication, enforces relative linking and proper front-matter
+  - Builds on: Layer 1 (foundation) and Layer 2 (development environment) principles
 
 - **scripts/README.md** → **ALL script files** (Why: Must be synchronized whenever scripts change)
   - Impact: Documentation accuracy and developer onboarding efficiency
