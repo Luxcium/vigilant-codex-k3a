@@ -80,6 +80,7 @@ Brief: Scripts are language-agnostic and safe to run repeatedly.
     - Sets `chmod +x` on `scripts/*.sh`.
     - Initializes git only if `.git/` is absent.
     - Prints project info and status.
+    - It must print date time of execution.
 - Never overwrite existing `scripts/init.sh`.
 
 ---
