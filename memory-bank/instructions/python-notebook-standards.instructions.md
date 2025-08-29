@@ -1,5 +1,6 @@
 ---
 applyTo: '**/*.ipynb'
+description: 'Standards for structuring and documenting Jupyter notebooks'
 ---
 
 # Python Notebook Standards

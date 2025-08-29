@@ -11,15 +11,26 @@ This file tracks all project dependencies, their relationships, and integration 
 
 ### Script Management and Optimization Protocol
 
-- **31 instruction files** - Automated coding standards in `memory-bank/instructions/`
+- **34 instruction files** - Automated coding standards in `memory-bank/instructions/` (including Layer 3 factory instructions)
 - **35 prompt files** - Executable workflow templates in `memory-bank/prompts/`
 
 ### Dependencies and Relationships
+
+- **Layer 3 Factory Instructions** → **All instruction, chatmode, and prompt file creation** (Why: Provides canonical authoring rules and validation guardrails)
+  - `layer-3a-custom-instructions-factory.instructions.md` → Controls creation of `*.instructions.md` files
+  - `layer-3b-chatmodes-factory.instructions.md` → Controls creation of `*.chatmode.md` files  
+  - `layer-3c-prompt-files-factory.instructions.md` → Controls creation of `*.prompt.md` files
+  - Impact: Ensures consistency, prevents duplication, enforces relative linking and proper front-matter
+  - Builds on: Layer 1 (foundation) and Layer 2 (development environment) principles
 
 - **scripts/README.md** → **ALL script files** (Why: Must be synchronized whenever scripts change)
   - Impact: Documentation accuracy and developer onboarding efficiency
 - **systemPatterns.md script consolidation principles** → **file-organization.instructions.md** (Why: Architecture drives implementation standards)
   - Impact: Consistent script management approach across all AI agents
+
+- **.github/copilot-instructions.md (Tasks-First Policy)** ↔ **.vscode/tasks.json** (Why: Agents must prefer VS Code tasks; tasks are pre-approved and discoverable)
+  - Impact: Agents run `run_task` instead of raw terminal; output captured via task/terminal APIs; reduces friction and standardizes execution
+  - Also see: `scripts/README.md` for documenting any added/updated tasks
 
 - **Regular script reviews** → **script usage analytics** (Why: Data-driven consolidation decisions)
   - Impact: Optimization priorities based on actual usage patterns
@@ -147,6 +158,12 @@ ENV_MODE Parameter Selection
 ```
 
 ## Historical Changes Archive
+
+### [2025-08-23] Tasks-First Execution Policy Adoption
+
+**Rationale:** Institutionalize preference for VS Code Tasks to standardize execution and avoid unnecessary approval loops.
+**Technical Implementation:** Added policy to `.github/copilot-instructions.md`; normalized `.vscode/tasks.json` to keep a single stable `hello:world` task; established guidance to capture evidence via task output or terminal last-command.
+**Impact:** Tasks are treated as pre-approved; encourages `run_task`/`get_task_output` first; improves reproducibility and auditability. Cross-referenced here to link policy with task definitions and script documentation.
 
 ### [2025-07-14] Microsoft Edge DevTools Integration
 

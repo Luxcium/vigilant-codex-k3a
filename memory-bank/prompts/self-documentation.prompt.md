@@ -1,8 +1,7 @@
 ---
-mode: 'agent'
 description: 'Automate self-documentation protocol.'
+tools: []
 ---
-
 # Self-Documentation Execution
 
 Your goal is to log and reinforce every action or context change by appending a structured entry to the designated self-documentation log (e.g., `memory-bank/activeContext.md`), following the Self-Documentation Protocol.

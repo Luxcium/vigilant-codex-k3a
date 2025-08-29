@@ -1,7 +1,7 @@
-mode: 'agent'
-mode: 'agent'
+---
 description: 'Generate icon and link tags for all platforms.'
-
+tools: []
+---
 # Add General Icon Link Tags
 
 **Prompt**

@@ -1,9 +1,7 @@
 ---
-mode: 'agent'
-tools: ['codebase', 'terminalLastCommand']
 description: 'Generate a Vision Transformer (ViT) implementation with detailed documentation'
+tools: ['codebase', 'terminalLastCommand']
 ---
-
 # Vision Transformer (ViT) Implementation
 
 Your task is to help me create a complete Vision Transformer (ViT) implementation following our project's coding standards and documentation requirements.

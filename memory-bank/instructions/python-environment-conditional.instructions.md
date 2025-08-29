@@ -1,5 +1,6 @@
 ---
 applyTo: 'python/**'
+description: 'Conditional Python environment setup across runtime modes'
 ---
 
 # Python Environment Setup - Conditional Instructions

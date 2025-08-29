@@ -1,7 +1,6 @@
 ---
-mode: 'agent'
-tools: ['codebase', 'terminalLastCommand', 'githubRepo']
 description: 'Track and update project dependencies with proper documentation'
+tools: ['codebase', 'terminalLastCommand', 'githubRepo']
 ---
 
 # Dependency Management and Documentation

@@ -1,5 +1,4 @@
 ---
-applyTo: '**'
 description: 'Mandates real, executable code generation—no placeholders or dummy segments.'
 ---
 

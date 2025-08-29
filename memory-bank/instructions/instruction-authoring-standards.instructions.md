@@ -46,7 +46,7 @@ applyTo: 'glob-pattern-here'
 
 ### ApplyTo Pattern Selection
 
-- Use `"**"` for global project rules.
+- Use `"**"` for global project rules. (please avoid, unless already in place, do not add)
 - Use `"**/*.{ext}"` for language-specific rules.
 - Use `"**/folder/**"` for directory-specific rules.
 - Use `"**/*.{test,spec}.*"` for testing-specific rules.
@@ -299,8 +299,3 @@ They help our ai agents quickly identify important content and are formatted as 
 - Consider impact on team development workflow.
 - Ensure rules scale with project growth.
 - Plan for rule evolution and refinement.
-
-## Verification
-
-- `markdownlint --strict`
-- `scripts/verify-all.sh`

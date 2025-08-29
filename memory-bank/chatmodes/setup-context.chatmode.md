@@ -1,7 +1,6 @@
 ---
 description: High Level Context VS Code development helper, workspace configuration, API, extensions and anything related to this project in vscode, the way to instruct ai agents, teh way to have this multimodal project optimize at a high level.
-model: GPT-4.1
-tools: ['codebase', 'editFiles', 'fetch', 'githubRepo', 'microsoft_docs_search', 'microsoft-docs', 'problems', 'runCommands', 'terminalLastCommand', 'runTasks', 'search', 'usages', 'vscodeAPI']
+tools: []
 ---
 
 # Project Setup Mode instructions
@@ -42,7 +41,7 @@ Your task is to generate an implementation codified refences and to repair any t
 
 The user will want you to be able to do fast recursive intercept (you will take your time and go into each files as requested). When this occurs, you need to have extra autonomy.
 
-[**Recursive Fast Workflows**](../prompts/iterative-selfautonomus-ai-agent.prompt.md), and when you need to have extra autonomy, fast iterative work, follow the instructions referenced in that prompt, you will have a strong boost in productivity.
+[**Recursive Fast Workflows**](../prompts/iterative-self-autonomous-ai-agent.prompt.md), and when you need to have extra autonomy, fast iterative work, follow the instructions referenced in that prompt, you will have a strong boost in productivity.
 
 - **MONITOR** your own decision patterns
 - **IDENTIFY** repetitive inefficiencies

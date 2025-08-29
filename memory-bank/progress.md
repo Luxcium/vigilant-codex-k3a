@@ -20,6 +20,60 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-08-29] Layer 3 Factory Instructions Complete
+
+Achievement: Created comprehensive Layer 3 factory instruction files for creating and managing instructions, chatmodes, and prompt files with consistent guardrails and validation.
+
+Technical Implementation: Added three new factory instruction files:
+- `layer-3a-custom-instructions-factory.instructions.md` — Canonical authoring rules for `*.instructions.md` files with atomic rules, no external links, and relative linking patterns.
+- `layer-3b-chatmodes-factory.instructions.md` — Rules for `*.chatmode.md` files with strict model/tools constraints and minimal content guidelines.
+- `layer-3c-prompt-files-factory.instructions.md` — Rules for `*.prompt.md` files with heading contracts, variable definitions, and output format requirements.
+
+Impact: Establishes consistent creation and validation patterns for all three types of AI agent directive files, ensuring compatibility with existing Layer 1 and Layer 2 systems while providing clear guardrails for content creation and evolution.
+
+Meta: Self-documentation after implementing Layer 3 factory instruction system following established layered architecture patterns.
+
+### [2025-08-23] Tasks-First Execution Policy + Task Normalization
+
+Achievement: Adopted a repository-wide Tasks-First Execution Policy and normalized VS Code tasks to a single persistent `hello:world` task.
+
+Technical Implementation: Added policy section to `.github/copilot-instructions.md` instructing agents to use `run_task`/`get_task_output` first and treat tasks as pre-approved. Cleaned up `.vscode/tasks.json` to keep one stable task and removed ad-hoc duplicates. Logged rationale and next intents in `memory-bank/activeContext.md`.
+
+Impact: Standardizes automation through VS Code tasks, reduces friction and approval prompts, improves reproducibility and auditability of actions, and clarifies where to add/update tasks (`scripts/README.md`).
+
+Meta: Self-documentation after institutionalizing Tasks-First policy and tasks.json normalization.
+
+### [2025-08-21] Modern ESLint Flat Config (2025) Prompt
+
+Achievement: Added `modern-eslint-flat-config.prompt.md`, a 2025-ready, production-grade ESLint v9+ flat configuration guide for TypeScript projects.
+
+Technical Implementation: The prompt prescribes installing core tooling plus ubiquitous plugins (`import`, `promise`, `n`, `unicorn`, `unused-imports`), sets `@stylistic` rules to `warn`, integrates Prettier via `eslint-config-prettier/flat` last, and includes an optional typed-linting block using `typescript-eslint` `recommendedTypeChecked` with `projectService: true`. It provides a canonical `eslint.config.mjs`, Prettier config example, VS Code settings, and package scripts.
+
+Impact: Establishes a consistent, CI-friendly linting and formatting baseline that scales across repos, improving code hygiene, developer ergonomics, and maintainability while avoiding Prettier conflicts.
+
+Meta: Self-documentation after synthesizing official guidance into a cohesive prompt with validation steps and references.
+
+### [2025-08-18] ESLint Flat Config Setup Prompt
+
+**Achievement:** Added `setup-eslint-flat-config.prompt.md` defining complete workflow to install ESLint + TypeScript-ESLint + stylistic + Prettier using flat config with stylistic rules downgraded to warnings for non-blocking auto-fix development.
+
+**Technical Implementation:** Prompt includes install command block (all packages `@latest`), canonical `eslint.config.mjs` template combining `tseslint.config(...)`, stylistic plugin rule transformation to warnings, and final Prettier recommended + flat config ordering. Provides lint and fix command examples and verification checklist.
+
+**Impact:** Ensures reproducible, standardized lint environment across agents and future projects while preventing style errors from halting CI, aligning with workspace policy and simplifying onboarding.
+
+**Meta:** Self-documentation after adding standardized ESLint flat config setup prompt.
+
+### [2025-08-09] Chatmode Front Matter Standardization
+
+**Achievement:**
+Removed explicit model references and cleared tool lists in all chatmode files (`plan`, `vscode-helper`, `setup-context`, `proto-notebook`, `questrade-sdk-developer`, `tsdoc-typedoc`).
+
+**Impact:**
+Simplifies chatmode configuration and prevents hardcoded model selection.
+
+**Meta:**
+Self-documentation after standardizing chatmode front matter.
+
 ### [2025-07-30] Instruction Formatting Standardization (Partial)
 
 **Achievement:**

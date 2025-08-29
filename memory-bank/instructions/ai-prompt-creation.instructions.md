@@ -3,7 +3,7 @@ applyTo: '**/*.prompt.md'
 description: 'Standards for creating AI agent prompt files; covers triggers, task analysis, mode selection, and validation.'
 ---
 
-# AI Agent Instructions: Creating \*.prompt.md Files On-Demand
+# AI Agent Instructions: Creating `*.prompt.md` Files On-Demand
 
 ## TRIGGER RECOGNITION
 
@@ -249,8 +249,3 @@ Your goal is to [specific outcome].
 - This file is labeled as an intermediate refactor phase, preparing for future dependency injection and SDK integration.
 - When creating or updating prompts for agent workflows, reference this playground as the standard for isolated feature prototyping.
 - Do not explain standard TypeScript, Node.js, or Questrade API details in prompts—focus on project-specific context and agent behaviors.
-
-## Verification
-
-- `markdownlint --strict`
-- `scripts/verify-all.sh`

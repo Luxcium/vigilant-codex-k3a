@@ -1,5 +1,5 @@
 ---
-applyTo: '**'
+description: 'Protocol for logging actions and updating memory bank'
 ---
 
 # Self-Documentation Protocol
@@ -82,7 +82,7 @@ Additionally, you must log your actions and findings in memory bank as per self-
   3. **Rationale:** Why this action occurred.
   4. **Next Intent:** Planned next step and purpose.
 
- > [!WARNING]
+ > [!NOTE]
  > You MUST get the actual date from the commandline at least once to establish the basis for the timestamping. If you are not sure about the date, you MUST use the **"Get Current Date/Time" task** (which runs `date --iso-8601=seconds`) in the terminal to get the current date and time. Reference this task instead of using the raw command directly in all instructions and documentation.
 
 ## Meta-Description

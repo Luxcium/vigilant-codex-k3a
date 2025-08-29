@@ -1,7 +1,6 @@
 ---
 description: 'Specialized for developing a Questrade API SDK.'
-model: GPT-4.1
-tools: ['codebase-usages', 'terminal-and-tasks', 'fetch', 'problems', 'search']
+tools: []
 ---
 
 # Questrade SDK Developer Mode

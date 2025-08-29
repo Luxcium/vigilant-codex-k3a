@@ -2132,7 +2132,6 @@
   "chat.implicitContext.enabled": {
     "panel": "always"
   },
-  "chat.mcp.enabled": true,
   "chat.sendElementsToChat.enabled": true,
   // #endregion: Copilot Chat Agent                                  !
   /*
@@ -2142,7 +2141,6 @@
   "github.copilot.chat.agent.autoFix": true,
   "github.copilot.chat.agent.currentEditorContext.enabled": true,
   "github.copilot.chat.agent.runTasks": true,
-  "github.copilot.chat.agent.thinkingTool": true,
   "github.copilot.chat.codesearch.enabled": true,
   "github.copilot.chat.copilotDebugCommand.enabled": true,
   "github.copilot.chat.editor.temporalContext.enabled": false,
@@ -2182,13 +2180,13 @@
   ],
   "github.copilot.chat.reviewSelection.instructions": [
     {
-      "text": "Check for modularity, proper TypeScript types, comprehensive error handling, and code comments."
+      "file": "memory-bank/instructions/start-revision.instructions.md"
     },
     {
       "text": "Verify compliance with project coding standards and memory bank guidelines."
     },
     {
-      "text": "Ensure no direct mutations of shared state and proper dependency management."
+      "text": "Check for modularity, proper TypeScript types, comprehensive error handling, and code comments."
     }
   ],
 
@@ -2235,14 +2233,10 @@
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 12,
   "workbench.list.openMode": "singleClick",
-
-  // Explorer view header icons
-  "explorer.compactFolders": false,
   "explorer.decorations.badges": true,
   "explorer.decorations.colors": true,
   "explorer.sortOrder": "type",
   "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.expand": true,
   "explorer.fileNesting.patterns": {
     "*.ts": "${capture}.js",
     "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
@@ -2396,6 +2390,15 @@
   "npm.packageManager": "pnpm",
   "npm.scriptRunner": "pnpm",
   "prisma.scriptRunner": "pnpm",
-  "genaiscript.cli.packageManager": "pnpm"
+  "genaiscript.cli.packageManager": "pnpm",
+  "explorer.incrementalNaming": "smart",
+  "eslint.quiet": true,
+  "prettier.vueIndentScriptAndStyle": true,
+  "window.zoomLevel": 0,
+  "search.sortOrder": "modified",
+  "search.searchView.keywordSuggestions": true,
+  "workbench.editor.alwaysShowEditorActions": true,
+  "workbench.editor.closeOnFileDelete": false,
+  "workbench.editor.highlightModifiedTabs": true
   // #endregion: Last Section                                        !
 }
