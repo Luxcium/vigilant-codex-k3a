@@ -46,7 +46,7 @@ Context: Normalize line endings and mark binaries for safe diffs.
 
 ### B3. `.gitignore`
 Context: Exclude OS junk, editor files, logs, env, builds, caches.
-- IF missing → create with a broad, language-agnostic set; keep `!.vscode/`.
+- IF missing → create with a broad, language-agnostic set; keep `!.vscode/` meaning it MUST NOT BE ignored, it must be inside the repo files.
 - ELSE → do nothing.
 
 ### B4. `LICENSE`
@@ -78,7 +78,6 @@ Brief: Scripts are language-agnostic and safe to run repeatedly.
   - IF missing → create with idempotent checks:
     - Validates foundation files.
     - Sets `chmod +x` on `scripts/*.sh`.
-    - Creates common dirs if absent: `docs/`, `tmp/`, `.vscode/`.
     - Initializes git only if `.git/` is absent.
     - Prints project info and status.
 - Never overwrite existing `scripts/init.sh`.
