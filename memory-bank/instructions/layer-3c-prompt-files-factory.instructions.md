@@ -64,7 +64,7 @@ The prompt files factory also governs authoring rules for `.prompt.md` cards. Th
 
 ### Body structure (strict)
 1) Exactly one H1 title.  
-2) Exactly one paragraph under the H1 (no lists, no headings).  
+2) Exactly one or maximum two paragraphs under the H1 (no lists, no headings).  
 3) First H2 is the Slash Command block:
 
 ```md
@@ -214,4 +214,14 @@ One short paragraph naming the operational state this command casts or lifts for
 ### Edge cases / Stop criteria
 - <pitfalls and halting conditions>
 - Do nothing if already compliant
+```
+
+## Exclusions
+
+Even if we do not plan to use prettier for the time being, we exclude the chatmode files from formatting to avoid any accidental reformatting that could alter the intended structure or readability of these files.
+
+```ignore
+# Keep prompt and chatmode cards out of Prettier to preserve strict spacing/heading contracts, generate a .prettierignore file with the 2 files types below:
+*.prompt.md
+*.chatmode.md
 ```
