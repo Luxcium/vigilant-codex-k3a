@@ -1,7 +1,7 @@
 ---
 description: 'Guide for documenting breaking changes in commits.'
-tools: []
 ---
+
 # Breaking Changes Guide (Concise)
 
 ## Required Format
@@ -47,12 +47,3 @@ After: authenticate({ username, password, rememberMe })
 - Be specific and helpful
 - Include migration steps
 - Avoid vague messages
-
-## References
-
-- [conventional-commits-must-be-used](../instructions/conventional-commits-must-be-used.instructions.md)
-
-## Verification
-
-- `markdownlint --strict` on updated Markdown files
-- `scripts/verify-all.sh`

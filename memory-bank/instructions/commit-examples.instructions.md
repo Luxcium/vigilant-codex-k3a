@@ -1,7 +1,7 @@
 ---
 description: 'Examples of conventional commit messages with gitmoji.'
-tools: []
 ---
+
 # Commit Examples
 
 This prompt file contains comprehensive examples of conventional commit messages with gitmoji.
@@ -215,7 +215,7 @@ feat(auth): :construction: implement OAuth2 flow (WIP)
 
 ## References
 
-- [conventional-commits-must-be-used](../instructions/conventional-commits-must-be-used.instructions.md)
+- [conventional-commits-must-be-used](./conventional-commits-must-be-used.instructions.md)
 
 ## Verification
 

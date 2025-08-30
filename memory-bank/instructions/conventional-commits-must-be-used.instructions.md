@@ -1,5 +1,4 @@
 ---
-applyTo: '**'
 description: 'Mandatory for all commit messages: Conventional commit protocol with gitmoji MUST BE USED.'
 ---
 
@@ -71,17 +70,10 @@ BREAKING CHANGE: Legacy v1 endpoints removed. Use v2 API.
 Closes #123
 ```
 
-<!--
 ## References
 
+- [Breaking Changes Guide](./breaking-changes-commits.instructions.md)
+- [Complete Gitmoji List](./gitmoji-complete-list.instructions.md)
+- [Commit Examples](./commit-examples.instructions.md)  
 - [Conventional Commits](https://www.conventionalcommits.org/)
 - [Gitmoji Guide](https://gitmoji.dev/)
-- [Complete Gitmoji Selection](../prompts/gitmoji-complete-list.prompt.md)
-- [Commit Examples](../prompts/commit-examples.prompt.md)
-- [Breaking Changes Guide](../prompts/breaking-changes.prompt.md) 
--->
-
-## Verification
-
-- `markdownlint --strict`
-- `scripts/verify-all.sh`
