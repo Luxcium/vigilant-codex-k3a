@@ -1,6 +1,6 @@
 ---
 description: 'Generate optimized prompt and instruction files following project standards'
-tools: ['codebase', 'editFiles', 'fetch', 'todos', 'runCommands', 'runTasks']
+tools: ['codebase', 'editFiles', 'fetch', 'githubRepo', 'runCommands', 'runTasks', 'todos']
 ---
 # AI Agent Template Manager
 
@@ -177,6 +177,12 @@ ${input:validation:- Check markdown-lint compliance\n- Verify cross-references\n
 This template manager serves as the foundation for creating consistent, high-quality prompt and instruction files throughout the AI agent framework project.
 
 ## References
+
+You have tools to search a GitHub repository for relevant source code snippets. Only use this tool if the user is very clearly asking for code snippets from a specific GitHub repository. Do not use this tool for Github repos that the user has open in their workspace.
+
+Also you have tools to fetch the main content from a web page. This tool is useful for summarizing or analyzing the content of a webpage. You should use this tool when you think the user is looking for information from a specific webpage.
+
+
 
 - [ai-instruction-creation](../instructions/ai-instruction-creation.instructions.md)
 - [ai-prompt-creation](../instructions/ai-prompt-creation.instructions.md)

@@ -29,7 +29,7 @@ Operational State
    - Ensure triad directories + READMEs and six memory files exist under `memory-bank/`.
    - Source of truth: [Layer 2](../instructions/layer-2-verify-and-bootstrap.instructions.md).
 3. Layer 3A — Custom Instructions Factory
-   - Ensure factory doc and `_TEMPLATE.instructions.md` exist; no external links; keep rules atomic.
+   - Ensure factory doc and `_TEMPLATE.instructions.md` exist; keep rules atomic. Prefer relative links; add external links only when authoritative and value-add.
    - Run instructions validator and resolve any issues additively.
    - Source: [3A](../instructions/layer-3a-custom-instructions-factory.instructions.md).
 4. Layer 3B — Chat Modes Factory
@@ -40,7 +40,7 @@ Operational State
    - Source: [3B](../instructions/layer-3b-chatmodes-factory.instructions.md).
 5. Layer 3C — Prompt Files Factory
    - Ensure factory doc, `_TEMPLATE.prompt.md`, and at least one prompt (e.g., Quick Edit) exist.
-   - Enforce heading contract: no H1; first header is `## Slash Command: /<stem> - <label>`; body includes Operational State, Inputs, Steps, Outputs; relative links only.
+   - Enforce heading contract: no H1; first header is `## Slash Command: /<stem> - <label>`; body includes Operational State, Inputs, Steps, Outputs; prefer relative links and allow authoritative external links.
    - Run prompts validator and resolve any issues additively.
    - Source: [3C](../instructions/layer-3c-prompt-files-factory.instructions.md).
 6. Coherence and Health

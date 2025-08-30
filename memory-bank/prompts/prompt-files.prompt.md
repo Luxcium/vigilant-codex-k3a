@@ -19,7 +19,7 @@ that comply with our repository rules and produce ready-to-use `.prompt.md` file
 * **Scope:** Create or rewrite files under `memory-bank/prompts/` only. Do not touch `.github/prompts/`.
 * **State:** Enforce our prompt-card contract. No H1. First header is the Slash Command H2. Use only allowed frontmatter.
 * **Inputs:** `${input:stem}` (required), `${selection}` (optional), `${file}` (optional), `${input:label}` (optional).
-* **Safety:** Never add `mode`, `model`, or `tools` frontmatter if they are absent. If present in an existing card, preserve them unchanged. No external links; use relative links to our instructions.
+* **Safety:** Never add `mode`, `model`, or `tools` frontmatter if they are absent. If present in an existing card, preserve them unchanged. Prefer relative links to our instructions; include external links when they materially clarify or cite authoritative sources.
 
 ### Goal
 
@@ -98,7 +98,7 @@ This command enables “React Form Scaffolding Mode” to generate a typed form 
 > `/create-react-form` has been called by the user to scaffold a React form. The state above applies for this run.
 
 ### Context & Activation
-- **Scope:** Generate component files; read templates; no external links.
+- **Scope:** Generate component files; read templates; cite internal rules and authoritative external sources when helpful.
 - **State:** Use Next.js + TypeScript conventions if detected; otherwise plain React + TS.
 
 ### Goal

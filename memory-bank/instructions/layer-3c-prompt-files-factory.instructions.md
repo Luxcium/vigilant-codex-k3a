@@ -26,7 +26,7 @@ Storage. Place actual prompt files in `memory-bank/prompts/`. The present docume
 
 ### Review Gate
 - No contradictions with the selected mode's tools/model.
-- Relative links only. No policy duplication. Outputs explicit.
+- Links resolve. Prefer relative links internally; allow external links when they add clear value. No policy duplication. Outputs explicit.
 
 ## Verify & Bootstrap
 - Create `memory-bank/prompts/` if missing.

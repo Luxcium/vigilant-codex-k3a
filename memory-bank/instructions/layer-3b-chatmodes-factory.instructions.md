@@ -15,7 +15,7 @@ Storage. Place actual mode files in `memory-bank/chatmodes/`. The present docume
   - `description: <short>`
   - `tools: ['codebase', 'editFiles', 'fetch']`  ← exact
   - `model: GPT-5 (Preview)` **or** `model: GPT-5 mini (Preview)`  ← only these
-- One `#` H1 in the mode file body. Relative links only. No external URLs.
+- One `#` H1 in the mode file body. Prefer relative links for internal references; external links allowed when authoritative.
 
 ## Mode Authoring Procedure
 - Path for mode file: `memory-bank/chatmodes/<name>.chatmode.md`
@@ -34,7 +34,7 @@ Storage. Place actual mode files in `memory-bank/chatmodes/`. The present docume
 ## Review Gate
 - Front-matter present and compliant.
 - Body minimal. Inputs/outputs/boundaries explicit.
-- Only relative links. No duplication of instruction text.
+- Links resolve. Prefer relative links internally; allow authoritative external links. Avoid duplicating instruction text.
 
 ## Exclusions
 
