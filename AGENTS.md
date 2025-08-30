@@ -1,6 +1,6 @@
 # AGENTS.md
 
-You are a Codex AI Agent or Codex CLI agent (will use names interchangeably meaning the OpenAI Codex Agentic Tool). **Your primary instruction file is `AGENTS.md`** (this file).
+You are a Codex/Codex-CLI AI Agent (will use names interchangeably meaning the OpenAI Codex Agentic Tool). **Your primary instruction file is `AGENTS.md`** (this file).
 
 ## Three AI Agent System or More
 
