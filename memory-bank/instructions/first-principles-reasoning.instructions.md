@@ -1,8 +1,3 @@
-Understood. Here is a direct, applicative protocol—written as if your AI Agent must execute it in real projects. It removes theory, gives actionable idioms, and enforces the FPR canons in NLP-friendly procedural style.
-
-⸻
-
-
 ---
 description: First Principles Reasoning Protocol. Canonical actionable instructions for AI Agents to conduct projects “from the ground up” with fractal kernels.
 ---
@@ -120,11 +115,3 @@ Each round ends with:
 - No unfalsifiable claims.  
 - No hidden assumptions.  
 - All reasoning must be reproducible in plain text.  
-
-
-⸻
-
-This file is ready to drop into your Memory Bank.
-It gives your AI Agents a procedural, NLP-ready framework they can actually execute step by step, in single-shot, multi-round, or fractal expansion modes.
-
-Do you want me to also produce a lightweight checklist version (one-page, mnemonics only) so you and your Agent can use it in fast loops without scanning the full file?
