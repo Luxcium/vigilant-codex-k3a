@@ -1,6 +1,6 @@
 # Vigilant Codex K3a - Polyvalent AI Development Workspace
 
-[![CI](https://github.com/Luxcium/vigilant-codex-k3a/actions/workflows/ci.yml/badge.svg)](https://github.com/Luxcium/vigilant-codex-k3a/actions/workflows/ci.yml)
+<!--[![CI](https://github.com/Luxcium/vigilant-codex-k3a/actions/workflows/ci.yml/badge.svg)](https://github.com/Luxcium/vigilant-codex-k3a/actions/workflows/ci.yml)-->
 
 ## Canonical Playground: `src/example.ts`
 
