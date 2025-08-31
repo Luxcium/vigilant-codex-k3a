@@ -19,18 +19,17 @@ Prompt files (`.prompt.md`) are executable templates that:
 - Include variables for customization and reusability
 - Use tools to perform actions like file creation, code generation, or terminal commands
 
-## Available Prompts (38 Files)
+## Available Prompts (39 Files)
 
 > **Note:** This list must be kept in sync with the actual prompt files in this directory. Add new prompts and update descriptions as needed.
 
 ### Template Management & AI Framework
 
-- **[template-manager.prompt.md](./template-manager.prompt.md)** — Master template manager for all prompt/instruction file creation, featuring a decision matrix, workflow, and intelligent file management for the entire project.
-- **[ai-template-manager.prompt.md](./ai-template-manager.prompt.md)** — Specialized template manager for generating prompt/instruction files with strict markdown-lint compliance and advanced AI agent collaboration features.
+- **[template-manager.prompt.md](./template-manager.prompt.md)** — Master template manager for prompt/instruction file creation with decision matrix, workflow, scope determination, and naming standards.
+- **[define-prompt-file.prompt.md](./define-prompt-file.prompt.md)** — Lifecycle protocol for authoring, auditing, and maintaining compliant `*.prompt.md` files.
 - **[instruction-generator.prompt.md](./instruction-generator.prompt.md)** — Generate `.instructions.md` files with a focus on structure, standards, and detailed validation templates for coding requirements.
 - **[instruction-creation.prompt.md](./instruction-creation.prompt.md)** — Create `.instructions.md` files using a process-oriented, QA-driven approach, emphasizing validation, error prevention, and best practices.
 - **[instruction-creation-v2.prompt.md](./instruction-creation-v2.prompt.md)** — Enhanced instruction file creation with advanced validation.
-- **[make-prompts.prompt.md](./make-prompts.prompt.md)** — Project directives and guardrails for creating, validating, and maintaining `*.prompt.md` files and keeping README in sync.
 
 ### Environment & Infrastructure
 
@@ -182,7 +181,7 @@ Prompts support these variable types:
 
 ### AI Agent Framework
 
-- **Template Management**: template-manager, ai-template-manager
+- **Template Management**: template-manager, define-prompt-file
 - **Instruction Creation**: instruction-generator, instruction-creation, instruction-creation-v2
 - **State Management**: self-documentation
 

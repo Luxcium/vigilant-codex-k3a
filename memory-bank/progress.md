@@ -20,6 +20,16 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-08-31] Prompt management consolidation
+
+Achievement: Streamlined prompt-management system by removing redundant files and enriching remaining templates.
+
+Technical Implementation: Deleted `ai-template-manager.prompt.md`, `make-prompts.prompt.md`, and `prompt-files.prompt.md`; expanded `template-manager.prompt.md` with scope determination and naming standards; rewrote `define-prompt-file.prompt.md` with README synchronization steps.
+
+Impact: Reduces overlap, clarifies responsibilities, and ensures prompt directory and README remain synchronized.
+
+Meta: Self-documentation after consolidating prompt management prompts.
+
 ### [2025-08-29] Layer 3 Factory Instructions Complete
 
 Achievement: Created comprehensive Layer 3 factory instruction files for creating and managing instructions, chatmodes, and prompt files with consistent guardrails and validation.

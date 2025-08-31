@@ -1,3 +1,10 @@
+- [2025-08-31T06:57:50+00:00] Prompt management prompts consolidated
+  **Current State:** Redundant prompt-management files removed; `template-manager.prompt.md` now includes scope determination and naming standards; `define-prompt-file.prompt.md` rewritten with README sync guidance.
+  **Last Action:** Deleted `ai-template-manager.prompt.md`, `make-prompts.prompt.md`, and `prompt-files.prompt.md`; updated remaining prompt files and README counts.
+  **Rationale:** Eliminate overlapping prompt workflows and maintain a minimal, clearly scoped set of templates.
+  **Next Intent:** Monitor for future prompt additions and ensure README stays in sync.
+  **Meta:** Self-documentation after consolidating prompt management.
+
 - [2025-08-23T00:00:00Z] Tasks-First Policy Adopted for VS Code
   **Current State:** `.github/copilot-instructions.md` now codifies a Tasks-First Execution Policy. `.vscode/tasks.json` includes a stable `hello:world` task; ad-hoc duplicates removed.
   **Last Action:** Added Tasks-First section instructing agents to use `run_task`/`get_task_output` first and `create_and_run_task` when needed. Normalized tasks file to avoid confusion and ensure discoverability.

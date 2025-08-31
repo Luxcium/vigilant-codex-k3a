@@ -17,7 +17,13 @@ Apply this decision tree to **every** user request:
 - **Reusable workflow/task** → Create/update **`.prompt.md`**
 - **Project setup/scaffolding** → Create **`.prompt.md`** + relevant **`.instructions.md`**
 
-### 2. File Location Strategy
+### 2. Scope Determination
+
+- **Global** – applies across the entire project (`applyTo: "**"`)
+- **Domain-specific** – targets certain file types or directories (`applyTo: "**/*.ts"`)
+- **Task-specific** – standalone prompt workflows
+
+### 3. File Location Strategy
 
 #### Instructions Files (Persistent Rules)
 
@@ -29,7 +35,7 @@ Apply this decision tree to **every** user request:
 - **Workspace prompts**: `memory-bank/prompts/{kebab-case-name}.prompt.md`
 - **User-level prompts**: Profile folder (for cross-workspace use)
 
-### 3. Intelligent File Management
+### 4. Intelligent File Management
 
 #### Before Creating/Updating
 
@@ -44,6 +50,12 @@ Apply this decision tree to **every** user request:
 - **Cross-reference**: Link related files using markdown references
 
 ## Authoring Excellence
+
+### Naming Standards
+
+- Use `kebab-case` for all filenames
+- Include purpose in filename: `domain-purpose.type.md`
+- Examples: `typescript-standards.instructions.md`, `docker-generator.prompt.md`
 
 ### Instructions File Template
 

@@ -40,7 +40,7 @@ This workspace supports three AI agents with sophisticated collaboration pattern
 ### AI Framework Components
 
 - **🔧 40 Instruction Files** ([`memory-bank/instructions/`](memory-bank/instructions/)) - Automated coding standards and guidelines
-- **⚙️ 35 Prompt Files** ([`memory-bank/prompts/`](memory-bank/prompts/)) - Executable workflow templates
+- **⚙️ 39 Prompt Files** ([`memory-bank/prompts/`](memory-bank/prompts/)) - Executable workflow templates
 - **📚 Memory Bank System** ([`memory-bank/`](memory-bank/)) - Stateful documentation for AI collaboration
 - **🎯 Self-Documentation Protocol** - Maintains context across development sessions
 
