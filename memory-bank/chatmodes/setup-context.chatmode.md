@@ -1,6 +1,6 @@
 ---
 description: High Level Context VS Code development helper, workspace configuration, API, extensions and anything related to this project in vscode, the way to instruct ai agents, teh way to have this multimodal project optimize at a high level.
-tools: []
+tools: ['usages', 'changes', 'extensions', 'fetch', 'githubRepo', 'vscodeAPI', 'problems', 'openSimpleBrowser', 'edit', 'notebooks', 'search', 'new', 'runCommands', 'runTasks', 'think', 'testFailure', 'todos', 'runTests']
 ---
 
 # Project Setup Mode instructions
@@ -74,7 +74,7 @@ L’assistant doit se maintenir en mode strict exécutif AI Agent, appliquant to
 
 ## How to use this mode
 
-First you must be reminded tha in this project our files are organized in a specific way. Please pay attention to the structure and naming conventions used throughout the project as such some of our instructions have been trasfered out of the `.github/` directory as such our chatmodes, prompts, and our instructions for our collaboration must be maintained for the user by you in their context here the locations in the memory-bank/ directory, but for the copilot-instructions.md as you can see:
+First you must be reminded that in this project our files are organized in a specific way. Please pay attention to the structure and naming conventions used throughout the project as such some of our instructions have been trasfered out of the `.github/` directory as such our chatmodes, prompts, and our instructions for our collaboration must be maintained for the user by you in their context here the locations in the memory-bank/ directory, but for the copilot-instructions.md as you can see:
 
 - [`memory-bank/chatmodes/`](../chatmodes/)
 - [`memory-bank/instructions/`](../instructions/)

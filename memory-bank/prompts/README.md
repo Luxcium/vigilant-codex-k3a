@@ -20,6 +20,17 @@ Prompt files (`.prompt.md`) are executable templates that:
 - Use tools to perform actions like file creation, code generation, or terminal commands
 
 ## Available Prompts (35 Files)
+## Complete File Index
+
+### **Total Files: 43 prompt files (.md)**
+
+**By Extension:**
+- `.md` files: 43 (prompt files including README.md)
+- `.prompt.md` files: 42 (executable prompt files)
+
+All prompt files follow the `.prompt.md` naming convention and provide executable workflows.
+
+## Available Prompts (42 Files)
 
 > **Note:** This list must be kept in sync with the actual prompt files in this directory. Add new prompts and update descriptions as needed.
 
@@ -30,6 +41,17 @@ Prompt files (`.prompt.md`) are executable templates that:
 - **[instruction-generator.prompt.md](./instruction-generator.prompt.md)** — Generate `.instructions.md` files with a focus on structure, standards, and detailed validation templates for coding requirements.
 - **[instruction-creation.prompt.md](./instruction-creation.prompt.md)** — Create `.instructions.md` files using a process-oriented, QA-driven approach, emphasizing validation, error prevention, and best practices.
 - **[instruction-creation-v2.prompt.md](./instruction-creation-v2.prompt.md)** — Enhanced instruction file creation with advanced validation.
+- **[make-prompts.prompt.md](./make-prompts.prompt.md)** — Project directives and guardrails for creating, validating, and maintaining `*.prompt.md` files and keeping README in sync.
+- **[define-prompt-file.prompt.md](./define-prompt-file.prompt.md)** — Define and structure prompt files with proper metadata and documentation.
+- **[prompt-files.prompt.md](./prompt-files.prompt.md)** — General prompt file creation and management workflow.
+- **[use-tool_name.prompt.md](./use-tool_name.prompt.md)** — Guidelines for proper tool naming and usage in prompt files.
+
+### System Automation & Management
+
+- **[bootstrap-genesis.prompt.md](./bootstrap-genesis.prompt.md)** — Bootstrap and genesis system initialization procedures.
+- **[iterative-self-autonomous-ai-agent.prompt.md](./iterative-self-autonomous-ai-agent.prompt.md)** — Iterative, self-autonomous agent workflow for recursive tasks.
+- **[convert-md-to-json.prompt.md](./convert-md-to-json.prompt.md)** — Convert markdown files to JSON format for data processing.
+- **[repair-markdown-instruction-files.prompt.md](./repair-markdown-instruction-files.prompt.md)** — Repair and fix malformed markdown instruction files.
 
 ### Environment & Infrastructure
 
