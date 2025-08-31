@@ -7,6 +7,9 @@
 python/.venv/
 python/__pycache__/
 python/.env
+**/__pycache__/
+*.pyc
+*.pyo
 
 # Environment
 .env
