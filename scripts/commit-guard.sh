@@ -12,6 +12,8 @@
 set -euo pipefail
 
 ## Configuration
+
+#? Disable all local guards (NOT RECOMMENDED)
 DISABLE_LOCAL_GUARDS=1
 STAGE="manual"
 FAST_ARG=""
