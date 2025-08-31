@@ -40,3 +40,6 @@ lib/
 history.jsonl
 
 .codex/auth.json
+
+# README cleanup backups
+backup-readmes/
