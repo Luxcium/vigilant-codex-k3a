@@ -55,31 +55,41 @@ class ReadmeSyncGenerator:
         preserved = {}
         
         # Extract content before "## Complete File Index" section
-        pre_index_match = re.search(r'^(.*?)(?=## Complete File Index)', content, re.DOTALL | re.MULTILINE)
+        pre_index_match = re.search(r'^(.*?)(?=^\s*##\s+Complete File Index)', content, re.DOTALL | re.MULTILINE)
         if pre_index_match:
             preserved['header'] = pre_index_match.group(1).rstrip()
+        else:
+            print("Warning: Could not find '## Complete File Index' section header in README content. Preserved header will be empty.")
         
         # Extract existing categorized content based on folder type
         if folder_type == "instructions":
             # Extract content after "## Available Instructions" but preserve structure
-            match = re.search(r'(## Available Instructions.*?)(?=\n## |$)', content, re.DOTALL)
+            match = re.search(r'(##\s+Available Instructions.*?)(?=\n## |\Z)', content, re.DOTALL)
             if match:
                 preserved['categorized_content'] = match.group(1)
+            else:
+                print("Warning: Could not find '## Available Instructions' section in README content.")
         elif folder_type == "prompts":
             # Extract content after "## Available Prompts" but preserve structure  
-            match = re.search(r'(## Available Prompts.*?)(?=\n## |$)', content, re.DOTALL)
+            match = re.search(r'(##\s+Available Prompts.*?)(?=\n## |\Z)', content, re.DOTALL)
             if match:
                 preserved['categorized_content'] = match.group(1)
+            else:
+                print("Warning: Could not find '## Available Prompts' section in README content.")
         elif folder_type == "chatmodes":
             # Extract content after "## Available Chatmodes" but preserve structure
-            match = re.search(r'(## Available Chatmodes.*?)(?=\n## |$)', content, re.DOTALL)
+            match = re.search(r'(##\s+Available Chatmodes.*?)(?=\n## |\Z)', content, re.DOTALL)
             if match:
                 preserved['categorized_content'] = match.group(1)
+            else:
+                print("Warning: Could not find '## Available Chatmodes' section in README content.")
         elif folder_type == "scripts":
             # Extract categorized script content
-            match = re.search(r'(#### .*?)(?=\n## |$)', content, re.DOTALL)
+            match = re.search(r'(####\s+.*?)(?=\n## |\Z)', content, re.DOTALL)
             if match:
                 preserved['categorized_content'] = match.group(1)
+            else:
+                print("Warning: Could not find '#### ...' categorized script section in README content.")
         
         return preserved
     
