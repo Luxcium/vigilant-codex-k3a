@@ -141,3 +141,4 @@ export type { CandlesParams } from './infra/helpers/candles';
 export * from './core/errors';
 export * from './core/rateLimit';
 export * from './core/types';
+export * as rpc from './rpc';
