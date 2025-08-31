@@ -47,4 +47,5 @@ fi
 
 log "Questrade SDK core scaffold complete"
 
-#? Validation Status: Actively Validated on 2025-07-24
+
+#? Validation Status: Actively Validated on 2025-08-31

@@ -9,7 +9,6 @@
 #? References: src/types/ directory structure, TypeScript type definitions
 ## =============================================================================
 
-#? Validation Status: Actively Validated on 2025-07-24
 
 #!/usr/bin/env bash
 
@@ -53,6 +52,7 @@ done
 
 log "Questrade type module scaffold complete"
 
-#? Validation Status: Actively Validated on 2025-07-24
 
 #? Status: Script reviewed and validated on 2025-07-24
+
+#? Validation Status: Actively Validated on 2025-08-31

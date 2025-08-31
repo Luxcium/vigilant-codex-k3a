@@ -9,7 +9,6 @@
 #? References: memory-bank/*.md, markdownlint documentation
 ## =============================================================================
 
-#? Validation Status: Actively Validated on 2025-07-23
 
 #!/usr/bin/env bash
 set -euo pipefail
@@ -35,3 +34,5 @@ if command -v markdownlint > /dev/null; then
 else
   log "[WARN] markdownlint not found, skipping"
 fi
+
+#? Validation Status: Actively Validated on 2025-08-31

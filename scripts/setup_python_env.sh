@@ -12,7 +12,6 @@ set -euo pipefail
 #? References: .vscode/tasks.json (Python: Setup Environment), python/README.md
 ## =============================================================================
 
-#? Validation Status: Actively Validated on 2025-07-23
 
 #==============================================================================
 # Script Name: setup_python_env.sh
@@ -385,3 +384,5 @@ case "$MODE" in
     log "  4. Use docker-compose: cd python/ && docker-compose up"
     ;;
 esac
+
+#? Validation Status: Actively Validated on 2025-08-31

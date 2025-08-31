@@ -9,7 +9,6 @@
 #? References: docker-compose.codex.yml, .codex/config.json
 ## =============================================================================
 
-#? Validation Status: Actively Validated on 2025-07-23
 
 #!/bin/bash
 
@@ -431,3 +430,5 @@ main() {
 if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
   main "$@"
 fi
+
+#? Validation Status: Actively Validated on 2025-08-31

@@ -1,3 +1,10 @@
+- [2025-08-31T06:21:00Z] Script inventory reconciled and validation lines standardized
+  **Current State:** All 49 active scripts in `scripts/` contain the mandated 10-line headers and end with a validation status line. `scripts/README.md` indexes every script and matches the directory contents.
+  **Last Action:** Added missing headers, appended validation status lines dated 2025-08-31, and rebuilt the script README with a full inventory.
+  **Rationale:** Maintain documentation parity and enforce header/validation mandates across the repository.
+  **Next Intent:** Periodically audit for obsolete scripts and pursue further consolidation opportunities.
+  **Meta:** Self-documentation after synchronizing script directory and README.
+
 - [2025-08-23T00:00:00Z] Tasks-First Policy Adopted for VS Code
   **Current State:** `.github/copilot-instructions.md` now codifies a Tasks-First Execution Policy. `.vscode/tasks.json` includes a stable `hello:world` task; ad-hoc duplicates removed.
   **Last Action:** Added Tasks-First section instructing agents to use `run_task`/`get_task_output` first and `create_and_run_task` when needed. Normalized tasks file to avoid confusion and ensure discoverability.

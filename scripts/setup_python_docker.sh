@@ -9,7 +9,6 @@
 #? References: python/Dockerfile
 ## =============================================================================
 
-#? Validation Status: Actively Validated on 2025-07-23
 
 #!/usr/bin/env bash
 # Idempotent Docker Python environment setup script
@@ -28,3 +27,5 @@ else
   docker build -t my-python-app .
   log "Docker Python image built"
 fi
+
+#? Validation Status: Actively Validated on 2025-08-31

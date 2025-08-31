@@ -9,7 +9,6 @@
 #? References: ghcr.io/openai/codex-universal:latest
 ## =============================================================================
 
-#? Validation Status: Actively Validated on 2025-07-23
 
 #!/usr/bin/env bash
 set -euo pipefail
@@ -41,3 +40,5 @@ docker run --rm -it \
   -v "${PROJECT_PATH}:/workspace/${PROJECT_NAME}" \
   -w "/workspace/${PROJECT_NAME}" \
   "${IMAGE}"
+
+#? Validation Status: Actively Validated on 2025-08-31

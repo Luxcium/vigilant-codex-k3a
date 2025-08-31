@@ -9,7 +9,6 @@
 #? References: docker-compose.codex.yml, OpenAI API key
 ## =============================================================================
 
-#? Validation Status: Actively Validated on 2025-07-23
 
 #!/bin/bash
 # Rebuild and Restart Codex Universal Environment
@@ -38,3 +37,5 @@ docker-compose -f docker-compose.codex.yml down
 docker-compose -f docker-compose.codex.yml up -d --force-recreate
 
 echo "Environment rebuilt and restarted."
+
+#? Validation Status: Actively Validated on 2025-08-31

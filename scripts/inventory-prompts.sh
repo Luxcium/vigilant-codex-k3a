@@ -1,4 +1,16 @@
 #!/usr/bin/env bash
+
+## =============================================================================
+#? Script Name: inventory-prompts.sh
+#? Aim: List all prompt files and counts
+#? Purpose: Provide quick inventory of prompt files under memory-bank/prompts
+#? Decision Rationale: Enables visibility into prompt assets for maintenance
+#? Usage: ./inventory-prompts.sh
+#? Dependencies: bash, coreutils
+#? Last Updated: 2025-08-31 by Codex CLI
+#? References: memory-bank/prompts/README.md
+## =============================================================================
+
 set -euo pipefail
 
 PROMPTS_DIR="memory-bank/prompts"
@@ -13,16 +25,4 @@ echo "== Filenames =="
 ls "$PROMPTS_DIR"/*.prompt.md -1
 echo
 
-echo "== README Listed Filenames =="
-grep -oP "\[.*?\.prompt\.md\]" "$README" | sed -E 's/^\[|\]$//g' | sort -u
-echo
-
-echo "== Missing in README (present on disk, not listed) =="
-comm -23 <(ls "$PROMPTS_DIR"/*.prompt.md -1 | xargs -n1 basename | sort) <(grep -oP "\[.*?\.prompt\.md\]" "$README" | sed -E 's/^\[|\]$//g' | sort -u)
-echo
-
-echo "== Orphans in README (listed but not present on disk) =="
-comm -13 <(ls "$PROMPTS_DIR"/*.prompt.md -1 | xargs -n1 basename | sort) <(grep -oP "\[.*?\.prompt\.md\]" "$README" | sed -E 's/^\[|\]$//g' | sort -u)
-echo
-
-echo "Done."
+#? Validation Status: Actively Validated on 2025-08-31

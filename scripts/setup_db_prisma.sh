@@ -9,7 +9,6 @@
 #? References: docker-compose.yml, web/prisma/schema.prisma
 ## =============================================================================
 
-#? Validation Status: Actively Validated on 2025-07-23
 
 #!/usr/bin/env bash
 # setup_db_prisma.sh: Setup PostgreSQL service and Prisma schema
@@ -84,3 +83,5 @@ log "Running prisma migrate"
 cd "$WEB_DIR" && npx prisma migrate dev --name init
 
 log "Database and Prisma setup complete"
+
+#? Validation Status: Actively Validated on 2025-08-31

@@ -9,7 +9,6 @@
 #? References: src/types/apiError.ts, src/tests/types/apiError.test.ts
 ## =============================================================================
 
-#? Validation Status: Actively Validated on 2025-07-23
 
 #!/usr/bin/env bash
 set -euo pipefail
@@ -37,3 +36,5 @@ else
 fi
 
 log "ApiError scaffold complete"
+
+#? Validation Status: Actively Validated on 2025-08-31

@@ -20,5 +20,6 @@ PROJECT_NAME="$(basename "$PROJECT_ROOT")"
 echo "Entering Codex Universal container..."
 docker exec -it "${PROJECT_NAME}-codex" bash
 
-#? Validation Status: Actively Validated on 2025-07-23
 # This script has been reviewed for relevancy and usability. It is essential for container-based workflows.
+
+#? Validation Status: Actively Validated on 2025-08-31

@@ -9,7 +9,6 @@
 #? References: src/helpers/candles.ts, src/tests/helpers/candles.test.ts
 ## =============================================================================
 
-#? Validation Status: Actively Validated on 2025-07-23
 
 #!/usr/bin/env bash
 # setup_helpers.sh: scaffold helpers directory and placeholder files
@@ -52,3 +51,5 @@ else
 fi
 
 log "Helpers scaffold complete"
+
+#? Validation Status: Actively Validated on 2025-08-31

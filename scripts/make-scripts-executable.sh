@@ -9,8 +9,9 @@
 #? References: None
 ## =============================================================================
 
-#? Validation Status: Actively Validated on 2025-07-23
 
 #!/bin/bash
 chmod +x "$(dirname "$0")"/*.sh
 echo "All scripts made executable"
+
+#? Validation Status: Actively Validated on 2025-08-31

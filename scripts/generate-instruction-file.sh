@@ -13,7 +13,6 @@
 #? References: ai-instruction-creation.instructions.md, instruction-generator.prompt.md
 ## =============================================================================
 
-#? Validation Status: Actively Validated on 2025-07-23
 
 # AI Agent Framework - Instruction File Generator
 # This script creates new .instructions.md files, providing structured templates
@@ -436,3 +435,5 @@ main() {
 
 # Entry point
 main "$@"
+
+#? Validation Status: Actively Validated on 2025-08-31

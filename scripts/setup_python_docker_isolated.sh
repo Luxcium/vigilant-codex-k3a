@@ -9,7 +9,6 @@
 #? References: python/Dockerfile, python/README.md
 ## =============================================================================
 
-#? Validation Status: Actively Validated on 2025-07-23
 
 #!/usr/bin/env bash
 set -euo pipefail
@@ -299,3 +298,5 @@ log "  3. Edit .env with your environment variables"
 log "  4. Add your Python code to the python/ directory"
 log "  5. Rebuild when you make changes: docker build -t $PROJECT_NAME ."
 log "  6. Run your code: docker run --rm -it $PROJECT_NAME python your_script.py"
+
+#? Validation Status: Actively Validated on 2025-08-31

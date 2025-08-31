@@ -1,39 +1,25 @@
-#!/bin/bash
-# ────────────────────────────────────────────────────────────────────
-# 🧠 Purpose:
-#   Generate a fresh Next.js 15+ project inside an existing repo.
-#   Designed for monorepos or multi-root setups (repo root + web root).
-#
-# 📂 Structure:
-#   - repo-root/ (git version-controlled)
-#     └─ web/   (Next.js project created by this script)
-#
-# 🔧 Features enabled:
-#   • TypeScript
-#   • TailwindCSS
-#   • ESLint (flat config)
-#   • App Router
-#   • src/ directory
-#   • Turbopack
-#   • Import alias: @/*
-#
-# 🚫 Notes:
-#   - Does not initialize git, assuming repo is already versioned.
-#   - Uses npm explicitly; adjust flags for yarn/pnpm if needed.
-# ────────────────────────────────────────────────────────────────────
+#!/usr/bin/env bash
 
-# 💡 Constants (can be externalized later)
+## =============================================================================
+#? Script Name: create-nextjs-web.sh
+#? Aim: Scaffold a Next.js 15+ project inside web/ directory
+#? Purpose: Generate a TypeScript Next.js app with Tailwind, ESLint, and alias setup
+#? Decision Rationale: Provides consistent web app bootstrapping for monorepos
+#? Usage: ./create-nextjs-web.sh [project_name]
+#? Dependencies: npx, create-next-app, Node.js
+#? Last Updated: 2025-08-31 by Codex CLI
+#? References: https://nextjs.org/docs
+## =============================================================================
+
+set -euo pipefail
+
 DEFAULT_PROJECT_NAME="web"
 DEFAULT_ALIAS="@/*"
-
-# 🛠️ Parameters (temporary placeholders for now)
 PROJECT_NAME="${1:-$DEFAULT_PROJECT_NAME}"
 PROJECT_DIR="./$PROJECT_NAME"
 
-# 🧪 Placeholder: This section will be modularized
-function run_create_next_app() {
-  echo "📦 Creating Next.js project: $PROJECT_NAME in $PROJECT_DIR"
-
+run_create_next_app() {
+  echo "Creating Next.js project: $PROJECT_NAME in $PROJECT_DIR"
   npx create-next-app@latest "$PROJECT_DIR" \
     --ts \
     --tailwind \
@@ -45,9 +31,9 @@ function run_create_next_app() {
     --import-alias "$DEFAULT_ALIAS" \
     --disable-git \
     --yes
-
-  echo "✅ Project created at: $PROJECT_DIR"
+  echo "Project created at: $PROJECT_DIR"
 }
 
-# 🚧 Run the main command (to be moved to a main function later)
 run_create_next_app
+
+#? Validation Status: Actively Validated on 2025-08-31
