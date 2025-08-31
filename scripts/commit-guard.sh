@@ -11,6 +11,8 @@
 ## =============================================================================
 set -euo pipefail
 
+## Configuration
+DISABLE_LOCAL_GUARDS=1
 STAGE="manual"
 FAST_ARG=""
 COVERAGE_SKIP=false
