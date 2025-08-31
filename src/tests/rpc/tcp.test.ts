@@ -11,7 +11,7 @@ describe('tcp transport', () => {
     const pool = new RpcWorkerPool(1, methodsPath);
     const server = createTcpServer(pool);
     await new Promise<void>((resolve) => server.listen(0, resolve));
-    const port = (server.address() as any).port;
+    const port = (server.address() as net.AddressInfo).port;
 
     const client = net.createConnection(port);
     const dataPromise = new Promise<string>((resolve) =>
