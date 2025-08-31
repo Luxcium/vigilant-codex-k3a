@@ -7,6 +7,9 @@
 python/.venv/
 python/__pycache__/
 python/.env
+**/__pycache__/
+*.pyc
+*.pyo
 
 # Environment
 .env
@@ -40,3 +43,6 @@ lib/
 history.jsonl
 
 .codex/auth.json
+
+# README cleanup backups
+backup-readmes/

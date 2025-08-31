@@ -1,4 +1,4 @@
-
+# Memory Bank
 
 ## Purpose
 
@@ -103,8 +103,8 @@ find ./memory-bank/prompts -type f -name '*.prompt.md' | wc -l
 find ./memory-bank/chatmodes -type f -name '*.chatmode.md' | wc -l
 
 # Check for lint issues
-./scripts/check-markdown.sh memory-bank/ || true
-./scripts/check-memory-bank.sh || true
+../scripts/check-markdown.sh memory-bank/ || true
+../scripts/check-memory-bank.sh || true
 ```
 
 ## Documentation Standards

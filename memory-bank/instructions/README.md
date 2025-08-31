@@ -21,13 +21,56 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 > **Authoring Standard:**  
 > Before creating or updating any instruction file, consult [instruction-authoring-standards.instructions.md](./instruction-authoring-standards.instructions.md) for the canonical rules, structure, and validation checklist. All `.instructions.md` files must comply with this standard for consistency and markdown-lint strictness.
 
-## Available Instructions (40 Files)
+## Complete File Index
+
+### **Total Files: 61 instruction files (.md)**
+
+**By Extension:**
+- `.md` files: 61 (instruction files)
+
+All files follow the `.instructions.md` naming convention and provide automatic coding standards.
+
+## Available Instructions (61 Files)
 
 ### AI Agent Workflow & Creation
 
 **[ai-instruction-creation.instructions.md](./ai-instruction-creation.instructions.md)** - Complete framework for AI agents to create new .instructions.md files on-demand with proper structure, validation, and integration.
 
 **[ai-prompt-creation.instructions.md](./ai-prompt-creation.instructions.md)** - Comprehensive guidelines for AI agents to create .prompt.md files with proper mode selection, tool configuration, and workflow automation.
+
+### AI Agent Framework & Workflow
+
+**[first-principles-reasoning.instructions.md](./first-principles-reasoning.instructions.md)** - First principles reasoning framework for complex problem-solving and architectural decisions.
+
+**[highly-recursive-agentic-flow.instructions.md](./highly-recursive-agentic-flow.instructions.md)** - Recursive agentic workflow patterns for self-improving AI systems.
+
+**[layer-1-verify-and-bootstrap.instructions.md](./layer-1-verify-and-bootstrap.instructions.md)** - Layer 1 verification and bootstrap procedures for system initialization.
+
+**[layer-2-verify-and-bootstrap.instructions.md](./layer-2-verify-and-bootstrap.instructions.md)** - Layer 2 verification and bootstrap procedures for environment setup.
+
+**[layer-3a-custom-instructions-factory.instructions.md](./layer-3a-custom-instructions-factory.instructions.md)** - Factory pattern for creating custom instruction files.
+
+**[layer-3b-chatmodes-factory.instructions.md](./layer-3b-chatmodes-factory.instructions.md)** - Factory pattern for generating chatmode files.
+
+**[layer-3c-prompt-files-factory.instructions.md](./layer-3c-prompt-files-factory.instructions.md)** - Factory pattern for creating prompt files.
+
+**[layer-4-automation-and-health.instructions.md](./layer-4-automation-and-health.instructions.md)** - Automation and health monitoring for layered systems.
+
+**[copilot-memory-bank.instructions.md](./copilot-memory-bank.instructions.md)** - Memory bank protocol for GitHub Copilot integration and state management.
+
+**[start-revision.instructions.md](./start-revision.instructions.md)** - Revision and update protocols for iterative development workflows.
+
+### Documentation & Markdown Standards
+
+**[chatmode-markdown.instructions.md](./chatmode-markdown.instructions.md)** - Markdown formatting standards for chatmode files.
+
+**[markdown.instructions.md](./markdown.instructions.md)** - General markdown formatting and style guidelines.
+
+**[prompts-markdown.instructions.md](./prompts-markdown.instructions.md)** - Markdown standards specific to prompt file formatting.
+
+**[prompting-like-with-chatgpt.instructions.md](./prompting-like-with-chatgpt.instructions.md)** - ChatGPT-style prompting conventions and patterns.
+
+**[prompt-file-library.instructions.md](./prompt-file-library.instructions.md)** - Standards for maintaining and organizing prompt file libraries.
 
 **[instruction-authoring-standards.instructions.md](./instruction-authoring-standards.instructions.md)** - Canonical authoring standards for all instruction files including structure, validation, and quality requirements.
 
@@ -75,7 +118,15 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 
 **[nextjs-component-patterns.instructions.md](./nextjs-component-patterns.instructions.md)** - Next.js v15+ server/client component decision framework and patterns.
 
+### Git & Commit Standards
+
+**[breaking-changes-commits.instructions.md](./breaking-changes-commits.instructions.md)** - Standards for documenting breaking changes in commit messages.
+
+**[commit-examples.instructions.md](./commit-examples.instructions.md)** - Comprehensive examples of proper commit message formats.
+
 **[conventional-commits-must-be-used.instructions.md](./conventional-commits-must-be-used.instructions.md)** - Conventional commit protocol with gitmoji is mandatory.
+
+**[gitmoji-complete-list.instructions.md](./gitmoji-complete-list.instructions.md)** - Complete gitmoji reference for conventional commits with selection guidelines.
 
 **[no_dummy-no_placeholders.instructions.md](./no_dummy-no_placeholders.instructions.md)** - Standards requiring real, functional configurations instead of placeholder or dummy content.
 
