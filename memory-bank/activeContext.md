@@ -11,6 +11,18 @@
   **Next Intent:** Monitor README maintenance using existing safeguard script. Follow memory bank documentation standards for all future README updates.
   **Meta:** Self-Documentation Protocol entry capturing emergency README consolidation to resolve workspace conflicts per user requirements.
 
+- [2025-08-31T06:53:41+00:00] Minimal remote actors RPC system added
+  **Current State:** Worker-thread pool, JSON protocol, HTTP/TCP transports, configuration, docs, and tests implemented under src/remote-actors.
+  **Last Action:** Added protocol codecs, method registry, worker pool with eval workers, actor dispatch, HTTP/TCP servers, configuration merger, documentation, and unit/integration tests.
+  **Rationale:** Establishes extensible baseline for remote actors framework within project context.
+  **Next Intent:** Add backpressure, error taxonomy, authentication, and typed client SDK.
+  **Meta:** Self-documentation after implementing remote actors MVP.
+- [2025-08-31T06:55:17+00:00] Remote RPC actors baseline
+  **Current State:** Minimal RPC system added under src/rpc with worker-thread pool, HTTP/TCP transports, protocol types, config, docs, and tests.
+  **Last Action:** Implemented module, added unit and integration tests, updated docs and dependency tracking.
+  **Rationale:** Establish foundation for remote actor architecture over HTTP/TCP for future expansion.
+  **Next Intent:** Introduce logging, backpressure metrics, and authentication.
+  **Meta:** Self-documentation after creating remote actor baseline and adding ts-node dependency.
 - [2025-08-23T00:00:00Z] Tasks-First Policy Adopted for VS Code
   **Current State:** `.github/copilot-instructions.md` now codifies a Tasks-First Execution Policy. `.vscode/tasks.json` includes a stable `hello:world` task; ad-hoc duplicates removed.
   **Last Action:** Added Tasks-First section instructing agents to use `run_task`/`get_task_output` first and `create_and_run_task` when needed. Normalized tasks file to avoid confusion and ensure discoverability.

@@ -19,6 +19,24 @@ This file tracks what works, what remains to be built, current status, and known
 ---
 
 ## What Works
+### [2025-08-31] Remote Actors RPC MVP
+
+Achievement: Implemented worker-thread-based RPC system with HTTP and TCP transports under `src/remote-actors`.
+
+Technical Implementation: Added JSON protocol codecs, method registry, worker pool using eval workers, actor dispatch API, HTTP/TCP servers, configuration merge, documentation, and unit/integration tests.
+
+Impact: Provides extensible baseline for remote actors enabling future features like backpressure, metrics, and typed clients.
+
+Meta: Self-documentation after delivering remote actors MVP.
+
+
+### [2025-08-31] Remote RPC Actors Baseline
+
+Achievement: Added `src/rpc` module implementing JSON RPC protocol, worker-thread pool, actor registry, HTTP and TCP transports, configuration loader, documentation, and comprehensive tests.
+
+Impact: Establishes extensible foundation for remote actor dispatch and transport-agnostic RPC, enabling future features like logging, metrics, and authentication.
+
+Meta: Self-documentation after introducing remote actor system and associated dependency updates.
 
 ### [2025-08-31] Prompt management consolidation
 
