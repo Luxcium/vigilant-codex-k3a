@@ -30,6 +30,14 @@ Impact: Provides extensible baseline for remote actors enabling future features 
 Meta: Self-documentation after delivering remote actors MVP.
 
 
+### [2025-08-31] Remote RPC Actors Baseline
+
+Achievement: Added `src/rpc` module implementing JSON RPC protocol, worker-thread pool, actor registry, HTTP and TCP transports, configuration loader, documentation, and comprehensive tests.
+
+Impact: Establishes extensible foundation for remote actor dispatch and transport-agnostic RPC, enabling future features like logging, metrics, and authentication.
+
+Meta: Self-documentation after introducing remote actor system and associated dependency updates.
+
 ### [2025-08-29] Layer 3 Factory Instructions Complete
 
 Achievement: Created comprehensive Layer 3 factory instruction files for creating and managing instructions, chatmodes, and prompt files with consistent guardrails and validation.
