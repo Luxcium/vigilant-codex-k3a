@@ -2399,6 +2399,21 @@
   "workbench.editor.alwaysShowEditorActions": true,
   "workbench.editor.closeOnFileDelete": false,
   "workbench.editor.highlightModifiedTabs": true,
-  "terminal.integrated.enableImages": true
+  "terminal.integrated.enableImages": true,
+  "debug.javascript.autoAttachFilter": "smart",
+  "debug.javascript.terminalOptions": {
+    "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+    "sourceMaps": true,
+    "resolveSourceMapLocations": [
+      "${workspaceFolder}/web/**",
+      "!**/node_modules/**"
+    ]
+  },
+  "debug.javascript.autoAttachSmartPattern": [
+    "!**/node_modules/**",
+    "**/$KNOWN_TOOLS$/**",
+    "${workspaceFolder}/web/**"
+  ],
+  "debug.onTaskErrors": "showErrors"
   // #endregion: Last Section                                        !
 }

@@ -15,6 +15,7 @@
     "commit:force": "FORCE_COMMIT=1 git commit",
     "coverage": "pnpm test:coverage",
     "dev": "cd ./web/ && pnpm install --no-frozen-lockfile && pnpm run dev",
+    "dev:debug": "cd ./web/ && pnpm install --no-frozen-lockfile && pnpm run dev:debug",
     "docs": "typedoc --options typedoc.json",
     "hello:world": "echo 'Hello, Copilot!'",
     "hooks:install": "bash ./scripts/install-hooks.sh",

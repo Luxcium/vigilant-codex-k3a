@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 /* eslint-env node */
 
-// Lightweight CDP client using the DevTools Protocol via WebSocket.
-// Requires launching Edge/Chrome with --remote-debugging-port=9222.
-// Outputs problem-matcher-friendly lines for VS Code Problems panel.
+// Enhanced CDP monitor for VS Code integration
+// Provides real-time browser error capture with VS Code problem matcher support
+// Connects to DevTools Protocol and outputs formatted error lines
 
 import http from 'node:http';
 import { WebSocket } from 'ws';
@@ -16,210 +16,322 @@ const TARGET_URL_PATTERN =
   proc?.env?.CDP_TARGET_PATTERN || 'http://localhost:3000';
 const VERBOSE =
   proc?.env?.CDP_VERBOSE === '1' || proc?.env?.CDP_VERBOSE === 'true';
+const RECONNECT_DELAY = Number(proc?.env?.CDP_RECONNECT_DELAY || 5000);
+const MAX_RETRIES = Number(proc?.env?.CDP_MAX_RETRIES || 10);
 
-function logInfo(msg) {
-  if (VERBOSE && proc?.stderr?.write) proc.stderr.write(`[cdp] ${msg}\n`);
-}
+class CDPMonitor {
+  constructor() {
+    this.ws = null;
+    this.isConnected = false;
+    this.retryCount = 0;
+    this.shouldReconnect = true;
+  }
 
-function pmLine(severity, file, line, column, message) {
-  return `${severity} ${file}:${line}:${column} ${message}`;
-}
-
-function fetchJson(pathname) {
-  return new Promise((resolve, reject) => {
-    const req = http.request(
-      {
-        host: DEVTOOLS_HOST,
-        port: DEVTOOLS_PORT,
-        path: pathname,
-        method: 'GET',
-      },
-      res => {
-        let data = '';
-        res.setEncoding('utf8');
-        res.on('data', chunk => (data += chunk));
-        res.on('end', () => {
-          try {
-            resolve(JSON.parse(data));
-          } catch (e) {
-            reject(e);
-          }
-        });
-      }
-    );
-    req.on('error', reject);
-    req.end();
-  });
-}
-
-async function findTarget() {
-  const list = await fetchJson('/json');
-  const pages = Array.isArray(list) ? list : [];
-  let best = null;
-  for (const p of pages) {
-    if (p.type !== 'page' && p.type !== 'iframe') continue;
-    if (!p.webSocketDebuggerUrl) continue;
-    const url = String(p.url || '');
-    if (url.startsWith(TARGET_URL_PATTERN)) {
-      best = p;
-      break;
+  logInfo(msg) {
+    if (VERBOSE && proc?.stderr?.write) {
+      proc.stderr.write(`[cdp] ${new Date().toISOString()} ${msg}\n`);
     }
   }
-  return best;
-}
 
-function connectWS(debugUrl) {
-  return new Promise((resolve, reject) => {
-    const ws = new WebSocket(debugUrl);
-    ws.once('open', () => resolve(ws));
-    ws.once('error', reject);
-  });
-}
+  logError(msg) {
+    if (proc?.stderr?.write) {
+      proc.stderr.write(`[cdp] ERROR: ${msg}\n`);
+    }
+  }
 
-let msgId = 0;
-function send(ws, method, params) {
-  const id = ++msgId;
-  ws.send(JSON.stringify({ id, method, params }));
-  return id;
-}
+  // Format messages for VS Code problem matcher
+  formatProblemLine(severity, file, line, column, message) {
+    return `${severity} ${file}:${line}:${column} ${message}`;
+  }
 
-function onMessage(ws, handlers) {
-  ws.on('message', data => {
+  async fetchJson(pathname) {
+    return new Promise((resolve, reject) => {
+      const req = http.request(
+        {
+          host: DEVTOOLS_HOST,
+          port: DEVTOOLS_PORT,
+          path: pathname,
+          method: 'GET',
+          timeout: 5000,
+        },
+        res => {
+          let data = '';
+          res.setEncoding('utf8');
+          res.on('data', chunk => (data += chunk));
+          res.on('end', () => {
+            try {
+              resolve(JSON.parse(data));
+            } catch (e) {
+              reject(new Error(`JSON parse error: ${e.message}`));
+            }
+          });
+        }
+      );
+      req.on('error', reject);
+      req.on('timeout', () => {
+        req.destroy();
+        reject(new Error('Request timeout'));
+      });
+      req.end();
+    });
+  }
+
+  async findTarget() {
     try {
-      const msg = JSON.parse(data.toString());
-      if (msg.method && handlers[msg.method])
-        handlers[msg.method](msg.params || {});
-    } catch {
-      // ignore parse errors
+      const list = await this.fetchJson('/json');
+      const pages = Array.isArray(list) ? list : [];
+
+      for (const page of pages) {
+        if (page.type !== 'page' && page.type !== 'iframe') continue;
+        if (!page.webSocketDebuggerUrl) continue;
+
+        const url = String(page.url || '');
+        if (url.startsWith(TARGET_URL_PATTERN)) {
+          return page;
+        }
+      }
+      return null;
+    } catch (error) {
+      this.logError(`Failed to fetch targets: ${error.message}`);
+      return null;
     }
-  });
-}
-
-function extractLocation(details) {
-  let file = 'browser';
-  let line = 1;
-  let column = 1;
-
-  if (details && typeof details.url === 'string' && details.url) {
-    file = details.url;
-    if (typeof details.lineNumber === 'number') line = details.lineNumber;
-    if (typeof details.columnNumber === 'number') column = details.columnNumber;
   }
 
-  const frames =
-    details && (details.stackTrace?.callFrames || details.stack?.callFrames);
-  if (Array.isArray(frames) && frames.length > 0) {
-    const f = frames[0];
-    if (f.url) file = f.url;
-    if (typeof f.lineNumber === 'number') line = f.lineNumber;
-    if (typeof f.columnNumber === 'number') column = f.columnNumber;
+  extractLocation(details) {
+    let file = 'browser';
+    let line = 1;
+    let column = 1;
+
+    // Try to get location from URL and line/column numbers
+    if (details && typeof details.url === 'string' && details.url) {
+      file = details.url;
+      if (typeof details.lineNumber === 'number') line = details.lineNumber;
+      if (typeof details.columnNumber === 'number')
+        column = details.columnNumber;
+    }
+
+    // Check stack trace for better location info
+    const frames =
+      details && (details.stackTrace?.callFrames || details.stack?.callFrames);
+    if (Array.isArray(frames) && frames.length > 0) {
+      const frame = frames[0];
+      if (frame.url) file = frame.url;
+      if (typeof frame.lineNumber === 'number') line = frame.lineNumber;
+      if (typeof frame.columnNumber === 'number') column = frame.columnNumber;
+    }
+
+    return { file, line, column };
   }
-  return { file, line, column };
-}
 
-function summarizeConsole(params) {
-  const type = params.type || 'log';
-  const args = params.args || [];
-  const texts = args.map(a => a.value ?? a.description ?? '').filter(Boolean);
-  const message = texts.join(' ') || type;
-  const { file, line, column } = extractLocation(
-    params.stackTrace ? { stackTrace: params.stackTrace } : {}
-  );
-  const severity =
-    type === 'error' ? 'ERROR' : type === 'warning' ? 'WARNING' : 'INFO';
-  return pmLine(severity, file, line, column, message);
-}
-
-function summarizeException(params) {
-  const exc = params?.exceptionDetails || {};
-  const text =
-    exc.text ||
-    exc.exception?.description ||
-    exc.exception?.value ||
-    'Uncaught exception';
-  const { file, line, column } = extractLocation(exc);
-  return pmLine('ERROR', file, line, column, text);
-}
-
-async function main() {
-  const start = Date.now();
-  const timeoutMs = Number(proc?.env?.CDP_TIMEOUT_MS || 30000);
-  let target = null;
-  while (!target) {
+  handleConsoleMessage(params) {
     try {
-      target = await findTarget();
-      if (target) break;
-    } catch {
-      // ignore until timeout
+      const type = params.type || 'log';
+      const args = params.args || [];
+      const texts = args
+        .map(a => a.value ?? a.description ?? '')
+        .filter(Boolean);
+      const message = texts.join(' ') || type;
+
+      if (type === 'error' || type === 'warning') {
+        const { file, line, column } = this.extractLocation(
+          params.stackTrace ? { stackTrace: params.stackTrace } : {}
+        );
+        const severity = type === 'error' ? 'ERROR' : 'WARNING';
+        const formattedLine = this.formatProblemLine(
+          severity,
+          file,
+          line,
+          column,
+          message
+        );
+
+        if (proc?.stdout?.write) {
+          proc.stdout.write(formattedLine + '\n');
+        }
+      }
+    } catch (error) {
+      this.logError(`Console message handling error: ${error.message}`);
     }
-    if (Date.now() - start > timeoutMs) {
-      if (proc?.stderr?.write)
-        proc.stderr.write('cdp: timed out waiting for target\n');
-      if (proc?.exit) proc.exit(2);
-      return; // in case exit is not available
-    }
-    await delay(500);
   }
 
-  logInfo(`Attaching to ${target.url}`);
-  const ws = await connectWS(target.webSocketDebuggerUrl);
+  handleRuntimeException(params) {
+    try {
+      const exc = params?.exceptionDetails || {};
+      const text =
+        exc.text ||
+        exc.exception?.description ||
+        exc.exception?.value ||
+        'Uncaught exception';
+      const { file, line, column } = this.extractLocation(exc);
+      const formattedLine = this.formatProblemLine(
+        'ERROR',
+        file,
+        line,
+        column,
+        text
+      );
 
-  send(ws, 'Runtime.enable');
-  send(ws, 'Log.enable');
-  send(ws, 'Page.enable');
+      if (proc?.stdout?.write) {
+        proc.stdout.write(formattedLine + '\n');
+      }
+    } catch (error) {
+      this.logError(`Exception handling error: ${error.message}`);
+    }
+  }
 
-  onMessage(ws, {
-    'Runtime.consoleAPICalled': params => {
-      try {
-        const line = summarizeConsole(params);
-        if (proc?.stdout?.write) proc.stdout.write(line + '\n');
-      } catch (e) {
-        logInfo(`console summarize error: ${e.message}`);
-      }
-    },
-    'Runtime.exceptionThrown': params => {
-      if (proc?.stdout?.write)
-        proc.stdout.write('INFO browser:1:1 CDP monitor attached\n');
-      try {
-        const line = summarizeException(params);
-        if (proc?.stdout?.write) proc.stdout.write(line + '\n');
-      } catch (e) {
-        logInfo(`exception summarize error: ${e.message}`);
-      }
-    },
-    'Log.entryAdded': params => {
-      try {
-        const entry = params?.entry || {};
-        const level = String(entry.level || 'info').toLowerCase();
-        const severity =
-          level === 'error'
-            ? 'ERROR'
-            : level === 'warning'
-              ? 'WARNING'
-              : 'INFO';
+  handleLogEntry(params) {
+    try {
+      const entry = params?.entry || {};
+      const level = String(entry.level || 'info').toLowerCase();
+
+      if (level === 'error' || level === 'warning') {
+        const severity = level === 'error' ? 'ERROR' : 'WARNING';
         const text = entry.text || entry.source || 'log';
-        const { file, line, column } = extractLocation(entry);
-        if (proc?.stdout?.write)
-          proc.stdout.write(pmLine(severity, file, line, column, text) + '\n');
-      } catch (e) {
-        logInfo(`log entry summarize error: ${e.message}`);
+        const { file, line, column } = this.extractLocation(entry);
+        const formattedLine = this.formatProblemLine(
+          severity,
+          file,
+          line,
+          column,
+          text
+        );
+
+        if (proc?.stdout?.write) {
+          proc.stdout.write(formattedLine + '\n');
+        }
       }
-    },
-  });
+    } catch (error) {
+      this.logError(`Log entry handling error: ${error.message}`);
+    }
+  }
 
-  ws.on('close', () => {
-    if (proc?.stderr?.write) proc.stderr.write('cdp: connection closed\n');
-    if (proc?.exit) proc.exit(0);
-  });
-  ws.on('error', err => {
-    if (proc?.stderr?.write) proc.stderr.write(`cdp: error ${err.message}\n`);
-    if (proc?.exit) proc.exit(1);
-  });
+  async connectToTarget(target) {
+    return new Promise((resolve, reject) => {
+      const ws = new WebSocket(target.webSocketDebuggerUrl);
 
-  logInfo('CDP monitor attached and streaming events...');
+      ws.on('open', () => {
+        this.ws = ws;
+        this.isConnected = true;
+        this.retryCount = 0;
+
+        this.logInfo(`Connected to ${target.url}`);
+
+        // Enable required domains
+        ws.send(JSON.stringify({ id: 1, method: 'Runtime.enable' }));
+        ws.send(JSON.stringify({ id: 2, method: 'Log.enable' }));
+        ws.send(JSON.stringify({ id: 3, method: 'Page.enable' }));
+
+        // Output readiness signal for VS Code background task
+        if (proc?.stdout?.write) {
+          proc.stdout.write('INFO browser:1:1 CDP monitor attached\n');
+        }
+
+        resolve(ws);
+      });
+
+      ws.on('message', data => {
+        try {
+          const msg = JSON.parse(data.toString());
+
+          if (msg.method && msg.params) {
+            switch (msg.method) {
+              case 'Runtime.consoleAPICalled':
+                this.handleConsoleMessage(msg.params);
+                break;
+              case 'Runtime.exceptionThrown':
+                this.handleRuntimeException(msg.params);
+                break;
+              case 'Log.entryAdded':
+                this.handleLogEntry(msg.params);
+                break;
+            }
+          }
+        } catch (error) {
+          this.logError(`Message parsing error: ${error.message}`);
+        }
+      });
+
+      ws.on('close', () => {
+        this.isConnected = false;
+        this.ws = null;
+        this.logInfo('WebSocket connection closed');
+
+        if (this.shouldReconnect && this.retryCount < MAX_RETRIES) {
+          this.scheduleReconnect();
+        }
+      });
+
+      ws.on('error', error => {
+        this.logError(`WebSocket error: ${error.message}`);
+        reject(error);
+      });
+    });
+  }
+
+  async scheduleReconnect() {
+    this.retryCount++;
+    this.logInfo(
+      `Scheduling reconnect attempt ${this.retryCount}/${MAX_RETRIES} in ${RECONNECT_DELAY}ms`
+    );
+
+    await delay(RECONNECT_DELAY);
+
+    if (this.shouldReconnect && this.retryCount < MAX_RETRIES) {
+      await this.start();
+    } else if (this.retryCount >= MAX_RETRIES) {
+      this.logError('Max reconnection attempts reached');
+      if (proc?.exit) proc.exit(1);
+    }
+  }
+
+  async start() {
+    this.logInfo(`Starting CDP monitor for ${TARGET_URL_PATTERN}`);
+
+    const target = await this.findTarget();
+
+    if (!target) {
+      this.logError('No suitable target found');
+      await this.scheduleReconnect();
+      return;
+    }
+
+    try {
+      await this.connectToTarget(target);
+    } catch (error) {
+      this.logError(`Connection failed: ${error.message}`);
+      await this.scheduleReconnect();
+    }
+  }
+
+  stop() {
+    this.shouldReconnect = false;
+    if (this.ws) {
+      this.ws.close();
+    }
+  }
 }
 
-main().catch(err => {
-  if (proc?.stderr?.write) proc.stderr.write(`cdp: fatal ${err.message}\n`);
+// Initialize and start monitor
+const monitor = new CDPMonitor();
+
+// Graceful shutdown
+proc?.on?.('SIGINT', () => {
+  monitor.stop();
+  if (proc?.stdout?.write) {
+    proc.stdout.write('INFO browser:1:1 CDP monitor shutting down\n');
+  }
+  if (proc?.exit) proc.exit(0);
+});
+
+proc?.on?.('SIGTERM', () => {
+  monitor.stop();
+  if (proc?.exit) proc.exit(0);
+});
+
+// Start monitoring
+monitor.start().catch(error => {
+  if (proc?.stderr?.write) {
+    proc.stderr.write(`[cdp] Fatal error: ${error.message}\n`);
+  }
   if (proc?.exit) proc.exit(1);
 });
