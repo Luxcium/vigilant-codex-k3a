@@ -17,18 +17,26 @@ export function createHttpServer(actor: Actor, config: HttpConfig) {
 
     const chunks: Buffer[] = [];
     let size = 0;
+    let requestTooLarge = false;
     req.on('data', (chunk) => {
+      if (requestTooLarge) {
+        return;
+      }
       size += chunk.length;
       if (size > config.maxBodySize) {
         res.statusCode = 413;
         res.end();
         req.destroy();
+        requestTooLarge = true;
       } else {
         chunks.push(chunk);
       }
     });
 
     req.on('end', async () => {
+      if (requestTooLarge) {
+        return;
+      }
       try {
         const body = Buffer.concat(chunks).toString();
         const request = decodeRequest(body);
