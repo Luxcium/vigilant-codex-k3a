@@ -43,7 +43,13 @@ Return a corrected `.prompt.md` ready to commit, or an audit summary followed by
 6. Add slash command H2 `## Slash Command: /<stem> - <purpose>`
 7. Ensure sections in order: Context & Activation; Goal; Output format; Inputs; Steps / Rules; Examples; Edge cases / Stop criteria
 8. Validate filename, header, and slash command alignment
-9. Verify spacing: one blank line after front matter and path comment
+9. Verify formatting:
+   - One blank line before and after every heading and code block
+   - One blank line after front matter and path comment
+   - Hierarchical headings only (no skipped levels)
+   - LF newlines only
+   - Maximum 120 characters per line
+   - Spaces only (no tabs or trailing spaces)
 10. Return corrected file or report no changes needed
 
 ### Examples
