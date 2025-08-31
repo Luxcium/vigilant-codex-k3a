@@ -136,7 +136,7 @@ class ReadmeSyncGenerator:
                 section += f"#### {category} ({len(file_list)} files)\n"
                 for file_data in sorted(file_list, key=lambda x: x["name"]):
                     name = file_data["name"]
-                    section += f"- `{name}` — [Brief description needed]\n"
+                    section += f"- `{name}` — TODO: Add description\n"
                 section += "\n"
         
         return section
