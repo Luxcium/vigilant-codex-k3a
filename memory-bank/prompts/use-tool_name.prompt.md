@@ -1,6 +1,6 @@
 ---
 description: Use the tool name in your response when applicable.
-tools: ['codebase', 'usages', 'problems', 'terminalSelection', 'terminalLastCommand', 'fetch', 'editFiles', 'search', 'runCommands']
+tools: ['usages', 'changes', 'extensions', 'fetch', 'githubRepo', 'vscodeAPI', 'problems', 'openSimpleBrowser', 'edit', 'notebooks', 'search', 'new', 'runCommands', 'runTasks', 'think', 'testFailure', 'todos', 'runTests']
 ---
 # Use this specific tool now
 

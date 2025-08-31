@@ -2159,7 +2159,6 @@
   "github.copilot.chat.useProjectTemplates": true,
   "github.copilot.editor.enableCodeActions": true,
   "github.copilot.renameSuggestions.triggerAutomatically": true,
-  "github.copilot.selectedCompletionModel": "gpt-4o-copilot",
   "inlineChat.enableV2": true,
   "inlineChat.hideOnRequest": false,
   "inlineChat.lineEmptyHint": true,
@@ -2399,6 +2398,7 @@
   "search.searchView.keywordSuggestions": true,
   "workbench.editor.alwaysShowEditorActions": true,
   "workbench.editor.closeOnFileDelete": false,
-  "workbench.editor.highlightModifiedTabs": true
+  "workbench.editor.highlightModifiedTabs": true,
+  "terminal.integrated.enableImages": true
   // #endregion: Last Section                                        !
 }

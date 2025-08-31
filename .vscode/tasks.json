@@ -25,6 +25,65 @@
       "label": "hello:world",
       "type": "shell",
       "command": "pnpm run hello:world"
+    },
+    {
+      "label": "Start Web Dev Server (bg)",
+      "type": "shell",
+      "command": "pnpm run web:dev",
+      "isBackground": true,
+      "problemMatcher": {
+        "owner": "nextjs",
+        "fileLocation": "autoDetect",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*Starting.*|.*ready - started server on.*|.*Ready in .*ms",
+          "endsPattern": ".*ready - started server on.*|.*Ready in .*ms"
+        },
+        "pattern": {
+          "regexp": "^(ERROR|WARNING|INFO)\\s+(.*):(\\d+):(\\d+)\\s+(.*)$",
+          "severity": 1,
+          "file": 2,
+          "line": 3,
+          "column": 4,
+          "message": 5
+        }
+      }
+    },
+    {
+      "label": "Browser CDP Monitor (bg)",
+      "type": "shell",
+      "command": "node ./scripts/cdp-browser-monitor.mjs",
+      "isBackground": true,
+      "options": {
+        "env": {
+          "CDP_HOST": "127.0.0.1",
+          "CDP_PORT": "9222",
+          "CDP_TARGET_PATTERN": "http://localhost:3000",
+          "CDP_VERBOSE": "0"
+        }
+      },
+      "problemMatcher": {
+        "owner": "cdp",
+        "fileLocation": "autoDetect",
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*Attaching to .*",
+          "endsPattern": ".*CDP monitor attached.*"
+        },
+        "pattern": {
+          "regexp": "^(ERROR|WARNING|INFO)\\s+(.*):(\\d+):(\\d+)\\s+(.*)$",
+          "severity": 1,
+          "file": 2,
+          "line": 3,
+          "column": 4,
+          "message": 5
+        }
+      }
+    },
+    {
+      "label": "Dev: Web + CDP Monitor (bg)",
+      "dependsOn": ["Start Web Dev Server (bg)", "Browser CDP Monitor (bg)"],
+      "dependsOrder": "parallel"
     }
   ]
 }
