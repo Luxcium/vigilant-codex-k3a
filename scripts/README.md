@@ -343,50 +343,84 @@ The setup is configured in:
 - **Questrade Scripts**: Merge `setup_questrade_sdk_core.sh` and `setup_questrade_types.sh` if overlap exists
 - **Generate Scripts**: Consolidate `generate-instruction-file.sh` and `generate-prompt-file.sh` into unified generator
 
-## Script Index by Function
+## Complete File Index
 
-### Environment Setup
+### **Total Files: 50 scripts + 1 README + 1 JavaScript module + 1 archives directory**
 
-- `setup_python_env.sh` — **Consolidated Python environment setup (5-in-1)**
-- `setup_python_docker.sh` — Advanced Docker Python features
-- `setup_python_local.sh` — Advanced local Python optimizations
-- `setup_web_dev_environment.sh` — Complete web development setup
-- `activate_web_dev_environment.sh` — Quick web environment activation
-- `setup_project.sh` — Master project initialization
+**By Extension:**
+- `.sh` files: 50 (shell scripts)
+- `.md` files: 1 (README.md)
+- `.mjs` files: 1 (ES module JavaScript)
+- `archives/` directory: 1 (archived scripts)
 
-### Docker Lifecycle
+### Per-File Summary
 
-- `setup_codex_universal.sh` — Complete Codex Universal setup
-- `codex_start.sh` — Start Docker environment
-- `codex_stop.sh` — Stop Docker environment
-- `codex_shell.sh` — Enter container shell
-- `codex_rebuild.sh` — Rebuild containers
-- `codex_test.sh` — Test Docker environment
-- `run_codex_cli.sh` — Single container execution
+#### Environment Setup Scripts (12 files)
+- `activate_web_dev_environment.sh` — Quick activation of web development environment with dependency checks
+- `create-nextjs-web.sh` — Create and configure new Next.js web application with TypeScript
+- `init-empty-copilot-project.sh` — Initialize empty project structure for GitHub Copilot development
+- `launch_dev_environment.sh` — Launch complete development environment with all services
+- `setup_agent_framework.sh` — Setup TypeScript-based multi-agent orchestration framework
+- `setup_agent_system.sh` — Setup AI agent system integration and coordination
+- `setup_api_error.sh` — Setup API error handling and response patterns
+- `setup_helpers.sh` — Setup utility helper functions and common libraries
+- `setup_project.sh` — Master project initialization with workspace configuration
+- `setup_web_dev_environment.sh` — Complete web development environment setup
+- `setup_web_env.sh` — Web environment configuration and deployment
+- `vscode_auto_env.sh` — Automatic VS Code environment configuration
 
-### TypeScript/SDK
+#### Python Environment Scripts (5 files)
+- `setup_python_docker.sh` — Advanced Docker Python environment configuration
+- `setup_python_docker_isolated.sh` — Isolated Docker Python environment setup
+- `setup_python_docker_volume.sh` — Volume-mounted Docker Python environment
+- `setup_python_env.sh` — **Master Python environment setup with mode selection**
+- `setup_python_local.sh` — Local Python environment configuration and optimization
 
-- `setup_ts_sdk.sh` — **Consolidated TypeScript/SDK setup (6-in-1)**
-- `setup_db_prisma.sh` — Database configuration
+#### Docker Lifecycle Scripts (7 files)
+- `codex_rebuild.sh` — Rebuild Docker containers with latest images and configuration
+- `codex_run.sh` — Run Codex CLI in Docker container environment
+- `codex_shell.sh` — Enter interactive shell in Codex Docker container
+- `codex_start.sh` — Start Docker Compose development environment
+- `codex_stop.sh` — Stop Docker Compose environment and cleanup
+- `codex_test.sh` — Test Docker environment functionality and API connectivity
+- `run_codex_cli.sh` — Execute Codex CLI commands in containerized environment
 
-### Validation & Quality
+#### TypeScript/SDK Scripts (4 files)
+- `setup_codex_universal.sh` — Complete Codex Universal Docker environment setup
+- `setup_db_prisma.sh` — Database setup with Prisma ORM configuration
+- `setup_questrade_sdk_core.sh` — Setup Questrade SDK core functionality and types
+- `setup_questrade_types.sh` — Setup Questrade TypeScript type definitions
+- `setup_ts_sdk.sh` — **Master TypeScript/SDK setup with module selection**
 
-- `verify-all.sh` — **Consolidated validation suite (5-in-1)**
-- `check-memory-bank.sh` — Memory bank validation
-- `local-ci.sh` — Local replacement for remote CI pipeline (cost-free)
- - `commit-guard.sh` — Enforced validation during git hooks
- - `install-hooks.sh` — Git hook installer
+#### Validation & Quality Scripts (10 files)
+- `analyze-test-structure.sh` — Analyze and report on test suite structure and coverage
+- `check-dependencies.sh` — Validate project dependencies and version compatibility
+- `check-markdown.sh` — Lint and format markdown files with strict compliance
+- `check-memory-bank.sh` — Validate memory bank file structure and cross-references
+- `check-readme-variants.sh` — Check for duplicate README variant files (safeguard)
+- `commit-guard.sh` — **Pre-commit validation gate with override support**
+- `install-hooks.sh` — Install Git hooks for automated validation
+- `local-ci.sh` — **Complete local CI pipeline replacing remote GitHub Actions**
+- `validate-instructions.sh` — Validate instruction file structure and compliance
+- `validate-prompt.sh` — Validate prompt file format and metadata
+- `verify-all.sh` — **Master validation script with selective checking**
 
-### Code Generation
+#### Code Generation Scripts (4 files)
+- `generate-instruction-file.sh` — Generate AI instruction files with template compliance
+- `generate-prompt-file.sh` — Generate AI prompt files with proper metadata
+- `inventory-prompts.sh` — Inventory and catalog existing prompt files
+- `update-checklist.sh` — Update project checklists and task tracking
 
-- `generate-instruction-file.sh` — AI instruction file generation
-- `generate-prompt-file.sh` — AI prompt file generation
+#### Development Tools (6 files)
+- `autonomous-state-manager.sh` — **Automated development state management**
+- `browser-error-monitor.sh` — Monitor and report browser JavaScript errors
+- `cdp-browser-monitor.mjs` — Chrome DevTools Protocol browser monitoring (ES module)
+- `cleanup_readmes.sh` — Clean up duplicate and variant README files
+- `get_current_datetime.sh` — Get current ISO 8601 timestamp for logging
+- `make-scripts-executable.sh` — Ensure all shell scripts have execute permissions
 
-### Development Tools
-
-- `browser-error-monitor.sh` — Browser error monitoring
-- `make-scripts-executable.sh` — Script permission management
-- `autonomous-state-manager.sh` — **Development state automation (2-in-1)**
+#### Utility Scripts (4 files)
+- `genesis_boot.sh` — Minimal genesis boot-phase dependency and workspace validation
 
 ## Verification
 
