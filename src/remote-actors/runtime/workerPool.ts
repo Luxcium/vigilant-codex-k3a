@@ -1,37 +1,16 @@
 import { Worker } from 'node:worker_threads';
 import { MethodRegistry } from '../commands/methods';
 import { Request, Response } from '../protocol';
+import * as path from 'path';
 
 let nextId = 0;
 
-function serializeMethods(methods: MethodRegistry) {
-  const serialized: Record<string, string> = {};
-  for (const [name, fn] of Object.entries(methods)) {
-    serialized[name] = fn.toString();
-  }
-  return serialized;
+// The worker script will import the method registry directly.
+function createWorker(): Worker {
+  // Use path.resolve to get the absolute path to the worker script.
+  const workerPath = path.resolve(__dirname, 'workerThread.js');
+  return new Worker(workerPath);
 }
-
-function createWorker(methods: MethodRegistry): Worker {
-  const code = `
-    const { parentPort, workerData } = require('node:worker_threads');
-    const handlers = {};
-    for (const [name, src] of Object.entries(workerData.methods)) {
-      handlers[name] = eval(src);
-    }
-    parentPort.on('message', async (msg) => {
-      const { id, method, params } = msg;
-      try {
-        const result = await handlers[method](params);
-        parentPort.postMessage({ id, result });
-      } catch (err) {
-        parentPort.postMessage({ id, error: { message: err.message } });
-      }
-    });
-  `;
-  return new Worker(code, { eval: true, workerData: { methods: serializeMethods(methods) } });
-}
-
 export class RpcWorkerPool {
   private workers: Worker[] = [];
   private pending = new Map<number, (res: Response) => void>();
