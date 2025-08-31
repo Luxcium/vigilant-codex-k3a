@@ -42,8 +42,9 @@ class ReadmeSyncGenerator:
         if readme_path.exists():
             try:
                 return readme_path.read_text(encoding='utf-8')
-            except Exception as e:
+            except OSError as e:
                 print(f"Warning: Could not read {readme_path}: {e}")
+                raise
         return None
     
     def extract_preserved_sections(self, content: str, folder_type: str) -> Dict[str, str]:
