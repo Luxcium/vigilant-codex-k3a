@@ -13,7 +13,7 @@ export class RpcWorkerPool {
   private next = 0;
 
   constructor(size: number, methodsPath: string) {
-    const workerFile = path.resolve(__dirname, 'worker.ts');
+    const workerFile = path.join(path.dirname(__filename), 'worker' + path.extname(__filename));
     for (let i = 0; i < size; i++) {
       const worker = new Worker(workerFile, {
         execArgv: ['-r', 'ts-node/register'],
