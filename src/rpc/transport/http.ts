@@ -35,9 +35,19 @@ export function createHttpServer(
       } catch (error) {
         res.statusCode = 500;
         res.setHeader('Content-Type', 'application/json');
+        // Try to extract the id from the request body, fallback to null if not possible
+        let errorId: string | number | null = null;
+        try {
+          const parsed = JSON.parse(body);
+          if (typeof parsed.id === 'string' || typeof parsed.id === 'number' || parsed.id === null) {
+            errorId = parsed.id;
+          }
+        } catch (_) {
+          // ignore, leave errorId as null
+        }
         res.end(
           encodeResponse({
-            id: '0',
+            id: errorId,
             error: { code: 500, message: (error as Error).message },
           }),
         );
