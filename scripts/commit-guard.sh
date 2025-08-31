@@ -89,7 +89,7 @@ echo "[commit-guard] Validation succeeded for stage: $STAGE"
 exit 0
 
 }
-if [ "${DISABLE_LOCAL_GUARDS:-1}" = "1" ]; then
+if [ "${DISABLE_LOCAL_GUARDS:-0}" = "1" ]; then
   echo "[commit-guard] DISABLE_LOCAL_GUARDS=1 set -> Skipping all validations (NOT RECOMMENDED)."
   exit 0
 fi
