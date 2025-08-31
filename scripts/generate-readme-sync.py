@@ -163,42 +163,59 @@ class ReadmeSyncGenerator:
         if preserved_content.get('categorized_content'):
             categorized_section = preserved_content['categorized_content']
         else:
-            # Categorize shell scripts by function
-            categories = {
-                "Environment Setup Scripts": [],
-                "Python Environment Scripts": [],
-                "Docker Lifecycle Scripts": [],
-                "TypeScript/SDK Scripts": [],
-                "Validation & Quality Scripts": [],
-                "Code Generation Scripts": [],
-                "Development Tools": [],
-                "Utility Scripts": []
-            }
-            
-            # Categorize files based on naming patterns
+            # Categorize shell scripts by function using a configuration-driven approach
+            category_rules = [
+                {
+                    "name": "Python Environment Scripts",
+                    "patterns": ["setup_", "create-", "init-", "launch_", "activate_"],
+                    "extra_condition": lambda name: "python" in name
+                },
+                {
+                    "name": "Environment Setup Scripts",
+                    "patterns": ["setup_", "create-", "init-", "launch_", "activate_"],
+                    "extra_condition": lambda name: any(x in name for x in ["web", "project", "agent", "api", "helper"])
+                },
+                {
+                    "name": "Docker Lifecycle Scripts",
+                    "patterns": ["codex_", "docker"],
+                    "extra_condition": None
+                },
+                {
+                    "name": "TypeScript/SDK Scripts",
+                    "patterns": ["ts_sdk", "questrade", "db_prisma"],
+                    "extra_condition": None
+                },
+                {
+                    "name": "Validation & Quality Scripts",
+                    "patterns": ["check-", "validate-", "verify-", "local-ci", "commit-guard", "install-hooks"],
+                    "extra_condition": None
+                },
+                {
+                    "name": "Code Generation Scripts",
+                    "patterns": ["generate-"],
+                    "extra_condition": None
+                },
+                {
+                    "name": "Development Tools",
+                    "patterns": ["browser-", "monitor", "autonomous-", "make-scripts"],
+                    "extra_condition": None
+                }
+            ]
+            categories = {rule["name"]: [] for rule in category_rules}
+            categories["Utility Scripts"] = []
+
             for file_data in files:
                 if not file_data["name"].endswith('.sh'):
                     continue
-                    
                 name = file_data["name"]
-                if any(x in name for x in ["setup_", "create-", "init-", "launch_", "activate_"]):
-                    if "python" in name:
-                        categories["Python Environment Scripts"].append(file_data)
-                    elif any(x in name for x in ["web", "project", "agent", "api", "helper"]):
-                        categories["Environment Setup Scripts"].append(file_data)
-                    else:
-                        categories["Utility Scripts"].append(file_data)
-                elif any(x in name for x in ["codex_", "docker"]):
-                    categories["Docker Lifecycle Scripts"].append(file_data)
-                elif any(x in name for x in ["ts_sdk", "questrade", "db_prisma"]):
-                    categories["TypeScript/SDK Scripts"].append(file_data)
-                elif any(x in name for x in ["check-", "validate-", "verify-", "local-ci", "commit-guard", "install-hooks"]):
-                    categories["Validation & Quality Scripts"].append(file_data)
-                elif any(x in name for x in ["generate-"]):
-                    categories["Code Generation Scripts"].append(file_data)
-                elif any(x in name for x in ["browser-", "monitor", "autonomous-", "make-scripts"]):
-                    categories["Development Tools"].append(file_data)
-                else:
+                matched = False
+                for rule in category_rules:
+                    if any(pattern in name for pattern in rule["patterns"]):
+                        if rule["extra_condition"] is None or rule["extra_condition"](name):
+                            categories[rule["name"]].append(file_data)
+                            matched = True
+                            break
+                if not matched:
                     categories["Utility Scripts"].append(file_data)
             
             # Generate category sections
