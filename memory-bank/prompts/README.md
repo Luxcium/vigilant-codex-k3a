@@ -19,6 +19,7 @@ Prompt files (`.prompt.md`) are executable templates that:
 - Include variables for customization and reusability
 - Use tools to perform actions like file creation, code generation, or terminal commands
 
+## Available Prompts (35 Files)
 ## Complete File Index
 
 ### **Total Files: 43 prompt files (.md)**
@@ -35,8 +36,8 @@ All prompt files follow the `.prompt.md` naming convention and provide executabl
 
 ### Template Management & AI Framework
 
-- **[template-manager.prompt.md](./template-manager.prompt.md)** — Master template manager for all prompt/instruction file creation, featuring a decision matrix, workflow, and intelligent file management for the entire project.
-- **[ai-template-manager.prompt.md](./ai-template-manager.prompt.md)** — Specialized template manager for generating prompt/instruction files with strict markdown-lint compliance and advanced AI agent collaboration features.
+- **[template-manager.prompt.md](./template-manager.prompt.md)** — Master template manager for prompt/instruction file creation with decision matrix, workflow, scope determination, and naming standards.
+- **[define-prompt-file.prompt.md](./define-prompt-file.prompt.md)** — Lifecycle protocol for authoring, auditing, and maintaining compliant `*.prompt.md` files.
 - **[instruction-generator.prompt.md](./instruction-generator.prompt.md)** — Generate `.instructions.md` files with a focus on structure, standards, and detailed validation templates for coding requirements.
 - **[instruction-creation.prompt.md](./instruction-creation.prompt.md)** — Create `.instructions.md` files using a process-oriented, QA-driven approach, emphasizing validation, error prevention, and best practices.
 - **[instruction-creation-v2.prompt.md](./instruction-creation-v2.prompt.md)** — Enhanced instruction file creation with advanced validation.
@@ -202,7 +203,7 @@ Prompts support these variable types:
 
 ### AI Agent Framework
 
-- **Template Management**: template-manager, ai-template-manager
+- **Template Management**: template-manager, define-prompt-file
 - **Instruction Creation**: instruction-generator, instruction-creation, instruction-creation-v2
 - **State Management**: self-documentation
 
