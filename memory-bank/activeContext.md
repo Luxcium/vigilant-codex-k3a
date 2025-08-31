@@ -1,3 +1,9 @@
+- [2025-08-31T06:53:41+00:00] Minimal remote actors RPC system added
+  **Current State:** Worker-thread pool, JSON protocol, HTTP/TCP transports, configuration, docs, and tests implemented under src/remote-actors.
+  **Last Action:** Added protocol codecs, method registry, worker pool with eval workers, actor dispatch, HTTP/TCP servers, configuration merger, documentation, and unit/integration tests.
+  **Rationale:** Establishes extensible baseline for remote actors framework within project context.
+  **Next Intent:** Add backpressure, error taxonomy, authentication, and typed client SDK.
+  **Meta:** Self-documentation after implementing remote actors MVP.
 - [2025-08-31T06:55:17+00:00] Remote RPC actors baseline
   **Current State:** Minimal RPC system added under src/rpc with worker-thread pool, HTTP/TCP transports, protocol types, config, docs, and tests.
   **Last Action:** Implemented module, added unit and integration tests, updated docs and dependency tracking.
