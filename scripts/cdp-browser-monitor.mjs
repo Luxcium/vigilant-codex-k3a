@@ -16,8 +16,11 @@ const TARGET_URL_PATTERN =
   proc?.env?.CDP_TARGET_PATTERN || 'http://localhost:3000';
 const VERBOSE =
   proc?.env?.CDP_VERBOSE === '1' || proc?.env?.CDP_VERBOSE === 'true';
-const RECONNECT_DELAY = Number(proc?.env?.CDP_RECONNECT_DELAY || 5000);
-const MAX_RETRIES = Number(proc?.env?.CDP_MAX_RETRIES || 10);
+const MAX_RETRIES = (() => {
+  const val = proc?.env?.CDP_MAX_RETRIES;
+  const parsed = parseInt(val, 10);
+  return Number.isFinite(parsed) && !isNaN(parsed) ? parsed : 10;
+})();
 
 class CDPMonitor {
   constructor() {
