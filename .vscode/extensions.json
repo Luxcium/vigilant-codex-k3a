@@ -36,6 +36,14 @@
     "vitest.explorer",
     "ms-python.pytest",
 
+    // Debugging & DevTools
+    "ms-vscode.js-debug",
+    "ms-vscode.js-debug-companion",
+    "msjsdiag.debugger-for-edge",
+    "firefox-devtools.vscode-firefox-debug",
+    "ms-vscode.vscode-edge-devtools",
+    "prisma.prisma",
+
     // Themes & UI
     "pkief.material-icon-theme",
     "luxcium.pop-n-lock-theme-vscode",

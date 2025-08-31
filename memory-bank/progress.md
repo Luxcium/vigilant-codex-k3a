@@ -38,6 +38,54 @@ Impact: Establishes extensible foundation for remote actor dispatch and transpor
 
 Meta: Self-documentation after introducing remote actor system and associated dependency updates.
 
+### [2025-08-31] Prompt management consolidation
+
+Achievement: Streamlined prompt-management system by removing redundant files and enriching remaining templates.
+
+Technical Implementation: Deleted `ai-template-manager.prompt.md`, `make-prompts.prompt.md`, and `prompt-files.prompt.md`; expanded `template-manager.prompt.md` with scope determination and naming standards; rewrote `define-prompt-file.prompt.md` with README synchronization steps.
+
+Impact: Reduces overlap, clarifies responsibilities, and ensures prompt directory and README remain synchronized.
+
+Meta: Self-documentation after consolidating prompt management prompts.
+### [2025-01-01] README Automation Framework Enhanced with Pluralization and Content Preservation
+
+Achievement: Fixed critical issues in the README synchronization automation framework to make it production-ready with proper grammar handling and content preservation.
+
+Technical Implementation: Enhanced `scripts/generate-readme-sync.py` with two major improvements:
+1. **Pluralization Logic**: Added `pluralize()` method that correctly handles singular/plural forms for all file counts, eliminating grammatical errors like "1 JavaScript modules" or "0 archives directory"
+2. **Content Preservation**: Implemented comprehensive content preservation system that reads existing README files and preserves their structure including:
+   - Header sections before "## Complete File Index"
+   - Categorized content sections (AI frameworks, development workflows, etc.)
+   - Existing documentation structure and organization
+
+Process: The automation framework now:
+- Scans directories and accurately counts files by extension
+- Generates grammatically correct pluralized descriptions 
+- Preserves existing README content structure while updating file counts
+- Supports dry-run mode for safe testing
+- Provides actual README file writing (no longer just placeholders)
+
+Impact: Transforms the automation framework from a placeholder system to a fully functional production tool that maintains documentation accuracy while preserving valuable content organization. Eliminates the need for manual README maintenance while ensuring no existing content is lost.
+
+Meta: Addresses feedback from user @Luxcium regarding incomplete automation framework and pluralization inconsistencies.
+
+### [2025-08-31] README Consolidation and Cleanup Emergency Resolution
+
+Achievement: Completed systematic removal of all duplicate README variant files across the repository and established single authoritative README.md per directory.
+
+Technical Implementation: Executed comprehensive cleanup process removing 12 duplicate README variants including:
+- `memory-bank/README.consolidated.md`, `memory-bank/README.sync.md`
+- `memory-bank/chatmodes/README.consolidated.md`, `memory-bank/chatmodes/README.sync.md`
+- `memory-bank/instructions/README.sync.md`
+- `memory-bank/prompts/README.consolidated.md`, `memory-bank/prompts/README.sync.md`
+- `scripts/README.consolidated.md`, `scripts/README.final.md`, `scripts/README.rewrite.md`, `scripts/README.sync.md`, `scripts/README.synced.md`
+
+Process: Used existing `scripts/cleanup_readmes.sh` to backup all variants to timestamped `backup-readmes/` directory before removal. Created authoritative `memory-bank/README.md` consolidating best content from variants. Verified completion using `scripts/check-readme-variants.sh` safeguard script.
+
+Impact: Resolved workspace conflicts caused by duplicate README files. Established clear single-source-of-truth documentation structure. Implemented prevention safeguard to block future duplicates. Added `backup-readmes/` to `.gitignore` to prevent accidental commits.
+
+Meta: Emergency resolution completed per user urgent requirements to eliminate README duplication mess immediately.
+
 ### [2025-08-29] Layer 3 Factory Instructions Complete
 
 Achievement: Created comprehensive Layer 3 factory instruction files for creating and managing instructions, chatmodes, and prompt files with consistent guardrails and validation.

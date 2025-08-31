@@ -1,3 +1,16 @@
+- [2025-08-31T06:57:50+00:00] Prompt management prompts consolidated
+  **Current State:** Redundant prompt-management files removed; `template-manager.prompt.md` now includes scope determination and naming standards; `define-prompt-file.prompt.md` rewritten with README sync guidance.
+  **Last Action:** Deleted `ai-template-manager.prompt.md`, `make-prompts.prompt.md`, and `prompt-files.prompt.md`; updated remaining prompt files and README counts.
+  **Rationale:** Eliminate overlapping prompt workflows and maintain a minimal, clearly scoped set of templates.
+  **Next Intent:** Monitor for future prompt additions and ensure README stays in sync.
+  **Meta:** Self-documentation after consolidating prompt management.
+- [2025-08-31T19:37:23Z] README Consolidation and Cleanup Completed
+  **Current State:** All duplicate README variant files (sync, synced, rewrite, final, consolidated) have been systematically removed from the workspace. Each directory now has a single authoritative README.md file. Created `memory-bank/README.md` as consolidated authoritative reference.
+  **Last Action:** Executed comprehensive cleanup removing 12 duplicate README variants across scripts/ and memory-bank/ directories. Backed up all variants to `backup-readmes/` with timestamp. Verified safeguard script `check-readme-variants.sh` confirms no duplicates remain.
+  **Rationale:** User reported urgent workspace issues due to README duplication mess. Required immediate resolution to prevent further conflicts and confusion across project documentation.
+  **Next Intent:** Monitor README maintenance using existing safeguard script. Follow memory bank documentation standards for all future README updates.
+  **Meta:** Self-Documentation Protocol entry capturing emergency README consolidation to resolve workspace conflicts per user requirements.
+
 - [2025-08-31T06:53:41+00:00] Minimal remote actors RPC system added
   **Current State:** Worker-thread pool, JSON protocol, HTTP/TCP transports, configuration, docs, and tests implemented under src/remote-actors.
   **Last Action:** Added protocol codecs, method registry, worker pool with eval workers, actor dispatch, HTTP/TCP servers, configuration merger, documentation, and unit/integration tests.

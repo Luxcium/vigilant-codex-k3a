@@ -5,10 +5,13 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev --hostname 0.0.0.0",
+    "dev:debug": "NODE_OPTIONS='--inspect' next dev --hostname 0.0.0.0",
+    "dev:debug-brk": "NODE_OPTIONS='--inspect-brk' next dev --hostname 0.0.0.0",
     "format": "prettier --write \"src/**/*.{js,ts,tsx,jsx}\"",
     "lint": "next lint",
     "preview": "pnpm run build && pnpm run start",
     "start": "next start --hostname 0.0.0.0",
+    "start:debug": "NODE_OPTIONS='--inspect' next start --hostname 0.0.0.0",
     "test": "echo 'Tests placeholder - will implement later' && exit 0",
     "test:watch": "echo 'Test watch placeholder - will implement later' && exit 0"
   },
