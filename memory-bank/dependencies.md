@@ -1,5 +1,7 @@
 - **example.ts** → **.keys/example-sdk-demo.json** (Why: Playground output must include HTTP status codes for robust error reporting)
   - Impact: Enables agentic error handling, debugging, and recursive output verification
+- **ts-node** → **RpcWorkerPool** (Why: Enable TypeScript worker execution for RPC worker threads)
+  - Impact: Allows worker pool to run TypeScript command modules without pre-compilation
 
 # The `dependencies.md` Memory Bank File
 
