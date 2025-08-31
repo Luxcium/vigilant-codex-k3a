@@ -20,6 +20,16 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-08-31] Prompt authoring workflow consolidated
+
+Achievement: Adopted `define-prompt-file.prompt.md` as the single canonical prompt-authoring workflow and archived superseded guides.
+
+Technical Implementation: Moved `make-prompts.prompt.md` and `prompt-files.prompt.md` to `memory-bank/prompts/archives/`, updated references in documentation and instructions, and normalized the surviving prompt to repository standards.
+
+Impact: Removes conflicting guidance and establishes a unified lifecycle for `.prompt.md` files, improving maintainability and cross-file consistency.
+
+Meta: Self-documentation after consolidating prompt authoring.
+
 ### [2025-08-29] Layer 3 Factory Instructions Complete
 
 Achievement: Created comprehensive Layer 3 factory instruction files for creating and managing instructions, chatmodes, and prompt files with consistent guardrails and validation.

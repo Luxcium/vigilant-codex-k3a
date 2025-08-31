@@ -1,3 +1,10 @@
+- [2025-08-31T06:56:22+00:00] Canonical prompt workflow selected
+  **Current State:** `define-prompt-file.prompt.md` adopted as sole prompt-authoring workflow; `make-prompts.prompt.md` and `prompt-files.prompt.md` archived.
+  **Last Action:** Archived superseded prompt files and updated references.
+  **Rationale:** Consolidate prompt authoring to a single protocol and remove outdated guides.
+  **Next Intent:** Monitor future prompts for compliance.
+  **Meta:** Self-documentation after consolidating prompt authoring workflow.
+
 - [2025-08-23T00:00:00Z] Tasks-First Policy Adopted for VS Code
   **Current State:** `.github/copilot-instructions.md` now codifies a Tasks-First Execution Policy. `.vscode/tasks.json` includes a stable `hello:world` task; ad-hoc duplicates removed.
   **Last Action:** Added Tasks-First section instructing agents to use `run_task`/`get_task_output` first and `create_and_run_task` when needed. Normalized tasks file to avoid confusion and ensure discoverability.

@@ -2,9 +2,12 @@
 description: Author and run *.prompt.md cards under memory-bank/prompts/ with our strict format and guardrails.
 ---
 
-<!-- memory-bank/prompts/prompt-files-guide.prompt.md -->
+<!-- memory-bank/prompts/archives/prompt-files.prompt.md -->
 
 # Prompt Files Guide
+
+> [!NOTE]
+> Archived on 2025-08-31; replaced by [../define-prompt-file.prompt.md](../define-prompt-file.prompt.md).
 
 ## Slash Command: /prompt-files-guide - Author and run *.prompt.md cards
 

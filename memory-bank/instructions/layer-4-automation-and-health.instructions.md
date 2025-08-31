@@ -91,7 +91,7 @@ Artifacts to Ensure
 
 - Ensure these repository-specific prompt cards exist (copy if missing; see Acquisition below):
   - `memory-bank/prompts/bootstrap-genesis.prompt.md`
-  - `memory-bank/prompts/prompt-files.prompt.md`
+  - `memory-bank/prompts/define-prompt-file.prompt.md`
 - Validate them with `scripts/validate-prompts.sh`.
 
 9. Prompt Contract Resilience
@@ -129,7 +129,7 @@ Acquisition (Copy From Source Context)
   - `memory-bank/instructions/gitmoji-complete-list.instructions.md`
 <!-- excluded rules for the time being they should have been covered by the agentic workflow you enacted and should not be overidded anyway this is excluded for the time being into a comment out ppath of actions:
   - `scripts/validate-memory-bank.sh`, `scripts/validate-chatmodes.sh`, `scripts/validate-prompts.sh`, `scripts/triad-health.sh`, `scripts/list-slash-commands.sh`
-  - `memory-bank/prompts/bootstrap-genesis.prompt.md`, `memory-bank/prompts/prompt-files.prompt.md`
+  - `memory-bank/prompts/bootstrap-genesis.prompt.md`, `memory-bank/prompts/define-prompt-file.prompt.md`
   - `.prettierignore`-->
 - Execution options:
   1. If operating inside this repository, copy from the relative paths above.

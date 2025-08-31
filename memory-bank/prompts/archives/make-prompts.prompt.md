@@ -3,9 +3,12 @@ description: "Guidance for creating .prompt.md files in the VS Code project."
 tools: ['codebase', 'usages', 'fetch', 'problems', 'editFiles', 'runCommands', 'todos', 'runInTerminal', 'getTerminalOutput']
 ---
 
-<!-- memory-bank/prompts/make-prompts.prompt.md -->
+<!-- memory-bank/prompts/archives/make-prompts.prompt.md -->
 
-# Project Directives: 📜 VSCODE *.prompt.md Scribe 🖋️ 
+# Project Directives: 📜 VSCODE *.prompt.md Scribe 🖋️
+
+> [!NOTE]
+> Archived on 2025-08-31; replaced by [../define-prompt-file.prompt.md](../define-prompt-file.prompt.md).
 
 Directives for Vscode Copilot's `*.prompt.md` This governs how `.prompt.md` files are authored, reviewed, and delivered for consumption in vscode. Since vscode leverages gpt-5 as the new engine behind copilot you have been given a prompting cookbook style guidance which can help you when you are drafting such a prompt file as a general rule of thumb, when it is relevant and can be extended.
 

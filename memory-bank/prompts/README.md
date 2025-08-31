@@ -19,7 +19,7 @@ Prompt files (`.prompt.md`) are executable templates that:
 - Include variables for customization and reusability
 - Use tools to perform actions like file creation, code generation, or terminal commands
 
-## Available Prompts (38 Files)
+## Available Prompts (40 Files)
 
 > **Note:** This list must be kept in sync with the actual prompt files in this directory. Add new prompts and update descriptions as needed.
 
@@ -30,7 +30,7 @@ Prompt files (`.prompt.md`) are executable templates that:
 - **[instruction-generator.prompt.md](./instruction-generator.prompt.md)** — Generate `.instructions.md` files with a focus on structure, standards, and detailed validation templates for coding requirements.
 - **[instruction-creation.prompt.md](./instruction-creation.prompt.md)** — Create `.instructions.md` files using a process-oriented, QA-driven approach, emphasizing validation, error prevention, and best practices.
 - **[instruction-creation-v2.prompt.md](./instruction-creation-v2.prompt.md)** — Enhanced instruction file creation with advanced validation.
-- **[make-prompts.prompt.md](./make-prompts.prompt.md)** — Project directives and guardrails for creating, validating, and maintaining `*.prompt.md` files and keeping README in sync.
+- **[define-prompt-file.prompt.md](./define-prompt-file.prompt.md)** — Protocol to author, audit, and maintain prompt cards.
 
 ### Environment & Infrastructure
 
