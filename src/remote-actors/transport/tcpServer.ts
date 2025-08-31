@@ -16,13 +16,21 @@ export function createTcpServer(actor: Actor, config: TcpConfig) {
         const line = buffer.slice(0, index);
         buffer = buffer.slice(index + 1);
         if (!line.trim()) continue;
+        let req;
         try {
-          const req = decodeRequest(line);
+          req = decodeRequest(line);
+        } catch (err) {
+          socket.write(
+            encodeResponse({ id: 0, error: { message: (err as Error).message } }) + '\n'
+          );
+          continue;
+        }
+        try {
           const result = await actor.dispatch(req.method, req.params);
           socket.write(encodeResponse({ id: req.id, result }) + '\n');
         } catch (err) {
           socket.write(
-            encodeResponse({ id: 0, error: { message: (err as Error).message } }) + '\n'
+            encodeResponse({ id: req.id, error: { message: (err as Error).message } }) + '\n'
           );
         }
       }
