@@ -25,7 +25,7 @@ This file tracks what works, what remains to be built, current status, and known
 Achievement: Created comprehensive Layer 3 factory instruction files for creating and managing instructions, chatmodes, and prompt files with consistent guardrails and validation.
 
 Technical Implementation: Added three new factory instruction files:
-- `layer-3a-custom-instructions-factory.instructions.md` — Canonical authoring rules for `*.instructions.md` files with atomic rules, no external links, and relative linking patterns.
+- `layer-3a-custom-instructions-factory.instructions.md` — Canonical authoring rules for `*.instructions.md` files with atomic rules and link guidance (prefer relative links; allow authoritative external links).
 - `layer-3b-chatmodes-factory.instructions.md` — Rules for `*.chatmode.md` files with strict model/tools constraints and minimal content guidelines.
 - `layer-3c-prompt-files-factory.instructions.md` — Rules for `*.prompt.md` files with heading contracts, variable definitions, and output format requirements.
 

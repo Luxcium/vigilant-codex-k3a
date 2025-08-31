@@ -207,6 +207,30 @@ pip install -r python/requirements.txt
 ./scripts/codex_stop.sh
 ```
 
+### Non-Blocking Dev Sessions (Important)
+
+- Use the VS Code task "Dev: Web + Monitor (bg)" to start both the Next.js dev server and the browser error monitor in the background without blocking your terminal.
+- Each sub-task is configured with `isBackground: true` and a problem matcher so VS Code knows when they are "ready". This prevents long-running processes from hanging the UI.
+- If you need a one-off error snapshot, run the task "Browser Error Check (single)" instead of the continuous monitor.
+
+Manual alternatives:
+
+```bash
+# Start Next.js dev server in the background
+pnpm --dir web dev >/tmp/next-dev.log 2>&1 &
+
+# Start the browser error monitor in the background
+./scripts/browser-error-monitor.sh --monitor >/tmp/browser-monitor.log 2>&1 &
+
+# Stop background jobs (example)
+pkill -f "next dev" || true
+pkill -f "browser-error-monitor.sh --monitor" || true
+```
+
+Notes:
+- Never run long-lived servers directly in a foreground terminal during automated sessions; prefer background tasks or VS Code Tasks with `isBackground`.
+- For compound runs, use the task "Dev: Web + Monitor (bg)" which runs both in parallel and returns control immediately.
+
 ### Volume-Based Development
 
 These scripts use **volume mounting instead of COPY operations** for:

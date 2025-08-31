@@ -39,3 +39,4 @@ lib/
 .codex/log/**
 history.jsonl
 
+.codex/auth.json

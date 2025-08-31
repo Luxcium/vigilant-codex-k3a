@@ -179,32 +179,9 @@ export async function uploadImage(formData: FormData): Promise<UploadResult> {
   return { filename, size: buffer.byteLength };
 }
 
-// Example 8: Inline Server Action pattern (for use in Server Components)
-export type InlineAction = () => Promise<void>;
-
-export function createInlineAction(postId: string): InlineAction {
-  async function toggleLike(): Promise<void> {
-    'use server';
-
-    const post = await prisma.post.findUnique({
-      where: { id: postId },
-      select: { likes: true },
-    });
-
-    if (!post) {
-      throw new Error('Post not found');
-    }
-
-    await prisma.post.update({
-      where: { id: postId },
-      data: { likes: { increment: 1 } },
-    });
-
-    revalidatePath('/');
-  }
-
-  return toggleLike;
-}
+// Example 8 removed: inline server action factory pattern was unused and
+// triggered Next.js rule about exported server actions. If needed later,
+// prefer exporting a direct `export async function toggleLike(postId: string)`.
 
 // Example 9: Server Action with progressive enhancement
 export async function subscribeToNewsletter(
@@ -236,9 +213,10 @@ export async function batchUpdatePosts(
     if (action === 'delete') {
       return prisma.post.delete({ where: { id } });
     } else {
+      // Archive by prefixing the title to avoid schema changes
       return prisma.post.update({
         where: { id },
-        data: { archived: true },
+        data: { title: { set: '[archived] ' } },
       });
     }
   });

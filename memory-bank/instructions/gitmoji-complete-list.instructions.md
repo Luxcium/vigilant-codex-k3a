@@ -1,6 +1,5 @@
 ---
 description: 'Reference list of all gitmoji codes.'
-tools: []
 ---
 # Complete Gitmoji List
 
@@ -93,9 +92,4 @@ Choose the most appropriate gitmoji based on:
 
 ## References
 
-- [conventional-commits-must-be-used](../instructions/conventional-commits-must-be-used.instructions.md)
-
-## Verification
-
-- `markdownlint --strict` on updated Markdown files
-- `scripts/verify-all.sh`
+- [conventional-commits-must-be-used](./conventional-commits-must-be-used.instructions.md)
