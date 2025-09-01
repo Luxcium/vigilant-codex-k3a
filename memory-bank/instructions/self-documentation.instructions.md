@@ -48,6 +48,12 @@ Additionally, you must log your actions and findings in memory bank as per self-
     - Must be referenced when writing tests or working on QA tasks
     - Critical for maintaining code quality and reliability
 
+### Historical Planning Documents
+
+- [`archives/`](../../memory-bank/archives/) - Historical planning and upgrade documentation
+  - Contains carrier-grade upgrade documentation and consolidation plans
+  - Reference for understanding past project improvements and decisions
+
 - [protocol to follow](../prompts/self-documentation.prompt.md)
   - Self-Documentation Execution
   - Context

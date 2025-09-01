@@ -29,7 +29,15 @@
 
 ### archives/
 
-Time-capsuled snapshots of major context files for historical reference.
+Time-capsuled snapshots of major context files for historical reference and planning documents.
+
+**Historical Planning Documents:**
+
+- `CONSOLIDATION_PLAN.md` — README consolidation strategy and implementation plan
+- `CARRIER_GRADE_UPGRADE.md` — Carrier-grade script improvements documentation
+- `CARRIER_GRADE_UPGRADE_FIXED.md` — Final version of carrier-grade upgrades
+
+**Legacy Context Files:** Time-stamped snapshots of activeContext, progress, and other root files for historical reference.
 
 ### chatmodes/
 
