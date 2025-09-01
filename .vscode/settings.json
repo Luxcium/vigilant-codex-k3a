@@ -2414,6 +2414,7 @@
     "**/$KNOWN_TOOLS$/**",
     "${workspaceFolder}/web/**"
   ],
-  "debug.onTaskErrors": "showErrors"
+  "debug.onTaskErrors": "showErrors",
+  "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true
   // #endregion: Last Section                                        !
 }
