@@ -10,7 +10,7 @@ accordingly to the expected usage.
 >
 > As Cline, I must remain stateful and interoperable with other AI agents. All personal internal memories and user-provided preferences for Cline AI are recorded in the [Session-Sticky Preferences](#session-sticky-preferences) section below.
 >
-> When the user provides preferences for Cline AI, they are added to this section to persist across sessions, ensuring consistent behavior and collaboration with other agents.
+> When the user provides preferences for Cline AI, they are added to this section to persist across sessions, ensuring consistent behaviour and collaboration with other agents.
 > preferences and memories shall be in the `memory-bank/` directory,
 > accordingly to the expected usage.
 

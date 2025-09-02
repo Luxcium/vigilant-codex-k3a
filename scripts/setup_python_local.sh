@@ -154,7 +154,7 @@ deactivate
 ## Development Workflow
 
 1. **Activate environment:** \`source .venv/bin/activate\`
-2. **Edit code** using your favorite editor/IDE
+2. **Edit code** using your favourite editor/IDE
 3. **Run/test** your code directly
 4. **Install new packages:** \`pip install package_name\`
 5. **Update requirements:** \`pip freeze > requirements.txt\`

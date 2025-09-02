@@ -81,7 +81,7 @@ This ensures both your local editor and any AI-agents relying on front-matter pa
 
 ## Codex and Codex CLI Automation Rules
 
-The following rules govern Codex CLI behavior and are to be
+The following rules govern Codex CLI behaviour and are to be
 interpreted as strict instructions by the AI agent:
 
 - Accept prompt input; interpret instructions with zero ambiguity.
@@ -277,7 +277,7 @@ verification scripts passing.
   Code, drawing its primary guidance from instruction files housed in
   the `.clinerules/` directory. Focused on code and documentation
   generation, as well as workflow automation, Cline AI learns and
-  refines its behavior by persistently referencing and updating its
+  refines its behaviour by persistently referencing and updating its
   own local instruction sets. It is explicitly scoped to tasks outside
   of `AGENTS.md`, thereby ensuring that its custom rules evolve
   independently and do not interfere with the core agent

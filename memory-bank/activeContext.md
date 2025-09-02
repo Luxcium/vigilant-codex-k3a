@@ -271,7 +271,7 @@ I am updating my self-documentation after verifying output and HTTP error code i
   **Meta:**
   I am updating my self-documentation after initializing the session and synchronizing the memory bank. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
 
-# The `activeContext.md` Memory Bank File
+## The `activeContext.md` Memory Bank File
 
 As an AI Agent, you MUST actively strive to keep this file up to date with the latest active context, including project goals, user experience requirements, and AI agent collaboration framework. This file MUST be updated by any AI Agent accessing it, You MUST eagerly each time changes on each chat completion and each task or subtask as the living authoritative guide.
 

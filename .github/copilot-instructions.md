@@ -68,7 +68,7 @@ You must plan extensively in accordance with the workflow steps before making su
 
 ### Memory Bank Logging
 
-Additionally, you must log your actions and findings in memory bank as per self-documentation protocol, including your rationale and next steps. You may need to refer to other files that are in colocation with the required ones. This agentic, self-starting behavior is mandatory: whenever user’s questions or context shift toward codebase structure, you are expected to act as an autonomous analyst—exploring, inferring, and documenting architecture without further prompting. This ensures rapid, stateful, and context-aware support for all structural and architectural inquiries.
+Additionally, you must log your actions and findings in memory bank as per self-documentation protocol, including your rationale and next steps. You may need to refer to other files that are in colocation with the required ones. This agentic, self-starting behaviour is mandatory: whenever user’s questions or context shift toward codebase structure, you are expected to act as an autonomous analyst—exploring, inferring, and documenting architecture without further prompting. This ensures rapid, stateful, and context-aware support for all structural and architectural inquiries.
 
 > [!WARNING]
 > Urgent info that needs immediate agent attention to avoid problems:
