@@ -12,17 +12,6 @@
 ## =============================================================================
 set -euo pipefail
 
-#==============================================================================
-# Script Name: verify-all.sh
-# Aim: Run comprehensive validation suite for the entire repository
-# Purpose: Consolidate all validation tasks into a single entry point with selective checking
-# Decision Rationale: Combines 5 separate validation scripts to reduce redundancy and provide unified interface
-# Usage: ./verify-all.sh [--check dependencies|markdown|instructions|prompts|tests] [--analyze tests]
-# Dependencies: markdownlint, git, python (optional), docker (optional)
-# Last Updated: 2025-07-23 by GitHub Copilot
-# References: .vscode/tasks.json validation tasks, memory-bank validation protocols
-#==============================================================================
-
 # Script directory and project root
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"

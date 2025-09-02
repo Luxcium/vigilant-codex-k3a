@@ -10,7 +10,7 @@ accordingly to the expected usage.
 >
 > As Cline, I must remain stateful and interoperable with other AI agents. All personal internal memories and user-provided preferences for Cline AI are recorded in the [Session-Sticky Preferences](#session-sticky-preferences) section below.
 >
-> When the user provides preferences for Cline AI, they are added to this section to persist across sessions, ensuring consistent behavior and collaboration with other agents.
+> When the user provides preferences for Cline AI, they are added to this section to persist across sessions, ensuring consistent behaviour and collaboration with other agents.
 > preferences and memories shall be in the `memory-bank/` directory,
 > accordingly to the expected usage.
 
@@ -94,7 +94,7 @@ All Memory Bank files MUST follow the official Cline Memory Bank structure with 
 
 - Current context must be separated from historical logs
 - All files must include Dependencies and Relationships section
-- Historical entries must be chronologically organized in archive sections
+- Historical entries must be chronologically organised in archive sections
 - Cross-file references must be maintained accurately
 - Memory Bank protocol compliance is NOT optional - it's essential for AI agent functionality
 
@@ -143,7 +143,7 @@ All Memory Bank files MUST follow the official Cline Memory Bank structure with 
 
 #### Additional Context
 
-Create additional files/folders within memory-bank/ when they help organize:
+Create additional files/folders within memory-bank/ when they help organise:
 
 - Complex feature documentation
 - Integration specifications
@@ -241,7 +241,7 @@ To add or update preferences:
 use their own instruction files to manage preferences. -->
 
 **Cline AI**: Cline AI uses files housed in the `.clinerules/`
-directory to organize automatically their operational preferences and
+directory to organise automatically their operational preferences and
 instructions.
 
 **VS Code Copilot Chat**: VS Code Copilot Chat uses

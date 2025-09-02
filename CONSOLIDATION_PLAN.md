@@ -1,4 +1,5 @@
 
+# Consolidation Plan
 
 - `scripts/README.md` (original, has lint errors)
 - `scripts/README.sync.md`

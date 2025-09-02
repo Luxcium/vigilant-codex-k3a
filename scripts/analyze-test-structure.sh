@@ -1,6 +1,6 @@
 ## =============================================================================
 #? Script Name: analyze-test-structure.sh
-#? Aim: Analyze and organize test structure for 1:1 mapping with source code
+#? Aim: Analyse and organise test structure for 1:1 mapping with source code
 #? Purpose: Ensure comprehensive test coverage and create missing test directories
 #? Decision Rationale: Provides a structured approach to test creation and validation
 #? Usage: ./analyze-test-structure.sh

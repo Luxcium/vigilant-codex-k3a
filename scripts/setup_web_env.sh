@@ -22,7 +22,7 @@ WEB_DIR="$PROJECT_ROOT/web"
 
 if [ ! -f "$WEB_DIR/package.json" ]; then
   log "Creating Next.js project in $WEB_DIR"
-  CI=1 npx create-next-app@latest "$WEB_DIR" --typescript --eslint --use-npm --skip-install --import-alias "@/*" --src-dir
+  CI=1 npx create-next-app@latest "$WEB_DIR" --typescript --eslint --use-pnpm --skip-install --import-alias "@/*" --src-dir
   log "Next.js project created"
 else
   log "Next.js project already exists in $WEB_DIR"

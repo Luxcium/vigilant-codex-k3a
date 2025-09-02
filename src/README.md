@@ -1,12 +1,14 @@
+# Questrade API SDK
+
 ## Questrade API Reference Links
 
-### **OVERVIEW**
+### OVERVIEW
 
   - [GETTING STARTED](https://www.questrade.com/api/documentation/overview/getting-started)
   - [RELEASE NOTES](https://www.questrade.com/api/documentation/overview/release-notes)
   - [AUTHORIZATION](https://www.questrade.com/api/documentation/overview/authorization)
   - [STREAMING](https://www.questrade.com/api/documentation/overview/streaming)
-  - [PRICE LIMITING](https://www.questrade.com/api/documentation/overview/rate-limiting)
+  - [RATE LIMITING](https://www.questrade.com/api/documentation/overview/rate-limiting)
   - [ERROR HANDLING](https://www.questrade.com/api/documentation/overview/error-handling)
   - [SECURITY](https://www.questrade.com/api/documentation/overview/security)
 
@@ -42,19 +44,19 @@
 
 ### API Welcome Page
 
-- [In the tr](https://www.questrade.com/api/documentation/api-welcome-page)
+- [API Welcome Page](https://www.questrade.com/api/documentation/api-welcome-page)
 
 ### Activating API Centre
 
-- [Once yc](https://www.questrade.com/api/documentation/activating-api-centre)
+- [Activating API Centre](https://www.questrade.com/api/documentation/activating-api-centre)
 
 ### API Access Agreement
 
-- [The API proce](https://www.questrade.com/api/documentation/api-access-agreement)
+- [API Access Agreement](https://www.questrade.com/api/documentation/api-access-agreement)
 
 ### Creating Your First Personal App
 
 #### Manual Auth
 
-- [In the A](https://www.questrade.com/api/documentation/creating-app/manual-auth-step1)
-- [In the cr brief de](https://www.questrade.com/api/documentation/creating-app/manual-auth-step2)
+- [Manual Authentication Step 1](https://www.questrade.com/api/documentation/creating-app/manual-auth-step1)
+- [Manual Authentication Step 2 - Creating Your App](https://www.questrade.com/api/documentation/creating-app/manual-auth-step2)

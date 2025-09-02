@@ -22,7 +22,7 @@ This file MUST be updated by any AI Agent accessing it, You MUST eagerly each ti
 
 ## Purpose
 
-This file explains the underlying motivation, intended outcomes, and user experience goals for the Vigilant Codex K3a polyvalent AI development workspace. It provides context for why the project exists and how it should function, establishing the user-centered perspective that guides all development decisions.
+This file explains the underlying motivation, intended outcomes, and user experience goals for the Vigilant Codex K3a polyvalent AI development workspace. It provides context for why the project exists and how it should function, establishing the user-centred perspective that guides all development decisions.
 
 ## Structure
 
