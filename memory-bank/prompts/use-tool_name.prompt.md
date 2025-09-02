@@ -4,7 +4,7 @@ tools: ['usages', 'changes', 'extensions', 'fetch', 'githubRepo', 'vscodeAPI', '
 ---
 # Use this specific tool now
 
-Use this tool to think deeply about the user's request and organize your thoughts. This tool helps improve response quality by allowing the model to consider the request carefully, brainstorm solutions, and plan complex tasks. It's particularly useful for:
+Use this tool to think deeply about the user's request and organise your thoughts. This tool helps improve response quality by allowing the model to consider the request carefully, brainstorm solutions, and plan complex tasks. It's particularly useful for:
 
 Exploring repository issues and brainstorming bug fixes
 Analyzing test results and planning fixes

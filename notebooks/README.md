@@ -6,7 +6,7 @@ This directory contains all Jupyter notebooks for the project.
 
 ## Notebook Index & References
 
-- **[openai/](./openai/)**: All OpenAI API prototyping and integration notebooks are now organized in this subfolder.
+- **[openai/](./openai/)**: All OpenAI API prototyping and integration notebooks are now organised in this subfolder.
   - **[openai_api_prototyping.ipynb](./openai/openai_api_prototyping.ipynb)**: Stepwise, well-documented OpenAI API prototyping using `.env` for API key management. Created as part of a guided session—see [memory-bank/activeContext.md](../memory-bank/activeContext.md) for chat context. Follows project standards for reproducibility and documentation.
 
 ---

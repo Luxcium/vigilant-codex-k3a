@@ -94,7 +94,7 @@ All Memory Bank files MUST follow the official Cline Memory Bank structure with 
 
 - Current context must be separated from historical logs
 - All files must include Dependencies and Relationships section
-- Historical entries must be chronologically organized in archive sections
+- Historical entries must be chronologically organised in archive sections
 - Cross-file references must be maintained accurately
 - Memory Bank protocol compliance is NOT optional - it's essential for AI agent functionality
 
@@ -143,7 +143,7 @@ All Memory Bank files MUST follow the official Cline Memory Bank structure with 
 
 #### Additional Context
 
-Create additional files/folders within memory-bank/ when they help organize:
+Create additional files/folders within memory-bank/ when they help organise:
 
 - Complex feature documentation
 - Integration specifications
@@ -241,7 +241,7 @@ To add or update preferences:
 use their own instruction files to manage preferences. -->
 
 **Cline AI**: Cline AI uses files housed in the `.clinerules/`
-directory to organize automatically their operational preferences and
+directory to organise automatically their operational preferences and
 instructions.
 
 **VS Code Copilot Chat**: VS Code Copilot Chat uses

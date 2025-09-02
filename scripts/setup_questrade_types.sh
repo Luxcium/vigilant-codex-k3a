@@ -2,7 +2,7 @@
 #? Script Name: setup_questrade_types.sh
 #? Aim: Scaffold Questrade TypeScript type definition modules
 #? Purpose: Create comprehensive type structure for enums, accounts, orders, markets, symbols and API responses
-#? Decision Rationale: Provides type safety foundation for Questrade SDK with organized module separation
+#? Decision Rationale: Provides type safety foundation for Questrade SDK with organised module separation
 #? Usage: ./setup_questrade_types.sh
 #? Dependencies: bash, mkdir commands, PROJECT_ROOT environment
 #? Last Updated: 2025-07-24 by GitHub Copilot
@@ -16,7 +16,7 @@
 ## =============================================================================
 #? Script Name: setup_questrade_types.sh
 #? Aim: Scaffold Questrade TypeScript type module structure
-#? Purpose: Create organized type definition files for Questrade API integration including enums, accounts, orders, markets, symbols, and responses
+#? Purpose: Create organised type definition files for Questrade API integration including enums, accounts, orders, markets, symbols, and responses
 #? Decision Rationale: Provides consistent TypeScript type definitions following API schema standards for type-safe development
 #? Usage: ./setup_questrade_types.sh
 #? Dependencies: bash, mkdir commands, PROJECT_ROOT environment
