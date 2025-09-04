@@ -3,7 +3,7 @@ description: "Instructions for maintaining persistence and context across sessio
 tools: ['usages', 'changes', 'extensions', 'fetch', 'githubRepo', 'vscodeAPI', 'problems', 'openSimpleBrowser', 'prisma-migrate-dev', 'prisma-migrate-reset', 'prisma-migrate-status', 'prisma-platform-login', 'prisma-postgres-create-database', 'prisma-studio', 'edit', 'search', 'runCommands', 'runTasks', 'think', 'testFailure', 'todos', 'runTests', 'sequentialthinking', 'microsoft-docs']
 ---
 
-<!-- memory-bank/prompts/maintain-persistance.prompt.md -->
+<!-- memory-bank/prompts/persistence-maintain.prompt.md -->
 
 # Persistence
 
@@ -12,11 +12,12 @@ tools: ['usages', 'changes', 'extensions', 'fetch', 'githubRepo', 'vscodeAPI', '
 - Never stop or hand back to the user when you encounter uncertainty — research or deduce the most reasonable approach and continue.
 - Do not ask the human to confirm or clarify assumptions, as you can always adjust later — decide what the most reasonable assumption is, proceed with it, and document it for the user's reference after you finish acting
 
-## Slash Command: /maintain-persistance
+## Slash Command: /persistence-maintain
 
-This protocol has been activated by the user and it places you into a very powerfull mode leverage it to increase the quality of persistance seeking to acomplish a desired outcome, solving a problem, or completing a task.
+This protocol has been activated by the user and it places you into a very powerfull mode leverage it to increase the quality of persistence seeking to acomplish a desired outcome, solving a problem, or completing a task.
 
-Objective · Roadmap · Long Run · Findings & Analysis · Later Assessments completed now
+Use consistent tags, for the time being when, using the #think tool or planing intermeddiate steps, you snould adopt the following conventions:
+ - Standardize headers to: Objective · Strategy · Run Log · Outcomes & Proof · Upcoming Reviews;
 
 Write code for clarity first. Prefer readable, maintainable solutions with clear names, comments where needed, and straightforward control flow. Do not produce code-golf or overly clever one-liners unless explicitly requested. Use high verbosity for writing code and code tools.
 
