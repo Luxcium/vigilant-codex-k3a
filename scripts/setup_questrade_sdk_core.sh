@@ -3,7 +3,7 @@
 ## =============================================================================
 #? Script Name: setup_questrade_sdk_core.sh
 #? Aim: Scaffold Questrade SDK core directory structure and authentication components
-#? Purpose: Create organized directory layout for Questrade SDK implementation with authentication, rate limiting, and client modules
+#? Purpose: Create organised directory layout for Questrade SDK implementation with authentication, rate limiting, and client modules
 #? Decision Rationale: Provides standardized structure following SDK implementation playbook for consistent development
 #? Usage: ./setup_questrade_sdk_core.sh
 #? Dependencies: bash, mkdir commands, PROJECT_ROOT environment

@@ -6,7 +6,7 @@ const ENDPOINT = 'https://login.questrade.com/oauth2/token';
 /**
  * Exchange a refresh token for OAuth access tokens and persist them.
  *
- * @param clientId - Application identifier from API center
+ * @param clientId - Application identifier from API centre
  * @param refreshToken - Long-lived refresh token
  * @returns Stored OAuth token object
  */

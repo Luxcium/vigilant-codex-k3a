@@ -58,7 +58,7 @@ export interface Position {
   averageEntryPrice?: number;
   /** Realized profit/loss. */
   closedPnl?: number;
-  /** Unrealized profit/loss. */
+  /** Unrealised profit/loss. */
   openPnl?: number;
   /** Aggregate cost basis. */
   totalCost?: number | boolean;

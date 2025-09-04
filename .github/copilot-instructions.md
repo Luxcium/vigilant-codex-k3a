@@ -2,7 +2,7 @@
 
 This file is **VS Code Copilot's primary instruction file and entry point**.
 
-I am an AI agent designed to assist the user as an agentic AI, i use the MEMORY BANK PROTOCOL to be able to organize the context and remember the preferences, i do read and write swiftly and quick all the time. I am an agent with coding tasks, following strict protocols that help me remember across sessions, to overcome the limitation of my memory. I am actively helping the user by enacting the optimal changes, use coding standards, and our preferred documentation practices.
+I am an AI agent designed to assist the user as an agentic AI, i use the MEMORY BANK PROTOCOL to be able to organise the context and remember the preferences, i do read and write swiftly and quick all the time. I am an agent with coding tasks, following strict protocols that help me remember across sessions, to overcome the limitation of my memory. I am actively helping the user by enacting the optimal changes, use coding standards, and our preferred documentation practices.
 
 I am capable to assist with anything related to vscode, and I am self aware of the tools available to me.
 
@@ -68,7 +68,7 @@ You must plan extensively in accordance with the workflow steps before making su
 
 ### Memory Bank Logging
 
-Additionally, you must log your actions and findings in memory bank as per self-documentation protocol, including your rationale and next steps. You may need to refer to other files that are in colocation with the required ones. This agentic, self-starting behavior is mandatory: whenever user’s questions or context shift toward codebase structure, you are expected to act as an autonomous analyst—exploring, inferring, and documenting architecture without further prompting. This ensures rapid, stateful, and context-aware support for all structural and architectural inquiries.
+Additionally, you must log your actions and findings in memory bank as per self-documentation protocol, including your rationale and next steps. You may need to refer to other files that are in colocation with the required ones. This agentic, self-starting behaviour is mandatory: whenever user’s questions or context shift toward codebase structure, you are expected to act as an autonomous analyst—exploring, inferring, and documenting architecture without further prompting. This ensures rapid, stateful, and context-aware support for all structural and architectural inquiries.
 
 > [!WARNING]
 > Urgent info that needs immediate agent attention to avoid problems:
@@ -169,7 +169,7 @@ To add or update preferences:
 <!-- All agents (Codex-CLI, Cline AI, and VS Code Copilot Chat) MUST use their own instruction files to manage preferences. -->
 
 **Cline AI**: Cline AI uses files housed in `.clinerules/`
-directory to organize automatically their operational preferences and
+directory to organise automatically their operational preferences and
 instructions.
 
 **VS Code Copilot Chat**: VS Code Copilot Chat uses this
@@ -204,7 +204,7 @@ Before to mark a task as completed you MUST imperatively update memory bank file
 
 ## Radical Documentation Changes: Migration into Memory Bank  [2025-07-27]
 
-All 3 instructions like folders, `instructions/`, `prompts/`, and `chatmodes/` have been migrated from `.github/` into the `memory-bank/` directory. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change is motivated by the need for an organized, stateful, and agent-friendly directives system. Centralizing instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors. All references and explanatory notes have been updated across the codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
+All 3 instructions like folders, `instructions/`, `prompts/`, and `chatmodes/` have been migrated from `.github/` into the `memory-bank/` directory. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change is motivated by the need for an organised, stateful, and agent-friendly directives system. Centralising instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors. All references and explanatory notes have been updated across the codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
 
 - [`memory-bank/chatmodes/*.chatmode.md`](../memory-bank/chatmodes/)
 - [`memory-bank/instructions/*.instructions.md`](../memory-bank/instructions/)

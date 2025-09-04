@@ -5,7 +5,7 @@ description: 'Protocol for logging actions and updating memory bank'
 # Self-Documentation Protocol
 
 > [!IMPORTANT]
-> Non negotiable rule THOSE RULES MUST BE FOLLOWED. On session start you MUST read the important self-memory guide and during any significant change write to the memory-bank/ to keep track of the intentions so that we can resume the task in a new session with the stateful information. Agents MUST also execute the Self-Documentation Protocol to ensure all actions and context changes are logged and documented.
+> Non-negotiable rule: THESE RULES MUST BE FOLLOWED. On session start you MUST read the important self-memory guide and during any significant change write to the memory-bank/ to keep track of the intentions so that we can resume the task in a new session with the stateful information. Agents MUST also execute the Self-Documentation Protocol to ensure all actions and context changes are logged and documented.
 
 ## Memory Bank Logging
 
@@ -33,8 +33,10 @@ Additionally, you must log your actions and findings in memory bank as per self-
    - Overview of the project and its goals
    - Must be referenced when working on project-related tasks
    - Critical for understanding project scope
-7. [`readme-drift-resolution`](../../memory-bank/readme-drift-resolution.md) - Guidelines for resolving README drift - Must be referenced when updating README files
-   10 [`root-contexts`](../../memory-bank/root-contexts.md) - Root contexts for the project - Must be referenced when working on root-level tasks - Critical for understanding project structure
+7. [`readme-drift-resolution`](../../memory-bank/readme-drift-resolution.md)
+   - Guidelines for resolving README drift
+   - Must be referenced when updating README files
+
 8. [`systemPatterns`](../../memory-bank/systemPatterns.md)
    - Document system patterns and architectural decisions
    - Must be updated when making design decisions
@@ -43,10 +45,16 @@ Additionally, you must log your actions and findings in memory bank as per self-
    - Technical context and constraints for the project
    - Must be referenced when making technical decisions
    - Critical for understanding system limitations
+
 10. [`testing-guide`](../../memory-bank/testing-guide.md)
     - Guidelines for testing and quality assurance
     - Must be referenced when writing tests or working on QA tasks
     - Critical for maintaining code quality and reliability
+
+11. [`root-contexts`](../../memory-bank/root-contexts.md)
+    - Root contexts for the project
+    - Must be referenced when working on root-level tasks
+    - Critical for understanding project structure
 
 ### Historical Planning Documents
 
