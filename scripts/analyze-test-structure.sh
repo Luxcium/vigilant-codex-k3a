@@ -16,9 +16,14 @@
 # Test Structure Analysis and Organization Script
 # This script analyzes the current test structure and creates missing test directories
 
-set -e
+set -euo pipefail
 
-PROJECT_ROOT="/projects/annexes/vigilant-codex-k3a.2/vigilant-codex-k3a"
+# AI Agents: Always run this via scripts/sandbox_docker_run.sh to avoid
+# side effects. Leave brief comments in patches explaining your changes
+# and rationale. Do not write outside PROJECT_ROOT.
+
+# Resolve project root dynamically for portability and sandbox use.
+PROJECT_ROOT="${PROJECT_ROOT:-$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)}"
 SRC_DIR="$PROJECT_ROOT/src"
 TEST_DIR="$PROJECT_ROOT/src/tests"
 

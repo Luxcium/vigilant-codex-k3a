@@ -18,6 +18,14 @@ This file tracks what works, what remains to be built, current status, and known
 
 ---
 
+## Current Status
+
+### [2025-09-04] Script Sandbox
+
+- Added Docker and local sandbox harnesses to validate scripts without network or repo writes.
+- Documented usage in `scripts/README.md` and `memory-bank/instructions/script-sandbox.instructions.md`; linked from `AGENTS.md`.
+- Minor robustness: dynamic `PROJECT_ROOT` in `scripts/analyze-test-structure.sh` for portability and sandbox compatibility.
+
 ## What Works
 ### [2025-08-31] Remote Actors RPC MVP
 

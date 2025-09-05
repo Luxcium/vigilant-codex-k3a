@@ -297,6 +297,13 @@ verification scripts passing.
   invisible during prompt composition, and are listed under the
   References section in each chat response for auditability.
 
+## Script Sandbox Usage
+
+- Always validate repository scripts in isolation before real runs.
+- Preferred path: `scripts/sandbox_docker_run.sh` which disables network, mounts the repo read‑only, and writes only under `/work` via our inner sandbox.
+- See `memory-bank/instructions/script-sandbox.instructions.md` for concrete usage and agent‑specific guidance.
+- Copilot parity: Mirror the same sandbox-first policy described here and in `.github/copilot-instructions.md` when proposing commands.
+
 ## Code Organization
 
 We organise code by language and framework at the project root:

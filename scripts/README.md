@@ -166,6 +166,32 @@ Additional archived scripts:
 
 See `scripts/archives/ARCHIVED_SCRIPTS.md` for complete consolidation details.
 
+## Sandboxed Script Execution
+
+Use these wrappers to run any script without side effects:
+
+- `scripts/sandbox_docker_run.sh`: Runs a script inside Docker with `--network=none`, the repo mounted read‑only at `/repo`, and a writable workspace at `/work`. It invokes our inner sandbox to mock networked tools and keep outputs contained.
+  - Example: `bash scripts/sandbox_docker_run.sh scripts/setup_web_env.sh`
+  - Keep outputs for inspection: `SANDBOX_KEEP=1 bash scripts/sandbox_docker_run.sh scripts/setup_questrade_types.sh`
+  - Disable mocks for real runs (only if image has tools): `SANDBOX_MOCK=0 bash scripts/sandbox_docker_run.sh scripts/setup_python_local.sh`
+
+- `scripts/sandbox_run.sh`: Lightweight local harness that isolates writes under `.sandbox/` and injects safe mocks for `npx`, `pip`, `docker`, and friends. Prefer the Docker wrapper above for maximum isolation.
+  - Example: `bash scripts/sandbox_run.sh scripts/setup_questrade_sdk_core.sh`
+
+### Script Usage (one‑paragraph quickstart each)
+
+- `analyze-test-structure.sh`: Analyzes `src/` for a 1:1 test mapping, reports missing tests, and can create test directories. Run in sandbox to preview changes; with mocks enabled it only scans and logs. Real runs create test directories under `src/tests/` where missing.
+
+- `setup_web_env.sh`: Initializes a Next.js app in `web/` with TypeScript, ESLint, and import aliases. In Docker sandbox it uses a mocked `create-next-app` to generate a minimal `web/package.json` for verification. Outside the sandbox, it uses `npx create-next-app@latest --skip-install --no-git` to avoid network installs and Git init.
+
+- `setup_questrade_types.sh`: Scaffolds `src/types/` with placeholder TypeScript modules (enums, accounts, orders, markets, symbols, responses, index). Safe and idempotent; sandbox run shows created paths under `/work`.
+
+- `setup_questrade_sdk_core.sh`: Creates the Questrade SDK core directory structure (`src/auth/...`, `src/rateLimit`, `src/http`, `src/client`, `examples`, `tests`) and a `.cache` folder. Idempotent; sandboxed run logs which directories are created versus already present.
+
+- `setup_python_local.sh`: Creates a local Python virtual environment under `python/.venv`, upgrades `pip`, and installs dependencies if listed in `python/requirements.txt`. In sandbox, Python and pip are mocked to validate flow without installing anything; use a real image and `SANDBOX_MOCK=0` when you want to actually build the venv.
+
+- `setup_python_docker_volume.sh` and `setup_python_docker_isolated.sh`: Scaffolds Dockerized Python development with either volume‑mounted or isolated approaches. In sandbox, `docker` is mocked so you can review generated files without starting containers; for real use, run outside mocks after verifying `docker info` works.
+
 ## Codex Universal Docker Environment
 
 Scripts for managing the Docker development environment with Node.js 22 and Python 3.13:

@@ -15,6 +15,10 @@
 #   SANDBOX_KEEP: 1|0 (default: 1 to let you inspect /work)
 #   DOCKER_USER:  user to run as (default: current UID:GID)
 
+# AI Agents: Use this wrapper by default to test scripts. It prevents network
+# access and repo writes. Keep SANDBOX_MOCK=1 for dry runs; set to 0 only when
+# the image contains all required tools and a real run is intended.
+
 set -euo pipefail
 
 usage() {
@@ -102,4 +106,3 @@ else
 fi
 
 exit $STATUS
-

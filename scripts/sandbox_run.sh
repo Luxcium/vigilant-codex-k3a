@@ -19,6 +19,8 @@
 # - This harness does NOT require Docker. If you want a containerized run,
 #   you can wrap this with your own docker run --network=none and mount the repo.
 # - Networked operations are mocked by default to respect no-lock-files preference.
+# - AI Agents: Prefer using scripts/sandbox_docker_run.sh for maximum isolation
+#   and leave a short comment in your PR/patch describing what you validated.
 
 set -euo pipefail
 

@@ -1,5 +1,11 @@
 # Active Context
 
+- [2025-09-04T14:40:00Z] Script sandbox wrappers added and documented
+  **Current State:** Added `scripts/sandbox_docker_run.sh` and `scripts/sandbox_run.sh` to enable no‑side‑effect script validation with mocks and read‑only repo mounts. Updated `scripts/analyze-test-structure.sh` to resolve `PROJECT_ROOT` dynamically for portability. Documented sandbox usage in `scripts/README.md`, referenced by `AGENTS.md`, and added `memory-bank/instructions/script-sandbox.instructions.md` for all agents.
+  **Last Action:** Created Docker wrapper, inner harness, and instructions; added AI agent guidance comments to relevant scripts; linked instructions from AGENTS.md.
+  **Rationale:** Ensure safe, repeatable validation of scripts without network access or repository writes, while providing a consistent workflow for all agents.
+  **Next Intent:** Optionally add `--dry-run` flags to scaffolding scripts and unify Python/Docker setup scripts per consolidation strategy.
+
 - [2025-08-31T06:57:50+00:00] Prompt management prompts consolidated
   **Current State:** Redundant prompt-management files removed; `template-manager.prompt.md` now includes scope determination and naming standards; `define-prompt-file.prompt.md` rewritten with README sync guidance.
   **Last Action:** Deleted `ai-template-manager.prompt.md`, `make-prompts.prompt.md`, and `prompt-files.prompt.md`; updated remaining prompt files and README counts.
