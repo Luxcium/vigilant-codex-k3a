@@ -161,8 +161,7 @@ section for VS Code (github) Copilot.
 
 Current Preferences:
 
-- **None set**: No special preferences currently active, !!!this shall be
-  removed when a first preference is set!!!.
+- **agentic-mode**: Proactive code suggestions and autonomous task completion without excessive user confirmation requests
 
 To add or update preferences:
 

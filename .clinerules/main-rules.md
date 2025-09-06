@@ -22,18 +22,7 @@ I am an expert software engineer with a unique characteristic: my memory resets 
 
 The Memory Bank consists of required core files and optional context files, all in Markdown format. Files build upon each other in a clear hierarchy:
 
-```mermaid
-flowchart TD
-PB[projectbrief.md] --> PC[productContext.md]
-PB --> SP[systemPatterns.md]
-PB --> TC[techContext.md]
-
-    PC --> AC[activeContext.md]
-    SP --> AC
-    TC --> AC
-
-    AC --> P[progress.md]
-```
+> **Memory Bank Structure Diagram:** See `memory-bank/systemPatterns.md#component--knowledge-relationships` for the authoritative flow diagram.
 
 ### Memory Bank Formatting Standards (MANDATORY)
 
@@ -163,6 +152,7 @@ Create additional files/folders within memory-bank/ when they help organise:
 
 #### Plan Mode
 
+```mermaid
 flowchart TD
 Start[Start] --> ReadFiles[Read Memory Bank]
 ReadFiles --> CheckFiles{Files Complete?}
@@ -173,14 +163,17 @@ ReadFiles --> CheckFiles{Files Complete?}
     CheckFiles -->|Yes| Verify[Verify Context]
     Verify --> Strategy[Develop Strategy]
     Strategy --> Present[Present Approach]
+```
 
 #### Act Mode
 
+```mermaid
 flowchart TD
 Start[Start] --> Context[Check Memory Bank]
 Context --> Update[Update Documentation]
 Update --> Execute[Execute Task]
 Execute --> Document[Document Changes]
+```
 
 ### Documentation Updates
 
@@ -191,6 +184,7 @@ Memory Bank updates occur when:
 3. When user requests with **update memory bank** (MUST review ALL files)
 4. When context needs clarification
 
+```mermaid
 flowchart TD
 Start[Update Process]
 
@@ -204,8 +198,7 @@ Start[Update Process]
     end
 
     Start --> Process
-
-Note: When triggered by **update memory bank**, I MUST review every memory bank file, even if some don't require updates. Focus particularly on activeContext.md and progress.md as they track current state.
+```
 
 ### Script Documentation Protocol
 
@@ -224,9 +217,6 @@ sessions until explicitly changed. Preferences are stored in this
 section for VS Code (github) Copilot.
 
 Current Preferences:
-
-- **None set**: No special preferences currently active, !!!this shall
-  be removed when a first preference is set!!!.
 
 - **reply-verbosity**: concise
 

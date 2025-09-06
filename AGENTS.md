@@ -167,18 +167,7 @@ the start of **every** task and update them once the task is complete.
 The Memory Bank is organised as Markdown files that build on each other in a
 clear hierarchy:
 
-```mermaid
-flowchart TD
-    PB[projectbrief.md] --> PC[productContext.md]
-    PB --> SP[systemPatterns.md]
-    PB --> TC[techContext.md]
-
-    PC --> AC[activeContext.md]
-    SP --> AC
-    TC --> AC
-
-    AC --> P[progress.md]
-```
+> **Memory Bank Structure Diagram:** See `memory-bank/systemPatterns.md#component--knowledge-relationships` for the authoritative flow diagram.
 
 ##### Core Files (Required)
 

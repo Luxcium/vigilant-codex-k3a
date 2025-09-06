@@ -1,291 +1,4 @@
-# Active Context
-
-- Layer 4 automation and health fully implemented per instructions
-- All validators, tasks, index, commit policy, prompts, and settings in place
-- Repository ready for development with resilient triad structure
-- Fast markdown pipeline implemented for >99% autonomous resolution
-- Session scheme should include, and loop over: Intention · Outline · Execution · Documentation · Fix pending Validations `<rinse 🔧 repeat>` · Conclusions
-
-- [2025-09-04T14:40:00Z] Script sandbox wrappers added and documented
-  **Current State:** Added `scripts/sandbox_docker_run.sh` and `scripts/sandbox_run.sh` to enable no‑side‑effect script validation with mocks and read‑only repo mounts. Updated `scripts/analyze-test-structure.sh` to resolve `PROJECT_ROOT` dynamically for portability. Documented sandbox usage in `scripts/README.md`, referenced by `AGENTS.md`, and added `memory-bank/instructions/script-sandbox.instructions.md` for all agents.
-  **Last Action:** Created Docker wrapper, inner harness, and instructions; added AI agent guidance comments to relevant scripts; linked instructions from AGENTS.md.
-  **Rationale:** Ensure safe, repeatable validation of scripts without network access or repository writes, while providing a consistent workflow for all agents.
-  **Next Intent:** Optionally add `--dry-run` flags to scaffolding scripts and unify Python/Docker setup scripts per consolidation strategy.
-
-- [2025-08-31T06:57:50+00:00] Prompt management prompts consolidated
-  **Current State:** Redundant prompt-management files removed; `template-manager.prompt.md` now includes scope determination and naming standards; `define-prompt-file.prompt.md` rewritten with README sync guidance.
-  **Last Action:** Deleted `ai-template-manager.prompt.md`, `make-prompts.prompt.md`, and `prompt-files.prompt.md`; updated remaining prompt files and README counts.
-  **Rationale:** Eliminate overlapping prompt workflows and maintain a minimal, clearly scoped set of templates.
-  **Next Intent:** Monitor for future prompt additions and ensure README stays in sync.
-  **Meta:** Self-documentation after consolidating prompt management.
-- [2025-08-31T19:37:23Z] README Consolidation and Cleanup Completed
-  **Current State:** All duplicate README variant files (sync, synced, rewrite, final, consolidated) have been systematically removed from the workspace. Each directory now has a single authoritative README.md file. Created `memory-bank/README.md` as consolidated authoritative reference.
-  **Last Action:** Executed comprehensive cleanup removing 12 duplicate README variants across scripts/ and memory-bank/ directories. Backed up all variants to `backup-readmes/` with timestamp. Verified safeguard script `check-readme-variants.sh` confirms no duplicates remain.
-  **Rationale:** User reported urgent workspace issues due to README duplication mess. Required immediate resolution to prevent further conflicts and confusion across project documentation.
-  **Next Intent:** Monitor README maintenance using existing safeguard script. Follow memory bank documentation standards for all future README updates.
-  **Meta:** Self-Documentation Protocol entry capturing emergency README consolidation to resolve workspace conflicts per user requirements.
-
-- [2025-08-31T06:53:41+00:00] Minimal remote actors RPC system added
-  **Current State:** Worker-thread pool, JSON protocol, HTTP/TCP transports, configuration, docs, and tests implemented under src/remote-actors.
-  **Last Action:** Added protocol codecs, method registry, worker pool with eval workers, actor dispatch, HTTP/TCP servers, configuration merger, documentation, and unit/integration tests.
-  **Rationale:** Establishes extensible baseline for remote actors framework within project context.
-  **Next Intent:** Add backpressure, error taxonomy, authentication, and typed client SDK.
-  **Meta:** Self-documentation after implementing remote actors MVP.
-- [2025-08-31T06:55:17+00:00] Remote RPC actors baseline
-  **Current State:** Minimal RPC system added under src/rpc with worker-thread pool, HTTP/TCP transports, protocol types, config, docs, and tests.
-  **Last Action:** Implemented module, added unit and integration tests, updated docs and dependency tracking.
-  **Rationale:** Establish foundation for remote actor architecture over HTTP/TCP for future expansion.
-  **Next Intent:** Introduce logging, backpressure metrics, and authentication.
-  **Meta:** Self-documentation after creating remote actor baseline and adding ts-node dependency.
-- [2025-08-23T00:00:00Z] Tasks-First Policy Adopted for VS Code
-  **Current State:** `.github/copilot-instructions.md` now codifies a Tasks-First Execution Policy. `.vscode/tasks.json` includes a stable `hello:world` task; ad-hoc duplicates removed.
-  **Last Action:** Added Tasks-First section instructing agents to use `run_task`/`get_task_output` first and `create_and_run_task` when needed. Normalized tasks file to avoid confusion and ensure discoverability.
-  **Rationale:** Tasks are pre-approved; using them reduces friction and avoids unnecessary confirmations. Centralizing common commands as tasks makes automation predictable and auditable.
-  **Next Intent:** Extend tasks to cover lint, test, build, and dev with real commands; prefer tasks in future workflows and document additions in `scripts/README.md`.
-  **Meta:** Self-Documentation Protocol entry to record policy change and editor task normalization.
-
-- [2025-08-09T06:04:52+00:00] Prompt metadata standardized
-  **Current State:** All prompt files now use front matter with description and tools fields, and all `mode:` lines were removed.
-  **Last Action:** Added missing front matter and removed deprecated `mode` lines across memory-bank/prompts.
-  **Rationale:** Ensure consistent metadata and align prompts with current project standards.
-  **Next Intent:** Monitor future prompt additions for compliance.
-  **Meta:** I am updating my self-documentation after standardizing prompt metadata. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-
-- [2025-08-11T19:44:17Z] Session initialization and full Memory Bank sync
-  **Current State:** All core Memory Bank files read this session (projectbrief.md, productContext.md, systemPatterns.md, techContext.md, activeContext.md, progress.md, dependencies.md). No code changes performed; context fully hydrated.
-  **Last Action:** Retrieved current timestamp via approved script `scripts/get_current_datetime.sh` and completed reading remaining files (progress.md, dependencies.md) to finish sync.
-  **Rationale:** Mandatory CRITICAL MEMORY BANK PROTOCOL requirement to load entire Memory Bank at session start for stateful continuity and to prevent context drift before any implementation tasks.
-  **Next Intent:** Await user task instructions; once received, create/refresh todo list, then proceed with planned actions (e.g., potential script consolidation follow-ups or instruction standardization) while maintaining self-documentation.
-  **Meta:** Executing Self-Documentation Protocol at session start. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-
-- [2025-08-18T00:00:00Z] ESLint Flat Config Prompt Added
-  **Current State:** New prompt `setup-eslint-flat-config.prompt.md` created under `memory-bank/prompts/` providing end-to-end procedure for installing dependencies, generating `eslint.config.mjs`, downgrading stylistic rules to warnings, integrating Prettier, and verification commands.
-  **Last Action:** Authored prompt per `define-prompt-file` protocol with required sections (Intent, Inputs, Preconditions, Steps, Output Format, Constraints, Failure Modes and Recovery, Examples) plus install command, template config, lint commands, and verification checklist.
-  **Rationale:** Establish standardized repeatable workflow for modern ESLint v9+ flat config setup ensuring consistency across agents and future repositories while honoring workspace policy of using `@latest` versions and non-blocking stylistic warnings.
-  **Next Intent:** Update `progress.md` What Works section with achievement entry; monitor for future enhancements (e.g., optional JSON reporter snippet) before expanding.
-  **Meta:** Self-Documentation Protocol entry capturing addition of new prompt and architectural rationale (consistency, reproducibility, Prettier conflict avoidance, warning-level stylistic governance).
-
-  - [2025-08-21T00:00:00Z] Modern ESLint Flat Config Prompt Added
-    **Current State:** Added `modern-eslint-flat-config.prompt.md` under `memory-bank/prompts/`, documenting a 2025-ready ESLint v9+ flat config for TypeScript with ubiquitous plugins (import, promise, n, unicorn, unused-imports), stylistic rules downgraded to warnings, Prettier integration via `eslint-config-prettier/flat` last, optional typed linting block, VS Code settings, and package scripts.
-    **Last Action:** Authored the prompt with Goal/Plan/Execution Log; normalized front matter to the repository schema by replacing unsupported keys with a single `description`.
-    **Rationale:** Provide a production-grade baseline that aligns with current ecosystem practices while remaining CI-friendly and editor-friendly; ensures consistent hygiene and formatting across projects.
-    **Next Intent:** Cross-reference this prompt from `memory-bank/prompts/README.md` and validate in a sample repo; monitor plugin updates for ESLint v9 flat compatibility.
-    **Meta:** Self-documentation after synthesizing best practices from official docs and integrating them into a cohesive prompt with validation steps and references.
-
-- [2025-08-09T06:03:14+00:00] Chatmode front matter simplified
-  **Current State:**
-  All chatmode files now have only `description` and an empty `tools` array in their front matter, removing explicit `model` declarations.
-  **Last Action:**
-  Removed model lines and cleared tools arrays in `plan`, `vscode-helper`, `setup-context`, `proto-notebook`, `questrade-sdk-developer`, and `tsdoc-typedoc` chatmodes.
-  **Rationale:**
-  Standardizes chatmode configuration and prevents hardcoded model references.
-  **Next Intent:**
-  Monitor chatmode files for consistency with evolving project standards.
-  **Meta:**
-  Self-documentation after simplifying chatmode front matter.
-- [2025-08-09T06:00:07Z] VS Code placeholder tasks defined
-  **Current State:**
-  `.vscode/tasks.json` now defines shell tasks for project-status, lint, test, and build.
-  **Last Action:**
-  Replaced the empty tasks array with placeholder echo commands for initialisation.
-  **Rationale:**
-  Provide baseline VS Code tasks to guide future automation workflows.
-  **Next Intent:**
-  Update these tasks with real commands once tooling is ready.
-  **Meta:**
-  Self-documentation after adding editor tasks to support future workflow automation.
-- [2025-08-03T22:55:00Z] Created and referenced 'Get Current Date/Time' task for timestamping
-  **Current State:**
-  A dedicated task for obtaining the current date/time in ISO 8601 format has been defined in `scripts/README.md`. All instructions now reference this task instead of the raw `date --iso-8601=seconds` command. The self-documentation and instruction-authoring standards have been updated accordingly.
-  **Last Action:**
-  Added the task definition to `scripts/README.md`, updated `self-documentation.instructions.md` to reference the task, and added a new section to `instruction-authoring-standards.instructions.md` for timestamping best practices.
-  **Rationale:**
-  To ensure discoverability, maintainability, and protocol compliance for all timestamping and logging actions, and to avoid direct use of raw shell commands in documentation.
-  **Next Intent:**
-  Monitor for any future direct uses of `date` and enforce exclusive use of the task. Continue to update documentation and protocols as needed.
-  **Meta:**
-  I am updating my self-documentation after creating and referencing the 'Get Current Date/Time' task. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-  **Current State:**
-  The canonical playground `src/example.ts` was hardened to include HTTP status codes in the output file `.keys/example-sdk-demo.json` on error. The playground was built and executed, and the output file was verified to contain the correct status code (400) on failure. This confirms robust error reporting and output verification as part of the recursive demonstration workflow.
-  **Last Action:**
-  Patched `example.ts` to propagate and record HTTP status codes on error, rebuilt and ran the playground, and verified `.keys/example-sdk-demo.json` for correct error code output.
-  **Rationale:**
-  To fulfill the requirement for robust, agentic, and reproducible playground development, ensuring all error outputs include HTTP status codes for better debugging and agent memory.
-  **Next Intent:**
-  Continue recursive, output-verified workflow for all future playground iterations and maintain robust error reporting.
-  **Meta:**
-  I am updating my self-documentation after verifying output and HTTP error code inclusion. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-
----
-
-- [2025-08-07T01:00:00Z] Workspace Hardened for pnpm-Only, No-Lockfile Policy
-  **Current State:** All references to npm and yarn have been removed from documentation and scripts. The workspace is now pnpm-only, with no lockfiles generated or required. This is enforced in CI, `.gitignore`, and all relevant documentation. All onboarding and usage instructions now direct users to use pnpm exclusively.
-  **Last Action:** Updated `package.json`, root and web `README.md`, scripts/README.md, and agent-framework/README.md to reflect pnpm-only, no-lockfile policy. Verified no remaining npm/yarn references in onboarding docs.
-  **Rationale:** Ensures consistency, prevents lockfile-related CI failures, and aligns with user policy for reproducible, robust development. Documentation and onboarding are now future-proofed for possible later lockfile adoption.
-  **Meta:** This entry documents the completion of workspace hardening for pnpm-only, no-lockfile operation. All future changes to package management policy must be documented here.
-- [2025-08-07T01:00:00Z] CI Workflow and Workspace Lockfile Policy Updated
-  **Current State:** The CI workflow now uses `pnpm install --no-frozen-lockfile` to ensure no lockfile is required or generated. `.gitignore` explicitly blocks all lockfiles, and a comment clarifies that lockfiles are intentionally not used in this workspace. This matches the user's directive and workspace policy.
-  **Last Action:** Updated `.github/workflows/ci.yml` to use `--no-frozen-lockfile` for dependency installation. Enhanced `.gitignore` with a clear comment about the no-lockfile policy. Confirmed that no lockfiles are present or required. Documented rationale and next steps in the memory bank.
-  **Rationale:** The user explicitly requested a workspace and CI environment that does not use any lockfiles for the time being, to avoid errors and ensure flexibility. This is now enforced in both the workflow and repository configuration.
-  **Next Intent:** Monitor CI runs to confirm no lockfile-related errors occur. If/when lockfiles are to be used in the future, update `.gitignore` and CI accordingly.
-  **Meta:** I am updating my self-documentation after enforcing the no-lockfile policy and updating the CI workflow. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-- [2025-08-07T00:15:00Z] CI Workflow pnpm PATH Issue Resolved
-  **Current State:** Fixed critical CI workflow issue where pnpm was not found in PATH. Removed cache: 'pnpm' from setup-node step and ensured pnpm is installed before any pnpm commands.
-  **Last Action:** Updated .github/workflows/ci.yml to remove premature pnpm cache setup from setup-node and ensure pnpm is available in PATH before use. Added shell: bash and --silent flag to store path command.
-  **Rationale:** The cache: 'pnpm' option in setup-node was being evaluated before pnpm was actually installed, causing PATH issues. Installing pnpm first, then setting up caching resolves the dependency order.
-  **Next Intent:** Monitor CI runs to ensure pnpm is now available and workflow passes successfully.
-  **Meta:** I am updating my self-documentation after fixing the CI workflow pnpm PATH issue. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-- [2025-08-07T00:10:00Z] CI Workflow pnpm Install and Caching Hardened
-  **Current State:** The CI workflow now explicitly installs pnpm with npm, uses pnpm/action-setup for version pinning, and enables pnpm store caching for faster builds. A context warning about STORE_PATH was noted for future review.
-  **Last Action:** Updated .github/workflows/ci.yml to add an explicit pnpm install step, keep pnpm/action-setup, and add pnpm store caching. Noted a lint warning about STORE_PATH context access for future investigation.
-  **Rationale:** Ensures pnpm is always available, pins the version, and speeds up builds with caching. Addresses root cause of missing pnpm and aligns with best practices for reliability and speed.
-  **Next Intent:** Monitor CI for STORE_PATH context issues and validate caching effectiveness. Update documentation and workflow as needed.
-  **Meta:** I am updating my self-documentation after hardening the CI workflow with explicit pnpm install and caching. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-- [2025-08-07T00:00:00Z] CI Workflow pnpm Setup Hardened
-  **Current State:** The CI workflow now uses pnpm/action-setup with run_install: false, verifies pnpm is in PATH, and installs dependencies in a dedicated step.
-  **Last Action:** Updated .github/workflows/ci.yml to split pnpm setup and install, add a pnpm --version check, and follow best practices to prevent workflow failures due to pnpm not being found.
-  **Rationale:** Ensures reliable pnpm availability in CI, avoids race conditions, and aligns with official pnpm/action-setup and GitHub Actions recommendations for monorepos.
-  **Next Intent:** Monitor CI runs for stability and update documentation if further changes are needed.
-  **Meta:** I am updating my self-documentation after hardening the CI workflow pnpm setup. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-- [2025-08-01T00:00:00Z] Questrade SDK structure modularized
-  **Current State:** Core logic, IO modules, CLI scripts, mocks, and tests reorganized under `src/`.
-  **Last Action:** Created `src/core`, `src/infra`, `src/cli`, `src/mocks`, and `src/tests`; migrated modules and updated imports.
-  **Rationale:** Provide clear separation of concerns and prepare for SDK expansion.
-  **Next Intent:** Ensure future modules follow this structure.
-  **Meta:** Self-documentation after restructuring Questrade code.
-- [2025-07-30T22:30:00Z] Documentation Essentials Added
-  **Current State:** README includes Development Essentials and new CONTRIBUTING guide covers folder layout, token persistence, environment switching, CLI usage, mock recording, and testing commands.
-  **Last Action:** Updated README and created CONTRIBUTING.md to clarify contributor workflows.
-  **Rationale:** Provide clear onboarding and ensure memory-bank rules guide token handling and environment setup.
-  **Next Intent:** Keep documentation synchronized with project structure and validation scripts.
-  **Meta:** Self-documentation after expanding contributor documentation.
-- [2025-07-30T21:00:00Z] Prompt References Consolidated
-  **Current State:** All prompt files in `memory-bank/prompts/` now include a References section linking to instruction files.
-  **Last Action:** Audited and updated prompt files to remove duplicated instructions and add links.
-  **Rationale:** Centralizes instruction guidance and reduces duplication.
-  **Next Intent:** Maintain prompt-instruction linkage for new or revised prompts.
-  **Meta:** Self-documentation after completing prompt reference audit.
-
-**Current State:**
-TypeScript coding standards were modularized into topic-specific instruction files and README references updated.
-
-- [2025-08-08T00:00:00Z] Local CI & Commit Guard Implemented / Remote CI Removed
-  **Current State:** Remote GitHub Actions CI workflow deleted to eliminate external run costs. Local validation stack now includes `local-ci.sh` (full pipeline), `commit-guard.sh` (hook gate), and `install-hooks.sh` (hook deployment). Package scripts augmented (`ci:local`, `hooks:install`, `commit:force`). Scripts README updated; hook override variables documented.
-  **Last Action:** Removed `.github/workflows/ci.yml`, created new scripts, updated documentation and package.json, appended self-documentation entry.
-  **Rationale:** Reduce CI expenditure to $0 by shifting validation locally while retaining quality enforcement before commit/push with auditable overrides.
-  **Next Intent:** Monitor developer workflow friction; optionally add JSON summary artifact & performance timings; consider selective parallelization in `local-ci.sh` if needed.
-  **Meta:** Executing Self-Documentation Protocol for CI cost elimination and guard introduction.
-  This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-- [2025-08-08T17:54:46-04:00] Attempted deletion of `.github/workflows/ci.yml` did not persist (file still present after delete patch). Will re-attempt deletion ensuring proper patch application and verify absence via directory listing and search before marking remote CI fully removed.
-  **Current State:** Workflow file contents still readable; local guard system operational.
-  **Last Action:** Issued delete patch; file_search still returns path; listed directory confirms presence.
-  **Rationale:** Must eliminate any chance of remote CI runs to guarantee zero external cost.
-  **Next Intent:** Re-issue deletion with correct tool context or alternative method, then re-verify and proceed to update documentation if needed.
-  **Meta:** I am updating my self-documentation after a failed deletion attempt. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-- [2025-08-08T18:12:51-04:00] Second deletion attempt of `.github/workflows/ci.yml` still shows file present (neutralized content). Tool search and directory listing persistently list file.
-  **Current State:** File contains only deactivation notice; no actionable jobs; remote CI effectively inert but artifact remains.
-  **Last Action:** Re-issued delete patch, re-ran search and directory listing, confirmed persistence; logged timestamp.
-  **Rationale:** Maintain transparency; artifact neutralization prevents runs while investigating deletion persistence (possible tool indexing constraint).
-  **Next Intent:** If full removal remains blocked, proceed with rename strategy or leave inert file; confirm with user preference before further attempts.
-  **Meta:** Executing Self-Documentation Protocol after repeated deletion attempt persistence. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-- [2025-08-08T18:18:21-04:00] Successfully removed `.github/workflows/ci.yml` via terminal `rm -f` and verified absence (search returns none, directory empty).
-  **Current State:** Remote CI workflow fully removed; only local validation (hooks + local-ci.sh) remains.
-  **Last Action:** Executed terminal removal, listed directory, confirmed empty; ran file search with no results.
-  **Rationale:** Finalize elimination of external CI cost surface and align with zero-remote-CI directive.
-  **Next Intent:** Monitor for accidental reintroduction; optionally add a safeguard script or git hook to block new workflow additions unless approved.
-  **Meta:** Executing Self-Documentation Protocol after successful deletion. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-  **Last Action:**
-  Split `typescript-standards.instructions.md` into dedicated files and updated documentation.
-  **Rationale:**
-  Improve clarity and maintainability of TypeScript guidelines.
-  **Next Intent:**
-  Ensure agents use the new instruction files and keep documentation in sync.
-  **Meta:**
-  Self-documentation after modularizing TypeScript instructions.
-
-**Current State:**
-Instruction files for commit messages and Python environment use short, direct sentences with "You" and include verification blocks.
-**Last Action:**
-Rewrote `conventional-commits-must-be-used.instructions.md` and `python-environment.instructions.md` to follow instruction formatting rules.
-**Rationale:**
-Ensure instruction clarity and alignment with project standards.
-**Next Intent:**
-Standardize remaining instruction files.
-**Meta:**
-Self-documentation after instruction update.
-
-**Current State:**
-The canonical playground `src/example.ts` was hardened to include HTTP status codes in the output file `.keys/example-sdk-demo.json` on error. The playground was built and executed, and the output file was verified to contain the correct status code (400) on failure. This confirms robust error reporting and output verification as part of the recursive demonstration workflow.
-**Last Action:**
-Patched `example.ts` to propagate and record HTTP status codes on error, rebuilt and ran the playground, and verified `.keys/example-sdk-demo.json` for correct error code output.
-**Rationale:**
-To fulfill the requirement for robust, agentic, and reproducible playground development, ensuring all error outputs include HTTP status codes for better debugging and agent memory.
-**Next Intent:**
-Continue recursive, output-verified workflow for all future playground iterations and maintain robust error reporting.
-**Meta:**
-I am updating my self-documentation after verifying output and HTTP error code inclusion. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-
-- [2025-07-29T20:30:00Z] Meta-Context Review and Validation of Operational Rules
-  **Current State:**
-  All meta-level operational rules, initialization protocols, and agent collaboration standards are codified and up to date. The CRITICAL MEMORY BANK PROTOCOL, agent obligations, recursive workflow patterns, and documentation standards are enforced across `.github/copilot-instructions.md` and memory-bank files. The three-agent system is fully described, and all meta-level standards (script-driven setup, idempotency, documentation, cross-agent compatibility, markdown-lint compliance) are actionable. Initialization, dependency/tooling detection, and environment readiness are referenced and described in the memory bank.
-  **Last Action:**
-  Reviewed and validated all meta-level operational rules, initialization, and agent protocols. Confirmed that all agents and contributors have clear, actionable guidance for high-level operations. No missing documentation or unclear rules found at the meta level.
-  **Rationale:**
-  To ensure the project’s meta-configuration, agent protocols, and operational rules are robust, actionable, and up to date, supporting effective multi-agent collaboration and stateful development.
-  **Next Intent:**
-  Continue to monitor and optimize meta-level documentation and operational rules as the project evolves. Update memory bank and documentation immediately upon any change in meta-configuration or agent protocols.
-  **Meta:**
-  I am updating my self-documentation after completing a meta-context review and validation. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-
-- [2025-07-30T02:07:00Z] Prompt Verification Sections Added
-  **Current State:**
-  All prompt files now end with a '## Verification' section referencing markdownlint and scripts/verify-all.sh.
-  **Last Action:**
-  Appended verification sections to 35 prompt files using an automated script.
-  **Rationale:**
-  Ensures compliance with the Verification Block Standard for prompts.
-  **Next Intent:**
-  Maintain this checklist for all future prompt additions.
-  **Meta:**
-  Self-documentation after repository-wide prompt update.
-  **Current State:**
-  The canonical playground `src/example.ts` was hardened to include HTTP status codes in the output file `.keys/example-sdk-demo.json` on error. The playground was built and executed, and the output file was verified to contain the correct status code (400) on failure. This confirms robust error reporting and output verification as part of the recursive demonstration workflow.
-  **Last Action:**
-  Patched `example.ts` to propagate and record HTTP status codes on error, rebuilt and ran the playground, and verified `.keys/example-sdk-demo.json` for correct error code output.
-  **Rationale:**
-  To fulfill the requirement for robust, agentic, and reproducible playground development, ensuring all error outputs include HTTP status codes for better debugging and agent memory.
-  **Next Intent:**
-  Continue recursive, output-verified workflow for all future playground iterations and maintain robust error reporting.
-  **Meta:**
-  I am updating my self-documentation after verifying output and HTTP error code inclusion. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-
-- [2025-07-29T20:30:00Z] Meta-Context Review and Validation of Operational Rules
-  **Current State:**
-  All meta-level operational rules, initialization protocols, and agent collaboration standards are codified and up to date. The CRITICAL MEMORY BANK PROTOCOL, agent obligations, recursive workflow patterns, and documentation standards are enforced across `.github/copilot-instructions.md` and memory-bank files. The three-agent system is fully described, and all meta-level standards (script-driven setup, idempotency, documentation, cross-agent compatibility, markdown-lint compliance) are actionable. Initialization, dependency/tooling detection, and environment readiness are referenced and described in the memory bank.
-  **Last Action:**
-  Reviewed and validated all meta-level operational rules, initialization, and agent protocols. Confirmed that all agents and contributors have clear, actionable guidance for high-level operations. No missing documentation or unclear rules found at the meta level.
-  **Rationale:**
-  To ensure the project’s meta-configuration, agent protocols, and operational rules are robust, actionable, and up to date, supporting effective multi-agent collaboration and stateful development.
-  **Next Intent:**
-  Continue to monitor and optimize meta-level documentation and operational rules as the project evolves. Update memory bank and documentation immediately upon any change in meta-configuration or agent protocols.
-  **Meta:**
-  I am updating my self-documentation after completing a meta-context review and validation. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-
-- [2025-08-05T13:21:21-04:00] Session Initialization and Memory Bank Synchronization
-  **Current State:**
-  All core memory bank files have been read and synchronized. The agent is fully initialized with the latest project context, requirements, architectural patterns, technical standards, and dependencies. The environment is ready for agentic, iterative development.
-  **Last Action:**
-  Performed full memory bank sync at session start, including reading projectbrief.md, productContext.md, activeContext.md, progress.md, systemPatterns.md, techContext.md, and dependencies.md. Verified script permissions and timestamping protocol.
-  **Rationale:**
-  To comply with the CRITICAL MEMORY BANK PROTOCOL and Self-Documentation Protocol, ensuring stateful, context-aware, and reproducible agentic development from the outset of the session.
-  **Next Intent:**
-  Proceed with user-directed coding tasks, maintaining real-time documentation and memory bank updates before, after, and between every action.
-  **Meta:**
-  I am updating my self-documentation after initializing the session and synchronizing the memory bank. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-
-## The `activeContext.md` Memory Bank File
-
-As an AI Agent, you MUST actively strive to keep this file up to date with the latest active context, including project goals, user experience requirements, and AI agent collaboration framework. This file MUST be updated by any AI Agent accessing it, You MUST eagerly each time changes on each chat completion and each task or subtask as the living authoritative guide.
+# activeContext.md
 
 ## Purpose
 
@@ -293,9 +6,9 @@ This file tracks the current work focus, recent changes, next steps, and active 
 
 ## Structure
 
-- **Current Work Focus** - Active development priorities and immediate tasks
+- **Current Focus Snapshot** - High-priority current work requiring immediate attention
 - **Recent Changes** - Latest completed work and achievements (last 30 days)
-- **Next Steps** - Planned upcoming work and priorities
+- **Next Steps** - Planned upcoming work and priorities  
 - **Active Decisions** - Current architectural and process decisions requiring attention
 - **Historical Context Archive** - Reference to archived historical context entries
 - **Dependencies and Relationships** - File relationships and impact analysis
@@ -303,396 +16,64 @@ This file tracks the current work focus, recent changes, next steps, and active 
 
 ---
 
-## Current Work Focus
+## Current Focus Snapshot
 
-[2025-07-29T17:35:00Z] Example Playground Output Verification and Recursive Procedure Logging
+### [2025-12-06] Memory Bank Grooming Implementation - CRITICAL Priority
 
-**Current State:**
-The hardened `src/example.ts` was built and executed. Output was written to `.keys/example-sdk-demo.json` and verified for correctness. The workflow now includes a recursive, output-verified demonstration step for each iteration, to be logged in the memory bank and referenced in chatmode/instructions for agent memory.
+**Current State:** Implementing systematic Memory Bank optimization following comprehensive analysis. Multiple grooming tasks completed with critical script consolidation discrepancy discovered.
 
-**Last Action:**
-Built and ran the playground, checked `.keys/example-sdk-demo.json` for valid output, and confirmed the process. Logging this demonstration and recursive verification procedure for future agent sessions.
+**Last Action:** Fixed techContext.md build output segregation rules. **DISCOVERED CRITICAL ISSUE**: AUDIT.sync.md findings confirmed - scripts/README.md claims consolidation (41→22→23 scripts) but actual count is 59 scripts. Documentation severely out of sync with reality.
 
-**Rationale:**
-To ensure every code iteration is validated by actual output, and that this workflow is remembered and referenced by all agents and chatmodes. This supports robust, agentic, and reproducible development.
+**Rationale:** Memory Bank grooming essential for AI agent session startup speed and context accuracy. Script consolidation discrepancy represents major documentation integrity issue requiring immediate resolution.
 
-**Next Intent:**
-Update chatmode/instructions to reference this recursive, output-verified workflow. Continue modularizing and hardening the playground as needed.
+**Next Intent:** Address script consolidation documentation discrepancy, archive historical systemPatterns.md content, then complete remaining compliance sections for core files.
 
-**Meta:**
-I am updating my self-documentation after verifying output and logging the recursive demonstration procedure. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-[2025-07-29T00:00:00Z] Questrade Example Playground Canonicalization and Modularization
+---
 
-**Current State:**
-`src/example.ts` is now the canonical playground for agent and user feature prototyping. The file is working, modular, and outputs only to `.keys/example-sdk-demo.json` with human-readable metadata. A modularization plan is written and ready for further function extraction. All agent-facing documentation and memory bank files have been updated to reference this playground as the canonical example.
+## Recent Changes (Last 30 Days)
 
-**Last Action:**
-Restored and enhanced `example.ts`, consolidated output, wrote modularization plan, and updated all relevant memory bank and documentation files to reference the playground. Ensured all changes and rationale are logged for agent autonomy.
+### [2025-09-04] Script Sandbox Wrappers Implementation
 
-**Rationale:**
-To provide a robust, modular, and agent-oriented playground for Questrade SDK development, supporting agent autonomy and future modularization. Ensures all agents recognize and use `src/example.ts` as the canonical example.
+**Achievement:** Added `scripts/sandbox_docker_run.sh` and `scripts/sandbox_run.sh` to enable no-side-effect script validation with mocks and read-only repo mounts.
 
-**Next Intent:**
-Continue modularizing `example.ts` per the plan, extracting pure functions and consolidating all output. Maintain and update memory bank and documentation as features evolve.
+- Updated `scripts/analyze-test-structure.sh` for dynamic `PROJECT_ROOT` resolution
+- Documented sandbox usage in `scripts/README.md`
+- Added AI agent guidance comments to relevant scripts
+- Created `memory-bank/instructions/script-sandbox.instructions.md`
 
-**Meta:**
-I am updating my self-documentation after canonicalizing and modularizing the Questrade example playground. I include this log following the Self-Documentation Protocol.
-This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-[2025-07-27T00:00:00Z] Radical Documentation Refactor: Memory Bank Migration
+**Impact:** Safe, repeatable validation of scripts without network access or repository writes
 
-**Current State:**
-All instructions, prompts, and chatmodes have been migrated from `.github/` to the `memory-bank/` folders. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. All references and explanatory notes have been updated across the codebase to reflect this change.
+### [2025-08-31] Prompt Management Consolidation
 
-**Last Action:**
-Systematic update of every file in the codebase to ensure all documentation, agent instructions, and internal references point to the new memory-bank structure. Explanatory notes were added to prevent confusion and clarify the rationale for contributors and agents.
+**Achievement:** Eliminated redundant prompt-management files and established minimal, clearly scoped template set.
 
-**Rationale:**
-This radical change was motivated by the need for a more organized, stateful, and agent-friendly documentation system. Centralizing instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors. Keeping the Copilot entry point in `.github/copilot-instructions.md` ensures compatibility with VS Code Copilot and prevents integration issues.
+- Deleted overlapping files: `ai-template-manager.prompt.md`, `make-prompts.prompt.md`, `prompt-files.prompt.md`
+- Enhanced `template-manager.prompt.md` with scope determination and naming standards
+- Rewritten `define-prompt-file.prompt.md` with README sync guidance
 
-**Next Intent:**
-Monitor for any documentation drift or confusion, and continue to update explanatory notes as needed. Ensure all future changes follow the new structure and maintain clarity for all contributors and agents.
+**Impact:** Clear prompt workflow with maintained README synchronization
 
-**Meta:**
-I am updating my self-documentation after completing the radical documentation refactor and memory bank migration. I include this log following the Self-Documentation Protocol.
-This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+### [2025-08-31] README Consolidation Emergency Resolution
 
-### [2025-07-25T22:30:00-04:00] Standardized Output Directory for Build Artifacts
+**Achievement:** Resolved urgent workspace conflicts from README duplication across 12 locations.
 
-**Current State:**
-Established that all emitted build outputs (e.g., compiled JavaScript from TypeScript) must go to the `./lib` folder at the project root context.
+- Systematic removal of duplicate README variants (sync, synced, rewrite, final, consolidated)
+- Created single authoritative README.md per directory
+- Established `memory-bank/README.md` as consolidated reference
+- Implemented safeguard script verification
 
-**Last Action:**
-Documented the output directory standard in the memory bank and Copilot instructions file. This ensures all build scripts, tasks, and configurations use `./lib` as the `outDir` for emitted files.
+**Impact:** Eliminated workspace documentation conflicts and established clear documentation hierarchy
 
-**Rationale:**
-Unifying the output directory to `./lib` at the root context simplifies automation, debugging, and cross-tool compatibility. This eliminates confusion and ensures all agents and contributors use the same convention.
+### [2025-08-31] Remote Actors RPC System Baseline
 
-**Next Intent:**
-Update all relevant scripts, tasks, and documentation to reference `./lib` as the output directory. Validate that all build and run workflows use this path.
+**Achievement:** Implemented minimal RPC system foundation under `src/remote-actors` and `src/rpc`.
 
-**Meta:**
-I am updating my self-documentation after standardizing the output directory for build artifacts. I include this log following the Self-Documentation Protocol.
-This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+- Worker-thread pool with JSON protocol implementation
+- HTTP/TCP transports with configuration management
+- Comprehensive unit and integration tests
+- Complete documentation and dependency tracking
 
-### [2025-07-25T22:24:48-04:00] Added sdk:playground Script to package.json [32m[1m[0m
-
-**Current State:**
-Added a top-level script to `package.json` to run the SDK playground (`src/main.ts`) via `node ./dist/src/main.js` after build.
-
-**Last Action:**
-Inserted `"sdk:playground": "npm run build && node ./dist/src/main.js"` into the root `package.json` scripts section.
-
-**Rationale:**
-User requested a CLI-accessible script to run the SDK playground for rapid manual testing, aligning with the VS Code tasks and debug configurations already implemented. This ensures a seamless workflow for building, running, and debugging the playground from both the CLI and VS Code.
-
-**Next Intent:**
-Confirm script works as intended, then document usage instructions and update progress tracking. Prepare a final report summarizing all changes and usage guidance for the user.
-
-**Meta:**
-I am updating my self-documentation after adding the sdk:playground script to package.json. I include this log following the Self-Documentation Protocol.
-This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-
-### [2025-07-24T19:45:00Z] Script Optimization Review Plan Created ✅
-
-**Current State:**
-Generated a detailed implementation plan addressing user requirements, triggered by project milestones or actionable conditions:
-
-**Last Action:**
-Created detailed implementation plan addressing user requirements:
-
-- ✅ **Script Consolidation Assessment** - Plan to reduce from 42 to 22-25 scripts (45-50% reduction)
-- ✅ **Documentation Standardization** - Complete README updates reflecting standardized formats
-- ✅ **Memory Bank Optimization** - Continued optimization with cross-referencing and dependency tracking
-- ✅ **Quality Assurance Framework** - Comprehensive validation for annotated scripts and consolidation
-- ✅ **Development Preparation** - Foundation optimization for next feature development phase
-
-**Rationale:**
-User requested comprehensive review of script consolidation opportunities, documentation updates, memory bank optimization, and quality assurance following successful script annotation completion. Plan provides systematic approach to foundation optimization.
-
-**Next Intent:**
-Implementation plan ready for execution. Begin Phase 1 script consolidation assessment with focus on web environment, validation, generator, Questrade, and agent setup script consolidation opportunities.
-
-**I am executing the Self-Documentation Protocol after creating comprehensive script optimization review plan.**
-
-### [2025-07-24T15:30:00Z] Script Annotation Project Complete ✅
-
-**Current State:**
-Successfully completed comprehensive annotation of all 42 scripts in the `scripts/` directory. All scripts now have standardized header documentation with proper shebang placement and validation status markers.
-
-**Last Action:**
-Fixed critical formatting error and completed script annotation:
-
-- ✅ Corrected shebang placement to line 1 for all scripts (was incorrectly on line 12)
-- ✅ Applied standardized 10-line header block to all remaining scripts
-- ✅ Added validation status pragma on the last line of each script
-- ✅ Ensured consistent format: shebang → empty line → header → empty line → content → validation
-- ✅ Total scripts annotated: 42/42 (100% complete)
-
-**Rationale:**
-User requested systematic annotation of all scripts with standardized headers for better documentation, maintenance, and understanding of script purposes and dependencies.
-
-**Next Intent:**
-Script annotation task completed. Script optimization and consolidation ongoing effort established with continuous monthly reviews, flow optimization, and dependency reduction protocols. Ready for next development priorities as directed by user.
-
-**I am executing the Self-Documentation Protocol after completing script annotation project and establishing ongoing optimization protocols.**
-
-### [2025-07-23T17:45:00Z] Script Consolidation Implementation Complete ✅
-
-**Current State:**
-Successfully consolidated 41 scripts into 22 scripts (46% reduction). Implemented comprehensive documentation standards and parameter-driven interfaces. All consolidated scripts have proper header comments and unified parameter systems.
-
-**Last Action:**
-Completed full script consolidation implementation:
-
-- ✅ Enhanced `setup_python_env.sh` with inline consolidation of Docker modes
-- ✅ Enhanced `verify-all.sh` as master validation script with selective checking
-- ✅ Enhanced `setup_ts_sdk.sh` as master TypeScript/SDK setup with module selection
-- ✅ Enhanced Docker lifecycle scripts with comprehensive documentation headers
-- ✅ Updated `scripts/README.md` with consolidated structure and usage examples
-- ✅ Created `scripts/archives/` with proper archive documentation
-- ✅ Verified `.vscode/tasks.json` compatibility with consolidated scripts
-
-**Rationale:**
-Executed complete consolidation plan to eliminate redundancy, improve documentation consistency, and provide unified interfaces for all script categories.
-
-**Next Intent:**
-Monitor consolidated script usage and gather feedback for further refinements. All consolidation objectives achieved.
-
-**I am executing the Self-Documentation Protocol after completing script consolidation implementation.**
-
-### [2025-07-22T23:10:00Z] Root Context Inventory & Script Protocol Implementation
-
-**Current State:**
-Root context directories fully documented in `README.md` and `projectbrief.md`.
-Introduced script documentation protocol in `systemPatterns.md` and `.clinerules`.
-
-**Next Intent:**
-
-- Ensure all shell scripts contain header comments and are listed in `scripts/README.md`.
-- Consolidate any duplicate scripts.
-
-### [2025-07-22T22:44:00Z] Development Session Analysis Complete - Ready for Instructions
-
-**Current State:**
-Completed comprehensive project analysis and environment topology assessment. Project structure and memory bank system fully understood. Ready to proceed with development tasks per user instructions.
-
-### [2025-07-23T00:00:00Z] Root Context & Script Protocol Updates
-
-**Current State:**
-Root context folders documented across README and memory bank. Added autonomous script documentation protocol with updates to `.clinerules` and `scripts/README.md`.
-
-**Project Analysis Summary:**
-
-- **Vigilant Codex K3a**: Sophisticated polyvalent AI development workspace
-- **Three AI Agent System**: Cline AI, Codex CLI, VS Code Copilot with shared Memory Bank
-- **Technology Stack**: TypeScript/Python/Next.js with Docker orchestration
-- **Current Status**: Production-ready applications with 98.34% test coverage
-- **Infrastructure**: Comprehensive script automation and memory bank documentation
-
-**Last Action:**
-
-- Analyzed project brief and active context files
-- Understood current priorities: Memory Bank formatting, documentation compliance
-- Identified active decisions and next steps
-
-**Rationale:**
-User requested initial project analysis to understand environment topology before providing specific development instructions. Analysis phase complete.
-
-**Next Intent:**
-
-- Await specific development instructions from user
-- Execute tasks according to Memory Bank protocols and established patterns
-- Maintain real-time documentation of all actions and decisions
-
-**I am executing the Self-Documentation Protocol following project analysis completion.**
-
-### Session Restart and Context Synchronization ✅ **COMPLETED**
-
-**[2025-07-19T18:06:01Z]** Successfully implemented comprehensive browser error integration with VS Code Problems panel.
-
-**Current State**: Complete browser error monitoring system implemented with real-time VS Code integration
-**Last Action**: Created browser-error-monitor.sh script, enhanced Edge DevTools configuration, and added VS Code tasks for error detection
-**Rationale**: Essential for seamless browser error debugging and integration with VS Code Problems panel
-**Next Intent**: Demonstrate the complete error monitoring system and provide usage instructions
-
-**I am completing the Self-Documentation Protocol after implementing browser error integration.**
-
-### Conventional Commits Documentation Reorganization ✅ **COMPLETED**
-
-**[2025-07-20T18:57:02Z]** Successfully reorganized conventional commits documentation with concise instructions and detailed prompt files.
-
-**Current State**: Streamlined instruction file with comprehensive supporting prompt files for detailed information
-**Last Action**: Split monolithic documentation into focused, modular components for better usability and maintainability
-**Rationale**: The original file was too long and unwieldy. Users needed quick reference instructions with optional detailed guides
-**Next Intent**: Ensure all commit examples throughout the project follow the new standardized patterns
-
-**Major Reorganization Completed**:
-
-**✅ Main Instructions File** (`memory-bank/instructions/conventional-commits-must-be-used.instructions.md`):
-
-- **Concise and Clear**: Essential information only, quick reference format
-- **100% Gitmoji Compliance**: Every example includes mandatory gitmoji
-- **Critical Warning**: Prominent callout that gitmoji is mandatory with no exceptions
-- **Essential Types & Emojis**: Quick reference table for most common scenarios
-- **Cross-References**: Links to detailed prompt files for comprehensive information
-
-**✅ Supporting Prompt Files Created**:
-
-- **`memory-bank/prompts/gitmoji-complete-list.prompt.md`**: Complete gitmoji reference with selection guidelines
-- **`memory-bank/prompts/commit-examples.prompt.md`**: Comprehensive examples by category with detailed context
-- **`memory-bank/prompts/breaking-changes.prompt.md`**: Detailed breaking changes guidance and best practices
-- **`memory-bank/prompts/git-hooks-automation.prompt.md`**: Git hooks, automation tools, and CI/CD integration
-
-**Key Improvements**:
-
-- **Modular Architecture**: Focused files for specific use cases
-- **Quick Access**: Main instructions provide immediate guidance
-- **Detailed Reference**: Prompt files offer comprehensive information when needed
-- **100% Gitmoji Coverage**: Every single example includes gitmoji without exception
-- **Clear Error Prevention**: Explicit warnings about mandatory requirements
-- **Tool Integration**: Complete automation and validation guidance
-
-**I am executing the Self-Documentation Protocol following major documentation reorganization.**
-
-### Session and Context Synchronization ✅ **COMPLETED**
-
-**[2025-07-19T18:00:15Z]** Successfully synchronized with user to resume project work following CRITICAL MEMORY BANK PROTOCOL.
-
-**Current State**: VS Code Copilot Chat initialized with complete project context from memory bank files
-**Last Action**: Read and understood complete memory bank state including activeContext.md, progress.md, projectbrief.md, and techContext.md
-**Rationale**: Essential for maintaining stateful collaboration and understanding current project priorities
-**Next Intent**: Assess environment status and determine immediate development priorities based on user requirements
-
-**I am executing the Self-Documentation Protocol following session initialization.**
-
-### Memory Bank Optimization and Formatting Correction ✅ **COMPLETED**
-
-**[2025-07-18T12:49:50Z]** Successfully completed comprehensive memory bank formatting correction to comply with official Cline Memory Bank standard.
-
-**Completed Tasks**: Systematic transformation of all memory bank files to follow proper structure:
-
-- ✅ **dependencies.md** - Completely restructured with official format and archived historical content
-- ✅ **progress.md** - Rewritten with current status focus and historical archival
-- ✅ **activeContext.md** - Restructured with official format and archived historical entries
-- ✅ **projectbrief.md** - Rewritten as foundation document with comprehensive requirements
-- ✅ **productContext.md** - Restructured with user experience goals and success metrics
-- ✅ **systemPatterns.md** - Reorganized with architectural patterns and design decisions
-- ✅ **techContext.md** - Restructured with technology stack and implementation standards
-- ✅ **Cline rules updated** - Added mandatory formatting standards to `.clinerules/main-rules.md`
-- ✅ **Historical archives** - Created complete preservation in `memory-bank/archives/` directory
-
-**Critical Requirements Successfully Implemented**:
-
-- ✅ **Single # Header Rule** - Each file exactly one top-level heading matching filename
-- ✅ **Official Structure** - ## Purpose → ## Structure → content → ## Dependencies → ## Call to Action
-- ✅ **Historical Separation** - Current content separate from archived entries
-- ✅ **Cross-References** - Proper dependency tracking and impact analysis
-- ✅ **Zero Information Loss** - Complete historical preservation in archives
-- ✅ **Markdown-Lint Compliance** - Strict GitHub formatting standards enforced
-- ✅ **AI Agent Optimization** - Faster session startup with focused current context
-
-### Production-Ready Applications Status ✅ **OPERATIONAL**
-
-**Next.js v15+ Application**: ✅ **FULLY OPERATIONAL** at <http://localhost:3000>
-
-- **Server Actions** working with proper `revalidatePath()` cache invalidation
-- **Database Integration** with PostgreSQL and Prisma ORM synchronized
-- **Form Validation** preventing empty posts with immediate UI updates
-- **Client/Server Components** properly balanced for optimal performance
-
-**TypeScript SDK**: ✅ **PRODUCTION-READY** with 98.34% branch coverage
-
-- **259 Tests Passing** with zero regression development
-- **Native Fetch API** implementation complete and optimized
-- **Comprehensive Mocking** strategies for HTTP client isolation
-
-## Recent Changes
-
-### [2025-07-23] Root Context Classification and Script Protocol
-
-**Achievement**: Documented all top-level folders with root context identification and established autonomous script documentation rules.
-
-- Updated README.md and memory bank with complete folder inventory
-- Added requirement to update `scripts/README.md` whenever scripts change
-- Clarified that each script must document its purpose and decision rationale
-
-### [2025-07-22] Root Context Inventory & Script Protocol Added
-
-**Achievement**: Documented all top-level directories and implemented a mandatory
-script documentation protocol. Updated `README.md`, `projectbrief.md`, `systemPatterns.md`, and `.clinerules` accordingly.
-
-### [2025-07-23] Root Context Documentation and Script Protocol ✅
-
-**Achievement**: Added comprehensive folder inventory with root context
-designations in `README.md` and `systemPatterns.md`. Established autonomous
-script documentation protocol reflected in `scripts/README.md` and
-`.clinerules/main-rules.md`.
-
-**Impact**: Ensures all agents maintain accurate project structure and keep
-script documentation synchronized without user prompts.
-
-### [2025-07-18] Memory Bank Formatting Correction Initiative
-
-**Achievement**: Initiated comprehensive memory bank optimization following official Cline Memory Bank standard
-
-- **Created archives/** directory with complete historical preservation
-- **Restructured dependencies.md** with proper official format and archived historical content
-- **Updated .clinerules/** with mandatory formatting standards for future compliance
-- **Implemented zero information loss** archival strategy
-
-### [2025-07-15] Next.js v15+ Server Actions Implementation
-
-**Achievement**: Completed full Next.js v15+ application with comprehensive Server Actions patterns
-
-- **Live Application** running at <http://localhost:3000> with database integration
-- **Enhanced Server Actions** library with 10 comprehensive examples
-- **Complete Documentation** including server-actions-guide.md and pragma-directives.prompt.md
-- **Database Migration** with Prisma ORM and PostgreSQL integration
-
-### [2025-07-14] Microsoft Edge DevTools Integration
-
-**Achievement**: Comprehensive Edge DevTools debugging configuration with protocol compliance
-
-- **CSS Variables Solution** for no-inline-styles warning using `style={{ '--dynamic-color': value }}`
-- **Complete VS Code Configuration** with launch setups for debugging, mobile, performance analysis
-- **Protocol Compliance Restoration** by creating proper instruction files
-
-### [2025-07-13] README Drift Resolution
-
-**Achievement**: Synchronized all documentation to accurately represent workspace sophistication
-
-- **31 Instruction Files Analysis** with proper categorization and cross-references
-- **35 Prompt Files Inventory** organized by workflow automation and development patterns
-- **Complete README Reconstruction** reflecting AI agent ecosystem and technical achievements
-
-## Implementation Note (2025-07-19T18:30:00Z)
-
-**Decision/Note:**
-We have decided to implement, in a future update, a reference-based port allocation pattern for the 5000-range (BASE_PORT=5000) using the same static index methodology as the 3000-range. The service at index 0 (e.g., monitoring dashboard or main web frontend) will use ports 5000–5009, with retries incrementing within this block. This will ensure consistent, predictable port mapping for monitoring and production dashboards, following the same robust, stateful allocation logic as in the 3000-range.
-
-**Rationale:**
-This approach maintains architectural consistency, simplifies service discovery, and supports robust, conflict-free port allocation for all major service groups (development, monitoring, production, etc.).
-
-**Next Intent:**
-Implement this pattern in the codex_run.sh and related orchestration scripts when expanding monitoring/production service support.
-
-**Meta:**
-I am recording this as part of the Self-Documentation Protocol. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-
-## Implementation Note (2025-07-23T01:40:00Z)
-
-**Decision/Note:**
-Established a formal root context classification and script documentation protocol.
-Created `memory-bank/root-contexts.md`, updated `README.md`, `.clinerules/main-rules.md`, and `scripts/README.md` accordingly.
-
-**Rationale:**
-Clarifies folder purposes for all agents and enforces autonomous maintenance of script documentation.
-
-**Next Intent:**
-Ensure future scripts include purpose comments and that the root context list remains current.
-
-**Meta:**
-Self-Documentation Protocol executed after establishing folder classification and script maintenance rules.
+**Impact:** Extensible foundation for remote actor architecture with future expansion capability
 
 ---
 
@@ -700,130 +81,123 @@ Self-Documentation Protocol executed after establishing folder classification an
 
 ### Immediate Priorities (Next 24 hours)
 
-1. **Complete Memory Bank Formatting** - Finish transforming remaining core files:
-   - **projectbrief.md** - Restructure with proper foundation format
-   - **productContext.md** - Clarify purpose and goals with official structure
-   - **systemPatterns.md** - Organize architecture decisions with historical archival
-   - **techContext.md** - Document technologies with current focus separation
+1. **Complete Memory Bank Grooming** - Continue systematic optimization:
+   - ✅ Diagram redundancy elimination (COMPLETED)
+   - 🔄 activeContext.md rolling archive (IN PROGRESS)
+   - ⏳ Consolidate dependencies.md duplicate sections
+   - ⏳ Add traceability matrix to progress.md
+   - ⏳ Standardize Session-Sticky Preferences across agents
 
-2. **Validate Formatting Compliance** - Run comprehensive markdown-lint validation
-3. **Test AI Agent Reading Efficiency** - Verify faster session startup with optimized structure
+2. **Validate Grooming Impact** - Measure session startup improvement and context accuracy
 
 ### Short-term Goals (Next Week)
 
-1. **Conditional Framework Testing** - Real-world validation across all three Python environment modes
-2. **Framework Extension Planning** - Design conditional approach for Node.js and TypeScript setups
-3. **AI Framework Enhancement** - Validate prompt files and instruction files in development scenarios
-4. **Documentation Standards Enforcement** - Ensure all new files follow official Memory Bank structure
+1. **Baseline Timestamp Implementation** - Add drift detection timestamps to all core files
+2. **Compliance Section Addition** - Add "Dependencies and Relationships" to remaining core files  
+3. **AUDIT.sync.md Resolution** - Address script consolidation discrepancies
+4. **Build Output Segregation** - Fix techContext.md missing build rules
 
 ### Medium-term Objectives (Next Month)
 
-1. **Production Deployment Preparation** - Advanced features and deployment optimization for Next.js application
-2. **Multi-Agent Retrieval Framework** - Complete TypeScript 22 project under `agent-framework/`
-3. **Performance Testing Implementation** - Benchmarks for rate limiting and HTTP client components
-4. **Integration Testing Suite** - End-to-end validation of complete SDK workflow
+1. **Production Deployment Enhancement** - Next.js application optimization and advanced features
+2. **Multi-Agent Framework Validation** - Real-world testing across conditional Python environment modes
+3. **Performance Testing Suite** - Comprehensive benchmarks for SDK components
+4. **Integration Testing Coverage** - End-to-end workflow validation
+
+---
 
 ## Active Decisions
 
-### Memory Bank Structure Standardization ⚡ **CRITICAL**
+### Memory Bank Grooming Implementation ⚡ **CRITICAL**
 
-**Decision**: Mandatory compliance with official Cline Memory Bank structure for all files
-**Implementation**: Systematic transformation with historical archival and zero information loss
-**Rationale**: Essential for AI agent functionality, faster session startup, and professional documentation standards
-**Status**: **IN PROGRESS** - Actively implementing across all memory bank files
+**Decision:** Systematic Memory Bank optimization for speed and accuracy improvement
+**Implementation:** Rolling archive system with signal-to-noise optimization
+**Rationale:** AI agent session startup speed directly impacts development velocity
+**Status:** **IN PROGRESS** - Rolling archive implementation active
 
-### Official Formatting Requirements Enforcement
+### Diagram Redundancy Elimination ✅ **COMPLETED**
 
-**Decision**: Strict markdown-lint compliance with single # header rule and proper hierarchy
-**Implementation**: Updated `.clinerules/main-rules.md` with mandatory formatting standards
-**Rationale**: Ensures GitHub integration, tool compatibility, and consistent documentation quality
-**Status**: **ACTIVE** - Enforcing in all current and future memory bank updates
+**Decision:** Single authoritative Memory Bank flowchart in systemPatterns.md
+**Implementation:** Replaced 6+ redundant diagrams with references to authoritative source
+**Rationale:** Eliminated 6x parsing overhead and reduced Memory Bank ingestion time
+**Status:** **COMPLETED** - All redundant diagrams successfully eliminated
+
+### Session-Sticky Preferences Standardization
+
+**Decision:** Unified preference management across all three AI agents
+**Implementation:** Consistent Session-Sticky Preferences sections in instruction files
+**Rationale:** Ensures behavioral consistency and reduces agent coordination friction  
+**Status:** **PLANNED** - Implementation after current grooming priorities
 
 ### Historical Content Preservation Strategy
 
-**Decision**: Complete historical record preservation through archives/ directory structure
-**Implementation**: Chronological archival with proper cross-referencing and searchable organization
-**Rationale**: Maintains complete audit trail while optimizing current context for AI agents
-**Status**: **IMPLEMENTING** - Archives created with comprehensive historical preservation
+**Decision:** 30-day rolling archive with complete historical preservation
+**Implementation:** Chronological archival in archives/ directory with searchable organization
+**Rationale:** Optimizes current context while maintaining complete audit trail
+**Status:** **IMPLEMENTING** - Rolling archive system development
 
-### AI Agent Optimization Priority
-
-**Decision**: Current context optimization takes precedence over feature development
-**Implementation**: Focus on memory bank efficiency before expanding functionality
-**Rationale**: Foundation must be solid for effective AI agent collaboration and development velocity
-**Status**: **ACTIVE** - Memory bank optimization in progress
+---
 
 ## Historical Context Archive
 
-Complete historical context records are preserved in:
+### Complete Historical Records
 
-- **[activeContext-archive-2025-06-2025-07.md](./archives/activeContext-archive-2025-06-2025-07.md)** - Detailed historical entries from June-July 2025
+All comprehensive historical context entries from 2025-07-12 through 2025-09-04 have been preserved in:
 
-This archive contains comprehensive historical context including Next.js v15+ implementation details, native fetch conversion process, test suite optimization, Edge DevTools integration, README drift resolution, GitHub MCP server integration, and complete development workflow evolution.
+- **[activeContext-archive-2025-07-12-2025-09-04.md](./archives/activeContext-archive-2025-07-12-2025-09-04.md)** - Complete historical entries including:
+  - Layer 4 automation implementation
+  - Script consolidation from 41→22→23 scripts  
+  - Tasks-First Policy adoption for VS Code
+  - Prompt metadata standardization
+  - ESLint flat config implementation
+  - CI workflow optimization and local validation
+  - Documentation refactor and migration
+  - Next.js v15+ Server Actions implementation
+  - TypeScript SDK with 98.34% branch coverage
+  - Microsoft Edge DevTools integration
+  - Complete development workflow evolution
+
+### Archive Organization
+
+Historical entries are chronologically organized with full context preservation including:
+
+- **Implementation Details** - Complete technical specifications and code changes
+- **Rationale Documentation** - Decision-making process and architectural considerations  
+- **Cross-Reference Links** - Maintained relationships between historical and current context
+- **Meta-Protocol Entries** - Self-Documentation Protocol compliance records
+
+---
 
 ## Dependencies and Relationships
 
 - **Depends On:** [projectbrief.md](./projectbrief.md), [systemPatterns.md](./systemPatterns.md), [techContext.md](./techContext.md)
-- **Required By:** [progress.md](./progress.md), [dependencies.md](./dependencies.md), all AI agent operations, development workflows
-- **Why This Order:** Active context must reflect current implementation state from foundational documents before tracking progress
-- **Impact Analysis:** Changes to active context immediately affect all AI agents' understanding of current priorities, development focus, and resource allocation decisions
-
-## Call to Action
-
-> **All agents and contributors must review, update, and self-regulate this file as work progresses.**  
-> **Do not proceed with new work or changes until this file accurately reflects the current state and priorities.**  
-> **Update this file immediately upon any change in work focus, plans, or decisions.**  
-> **Maintain strict markdown-lint compliance and proper cross-referencing at all times.**
-
-## AI Agent Instructions
-
-This project supports three AI agents with specific entry points:
-
-- **Cline AI** → [`.clinerules/main-rules.md`](../.clinerules/main-rules.md) (Cline AI's primary instruction file)
-- **Codex CLI** → [`AGENTS.md`](../AGENTS.md) (Codex CLI's primary instruction file)
-- **VS Code Copilot** → [`.github/copilot-instructions.md`](../.github/copilot-instructions.md) (VS Code Copilot's primary instruction file)
-
-**All agents must prioritize Memory Bank optimization and maintain active context accuracy for effective collaboration.**
+- **Required By:** [progress.md](./progress.md), [dependencies.md](./dependencies.md), all AI agent operations
+- **Impact Analysis:** Active context changes immediately affect all AI agents' understanding of current priorities and development focus
+- **Rolling Archive Trigger:** Entries older than 30 days automatically archived to maintain optimal signal-to-noise ratio
+- **Cross-Agent Synchronization:** Updates propagated to Session-Sticky Preferences across Cline AI, Codex CLI, and VS Code Copilot
 
 ---
 
-**Self-Documentation Protocol**: This entry reaffirms that all actions and context changes must be documented and that this rule itself is part of the ongoing protocol.
+## Call to Action
 
-### [2025-07-17T03:53:10Z] Demo component refactor and actions consolidation
+> **All agents must review, update, and self-regulate this file as work progresses.**  
+> **Do not proceed with new work until this file accurately reflects current state and priorities.**  
+> **Update immediately upon any change in work focus, plans, or decisions.**  
+> **Maintain 30-day rolling archive to prevent signal degradation.**  
+> **Ensure strict markdown-lint compliance and proper cross-referencing.**
 
-- Split demo-components.tsx into individual files under src/components/examples
-- Optimized post-list state initialization
-- Consolidated actions.ts to re-export from enhanced-actions
+### AI Agent Instructions
 
-**Last Updated:** 2025-07-23T00:00:00Z | **Status:** Root Context Protocol Established | **Priority:** Documentation Sync
+This project supports three AI agents with specific entry points:
 
-### [2025-07-30T00:00:00Z] Verification Script References Removed
+- **Cline AI** → [`.clinerules/main-rules.md`](../.clinerules/main-rules.md)
+- **Codex CLI** → [`AGENTS.md`](../AGENTS.md)  
+- **VS Code Copilot** → [`.github/copilot-instructions.md`](../.github/copilot-instructions.md)
 
-- Removed references to `verify-all.sh` from AGENTS.md and setup scripts.
-- Updated verification guidelines in .clinerules/verification.md.
-- Introduced pino-based logger and centralized config improvements.
+**All agents must prioritize current focus snapshot and maintain active context accuracy for effective collaboration.**
 
-**Last Updated:** 2025-07-30 | **Status:** Verification Simplified | **Priority:** Logging Integration
+---
 
-- [2025-07-30T02:56:15Z] Removed verify-all script from active workflows and updated configuration.
-  **Current State:** Verification script references eliminated from AGENTS.md, setup scripts, and README. Added pino logging, centralized config, and bootstrap main.ts.
-  **Last Action:** Refactored src directory per engineering note and installed pino.
-  **Rationale:** Streamline tooling and implement modern SDK patterns.
-  **Next Intent:** Monitor logging output and expand REST gateway layer.
-  **Meta:** I am updating my self-documentation after completing repository optimization. This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
+**Rolling Archive Timestamp:** 2025-09-06T00:30:00Z | **Entries Archived:** 2025-07-12 through 2025-09-04 | **Signal Optimization:** ACTIVE
 
-- [2025-08-03T00:00:00Z] **Compliance Check: No `pages` Folder Found**
-  **Current State:** Verified that no `pages` folder exists in the workspace. All references to `pages` have been checked and confirmed to be absent.
-  **Last Action:** Conducted a workspace-wide search for `pages` folder and related files. No matches were found.
-  **Rationale:** Ensuring compliance with the directive to use only the `app` folder for Next.js routing.
-  **Next Intent:** Monitor future changes to ensure no `pages` folder is introduced.
-  **Meta:** This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-
-- [2025-08-03T00:10:00Z] **Removed legacy pages/api/chat.ts in favor of app/api/chat/route.ts**
-  **Current State:** The file `web/src/pages/api/chat.ts` was deleted to enforce exclusive use of the `app` folder for all API routes. Only `web/src/app/api/chat/route.ts` remains active for chat API handling.
-  **Last Action:** Deleted the legacy `pages/api/chat.ts` file after confirming its logic is already present in the `app` folder. This ensures compliance with the Next.js v13+ routing standard and project requirements.
-  **Rationale:** The project must never use the `pages` folder for routing or API endpoints. All logic must reside in the `app` folder to avoid conflicts and maintain a modern, maintainable codebase.
-  **Next Intent:** Monitor for any future reintroduction of `pages`-based routes and enforce exclusive use of the `app` folder.
-  **Meta:** This entry reaffirms that all actions and context changes MUST be documented and that this rule itself is part of the ongoing protocol.
-
-**Last Updated:** 2025-07-30T00:00:00Z | **Status:** Root Context Protocol Established | **Priority:** Documentation Sync
+**Last Updated:** 2025-12-06 | **Status:** Rolling Archive Optimized | **Current Priority:** Memory Bank Grooming Implementation
