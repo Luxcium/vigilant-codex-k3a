@@ -7,7 +7,7 @@ This file tracks all project dependencies, their relationships, and integration 
 ## Structure
 
 - **Core Dependencies** - Essential runtime and development dependencies
-- **Development Dependencies** - Tools and utilities for development workflow  
+- **Development Dependencies** - Tools and utilities for development workflow
 - **AI Agent Dependencies** - Files and systems required for AI agent collaboration
 - **Cross-References** - Dependency relationships and integration points
 - **Historical Changes Archive** - Chronological record of major dependency changes
@@ -27,7 +27,7 @@ This file tracks all project dependencies, their relationships, and integration 
 
 - **Layer 3 Factory Instructions** → **All instruction, chatmode, and prompt file creation** (Why: Provides canonical authoring rules and validation guardrails)
   - `layer-3a-custom-instructions-factory.instructions.md` → Controls creation of `*.instructions.md` files
-  - `layer-3b-chatmodes-factory.instructions.md` → Controls creation of `*.chatmode.md` files  
+  - `layer-3b-chatmodes-factory.instructions.md` → Controls creation of `*.chatmode.md` files
   - `layer-3c-prompt-files-factory.instructions.md` → Controls creation of `*.prompt.md` files
   - Impact: Ensures consistency, prevents duplication, enforces relative linking and proper front-matter
   - Builds on: Layer 1 (foundation) and Layer 2 (development environment) principles
@@ -117,40 +117,43 @@ All agents must consult the [theme-ui-meta.instructions.md](../memory-bank/instr
 
 ### Memory Bank File Hierarchy
 
-```
-projectbrief.md (foundation)
-├── productContext.md (purpose & goals)
-├── systemPatterns.md (architecture & decisions)
-├── techContext.md (technologies & constraints)
-└── activeContext.md (current state)
-    └── progress.md (achievements & status)
-        └── dependencies.md (this file)
+```mermaid
+flowchart TD
+    PB[projectbrief.md foundation] --> PC[productContext.md purpose & goals]
+    PB --> SP[systemPatterns.md architecture & decisions]
+    PB --> TC[techContext.md technologies & constraints]
+    PC --> AC[activeContext.md current state]
+    SP --> AC
+    TC --> AC
+    AC --> P[progress.md achievements & status]
+    P --> D[dependencies.md this file]
 ```
 
 ### AI Agent Collaboration Flow
 
-```
-User Request → AI Agent (Cline/Codex/Copilot)
-├── Reads: Memory Bank files (mandatory at session start)
-├── Applies: Instruction files for coding standards
-├── Executes: Prompt files for workflow automation
-├── Updates: Memory Bank with architectural decisions
-└── Maintains: Cross-session context preservation
+```mermaid
+flowchart TD
+    UR[User Request] --> AA[AI Agent Cline/Codex/Copilot]
+    AA --> R[Reads Memory Bank files mandatory at session start]
+    AA --> A[Applies Instruction files for coding standards]
+    AA --> E[Executes Prompt files for workflow automation]
+    AA --> U[Updates Memory Bank with architectural decisions]
+    AA --> M[Maintains Cross-session context preservation]
 ```
 
 ### Conditional Environment Integration
 
-```
-ENV_MODE Parameter Selection
-├── local: Host virtual environment
-│   ├── Dependencies: Python 3.13, pip, virtualenv
-│   └── Generated: .venv/, requirements.txt, local README
-├── docker_isolated: Fully containerized
-│   ├── Dependencies: Docker Engine, custom image
-│   └── Generated: Dockerfile, .dockerignore, isolated README
-└── docker_volume: Container + live editing
-    ├── Dependencies: Docker Compose, volume mounting
-    └── Generated: docker-compose.yml, volume README
+```mermaid
+flowchart TD
+    EM[ENV_MODE Parameter Selection] --> L[local Host virtual environment]
+    EM --> DI[docker_isolated Fully containerized]
+    EM --> DV[docker_volume Container + live editing]
+    L --> LD[Dependencies Python 3.13, pip, virtualenv]
+    L --> LG[Generated .venv/, requirements.txt, local README]
+    DI --> DID[Dependencies Docker Engine, custom image]
+    DI --> DIG[Generated Dockerfile, .dockerignore, isolated README]
+    DV --> DVD[Dependencies Docker Compose, volume mounting]
+    DV --> DVG[Generated docker-compose.yml, volume README]
 ```
 
 ## Historical Changes Archive
@@ -231,7 +234,6 @@ This project supports three AI agents with specific dependency management respon
 **Depends On:** Docker Engine, OpenAI API access, project structure standards
 **Required By:** All development workflows, AI agent environments, testing procedures
 **Impact Analysis:** Provides consistent development environment across all platforms and agents, eliminates environment-specific issues.
-
 
 ### Conditional Python Environment Framework
 
@@ -483,41 +485,42 @@ This project supports three AI agents with specific dependency management respon
 
 ### Conditional Python Environment Integration
 
-```
-memory-bank/instructions/python-environment-conditional.instructions.md
-├── Defines: Three-mode conditional setup (local, docker_isolated, docker_volume)
-├── Parameters: ENV_MODE, PYTHON_VERSION, PROJECT_NAME
-├── Integrates: AI agent collaboration patterns
-└── Enables: memory-bank/prompts/python-environment-setup.prompt.md
-    ├── Presents: Mode selection to users
-    ├── Routes: scripts/setup_python_env.sh
-    ├── Generates: Mode-specific configurations and documentation
-    └── Updates: memory-bank/dependencies.md (this file)
+```mermaid
+flowchart TD
+    PEC[python-environment-conditional.instructions.md] --> D[Defines Three-mode conditional setup]
+    PEC --> P[Parameters ENV_MODE, PYTHON_VERSION, PROJECT_NAME]
+    PEC --> I[Integrates AI agent collaboration patterns]
+    PEC --> E[Enables python-environment-setup.prompt.md]
+    E --> PR[Presents Mode selection to users]
+    E --> R[Routes scripts/setup_python_env.sh]
+    E --> G[Generates Mode-specific configurations and documentation]
+    E --> U[Updates memory-bank/dependencies.md this file]
 ```
 
 ### Script Dependency Flow
 
-```
-scripts/setup_python_env.sh (main entry)
-├── Validates: ENV_MODE parameter
-├── Routes to mode-specific scripts:
-│   ├── scripts/setup_python_local.sh (ENV_MODE=local)
-│   ├── scripts/setup_python_docker_isolated.sh (ENV_MODE=docker_isolated)
-│   └── scripts/setup_python_docker_volume.sh (ENV_MODE=docker_volume)
-├── Generates: .env.example, .gitignore updates
-└── Reports: Next steps and activation instructions
+```bash
+# setup_python_env.sh main entry script
+# Validates ENV_MODE parameter
+# Routes to mode-specific scripts:
+#   - scripts/setup_python_local.sh (ENV_MODE=local)
+#   - scripts/setup_python_docker_isolated.sh (ENV_MODE=docker_isolated)
+#   - scripts/setup_python_docker_volume.sh (ENV_MODE=docker_volume)
+# Generates .env.example, .gitignore updates
+# Reports next steps and activation instructions
 ```
 
 ### AI Agent Collaboration Flow
 
-```
-User Request → GitHub Copilot/Cline AI/Codex CLI
-├── Reads: memory-bank/prompts/python-environment-setup.prompt.md
-├── Applies: memory-bank/instructions/python-environment-conditional.instructions.md
-├── References: memory-bank/docker-workflow.md (for Docker modes)
-├── Executes: scripts/setup_python_env.sh with chosen ENV_MODE
-├── Generates: Mode-specific configurations and documentation
-└── Updates: Memory Bank documentation per Self-Documentation Protocol
+```mermaid
+flowchart TD
+    UR[User Request] --> AC[GitHub Copilot/Cline AI/Codex CLI]
+    AC --> R[Reads python-environment-setup.prompt.md]
+    AC --> A[Applies python-environment-conditional.instructions.md]
+    AC --> RF[References docker-workflow.md for Docker modes]
+    AC --> E[Executes scripts/setup_python_env.sh with chosen ENV_MODE]
+    AC --> G[Generates Mode-specific configurations and documentation]
+    AC --> U[Updates Memory Bank documentation per Self-Documentation Protocol]
 ```
 
 ### Project Structure Dependencies
@@ -548,9 +551,7 @@ Project Root
 
 - **Why This Order**: Dependencies must be documented before implementation to ensure proper integration
 
-- **Impact Analysis**: Changes to dependencies affect entire AI Agent Framework and development workflow
-
-## Recent Additions
+- **Impact Analysis**: Changes to dependencies affect entire AI Agent Framework and development workflow## Recent Additions
 
 ### Conditional Python Environment Framework
 
@@ -609,7 +610,7 @@ Project Root
 **Impact Analysis:** Enables mirrored directory structure in tests with clean imports, supporting comprehensive test coverage goals.
 
 - **Jest Configuration**: Updated to support @/ path aliases and focused test discovery
-- **TypeScript Config**: Added baseUrl and paths mapping for @/_ to src/_
+- **TypeScript Config**: Added baseUrl and paths mapping for @/_to src/_
 - **Test Structure**: Mirrored src/ folder structure in src/tests/ for organized testing
 - **Coverage Goals**: Targeting full coverage except src/types/ (saved for last as requested)
 
