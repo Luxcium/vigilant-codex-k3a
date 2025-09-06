@@ -1,5 +1,11 @@
 # Active Context
 
+- Layer 4 automation and health fully implemented per instructions
+- All validators, tasks, index, commit policy, prompts, and settings in place
+- Repository ready for development with resilient triad structure
+- Fast markdown pipeline implemented for >99% autonomous resolution
+- Session scheme should include, and loop over: Intention · Outline · Execution · Documentation · Fix pending Validations `<rinse 🔧 repeat>` · Conclusions
+
 - [2025-09-04T14:40:00Z] Script sandbox wrappers added and documented
   **Current State:** Added `scripts/sandbox_docker_run.sh` and `scripts/sandbox_run.sh` to enable no‑side‑effect script validation with mocks and read‑only repo mounts. Updated `scripts/analyze-test-structure.sh` to resolve `PROJECT_ROOT` dynamically for portability. Documented sandbox usage in `scripts/README.md`, referenced by `AGENTS.md`, and added `memory-bank/instructions/script-sandbox.instructions.md` for all agents.
   **Last Action:** Created Docker wrapper, inner harness, and instructions; added AI agent guidance comments to relevant scripts; linked instructions from AGENTS.md.
@@ -548,7 +554,7 @@ User requested initial project analysis to understand environment topology befor
 
 **I am executing the Self-Documentation Protocol following major documentation reorganization.**
 
-### Session Restart and Context Synchronization ✅ **COMPLETED**
+### Session and Context Synchronization ✅ **COMPLETED**
 
 **[2025-07-19T18:00:15Z]** Successfully synchronized with user to resume project work following CRITICAL MEMORY BANK PROTOCOL.
 
@@ -587,7 +593,7 @@ User requested initial project analysis to understand environment topology befor
 
 ### Production-Ready Applications Status ✅ **OPERATIONAL**
 
-**Next.js v15+ Application**: ✅ **FULLY OPERATIONAL** at http://localhost:3000
+**Next.js v15+ Application**: ✅ **FULLY OPERATIONAL** at <http://localhost:3000>
 
 - **Server Actions** working with proper `revalidatePath()` cache invalidation
 - **Database Integration** with PostgreSQL and Prisma ORM synchronized
@@ -638,7 +644,7 @@ script documentation synchronized without user prompts.
 
 **Achievement**: Completed full Next.js v15+ application with comprehensive Server Actions patterns
 
-- **Live Application** running at http://localhost:3000 with database integration
+- **Live Application** running at <http://localhost:3000> with database integration
 - **Enhanced Server Actions** library with 10 comprehensive examples
 - **Complete Documentation** including server-actions-guide.md and pragma-directives.prompt.md
 - **Database Migration** with Prisma ORM and PostgreSQL integration
