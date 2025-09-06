@@ -1,9 +1,11 @@
 # systemPatterns.md
 
 ## Purpose
+
 Concise canonical record of current system architecture: structural principles, key technical decisions, core design patterns, and critical component relationships. Replaces verbose narrative (preserved in archives/systemPatterns-archive.md) with an operationally focused summary that other Memory Bank files and AI agents can reliably ingest quickly.
 
 ## Structure
+
 - Architecture Overview
 - Key Technical Decisions (Snapshot)
 - Core Design & Implementation Patterns
@@ -15,9 +17,11 @@ Concise canonical record of current system architecture: structural principles, 
 ---
 
 ## Architecture Overview
+
 Polyvalent monorepo supporting coordinated TypeScript SDK, Next.js app, Python agent system, multi‑agent frameworks, and shared documentation.
 
 Foundational Principles:
+
 - Clear root contexts (src, web, python, agent-framework) with isolated configs
 - Script‑driven, idempotent setup (no manual mutations; all lifecycle in scripts/)
 - Memory Bank enforced for session context (all agents read core files first)
@@ -26,6 +30,7 @@ Foundational Principles:
 - Documentation-lint & single-H1 discipline; verbose rationale archived
 
 Root Contexts (authoritative list in root-contexts.md):
+
 - src/: TypeScript SDK (native fetch, shared types)
 - web/: Next.js v15+ (Server/Client Components, Server Actions, Prisma)
 - python/: Python agent environments + notebooks integration
@@ -34,6 +39,7 @@ Root Contexts (authoritative list in root-contexts.md):
 ---
 
 ## Key Technical Decisions (Snapshot)
+
 | Domain | Decision | Rationale (Condensed) | Impact |
 | ------ | -------- | --------------------- | ------ |
 | HTTP Layer | Native fetch (Node 22) | Reduce deps, future-proof | Lean runtime, strong typing |
@@ -50,32 +56,39 @@ Root Contexts (authoritative list in root-contexts.md):
 ---
 
 ## Core Design & Implementation Patterns
+
 Architecture & Collaboration:
+
 - Memory Bank Bootstrap Pattern: mandatory read cycle before action
 - Role Segmentation: reasoning (Cline), orchestration (Codex CLI), inline assist (Copilot)
 - Self-Documentation Loop: every structural change → Memory Bank update → archive if verbose
 
 Environment & Scripts:
+
 - Idempotent Script Pattern: safe re-runs; explicit precondition checks
 - Consolidation Protocol: periodic reduction of overlapping scripts (tracked in SCRIPT_CONSOLIDATION_PLAN.md if present)
 - Header Compliance: 10-line descriptive block + validation status footer
 
 Web & Component Model:
+
 - Server-first default; elevate to client only for interaction/stateful UI
 - Server Actions for mutations; explicit cache revalidation via revalidatePath / revalidateTag
 - Serializable boundary contract between Server and Client components
 
 Testing & Quality:
+
 - Global fetch stub with vi.stubGlobal for deterministic HTTP tests
 - Coverage Gate ≥98% branch; error & boundary cases required
 - Lint + markdown-lint as pre-commit guards (see scripts/verify-all.sh)
 
 Container & Deployment (Dev Scope):
+
 - Volume-based iteration; no rebuild on code changes
 - Minimal privilege baseline; dependency verification scripts
 - ENV_MODE pivot without rewriting configuration artifacts
 
 Archival Discipline:
+
 - Active files retain only current operational material
 - superseded rationale → archives/*.md with date stamp
 - ensures ingestion speed and preserves provenance
@@ -83,6 +96,7 @@ Archival Discipline:
 ---
 
 ## Component & Knowledge Relationships
+
 Memory Bank Flow:
 projectbrief.md → (scope baseline)
   ↳ productContext.md (why/goals)
@@ -93,6 +107,7 @@ projectbrief.md → (scope baseline)
                   ↳ dependencies.md (dependency tracking)
 
 Technology Interaction (Condensed):
+
 - src (SDK) supplies shared types/utilities → web & python
 - web (Next.js) uses Prisma + Server Actions + SDK abstractions
 - python integrates via API / shared contracts; supports notebooks
@@ -102,6 +117,7 @@ Technology Interaction (Condensed):
 ---
 
 ## Dependencies and Relationships
+
 - **Depends On:** projectbrief.md, productContext.md
 - **Informs:** techContext.md, activeContext.md, progress.md, dependencies.md
 - **Archive Reference:** archives/systemPatterns-archive.md (full legacy + rationale)
@@ -110,6 +126,7 @@ Technology Interaction (Condensed):
 ---
 
 ## Call to Action
+>
 > Keep this file lean: only current architecture & patterns in force. On change: (1) update snapshot here, (2) append detailed rationale to archive, (3) reconcile root-contexts.md & scripts/README.md if impacted, (4) propagate constraints to techContext.md and activeContext.md. Never remove historically significant rationale—archive it.
 
 ---

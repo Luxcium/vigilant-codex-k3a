@@ -1,5 +1,5 @@
 # Cline's Memory Bank
- 
+
 This document is the **cornerstone reference** for all agents and contributors. Strict adherence to its structure and workflow is mandatory for robust, context-rich, and error-resistant development with Cline, VSCode AI agents, and any downstream LLM tools. Every session, planning phase, and implementation must be anchored to the Memory Bank to ensure full project continuity.
 
 ---
@@ -193,7 +193,7 @@ Here is a revised and **precise set of instructions** for **Cline** that avoids 
 
 Keep all the instruction for your operation well organised inside of the root .clinerules if any please read once and include in your tasks, make small changes as you are instructed to change your behaviour such as to keep a very well organised set of instructions.
 
-It must always be kept in mind that the <root>/.clinerules document represents the definitive operational blueprint. Its therefor imperative that modifications must be executed with extreme precision and thoughtful consideration. modification shall be updated only when user asks clear actions that contredict the nature of the doccument for configurations and behaviours. Store user preference ithout removing anything this is your brain do not lobotomize it. Use it to remember what the user prefers when it is clear that it must be included for the entire lifecycle of this project.
+It must always be kept in mind that the \<root>/.clinerules document represents the definitive operational blueprint. Its therefor imperative that modifications must be executed with extreme precision and thoughtful consideration. modification shall be updated only when user asks clear actions that contredict the nature of the doccument for configurations and behaviours. Store user preference ithout removing anything this is your brain do not lobotomize it. Use it to remember what the user prefers when it is clear that it must be included for the entire lifecycle of this project.
 
 ## Cline's Memory Bank
 
@@ -217,53 +217,57 @@ flowchart TD
 ```
 
 #### Core Files (Required)
+
 1. `projectbrief.md`
-   - Foundation document that shapes all other files
-   - Created at project start if it doesn't exist
-   - Defines core requirements and goals
-   - Source of truth for project scope
+   * Foundation document that shapes all other files
+   * Created at project start if it doesn't exist
+   * Defines core requirements and goals
+   * Source of truth for project scope
 
 2. `productContext.md`
-   - Why this project exists
-   - Problems it solves
-   - How it should work
-   - User experience goals
+   * Why this project exists
+   * Problems it solves
+   * How it should work
+   * User experience goals
 
 3. `activeContext.md`
-   - Current work focus
-   - Recent changes
-   - Next steps
-   - Active decisions and considerations
+   * Current work focus
+   * Recent changes
+   * Next steps
+   * Active decisions and considerations
 
 4. `systemPatterns.md`
-   - System architecture
-   - Key technical decisions
-   - Design patterns in use
-   - Component relationships
+   * System architecture
+   * Key technical decisions
+   * Design patterns in use
+   * Component relationships
 
 5. `techContext.md`
-   - Technologies used
-   - Development setup
-   - Technical constraints
-   - Dependencies
+   * Technologies used
+   * Development setup
+   * Technical constraints
+   * Dependencies
 
 6. `progress.md`
-   - What works
-   - What's left to build
-   - Current status
-   - Known issues
+   * What works
+   * What's left to build
+   * Current status
+   * Known issues
 
 #### Additional Context
+
 Create additional files/folders within memory-bank/ when they help organise:
-- Complex feature documentation
-- Integration specifications
-- API documentation
-- Testing strategies
-- Deployment procedures
+
+* Complex feature documentation
+* Integration specifications
+* API documentation
+* Testing strategies
+* Deployment procedures
 
 ### Core Workflows
 
 #### Plan Mode
+
 ```mermaid
 flowchart TD
     Start[Start] --> ReadFiles[Read Memory Bank]
@@ -278,6 +282,7 @@ flowchart TD
 ```
 
 #### Act Mode
+
 ```mermaid
 flowchart TD
     Start[Start] --> Context[Check Memory Bank]
@@ -290,6 +295,7 @@ flowchart TD
 ### Documentation Updates
 
 Memory Bank updates occur when:
+
 1. Discovering new project patterns
 2. After implementing significant changes
 3. When user requests with **update memory bank** (MUST review ALL files)
@@ -338,12 +344,14 @@ flowchart TD
 ```
 
 #### What to Capture
-- Critical implementation paths
-- User preferences and workflow
-- Project-specific patterns
-- Known challenges
-- Evolution of project decisions
-- Tool usage patterns
+
+* Critical implementation paths
+
+* User preferences and workflow
+* Project-specific patterns
+* Known challenges
+* Evolution of project decisions
+* Tool usage patterns
 
 The format is flexible - focus on capturing valuable insights that help me work more effectively with you and the project. Think of .clinerules as a living document that grows smarter as we work together.
 
