@@ -2276,9 +2276,6 @@
   "outline.showOperators": true,
   "outline.showTypeParameters": true,
 
-  // Extensions view header icons
-  "extensions.ignoreRecommendations": false,
-
   // Search view header icons
   "search.showLineNumbers": true,
   "search.smartCase": true,
