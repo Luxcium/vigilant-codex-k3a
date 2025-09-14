@@ -119,12 +119,13 @@
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "jupyter.askForKernelRestart": false,
   "python.testing.pytestEnabled": true,
-  "python.testing.pytestArgs": ["python/tests"],
+  "python.testing.pytestArgs": [
+    "python/tests"
+  ],
   "python.testing.unittestEnabled": false,
   "python.testing.autoTestDiscoverOnSaveEnabled": true,
   "python.terminal.executeInFileDir": true,
   "python.terminal.focusAfterLaunch": true,
-
   // "remote.defaultExtensionsIfInstalledLocally": [
   //   "GitHub.copilot",
   //   "GitHub.copilot-chat",
@@ -1142,7 +1143,6 @@
     "editor.wordWrap": "on",
     "editor.wordWrapColumn": 70
   },
-
   "editor.rulers": [
     {
       "color": "#FC33",
@@ -1285,16 +1285,16 @@
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   // ESLint auto fix on save (string array form)
-  "editor.codeActionsOnSave": ["source.fixAll", "source.fixAll.eslint"],
-
+  "editor.codeActionsOnSave": [
+    "source.fixAll",
+    "source.fixAll.eslint"
+  ],
   // Microsoft Edge DevTools Configuration - Enhanced Error Integration
-
   "vscode-edge-devtools.useHttps": false,
   "vscode-edge-devtools.headless": false,
   "vscode-edge-devtools.timeout": 10000,
   "vscode-edge-devtools.port": 9222,
   "vscode-edge-devtools.hostname": "localhost",
-
   // Notebook integration
   "notebook.experimental.generate": true,
   // "todo-tree.highlights.foregroundColourScheme": [
@@ -1321,7 +1321,9 @@
     |-··----------------------------------------------------------··-|
   */
   // #region TODO TREE                                               !
-  "todo-tree.filtering.excludeGlobs": ["**/node_modules"],
+  "todo-tree.filtering.excludeGlobs": [
+    "**/node_modules"
+  ],
   "todo-tree.filtering.ignoreGitSubmodules": false,
   "todo-tree.filtering.includedWorkspaces": [], // new items
   "todo-tree.filtering.includeGlobs": [], // new items
@@ -2109,7 +2111,6 @@
   // Controls whether code instructions from .github/copilot-instructions.md are added to Copilot requests.
   "github.copilot.chat.codeGeneration.useInstructionFiles": true,
   // Note: Keep your instructions short and precise. Poor instructions can degrade Copilot's quality and performance. [Learn more](https://code.visualstudio.com/docs/copilot/copilot-customization) about customizing Copilot.
-
   // Mode File Locations
   // Specify location(s) of custom chat mode files (*.chatmode.md). [Learn More](https://code.visualstudio.com/docs/copilot/chat/chat-modes).
   // Relative paths are resolved from the root folder(s) of your workspace.
@@ -2128,7 +2129,6 @@
   "chat.instructionsFilesLocations": {
     "memory-bank/instructions": true
   },
-
   "chat.implicitContext.enabled": {
     "panel": "always"
   },
@@ -2163,7 +2163,6 @@
   "inlineChat.hideOnRequest": false,
   "inlineChat.lineEmptyHint": true,
   "inlineChat.lineNaturalLanguageHint": true,
-
   "github.copilot.chat.commitMessageGeneration.instructions": [
     {
       "file": "memory-bank/instructions/conventional-commits-must-be-used.instructions.md"
@@ -2188,7 +2187,6 @@
       "text": "Check for modularity, proper TypeScript types, comprehensive error handling, and code comments."
     }
   ],
-
   // #endregion: Github Copilot                                      !
   /*
     |-··----------------------------------------------------------··-|
@@ -2207,27 +2205,22 @@
   "terminal.integrated.env.linux": {
     "CODEX_HOME": "${workspaceFolder}/.codex"
   },
-
   // ========================================
   // Task and Launch Configuration
   // ========================================
-
   "debug.allowBreakpointsEverywhere": true,
   "debug.showBreakpointsInOverviewRuler": true,
   "debug.console.fontSize": 14,
   "debug.console.fontFamily": "Consolas, 'Courier New', monospace",
-
   // ========================================
   // Quick Actions and Shortcuts
   // ========================================
   "workbench.action.quickOpen.triggerMode": "openEditors",
   "workbench.quickOpen.preserveInput": true,
   "workbench.commandPalette.preserveInput": true,
-
   // ========================================
   // View Header Icons Configuration
   // ========================================
-
   // Always show icons in view headers
   "workbench.tree.renderIndentGuides": "always",
   "workbench.tree.indent": 12,
@@ -2244,7 +2237,6 @@
     "tsconfig.json": "tsconfig.*.json",
     "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, .npmrc"
   },
-
   // Outline view header icons
   "outline.icons": true,
   "outline.problems.enabled": true,
@@ -2275,7 +2267,6 @@
   "outline.showEvents": true,
   "outline.showOperators": true,
   "outline.showTypeParameters": true,
-
   // Search view header icons
   "search.showLineNumbers": true,
   "search.smartCase": true,
@@ -2294,45 +2285,37 @@
     "**/.next": true,
     "**/out": true
   },
-
   // Git/SCM view header icons
   "scm.alwaysShowRepositories": true,
   "scm.autoReveal": true,
   "scm.defaultViewMode": "tree",
   "scm.repositories.visible": 10,
-
   // Problems view header icons
   "problems.showCurrentInStatus": true,
   "problems.sortOrder": "severity",
   "problems.decorations.enabled": true,
-
   // Debug view header icons
   "debug.showInStatusBar": "always",
   "debug.showSubSessionsInToolBar": true,
-
   // Terminal view header icons
   "terminal.integrated.showExitAlert": false,
   "terminal.integrated.tabs.enabled": true,
   "terminal.integrated.tabs.location": "left",
   "terminal.integrated.tabs.showActions": "always",
   "terminal.integrated.tabs.showActiveTerminal": "always",
-
   // Test view header icons (if you have test extensions)
   "testing.automaticallyOpenPeekView": "never",
   "testing.showAllMessages": true,
-
   // Workbench activity bar and side bar icons
   "workbench.activityBar.location": "default",
   "workbench.sideBar.location": "left",
   "workbench.panel.defaultLocation": "bottom",
-
   // Icon theme configuration (based on your Material Icon Theme)
   "material-icon-theme.folders.theme": "specific",
   "material-icon-theme.folders.color": "#90a4ae",
   "material-icon-theme.hidesExplorerArrows": false,
   "material-icon-theme.opacity": 1,
   "material-icon-theme.saturation": 1,
-
   // Breadcrumb icons
   "breadcrumbs.enabled": true,
   "breadcrumbs.icons": true,
@@ -2360,7 +2343,6 @@
   "breadcrumbs.showNull": true,
   "breadcrumbs.showNumbers": true,
   "breadcrumbs.showStrings": true,
-
   // Editor tab icons
   "workbench.editor.showTabs": "multiple",
   "workbench.editor.tabSizing": "shrink",
@@ -2369,10 +2351,8 @@
   "workbench.editor.decorations.colors": true,
   "workbench.editor.labelFormat": "default",
   "workbench.editor.showIcons": true,
-
   // Status bar icons
   "workbench.statusBar.visible": true,
-
   // Additional visual enhancements
   "workbench.tips.enabled": true,
   "workbench.hover.delay": 500,
@@ -2399,7 +2379,10 @@
   "terminal.integrated.enableImages": true,
   "debug.javascript.autoAttachFilter": "smart",
   "debug.javascript.terminalOptions": {
-    "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
+    "skipFiles": [
+      "<node_internals>/**",
+      "**/node_modules/**"
+    ],
     "sourceMaps": true,
     "resolveSourceMapLocations": [
       "${workspaceFolder}/web/**",
@@ -2412,6 +2395,58 @@
     "${workspaceFolder}/web/**"
   ],
   "debug.onTaskErrors": "showErrors",
-  "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true
-  // #endregion: Last Section                                        !
-}
+  "github.copilot.chat.notebook.enhancedNextEditSuggestions.enabled": true,
+  /*
+
+    Prompt File Recommendations
+
+    Configure which prompt files to recommend in the chat welcome view.
+    Each key is a prompt file name, and the value can be true to always
+    recommend, false to never recommend, or a when clause expression like
+    resourceExtname == .js or resourceLangId == markdown.
+
+  */
+  "chat.promptFilesRecommendations": {
+    "bootstrap-genesis": false,
+    "codex-universal-environment": false,
+    "convert-md-to-json": false,
+    "define-prompt-file": false,
+    "dependency-management": false,
+    "docker-consolidated-template": false,
+    "docker-exotic-generator": false,
+    "docker-generator": false,
+    "docker-modular-workflow": false,
+    "edge-devtools-debugging": false,
+    "file-organization": false,
+    "general-icon-link-tags": false,
+    "git-hooks-automation": false,
+    "instruction-creation": false,
+    "instruction-creation-v2": false,
+    "instruction-generator": false,
+    "iterative-self-autonomous-ai-agent": false,
+    "launch-browser-monitor": false,
+    "memory-bank-update": false,
+    "modern-eslint-flat-config": false,
+    "notebook-development-workflow": false,
+    "persistance-maintain": false,
+    "python-environment-setup": false,
+    "readme-update-review": false,
+    "repair-markdown-instruction-files": false,
+    "script-generator": false,
+    "self-documentation": false,
+    "seo-meta-tags": false,
+    "setup-eslint-flat-config": false,
+    "template-manager": false,
+    "test-prompt": false,
+    "theme-ui-meta": false,
+    "tsdoc-typedoc": false,
+    "typescript-component": false,
+    "use-tool_name": false,
+    "validate-current-setup": false,
+    "validation-debugging-checklist": false,
+    "vit-implementation": false,
+    "web-project-structure": false,
+    "x-cards": false
+  }
+  // #endregion: Last Section
+  }
