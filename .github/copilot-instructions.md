@@ -84,7 +84,7 @@ Additionally, you must log your actions and findings in memory bank as per self-
 This project supports three AI agents with distinct entry points:
 
 - **VS Code Copilot (YOU)** → `.github/copilot-instructions.md` (THIS IS YOUR ENTRY POINT)
-- **Other AI Agents** → Use their respective entry points and memory bank protocols
+- **Other AI Agents** → Use their respective entry points and share the same memory bank protocols
 
 ## General Coding Standards
 
