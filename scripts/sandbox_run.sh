@@ -48,7 +48,7 @@ fi
 REPO_ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TARGET_SCRIPT_SRC="$1"; shift || true
 [[ ${1:-} == "--" ]] && shift || true
-TARGET_ARGS=($@)
+TARGET_ARGS=("$@")
 
 if [[ ! -f "$TARGET_SCRIPT_SRC" ]]; then
   # Allow passing just the basename for scripts/ paths
