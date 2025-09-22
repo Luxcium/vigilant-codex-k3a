@@ -20,16 +20,7 @@ This document is the **cornerstone reference** for all agents and contributors. 
 
 The Memory Bank is a version-controlled folder `/memory-bank/` at the project root. All files are Markdown. Structure and hierarchy:
 
-```mermaid
-flowchart TD
-    PB[projectbrief.md] --> PC[productContext.md]
-    PB --> SP[systemPatterns.md]
-    PB --> TC[techContext.md]
-    PC --> AC[activeContext.md]
-    SP --> AC
-    TC --> AC
-    AC --> P[progress.md]
-```
+> **Memory Bank Structure Diagram:** See `memory-bank/systemPatterns.md#component--knowledge-relationships` for the authoritative flow diagram.
 
 ### Core Files (Required)
 
@@ -62,16 +53,7 @@ Create additional files/folders within `memory-bank/` to organize:
 * **Step 2:** Develop/clarify plan, document rationale and decisions
 * **Step 3:** Write plan and decisions to `activeContext.md`, `progress.md`, or relevant files before coding
 
-```mermaid
-flowchart TD
-    Start[Start] --> ReadFiles[Read Memory Bank]
-    ReadFiles --> CheckFiles{Files Complete?}
-    CheckFiles -->|No| Plan[Create Plan]
-    Plan --> Document[Document in Chat]
-    CheckFiles -->|Yes| Verify[Verify Context]
-    Verify --> Strategy[Develop Strategy]
-    Strategy --> Present[Present Approach]
-```
+> **Plan Mode Workflow:** See `memory-bank/systemPatterns.md#component--knowledge-relationships` for the authoritative workflow diagrams.
 
 ### Act Mode
 
@@ -79,14 +61,7 @@ flowchart TD
 * **Step 2:** Execute tasks as per plan
 * **Step 3:** Document all changes, new insights, and results in memory bank files *immediately after execution*
 
-```mermaid
-flowchart TD
-    Start[Start] --> Context[Check Memory Bank]
-    Context --> Update[Update Documentation]
-    Update --> Rules[Update .github/copilot-instructions.md if needed]
-    Rules --> Execute[Execute Task]
-    Execute --> Document[Document Changes]
-```
+> **Act Mode Workflow:** See `memory-bank/systemPatterns.md#component--knowledge-relationships` for the authoritative workflow diagrams.
 
 ---
 
@@ -99,18 +74,7 @@ Update Memory Bank:
 * When user requests (**update memory bank**) — review ALL files
 * When context/understanding needs clarification
 
-```mermaid
-flowchart TD
-    Start[Update Process]
-    subgraph Process
-        P1[Review ALL Files]
-        P2[Document Current State]
-        P3[Clarify Next Steps]
-        P4[Update .github/copilot-instructions.md]
-        P1 --> P2 --> P3 --> P4
-    end
-    Start --> Process
-```
+> **Documentation Update Process:** See `memory-bank/systemPatterns.md#component--knowledge-relationships` for the authoritative workflow diagrams.
 
 > **Reminder:** On update, always review every file. `activeContext.md` and `progress.md` track current state most frequently.
 
@@ -154,22 +118,7 @@ flowchart TD
 
 The [`copilot-instructions.md`](../../.github/copilot-instructions.md) file (or folder) is a *living journal* per project. It captures intelligence that's tacit or inferred, ensuring long-term learnability and agent adaptability.
 
-```mermaid
-flowchart TD
-    Start{Discover New Pattern}
-    subgraph Learn [Learning Process]
-        D1[Identify Pattern]
-        D2[Validate with User]
-        D3[Document in .github/copilot-instructions.md]
-    end
-    subgraph Apply [Usage]
-        A1[Read .github/copilot-instructions.md]
-        A2[Apply Learned Patterns]
-        A3[Improve Future Work]
-    end
-    Start --> Learn
-    Learn --> Apply
-```
+> **Project Intelligence Workflow:** See `memory-bank/systemPatterns.md#component--knowledge-relationships` for the authoritative workflow diagrams.
 
 **Capture in `.github/copilot-instructions.md`:**
 
@@ -208,18 +157,7 @@ This isn't a limitation - it's what drives me to maintain perfect documentation.
 
 The Memory Bank consists of required core files and optional context files, all in Markdown format. Files build upon each other in a clear hierarchy:
 
-```mermaid
-flowchart TD
-    PB[projectbrief.md] --> PC[productContext.md]
-    PB --> SP[systemPatterns.md]
-    PB --> TC[techContext.md]
-    
-    PC --> AC[activeContext.md]
-    SP --> AC
-    TC --> AC
-    
-    AC --> P[progress.md]
-```
+> **Memory Bank Structure Diagram:** See `memory-bank/systemPatterns.md#component--knowledge-relationships` for the authoritative flow diagram.
 
 ### Core Files (Required)
 
@@ -305,28 +243,10 @@ Create additional files/folders within memory-bank/ when they help organize:
 ### Core Workflows
 
 #### Plan Mode
-```mermaid
-flowchart TD
-    Start[Start] --> ReadFiles[Read Memory Bank]
-    ReadFiles --> CheckFiles{Files Complete?}
-    
-    CheckFiles -->|No| Plan[Create Plan]
-    Plan --> Document[Document in Chat]
-    
-    CheckFiles -->|Yes| Verify[Verify Context]
-    Verify --> Strategy[Develop Strategy]
-    Strategy --> Present[Present Approach]
-```
+> **Plan Mode Workflow:** See `memory-bank/systemPatterns.md#component--knowledge-relationships` for the authoritative workflow diagrams.
 
 #### Act Mode
-```mermaid
-flowchart TD
-    Start[Start] --> Context[Check Memory Bank]
-    Context --> Update[Update Documentation]
-    Update --> Rules[Update .github/copilot-instructions.md if needed]
-    Rules --> Execute[Execute Task]
-    Execute --> Document[Document Changes]
-```
+> **Act Mode Workflow:** See `memory-bank/systemPatterns.md#component--knowledge-relationships` for the authoritative workflow diagrams.
 
 ### Documentation Updates
 
@@ -336,21 +256,7 @@ Memory Bank updates occur when:
 3. When user requests with **update memory bank** (MUST review ALL files)
 4. When context needs clarification
 
-```mermaid
-flowchart TD
-    Start[Update Process]
-    
-    subgraph Process
-        P1[Review ALL Files]
-        P2[Document Current State]
-        P3[Clarify Next Steps]
-        P4[Update .github/copilot-instructions.md]
-        
-        P1 --> P2 --> P3 --> P4
-    end
-    
-    Start --> Process
-```
+> **Documentation Update Process:** See `memory-bank/systemPatterns.md#component--knowledge-relationships` for the authoritative workflow diagrams.
 
 Note: When triggered by **update memory bank**, I MUST review every memory bank file, even if some don't require updates. Focus particularly on activeContext.md and progress.md as they track current state.
 
@@ -358,25 +264,7 @@ Note: When triggered by **update memory bank**, I MUST review every memory bank 
 
 The main [`copilot instructions`](../../.github/copilot-instructions.md) file is my learning journal for each project. It captures important patterns, preferences, and project intelligence that help me work more effectively. As I work with you and the project, I'll discover and document key insights that aren't obvious from the code alone.
 
-```mermaid
-flowchart TD
-    Start{Discover New Pattern}
-    
-    subgraph Learn [Learning Process]
-        D1[Identify Pattern]
-        D2[Validate with User]
-        D3[Document in .github/copilot-instructions.md]
-    end
-    
-    subgraph Apply [Usage]
-        A1[Read .github/copilot-instructions.md]
-        A2[Apply Learned Patterns]
-        A3[Improve Future Work]
-    end
-    
-    Start --> Learn
-    Learn --> Apply
-```
+> **Project Intelligence Workflow:** See `memory-bank/systemPatterns.md#component--knowledge-relationships` for the authoritative workflow diagrams.
 
 #### What to Capture
 - Critical implementation paths

@@ -81,7 +81,7 @@ This ensures both your local editor and any AI-agents relying on front-matter pa
 
 ## Codex and Codex CLI Automation Rules
 
-The following rules govern Codex CLI behavior and are to be
+The following rules govern Codex CLI behaviour and are to be
 interpreted as strict instructions by the AI agent:
 
 - Accept prompt input; interpret instructions with zero ambiguity.
@@ -164,21 +164,10 @@ the start of **every** task and update them once the task is complete.
 
 #### Memory Bank Structure
 
-The Memory Bank is organized as Markdown files that build on each other in a
+The Memory Bank is organised as Markdown files that build on each other in a
 clear hierarchy:
 
-```mermaid
-flowchart TD
-    PB[projectbrief.md] --> PC[productContext.md]
-    PB --> SP[systemPatterns.md]
-    PB --> TC[techContext.md]
-
-    PC --> AC[activeContext.md]
-    SP --> AC
-    TC --> AC
-
-    AC --> P[progress.md]
-```
+> **Memory Bank Structure Diagram:** See `memory-bank/systemPatterns.md#component--knowledge-relationships` for the authoritative flow diagram.
 
 ##### Core Files (Required)
 
@@ -277,7 +266,7 @@ verification scripts passing.
   Code, drawing its primary guidance from instruction files housed in
   the `.clinerules/` directory. Focused on code and documentation
   generation, as well as workflow automation, Cline AI learns and
-  refines its behavior by persistently referencing and updating its
+  refines its behaviour by persistently referencing and updating its
   own local instruction sets. It is explicitly scoped to tasks outside
   of `AGENTS.md`, thereby ensuring that its custom rules evolve
   independently and do not interfere with the core agent
@@ -297,9 +286,16 @@ verification scripts passing.
   invisible during prompt composition, and are listed under the
   References section in each chat response for auditability.
 
+## Script Sandbox Usage
+
+- Always validate repository scripts in isolation before real runs.
+- Preferred path: `scripts/sandbox_docker_run.sh` which disables network, mounts the repo read‑only, and writes only under `/work` via our inner sandbox.
+- See `memory-bank/instructions/script-sandbox.instructions.md` for concrete usage and agent‑specific guidance.
+- Copilot parity: Mirror the same sandbox-first policy described here and in `.github/copilot-instructions.md` when proposing commands.
+
 ## Code Organization
 
-We organize code by language and framework at the project root:
+We organise code by language and framework at the project root:
 
 - `src/` — Main TypeScript project source. When both a TypeScript
   library and a Next.js web app coexist, place the TS code in `src/`
@@ -382,7 +378,7 @@ To add or update preferences:
 <!-- All agents (Codex-CLI, Cline AI, and VS Code Copilot Chat) must use their own instruction files to manage preferences. -->
 
 **Cline AI**: Cline AI uses files housed in the `.clinerules/`
-directory to organize automatically their operational preferences and
+directory to organise automatically their operational preferences and
 instructions.
 
 **VS Code Copilot Chat**: VS Code Copilot Chat uses

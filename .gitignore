@@ -46,3 +46,4 @@ history.jsonl
 
 # README cleanup backups
 backup-readmes/
+.codex/version.json

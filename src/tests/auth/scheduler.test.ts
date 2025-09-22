@@ -81,7 +81,7 @@ describe('auth/scheduler', () => {
     });
   });
 
-  describe('delay calculation behavior', () => {
+  describe('delay calculation behaviour', () => {
     it('should schedule timeout with correct delay for normal expiration', async () => {
       const mockTokens = createMockTokens(300000); // 5 minutes
       mockBootstrap.mockResolvedValue(mockTokens);

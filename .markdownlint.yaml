@@ -53,7 +53,7 @@ MD022: true
 MD023: true
 
 # MD024: no-duplicate-heading — Multiple headings with same content
-MD024: true
+MD024: false
 
 # MD025: single-title/single-h1 — Single top-level heading
 MD025: true

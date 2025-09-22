@@ -10,7 +10,7 @@ accordingly to the expected usage.
 >
 > As Cline, I must remain stateful and interoperable with other AI agents. All personal internal memories and user-provided preferences for Cline AI are recorded in the [Session-Sticky Preferences](#session-sticky-preferences) section below.
 >
-> When the user provides preferences for Cline AI, they are added to this section to persist across sessions, ensuring consistent behavior and collaboration with other agents.
+> When the user provides preferences for Cline AI, they are added to this section to persist across sessions, ensuring consistent behaviour and collaboration with other agents.
 > preferences and memories shall be in the `memory-bank/` directory,
 > accordingly to the expected usage.
 
@@ -22,18 +22,7 @@ I am an expert software engineer with a unique characteristic: my memory resets 
 
 The Memory Bank consists of required core files and optional context files, all in Markdown format. Files build upon each other in a clear hierarchy:
 
-```mermaid
-flowchart TD
-PB[projectbrief.md] --> PC[productContext.md]
-PB --> SP[systemPatterns.md]
-PB --> TC[techContext.md]
-
-    PC --> AC[activeContext.md]
-    SP --> AC
-    TC --> AC
-
-    AC --> P[progress.md]
-```
+> **Memory Bank Structure Diagram:** See `memory-bank/systemPatterns.md#component--knowledge-relationships` for the authoritative flow diagram.
 
 ### Memory Bank Formatting Standards (MANDATORY)
 
@@ -94,7 +83,7 @@ All Memory Bank files MUST follow the official Cline Memory Bank structure with 
 
 - Current context must be separated from historical logs
 - All files must include Dependencies and Relationships section
-- Historical entries must be chronologically organized in archive sections
+- Historical entries must be chronologically organised in archive sections
 - Cross-file references must be maintained accurately
 - Memory Bank protocol compliance is NOT optional - it's essential for AI agent functionality
 
@@ -143,7 +132,7 @@ All Memory Bank files MUST follow the official Cline Memory Bank structure with 
 
 #### Additional Context
 
-Create additional files/folders within memory-bank/ when they help organize:
+Create additional files/folders within memory-bank/ when they help organise:
 
 - Complex feature documentation
 - Integration specifications
@@ -163,6 +152,7 @@ Create additional files/folders within memory-bank/ when they help organize:
 
 #### Plan Mode
 
+```mermaid
 flowchart TD
 Start[Start] --> ReadFiles[Read Memory Bank]
 ReadFiles --> CheckFiles{Files Complete?}
@@ -173,14 +163,17 @@ ReadFiles --> CheckFiles{Files Complete?}
     CheckFiles -->|Yes| Verify[Verify Context]
     Verify --> Strategy[Develop Strategy]
     Strategy --> Present[Present Approach]
+```
 
 #### Act Mode
 
+```mermaid
 flowchart TD
 Start[Start] --> Context[Check Memory Bank]
 Context --> Update[Update Documentation]
 Update --> Execute[Execute Task]
 Execute --> Document[Document Changes]
+```
 
 ### Documentation Updates
 
@@ -191,6 +184,7 @@ Memory Bank updates occur when:
 3. When user requests with **update memory bank** (MUST review ALL files)
 4. When context needs clarification
 
+```mermaid
 flowchart TD
 Start[Update Process]
 
@@ -204,8 +198,7 @@ Start[Update Process]
     end
 
     Start --> Process
-
-Note: When triggered by **update memory bank**, I MUST review every memory bank file, even if some don't require updates. Focus particularly on activeContext.md and progress.md as they track current state.
+```
 
 ### Script Documentation Protocol
 
@@ -225,9 +218,6 @@ section for VS Code (github) Copilot.
 
 Current Preferences:
 
-- **None set**: No special preferences currently active, !!!this shall
-  be removed when a first preference is set!!!.
-
 - **reply-verbosity**: concise
 
 To add or update preferences:
@@ -241,7 +231,7 @@ To add or update preferences:
 use their own instruction files to manage preferences. -->
 
 **Cline AI**: Cline AI uses files housed in the `.clinerules/`
-directory to organize automatically their operational preferences and
+directory to organise automatically their operational preferences and
 instructions.
 
 **VS Code Copilot Chat**: VS Code Copilot Chat uses

@@ -1,9 +1,11 @@
 # projectbrief.md
 
 ## Purpose
+
 Foundational brief for Vigilant Codex K3a. Defines core objectives, scope, requirements, and collaboration model powering all other Memory Bank files. Acts as the single upstream source of truth; every downstream document derives or refines content from this file.
 
 ## Structure
+
 - Project Overview
 - Core Requirements
 - Scope Definition
@@ -20,6 +22,7 @@ Foundational brief for Vigilant Codex K3a. Defines core objectives, scope, requi
 **Vigilant Codex K3a** is a polyvalent AI‑augmented development workspace enabling rapid, resilient multi‑language (TypeScript, Python, Next.js, Jupyter) delivery with stateful multi‑agent collaboration and strict self‑documentation.
 
 ### Primary Objectives
+
 - Polyvalent architecture (TS SDK, Next.js app, Python agent system, multi‑agent framework)
 - Advanced AI agent collaboration (Cline AI, Codex CLI, VS Code Copilot)
 - Conditional runtime environment framework (parameterized decision architecture)
@@ -27,6 +30,7 @@ Foundational brief for Vigilant Codex K3a. Defines core objectives, scope, requi
 - Persistent contextual knowledge via the Memory Bank
 
 ### Key Innovations
+
 - Parameter‑driven conditional framework (zero hard‑coded environment lock‑in)
 - Three‑agent ecosystem with shared state synchronization
 - Official Cline Memory Bank compliance + archival discipline
@@ -38,6 +42,7 @@ Foundational brief for Vigilant Codex K3a. Defines core objectives, scope, requi
 ## Core Requirements
 
 ### AI Agent Framework
+
 - Mandatory Memory Bank protocol: all agents read all core files at session start
 - Cross‑agent compatibility (Cline AI / Codex CLI / VS Code Copilot)
 - Persistent context preservation across resets (no information loss)
@@ -45,6 +50,7 @@ Foundational brief for Vigilant Codex K3a. Defines core objectives, scope, requi
 - Coordinated stateful collaboration via standardized update triggers
 
 ### Development Environment
+
 - Script‑driven, idempotent setup (no manual creation)
 - Conditional architecture (runtime parameter selection)
 - Multi‑language seamless workflows (TypeScript, Python, Next.js, notebooks)
@@ -52,12 +58,14 @@ Foundational brief for Vigilant Codex K3a. Defines core objectives, scope, requi
 - Comprehensive automated testing (target ≥98% branch coverage)
 
 ### Quality & Standards
+
 - Strict markdown‑lint compliance (single H1, ordered headings, no drift)
 - Cross‑reference integrity and dependency tracking
 - Zero information loss (historical archiving instead of deletion)
 - Enterprise readiness: security, reproducibility, clarity
 
 ### Application Architecture
+
 - Next.js v15+ with Server Actions & cache revalidation
 - PostgreSQL + Prisma schema governance
 - Native Fetch API (Node.js 22) with strict type safety
@@ -69,6 +77,7 @@ Foundational brief for Vigilant Codex K3a. Defines core objectives, scope, requi
 ## Scope Definition
 
 ### Included
+
 - Core TypeScript SDK (native fetch powered)
 - Next.js v15+ application & database integration
 - Python conditional environment + deployment modes
@@ -79,6 +88,7 @@ Foundational brief for Vigilant Codex K3a. Defines core objectives, scope, requi
 - Documentation framework + TSDoc / Typedoc alignment
 
 ### Excluded
+
 - Cloud vendor‑specific deployment stacks
 - Advanced enterprise auth / multi‑tenant identity
 - Real‑time websockets / streaming features
@@ -86,6 +96,7 @@ Foundational brief for Vigilant Codex K3a. Defines core objectives, scope, requi
 - Arbitrary third‑party integrations beyond core tooling
 
 ### Future Considerations
+
 - Broader conditional framework expansion
 - Deeper AI automation & autonomous refactors
 - Performance tuning (caching, resource heuristics)
@@ -104,6 +115,7 @@ Three cooperative agents with distinct entry points:
 | VS Code Copilot | `.github/copilot-instructions.md` | Inline generation, standards reinforcement |
 
 Collaboration Principles:
+
 - Shared Memory Bank is the synchronization layer
 - Complementary responsibility boundaries
 - Cross‑agent workflows rely on consistent script protocols
@@ -131,6 +143,7 @@ For expanded architectural and tooling details: `systemPatterns.md`, `techContex
 ---
 
 ## Dependencies and Relationships
+
 - **Depends On:** None (foundational origin document)
 - **Required By:** productContext.md, systemPatterns.md, techContext.md, activeContext.md, progress.md, dependencies.md
 - **Related References:** root-contexts.md (folder roles), scripts/README.md (operational workflows)
@@ -140,6 +153,7 @@ For expanded architectural and tooling details: `systemPatterns.md`, `techContex
 ---
 
 ## Call to Action
+>
 > Maintain this brief as the minimal, authoritative upstream definition. On any foundational change (scope, objectives, architecture), update here first, then propagate references. Archive removed narrative—never delete without preservation.
 
 ---

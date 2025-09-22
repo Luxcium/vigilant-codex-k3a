@@ -23,7 +23,7 @@ the environment to have the basic structure and update them as needed.
 - Baseline: Node.js 22+.
 - Enable Copilot thinking tool and chat todo list.
 - Use ESLint flat config with Prettier integration.
-- Turn on format on save and organize imports.
+- Turn on format on save and organise imports.
 
 ## Copilot setup
 

@@ -439,11 +439,13 @@ Tests rely on `vi.stubGlobal('fetch', mockFetch)` to capture API interactions. U
 Leverage AI-assisted VS Code tasks and pnpm script aliases to co-develop the Next.js application in real time:
 
 ### Root-level pnpm script aliases
+
 ## pnpm-Only, No-Lockfile Policy
 
 This workspace is intentionally configured to use **pnpm only** as the package manager. All references to npm or yarn have been removed. Lockfiles (pnpm-lock.yaml, package-lock.json, yarn.lock) are intentionally ignored and not used in CI or local development. See `.gitignore` and CI workflow for enforcement details.
 
 **Key points:**
+
 - Use `pnpm` for all dependency management and scripts.
 - Do not use npm or yarn in this workspace.
 - No lockfiles are generated or required; this is enforced in CI and `.gitignore`.

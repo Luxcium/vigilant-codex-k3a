@@ -1,26 +1,33 @@
-- **example.ts** → **.keys/example-sdk-demo.json** (Why: Playground output must include HTTP status codes for robust error reporting)
-  - Impact: Enables agentic error handling, debugging, and recursive output verification
-- **ts-node** → **RpcWorkerPool** (Why: Enable TypeScript worker execution for RPC worker threads)
-  - Impact: Allows worker pool to run TypeScript command modules without pre-compilation
-
-# The `dependencies.md` Memory Bank File
-
-Your AI Agent MUST actively strive to keep this file up to date with the latest dependencies, their relationships, and integration points for the Vigilant Codex K3a polyvalent AI development workspace. This file MUST be updated by any AI Agent accessing it, You MUST eagerly each time changes on each chat completion and each task or subtask as the living authoritative guide.
+# dependencies.md
 
 ## Purpose
 
-This file tracks all project dependencies, their relationships, and integration points. It also summarizes the Script Management and Optimization Protocol.
+This file tracks all project dependencies, their relationships, and integration points for the Vigilant Codex K3a polyvalent AI development workspace. It serves as the authoritative guide for dependency management across multiple languages, frameworks, and AI agents.
+
+## Structure
+
+- **Core Dependencies** - Essential runtime and development dependencies
+- **Development Dependencies** - Tools and utilities for development workflow
+- **AI Agent Dependencies** - Files and systems required for AI agent collaboration
+- **Cross-References** - Dependency relationships and integration points
+- **Historical Changes Archive** - Chronological record of major dependency changes
+- **Dependencies and Relationships** - File relationships and impact analysis
+- **Call to Action** - Instructions for maintaining this file
+
+---
+
+## Core Dependencies
 
 ### Script Management and Optimization Protocol
 
 - **34 instruction files** - Automated coding standards in `memory-bank/instructions/` (including Layer 3 factory instructions)
 - **35 prompt files** - Executable workflow templates in `memory-bank/prompts/`
 
-### Dependencies and Relationships
+#### Key Dependency Relationships
 
 - **Layer 3 Factory Instructions** → **All instruction, chatmode, and prompt file creation** (Why: Provides canonical authoring rules and validation guardrails)
   - `layer-3a-custom-instructions-factory.instructions.md` → Controls creation of `*.instructions.md` files
-  - `layer-3b-chatmodes-factory.instructions.md` → Controls creation of `*.chatmode.md` files  
+  - `layer-3b-chatmodes-factory.instructions.md` → Controls creation of `*.chatmode.md` files
   - `layer-3c-prompt-files-factory.instructions.md` → Controls creation of `*.prompt.md` files
   - Impact: Ensures consistency, prevents duplication, enforces relative linking and proper front-matter
   - Builds on: Layer 1 (foundation) and Layer 2 (development environment) principles
@@ -40,7 +47,7 @@ This file tracks all project dependencies, their relationships, and integration 
 - **Script header standardization** → **All 42 scripts in scripts/ directory** (Why: Consistent documentation and validation)
   - Impact: Enhanced maintainability and automated validation capabilities
 
-**Advanced Consolidation Dependencies**:
+#### Advanced Consolidation Dependencies
 
 - `setup_web_env.sh` + `setup_web_dev_environment.sh` → **Planned unified web setup script**
 - `validate-instructions.sh` + `validate-prompt.sh` → **Planned unified validation script**
@@ -48,44 +55,30 @@ This file tracks all project dependencies, their relationships, and integration 
 - `setup_questrade_sdk_core.sh` + `setup_questrade_types.sh` → **Planned unified Questrade setup**
 - `setup_agent_framework.sh` + `setup_agent_system.sh` → **Planned unified agent setup**
 
-**Quality Assurance Dependencies**:
+#### Quality Assurance Dependencies
 
 - **Header Format Validation** → **Automated checker for 10-line standardized format**
 - **Functional Testing** → **Parameter combination testing for consolidated scripts**
 - **Integration Testing** → **.vscode/tasks.json validation with consolidated scripts**
 - **Continuous Monitoring** → **Regular review protocol and usage analytics**
 
-### Development Environment Dependenciesect dependencies, their relationships, and integration points for the Vigilant Codex K3a polyvalent AI development workspace. It serves as a comprehensive dependency map enabling proper management and coordination between components across multiple languages, frameworks, and AI agents.
+## Development Dependencies
 
-## Structure
+### AI Agent Framework
 
-- **Core Dependencies** - Essential runtime and development dependencies
-- **Development Dependencies** - Tools and utilities for development workflow
-- **AI Agent Dependencies** - Files and systems required for AI agent collaboration
-- **Cross-References** - Dependency relationships and integration points
-- **Historical Changes Archive** - Chronological record of major dependency changes
-- **Dependencies and Relationships** - File relationships and impact analysis
-- **Call to Action** - Instructions for maintaining this file
-
----
-
-### AI Agent Dependencies
-
-### Memory Bank System
-
-- **Markdown-Lint Compliance** - Strict formatting standards for all files
+- **Memory Bank System**: Cross-referencing and documentation framework
+- **Prompt Files**: Executable workflow templates in `memory-bank/prompts/`
+- **Instruction Files**: Coding standards and guidelines in `memory-bank/instructions/`
+- **Script System**: Automation tools in `scripts/` directory
+- **Genesis Boot-Phase Script**: Checks Node dependencies, container state, and Git repo
 
 ### Three AI Agent Ecosystem
 
 - **Cline AI** - Primary development agent (`.clinerules/main-rules.md`)
 - **VS Code Copilot** - Code generation (`.github/copilot-instructions.md`)
-  **31 instruction files** - Automated coding standards in `memory-bank/instructions/`
-  **35 prompt files** - Executable workflow templates in `memory-bank/prompts/`
-
-> [!IMPORTANT]
-
-- **Jupyter Notebooks** - VS Code integration with advanced API support
-- **pip/virtualenv** - Package management across all environment modes
+- **Codex CLI** - Terminal automation and orchestration (`AGENTS.md`)
+- **31 instruction files** - Automated coding standards in `memory-bank/instructions/`
+- **35 prompt files** - Executable workflow templates in `memory-bank/prompts/`
 
 ### Testing Infrastructure
 
@@ -95,6 +88,8 @@ This file tracks all project dependencies, their relationships, and integration 
 - **Dev Container Configuration** - VS Code integration with `.devcontainer/`
 - **Security Scanning** - Container vulnerability validation
 - **Non-root User Configuration** - Security best practices (UID 1000)
+- **Jupyter Notebooks** - VS Code integration with advanced API support
+- **pip/virtualenv** - Package management across all environment modes
 
 ## AI Agent Dependencies
 
@@ -103,60 +98,62 @@ This file tracks all project dependencies, their relationships, and integration 
 - **Cross-File Dependencies** - Comprehensive dependency tracking
 - **Self-Documentation Protocol** - Automatic context preservation
 - **Memory Reset Resilience** - Complete project understanding from documentation
-- **Cline AI** - Primary development agent (`.clinerules/main-rules.md`)
-- **Codex CLI** - Terminal automation and orchestration (`AGENTS.md`)
+- **Markdown-Lint Compliance** - Strict formatting standards for all files
 - **Stateful Collaboration** - Memory bank integration across all agents
 
 ### Instruction & Prompt Framework
 
 **Depends On:** tsconfig.json baseUrl and paths configuration, TypeScript standards from `memory-bank/instructions/`
 
-- **31 instruction files** - Automated coding standards in `memory-bank/instructions/`
-- **35 prompt files** - Executable workflow templates in `memory-bank/prompts/`
-  All agents must consult the [when-to-use-what-matrix.instructions.md](../memory-bank/instructions/when-to-use-what-matrix.instructions.md) for a one-page mapping of integration goals to configuration files and authoritative sources. For detailed implementation, see `memory-bank/instructions/README.md` and `memory-bank/prompts/README.md`.
+All agents must consult the [when-to-use-what-matrix.instructions.md](../memory-bank/instructions/when-to-use-what-matrix.instructions.md) for a one-page mapping of integration goals to configuration files and authoritative sources. For detailed implementation, see `memory-bank/instructions/README.md` and `memory-bank/prompts/README.md`.
+
+All agents must consult the [theme-ui-meta.instructions.md](../memory-bank/instructions/theme-ui-meta.instructions.md) for detailed theming meta tag standards and the [theme-ui-meta.prompt.md](../memory-bank/prompts/theme-ui-meta.prompt.md) for workflow automation. These files cover syntax, validation, and platform-specific quirks for `theme-color`, `color-scheme`, and related tags.
+
 - **Conditional Architecture** - Runtime decision frameworks
 - **Parameter-Driven Configuration** - ENV_MODE and similar runtime selection
-  All agents must consult the [theme-ui-meta.instructions.md](../memory-bank/instructions/theme-ui-meta.instructions.md) for detailed theming meta tag standards and the [theme-ui-meta.prompt.md](../memory-bank/prompts/theme-ui-meta.prompt.md) for workflow automation. These files cover syntax, validation, and platform-specific quirks for `theme-color`, `color-scheme`, and related tags.
 - **Quality Assurance Standards** - Comprehensive validation and testing patterns
 
 ## Cross-References and Relationships
 
 ### Memory Bank File Hierarchy
 
-```
-projectbrief.md (foundation)
-├── productContext.md (purpose & goals)
-├── systemPatterns.md (architecture & decisions)
-├── techContext.md (technologies & constraints)
-└── activeContext.md (current state)
-    └── progress.md (achievements & status)
-        └── dependencies.md (this file)
+```mermaid
+flowchart TD
+    PB[projectbrief.md foundation] --> PC[productContext.md purpose & goals]
+    PB --> SP[systemPatterns.md architecture & decisions]
+    PB --> TC[techContext.md technologies & constraints]
+    PC --> AC[activeContext.md current state]
+    SP --> AC
+    TC --> AC
+    AC --> P[progress.md achievements & status]
+    P --> D[dependencies.md this file]
 ```
 
 ### AI Agent Collaboration Flow
 
-```
-User Request → AI Agent (Cline/Codex/Copilot)
-├── Reads: Memory Bank files (mandatory at session start)
-├── Applies: Instruction files for coding standards
-├── Executes: Prompt files for workflow automation
-├── Updates: Memory Bank with architectural decisions
-└── Maintains: Cross-session context preservation
+```mermaid
+flowchart TD
+    UR[User Request] --> AA[AI Agent Cline/Codex/Copilot]
+    AA --> R[Reads Memory Bank files mandatory at session start]
+    AA --> A[Applies Instruction files for coding standards]
+    AA --> E[Executes Prompt files for workflow automation]
+    AA --> U[Updates Memory Bank with architectural decisions]
+    AA --> M[Maintains Cross-session context preservation]
 ```
 
 ### Conditional Environment Integration
 
-```
-ENV_MODE Parameter Selection
-├── local: Host virtual environment
-│   ├── Dependencies: Python 3.13, pip, virtualenv
-│   └── Generated: .venv/, requirements.txt, local README
-├── docker_isolated: Fully containerized
-│   ├── Dependencies: Docker Engine, custom image
-│   └── Generated: Dockerfile, .dockerignore, isolated README
-└── docker_volume: Container + live editing
-    ├── Dependencies: Docker Compose, volume mounting
-    └── Generated: docker-compose.yml, volume README
+```mermaid
+flowchart TD
+    EM[ENV_MODE Parameter Selection] --> L[local Host virtual environment]
+    EM --> DI[docker_isolated Fully containerized]
+    EM --> DV[docker_volume Container + live editing]
+    L --> LD[Dependencies Python 3.13, pip, virtualenv]
+    L --> LG[Generated .venv/, requirements.txt, local README]
+    DI --> DID[Dependencies Docker Engine, custom image]
+    DI --> DIG[Generated Dockerfile, .dockerignore, isolated README]
+    DV --> DVD[Dependencies Docker Compose, volume mounting]
+    DV --> DVG[Generated docker-compose.yml, volume README]
 ```
 
 ## Historical Changes Archive
@@ -237,33 +234,6 @@ This project supports three AI agents with specific dependency management respon
 **Depends On:** Docker Engine, OpenAI API access, project structure standards
 **Required By:** All development workflows, AI agent environments, testing procedures
 **Impact Analysis:** Provides consistent development environment across all platforms and agents, eliminates environment-specific issues.
-
-#### Dependency: Conditional Python Environment Framework (2025-02-06)
-
-**Rationale:** Enables runtime selection of environment via ENV_MODE.
-**Depends On:** projectbrief.md, systemPatterns.md, techContext.md
-**Required By:** scripts/setup_python_env.sh and related scripts
-**Impact Analysis:** Provides flexible environments without hard-coded assumptions.
-
-## Purpose
-
-This file tracks all project dependencies, their relationships, and integration points. It serves as a comprehensive dependency map for any project, enabling proper management and coordination between components.
-
-## Structure
-
-- **Core Dependencies:** Essential project dependencies and their purposes.
-
-- **Development Dependencies:** Tools and utilities for development workflow.
-
-- **AI Agent Dependencies:** Files and systems required for AI agent collaboration.
-
-- **Cross-References:** How dependencies relate to each other and to Memory Bank files.
-
-- **Call to Action:** Instructions for agents to update and self-regulate this file.
-
----
-
-## Core Dependencies
 
 ### Conditional Python Environment Framework
 
@@ -515,41 +485,42 @@ This file tracks all project dependencies, their relationships, and integration 
 
 ### Conditional Python Environment Integration
 
-```
-memory-bank/instructions/python-environment-conditional.instructions.md
-├── Defines: Three-mode conditional setup (local, docker_isolated, docker_volume)
-├── Parameters: ENV_MODE, PYTHON_VERSION, PROJECT_NAME
-├── Integrates: AI agent collaboration patterns
-└── Enables: memory-bank/prompts/python-environment-setup.prompt.md
-    ├── Presents: Mode selection to users
-    ├── Routes: scripts/setup_python_env.sh
-    ├── Generates: Mode-specific configurations and documentation
-    └── Updates: memory-bank/dependencies.md (this file)
+```mermaid
+flowchart TD
+    PEC[python-environment-conditional.instructions.md] --> D[Defines Three-mode conditional setup]
+    PEC --> P[Parameters ENV_MODE, PYTHON_VERSION, PROJECT_NAME]
+    PEC --> I[Integrates AI agent collaboration patterns]
+    PEC --> E[Enables python-environment-setup.prompt.md]
+    E --> PR[Presents Mode selection to users]
+    E --> R[Routes scripts/setup_python_env.sh]
+    E --> G[Generates Mode-specific configurations and documentation]
+    E --> U[Updates memory-bank/dependencies.md this file]
 ```
 
 ### Script Dependency Flow
 
-```
-scripts/setup_python_env.sh (main entry)
-├── Validates: ENV_MODE parameter
-├── Routes to mode-specific scripts:
-│   ├── scripts/setup_python_local.sh (ENV_MODE=local)
-│   ├── scripts/setup_python_docker_isolated.sh (ENV_MODE=docker_isolated)
-│   └── scripts/setup_python_docker_volume.sh (ENV_MODE=docker_volume)
-├── Generates: .env.example, .gitignore updates
-└── Reports: Next steps and activation instructions
+```bash
+# setup_python_env.sh main entry script
+# Validates ENV_MODE parameter
+# Routes to mode-specific scripts:
+#   - scripts/setup_python_local.sh (ENV_MODE=local)
+#   - scripts/setup_python_docker_isolated.sh (ENV_MODE=docker_isolated)
+#   - scripts/setup_python_docker_volume.sh (ENV_MODE=docker_volume)
+# Generates .env.example, .gitignore updates
+# Reports next steps and activation instructions
 ```
 
 ### AI Agent Collaboration Flow
 
-```
-User Request → GitHub Copilot/Cline AI/Codex CLI
-├── Reads: memory-bank/prompts/python-environment-setup.prompt.md
-├── Applies: memory-bank/instructions/python-environment-conditional.instructions.md
-├── References: memory-bank/docker-workflow.md (for Docker modes)
-├── Executes: scripts/setup_python_env.sh with chosen ENV_MODE
-├── Generates: Mode-specific configurations and documentation
-└── Updates: Memory Bank documentation per Self-Documentation Protocol
+```mermaid
+flowchart TD
+    UR[User Request] --> AC[GitHub Copilot/Cline AI/Codex CLI]
+    AC --> R[Reads python-environment-setup.prompt.md]
+    AC --> A[Applies python-environment-conditional.instructions.md]
+    AC --> RF[References docker-workflow.md for Docker modes]
+    AC --> E[Executes scripts/setup_python_env.sh with chosen ENV_MODE]
+    AC --> G[Generates Mode-specific configurations and documentation]
+    AC --> U[Updates Memory Bank documentation per Self-Documentation Protocol]
 ```
 
 ### Project Structure Dependencies
@@ -583,7 +554,6 @@ Project Root
 - **Impact Analysis**: Changes to dependencies affect entire AI Agent Framework and development workflow
 
 ## Recent Additions
-
 ### Conditional Python Environment Framework
 
 - **Added**: Complete conditional framework replacing hard-coded Python setup
@@ -641,7 +611,7 @@ Project Root
 **Impact Analysis:** Enables mirrored directory structure in tests with clean imports, supporting comprehensive test coverage goals.
 
 - **Jest Configuration**: Updated to support @/ path aliases and focused test discovery
-- **TypeScript Config**: Added baseUrl and paths mapping for @/_ to src/_
+- **TypeScript Config**: Added baseUrl and paths mapping for @/_to src/_
 - **Test Structure**: Mirrored src/ folder structure in src/tests/ for organized testing
 - **Coverage Goals**: Targeting full coverage except src/types/ (saved for last as requested)
 

@@ -321,7 +321,7 @@ docker run --rm -it -v \$(pwd):/app -w /app -p 8000:8000 --env-file .env ${PROJE
 
 ## Development Workflow
 
-1. **Edit code** on your host system using your favorite editor/IDE
+1. **Edit code** on your host system using your favourite editor/IDE
 2. **Changes are immediately reflected** in the container (no rebuild needed)
 3. **Run/test** your code from within the container
 4. **Install new dependencies** by updating requirements.txt and rebuilding

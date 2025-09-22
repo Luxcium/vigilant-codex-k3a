@@ -13,6 +13,11 @@
 # setup_web_env.sh: Initialize Next.js app in web/ directory
 set -euo pipefail
 
+# AI Agents: Run this script through scripts/sandbox_docker_run.sh to test
+# without network or repo writes. Prefer mocked runs by default. When
+# executing for real, ensure network access is approved and respect the
+# no-lock-files preference.
+
 log() {
   echo "[$(date -u '+%Y-%m-%dT%H:%M:%SZ')] $1"
 }
@@ -22,7 +27,7 @@ WEB_DIR="$PROJECT_ROOT/web"
 
 if [ ! -f "$WEB_DIR/package.json" ]; then
   log "Creating Next.js project in $WEB_DIR"
-  CI=1 npx create-next-app@latest "$WEB_DIR" --typescript --eslint --use-npm --skip-install --import-alias "@/*" --src-dir
+  CI=1 npx create-next-app@latest "$WEB_DIR" --typescript --eslint --use-pnpm --skip-install --no-git --import-alias "@/*" --src-dir
   log "Next.js project created"
 else
   log "Next.js project already exists in $WEB_DIR"
@@ -41,4 +46,3 @@ fi
 
 log "Web environment setup complete"
 # Verification steps can be executed separately
-

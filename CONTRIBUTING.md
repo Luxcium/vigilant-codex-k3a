@@ -28,7 +28,7 @@ Start a Codex Universal container and enter a development shell:
 ./scripts/run_codex_cli.sh
 ```
 
-Run project commands with `npm run <script>` or `pnpm <script>` inside the container.
+Run project commands with `pnpm <script>` inside the container. This workspace uses pnpm exclusively as the package manager.
 
 ## Mock Recording
 
@@ -37,8 +37,8 @@ Tests capture network activity through `vi.stubGlobal('fetch', mockFetch)`. Upda
 ## Testing
 
 - `./scripts/verify-all.sh` – markdown, instruction, prompt, and memory-bank checks
-- `npm test` – run the vitest suite
-- `npm run test:coverage` – generate coverage reports
+- `pnpm test` – run the vitest suite
+- `pnpm run test:coverage` – generate coverage reports
 
 ## Verification
 

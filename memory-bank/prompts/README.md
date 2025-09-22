@@ -20,11 +20,13 @@ Prompt files (`.prompt.md`) are executable templates that:
 - Use tools to perform actions like file creation, code generation, or terminal commands
 
 ## Available Prompts (35 Files)
+
 ## Complete File Index
 
 ### **Total Files: 43 prompt files (.md)**
 
 **By Extension:**
+
 - `.md` files: 43 (prompt files including README.md)
 - `.prompt.md` files: 42 (executable prompt files)
 

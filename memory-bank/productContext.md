@@ -1,9 +1,11 @@
 # productContext.md
 
 ## Purpose
+
 Defines the product motivation, user experience intent, and success criteria guiding all implementation decisions. Provides the WHY that the foundational brief (projectbrief.md) enables and that execution/state files (activeContext.md, progress.md) operationalize.
 
 ## Structure
+
 - Why This Project Exists
 - Problems Being Solved (Summary)
 - How It Should Work
@@ -16,9 +18,11 @@ Defines the product motivation, user experience intent, and success criteria gui
 ---
 
 ## Why This Project Exists
+
 Vigilant Codex K3a addresses fragmentation and context loss in multi‑language, AI‑augmented software development. It establishes a persistent, polyvalent, script‑driven workspace where AI agents collaborate coherently, memory is durable, and quality emerges from enforced process rather than ad‑hoc effort.
 
 Core Motivation (Condensed):
+
 - Preserve context across AI sessions
 - Coordinate complementary AI agents
 - Avoid premature architectural lock‑in (conditional runtime decisions)
@@ -30,6 +34,7 @@ Core Motivation (Condensed):
 ---
 
 ## Problems Being Solved (Summary)
+
 | Problem | Impact | Solution Vector |
 | ------- | ------ | --------------- |
 | Session context loss | Repeated re-explanation | Mandatory Memory Bank read protocol |
@@ -42,7 +47,9 @@ Core Motivation (Condensed):
 ---
 
 ## How It Should Work
+
 Principles:
+
 - Seamless session resumption (context already loaded)
 - Runtime-selectable environment modes without structural churn
 - AI agents provide role-scoped, non-overlapping assistance
@@ -53,19 +60,23 @@ Principles:
 ---
 
 ## User Experience Goals
+
 Developer Experience:
+
 - Onboarding to productivity: hours, not days
 - Immediate retrieval of architectural intent
 - Minimal cognitive switching across languages
 - Confidence in standards & test rigor by default
 
 Team & Stakeholder Experience:
+
 - Transparent progress (progress.md + activeContext.md)
 - Stable architectural intent (systemPatterns.md references)
 - Traceability from feature decisions back to product rationale
 - Low risk of knowledge loss during personnel or agent turnover
 
 AI Agent Collaboration:
+
 - Consistent interpretation of scope & intent
 - Fast convergence on relevant suggestions
 - No duplication of long-form rationale across active files
@@ -73,6 +84,7 @@ AI Agent Collaboration:
 ---
 
 ## Success Metrics (Operational Targets)
+
 | Category | Metric | Target |
 | -------- | ------ | ------ |
 | Context Persistence | Fresh session readiness (all core files ingested) | < 30s |
@@ -85,6 +97,7 @@ AI Agent Collaboration:
 | Flexibility | Change environment mode w/out restructure | Always supported |
 
 Strategic Health Signals:
+
 - Memory Bank synchronization maintained
 - No conflicting agent edits
 - Archive growth corresponds to reduced active verbosity
@@ -93,6 +106,7 @@ Strategic Health Signals:
 ---
 
 ## Dependencies and Relationships
+
 - **Depends On:** projectbrief.md (foundational scope & requirements)
 - **Informs:** activeContext.md (current focus), progress.md (status), systemPatterns.md (architectural alignment), techContext.md (tooling expectations)
 - **Archive Reference:** Full pre-refactor narrative in archives/productContext-archive.md
@@ -101,6 +115,7 @@ Strategic Health Signals:
 ---
 
 ## Call to Action
+>
 > Keep this file minimal and intent-driven. On major rationale changes: update summary here, move superseded detail into the archive, propagate impacts to dependent Memory Bank files, and ensure metrics remain actionable.
 
 ---
