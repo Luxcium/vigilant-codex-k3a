@@ -126,7 +126,6 @@ Technology Interaction (Condensed):
 ---
 
 ## Call to Action
->
 > Keep this file lean: only current architecture & patterns in force. On change: (1) update snapshot here, (2) append detailed rationale to archive, (3) reconcile root-contexts.md & scripts/README.md if impacted, (4) propagate constraints to techContext.md and activeContext.md. Never remove historically significant rationale—archive it.
 
 ---
