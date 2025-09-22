@@ -104,9 +104,9 @@ Achievement: Created comprehensive Layer 3 factory instruction files for creatin
 
 Technical Implementation: Added three new factory instruction files:
 
-- `layer-3a-custom-instructions-factory.instructions.md` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ï¿½ Canonical authoring rules for `*.instructions.md` files with atomic rules and link guidance (prefer relative links; allow authoritative external links).
-- `layer-3b-chatmodes-factory.instructions.md` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ï¿½ Rules for `*.chatmode.md` files with strict model/tools constraints and minimal content guidelines.
-- `layer-3c-prompt-files-factory.instructions.md` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬ï¿½ Rules for `*.prompt.md` files with heading contracts, variable definitions, and output format requirements.
+- `layer-3a-custom-instructions-factory.instructions.md` — Canonical authoring rules for `*.instructions.md` files with atomic rules and link guidance (prefer relative links; allow authoritative external links).
+- `layer-3b-chatmodes-factory.instructions.md` — Rules for `*.chatmode.md` files with strict model/tools constraints and minimal content guidelines.
+- `layer-3c-prompt-files-factory.instructions.md` — Rules for `*.prompt.md` files with heading contracts, variable definitions, and output format requirements.
 
 Impact: Establishes consistent creation and validation patterns for all three types of AI agent directive files, ensuring compatibility with existing Layer 1 and Layer 2 systems while providing clear guardrails for content creation and evolution.
 
