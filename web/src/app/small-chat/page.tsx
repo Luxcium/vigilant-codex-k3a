@@ -30,7 +30,10 @@ export default function SmallChat() {
       });
 
       if (!response.ok) {
-        console.error('Error: Failed to fetch the chat response. Status:', response.status);
+        console.error(
+          'Error: Failed to fetch the chat response. Status:',
+          response.status
+        );
         return;
       }
 
