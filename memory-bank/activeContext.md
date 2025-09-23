@@ -32,6 +32,11 @@ This file tracks the current work focus, recent changes, next steps, and active 
 
 ## Recent Changes (Last 30 Days)
 
+### [2025-09-23] Web Dev Session Kickoff (Next.js)
+
+Started an iterative web development session for the `web/` app: opened Simple Browser at <http://localhost:3000>, prepared commands to activate the environment and start the dev server with hot reload, and set up a session log under `memory-bank/session-logs/` for traceability.
+
+
 ### [2025-09-04] Script Sandbox Wrappers Implementation
 
 **Achievement:** Added `scripts/sandbox_docker_run.sh` and `scripts/sandbox_run.sh` to enable no-side-effect script validation with mocks and read-only repo mounts.

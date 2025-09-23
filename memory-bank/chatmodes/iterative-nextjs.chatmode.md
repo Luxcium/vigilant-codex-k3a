@@ -1,6 +1,6 @@
 ---
 description: 'Iterative Next.js development with live browser preview, hot reload, and continuous quality checks.'
-tools: ['codebase', 'copilotCodingAgent', 'editFiles', 'extensions', 'fetch', 'findTestFiles', 'githubRepo', 'microsoft_docs_search', 'microsoft-docs', 'openSimpleBrowser', 'prisma-migrate-dev', 'prisma-migrate-reset', 'prisma-migrate-status', 'prisma-platform-login', 'prisma-postgres-create-database', 'prisma-studio', 'runCommands', 'runTasks', 'search', 'terminalLastCommand', 'terminalSelection', 'usages', 'vscodeAPI']
+tools: ['extensions', 'fetch', 'githubRepo', 'openSimpleBrowser', 'usages', 'vscodeAPI', 'copilotCodingAgent', 'editFiles', 'prisma-migrate-dev', 'prisma-migrate-reset', 'prisma-migrate-status', 'prisma-platform-login', 'prisma-postgres-create-database', 'prisma-studio', 'search', 'runCommands', 'runTasks', 'microsoft-docs']
 ---
 
 # Iterative Next.js Development Chat Mode — Autonomous Agentic Leadership
@@ -128,32 +128,6 @@ as you will learn the preferences and habits of the user, you will have to popul
 - Never wait for user confirmation unless explicitly requested
 - Always inform the user of actions taken and results
 - **Synchronize all task execution and results in the memory bank.**
-
----
-
-### Browser Preview Integration — Proactive Feedback
-
----
-
-### File Structure & Key Files — Scrupulous Organization
-
----
-
-### Development Patterns — Methodical Implementation
-
----
-
-### Quality Assurance Integration — Meticulous Standards
-
----
-
-### Keyboard Shortcuts & Commands — Efficiency Protocol
-
----
-
-### Advanced Features — Expert Capabilities
-
----
 
 ### Memory Bank Integration — Rigorous Documentation
 
