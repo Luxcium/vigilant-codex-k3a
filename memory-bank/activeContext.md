@@ -36,6 +36,10 @@ This file tracks the current work focus, recent changes, next steps, and active 
 
 Started an iterative web development session for the `web/` app: opened Simple Browser at <http://localhost:3000>, prepared commands to activate the environment and start the dev server with hot reload, and set up a session log under `memory-bank/session-logs/` for traceability.
 
+### [2025-09-23] Early Development Policy — No Lock Files
+
+Decision recorded to avoid committing package manager lock files during early development to maintain agility. Implemented `.gitignore` rules for all lockfile types and configured `.npmrc` with `save-lockfile=false` and `package-lock=false` to prevent generation. Existing `pnpm-lock.yaml` removed from version control. This aligns with the repository’s Session‑Sticky Preferences.
+
 
 ### [2025-09-04] Script Sandbox Wrappers Implementation
 
@@ -140,6 +144,13 @@ Started an iterative web development session for the `web/` app: opened Simple B
 **Implementation:** Consistent Session-Sticky Preferences sections in instruction files
 **Rationale:** Ensures behavioral consistency and reduces agent coordination friction  
 **Status:** **PLANNED** - Implementation after current grooming priorities
+
+### Early Development — No Lock Files (Repo Policy)
+
+**Decision:** Do not generate or commit lockfiles (`pnpm-lock.yaml`, `package-lock.json`, `yarn.lock`, `npm-shrinkwrap.json`).
+**Rationale:** Faster iteration and reduced churn while dependencies are fluid in early development.
+**Implementation:** `.gitignore` patterns added; `.npmrc` disables lockfile generation; existing lockfile removed.
+**Status:** **ACTIVE**
 
 ### Historical Content Preservation Strategy
 
