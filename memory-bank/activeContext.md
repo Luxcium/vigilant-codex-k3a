@@ -2,7 +2,25 @@
 
 ## Purpose
 
-This file tracks the current work focus, recent changes, next steps, and active decisions for the Vigilant Codex K3a polyvalent AI development workspace. It serves as the primary reference for understanding the present state of the project and immediate priorities.
+This f### [2025-09-23] Early Development Policy — No Lock Files
+
+Decision recorded to avoid committing package manager lock files during early development to maintain agility. Implemented `.gitignore` rules for all lockfile types and configured `.npmrc` with `save-lockfile=false` and `package-lock=false` to prevent generation. Existing `pnpm-lock.yaml` removed from version control. This aligns with the repository's Session‑Sticky Preferences.
+
+### [2025-09-23] VS Code Tasks Configuration Fixed
+
+Fixed malformed `tasks.json` containing duplicate JSON objects. Created unified task configuration with concurrent launch capabilities:
+
+- Individual tasks: `web:activate-env`, `web:dev`, `web:lint`, `web:test`, `web:format`
+- Background services: `Start Web Dev Server (bg)`, `Browser CDP Monitor (bg)`
+- Compound task: `Dev: Web + CDP Monitor (bg)` for parallel execution
+- Proper problem matchers and presentation settings for optimal UX
+
+**Validation Results:**
+
+- ✅ All VS Code JSON files pass error validation (`tasks.json`, `launch.json`, `extensions.json`)
+- ✅ Simple Browser opened successfully at `http://localhost:3000`
+- ✅ Compound launch configuration `Launch All: Web + Edge + CDP` ready for concurrent execution
+- ✅ Extension recommendations include Edge DevTools for proper instrumentation tracks the current work focus, recent changes, next steps, and active decisions for the Vigilant Codex K3a polyvalent AI development workspace. It serves as the primary reference for understanding the present state of the project and immediate priorities.
 
 ## Structure
 
