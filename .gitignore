@@ -56,3 +56,4 @@ history.jsonl
 # README cleanup backups
 backup-readmes/
 .codex/version.json
+.vscode/edge-data/**
