@@ -65,6 +65,14 @@ Fixed malformed `tasks.json` containing duplicate JSON objects. Created unified 
 
 ## Recent Changes (Last 30 Days)
 
+### [2025-09-27] Iterative Next.js Chatmode Stack Mandate
+
+**Achievement:** Updated `memory-bank/chatmodes/iterative-nextjs.chatmode.md` to codify the canonical stack (Next.js + React + HTML, Tailwind CSS, shadcn/ui, Radix Themes, Motion, Material Symbols, Heroicons, Lucide) and recalibrated every section to address advanced agents (Codex CLI, GPT-5, Claude-4).
+
+**Impact:** All iterative Next.js development sessions now explicitly steer toward the mandated libraries, ensuring consistent UI primitives, iconography, and animation frameworks across autonomous agent workflows. Troubleshooting, performance, and success metrics sections now cue agents to document compliance in the memory bank.
+
+**Next Intent:** Monitor upcoming iterations to confirm agents document stack adherence during QA cycles and capture any deviations or exceptions in future memory bank updates.
+
 ### [2025-09-23] Web Dev Session Kickoff (Next.js)
 
 Started an iterative web development session for the `web/` app: opened Simple Browser at <http://localhost:3000>, prepared commands to activate the environment and start the dev server with hot reload, and set up a session log under `memory-bank/session-logs/` for traceability.

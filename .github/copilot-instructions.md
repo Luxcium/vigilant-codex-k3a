@@ -180,7 +180,7 @@ instructions.
 `.github/copilot-instructions.md` file to manage its preferences and
 instructions.
 
-**Codex CLI**: Codex CLI uses `AGENTS.md` file to manage its
+**Codex/Codex CLI**: Codex CLI uses `AGENTS.md` file to manage its
 preferences and instructions.
 
 ### Documentation and User Preferences

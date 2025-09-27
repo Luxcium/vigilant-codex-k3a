@@ -13,12 +13,12 @@ BASE_URL="https://raw.githubusercontent.com/${REPO_OWNER}/${REPO_NAME}/${COMMIT}
 
 # Targets to fetch (relative paths to place under current working directory)
 TARGETS=(
-  "memory-bank/instructions/layer-1-v2-verify-and-bootstrap.instructions.md"
-  "memory-bank/instructions/layer-2-v2-verify-and-bootstrap.instructions.md"
-  "memory-bank/instructions/layer-3a-v2-custom-instructions-factory.instructions.md"
-  "memory-bank/instructions/layer-3b-v2-chatmodes-factory.instructions.md"
-  "memory-bank/instructions/layer-3c-v2-prompt-files-factory.instructions.md"
-  "memory-bank/instructions/layer-4-v2-automation-and-health.instructions.md"
+  "memory-bank/instructions/layer-1-verify-and-bootstrap.instructions.md"
+  "memory-bank/instructions/layer-2-verify-and-bootstrap.instructions.md"
+  "memory-bank/instructions/layer-3a-custom-instructions-factory.instructions.md"
+  "memory-bank/instructions/layer-3b-chatmodes-factory.instructions.md"
+  "memory-bank/instructions/layer-3c-prompt-files-factory.instructions.md"
+  "memory-bank/instructions/layer-4-automation-and-health.instructions.md"
 )
 
 # ---------- Utilities ----------
