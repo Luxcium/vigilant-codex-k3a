@@ -7,11 +7,13 @@ This directory contains specialized chatmode files that configure VS Code Copilo
 ### **Total Files: 14 total files (12 chatmodes + 1 README + 1 directory)**
 
 **By Extension:**
+
 - `.chatmode.md` files: 12 (specialized interaction modes)
 - `.md` files: 1 (README.md)
 - Directories: 1 (planification-agent/)
 
 **File Structure:**
+
 - 12 active chatmode files
 - 1 README.md file  
 - 1 planification-agent/ directory with 5 planning documents
@@ -125,22 +127,26 @@ You are an expert in [domain] with deep knowledge of [specific technologies].
 ## Chatmode Categories by Purpose
 
 ### Technical Implementation
+
 - **API Development**: api-architect
 - **Frontend Development**: iterative-nextjs
 - **SDK Development**: questrade-sdk-developer
 - **Documentation**: tsdoc-typedoc
 
 ### Environment & Tooling
+
 - **Editor Configuration**: vscode-helper
 - **Environment Setup**: setup-context
 - **Project Planning**: plan
 
 ### Data Science & Research
+
 - **Advanced Analytics**: notebook-master
 - **Experimentation**: notebook-specialist, proto-notebook
 - **Rapid Prototyping**: proto-notebook-advanced
 
 ### Strategic & Management
+
 - **Project Coordination**: main-expert
 - **Planning**: plan (with planification-agent/ support)
 
