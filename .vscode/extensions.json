@@ -1,5 +1,8 @@
 {
   "recommendations": [
+    // Core Development
+    "ms-edgedevtools.vscode-edge-devtools",
+
     // Python Development
     "ms-python.python",
     "ms-python.debugpy",

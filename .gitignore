@@ -1,3 +1,12 @@
+# Lockfiles are intentionally ignored in early development
+pnpm-lock.yaml
+package-lock.json
+npm-shrinkwrap.json
+yarn.lock
+**/pnpm-lock.yaml
+**/package-lock.json
+**/npm-shrinkwrap.json
+**/yarn.lock
 # Node
 **/node_modules/
 **/.next/
@@ -47,3 +56,4 @@ history.jsonl
 # README cleanup backups
 backup-readmes/
 .codex/version.json
+.vscode/edge-data/

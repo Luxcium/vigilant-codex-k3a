@@ -26,6 +26,7 @@ Instruction files (`.instructions.md`) are automatic guidelines that:
 ### **Total Files: 61 instruction files (.md)**
 
 **By Extension:**
+
 - `.md` files: 61 (instruction files)
 
 All files follow the `.instructions.md` naming convention and provide automatic coding standards.
@@ -94,7 +95,7 @@ All files follow the `.instructions.md` naming convention and provide automatic 
 
 ### Language Standards
 
-**TypeScript**
+**TypeScript**:
 
 - [typescript-style.instructions.md](./typescript-style.instructions.md) - Formatting and naming conventions.
 - [typescript-typing.instructions.md](./typescript-typing.instructions.md) - Type system usage and strict typing.

@@ -19,7 +19,8 @@ export default function PostList({ posts }: PostListProps) {
   for (const post of posts) {
     initialLikes[post.id] = post.likes;
   }
-  const [likesState, setLikesState] = useState<Record<string, number>>(initialLikes);
+  const [likesState, setLikesState] =
+    useState<Record<string, number>>(initialLikes);
 
   const handleLike = async (postId: string) => {
     try {

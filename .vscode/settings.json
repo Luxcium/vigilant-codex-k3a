@@ -2428,7 +2428,7 @@
     "memory-bank-update": false,
     "modern-eslint-flat-config": false,
     "notebook-development-workflow": false,
-    "persistance-maintain": false,
+    "persistence-maintain": false,
     "python-environment-setup": false,
     "readme-update-review": false,
     "repair-markdown-instruction-files": false,

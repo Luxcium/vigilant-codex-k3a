@@ -1,14 +1,17 @@
 'use server';
 // Next.js requires that a "use server" file only exports async functions directly.
 // Wrap and forward to implementations in `enhanced-actions`.
-import { createPost as _createPost, likePost as _likePost } from './enhanced-actions';
+import {
+  createPost as _createPost,
+  likePost as _likePost,
+} from './enhanced-actions';
 
 export async function createPost(formData: FormData) {
-	return _createPost(formData);
+  return _createPost(formData);
 }
 
 export async function likePost(id: string) {
-	return _likePost(id);
+  return _likePost(id);
 }
 
 // =======

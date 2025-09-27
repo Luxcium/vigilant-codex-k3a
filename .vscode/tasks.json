@@ -1,89 +1,162 @@
 {
-  "version": "2.0.0",
-  "tasks": [
-    {
-      "label": "project-status",
-      "type": "shell",
-      "command": "echo initialisation en attente..."
-    },
-    {
-      "label": "lint",
-      "type": "shell",
-      "command": "echo lint en attente..."
-    },
-    {
-      "label": "test",
-      "type": "shell",
-      "command": "echo tests en attente..."
-    },
-    {
-      "label": "build",
-      "type": "shell",
-      "command": "echo build en attente..."
-    },
-    {
-      "label": "hello:world",
-      "type": "shell",
-      "command": "pnpm run hello:world"
-    },
-    {
-      "label": "Start Web Dev Server (bg)",
-      "type": "shell",
-      "command": "pnpm run web:dev",
-      "isBackground": true,
-      "problemMatcher": {
-        "owner": "nextjs",
-        "fileLocation": "autoDetect",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": ".*Starting.*|.*ready - started server on.*|.*Ready in .*ms",
-          "endsPattern": ".*ready - started server on.*|.*Ready in .*ms"
-        },
-        "pattern": {
-          "regexp": "^(ERROR|WARNING|INFO)\\s+(.*):(\\d+):(\\d+)\\s+(.*)$",
-          "severity": 1,
-          "file": 2,
-          "line": 3,
-          "column": 4,
-          "message": 5
-        }
-      }
-    },
-    {
-      "label": "Browser CDP Monitor (bg)",
-      "type": "shell",
-      "command": "node ./scripts/cdp-browser-monitor.mjs",
-      "isBackground": true,
-      "options": {
-        "env": {
-          "CDP_HOST": "127.0.0.1",
-          "CDP_PORT": "9222",
-          "CDP_TARGET_PATTERN": "http://localhost:3000",
-          "CDP_VERBOSE": "0"
-        }
-      },
-      "problemMatcher": {
-        "owner": "cdp",
-        "fileLocation": "autoDetect",
-        "background": {
-          "activeOnStart": true,
-          "beginsPattern": ".*Attaching to .*",
-          "endsPattern": ".*CDP monitor attached.*"
-        },
-        "pattern": {
-          "regexp": "^(ERROR|WARNING|INFO)\\s+(.*):(\\d+):(\\d+)\\s+(.*)$",
-          "severity": 1,
-          "file": 2,
-          "line": 3,
-          "column": 4,
-          "message": 5
-        }
-      }
-    },
-    {
-      "label": "Dev: Web + CDP Monitor (bg)",
-      "dependsOn": ["Start Web Dev Server (bg)", "Browser CDP Monitor (bg)"],
-      "dependsOrder": "parallel"
-    }
-  ]
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "web:activate-env",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-lc",
+				"./scripts/activate_web_dev_environment.sh"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "web:dev",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-lc",
+				"pnpm --filter web dev || pnpm run web:dev || (cd web && pnpm dev)"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"isBackground": true,
+			"presentation": {
+				"reveal": "always",
+				"panel": "dedicated"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "web:lint",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-lc",
+				"pnpm --filter web lint || pnpm run web:lint || (cd web && pnpm lint) || (cd web && npx next lint)"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "web:test",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-lc",
+				"pnpm --filter web test || pnpm run web:test || (cd web && pnpm test) || (cd web && npx vitest run)"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"presentation": {
+				"reveal": "always",
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "web:format",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-lc",
+				"pnpm --filter web format || pnpm run web:format || (cd web && pnpm format) || (cd web && npx prettier --write .)"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"presentation": {
+				"reveal": "never",
+				"panel": "shared"
+			},
+			"problemMatcher": []
+		},
+		{
+			"label": "Start Web Dev Server (bg)",
+			"type": "shell",
+			"command": "pnpm run web:dev",
+			"isBackground": true,
+			"problemMatcher": {
+				"owner": "nextjs",
+				"fileLocation": "autoDetect",
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": ".*Starting.*|.*ready - started server on.*|.*Ready in .*ms",
+					"endsPattern": ".*ready - started server on.*|.*Ready in .*ms"
+				},
+				"pattern": {
+					"regexp": "^(ERROR|WARNING|INFO)\\s+(.*):(\\d+):(\\d+)\\s+(.*)$",
+					"severity": 1,
+					"file": 2,
+					"line": 3,
+					"column": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"label": "Browser CDP Monitor (bg)",
+			"type": "shell",
+			"command": "node ./scripts/cdp-browser-monitor.mjs",
+			"isBackground": true,
+			"options": {
+				"env": {
+					"CDP_HOST": "127.0.0.1",
+					"CDP_PORT": "9222",
+					"CDP_TARGET_PATTERN": "http://localhost:3000",
+					"CDP_VERBOSE": "0"
+				}
+			},
+			"problemMatcher": {
+				"owner": "cdp",
+				"fileLocation": "autoDetect",
+				"background": {
+					"activeOnStart": true,
+					"beginsPattern": ".*Attaching to .*",
+					"endsPattern": ".*CDP monitor attached.*"
+				},
+				"pattern": {
+					"regexp": "^(ERROR|WARNING|INFO)\\s+(.*):(\\d+):(\\d+)\\s+(.*)$",
+					"severity": 1,
+					"file": 2,
+					"line": 3,
+					"column": 4,
+					"message": 5
+				}
+			}
+		},
+		{
+			"label": "Dev: Web + CDP Monitor (bg)",
+			"dependsOn": [
+				"Start Web Dev Server (bg)",
+				"Browser CDP Monitor (bg)"
+			],
+			"dependsOrder": "parallel"
+		},
+		{
+			"label": "test-server-readiness",
+			"type": "shell",
+			"command": "bash",
+			"args": [
+				"-lc",
+				"curl -s http://localhost:3000 | head -20"
+			]
+		}
+	]
 }

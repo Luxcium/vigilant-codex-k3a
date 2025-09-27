@@ -79,6 +79,7 @@ All prompt files follow the `.prompt.md` naming convention and provide executabl
 - **[memory-bank-update.prompt.md](./memory-bank-update.prompt.md)** — Update memory bank documentation and cross-references.
 - **[dependency-management.prompt.md](./dependency-management.prompt.md)** — Track and update project dependencies.
 - **[self-documentation.prompt.md](./self-documentation.prompt.md)** — Execute and append self-documentation entries.
+- **[persistence-maintain.prompt.md](./persistence-maintain.prompt.md)** — Maintain agent persistence and continuous problem-solving discipline.
 - **[tsdoc-typedoc.prompt.md](./tsdoc-typedoc.prompt.md)** — Generate TSDoc/TypeDoc documentation and API references.
 - **[readme-update-review.prompt.md](./readme-update-review.prompt.md)** — Review and update README files for accuracy and completeness.
 
