@@ -65,6 +65,22 @@ Fixed malformed `tasks.json` containing duplicate JSON objects. Created unified 
 
 ## Recent Changes (Last 30 Days)
 
+### [2025-10-10] Tool Documentation for Iterative Next.js Chatmode
+
+**Achievement:** Added comprehensive "Additional Tools and Resources" section to `memory-bank/chatmodes/iterative-nextjs.chatmode.md` documenting all 24 tools available in the chatmode.
+
+**Technical Implementation:**
+
+- ✅ Documented all tools listed in frontmatter: `usages`, `vscodeAPI`, `activePullRequest`, `copilotCodingAgent`, `openPullRequest`, `createFile`, `createDirectory`, `editFiles`, `prisma-migrate-dev`, `prisma-migrate-reset`, `prisma-migrate-status`, `prisma-platform-login`, `prisma-postgres-create-database`, `prisma-studio`, `search`, `runCommands`, `runTasks`, `microsoft-docs`, and others
+- ✅ Organized tools into logical categories: Built-In Codebase Tools, VS Code Integration Tools, Terminal and Task Execution Tools, GitHub and Pull Request Tools, Prisma Database Tools, Research and Documentation Tools, AI and Reasoning Tools
+- ✅ Provided context-specific descriptions for Next.js development workflow
+- ✅ Fixed markdown linting issues (bare URLs, fenced code language, trailing punctuation)
+- ✅ Followed same documentation pattern as `questrade-sdk-developer.chatmode.md`
+
+**Impact:** Agents using iterative-nextjs chatmode now have comprehensive reference documentation for all available tools, enabling more effective autonomous Next.js development. Documentation explains how each tool integrates with the canonical stack (Tailwind CSS, shadcn/ui, Radix Themes, Motion) and supports the iterative development workflow.
+
+**Next Intent:** Monitor tool usage in upcoming sessions to identify any missing documentation or clarifications needed for optimal agent performance.
+
 ### [2025-09-27] Iterative Next.js Chatmode Stack Mandate
 
 **Achievement:** Updated `memory-bank/chatmodes/iterative-nextjs.chatmode.md` to codify the canonical stack (Next.js + React + HTML, Tailwind CSS, shadcn/ui, Radix Themes, Motion, Material Symbols, Heroicons, Lucide) and recalibrated every section to address advanced agents (Codex CLI, GPT-5, Claude-4).
@@ -80,7 +96,6 @@ Started an iterative web development session for the `web/` app: opened Simple B
 ### [2025-09-23] Early Development Policy — No Lock Files
 
 Decision recorded to avoid committing package manager lock files during early development to maintain agility. Implemented `.gitignore` rules for all lockfile types and configured `.npmrc` with `save-lockfile=false` and `package-lock=false` to prevent generation. Existing `pnpm-lock.yaml` removed from version control. This aligns with the repository’s Session‑Sticky Preferences.
-
 
 ### [2025-09-04] Script Sandbox Wrappers Implementation
 

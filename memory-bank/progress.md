@@ -20,6 +20,13 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## Current Status
 
+### [2025-10-10] Iterative Next.js Chatmode Tool Documentation
+
+- Added comprehensive tool documentation section to `memory-bank/chatmodes/iterative-nextjs.chatmode.md`
+- Documented all 24 tools in the chatmode frontmatter organized by category (Codebase, VS Code Integration, Terminal/Tasks, GitHub/PR, Prisma, Research, AI)
+- Fixed markdown linting issues (bare URLs, fenced code language, trailing punctuation)
+- Documentation follows pattern established in `questrade-sdk-developer.chatmode.md` and provides Next.js-specific context
+
 ### [2025-09-04] Script Sandbox
 
 - Added Docker and local sandbox harnesses to validate scripts without network or repo writes.
