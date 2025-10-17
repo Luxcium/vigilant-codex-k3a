@@ -180,7 +180,7 @@ instructions.
 `.github/copilot-instructions.md` file to manage its preferences and
 instructions.
 
-**Codex CLI**: Codex CLI uses `AGENTS.md` file to manage its
+**Codex/Codex CLI**: Codex CLI uses `AGENTS.md` file to manage its
 preferences and instructions.
 
 ### Documentation and User Preferences
@@ -210,10 +210,15 @@ Before to mark a task as completed you MUST imperatively update memory bank file
 
 All 3 instructions like folders, `instructions/`, `prompts/`, and `chatmodes/` have been migrated from `.github/` into the `memory-bank/` directory. The Copilot entry point remains `.github/copilot-instructions.md` for compatibility with official VS Code tooling. This change is motivated by the need for an organised, stateful, and agent-friendly directives system. Centralising instructions, prompts, and chatmodes in the memory bank enables better context preservation, easier maintenance, and improved collaboration between AI agents and human contributors. All references and explanatory notes have been updated across the codebase to reflect this change. Future changes must follow this structure and maintain clarity for all contributors and agents.
 
+Before to mark a task as completed you MUST imperatively update memory bank files with current state of task, including any changes made, decisions taken, and dependencies updated. why and thought process behind to be kept in mind for future reference.
+
+## CRITICAL MEMORY BANK PROTOCOL (keep context stateful for future reference)
+
 - [`memory-bank/chatmodes/*.chatmode.md`](../memory-bank/chatmodes/)
 - [`memory-bank/instructions/*.instructions.md`](../memory-bank/instructions/)
 - [`memory-bank/prompts/*.prompts.md`](../memory-bank/prompts/)
 - [`.github/copilot-instructions.md`](../.github/copilot-instructions.md) (THIS FILE)
+- [`AGENTS.md`](../AGENTS.md) (for Codex and Codex CLI)
 
 ---
 

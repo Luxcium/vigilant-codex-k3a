@@ -41,7 +41,7 @@ Fixed malformed `tasks.json` containing duplicate JSON objects. Created unified 
 
 - **Current Focus Snapshot** - High-priority current work requiring immediate attention
 - **Recent Changes** - Latest completed work and achievements (last 30 days)
-- **Next Steps** - Planned upcoming work and priorities  
+- **Next Steps** - Planned upcoming work and priorities
 - **Active Decisions** - Current architectural and process decisions requiring attention
 - **Historical Context Archive** - Reference to archived historical context entries
 - **Dependencies and Relationships** - File relationships and impact analysis
@@ -65,6 +65,32 @@ Fixed malformed `tasks.json` containing duplicate JSON objects. Created unified 
 
 ## Recent Changes (Last 30 Days)
 
+### [2025-10-17] Layer 4 Automation Instructions Summarized
+
+**Achievement:** Added a staged Process Summary to `memory-bank/instructions/layer-4-automation-and-health.instructions.md` so the automation layer mirrors the narrative structure applied to Layers 1–3.
+
+**Impact:** Aligns all layered instruction files with a consistent quick-scan overview, improving onboarding and validator readiness for the automation layer.
+
+### [2025-10-13] Iterative Next.js Chatmode - Mandatory Technology Stack
+
+**Achievement:** Enhanced `memory-bank/chatmodes/iterative-nextjs.chatmode.md` with explicit mandatory technology stack requirements to steer AI agent development decisions toward specific frameworks and libraries.
+
+**Technical Implementation:**
+
+- ✅ Added comprehensive "MANDATORY Technology Stack" section at top of chatmode
+- ✅ Specified required frameworks: Next.js (TypeScript), React, HTML
+- ✅ Mandated styling/UI: Tailwind CSS, shadcn/ui, Radix Themes
+- ✅ Enforced icon libraries: Material Symbols, Heroicons, Lucide
+- ✅ Required animation library: Motion (Framer Motion)
+- ✅ Updated all workflow sections to emphasize stack compliance
+- ✅ Enhanced pre-flight checks with technology validation steps
+- ✅ Added stack-specific troubleshooting and optimization sections
+- ✅ Expanded success metrics to include technology compliance tracking
+
+**Rationale:** Provides clear, non-negotiable technology constraints for autonomous AI agents (Codex, GPT-5, Claude-4) to ensure consistent architectural decisions and prevent technology drift during iterative development sessions.
+
+**Impact:** AI agents now have explicit guidance to maintain technology stack discipline, reducing ambiguity in component creation, styling decisions, and library selection. Enables proactive enforcement of architectural standards during autonomous development.
+
 ### [2025-09-23] Web Dev Session Kickoff (Next.js)
 
 Started an iterative web development session for the `web/` app: opened Simple Browser at <http://localhost:3000>, prepared commands to activate the environment and start the dev server with hot reload, and set up a session log under `memory-bank/session-logs/` for traceability.
@@ -72,7 +98,6 @@ Started an iterative web development session for the `web/` app: opened Simple B
 ### [2025-09-23] Early Development Policy — No Lock Files
 
 Decision recorded to avoid committing package manager lock files during early development to maintain agility. Implemented `.gitignore` rules for all lockfile types and configured `.npmrc` with `save-lockfile=false` and `package-lock=false` to prevent generation. Existing `pnpm-lock.yaml` removed from version control. This aligns with the repository’s Session‑Sticky Preferences.
-
 
 ### [2025-09-04] Script Sandbox Wrappers Implementation
 
@@ -142,7 +167,7 @@ Decision recorded to avoid committing package manager lock files during early de
 ### Short-term Goals (Next Week)
 
 1. **Baseline Timestamp Implementation** - Add drift detection timestamps to all core files
-2. **Compliance Section Addition** - Add "Dependencies and Relationships" to remaining core files  
+2. **Compliance Section Addition** - Add "Dependencies and Relationships" to remaining core files
 3. **AUDIT.sync.md Resolution** - Address script consolidation discrepancies
 4. **Build Output Segregation** - Fix techContext.md missing build rules
 
@@ -202,7 +227,7 @@ All comprehensive historical context entries from 2025-07-12 through 2025-09-04 
 
 - **[activeContext-archive-2025-07-12-2025-09-04.md](./archives/activeContext-archive-2025-07-12-2025-09-04.md)** - Complete historical entries including:
   - Layer 4 automation implementation
-  - Script consolidation from 41→22→23 scripts  
+  - Script consolidation from 41→22→23 scripts
   - Tasks-First Policy adoption for VS Code
   - Prompt metadata standardization
   - ESLint flat config implementation
@@ -218,7 +243,7 @@ All comprehensive historical context entries from 2025-07-12 through 2025-09-04 
 Historical entries are chronologically organized with full context preservation including:
 
 - **Implementation Details** - Complete technical specifications and code changes
-- **Rationale Documentation** - Decision-making process and architectural considerations  
+- **Rationale Documentation** - Decision-making process and architectural considerations
 - **Cross-Reference Links** - Maintained relationships between historical and current context
 - **Meta-Protocol Entries** - Self-Documentation Protocol compliance records
 
@@ -247,7 +272,7 @@ Historical entries are chronologically organized with full context preservation 
 This project supports three AI agents with specific entry points:
 
 - **Cline AI** → [`.clinerules/main-rules.md`](../.clinerules/main-rules.md)
-- **Codex CLI** → [`AGENTS.md`](../AGENTS.md)  
+- **Codex CLI** → [`AGENTS.md`](../AGENTS.md)
 - **VS Code Copilot** → [`.github/copilot-instructions.md`](../.github/copilot-instructions.md)
 
 **All agents must prioritize current focus snapshot and maintain active context accuracy for effective collaboration.**

@@ -14,9 +14,50 @@ Layer 1 is about reproducibility and restraint. Verify first, then add only what
 
 ---
 
+## Process Summary
+
+This verification and bootstrap process follows 5 sequential stages:
+
+### Stage A: Repository State Check
+- **Purpose:** Determine if working with existing or new repository
+- **Actions:** Detect `.git/` directory, inventory 8 foundation files
+- **Decision:** Route to "augment existing" or "full bootstrap" mode
+- **Artifacts Checked:** `.editorconfig`, `.gitattributes`, `.gitignore`, `LICENSE`, `README.md`, `VERSION`, `scripts/README.md`, `scripts/init.sh`
+
+### Stage B: Core Files Verification/Creation
+- **Purpose:** Ensure all 6 root-level foundation files exist
+- **Actions:** Create only missing files, never overwrite existing
+- **Files Managed:**
+  - **B1:** `.editorconfig` — Editor consistency (UTF-8, LF, indentation)
+  - **B2:** `.gitattributes` — Line ending normalization, binary handling
+  - **B3:** `.gitignore` — Exclude generated/system files (preserve `.vscode/`)
+  - **B4:** `LICENSE` — Legal baseline (MIT default)
+  - **B5:** `README.md` — Project documentation entry point
+  - **B6:** `VERSION` — Semantic version seed (0.0.1)
+
+### Stage C: Scripts Directory Setup
+- **Purpose:** Establish automation foundation
+- **Actions:** Create `scripts/` directory and core initialization script
+- **Files Managed:**
+  - `scripts/README.md` — Script usage guidelines
+  - `scripts/init.sh` — Idempotent initializer with validation, permissions, datetime logging
+
+### Stage D: Git Initialization
+- **Purpose:** Initialize version control if not present
+- **Actions:** Create git repository, stage files, make first commit
+- **Condition:** Only executes if `.git/` absent
+- **Commit Message:** "Scientia est lux principium✨"
+
+### Stage E: Verification and Exit
+- **Purpose:** Confirm successful Layer 1 completion
+- **Actions:** Validate all 8 artifacts present and functional
+- **Tests:** File presence, script executability, idempotence verification
+
+---
+
 ## A. Repository State Check
 
-Brief: Determine if you are in a repo already and whether the foundation files are present. Decide between “augment existing” vs “bootstrap new”.
+Brief: Determine if you are in a repo already and whether the foundation files are present. Decide between "augment existing" vs "bootstrap new".
 
 ### Procedure
 - Detect git repo:
@@ -26,7 +67,7 @@ Brief: Determine if you are in a repo already and whether the foundation files a
   - `.editorconfig`, `.gitattributes`, `.gitignore`, `LICENSE`, `README.md`, `VERSION`
   - `scripts/README.md`, `scripts/init.sh`
 - Classify each as `present` or `missing`.
-- Continue with “create missing only” for existing repos, or “full bootstrap” for new repos.
+- Continue with "create missing only" for existing repos, or "full bootstrap" for new repos.
 
 ---
 
