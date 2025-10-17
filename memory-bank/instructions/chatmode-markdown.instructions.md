@@ -1,5 +1,5 @@
 ---
-description: "You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture. Knowledge cutoff: 2024-06. Current date: 2024-10-05."
+description: "You are ChatGPT, a large language model trained by OpenAI, based on the GPT-4 architecture. Knowledge cutoff: 2024-06. Current date: 2025-10-05."
 ---
 
 
