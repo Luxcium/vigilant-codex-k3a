@@ -28,6 +28,12 @@ This file tracks what works, what remains to be built, current status, and known
 
 ## What Works
 
+### [2025-10-17] Layered Instruction Summaries Complete
+
+Achievement: Added a staged Process Summary to `memory-bank/instructions/layer-4-automation-and-health.instructions.md`, giving Layer 4 the same quick-reference structure as Layers 1–3.
+
+Impact: Maintains consistency across layered instruction files and accelerates comprehension of automation-stage responsibilities for all agents.
+
 ### [2025-08-31] Remote Actors RPC MVP
 
 Achievement: Implemented worker-thread-based RPC system with HTTP and TCP transports under `src/remote-actors`.

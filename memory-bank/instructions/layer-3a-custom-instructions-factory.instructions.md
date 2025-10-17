@@ -11,6 +11,35 @@ Scope. Creation, verification, and evolution of `*.instructions.md`. Front-matte
 
 The layer 2 gave you a place to move the instructions files used to generate this project so far. The layer 3a gives you the rules to author these files, for the time being just include the 2 files if they are missing and if you can locate them in the context where you got this files from then also gather the [first layer instructions](./layer-1-verify-and-bootstrap.instructions.md) and the [second layer instructions](./layer-2-verify-and-bootstrap.instructions.md) so we can refer to them later, you will have to commit all changes including the 2 additions in the `memory-bank/instructions/` folder and any other previous changes not commited until this point in time, an the commit must include any changes made before enacting duties included here in layer 3a.
 
+## Process Summary
+
+This factory guidance flows through five checkpoints that keep instruction cards consistent and auditable.
+
+### Stage A: Scope & Principles
+- **Purpose:** Establish guardrails and link discipline before authoring starts.
+- **Actions:** Apply atomic rule mindset, prefer relative links, plan for idempotent updates.
+- **Outcome:** Clear constraints that prevent duplication and drift.
+
+### Stage B: Authoring Blueprint
+- **Purpose:** Define canonical file placement and front-matter requirements.
+- **Actions:** Target `memory-bank/instructions/`, enforce `description`, respect immutable `applyTo`.
+- **Outcome:** Uniform file metadata and predictable discovery.
+
+### Stage C: Content Construction
+- **Purpose:** Shape body structure around actionable, testable bullets.
+- **Actions:** Write conditional rules, cross-link sibling layers, keep length within 200–400 words.
+- **Outcome:** Focused instruction sets that compose cleanly with other layers.
+
+### Stage D: Verification Path
+- **Purpose:** Guard against misplacement and unauthorized scope changes.
+- **Actions:** Create only missing files, avoid overwriting, log updates in `memory-bank/progress.md`.
+- **Outcome:** Idempotent authoring with documented lineage.
+
+### Stage E: Extended Guidance
+- **Purpose:** Provide reference implementations and VS Code usage patterns.
+- **Actions:** Follow format exemplars, honour front-matter spacing, reuse instructions through settings.
+- **Outcome:** Practical adoption playbook that keeps generated cards compliant.
+
 ## Operating Principles
 
 - One idea per bullet. Keep language testable.
@@ -58,7 +87,7 @@ Only for your information and as a reminder, VS Code supports two types of Markd
   * Automatically applies to all chat requests in the workspace
   * Stored within the workspace
 
-* One or more [`.instructions.md`](#use-instructions-files) files
+* One or more `.instructions.md` files (refer to the "Use `.instructions.md` files" section below)
   * Created for specific tasks or files
   * Use `applyTo` frontmatter to define what files the instructions should be applied to
   * Stored in the workspace or user profile
@@ -109,7 +138,7 @@ applyTo: "**/*.ts,**/*.tsx"
 
 # Project coding standards for TypeScript and React
 
-Apply the [general coding guidelines](./general-coding.instructions.md) and extend them here for TypeScript and React code paths.
+Apply the general coding guidelines defined for this workspace and extend them here for TypeScript and React code paths.
 
 ## /rules
 - Use TypeScript for all new code.

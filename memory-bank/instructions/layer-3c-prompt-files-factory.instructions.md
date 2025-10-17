@@ -10,6 +10,35 @@ Purpose. Prompts are on-demand procedures. They call a chat mode (see [Layer 3B]
 
 Storage. Place actual prompt files in `memory-bank/prompts/`. The present document stays in `memory-bank/instructions/`.
 
+## Process Summary
+
+This factory runs through five coordinated stages that keep prompt cards consistent and executable.
+
+### Stage A: Authoring Blueprint
+- **Purpose:** Define mandatory file placement, front-matter, and structural expectations.
+- **Actions:** Target `memory-bank/prompts/`, capture required keys, enforce ordered headings and input/output sections.
+- **Outcome:** Prompts share a predictable scaffold that downstream agents can parse automatically.
+
+### Stage B: Review Gate
+- **Purpose:** Ensure each prompt remains internally coherent and free from contradictions.
+- **Actions:** Validate mode/tool alignment, confirm working links, require explicit outputs, and block policy duplication.
+- **Outcome:** Quality prompts that integrate cleanly with chat modes and instruction files.
+
+### Stage C: Bootstrap & Dependencies
+- **Purpose:** Confirm supporting assets exist before adopting or generating a prompt.
+- **Actions:** Create the prompts directory if missing, provision referenced chat modes, and add instruction stubs when needed.
+- **Outcome:** Reliable prompts with all dependencies present and ready to execute.
+
+### Stage D: Directive Framework
+- **Purpose:** Provide additional governance on scope, naming, front-matter, and body sequencing.
+- **Actions:** Apply storage rules, maintain canonical path markers, and enforce strict heading hierarchy.
+- **Outcome:** Uniform cards that uphold Memory Bank contracts and avoid drift.
+
+### Stage E: Execution Support
+- **Purpose:** Equip authors with operational best practices, policies, testing steps, and templates.
+- **Actions:** Follow agentic prompting guidance, respect mode/model/tool rules, run prompts manually, and leverage the adaptive template.
+- **Outcome:** Prompt authorship remains efficient, testable, and aligned with workspace standards.
+
 ## Prompt Authoring Procedure
 - Path: `memory-bank/prompts/<stem>.prompt.md`
 - Front-matter:

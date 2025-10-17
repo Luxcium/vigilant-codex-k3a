@@ -65,6 +65,12 @@ Fixed malformed `tasks.json` containing duplicate JSON objects. Created unified 
 
 ## Recent Changes (Last 30 Days)
 
+### [2025-10-17] Layer 4 Automation Instructions Summarized
+
+**Achievement:** Added a staged Process Summary to `memory-bank/instructions/layer-4-automation-and-health.instructions.md` so the automation layer mirrors the narrative structure applied to Layers 1–3.
+
+**Impact:** Aligns all layered instruction files with a consistent quick-scan overview, improving onboarding and validator readiness for the automation layer.
+
 ### [2025-10-13] Iterative Next.js Chatmode - Mandatory Technology Stack
 
 **Achievement:** Enhanced `memory-bank/chatmodes/iterative-nextjs.chatmode.md` with explicit mandatory technology stack requirements to steer AI agent development decisions toward specific frameworks and libraries.

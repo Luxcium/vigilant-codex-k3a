@@ -25,6 +25,35 @@ Operating Principles
   read the Memory Bank before acting and write back outcomes immediately after.
   Treat this as an internal TODO on every task.
 
+## Process Summary
+
+This automation layer progresses through five stages that harden validation, visibility, and tooling around the triad.
+
+### Stage A: Validator Tooling Setup
+- **Purpose:** Guarantee every triad file type has an executable validator.
+- **Actions:** Ensure memory-bank, chatmode, and prompt validation scripts exist, enforce permissions, and codify constraints from Layers 3A–3C.
+- **Outcome:** Repeatable checks that keep authored artifacts compliant.
+
+### Stage B: Triad Health Automation
+- **Purpose:** Provide a single command that reports overall triad status.
+- **Actions:** Maintain `scripts/triad-health.sh` to run validators, inspect VS Code settings, and emit OK or FAIL summaries.
+- **Outcome:** Fast confidence that the workspace remains aligned and idempotent.
+
+### Stage C: Workspace Task Integration
+- **Purpose:** Surface automation through VS Code without manual command recall.
+- **Actions:** Merge-append tasks mapping to each validator, triad health, and slash-command utility while preserving existing task definitions.
+- **Outcome:** Preferred task launcher workflow that reinforces one-click compliance checks.
+
+### Stage D: Memory Bank Reinforcement
+- **Purpose:** Keep supporting documentation and prompt assets synchronized.
+- **Actions:** Maintain memory-bank index entries, commit policy instruction files, Copilot protocol coverage, prompt contracts, and `.prettierignore` safeguards.
+- **Outcome:** Durable triad ecosystem where agents locate rules, prompts, and instructions without drift.
+
+### Stage E: Acquisition and Verification
+- **Purpose:** Standardize how canonical artifacts are copied and validated in new environments.
+- **Actions:** Follow acquisition guidelines, preserve original front-matter, set executable bits, run validators, and log provenance in Memory Bank files.
+- **Outcome:** Consistent bootstrap flow with traceable provenance and exit criteria.
+
 Artifacts to Ensure
 
 1. Validator Scripts (executable)

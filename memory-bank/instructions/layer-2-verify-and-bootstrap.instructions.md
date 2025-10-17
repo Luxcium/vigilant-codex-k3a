@@ -1,5 +1,5 @@
 --- 
-description: Layer 2 — verify and extend a repository’s development environment without overwriting; add only missing VS Code, Copilot, and memory-bank triad elements; supports clean bootstrap after Layer 1.
+description: Layer 2 — verify and extend a repository's development environment without overwriting; add only missing VS Code, Copilot, and memory-bank triad elements; supports clean bootstrap after Layer 1.
 ---
 
 <!-- memory-bank/instructions/layer-2-verify-and-bootstrap.instructions.md -->
@@ -11,6 +11,65 @@ Layer 2 extends a complete Layer 1 with workspace ergonomics: VS Code settings, 
 ## Operating Principles
 
 Do not restate or duplicate Layer-1 artifacts. Keep actions idempotent. Prefer additive changes. Use conservative defaults that match the documented guardrails and allow immediate use.
+
+---
+
+## Process Summary
+
+This verification and bootstrap process follows 5 sequential stages:
+
+### Stage A: VS Code Workspace Configuration
+- **Purpose:** Establish predictable editor behavior and connect memory-bank triad
+- **Actions:** Create/configure `.vscode/settings.json` with merge-append pattern
+- **Key Settings:**
+  - Enable Copilot instruction files usage
+  - Configure triad locations (instructions, prompts, chatmodes)
+  - Set baseline behaviors (format on save, organize imports)
+- **Artifacts Created:** `.vscode/` directory, `settings.json` with triad integration
+
+### Stage B: Copilot Setup and Guardrails
+- **Purpose:** Constrain Copilot with explicit standards for consistent agent behavior
+- **Actions:** Create `.github/copilot-instructions.md` with project guardrails
+- **Key Standards:**
+  - TypeScript focus with TSDoc usage
+  - Node.js 22+ baseline requirement
+  - ESLint flat config integration
+  - Memory-bank as canonical context
+- **Chat Mode Constraints:** Enforce approved models and tool sets
+
+### Stage C: Memory-Bank Triad and Core Files
+- **Purpose:** Create persistent context system for durable project memory
+- **Actions:** Establish triad directories and six core memory files
+- **Triad Structure:**
+  - `memory-bank/instructions/` — Coding standards and guidelines
+  - `memory-bank/prompts/` — Executable workflow templates
+  - `memory-bank/chatmodes/` — Specialized AI agent configurations
+- **Core Memory Files:**
+  - `activeContext.md` — Current focus and immediate tasks
+  - `projectbrief.md` — Purpose and high-level goals
+  - `productContext.md` — User needs and business goals
+  - `systemPatterns.md` — Architecture and conventions
+  - `techContext.md` — Stack and dependencies
+  - `progress.md` — Status and milestones
+
+### Stage D: ESLint + Prettier Posture
+- **Purpose:** Document linting and formatting expectations without altering code
+- **Actions:** Signal expectations in copilot-instructions.md
+- **Standards Documented:**
+  - ESLint flat config requirement
+  - Fixable rules set to warnings
+  - Prettier integration via `eslint-config-prettier`
+- **Note:** No config files created at this stage
+
+### Stage E: Health Check and Exit Criteria
+- **Purpose:** Verify successful Layer 2 completion and idempotence
+- **Actions:** Validate all artifacts present and functional
+- **Validation Checks:**
+  - VS Code settings contain triad keys
+  - Copilot instructions exist with guardrails
+  - All triad directories have READMEs
+  - Six core memory files are present and writable
+  - Second execution produces no changes (idempotent verification)
 
 ---
 
