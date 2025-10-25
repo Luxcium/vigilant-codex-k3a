@@ -20,7 +20,7 @@ Provide a trustworthy summary of shipped capabilities, outstanding work, active 
 
 - **Remote actor infrastructure** – `src/remote-actors` and `src/rpc` provide worker-based dispatch, HTTP/TCP transports, and protocol codecs ready for extension.
 - **Polyglot automation inventory** – `scripts/` currently contains 67 documented scripts, each with standardized headers that describe purpose, usage, and validation status.
-- **Instruction and prompt ecosystem** – Memory Bank hosts 70 instruction files and 41 prompt templates that align all three agents around shared policies.
+- **Instruction and prompt ecosystem** – Memory Bank hosts 70 instruction files and 40 prompt templates that align all three agents around shared policies.
 - **Testing harness** – `vitest` configuration in `config/testing/vitest.config.ts` and script targets in `package.json` support targeted suites (auth, client, http, rate limit, types) when dependencies are installed.
 - **Next.js workspace** – The `web/` app retains Prisma-backed server actions, lint/test scripts, and documentation describing its live development workflow.
 
@@ -33,7 +33,7 @@ Provide a trustworthy summary of shipped capabilities, outstanding work, active 
 
 ## Current Status
 
-- **2025-12-07** – Progress file rewritten to eliminate mojibake, align counts with the repository (scripts: 67, instructions: 70, prompts: 41), and re-establish authoritative sections. Superseded narrative relocated to `memory-bank/archives/progress-archive-2025-12-07.md`. Focus is on rebuilding automation guardrails and ensuring self-healing documentation loops.
+- **2025-12-07** – Progress file rewritten to eliminate mojibake, align counts with the repository (scripts: 67, instructions: 70, prompts: 40), and re-establish authoritative sections. Superseded narrative relocated to `memory-bank/archives/progress-archive-2025-12-07.md`. Focus is on rebuilding automation guardrails and ensuring self-healing documentation loops.
 
 ## Known Issues
 
