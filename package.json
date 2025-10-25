@@ -19,6 +19,7 @@
     "docs": "typedoc --options config/docs/typedoc.json",
     "hello:world": "echo 'Hello, Copilot!'",
     "hooks:install": "bash ./scripts/install-hooks.sh",
+    "check:readme-counts": "bash ./scripts/check-readme-counts.sh",
     "lint": "pnpm run lint:markdown && eslint --config config/linting/eslint.config.mjs 'src/**/*.ts'",
     "lint:markdown": "pnpm exec prettier --write '**/*.chatmode.md' '**/*.prompt.md' '**/*.instructions.md' && markdownlint --config .markdownlint.yaml '**/*.md' '**/*.chatmode.md' '**/*.prompt.md' '**/*.instructions.md'",
     "markdownlint": "markdownlint \"**/*.md\"",

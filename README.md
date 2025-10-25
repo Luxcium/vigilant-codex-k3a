@@ -39,8 +39,8 @@ This workspace supports three AI agents with sophisticated collaboration pattern
 
 ### AI Framework Components
 
-- **🔧 40 Instruction Files** ([`memory-bank/instructions/`](memory-bank/instructions/)) - Automated coding standards and guidelines
-- **⚙️ 35 Prompt Files** ([`memory-bank/prompts/`](memory-bank/prompts/)) - Executable workflow templates
+- **🔧 69 Instruction Files** ([`memory-bank/instructions/`](memory-bank/instructions/)) - Automated coding standards and guidelines
+- **⚙️ 40 Prompt Files** ([`memory-bank/prompts/`](memory-bank/prompts/)) - Executable workflow templates
 - **📚 Memory Bank System** ([`memory-bank/`](memory-bank/)) - Stateful documentation for AI collaboration
 - **🎯 Self-Documentation Protocol** - Maintains context across development sessions
 
@@ -423,6 +423,11 @@ Launch a Codex Universal container with:
 ```
 
 Run project scripts inside the container using `pnpm <script>` only. This workspace is pnpm-only by policy.
+
+### Pre-Commit Checklist
+
+- `pnpm run check:readme-counts` – confirm the AI Framework Components bullet counts match the memory-bank inventories
+- `./scripts/verify-all.sh` – run the consolidated validation suite before invoking `commit-guard.sh`
 
 ### Mock Recording
 
