@@ -6,6 +6,7 @@
 #? Decision Rationale: Disabling remote CI to cut costs; empowers iterative validation before pushing
 #? Usage: ./scripts/local-ci.sh [--fast] [--skip install|typecheck|lint|unit|integration|coverage|build|docs]
 #? Dependencies: node (>=22), pnpm (>=9), bash, optional: docker (if run inside container)
+#? Install Policy: Honors repo "no lockfile" rule—uses --frozen-lockfile only when pnpm-lock.yaml exists, otherwise disables lockfile writes
 #? Last Updated: 2025-08-08 by GitHub Copilot
 #? References: Removed .github/workflows/ci.yml, scripts/verify-all.sh
 ## =============================================================================
@@ -101,7 +102,13 @@ STAGE(){ log "--- $1 ---"; }
 # Stage: Install --------------------------------------------------------------
 if ! $SKIP_INSTALL; then
   STAGE "Install dependencies"
-  pnpm install --frozen-lockfile || { err "Install failed"; exit 1; }
+  if [[ -f pnpm-lock.yaml ]]; then
+    log "Detected pnpm-lock.yaml; enforcing frozen install"
+    pnpm install --frozen-lockfile || { err "Install failed"; exit 1; }
+  else
+    log "No pnpm-lock.yaml detected; installing without generating a lockfile"
+    pnpm install --config.save-lockfile=false --no-lockfile || { err "Install failed"; exit 1; }
+  fi
   ok "Dependencies installed"
 else
   warn "Skipping install"
