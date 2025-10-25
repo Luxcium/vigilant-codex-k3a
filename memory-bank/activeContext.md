@@ -51,6 +51,18 @@ Fixed malformed `tasks.json` containing duplicate JSON objects. Created unified 
 
 ## Current Focus Snapshot
 
+### [2025-12-07] Progress Remediation Complete — Restore Automation Guardrails
+
+**Current State:** `memory-bank/progress.md` rebuilt with verified counts, encoding fixed, and prior narrative archived.
+
+**Last Action:** Added `memory-bank/instructions/progress-maintenance.instructions.md` to enforce count verification, archiving discipline, and self-healing updates.
+
+**Rationale:** Restores trust in status documentation before tackling automation gaps flagged by the Memory Bank assessment.
+
+**Next Intent:** Rebuild CI and documentation automation per the refreshed `What’s Left` section in `progress.md`, beginning with GitHub Actions reinstatement and script consolidation review.
+
+---
+
 ### [2025-12-06] Memory Bank Critical Assessment Follow-up - URGENT Priority
 
 **Current State:** Comprehensive Memory Bank assessment completed revealing CRITICAL integrity issues requiring immediate remediation. Assessment documented in [memory-bank-assessment-2025-12-06.md](./memory-bank-assessment-2025-12-06.md).
@@ -60,6 +72,8 @@ Fixed malformed `tasks.json` containing duplicate JSON objects. Created unified 
 **Rationale:** Assessment identified MEDIUM-HIGH risk level due to progress.md integrity crisis threatening Memory Bank reliability. Immediate action required to prevent further degradation and restore system integrity.
 
 **Next Intent:** Execute immediate remediation actions per assessment recommendations - reconstruct progress.md content, reconcile script inventory documentation, implement staleness detection.
+
+**Status Update (2025-12-07):** Remediation completed; see preceding entry for follow-on priorities.
 
 ---
 
