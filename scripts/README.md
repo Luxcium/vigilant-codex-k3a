@@ -116,6 +116,7 @@ When a script is created or modified, update this README with a brief descriptio
   - Consolidates functionality from 5 previous validation scripts
   - Comprehensive repository validation suite
 - `check-memory-bank.sh` - Memory bank specific validation
+- `check-readme-counts.sh` - Validates README AI Framework Components counts stay in sync with instruction/prompt inventories
  - `local-ci.sh` - **Full local CI pipeline (install, typecheck, lint, test, coverage, docs)** replacing removed GitHub Actions workflow to cut costs
    - Usage: `./scripts/local-ci.sh [--fast] [--skip stage]`
    - Mirrors former `.github/workflows/ci.yml` stages entirely locally
