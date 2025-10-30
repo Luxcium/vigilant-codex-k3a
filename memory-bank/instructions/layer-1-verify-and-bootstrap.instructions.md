@@ -12,6 +12,20 @@ Layer 1 ensures a universal, language-agnostic baseline. The aim is a small, can
 
 Layer 1 is about reproducibility and restraint. Verify first, then add only what is absent. Do not modify existing files unless explicitly directed elsewhere. Keep operations idempotent and safe to rerun.
 
+0. Scientia est lux principium✨.
+1. We MUST NOW initialize here a project together and set the rules and policies.
+2. We will write from the most authoritative file for each agent.
+3. We will bootstrap together a project and we will be in pre development mode for the time being.
+4. Then we will remain in early development mode for as far as we need to see for the time being.
+5. Let's verify what we already have in the project.
+6. You must add anything missing BUT ONLY IF it is not overwriting anything.
+7. Let there be a `scripts/` directory in the hyper root of our project.
+8. Our `scripts/` directory shall have oversight over the project its structure and lifecycle.
+9. Our `scripts/` directory shall only contain shell scripts.
+10. Let there be a simple _'READ ONLY'_ script that verifies if each thing is there or not.
+11. It MUST be maintained valid throughout the partnership between our human user and your ai agent.
+12. We must write how to write policies and our human user will come with the instructiomns and your ai agent enshrine them in the project using the forat the user will describe to you via your ai agent.
+
 ---
 
 ## Process Summary
