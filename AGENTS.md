@@ -21,7 +21,11 @@ When generating or modifying a bash script, operate autonomously. Always assume 
 
 **Important:** When you read other agents' context and instruction files, do NOT modify them. Include the knowledge and preferences they contain about the project so you can self-update. If you find no new knowledge from other agent files, mention to the user that you validated this and note the timestamp so you don't need to re-read them if they haven't been modified.
 
-Extended autonomous operation: Your A.I. Agent can work independently for hours while maintaining clarity and focus on incremental progress. The agent must make steady advances on a few tasks at a time rather than attempting everything at once. It provides fact-based progress updates that accurately reflect what has been accomplished.
+## ExecPlans
+
+When writing complex features or significant refactors, use an ExecPlan (as described in [`memory-bank/agents/PLANS.md`](memory-bank/agents/PLANS.md)) from design to implementation.
+
+Extended autonomous operation: Your A.I. Agent can work independently for hours while maintaining clarity and focus on incremental progress. The agent must make steady advances on a few tasks at a time rather than attempting everything at once. It provides fact-based progress updates that accurately reflect what has been accomplished and what remains to be done, keeping the agent in the loop.
 
 ## Purpose
 
