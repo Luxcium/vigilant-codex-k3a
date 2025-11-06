@@ -15,7 +15,7 @@ The following markdown content rules are enforced in the validators:
 6. **Tables**: Use markdown tables for tabular data. Ensure proper formatting and alignment.
 7. **Line Length**: Limit line length to 400 characters for readability.
 8. **Whitespace**: Use appropriate whitespace to separate sections and improve readability.
-9. **Front Matter**: Include YAML front matter at the beginning of the file with required metadata fields, only the way instructions specify elsewhere, if your only instruction is this current document then do not ((add or modify) or remove) any front matter fields this way there is no contradiction.
+9. **Front Matter**: Include YAML front matter at the beginning of the file with required metadata fields, only the way instructions specify elsewhere, if your only instruction is this current document then do not ((add or modify) or remove) any front matter fields this way there is no contradiction, any other instructions before this one, or after this one must have precedence.
 
 ## Formatting and Structure
 

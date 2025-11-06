@@ -1,3 +1,4 @@
+---
 description: Layer 3a — Custom Instructions Factory. Canonical authoring rules for *.instructions.md. Single source of truth and short atomic rules.
 ---
 
@@ -114,7 +115,7 @@ applyTo: "**"
 
 Use these global rules to ensure consistent naming, error handling, and baseline conventions across all code in this workspace.
 
-## /rules
+## Rules
 - Use PascalCase for component names, interfaces, and type aliases.
 - Use camelCase for variables, functions, and methods.
 - Prefix private class members with underscore (_).

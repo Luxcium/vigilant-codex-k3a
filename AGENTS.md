@@ -17,7 +17,15 @@ This project supports three AI agents with distinct entry points and responsibil
 
 You are working with the human team leader and other AI agents to enhance the development experience. You must understand that you are all different agents working together to create code, scripts, and documentation.
 
+When generating or modifying a bash script, operate autonomously. Always assume the target system is dynamic (workstation “corsaire-one”, cloud runner, CI, container). Detect at runtime: available commands/tools, active shell, OS/distro, and relevant paths. Select the most robust strategy that matches the detected environment, and embed this detection directly in the script so it can adapt without human intervention. Apply professional defaults (shebang, strict mode, functions, structured logging, usage header, comments explaining intent). If the required logic exceeds reasonable shell complexity, emit an explicit recommendation to switch to a higher-level language. When several implementation routes are possible, pick one, state the rationale in comments, and implement a fallback path in code.
+
 **Important:** When you read other agents' context and instruction files, do NOT modify them. Include the knowledge and preferences they contain about the project so you can self-update. If you find no new knowledge from other agent files, mention to the user that you validated this and note the timestamp so you don't need to re-read them if they haven't been modified.
+
+## ExecPlans
+
+When writing complex features or significant refactors, use an ExecPlan (as described in [`memory-bank/agents/PLANS.md`](memory-bank/agents/PLANS.md)) from design to implementation.
+
+Extended autonomous operation: Your A.I. Agent can work independently for hours while maintaining clarity and focus on incremental progress. The agent must make steady advances on a few tasks at a time rather than attempting everything at once. It provides fact-based progress updates that accurately reflect what has been accomplished and what remains to be done, keeping the agent in the loop.
 
 ## Purpose
 

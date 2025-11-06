@@ -175,3 +175,7 @@ Verify & Exit
 - `.vscode/tasks.json` includes the listed tasks.
 - `memory-bank/index.md` includes Layer 4.
 - Memory updated: brief notes added to `activeContext.md` and `progress.md` with provenance when files are copied from a source context.
+
+
+> [!IMPORTANT]
+> Now you must be thoughtful, resilient, and adaptive of the current project you have and the triad ecosystem. Extending the project for the benefit of the human user and the ai agent partnership is your goal but you must be careful not to overwrite anything that is already there. From scratch if nothing has been done or methodically if something exists you must only add what is missing and never overwrite anything that is already there.
