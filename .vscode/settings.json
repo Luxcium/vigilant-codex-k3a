@@ -14,7 +14,8 @@
     "docker-compose*.yml": "dockercompose",
     "*.md": "markdown",
     "**/.github/chatmodes/*.chatmode.md": "chatmode",
-    "**/memory-bank/chatmodes/*.chatmode.md": "chatmode",
+    "**/.github/agents/*.chatagent.md": "chatagent",
+    "**/memory-bank/chatmodes/*.chatmode.md": "chatagent",
     "**/memory-bank/instructions/*.instructions.md": "instructions",
     "**/memory-bank/prompts/*.prompt.md": "prompt"
   },
@@ -119,9 +120,7 @@
   "jupyter.interactiveWindow.textEditor.executeSelection": true,
   "jupyter.askForKernelRestart": false,
   "python.testing.pytestEnabled": true,
-  "python.testing.pytestArgs": [
-    "python/tests"
-  ],
+  "python.testing.pytestArgs": ["python/tests"],
   "python.testing.unittestEnabled": false,
   "python.testing.autoTestDiscoverOnSaveEnabled": true,
   "python.terminal.executeInFileDir": true,
@@ -1285,10 +1284,7 @@
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
   // ESLint auto fix on save (string array form)
-  "editor.codeActionsOnSave": [
-    "source.fixAll",
-    "source.fixAll.eslint"
-  ],
+  "editor.codeActionsOnSave": ["source.fixAll", "source.fixAll.eslint"],
   // Microsoft Edge DevTools Configuration - Enhanced Error Integration
   "vscode-edge-devtools.useHttps": false,
   "vscode-edge-devtools.headless": false,
@@ -1321,9 +1317,7 @@
     |-··----------------------------------------------------------··-|
   */
   // #region TODO TREE                                               !
-  "todo-tree.filtering.excludeGlobs": [
-    "**/node_modules"
-  ],
+  "todo-tree.filtering.excludeGlobs": ["**/node_modules"],
   "todo-tree.filtering.ignoreGitSubmodules": false,
   "todo-tree.filtering.includedWorkspaces": [], // new items
   "todo-tree.filtering.includeGlobs": [], // new items
@@ -2366,7 +2360,6 @@
   "npm.packageManager": "pnpm",
   "npm.scriptRunner": "pnpm",
   "prisma.scriptRunner": "pnpm",
-  "genaiscript.cli.packageManager": "pnpm",
   "explorer.incrementalNaming": "smart",
   "eslint.quiet": true,
   "prettier.vueIndentScriptAndStyle": true,
@@ -2379,10 +2372,7 @@
   "terminal.integrated.enableImages": true,
   "debug.javascript.autoAttachFilter": "smart",
   "debug.javascript.terminalOptions": {
-    "skipFiles": [
-      "<node_internals>/**",
-      "**/node_modules/**"
-    ],
+    "skipFiles": ["<node_internals>/**", "**/node_modules/**"],
     "sourceMaps": true,
     "resolveSourceMapLocations": [
       "${workspaceFolder}/web/**",
@@ -2447,6 +2437,13 @@
     "vit-implementation": false,
     "web-project-structure": false,
     "x-cards": false
-  }
+  },
+  "chat.agent.thinking.collapsedTools": "all",
+  "chat.useAgentsMdFile": true,
+  "chat.useNestedAgentsMdFiles": true,
+  "chat.customAgentInSubagent.enabled": true,
+  "chat.agent.thinkingStyle": "fixedScrolling",
+  "chat.agentSessionsViewLocation": "view"
+
   // #endregion: Last Section
-  }
+}
