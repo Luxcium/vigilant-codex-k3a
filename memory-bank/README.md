@@ -29,15 +29,17 @@
 
 ### archives/
 
-Time-capsuled snapshots of major context files for historical reference and planning documents.
+Time-capsuled snapshots of major context files for historical reference and completed planning documents.
 
-**Historical Planning Documents:**
+**Completed Infrastructure Projects:**
 
-- `CONSOLIDATION_PLAN.md` — README consolidation strategy and implementation plan
-- `CARRIER_GRADE_UPGRADE.md` — Carrier-grade script improvements documentation
-- `CARRIER_GRADE_UPGRADE_FIXED.md` — Final version of carrier-grade upgrades
+- `config-reorganization-2025-status.md` — Configuration reorganization completion report
+- `execute-cleanup-now-2025.md` — Config cleanup execution plan (completed)
+- `CONSOLIDATION_PLAN.md` — README consolidation strategy (completed)
+- `CARRIER_GRADE_UPGRADE.md` — Carrier-grade script improvements (completed)
+- `CARRIER_GRADE_UPGRADE_FIXED.md` — Final carrier-grade upgrade version (completed)
 
-**Legacy Context Files:** Time-stamped snapshots of activeContext, progress, and other root files for historical reference.
+**Legacy Context Files:** Time-stamped snapshots of activeContext, progress, systemPatterns, techContext, productContext, and projectbrief for historical reference.
 
 ### chatmodes/
 

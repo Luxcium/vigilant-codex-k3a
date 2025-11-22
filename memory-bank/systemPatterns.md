@@ -66,7 +66,7 @@ Architecture & Collaboration:
 Environment & Scripts:
 
 - Idempotent Script Pattern: safe re-runs; explicit precondition checks
-- Consolidation Protocol: periodic reduction of overlapping scripts (tracked in SCRIPT_CONSOLIDATION_PLAN.md if present)
+- Consolidation Protocol: periodic reduction of overlapping scripts (documented in progress.md)
 - Header Compliance: 10-line descriptive block + validation status footer
 
 Web & Component Model:

@@ -64,8 +64,7 @@ rm -f memory-bank/chatmodes/README.consolidated.md
 # Audit files
 rm -f memory-bank/AUDIT.sync.md
 
-# Remove this consolidation plan
-rm -f CONSOLIDATION_PLAN.md
+# Note: CONSOLIDATION_PLAN.md now archived in memory-bank/archives/
 
 # Validate results
 echo "✅ Validation checks..."
