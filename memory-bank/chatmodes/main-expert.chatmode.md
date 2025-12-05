@@ -1,6 +1,6 @@
 ---
 description: Generate an implementation plan for new features or refactoring existing code.
-tools: ['usages', 'changes', 'extensions', 'fetch', 'githubRepo', 'vscodeAPI', 'problems', 'prisma-migrate-dev', 'prisma-migrate-reset', 'prisma-migrate-status', 'prisma-platform-login', 'prisma-postgres-create-database', 'prisma-studio', 'edit', 'search', 'runCommands', 'runTasks', 'think', 'testFailure', 'todos', 'runTests', 'sequentialthinking', 'microsoft-docs']
+tools: ['edit', 'search', 'runCommands', 'runTasks', 'microsoft-docs/*', 'usages', 'vscodeAPI', 'problems', 'changes', 'testFailure', 'fetch', 'githubRepo', 'prisma.prisma/prisma-migrate-status', 'prisma.prisma/prisma-migrate-dev', 'prisma.prisma/prisma-migrate-reset', 'prisma.prisma/prisma-studio', 'prisma.prisma/prisma-platform-login', 'prisma.prisma/prisma-postgres-create-database', 'extensions', 'todos', 'runTests']
 ---
 
 # Main Project Chatmode

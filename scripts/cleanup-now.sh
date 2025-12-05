@@ -22,10 +22,10 @@ rm -f memory-bank/chatmodes/README.consolidated.md
 # Audit files
 rm -f memory-bank/AUDIT.sync.md
 
-# Remove consolidation artifacts
-rm -f CONSOLIDATION_PLAN.md
+# Remove consolidation artifacts (if any remain)
 rm -f consolidate-readmes.sh
 
 echo "✅ Cleanup complete! All duplicate README variants removed."
+echo "📝 Note: CONSOLIDATION_PLAN.md is archived in memory-bank/archives/"
 echo "📊 Remaining README files:"
 find . -maxdepth 3 -name "README*.md" -type f | sort

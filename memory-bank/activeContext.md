@@ -79,6 +79,25 @@ Fixed malformed `tasks.json` containing duplicate JSON objects. Created unified 
 
 ## Recent Changes (Last 30 Days)
 
+### [2025-11-22] Root-Level Documentation Cleanup Complete
+
+**Achievement:** Systematically integrated and archived 6 root-level planning and status documents that were cluttering the project root.
+
+**Technical Implementation:**
+
+- ✅ Removed duplicate `CARRIER_GRADE_UPGRADE.md` and `CARRIER_GRADE_UPGRADE_FIXED.md` (already archived)
+- ✅ Archived `CONFIG_REORGANIZATION_STATUS.md` → `memory-bank/archives/config-reorganization-2025-status.md`
+- ✅ Archived `EXECUTE_NOW.md` → `memory-bank/archives/execute-cleanup-now-2025.md`
+- ✅ Removed duplicate `CONSOLIDATION_PLAN.md` (better version already in archives)
+- ✅ Removed empty `SCRIPT_CONSOLIDATION_PLAN.md` placeholder
+- ✅ Updated `memory-bank/README.md` to reflect proper archive organization
+- ✅ Updated `memory-bank/systemPatterns.md` to reference progress.md for consolidation tracking
+- ✅ Fixed script references in `cleanup-now.sh`, `scripts/cleanup-now.sh`, and `consolidate-readmes.sh`
+
+**Rationale:** These files represented completed historical work that was polluting the root directory and creating maintenance confusion. Proper archiving preserves historical value while improving project organization.
+
+**Impact:** Cleaner project root, proper historical documentation in archives/, and updated cross-references throughout Memory Bank for accurate documentation topology.
+
 ### [2025-10-17] Layer 4 Automation Instructions Summarized
 
 **Achievement:** Added a staged Process Summary to `memory-bank/instructions/layer-4-automation-and-health.instructions.md` so the automation layer mirrors the narrative structure applied to Layers 1–3.

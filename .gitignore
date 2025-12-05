@@ -57,3 +57,4 @@ history.jsonl
 backup-readmes/
 .codex/version.json
 .vscode/edge-data/
+!**/.mypy_cache/CACHEDIR.TAG
